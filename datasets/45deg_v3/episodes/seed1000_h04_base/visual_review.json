@@ -1,0 +1,35 @@
+{
+  "status": "sampled_pass",
+  "reviewer": "Codex /root visual inspection",
+  "reviewed_at": "2026-11-11T08:58:25.582174+08:00",
+  "notes": "Re-reviewed after correcting collision-overlay rendering. Inspected 43 side-view snapshots at 0.5-second intervals including the exact endpoint, 19 diagnostic keyframes, and dual-view video frames at initial pose, ascent, descent and exact endpoint. Wheel hubs, steer brackets, detailed rocker structure and the full original chassis visual mesh are visible; robot collision primitives are hidden. No detached components, extreme steering fold or collapsed endpoint shape was observed. The final rover has a normal aligned pose; six-wheel physical support remains confirmed by the independent audit. This is sampled visual inspection, not full-frame video playback.",
+  "reviewed_images": [
+    "contact_sheet.jpg",
+    "review_01.jpg",
+    "review_02.jpg",
+    "review_03.jpg",
+    "review_dual_initial.jpg",
+    "review_dual_ascent.jpg",
+    "review_dual_descent.jpg",
+    "review_dual_final.jpg"
+  ],
+  "trajectory_sha256": "cc427aed73c6c0d9088422f11083c1a985621323a2710cddd84b7a1e94b9dadb",
+  "video_sha256": "707605e180c304c056f9436d4dc9b6fcf233a870ea1888afb9931d55b385ec7b",
+  "render_scene_sha256": "a13e4cb1e0a300b1b4aa223ae59096e80d9d4247ea05871c004abbd08ad40a08",
+  "visual_scope": "sampled_frames",
+  "sample_interval_s": 0.5,
+  "side_view_samples": 43,
+  "diagnostic_keyframes": 19,
+  "dual_view_video_frame_indices": [
+    0,
+    213,
+    650,
+    1029
+  ],
+  "visual_geometry_mode": "original_urdf_visual_meshes_only",
+  "supersedes": "render_archive_collision_overlay_20261111/visual_review.json",
+  "limitations": [
+    "Self-collision disabled by inherited physics scene policy.",
+    "Visual inspection covers sampled images; all physical states are checked independently every 0.001 seconds."
+  ]
+}

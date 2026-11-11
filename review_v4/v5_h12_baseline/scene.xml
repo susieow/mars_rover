@@ -1,0 +1,455 @@
+<mujoco model="mars_rover">
+  <compiler angle="radian" />
+
+    <asset>
+    <mesh name="vis_base_link" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/base_link_slim.stl" />
+    <mesh name="vis_left_rocker" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/left_rocker.stl" />
+    <mesh name="vis_right_rocker" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/right_rocker.stl" />
+    <mesh name="vis_left_front_steer" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/left_front_steer.stl" />
+    <mesh name="vis_right_front_steer" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/right_front_steer.stl" />
+    <mesh name="vis_left_rear_steer" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/left_rear_steer.stl" />
+    <mesh name="vis_right_rear_steer" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/right_rear_steer.stl" />
+    <mesh name="vis_left_front_wheel" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/left_front_wheel.stl" />
+    <mesh name="vis_left_middle_wheel" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/left_middle_wheel.stl" />
+    <mesh name="vis_left_rear_wheel" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/left_rear_wheel.stl" />
+    <mesh name="vis_right_front_wheel" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/right_front_wheel.stl" />
+    <mesh name="vis_right_middle_wheel" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/right_middle_wheel.stl" />
+    <mesh name="vis_right_rear_wheel" file="/home/agilex/wzy/rover/assets/mars_rover/meshes/right_rear_wheel.stl" />
+  </asset>
+  <worldbody>
+    <light name="sun" pos="0 0 14" dir="0 0 -1" directional="true" diffuse=".9 .9 .85" />
+    <geom name="ground" type="plane" size="80 80 0.1" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".72 .72 .72 1" />
+    <geom name="up0" type="box" pos="1.6600000000000001 0 0.06" size="0.06 2.5 0.06" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up1" type="box" pos="1.7800000000000002 0 0.12" size="0.06 2.5 0.12" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up2" type="box" pos="1.9000000000000004 0 0.18" size="0.06 2.5 0.18" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up3" type="box" pos="2.0200000000000005 0 0.24" size="0.06 2.5 0.24" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up4" type="box" pos="2.1400000000000006 0 0.3" size="0.06 2.5 0.3" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up5" type="box" pos="2.2600000000000007 0 0.36" size="0.06 2.5 0.36" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up6" type="box" pos="2.380000000000001 0 0.42" size="0.06 2.5 0.42" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up7" type="box" pos="2.500000000000001 0 0.48" size="0.06 2.5 0.48" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up8" type="box" pos="2.620000000000001 0 0.54" size="0.06 2.5 0.54" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up9" type="box" pos="2.740000000000001 0 0.6" size="0.06 2.5 0.6" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up10" type="box" pos="2.860000000000001 0 0.6599999999999999" size="0.06 2.5 0.6599999999999999" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="up11" type="box" pos="2.9800000000000013 0 0.72" size="0.06 2.5 0.72" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="platform" type="box" pos="4.040000000000001 0 0.72" size="1.0 2.5 0.72" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down0" type="box" pos="5.1000000000000005 0 0.6599999999999999" size="0.06 2.5 0.6599999999999999" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down1" type="box" pos="5.220000000000001 0 0.6" size="0.06 2.5 0.6" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down2" type="box" pos="5.340000000000001 0 0.54" size="0.06 2.5 0.54" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down3" type="box" pos="5.460000000000001 0 0.48" size="0.06 2.5 0.48" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down4" type="box" pos="5.580000000000001 0 0.42" size="0.06 2.5 0.42" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down5" type="box" pos="5.700000000000001 0 0.36" size="0.06 2.5 0.36" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down6" type="box" pos="5.820000000000001 0 0.3" size="0.06 2.5 0.3" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down7" type="box" pos="5.940000000000001 0 0.24" size="0.06 2.5 0.24" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down8" type="box" pos="6.060000000000001 0 0.18" size="0.06 2.5 0.18" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down9" type="box" pos="6.1800000000000015 0 0.12" size="0.06 2.5 0.12" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <geom name="down10" type="box" pos="6.300000000000002 0 0.06" size="0.06 2.5 0.06" contype="2" conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" rgba=".58 .47 .36 1" />
+    <body name="base_link">
+      <geom solref="0.004 1" name="vis_base_link" type="mesh" mesh="vis_base_link" pos="0 0 0" quat="0.9998 0 -0.0199987 0" rgba="0.25 0.32 0.40 1" contype="0" conaffinity="0" group="1" density="0" />
+      <freejoint name="root" />
+      <inertial pos="0 0 0" mass="0.00056" diaginertia="3.73338e-08 3.73338e-08 3.73338e-08" />
+      <body name="left_rocker" pos="0.343044 0.244963 0.0138788" quat="0.99996 0 0.00899988 0">
+      <geom solref="0.004 1" name="vis_left_rocker" type="mesh" mesh="vis_left_rocker" pos="0 0 0" quat="1 0 0 0" rgba="0.20 0.55 0.38 1" contype="0" conaffinity="0" group="1" density="0" />
+        <inertial pos="0 0 0" mass="0.000313" diaginertia="2.08956e-08 2.08956e-08 2.08956e-08" />
+        <joint name="left_rocker_joint" range="-1.5708 0.3491" actuatorfrcrange="-100 100" damping="1.911" frictionloss="1.2" axis="0 1 0" />
+        <body name="left_front_steer" pos="0.324636 0.0050466 -0.181934">
+      <geom solref="0.004 1" name="vis_left_front_steer" type="mesh" mesh="vis_left_front_steer" pos="0 0 0" quat="1 0 0 0" rgba="0.72 0.55 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+          <inertial pos="0 0 0" mass="0.002425" diaginertia="1.61645e-07 1.61645e-07 1.61645e-07" />
+          <joint name="left_front_steer_joint" range="-1.5708 1.5708" actuatorfrcrange="-40 40" damping="0.637" frictionloss="0.8" />
+          <body name="left_front_wheel" pos="0.000258505 0.0763287 -0.194654">
+      <geom solref="0.004 1" name="vis_left_front_wheel" type="mesh" mesh="vis_left_front_wheel" pos="0 0 0" quat="1 0 0 0" rgba="0.12 0.12 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+            <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="12.75" diaginertia="0.168962 0.099225 0.099225" />
+            <joint name="left_front_wheel_joint" actuatorfrcrange="-50 50" damping="0.0477" frictionloss="1" axis="0 1 0" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="left_front_wheel_col_1" size="0.162697 0.1" pos="-0.00073418 0.0274896 -0.000317404" quat="0.707105 0.707108 0 0" type="cylinder" />
+            <body name="left_front_wheel_shape0">
+              <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06" />
+            </body>
+          </body>
+          <body name="left_front_steer_shape0">
+            <inertial pos="0.000133135 0.0009297 -0.0170505" quat="0.49257 0.502825 -0.497465 0.507022" mass="0.45462" diaginertia="0.00132024 0.000661115 0.000661086" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="left_front_steer_col_0" size="0.0660015 0.066 0.00254075" pos="0.000133135 0.0009297 -0.0170505" quat="0.700428 -0.00296563 -0.00346263 0.713708" type="box" />
+          </body>
+          <body name="left_front_steer_shape1">
+            <inertial pos="0.00118699 -0.00661511 -0.117559" quat="0.700426 -0.00296697 -0.0034613 0.713711" mass="1.34657" diaginertia="0.00548083 0.00469572 0.000836462" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="left_front_steer_col_1" size="0.0425012 0.102001 0.00756195" pos="0.00118699 -0.00661511 -0.117559" quat="0.706821 0.707315 0.00342836 0.00985664" type="box" />
+          </body>
+          <body name="left_front_steer_shape2">
+            <inertial pos="0.000905143 0.00838338 -0.117537" quat="0.700427 -0.00296602 -0.00346222 0.71371" mass="1.34683" diaginertia="0.00548221 0.00469696 0.00083663" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="left_front_steer_col_2" size="0.0425012 0.102005 0.00756315" pos="0.000905143 0.00838338 -0.117537" quat="0.00342736 0.00985563 -0.70682 -0.707316" type="box" />
+          </body>
+          <body name="left_front_steer_shape3">
+            <inertial pos="1.05751e-05 0.0009346 -0.00355788" quat="0.492829 0.502571 -0.497726 0.506765" mass="2.34955" diaginertia="0.00811733 0.00415606 0.00415211" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="left_front_steer_col_3" size="0.0720055 0.0719705 0.0110376" pos="1.05751e-05 0.0009346 -0.00355788" quat="0.700428 -0.00296563 -0.00346263 0.713708" type="box" />
+          </body>
+        </body>
+        <body name="left_middle_wheel" pos="-0.32044 0.0734287 -0.388533">
+      <geom solref="0.004 1" name="vis_left_middle_wheel" type="mesh" mesh="vis_left_middle_wheel" pos="0 0 0" quat="1 0 0 0" rgba="0.12 0.12 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+          <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="12.75" diaginertia="0.168962 0.099225 0.099225" />
+          <joint name="left_middle_wheel_joint" actuatorfrcrange="-50 50" damping="0.0477" frictionloss="1" axis="0 1 0" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_middle_wheel_col_1" size="0.16278 0.1" pos="-0.00252804 0.0274609 0.00067437" quat="0.707105 0.707108 0 0" type="cylinder" />
+          <body name="left_middle_wheel_shape0">
+            <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06" />
+          </body>
+        </body>
+        <body name="left_rocker_shape0">
+          <inertial pos="0.17739 0.00328188 -0.0786465" quat="-0.00564809 0.816499 0.00752691 0.57727" mass="0.335848" diaginertia="0.00150024 0.00150007 0.000315367" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_0" size="0.0375409 0.0375196 0.109507" pos="0.17739 0.00328188 -0.0786465" quat="0.572056 -0.404179 -0.412203 0.582649" type="box" />
+        </body>
+        <body name="left_rocker_shape1">
+          <inertial pos="0.000237836 -1.49794e-05 -0.0269904" quat="0.497374 0.493179 0.502221 0.507117" mass="0.749678" diaginertia="0.00328356 0.00290089 0.00189682" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_1" size="0.0926225 0.0675345 0.055042" pos="0.000237836 -1.49794e-05 -0.0269904" quat="0.00342736 0.00985563 -0.70682 -0.707316" type="box" />
+        </body>
+        <body name="left_rocker_shape2">
+          <inertial pos="-0.175948 -0.00335861 -0.0818656" quat="-0.0078792 0.56982 0.00510807 0.821716" mass="0.335857" diaginertia="0.00150034 0.00150015 0.000315377" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_2" size="0.0375419 0.0375188 0.109509" pos="-0.175948 -0.00335861 -0.0818656" quat="0.575459 0.399319 0.406529 0.586622" type="box" />
+        </body>
+        <body name="left_rocker_shape3">
+          <inertial pos="0.326157 -0.0800368 -0.179594" quat="0.965392 -0.00109592 -0.00440477 0.260763" mass="0.010665" diaginertia="2.05635e-06 2.04832e-06 2.04764e-06" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_3" size="0.0170089 0.0169368 0.0170033" pos="0.326157 -0.0800368 -0.179594" quat="0.610312 -0.350681 -0.615821 -0.353987" type="box" />
+        </body>
+        <body name="left_rocker_shape4">
+          <inertial pos="0.326085 -0.0799938 -0.166092" quat="-0.00689001 0.703854 0.006393 0.710282" mass="0.022382" diaginertia="2.54321e-05 1.78669e-05 8.19968e-06" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_4" size="0.0485002 0.0325042 0.0065205" pos="0.326085 -0.0799938 -0.166092" quat="0.0093925 0.00454546 0.000351443 -0.999945" type="box" />
+        </body>
+        <body name="left_rocker_shape5">
+          <inertial pos="0.320832 -0.0800127 -0.0411041" quat="0.724203 -0.0030705 -0.00334846 0.689572" mass="0.121246" diaginertia="0.000161832 0.000151067 8.5549e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_5" size="0.0530345 0.0345188 0.030417" pos="0.320832 -0.0800127 -0.0411041" quat="0.514457 -0.489772 0.509721 0.48543" type="box" />
+        </body>
+        <body name="left_rocker_shape6">
+          <inertial pos="0.325751 -0.0799666 -0.129336" quat="0.724204 -0.0030705 -0.00334847 0.68957" mass="0.134416" diaginertia="0.000235284 0.000231231 8.48628e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_6" size="0.065261 0.0300297 0.0314999" pos="0.325751 -0.0799666 -0.129336" quat="0.710097 0.0174563 0.703678 -0.0171783" type="box" />
+        </body>
+        <body name="left_rocker_shape7">
+          <inertial pos="0.3236 0.00600031 -0.126025" quat="-0.00688934 0.703855 0.00639237 0.710281" mass="0.319875" diaginertia="0.000634168 0.000595296 0.000560828" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_7" size="0.05303 0.0494735 0.055995" pos="0.3236 0.00600031 -0.126025" quat="0.502221 0.507116 -0.497373 -0.493181" type="box" />
+        </body>
+        <body name="left_rocker_shape8">
+          <inertial pos="0.325086 -0.0145169 -0.19151" quat="0.492829 0.502571 -0.497724 0.506767" mass="0.206456" diaginertia="0.00111092 0.000691437 0.000439508" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_8" size="0.079 0.0995075 0.0120617" pos="0.325086 -0.0145169 -0.19151" quat="-0.00454549 0.00939248 -0.999945 -0.000349027" type="box" />
+        </body>
+        <body name="left_rocker_shape9">
+          <inertial pos="0.325023 -0.0140457 -0.18551" quat="0.492827 0.502573 -0.497724 0.506767" mass="0.248122" diaginertia="0.00147327 0.000899696 0.000601804" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_9" size="0.084295 0.103476 0.0130642" pos="0.325023 -0.0140457 -0.18551" quat="0.999945 0.000351449 -0.00454546 0.00939392" type="box" />
+        </body>
+        <body name="left_rocker_shape10">
+          <inertial pos="-0.320834 -0.0061417 -0.180865" quat="-0.00688836 0.703856 0.00639139 0.710281" mass="0.018213" diaginertia="4.02211e-05 2.18944e-05 1.84046e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_10" size="0.055002 0.0600005 0.00253454" pos="-0.320834 -0.0061417 -0.180865" quat="0.00296405 0.700428 0.713708 0.00346102" type="box" />
+        </body>
+        <body name="left_rocker_shape11">
+          <inertial pos="-0.321273 -0.00611888 -0.131901" quat="-0.0068884 0.703854 0.00639137 0.710282" mass="0.319872" diaginertia="0.000634152 0.000595283 0.000560822" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_11" size="0.05303 0.0494733 0.0559945" pos="-0.321273 -0.00611888 -0.131901" quat="0.497374 0.493181 0.50222 0.507116" type="box" />
+        </body>
+        <body name="left_rocker_shape12">
+          <inertial pos="-0.319926 0.00130527 -0.296352" quat="0.700427 -0.00296603 -0.00346222 0.71371" mass="0.081993" diaginertia="0.000423539 0.000375736 5.09371e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_12" size="0.0425014 0.117005 0.0075724" pos="-0.319926 0.00130527 -0.296352" quat="0.00342736 0.00985563 -0.70682 -0.707316" type="box" />
+        </body>
+        <body name="left_rocker_shape13">
+          <inertial pos="-0.319644 -0.0136932 -0.296373" quat="0.700426 -0.00296696 -0.00346129 0.713711" mass="0.081978" diaginertia="0.000423438 0.000375645 5.09274e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_13" size="0.0425014 0.117001 0.00757125" pos="-0.319644 -0.0136932 -0.296373" quat="0.706821 0.707315 0.00342836 0.00985664" type="box" />
+        </body>
+        <body name="left_rocker_shape14">
+          <inertial pos="-0.174637 -0.00331052 -0.0440024" quat="0.397341 0.40851 -0.577431 0.584648" mass="0.013083" diaginertia="3.49144e-06 2.7288e-06 2.72778e-06" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rocker_col_14" size="0.0200104 0.0200045 0.0150102" pos="-0.174637 -0.00331052 -0.0440024" quat="0.702265 0.127344 -0.124549 -0.689271" type="box" />
+        </body>
+      </body>
+      <body name="left_rear_steer" pos="-0.687684 0.218398 -0.174094" quat="0.9998 0 -0.0199987 0">
+      <geom solref="0.004 1" name="vis_left_rear_steer" type="mesh" mesh="vis_left_rear_steer" pos="0 0 0" quat="1 0 0 0" rgba="0.72 0.55 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+        <inertial pos="0 0 0" mass="0.002425" diaginertia="1.61645e-07 1.61645e-07 1.61645e-07" />
+        <joint name="left_rear_steer_joint" range="-1.5708 1.5708" actuatorfrcrange="-40 40" damping="0.637" frictionloss="0.8" />
+        <body name="left_rear_wheel" pos="0.00366725 0.0763418 -0.194614">
+      <geom solref="0.004 1" name="vis_left_rear_wheel" type="mesh" mesh="vis_left_rear_wheel" pos="0 0 0" quat="1 0 0 0" rgba="0.12 0.12 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+          <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="12.75" diaginertia="0.168962 0.099225 0.099225" />
+          <joint name="left_rear_wheel_joint" actuatorfrcrange="-50 50" damping="0.0477" frictionloss="1" axis="0 1 0" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rear_wheel_col_1" size="0.162856 0.1" pos="0.00236743 0.0274594 0.000479388" quat="0.707105 0.707108 0 0" type="cylinder" />
+          <body name="left_rear_wheel_shape0">
+            <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06" />
+          </body>
+        </body>
+        <body name="left_rear_steer_shape0">
+          <inertial pos="0.000224648 0.000974058 -0.0170687" quat="0.501677 0.492319 -0.508094 0.497778" mass="0.454616" diaginertia="0.00132024 0.000661112 0.000661084" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rear_steer_col_0" size="0.0660015 0.066 0.00254075" pos="0.000224648 0.000974058 -0.0170687" quat="0.713714 -0.00386217 -0.00453572 0.700412" type="box" />
+        </body>
+        <body name="left_rear_steer_shape1">
+          <inertial pos="0.0012781 -0.00656546 -0.117578" quat="0.71371 -0.00386235 -0.00453553 0.700416" mass="1.34658" diaginertia="0.00548089 0.00469576 0.00083647" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rear_steer_col_1" size="0.0425012 0.102001 0.00756205" pos="0.0012781 -0.00656546 -0.117578" quat="0.706726 0.7074 -0.0108463 -0.00244838" type="box" />
+        </body>
+        <body name="left_rear_steer_shape2">
+          <inertial pos="0.00156008 0.008433 -0.117549" quat="0.713712 -0.00386145 -0.00453648 0.700414" mass="1.34683" diaginertia="0.00548224 0.00469695 0.000836634" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rear_steer_col_2" size="0.0425012 0.102005 0.0075632" pos="0.00156008 0.008433 -0.117549" quat="0.0108478 0.00244987 0.706725 0.7074" type="box" />
+        </body>
+        <body name="left_rear_steer_shape3">
+          <inertial pos="6.42762e-05 0.000978248 -0.00357644" quat="0.501482 0.492518 -0.507896 0.497979" mass="2.34954" diaginertia="0.00811732 0.00415603 0.0041521" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="left_rear_steer_col_3" size="0.0720055 0.0719705 0.0110376" pos="6.42762e-05 0.000978248 -0.00357644" quat="0.713714 -0.00386217 -0.00453572 0.700412" type="box" />
+        </body>
+      </body>
+      <body name="right_rocker" pos="0.343044 -0.244963 0.0138788" quat="0.99996 0 0.00899988 0">
+      <geom solref="0.004 1" name="vis_right_rocker" type="mesh" mesh="vis_right_rocker" pos="0 0 0" quat="1 0 0 0" rgba="0.20 0.55 0.38 1" contype="0" conaffinity="0" group="1" density="0" />
+        <inertial pos="0 0 0" mass="0.000313" diaginertia="2.08953e-08 2.08953e-08 2.08953e-08" />
+        <joint name="right_rocker_joint" range="-1.5708 0.3491" actuatorfrcrange="-100 100" damping="1.911" frictionloss="1.2" axis="0 1 0" />
+        <body name="right_front_steer" pos="0.324636 -0.0050466 -0.181934">
+      <geom solref="0.004 1" name="vis_right_front_steer" type="mesh" mesh="vis_right_front_steer" pos="0 0 0" quat="1 0 0 0" rgba="0.72 0.55 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+          <inertial pos="0 0 0" mass="0.002425" diaginertia="1.61643e-07 1.61643e-07 1.61643e-07" />
+          <joint name="right_front_steer_joint" range="-1.5708 1.5708" actuatorfrcrange="-40 40" damping="0.637" frictionloss="0.8" />
+          <body name="right_front_wheel" pos="-0.00773773 -0.0757521 -0.194545">
+      <geom solref="0.004 1" name="vis_right_front_wheel" type="mesh" mesh="vis_right_front_wheel" pos="0 0 0" quat="1 0 0 0" rgba="0.12 0.12 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+            <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="12.75" diaginertia="0.168962 0.099225 0.099225" />
+            <joint name="right_front_wheel_joint" actuatorfrcrange="-50 50" damping="0.0477" frictionloss="1" axis="0 1 0" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="right_front_wheel_col_1" size="0.162853 0.1" pos="-0.00248997 -0.0274594 0.000537965" quat="0.707105 0.707108 0 0" type="cylinder" />
+            <body name="right_front_wheel_shape0">
+              <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06" />
+            </body>
+          </body>
+          <body name="right_front_steer_shape0">
+            <inertial pos="-0.000574477 -0.000979378 -0.0173313" quat="0.512803 0.503448 -0.496224 0.487171" mass="0.454602" diaginertia="0.0013202 0.000661092 0.000661061" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="right_front_steer_col_0" size="0.0660015 0.066 0.00254073" pos="-0.000574477 -0.000979378 -0.0173313" quat="0.700337 -0.0117256 0.0115072 -0.713624" type="box" />
+          </body>
+          <body name="right_front_steer_shape1">
+            <inertial pos="-0.00373527 0.0063949 -0.117777" quat="0.71363 0.0115088 0.011724 0.70033" mass="1.34685" diaginertia="0.00548231 0.00469702 0.000836648" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="right_front_steer_col_1" size="0.0425013 0.102005 0.00756345" pos="-0.00373527 0.0063949 -0.117777" quat="-0.00496615 0.0182667 0.707088 0.706872" type="box" />
+          </body>
+          <body name="right_front_steer_shape2">
+            <inertial pos="-0.00401727 -0.00860329 -0.117781" quat="0.713632 0.0115078 0.0117249 0.700328" mass="1.34664" diaginertia="0.0054811 0.00469595 0.000836509" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="right_front_steer_col_2" size="0.0425013 0.102001 0.0075625" pos="-0.00401727 -0.00860329 -0.117781" quat="0.707089 0.706872 0.00496495 -0.0182679" type="box" />
+          </body>
+          <body name="right_front_steer_shape3">
+            <inertial pos="-0.000131172 -0.00096282 -0.00384539" quat="0.512898 0.503351 -0.496316 0.487077" mass="2.34949" diaginertia="0.00811713 0.00415594 0.00415199" />
+            <geom contype="1" conaffinity="2" solref="0.004 1" name="right_front_steer_col_3" size="0.0720055 0.0719705 0.0110376" pos="-0.000131172 -0.00096282 -0.00384539" quat="0.700337 -0.0117256 0.0115072 -0.713624" type="box" />
+          </body>
+        </body>
+        <body name="right_middle_wheel" pos="-0.32044 -0.0734287 -0.388533">
+      <geom solref="0.004 1" name="vis_right_middle_wheel" type="mesh" mesh="vis_right_middle_wheel" pos="0 0 0" quat="1 0 0 0" rgba="0.12 0.12 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+          <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="12.75" diaginertia="0.168962 0.099225 0.099225" />
+          <joint name="right_middle_wheel_joint" actuatorfrcrange="-50 50" damping="0.0477" frictionloss="1" axis="0 1 0" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_middle_wheel_col_1" size="0.162782 0.1" pos="0.00252487 -0.0274742 -0.000460387" quat="0.707105 0.707108 0 0" type="cylinder" />
+          <body name="right_middle_wheel_shape0">
+            <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06" />
+          </body>
+        </body>
+        <body name="right_rocker_shape0">
+          <inertial pos="-0.00089106 -2.42919e-05 -0.0272827" quat="0.486927 0.503509 0.51274 0.496466" mass="0.74969" diaginertia="0.00328364 0.00290099 0.00189686" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_0" size="0.0926235 0.0675345 0.0550425" pos="-0.00089106 -2.42919e-05 -0.0272827" quat="0.0182525 -0.00498031 -0.706871 -0.707089" type="box" />
+        </body>
+        <body name="right_rocker_shape1">
+          <inertial pos="0.173939 0.00322437 -0.0863241" quat="-0.0055042 0.828427 0.00762452 0.560018" mass="0.335868" diaginertia="0.00150038 0.00150018 0.0003154" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_1" size="0.0375433 0.0375192 0.109508" pos="0.173939 0.00322437 -0.0863241" quat="0.580407 -0.392092 -0.399892 0.591166" type="box" />
+        </body>
+        <body name="right_rocker_shape2">
+          <inertial pos="-0.179222 -0.00340393 -0.0747194" quat="-0.00776176 0.586929 0.00527935 0.809584" mass="0.335834" diaginertia="0.0015002 0.00150003 0.000315339" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_2" size="0.0375395 0.0375192 0.109508" pos="-0.179222 -0.00340393 -0.0747194" quat="0.566957 0.4113 0.418743 0.577967" type="box" />
+        </body>
+        <body name="right_rocker_shape3">
+          <inertial pos="-0.328132 -0.00625868 -0.167555" quat="-0.00675285 0.718596 0.00653447 0.695364" mass="0.018213" diaginertia="4.02219e-05 2.18949e-05 1.84051e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_3" size="0.0550025 0.060001 0.00253452" pos="-0.328132 -0.00625868 -0.167555" quat="0.0117254 -0.700337 -0.713624 0.011507" type="box" />
+        </body>
+        <body name="right_rocker_shape4">
+          <inertial pos="-0.326518 -0.00619726 -0.118615" quat="-0.00675286 0.718596 0.0065345 0.695364" mass="0.319877" diaginertia="0.000634176 0.000595297 0.000560836" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_4" size="0.0530305 0.0494734 0.055995" pos="-0.326518 -0.00619726 -0.118615" quat="0.486921 0.503504 0.512745 0.496471" type="box" />
+        </body>
+        <body name="right_rocker_shape5">
+          <inertial pos="-0.332068 0.00109708 -0.282984" quat="0.700344 0.0117252 0.0115077 0.713616" mass="0.081997" diaginertia="0.000423555 0.000375751 5.09397e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_5" size="0.0425014 0.117005 0.00757275" pos="-0.332068 0.00109708 -0.282984" quat="0.0182525 -0.00498031 -0.706871 -0.707089" type="box" />
+        </body>
+        <body name="right_rocker_shape6">
+          <inertial pos="-0.331786 -0.0139011 -0.283005" quat="0.700343 0.0117243 0.0115086 0.713617" mass="0.081984" diaginertia="0.000423467 0.000375669 5.09313e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_6" size="0.0425014 0.117001 0.0075718" pos="-0.331786 -0.0139011 -0.283005" quat="0.706872 0.707088 0.0182535 -0.00497928" type="box" />
+        </body>
+        <body name="right_rocker_shape7">
+          <inertial pos="0.315219 0.0918558 -0.193146" quat="0.958608 0.00437349 0.0158388 0.284255" mass="0.010665" diaginertia="2.05638e-06 2.04821e-06 2.04759e-06" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_7" size="0.0170089 0.0169361 0.0170038" pos="0.315219 0.0918558 -0.193146" quat="0.342905 0.63154 -0.331441 0.611326" type="box" />
+        </body>
+        <body name="right_rocker_shape8">
+          <inertial pos="0.315611 0.0918434 -0.17965" quat="-0.00674639 0.718597 0.0065278 0.695364" mass="0.022383" diaginertia="2.54332e-05 1.78675e-05 8.20014e-06" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_8" size="0.0485006 0.0325049 0.0065205" pos="0.315611 0.0918434 -0.17965" quat="0.999821 0.000154563 0.0164281 0.00938627" type="box" />
+        </body>
+        <body name="right_rocker_shape9">
+          <inertial pos="0.323834 0.0919229 -0.0548374" quat="0.707016 0.0113991 0.0118358 0.707006" mass="0.121214" diaginertia="0.000161726 0.000150963 8.5528e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_9" size="0.0530195 0.0345193 0.0304172" pos="0.323834 0.0919229 -0.0548374" quat="0.491869 0.491567 0.507989 -0.508305" type="box" />
+        </body>
+        <body name="right_rocker_shape10">
+          <inertial pos="0.316819 0.0918997 -0.142912" quat="0.693602 0.0116195 0.0116194 0.720171" mass="0.134419" diaginertia="0.000235293 0.00023124 8.48664e-05" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_10" size="0.0652615 0.03003 0.0315002" pos="0.316819 0.0918997 -0.142912" quat="0.0132834 0.695267 0.0132835 -0.718506" type="box" />
+        </body>
+        <body name="right_rocker_shape11">
+          <inertial pos="0.318034 0.00589913 -0.139794" quat="-0.00675381 0.718598 0.00653549 0.695362" mass="0.31988" diaginertia="0.000634189 0.000595313 0.000560845" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_11" size="0.0530305 0.0494735 0.0559955" pos="0.318034 0.00589913 -0.139794" quat="0.512746 0.496471 -0.48692 -0.503504" type="box" />
+        </body>
+        <body name="right_rocker_shape12">
+          <inertial pos="0.316004 0.026324 -0.205217" quat="0.503353 0.512896 -0.487082 0.496311" mass="0.206456" diaginertia="0.00111093 0.000691445 0.000439509" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_12" size="0.079 0.099508 0.0120617" pos="0.316004 0.026324 -0.205217" quat="0.000156989 -0.999821 -0.00938623 0.0164281" type="box" />
+        </body>
+        <body name="right_rocker_shape13">
+          <inertial pos="0.31621 0.0258629 -0.199221" quat="0.503355 0.512894 -0.487081 0.496312" mass="0.248122" diaginertia="0.00147328 0.000899704 0.000601803" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_13" size="0.084295 0.103477 0.0130642" pos="0.31621 0.0258629 -0.199221" quat="0.00938485 -0.0164281 0.000154586 -0.999821" type="box" />
+        </body>
+        <body name="right_rocker_shape14">
+          <inertial pos="-0.176326 -0.00332593 -0.0369445" quat="0.409515 0.420529 -0.568738 0.576185" mass="0.013083" diaginertia="3.49116e-06 2.72867e-06 2.72761e-06" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rocker_col_14" size="0.0200101 0.020004 0.0150104" pos="-0.176326 -0.00332593 -0.0369445" quat="0.704781 0.112587 -0.110065 -0.691732" type="box" />
+        </body>
+      </body>
+      <body name="right_rear_steer" pos="-0.687684 -0.218398 -0.174094" quat="0.9998 0 -0.0199987 0">
+      <geom solref="0.004 1" name="vis_right_rear_steer" type="mesh" mesh="vis_right_rear_steer" pos="0 0 0" quat="1 0 0 0" rgba="0.72 0.55 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+        <inertial pos="0 0 0" mass="0.002425" diaginertia="1.61645e-07 1.61645e-07 1.61645e-07" />
+        <joint name="right_rear_steer_joint" range="-1.5708 1.5708" actuatorfrcrange="-40 40" damping="0.637" frictionloss="0.8" />
+        <body name="right_rear_wheel" pos="0.00382197 -0.0760117 -0.194742">
+      <geom solref="0.004 1" name="vis_right_rear_wheel" type="mesh" mesh="vis_right_rear_wheel" pos="0 0 0" quat="1 0 0 0" rgba="0.12 0.12 0.12 1" contype="0" conaffinity="0" group="1" density="0" />
+          <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="12.75" diaginertia="0.168962 0.099225 0.099225" />
+          <joint name="right_rear_wheel_joint" actuatorfrcrange="-50 50" damping="0.0477" frictionloss="1" axis="0 1 0" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rear_wheel_col_1" size="0.162699 0.1" pos="0.000717171 -0.0275267 -0.000193819" quat="0.707105 0.707108 0 0" type="cylinder" />
+          <body name="right_rear_wheel_shape0">
+            <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06" />
+          </body>
+        </body>
+        <body name="right_rear_steer_shape0">
+          <inertial pos="0.000225243 -0.00133074 -0.0173704" quat="0.492283 0.501713 -0.498595 0.507292" mass="0.454616" diaginertia="0.00132024 0.000661112 0.000661081" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rear_steer_col_0" size="0.0660015 0.066 0.00254075" pos="0.000225243 -0.00133074 -0.0173704" quat="0.713704 0.00446234 -0.00394672 -0.700423" type="box" />
+        </body>
+        <body name="right_rear_steer_shape1">
+          <inertial pos="0.00127873 0.0061282 -0.117854" quat="0.700421 -0.00394715 -0.00446194 0.713705" mass="1.34683" diaginertia="0.00548222 0.00469693 0.00083663" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rear_steer_col_1" size="0.0425012 0.102005 0.00756315" pos="0.00127873 0.0061282 -0.117854" quat="0.00243722 0.0108463 -0.706806 -0.70732" type="box" />
+        </body>
+        <body name="right_rear_steer_shape2">
+          <inertial pos="0.0015606 -0.00887025 -0.117876" quat="0.70042 -0.00394807 -0.004461 0.713706" mass="1.34659" diaginertia="0.00548091 0.00469576 0.00083647" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rear_steer_col_2" size="0.0425012 0.102001 0.00756205" pos="0.0015606 -0.00887025 -0.117876" quat="0.706807 0.707319 0.00243821 0.0108473" type="box" />
+        </body>
+        <body name="right_rear_steer_shape3">
+          <inertial pos="6.48711e-05 -0.00132552 -0.00387814" quat="0.49213 0.501863 -0.49844 0.507444" mass="2.34954" diaginertia="0.00811731 0.00415605 0.0041521" />
+          <geom contype="1" conaffinity="2" solref="0.004 1" name="right_rear_steer_col_3" size="0.0720055 0.0719705 0.0110376" pos="6.48711e-05 -0.00132552 -0.00387814" quat="0.713704 0.00446234 -0.00394672 -0.700423" type="box" />
+        </body>
+      </body>
+      <body name="base_link_shape0" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="0.0965832 0.198448 0.203365" quat="0.676673 -0.182349 -0.186036 0.688661" mass="0.295948" diaginertia="0.000899055 0.000461546 0.000461539" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_0" size="0.0675045 0.067504 0.0110359" pos="0.0965832 0.198448 0.203365" quat="-0.346118 -0.357209 0.6105 -0.616355" type="box" />
+      </body>
+      <body name="base_link_shape1" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.429785 0.224438 0.0049174" quat="-0.00784383 0.56867 0.0051279 0.822512" mass="1.96613" diaginertia="0.0377403 0.0377378 0.00184765" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_1" size="0.0375699 0.03752 0.237011" pos="-0.429785 0.224438 0.0049174" quat="0.405708 0.587191 -0.576016 -0.398513" type="box" />
+      </body>
+      <body name="base_link_shape2" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.420694 -0.259477 0.00431967" quat="-0.00784383 0.56867 0.0051279 0.822512" mass="1.96613" diaginertia="0.0377403 0.0377378 0.00184765" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_2" size="0.0375699 0.03752 0.237011" pos="-0.420694 -0.259477 0.00431967" quat="0.405708 0.587191 -0.576016 -0.398513" type="box" />
+      </body>
+      <body name="base_link_shape3" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="0.104323 -0.21349 0.202855" quat="0.69628 -0.0757259 -0.0776133 0.709532" mass="0.295947" diaginertia="0.000899029 0.000461557 0.000461504" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_3" size="0.0675015 0.0675055 0.0110361" pos="0.104323 -0.21349 0.202855" quat="-0.0703117 0.083563 -0.701931 -0.703823" type="box" />
+      </body>
+      <body name="base_link_shape4" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="0.100453 -0.00752073 0.20311" quat="0.682275 0.678902 0.1985 -0.184909" mass="2.83518" diaginertia="0.0383195 0.0382443 0.00466961" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_4" size="0.050103 0.0493027 0.19503" pos="0.100453 -0.00752073 0.20311" quat="-0.339664 0.35166 -0.613209 -0.620434" type="box" />
+      </body>
+      <body name="base_link_shape5" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="0.214068 -0.246554 0.105062" quat="0.627629 -0.296146 -0.234115 0.680859" mass="2.1123" diaginertia="0.0285767 0.02692 0.00310012" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_5" size="0.192894 0.0320156 0.0581205" pos="0.214068 -0.246554 0.105062" quat="0.919375 -0.0576293 0.389113 -0.0044009" type="box" />
+      </body>
+      <body name="base_link_shape6" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.0349899 -0.242483 0.148941" quat="0.60599 0.337556 0.417297 0.587108" mass="2.43097" diaginertia="0.0288321 0.0275599 0.00393245" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_6" size="0.179916 0.0405148 0.05667" pos="-0.0349899 -0.242483 0.148941" quat="0.219122 -0.0304294 0.973975 -0.0493118" type="box" />
+      </body>
+      <body name="base_link_shape7" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="0.207069 0.232653 0.0976546" quat="0.674168 -0.216622 -0.284646 0.646181" mass="1.62442" diaginertia="0.0202843 0.018758 0.00222662" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_7" size="0.18438 0.025431 0.058868" pos="0.207069 0.232653 0.0976546" quat="0.910808 0.0480056 0.40954 0.020018" type="box" />
+      </body>
+      <body name="base_link_shape8" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.0380809 0.221215 0.158576" quat="0.566667 0.424084 0.362248 0.60648" mass="2.57308" diaginertia="0.0328928 0.0314236 0.00426945" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_8" size="0.187096 0.040404 0.057839" pos="-0.0380809 0.221215 0.158576" quat="0.193408 0.0110111 0.979739 0.0508254" type="box" />
+      </body>
+      <body name="base_link_shape9" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.686577 -0.178519 -0.144518" quat="0.963289 -0.00148537 -0.00575314 0.268401" mass="0.028826" diaginertia="5.55774e-06 5.53605e-06 5.53421e-06" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_9" size="0.0170089 0.0169368 0.0170033" pos="-0.686577 -0.178519 -0.144518" quat="-0.345306 -0.612227 0.349573 -0.619468" type="box" />
+      </body>
+      <body name="base_link_shape10" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.686787 -0.178545 -0.131018" quat="-0.00690058 0.702858 0.00638494 0.711268" mass="0.060494" diaginertia="6.87368e-05 4.82898e-05 2.21617e-05" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_10" size="0.0485003 0.0325043 0.0065205" pos="-0.686787 -0.178545 -0.131018" quat="0.999938 0.000364616 -0.0059461 0.00939428" type="box" />
+      </body>
+      <body name="base_link_shape11" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.684155 -0.178416 -0.00596214" quat="0.718685 -0.00405142 -0.00434817 0.69531" mass="0.327611" diaginertia="0.000437105 0.000408014 0.00023116" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_11" size="0.0530195 0.0345194 0.030417" pos="-0.684155 -0.178416 -0.00596214" quat="0.494523 0.511262 0.488794 -0.505112" type="box" />
+      </body>
+      <body name="base_link_shape12" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.687224 -0.17852 -0.0942626" quat="0.718687 -0.0040514 -0.00434819 0.695308" mass="0.363294" diaginertia="0.000635916 0.000624961 0.000229363" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_12" size="0.065261 0.0300297 0.0314999" pos="-0.687224 -0.17852 -0.0942626" quat="0.0118386 -0.711197 0.0115418 0.702798" type="box" />
+      </body>
+      <body name="base_link_shape13" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.685142 -0.264504 -0.091154" quat="-0.0068974 0.702859 0.00638184 0.711267" mass="0.864533" diaginertia="0.00171396 0.00160889 0.00151575" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_13" size="0.05303 0.0494733 0.0559945" pos="-0.685142 -0.264504 -0.091154" quat="0.498064 0.492484 0.501509 0.507819" type="box" />
+      </body>
+      <body name="base_link_shape14" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.685254 -0.244043 -0.156596" quat="0.492118 0.501874 -0.498426 0.507458" mass="0.557999" diaginertia="0.00300254 0.00186878 0.00118788" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_14" size="0.079 0.0995075 0.0120617" pos="-0.685254 -0.244043 -0.156596" quat="0.000362187 -0.999938 -0.00939427 -0.00594613" type="box" />
+      </body>
+      <body name="base_link_shape15" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.685317 -0.244509 -0.150597" quat="0.492117 0.501875 -0.498428 0.507456" mass="0.670614" diaginertia="0.0039819 0.00243168 0.00162653" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_15" size="0.084295 0.103477 0.0130642" pos="-0.685317 -0.244509 -0.150597" quat="0.00939286 0.0059461 0.000364607 -0.999938" type="box" />
+      </body>
+      <body name="base_link_shape16" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.692539 0.13336 -0.144133" quat="0.968159 -0.00137846 -0.00578063 0.250267" mass="0.028826" diaginertia="5.55777e-06 5.53597e-06 5.53417e-06" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_16" size="0.0170089 0.0169366 0.0170034" pos="-0.692539 0.13336 -0.144133" quat="0.605628 -0.356752 -0.612788 -0.361154" type="box" />
+      </body>
+      <body name="base_link_shape17" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.692648 0.1334 -0.130632" quat="-0.00689957 0.702859 0.00638394 0.711268" mass="0.060494" diaginertia="6.87368e-05 4.82898e-05 2.21617e-05" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_17" size="0.0485003 0.0325043 0.0065205" pos="-0.692648 0.1334 -0.130632" quat="0.00939286 0.0059461 0.000364607 -0.999938" type="box" />
+      </body>
+      <body name="base_link_shape18" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.698252 0.13353 -0.0056593" quat="0.731626 -0.00396899 -0.00442357 0.68168" mass="0.327703" diaginertia="0.000437401 0.000408302 0.000231225" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_18" size="0.0530345 0.0345193 0.030417" pos="-0.698252 0.13353 -0.0056593" quat="0.520466 -0.484827 0.51421 0.479214" type="box" />
+      </body>
+      <body name="base_link_shape19" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.693085 0.133426 -0.0938773" quat="0.718686 -0.00405141 -0.00434818 0.695309" mass="0.363294" diaginertia="0.000635916 0.000624961 0.000229363" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_19" size="0.065261 0.0300297 0.0314999" pos="-0.693085 0.133426 -0.0938773" quat="0.711197 0.0118372 0.702798 -0.0115404" type="box" />
+      </body>
+      <body name="base_link_shape20" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.694233 0.219411 -0.0905563" quat="-0.00689741 0.702859 0.00638183 0.711267" mass="0.864533" diaginertia="0.00171396 0.00160889 0.00151575" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_20" size="0.05303 0.0494733 0.0559945" pos="-0.694233 0.219411 -0.0905563" quat="0.498064 0.492484 0.501509 0.507819" type="box" />
+      </body>
+      <body name="base_link_shape21" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.693575 0.198878 -0.15605" quat="0.492119 0.501874 -0.498427 0.507457" mass="0.557999" diaginertia="0.00300254 0.00186878 0.00118788" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_21" size="0.079 0.0995075 0.0120617" pos="-0.693575 0.198878 -0.15605" quat="-0.00594613 0.00939284 -0.999938 -0.000362179" type="box" />
+      </body>
+      <body name="base_link_shape22" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.693655 0.199349 -0.15005" quat="0.492117 0.501875 -0.498427 0.507457" mass="0.670614" diaginertia="0.0039819 0.00243168 0.00162653" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_22" size="0.084295 0.103477 0.0130642" pos="-0.693655 0.199349 -0.15005" quat="0.999938 0.000364616 -0.0059461 0.00939428" type="box" />
+      </body>
+      <body name="base_link_shape23" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.0524604 -0.252496 0.105945" quat="0.396495 0.407728 -0.577962 0.585243" mass="0.03536" diaginertia="9.43645e-06 7.37523e-06 7.37249e-06" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_23" size="0.0200104 0.0200045 0.0150102" pos="-0.0524604 -0.252496 0.105945" quat="0.125513 0.689097 0.702085 0.128327" type="box" />
+      </body>
+      <body name="base_link_shape24" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.0615521 0.231418 0.106543" quat="0.396495 0.407728 -0.577962 0.585243" mass="0.03536" diaginertia="9.43645e-06 7.37523e-06 7.37249e-06" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_24" size="0.0200104 0.0200045 0.0150102" pos="-0.0615521 0.231418 0.106543" quat="0.125513 0.689097 0.702085 0.128327" type="box" />
+      </body>
+      <body name="base_link_shape25" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.153457 0.21967 0.0717597" quat="0.576017 0.398514 0.405708 0.58719" mass="0.017684" diaginertia="3.68583e-06 2.94935e-06 1.91821e-06" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_25" size="0.0100117 0.0200024 0.0150057" pos="-0.153457 0.21967 0.0717597" quat="0.125513 0.689097 0.702085 0.128327" type="box" />
+      </body>
+      <body name="base_link_shape26" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.144743 -0.244243 0.0711901" quat="0.576016 0.398513 0.405709 0.587191" mass="0.017663" diaginertia="3.68035e-06 2.94492e-06 1.91392e-06" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_26" size="0.0100039 0.0200023 0.0149996" pos="-0.144743 -0.244243 0.0711901" quat="0.128327 -0.702086 0.689096 -0.125513" type="box" />
+      </body>
+      <body name="base_link_shape27" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.693217 0.133422 -0.0854293" quat="0.492107 0.501886 -0.498417 0.507466" mass="0.206473" diaginertia="0.000154227 0.00014462 0.000144576" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_27" size="0.0334778 0.0313135 0.0334681" pos="-0.693217 0.133422 -0.0854293" quat="0.507819 -0.50151 0.492483 -0.498064" type="box" />
+      </body>
+      <body name="base_link_shape28" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.692773 0.133404 -0.120133" quat="0.492033 0.501957 -0.498343 0.50754" mass="0.024993" diaginertia="1.76008e-05 8.9357e-06 8.9344e-06" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_28" size="0.0325027 0.0325003 0.00402038" pos="-0.692773 0.133404 -0.120133" quat="0.713704 0.00446234 -0.00394672 -0.700423" type="box" />
+      </body>
+      <body name="base_link_shape29" quat="0.9998 0 -0.0199987 0">
+        <inertial pos="-0.692558 0.133408 -0.138222" quat="0.999846 0.000209838 -0.00593947 -0.0165269" mass="0.054978" diaginertia="1.6561e-05 1.63158e-05 1.59215e-05" />
+        <geom contype="1" conaffinity="2" solref="0.004 1" name="base_link_col_29" size="0.0215083 0.020681 0.0210022" pos="-0.692558 0.133408 -0.138222" quat="0.494524 0.511261 0.488794 -0.505112" type="box" />
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="left_front_wheel_joint_act" joint="left_front_wheel_joint" gear="1" ctrlrange="-120 120" />
+    <motor name="left_middle_wheel_joint_act" joint="left_middle_wheel_joint" gear="1" ctrlrange="-120 120" />
+    <motor name="left_rear_wheel_joint_act" joint="left_rear_wheel_joint" gear="1" ctrlrange="-120 120" />
+    <motor name="right_front_wheel_joint_act" joint="right_front_wheel_joint" gear="1" ctrlrange="-120 120" />
+    <motor name="right_middle_wheel_joint_act" joint="right_middle_wheel_joint" gear="1" ctrlrange="-120 120" />
+    <motor name="right_rear_wheel_joint_act" joint="right_rear_wheel_joint" gear="1" ctrlrange="-120 120" />
+    <motor name="left_front_steer_joint_act" joint="left_front_steer_joint" gear="1" ctrlrange="-40 40" />
+    <motor name="left_rear_steer_joint_act" joint="left_rear_steer_joint" gear="1" ctrlrange="-40 40" />
+    <motor name="right_front_steer_joint_act" joint="right_front_steer_joint" gear="1" ctrlrange="-40 40" />
+    <motor name="right_rear_steer_joint_act" joint="right_rear_steer_joint" gear="1" ctrlrange="-40 40" />
+    <motor name="left_rocker_joint_act" joint="left_rocker_joint" gear="1" ctrlrange="-100 100" />
+    <motor name="right_rocker_joint_act" joint="right_rocker_joint" gear="1" ctrlrange="-100 100" />
+  </actuator>
+  <visual><global offwidth="1280" offheight="720" /></visual>
+<option timestep="0.001" /></mujoco>

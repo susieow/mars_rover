@@ -1,0 +1,16 @@
+{
+  "formal_trajectory_sha256": "cc427aed73c6c0d9088422f11083c1a985621323a2710cddd84b7a1e94b9dadb",
+  "prototype": "/home/agilex/wzy/rover/review_v3/neutral_smooth_1ms_h4_brake_p40_trajectory.npz",
+  "prototype_sha256": "a2337c7421d8005b6b3b4a836b015f32e7a8cb3f77435639e466490ed3e72c48",
+  "all_arrays_bitwise_equal": true,
+  "arrays": {
+    "time": true,
+    "qpos": true,
+    "qvel": true,
+    "ctrl": true,
+    "physics_time": true,
+    "physics_qpos": true,
+    "physics_qvel": true,
+    "physics_qfrc_actuator": true
+  }
+}

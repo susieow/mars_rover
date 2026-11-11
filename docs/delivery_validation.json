@@ -1,0 +1,77 @@
+[
+  {
+    "person": "zc",
+    "height": 15,
+    "exit": 0
+  },
+  {
+    "person": "zc",
+    "height": 20,
+    "exit": 0
+  },
+  {
+    "person": "zc",
+    "height": 4,
+    "exit": 2
+  },
+  {
+    "person": "zc",
+    "height": 10,
+    "exit": 2
+  },
+  {
+    "person": "zc",
+    "height": 12,
+    "exit": 2
+  },
+  {
+    "person": "zc",
+    "height": 17,
+    "exit": 2
+  },
+  {
+    "person": "zc",
+    "height": 18,
+    "exit": 2
+  },
+  {
+    "person": "cxm",
+    "height": 15,
+    "exit": 0
+  },
+  {
+    "person": "cxm",
+    "height": 20,
+    "exit": 0
+  },
+  {
+    "person": "cxm",
+    "height": 4,
+    "exit": 2
+  },
+  {
+    "person": "cxm",
+    "height": 10,
+    "exit": 2
+  },
+  {
+    "person": "cxm",
+    "height": 12,
+    "exit": 2
+  },
+  {
+    "person": "cxm",
+    "height": 17,
+    "exit": 2
+  },
+  {
+    "person": "cxm",
+    "height": 18,
+    "exit": 2
+  },
+  {
+    "main_run_rejected": true,
+    "new_dynamics": false,
+    "unit_tests": 34
+  }
+]

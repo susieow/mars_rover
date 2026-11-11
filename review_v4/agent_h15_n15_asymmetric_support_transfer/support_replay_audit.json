@@ -1,0 +1,99 @@
+{
+  "source": "Saved initial integration state and every physics_ctrl action, independently stepped through the saved scene.",
+  "contact_force_convention": "mj_contactForce local force rotated by contact frame transpose into world, reversed for geom1 wheel. Only enabled wheel-terrain contacts are summed.",
+  "max_qpos_replay_error": 0.0,
+  "max_qvel_replay_error": 0.0,
+  "replay_ok": true,
+  "weight_n": 1243.37825019,
+  "windows": [
+    {
+      "stage": "SIDE_ACQUIRE_FRONT",
+      "start_s": 13.898999999997736,
+      "end_s": 22.28200000000425,
+      "base_x_min": 1.5384231176598955,
+      "base_x_max": 1.5770817034230398,
+      "physics_samples": 8383,
+      "mean_terrain_force_world_n": {
+        "left_front_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_middle_wheel_col_1": [
+          -174.03168813619126,
+          -2.141247057317209,
+          250.9486649852274
+        ],
+        "left_rear_wheel_col_1": [
+          165.97389199234814,
+          -2.89410666894552,
+          352.33827713797024
+        ],
+        "right_front_wheel_col_1": [
+          4.3341488327674424,
+          -1.0306896088152833,
+          10.627573410518483
+        ],
+        "right_middle_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_rear_wheel_col_1": [
+          4.313254354984069,
+          6.078873784174914,
+          629.6490826477432
+        ]
+      }
+    },
+    {
+      "stage": "FINAL_1S",
+      "start_s": 21.28200000000425,
+      "end_s": 22.28200100000425,
+      "base_x_min": 1.5761610593675488,
+      "base_x_max": 1.5768220486847697,
+      "physics_samples": 1000,
+      "mean_terrain_force_world_n": {
+        "left_front_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_middle_wheel_col_1": [
+          -141.53867688859444,
+          -11.57992861300151,
+          253.28647865514677
+        ],
+        "left_rear_wheel_col_1": [
+          132.4493548740758,
+          4.281799664532855,
+          361.56720624101825
+        ],
+        "right_front_wheel_col_1": [
+          32.997749390466765,
+          -7.028255094845024,
+          82.30268841581267
+        ],
+        "right_middle_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_rear_wheel_col_1": [
+          -24.135164692927024,
+          13.980409556030697,
+          545.770723487769
+        ]
+      }
+    }
+  ],
+  "final_zero_velocity_gravity_bias_nm": {
+    "left_rocker_joint": -111.90488068573957,
+    "right_rocker_joint": -72.95680531311315
+  },
+  "final_recorded_actuator_force_nm": {
+    "left_rocker_joint": -100.0,
+    "right_rocker_joint": -17.097544549571367
+  },
+  "dataset_accepted": false
+}

@@ -1,0 +1,207 @@
+{
+  "geometry": {
+    "height_m": 0.2,
+    "depth_m": 0.2,
+    "ascending_risers": 15,
+    "descending_risers_including_ground": 15,
+    "nosing_m": 0.0
+  },
+  "scope": "diagnostic_controller_comparisons_no_accepted_success",
+  "attempts": [
+    {
+      "case": "high20_slow_neutral_v2",
+      "duration_s": 24.519000000006983,
+      "final_base_x_m": 1.6,
+      "max_base_x_m": 1.6037165190499787,
+      "final_phase": "MIDDLE_LIFT",
+      "last_sample_pitch_deg": -48.923136421558105,
+      "last_sample_rocker_deg": [
+        3.898504652569326,
+        3.7746385591488334
+      ],
+      "process_rejections": [],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "automated_pass": false,
+      "dataset_accepted": false
+    },
+    {
+      "case": "high20_slow_positive",
+      "duration_s": 24.64800000000714,
+      "final_base_x_m": 1.57,
+      "max_base_x_m": 1.602894596390421,
+      "final_phase": "SUPPORT_POSITIVE",
+      "last_sample_pitch_deg": -51.214183755685674,
+      "last_sample_rocker_deg": [
+        13.600058736239237,
+        13.622760986566988
+      ],
+      "process_rejections": [],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "automated_pass": false,
+      "dataset_accepted": false
+    },
+    {
+      "case": "high20_slow_cycle",
+      "duration_s": 24.554000000007026,
+      "final_base_x_m": 1.59,
+      "max_base_x_m": 1.6022770140550857,
+      "final_phase": "SUPPORT_NEGATIVE",
+      "last_sample_pitch_deg": -50.31355955731092,
+      "last_sample_rocker_deg": [
+        9.113384139097642,
+        8.591870995620178
+      ],
+      "process_rejections": [],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "automated_pass": false,
+      "dataset_accepted": false
+    },
+    {
+      "case": "high20_slow_positive_unload",
+      "duration_s": 24.652000000007146,
+      "final_base_x_m": 1.57,
+      "max_base_x_m": 1.60390136812164,
+      "final_phase": "SUPPORT_POSITIVE",
+      "last_sample_pitch_deg": -51.15245504844027,
+      "last_sample_rocker_deg": [
+        13.258534504685509,
+        13.440349448614414
+      ],
+      "process_rejections": [],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "automated_pass": false,
+      "dataset_accepted": false
+    },
+    {
+      "case": "high20_slow_cycle_unload",
+      "duration_s": 24.54900000000702,
+      "final_base_x_m": 1.58,
+      "max_base_x_m": 1.603123129988419,
+      "final_phase": "SUPPORT_NEGATIVE",
+      "last_sample_pitch_deg": -50.86301020007316,
+      "last_sample_rocker_deg": [
+        11.592666769268188,
+        12.957250920724716
+      ],
+      "process_rejections": [],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "automated_pass": false,
+      "dataset_accepted": false
+    },
+    {
+      "case": "high20_front35_drive",
+      "duration_s": 26.29900000000916,
+      "final_base_x_m": 1.53,
+      "max_base_x_m": 1.5647862740346152,
+      "final_phase": "FRONT_CLEAR_GEOMETRY",
+      "last_sample_pitch_deg": -54.53093917016928,
+      "last_sample_rocker_deg": [
+        -44.25689848066723,
+        1.10719075562788
+      ],
+      "process_rejections": [],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "automated_pass": false,
+      "dataset_accepted": false
+    },
+    {
+      "case": "high20_front35_free",
+      "duration_s": 16.62899999999734,
+      "final_base_x_m": 0.78,
+      "max_base_x_m": 0.7829044591842212,
+      "final_phase": "FRONT_CLEAR_GEOMETRY",
+      "last_sample_pitch_deg": -0.12278064092818197,
+      "last_sample_rocker_deg": [
+        0.32174840118335113,
+        0.002384461068524659
+      ],
+      "process_rejections": [],
+      "route_rejections": [
+        "route_missing:ascent_s",
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "automated_pass": false,
+      "dataset_accepted": false
+    },
+    {
+      "case": "high20_front35_sync",
+      "duration_s": 26.20100000000904,
+      "final_base_x_m": 1.56,
+      "max_base_x_m": 1.5742571538301373,
+      "final_phase": "FRONT_CLEAR_GEOMETRY",
+      "last_sample_pitch_deg": -52.70917964868709,
+      "last_sample_rocker_deg": [
+        -19.237555615498355,
+        -20.963679210528866
+      ],
+      "process_rejections": [],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "automated_pass": false,
+      "dataset_accepted": false
+    }
+  ],
+  "accepted_count": 0,
+  "findings": [
+    "Lower drive speed with greater wheel feedback did not move the rear wheels over the first riser.",
+    "Positive rocker hold and bounded positive/negative cycles did not create net forward travel.",
+    "Releasing middle drive during positive rocker motion did not resolve the blocked configuration.",
+    "Early negative rocker front lift with front drive cleared earlier front edges but again stalled when rear reached first riser.",
+    "Releasing front drive during early lift stalled at the first front riser; motorized wheel traction was needed for the observed earlier-edge clearance.",
+    "Independent left/right rocker progress can diverge under load despite the same command; progress synchronization reduced this divergence but did not complete the route."
+  ],
+  "limits": "No claim of physical impossibility or success; only these candidates were tested. All archived trajectories remain diagnostic."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "h15_near_contact_round1_candidate23",
+  "height_cm": 15,
+  "batch": "near_contact",
+  "kind": "candidate",
+  "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/selected_full_states.npz",
+  "scene_path": "/home/agilex/wzy/rover/review_v4/dynamic_search15/scene.xml",
+  "source_start_s": 10.361999999999696,
+  "source_end_s": 12.361999999998588,
+  "video_path": "/home/agilex/wzy/videos/review_high_stairs/h15/near_contact/round1_candidate23.mp4",
+  "poster_path": "/home/agilex/wzy/videos/review_high_stairs/h15/near_contact/round1_candidate23.jpg",
+  "status_text": "PROCESS VALID | no rear crossing | full route incomplete | DIAGNOSTIC ONLY"
+}

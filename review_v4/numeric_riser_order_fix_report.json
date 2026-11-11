@@ -1,0 +1,45 @@
+{
+  "change": "Numeric up-step ordering in the two active-riser selections; platform explicitly ordered last.",
+  "files": [
+    {
+      "path": "/home/agilex/wzy/rover/scripts/rover/closed_loop_controller.py",
+      "backup": "/home/agilex/wzy/rover/scripts/rover/closed_loop_controller.py.before_numeric_riser_order_20261111_101220",
+      "before_sha256": "85ce76d03d7c5367d8379804802ca1f94bbfc09a30db8d670675fc78f8b42538",
+      "after_sha256": "d938fa4b9f71ce326318187cdb3306d89b653fef2c35467258b82c28464061d6"
+    },
+    {
+      "path": "/home/agilex/wzy/rover/scripts/rover/test_controller_contract.py",
+      "backup": "/home/agilex/wzy/rover/scripts/rover/test_controller_contract.py.before_numeric_riser_order_20261111_101220",
+      "before_sha256": "48114ac3ace93d0c492ec4f0f60c79cc70d232ba06e5146915ebae0f47949e3c",
+      "after_sha256": "0612121dba9c0be9da3f89b458af98aad74635fa620ce2db5d80ab8e341ad3d5"
+    }
+  ],
+  "controller_diff_verified_exactly_scoped": true,
+  "pre_fix_behavior_tests": {
+    "test_count": 3,
+    "failed_subtests": 6,
+    "roles": [
+      "front",
+      "middle"
+    ],
+    "cases": [
+      "up9/up10",
+      "up9/up10/up14",
+      "up9/up10/up14/platform"
+    ]
+  },
+  "post_fix_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 /home/agilex/wzy/rover/.venv/bin/python -m unittest -v test_controller_contract test_course_geometry test_dataset_plan",
+    "passed": 34,
+    "failed": 0
+  },
+  "not_changed": [
+    "control targets",
+    "gains",
+    "contact interpretation",
+    "bilateral support semantics",
+    "debounce",
+    "audit",
+    "dynamic-search source snapshots"
+  ]
+}

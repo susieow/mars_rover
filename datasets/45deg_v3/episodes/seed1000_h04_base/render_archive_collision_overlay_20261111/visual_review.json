@@ -1,0 +1,30 @@
+{
+  "status": "sampled_pass",
+  "reviewer": "Codex /root visual inspection",
+  "reviewed_at": "2026-11-11T08:41:53.098327+08:00",
+  "notes": "Inspected 43 side-view snapshots at 0.5-second intervals including the exact terminal state, 19 diagnostic keyframes, and dual-view video frames at ascent, descent and the exact endpoint. Observed coherent wheel/rocker/chassis configuration through ascent, platform and descent; the endpoint has a normal aligned rover pose with all six wheels grounded according to the independent physics audit. No detached components, extreme steering fold or collapsed terminal shape was observed in the inspected frames. This is sampled visual inspection, not frame-by-frame playback of the full video.",
+  "reviewed_images": [
+    "contact_sheet.jpg",
+    "review_01.jpg",
+    "review_02.jpg",
+    "review_03.jpg",
+    "review_dual_ascent.jpg",
+    "review_dual_descent.jpg",
+    "review_dual_final.jpg"
+  ],
+  "trajectory_sha256": "cc427aed73c6c0d9088422f11083c1a985621323a2710cddd84b7a1e94b9dadb",
+  "video_sha256": "91cb96f3915fff692a8ba1e7c39b164953853bcb81e8f57098722f517d81ae0d",
+  "visual_scope": "sampled_frames",
+  "sample_interval_s": 0.5,
+  "side_view_samples": 43,
+  "diagnostic_keyframes": 19,
+  "dual_view_video_frame_indices": [
+    213,
+    650,
+    1029
+  ],
+  "limitations": [
+    "Self-collision disabled by inherited scene policy.",
+    "Visual inspection covers sampled images; all physical states are checked independently every 0.001 seconds."
+  ]
+}

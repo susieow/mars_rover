@@ -1,0 +1,294 @@
+{
+  "height": 0.04,
+  "stairs": 12,
+  "depth": 0.04,
+  "friction": 4.0,
+  "contact_timeconst": 0.004,
+  "speed": 6.0,
+  "wheel_gain": 10.0,
+  "descent_speed": 1.0,
+  "rocker_gain": 160.0,
+  "rocker_damp": 8.0,
+  "nosing": 0.0,
+  "tau_max_requested": 50.0,
+  "tau_max_actual": 50.0,
+  "front_lift_deg": 14.0,
+  "middle_lift_deg": 17.0,
+  "quality_pitch_limit": 60.0,
+  "deg": 12.0,
+  "assist": true,
+  "controller": "closed_loop_v3",
+  "simulation_dt": 0.002,
+  "control_dt": 0.02,
+  "duration_s": 89.99999999997165,
+  "quality_roll_limit": 15.0,
+  "ground_wheels": [],
+  "stable_duration_s": 0.0,
+  "x": 1.89,
+  "y": 0.079,
+  "z": 0.841,
+  "max_z": 0.869,
+  "plat_z": 1.012,
+  "max_pitch_deg": 32.4,
+  "max_roll_deg": 5.4,
+  "final_pitch_deg": -29.84,
+  "final_roll_deg": -2.7,
+  "final_yaw_deg": 3.45,
+  "final_yaw_error_deg": -3.45,
+  "linear_speed": 0.0276,
+  "angular_speed": 0.0323,
+  "wheel_speed_max": 7.0558,
+  "reached_top": false,
+  "back_down": false,
+  "past_end": false,
+  "platform_seen": true,
+  "down_seen": false,
+  "settled": false,
+  "final_shape_ok": false,
+  "quality_ok": true,
+  "stopped_at_s": null,
+  "recovery_count": 0,
+  "max_slip": 5.313,
+  "max_abs_y": 0.079,
+  "max_yaw_error_deg": 7.08,
+  "phase": "MIDDLE_LIFT",
+  "events": [
+    {
+      "t": 1.78,
+      "phase": "FRONT_LIFT",
+      "riser": "up1"
+    },
+    {
+      "t": 3.26,
+      "phase": "FRONT_LAND",
+      "riser": null
+    },
+    {
+      "t": 3.4,
+      "phase": "MIDDLE_APPROACH",
+      "riser": null
+    },
+    {
+      "t": 3.42,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up6"
+    }
+  ],
+  "abort_reason": null,
+  "success": false,
+  "trajectory_path": "/home/agilex/wzy/rover/datasets/45deg_v3/episodes/seed004_h04_yaw_left/trajectory.npz",
+  "actions": 4500,
+  "states": 4501,
+  "physics_steps": 45000,
+  "duration": 89.99999999997165,
+  "case": "seed004_h04_yaw_left",
+  "dataset": "45deg_v3",
+  "dataset_accepted": false,
+  "simulation_success": false,
+  "physics_valid": false,
+  "automated_checks_passed": false,
+  "visual_review_status": "not_eligible",
+  "quality_rejection_reasons": [
+    "continuous_stability_less_than_1s",
+    "final_six_wheels_not_supported_on_ground",
+    "final_stability_under_1s",
+    "full_route_or_final_pose_failed"
+  ],
+  "final_wheel_contacts": {
+    "left_front_wheel": false,
+    "left_middle_wheel": false,
+    "left_rear_wheel": false,
+    "right_front_wheel": false,
+    "right_middle_wheel": false,
+    "right_rear_wheel": false
+  },
+  "max_contact_penetration_m": 0.005008248366948909,
+  "measured_actuator_peaks_nm": {
+    "wheel": 50.0,
+    "steer": 40.0,
+    "rocker": 32.25025935727592
+  },
+  "continuous_final_stability_s": 0.0,
+  "parameters": {
+    "height": 0.04,
+    "stairs": 12,
+    "depth": 0.04,
+    "seconds": 90.0,
+    "speed": 6.0,
+    "friction": 4.0,
+    "tau_max": 50.0,
+    "nosing": 0.0,
+    "front_lift_deg": 14.0,
+    "middle_lift_deg": 17.0,
+    "rocker_gain": 160.0,
+    "rocker_damp": 8.0,
+    "wheel_gain": 10.0,
+    "descent_speed": 1.0,
+    "settle_time": 1.2,
+    "quality_pitch_limit": 60.0,
+    "quality_roll_limit": 15.0,
+    "contact_timeconst": 0.004,
+    "init_yaw_deg": 1.0,
+    "init_y": 0.015,
+    "init_x": -0.02
+  },
+  "metadata_path": "/home/agilex/wzy/rover/datasets/45deg_v3/episodes/seed004_h04_yaw_left/metadata.json",
+  "scene_path": "/home/agilex/wzy/rover/datasets/45deg_v3/episodes/seed004_h04_yaw_left/scene.xml",
+  "model_sha256": "a7eeb359f8412dcc7830f997563d8aa4dbf22fe1ee55156f2b32e8307a1e1c68",
+  "source_sha256": {
+    "course.py": "d399d4515d87be99dfc0d5f4eb732d8cefba8354ad4742033d45484cd030e72d",
+    "closed_loop_controller.py": "57c97ebcb8f21ec5cb106aca79a6c7271ebf27112ffeb8ac1a57d3ab94a276f6",
+    "episode_audit.py": "2b30f3c4ca8d95824793b748f86d10be05e17c129eafb06a3e771df2b1e5cc8f",
+    "dataset_io.py": "345966f53c749c7941716887d60cda1a0c098c560791bc21ca6479f52cfad975",
+    "generate_dataset.py": "3356e4e21ae48331c68a303f6cc3397540d06d7ebfb839c8b35f7259bf15e1d6"
+  },
+  "mujoco_version": "3.17.0",
+  "audit": {
+    "audit_steps": 45000,
+    "audit_time_s": 89.99999999997165,
+    "nonfinite_seen": false,
+    "time_nonmonotonic_seen": false,
+    "mujoco_warning_counts": {},
+    "max_contact_penetration_m": 0.005008248366948909,
+    "worst_contact": {
+      "time_s": 3.7499999999998086,
+      "robot_geom": "left_middle_wheel_col_1",
+      "terrain_geom": "up10",
+      "penetration_m": 0.005008248366948909
+    },
+    "non_wheel_contact_duration_s": 0.0,
+    "non_wheel_contact_duration_by_geom_s": {},
+    "max_joint_limit_error_deg": 0.4653647090681103,
+    "joint_limit_error_by_joint_deg": {
+      "left_rocker_joint": 0.4653647090681103,
+      "left_front_steer_joint": 0.0,
+      "left_rear_steer_joint": 0.0,
+      "right_rocker_joint": 0.36141076669294653,
+      "right_front_steer_joint": 0.0,
+      "right_rear_steer_joint": 0.0
+    },
+    "actuator_force_peak_by_joint_nm": {
+      "left_rocker_joint": 30.888735625449172,
+      "left_front_steer_joint": 24.717665656355393,
+      "left_front_wheel_joint": 36.56309255819726,
+      "left_middle_wheel_joint": 50.0,
+      "left_rear_steer_joint": 40.0,
+      "left_rear_wheel_joint": 50.0,
+      "right_rocker_joint": 32.25025935727592,
+      "right_front_steer_joint": 22.81617494944888,
+      "right_front_wheel_joint": 35.664363254764226,
+      "right_middle_wheel_joint": 50.0,
+      "right_rear_steer_joint": 40.0,
+      "right_rear_wheel_joint": 50.0
+    },
+    "actuator_force_peak_by_kind_nm": {
+      "wheel": 50.0,
+      "steer": 40.0,
+      "rocker": 32.25025935727592
+    },
+    "final_ground_normal_force_n": {
+      "left_front_wheel": 0.0,
+      "left_middle_wheel": 0.0,
+      "left_rear_wheel": 0.0,
+      "right_front_wheel": 0.0,
+      "right_middle_wheel": 0.0,
+      "right_rear_wheel": 0.0
+    },
+    "final_ground_contact_by_wheel": {
+      "left_front_wheel": false,
+      "left_middle_wheel": false,
+      "left_rear_wheel": false,
+      "right_front_wheel": false,
+      "right_middle_wheel": false,
+      "right_rear_wheel": false
+    },
+    "final_all_six_ground": false,
+    "final_joint_state": {
+      "left_rocker_joint": {
+        "position_deg": 20.05116002329484,
+        "velocity_deg_s": 0.16557217044509623
+      },
+      "left_front_steer_joint": {
+        "position_deg": -4.143209807526697,
+        "velocity_deg_s": 0.816034918256091
+      },
+      "left_rear_steer_joint": {
+        "position_deg": 2.5086848156542603,
+        "velocity_deg_s": 100.17963640580237
+      },
+      "right_rocker_joint": {
+        "position_deg": 20.01511520297312,
+        "velocity_deg_s": -0.2464755437810202
+      },
+      "right_front_steer_joint": {
+        "position_deg": -5.208555763416149,
+        "velocity_deg_s": -2.580050838532439
+      },
+      "right_rear_steer_joint": {
+        "position_deg": 33.04099661216235,
+        "velocity_deg_s": -5.739482883146729
+      }
+    },
+    "continuous_final_stability_s": 0.0,
+    "final_stability_criteria": {
+      "finite": true,
+      "six_wheels_on_ground": false,
+      "roll_pitch": false,
+      "heading": true,
+      "lateral_position": true,
+      "body_translation": true,
+      "body_rotation": true,
+      "wheel_speed": false,
+      "joint_position": false,
+      "joint_speed": false
+    },
+    "quality_rejection_reasons": [
+      "final_six_wheels_not_supported_on_ground",
+      "final_stability_under_1s"
+    ],
+    "audit_quality_ok": false,
+    "thresholds": {
+      "minimum_final_stability_s": 1.0,
+      "final_roll_pitch_deg": 3.0,
+      "final_yaw_deg": 5.0,
+      "final_lateral_position_m": 0.25,
+      "final_linear_speed_m_s": 0.03,
+      "final_angular_speed_rad_s": 0.08,
+      "final_wheel_speed_rad_s": 0.2,
+      "final_rocker_steer_position_deg": 3.0,
+      "final_rocker_steer_speed_rad_s": 0.1,
+      "max_penetration_m": 0.02,
+      "max_non_wheel_contact_s": 0.02,
+      "max_joint_limit_error_deg": 1.0,
+      "minimum_ground_normal_force_n": 5.0,
+      "actuator_force_limits_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "actuator_force_tolerance_nm": 0.001
+    }
+  },
+  "replay": {
+    "replay_ok": true,
+    "actions": 4500,
+    "states": 4501,
+    "physics_steps": 45000,
+    "duration": 89.99999999997165,
+    "atol": 1e-08,
+    "physics_checked": true,
+    "max_time_error": 0.0,
+    "max_qpos_error": 0.0,
+    "max_qvel_error": 0.0,
+    "max_physics_time_error": 0.0,
+    "max_physics_qpos_error": 0.0,
+    "max_physics_qvel_error": 0.0,
+    "max_physics_qfrc_actuator_error": 0.0
+  },
+  "scope": "full_ascent_platform_descent_ground_stop",
+  "limitations": [
+    "Simulation demonstrations; friction and contact response are not hardware calibrated.",
+    "Original robot model retained, including disabled self-collision and collision/visual tire-width differences.",
+    "Controller uses privileged simulator contacts and world pose; not a sensor-only deployment controller."
+  ]
+}

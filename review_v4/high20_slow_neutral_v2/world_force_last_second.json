@@ -1,0 +1,151 @@
+{
+  "episode": "/home/agilex/wzy/rover/review_v4/high20_slow_neutral_v2",
+  "window_s": [
+    23.519000000006983,
+    24.519000000006983
+  ],
+  "samples": 1000,
+  "weight_n": 1243.37825019,
+  "force_frame": "world, full normal+tangential force on wheel; contact geom1 side negated",
+  "contact_cache_phase": "preceding integrated physical interval",
+  "replay": {
+    "replay_ok": true,
+    "actions": 24519,
+    "states": 24520,
+    "physics_steps": 24519,
+    "duration": 24.519000000006983,
+    "atol": 1e-08,
+    "physics_checked": true,
+    "max_time_error": 0.0,
+    "max_qpos_error": 0.0,
+    "max_qvel_error": 0.0,
+    "max_physics_time_error": 0.0,
+    "max_physics_qpos_error": 0.0,
+    "max_physics_qvel_error": 0.0,
+    "max_physics_qfrc_actuator_error": 0.0
+  },
+  "wheels": {
+    "left_front_wheel": {
+      "mean_force_xyz_n": [
+        24.694400560319547,
+        -1.9492953017617185,
+        75.21458151394015
+      ],
+      "min_up_force_n": 0.0,
+      "max_up_force_n": 1087.0452300613829,
+      "up_support_fraction_over_5n": 0.262,
+      "mean_torque_nm": 11.002723725383744,
+      "mean_speed_rad_s": 1.6996444939417246
+    },
+    "left_middle_wheel": {
+      "mean_force_xyz_n": [
+        0.8839229876292404,
+        0.3075920589479222,
+        7.6469514890023556
+      ],
+      "min_up_force_n": 0.0,
+      "max_up_force_n": 631.8591404464918,
+      "up_support_fraction_over_5n": 0.021,
+      "mean_torque_nm": 2.2410306100491693,
+      "mean_speed_rad_s": 1.9177624521185261
+    },
+    "left_rear_wheel": {
+      "mean_force_xyz_n": [
+        2.515007708303736,
+        -19.486618676231192,
+        575.2896240702918
+      ],
+      "min_up_force_n": 254.6304225445042,
+      "max_up_force_n": 971.8103944313457,
+      "up_support_fraction_over_5n": 1.0,
+      "mean_torque_nm": 50.0,
+      "mean_speed_rad_s": 0.04215708727342162
+    },
+    "right_front_wheel": {
+      "mean_force_xyz_n": [
+        7.00931069719435,
+        4.50033043557696,
+        55.2025729534578
+      ],
+      "min_up_force_n": 0.0,
+      "max_up_force_n": 1005.7416467916127,
+      "up_support_fraction_over_5n": 0.174,
+      "mean_torque_nm": 7.138453884819823,
+      "mean_speed_rad_s": 1.8454843216563959
+    },
+    "right_middle_wheel": {
+      "mean_force_xyz_n": [
+        -77.2337435694829,
+        -12.016600051411668,
+        350.07847236744016
+      ],
+      "min_up_force_n": 0.0,
+      "max_up_force_n": 1013.5059884193979,
+      "up_support_fraction_over_5n": 0.847,
+      "mean_torque_nm": 44.06533915990683,
+      "mean_speed_rad_s": 0.572020299522662
+    },
+    "right_rear_wheel": {
+      "mean_force_xyz_n": [
+        41.79967979376342,
+        29.766802750429147,
+        182.76918197598647
+      ],
+      "min_up_force_n": 0.0,
+      "max_up_force_n": 943.3167878299801,
+      "up_support_fraction_over_5n": 0.769,
+      "mean_torque_nm": 39.43734945742596,
+      "mean_speed_rad_s": 0.6357754835545342
+    }
+  },
+  "roles": {
+    "front": {
+      "mean_force_xyz_n": [
+        31.7037112575139,
+        2.5510351338152417,
+        130.41715446739795
+      ]
+    },
+    "middle": {
+      "mean_force_xyz_n": [
+        -76.34982058185366,
+        -11.709007992463746,
+        357.7254238564425
+      ]
+    },
+    "rear": {
+      "mean_force_xyz_n": [
+        44.31468750206715,
+        10.280184074197955,
+        758.0588060462783
+      ]
+    }
+  },
+  "terrain": {
+    "up2": [
+      -76.34982058185368,
+      -11.709007992463743,
+      357.7254238564424
+    ],
+    "ground": [
+      309.40332220036964,
+      24.362769735970115,
+      524.0447675660705
+    ],
+    "up0": [
+      -265.0886346983025,
+      -14.082585661772164,
+      234.014038480209
+    ],
+    "up4": [
+      31.703711257513902,
+      2.551035133815242,
+      130.4171544673981
+    ]
+  },
+  "total_mean_force_xyz_n": [
+    -0.33142182227260975,
+    1.1222112155494486,
+    1246.2013843701186
+  ]
+}

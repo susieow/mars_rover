@@ -1,0 +1,22 @@
+{
+  "scope": "Addendum only; original diagnostic.json and trajectory.npz are preserved unchanged.",
+  "recording_issue": {
+    "cause": "The first side-support prototype stored mutable EMA dictionaries and target lists by reference in its sample list.",
+    "unreliable_historical_fields": [
+      "samples[*].upward_support_ema_n",
+      "samples[*].side_goals"
+    ],
+    "unaffected_evidence": [
+      "trajectory.npz physics and controls",
+      "sample times, positions, actual rocker angles, contacts, velocities and actuator forces",
+      "assist_events: support_up_n and targets_deg were copied at each event"
+    ],
+    "remediation": "Do not infer historical support loads from the affected sample fields. Use independent NPZ action replay; the trigger50 rerun stores copies. Final dictionary values describe only the final observation, not earlier samples."
+  },
+  "controller_gating_change": {
+    "front_support_trigger_n_before": 80,
+    "front_support_trigger_n_after": 50,
+    "purpose": "Permit the measured supported front wheel to start the planned negative swing. This is controller state-transition logic, not a dataset quality threshold.",
+    "quality_thresholds_changed": false
+  }
+}
