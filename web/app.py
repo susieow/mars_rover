@@ -17,6 +17,7 @@ import recovery20_review
 import recovery20_amp20_review
 import recovery20_asym_review
 import recovery20_friction_review
+import recovery20_friction_negative_first_review
 
 BASE = Path.home() / "wzy"
 VIDEOS = BASE / "videos"
@@ -63,7 +64,7 @@ INDEX = r"""<!doctype html>
 <body>
 <header>
   <h1>火星车 · 成功轨迹核验</h1>
-  <p><a href="/recovery20friction">查看台阶摩擦 6 / 8 对照 →</a></p><p><a href="/recovery20asym">查看20 cm · 七种摇臂范围实验 →</a></p><p><a href="/recovery20amp20">查看20 cm · 摇臂 ±20° 续跑实验 →</a> · <a href="/recovery20">上一批 ±10°</a></p>
+  <p><a href="/recovery20frictionnegative">查看先负后正 · 台阶摩擦 6 / 8 →</a></p><p><a href="/recovery20friction">查看台阶摩擦 6 / 8 对照 →</a></p><p><a href="/recovery20asym">查看20 cm · 七种摇臂范围实验 →</a></p><p><a href="/recovery20amp20">查看20 cm · 摇臂 ±20° 续跑实验 →</a> · <a href="/recovery20">上一批 ±10°</a></p>
   <p>只读核验 · 仿真视频、终态与 state/action 轨迹</p>
   <p style="margin-top:10px"><a href="/experiments">查看高台阶试验审阅：15 cm / 20 cm 全部候选与早期诊断 →</a></p>
 </header>
@@ -235,6 +236,19 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, INDEX.encode("utf-8"), "text/html; charset=utf-8")
         if path == "/api/runs":
             return self._send(200, json.dumps(read_runs(), ensure_ascii=False).encode("utf-8"), extra={"Cache-Control": "no-store"})
+        if path in ("/recovery20frictionnegative", "/recovery20frictionnegative/"):
+            return self._send(200, recovery20_friction_negative_first_review.PAGE.read_bytes(), "text/html; charset=utf-8")
+        if path == "/api/recovery20frictionnegative":
+            return self._send(200, json.dumps(recovery20_friction_negative_first_review.catalog(), ensure_ascii=False).encode("utf-8"), extra={"Cache-Control": "no-store"})
+        if path.startswith("/recovery20frictionnegative-media/"):
+            target = recovery20_friction_negative_first_review.media(path[len("/recovery20frictionnegative-media/"):])
+            return self._serve_file(target) if target else self._send(404, b"not found", "text/plain")
+        if path.startswith("/recovery20frictionnegative-curves/"):
+            target = recovery20_friction_negative_first_review.curves(path[len("/recovery20frictionnegative-curves/"):])
+            return self._serve_file(target) if target else self._send(404, b"not found", "text/plain")
+        if path.startswith("/recovery20frictionnegative-data/"):
+            target = recovery20_friction_negative_first_review.data(path[len("/recovery20frictionnegative-data/"):])
+            return self._serve_file(target, download=True) if target else self._send(404, b"not found", "text/plain")
         if path in ("/recovery20friction", "/recovery20friction/"):
             return self._send(200, recovery20_friction_review.PAGE.read_bytes(), "text/html; charset=utf-8")
         if path == "/api/recovery20friction":
