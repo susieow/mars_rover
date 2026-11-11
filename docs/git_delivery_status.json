@@ -4,7 +4,7 @@
   "date": "2026-11-11",
   "default_branch": "main",
   "initial_repository_state": "empty",
-  "remote_upload": "pending",
+  "remote_upload": "blocked_partial_transport_objects_only_no_final_branches",
   "worktrees": [
     {
       "person": "zc",
@@ -34,5 +34,22 @@
     "frozen_hashes_unchanged": true,
     "stored_scene_visual_compile": true,
     "artifact_inventory_records": 1968
-  }
+  },
+  "remote_default_branch_observed": "delivery/transport-20261111",
+  "temporary_transport": {
+    "branch": "delivery/transport-20261111",
+    "completed_batches": 6,
+    "total_batches": 35,
+    "last_confirmed_commit": "ab525dd47d13cb14ace483b1c7c38d4e75c945a8",
+    "usable_project": false
+  },
+  "blockers": [
+    "Git SSH authenticated as susieow but uploads repeatedly disconnected/reset on direct and AGX-forwarded routes.",
+    "GitHub settings pages returned ERR_CONNECTION_CLOSED; required review protection not configured."
+  ],
+  "remaining": [
+    "Upload and verify main, zc/stairs-15-20, cxm/stairs-15-20 against the final local baseline.",
+    "Set GitHub default branch to main, then delete the temporary transport branch.",
+    "Configure main PR/code-owner approval by susieow, dismiss stale approvals, enforce protection and disable force pushes/deletion; verify readback."
+  ]
 }
