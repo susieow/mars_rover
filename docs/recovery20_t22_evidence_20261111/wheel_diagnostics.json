@@ -1,0 +1,2242 @@
+{
+  "T22_WFMR_RDN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.772792653021331,
+      "mean_torque_nm": 5.100057733341114,
+      "saturation_fraction": 0.050633333333333336,
+      "mean_contact_slip_m_s": 0.35222490671009166,
+      "peak_center_z_m": 1.3512422764716228
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 5.151365381145036,
+      "mean_torque_nm": 9.521429238548496,
+      "saturation_fraction": 0.16416666666666666,
+      "mean_contact_slip_m_s": 0.06931344412745966,
+      "peak_center_z_m": 0.7600679005507176
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.26095089653926784,
+      "mean_torque_nm": 48.10076253597197,
+      "saturation_fraction": 0.9586666666666667,
+      "mean_contact_slip_m_s": 0.008806236777130388,
+      "peak_center_z_m": 0.18758738003078354
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.708803231778908,
+      "mean_torque_nm": 1.8555809315471197,
+      "saturation_fraction": 0.0061,
+      "mean_contact_slip_m_s": 0.1954463170836407,
+      "peak_center_z_m": 1.365419105108995
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 0.6211221515456183,
+      "mean_torque_nm": 45.23922311067798,
+      "saturation_fraction": 0.8990666666666667,
+      "mean_contact_slip_m_s": 0.014312761449015885,
+      "peak_center_z_m": 0.7655245461369824
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 2.9046051938075648,
+      "mean_torque_nm": 33.51761352109833,
+      "saturation_fraction": 0.5783666666666667,
+      "mean_contact_slip_m_s": 0.0823232576242494,
+      "peak_center_z_m": 0.18770711072331647
+    }
+  ],
+  "T22_WFMR_RDP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.697753177275721,
+      "mean_torque_nm": 2.0816745687258984,
+      "saturation_fraction": 0.0075,
+      "mean_contact_slip_m_s": 0.3349350175944913,
+      "peak_center_z_m": 1.3700586095269154
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 0.7525001492242452,
+      "mean_torque_nm": 44.191078253878906,
+      "saturation_fraction": 0.8775333333333334,
+      "mean_contact_slip_m_s": 0.016764857450077972,
+      "peak_center_z_m": 0.7663271743310923
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 2.460107000432289,
+      "mean_torque_nm": 32.571705639528886,
+      "saturation_fraction": 0.6278666666666667,
+      "mean_contact_slip_m_s": 0.03877801681336426,
+      "peak_center_z_m": 0.1925324681507256
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.768333805830288,
+      "mean_torque_nm": 4.79612661555488,
+      "saturation_fraction": 0.0416,
+      "mean_contact_slip_m_s": 0.2575652128113093,
+      "peak_center_z_m": 1.3503530026804509
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.955049220519283,
+      "mean_torque_nm": 11.238410302492293,
+      "saturation_fraction": 0.20136666666666667,
+      "mean_contact_slip_m_s": 0.06577007993925757,
+      "peak_center_z_m": 0.7591452610116611
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.37019877150347885,
+      "mean_torque_nm": 47.257836539650384,
+      "saturation_fraction": 0.9350666666666667,
+      "mean_contact_slip_m_s": 0.010954781736000441,
+      "peak_center_z_m": 0.1766984671728096
+    }
+  ],
+  "T22_WFMR_RN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.626536507380091,
+      "mean_torque_nm": 7.025165993011554,
+      "saturation_fraction": 0.0561,
+      "mean_contact_slip_m_s": 0.5321411548823153,
+      "peak_center_z_m": 1.1601704413097158
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 3.3984429138820675,
+      "mean_torque_nm": 24.205065131986697,
+      "saturation_fraction": 0.46166666666666667,
+      "mean_contact_slip_m_s": 0.06270172845227635,
+      "peak_center_z_m": 0.6908385436364726
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.19732940617611489,
+      "mean_torque_nm": 49.46499671765389,
+      "saturation_fraction": 0.9867,
+      "mean_contact_slip_m_s": 0.01287291925485024,
+      "peak_center_z_m": 0.1681492547254254
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.620434948494649,
+      "mean_torque_nm": 7.287574709661018,
+      "saturation_fraction": 0.055933333333333335,
+      "mean_contact_slip_m_s": 0.517526651626801,
+      "peak_center_z_m": 1.1519508477736498
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.2939274374852188,
+      "mean_torque_nm": 35.22980464604308,
+      "saturation_fraction": 0.6860333333333334,
+      "mean_contact_slip_m_s": 0.06394281654291668,
+      "peak_center_z_m": 0.6892569694968557
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.3252466134783798,
+      "mean_torque_nm": 42.40654102699925,
+      "saturation_fraction": 0.8196666666666667,
+      "mean_contact_slip_m_s": 0.03412162972434675,
+      "peak_center_z_m": 0.16758941348150996
+    }
+  ],
+  "T22_WFMR_RSN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.707760277653775,
+      "mean_torque_nm": 1.3690917930162745,
+      "saturation_fraction": 0.0003,
+      "mean_contact_slip_m_s": 0.2687902953956246,
+      "peak_center_z_m": 1.3724329882620034
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 0.2756262323941429,
+      "mean_torque_nm": 48.78417499194069,
+      "saturation_fraction": 0.9692333333333333,
+      "mean_contact_slip_m_s": 0.01677250734481446,
+      "peak_center_z_m": 0.7659575645461323
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 2.8302727039666906,
+      "mean_torque_nm": 31.087270977611166,
+      "saturation_fraction": 0.5733,
+      "mean_contact_slip_m_s": 0.06223558166829407,
+      "peak_center_z_m": 0.18708662001991627
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.719315471378471,
+      "mean_torque_nm": 6.6433624394262125,
+      "saturation_fraction": 0.060366666666666666,
+      "mean_contact_slip_m_s": 0.31967936174079675,
+      "peak_center_z_m": 1.2249429708266684
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 5.20827941944234,
+      "mean_torque_nm": 7.982434407727064,
+      "saturation_fraction": 0.1362,
+      "mean_contact_slip_m_s": 0.04094667753069005,
+      "peak_center_z_m": 0.7189378084887789
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.11395902008252758,
+      "mean_torque_nm": 49.55104298060134,
+      "saturation_fraction": 0.9879,
+      "mean_contact_slip_m_s": 0.008857545142274128,
+      "peak_center_z_m": 0.16653396150800556
+    }
+  ],
+  "T22_WFMR_RSP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.542543876942042,
+      "mean_torque_nm": 8.110278885460955,
+      "saturation_fraction": 0.0877,
+      "mean_contact_slip_m_s": 0.5169872686463317,
+      "peak_center_z_m": 1.3763607827444926
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.580118316262303,
+      "mean_torque_nm": 30.85074105481205,
+      "saturation_fraction": 0.5979666666666666,
+      "mean_contact_slip_m_s": 0.051259357637811025,
+      "peak_center_z_m": 0.7643690267715494
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.219066458521878,
+      "mean_torque_nm": 42.0561215499457,
+      "saturation_fraction": 0.8288666666666666,
+      "mean_contact_slip_m_s": 0.02267427351314676,
+      "peak_center_z_m": 0.17811267926007204
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.615286239303954,
+      "mean_torque_nm": 7.696502286683597,
+      "saturation_fraction": 0.05383333333333333,
+      "mean_contact_slip_m_s": 0.4060066223598133,
+      "peak_center_z_m": 1.2672876002227798
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 3.9225731719549346,
+      "mean_torque_nm": 19.836621321741028,
+      "saturation_fraction": 0.37303333333333333,
+      "mean_contact_slip_m_s": 0.06628062296038398,
+      "peak_center_z_m": 0.7293025746856296
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.7840424871673036,
+      "mean_torque_nm": 45.40124327891171,
+      "saturation_fraction": 0.8946666666666667,
+      "mean_contact_slip_m_s": 0.019554071437496014,
+      "peak_center_z_m": 0.16922381344652465
+    }
+  ],
+  "T22_WFM_RDN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.765641096580116,
+      "mean_torque_nm": 1.9126319309070647,
+      "saturation_fraction": 0.006566666666666667,
+      "mean_contact_slip_m_s": 0.422118089189798,
+      "peak_center_z_m": 1.3762515020040675
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.2667388940612703,
+      "mean_torque_nm": 41.56135286739582,
+      "saturation_fraction": 0.8198666666666666,
+      "mean_contact_slip_m_s": 0.025967150499575275,
+      "peak_center_z_m": 0.7642146706574986
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.9164925921977316,
+      "mean_torque_nm": 36.925392010470425,
+      "saturation_fraction": 0.7184333333333334,
+      "mean_contact_slip_m_s": 0.022008635949157286,
+      "peak_center_z_m": 0.18172796183943424
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.755212320527175,
+      "mean_torque_nm": 3.745167728964925,
+      "saturation_fraction": 0.0321,
+      "mean_contact_slip_m_s": 0.2796021672508138,
+      "peak_center_z_m": 1.3482018065673855
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.246528331098306,
+      "mean_torque_nm": 16.845071077115435,
+      "saturation_fraction": 0.31283333333333335,
+      "mean_contact_slip_m_s": 0.08782342877833826,
+      "peak_center_z_m": 0.7595314881009176
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.3594537693880476,
+      "mean_torque_nm": 45.090781402136884,
+      "saturation_fraction": 0.8940333333333333,
+      "mean_contact_slip_m_s": 0.010676711542833554,
+      "peak_center_z_m": 0.1837346128573008
+    }
+  ],
+  "T22_WFM_RDP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.7587893758444,
+      "mean_torque_nm": 4.185686710340947,
+      "saturation_fraction": 0.0333,
+      "mean_contact_slip_m_s": 0.38861105806803303,
+      "peak_center_z_m": 1.3562393297407687
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.54837015587691,
+      "mean_torque_nm": 14.487374266239305,
+      "saturation_fraction": 0.2643333333333333,
+      "mean_contact_slip_m_s": 0.094884505795248,
+      "peak_center_z_m": 0.7607199108990516
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.3730447836203608,
+      "mean_torque_nm": 45.29358920000739,
+      "saturation_fraction": 0.8968333333333334,
+      "mean_contact_slip_m_s": 0.010946999310094938,
+      "peak_center_z_m": 0.1828165276851593
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.708607028701805,
+      "mean_torque_nm": 2.9902348848147957,
+      "saturation_fraction": 0.02036666666666667,
+      "mean_contact_slip_m_s": 0.3848692093974981,
+      "peak_center_z_m": 1.3644254962521891
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.9102742986056838,
+      "mean_torque_nm": 37.6302161643965,
+      "saturation_fraction": 0.7339,
+      "mean_contact_slip_m_s": 0.04480224176688866,
+      "peak_center_z_m": 0.7650691177590484
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.2674631183764276,
+      "mean_torque_nm": 31.49558084980753,
+      "saturation_fraction": 0.6004666666666667,
+      "mean_contact_slip_m_s": 0.02556125720047936,
+      "peak_center_z_m": 0.17784208019568973
+    }
+  ],
+  "T22_WFM_RN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.594722814618895,
+      "mean_torque_nm": 7.49739007405145,
+      "saturation_fraction": 0.06416666666666666,
+      "mean_contact_slip_m_s": 0.5202930116874833,
+      "peak_center_z_m": 1.1632048657041993
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 3.4827410445981273,
+      "mean_torque_nm": 23.7759934559541,
+      "saturation_fraction": 0.45126666666666665,
+      "mean_contact_slip_m_s": 0.06756488915664127,
+      "peak_center_z_m": 0.6899450371292201
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.2034121841223215,
+      "mean_torque_nm": 48.274073018631505,
+      "saturation_fraction": 0.9581666666666667,
+      "mean_contact_slip_m_s": 0.011869213417131909,
+      "peak_center_z_m": 0.1670981312759227
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.624862644845554,
+      "mean_torque_nm": 7.418922513200016,
+      "saturation_fraction": 0.05803333333333333,
+      "mean_contact_slip_m_s": 0.509286536643874,
+      "peak_center_z_m": 1.1566988608578164
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.324779090430571,
+      "mean_torque_nm": 34.641848451622224,
+      "saturation_fraction": 0.6740333333333334,
+      "mean_contact_slip_m_s": 0.062121223939418116,
+      "peak_center_z_m": 0.6882018386697042
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.7724501087149586,
+      "mean_torque_nm": 40.76703365845637,
+      "saturation_fraction": 0.7822333333333333,
+      "mean_contact_slip_m_s": 0.024558450246233255,
+      "peak_center_z_m": 0.1662132936274066
+    }
+  ],
+  "T22_WFM_RSN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.633430287941233,
+      "mean_torque_nm": 6.5692402494630375,
+      "saturation_fraction": 0.0627,
+      "mean_contact_slip_m_s": 0.4353135368641422,
+      "peak_center_z_m": 1.2392276568998766
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 5.17373504292977,
+      "mean_torque_nm": 7.729506784893534,
+      "saturation_fraction": 0.12986666666666666,
+      "mean_contact_slip_m_s": 0.0608287823965686,
+      "peak_center_z_m": 0.723377716922282
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.10745086280532418,
+      "mean_torque_nm": 49.21422164821049,
+      "saturation_fraction": 0.9822666666666666,
+      "mean_contact_slip_m_s": 0.0084671494721048,
+      "peak_center_z_m": 0.16678147299184665
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.749811720456742,
+      "mean_torque_nm": 3.1064970059836083,
+      "saturation_fraction": 0.010266666666666667,
+      "mean_contact_slip_m_s": 0.5529899826918441,
+      "peak_center_z_m": 1.371309512089613
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 0.9919650858290162,
+      "mean_torque_nm": 44.05415634677012,
+      "saturation_fraction": 0.8717333333333334,
+      "mean_contact_slip_m_s": 0.02751459957705296,
+      "peak_center_z_m": 0.7648968552002693
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.366924699466717,
+      "mean_torque_nm": 34.51896010605332,
+      "saturation_fraction": 0.49516666666666664,
+      "mean_contact_slip_m_s": 0.07654840653836278,
+      "peak_center_z_m": 0.18394208589726033
+    }
+  ],
+  "T22_WFM_RSP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.651646946003658,
+      "mean_torque_nm": 8.07505972595873,
+      "saturation_fraction": 0.06843333333333333,
+      "mean_contact_slip_m_s": 0.49834322621213123,
+      "peak_center_z_m": 1.354347730712742
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.5892208000427575,
+      "mean_torque_nm": 13.698474085974695,
+      "saturation_fraction": 0.2494,
+      "mean_contact_slip_m_s": 0.08564443494866704,
+      "peak_center_z_m": 0.7605160728745312
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.359267822497326,
+      "mean_torque_nm": 45.714997340619036,
+      "saturation_fraction": 0.9040666666666667,
+      "mean_contact_slip_m_s": 0.011984716717243918,
+      "peak_center_z_m": 0.18117877208780275
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.5150199088988225,
+      "mean_torque_nm": 7.988270375322764,
+      "saturation_fraction": 0.0758,
+      "mean_contact_slip_m_s": 0.46154481618434967,
+      "peak_center_z_m": 1.3703619123846842
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.5936565590987413,
+      "mean_torque_nm": 31.243388954470376,
+      "saturation_fraction": 0.6027666666666667,
+      "mean_contact_slip_m_s": 0.05366083743557546,
+      "peak_center_z_m": 0.7651088943939578
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.8969107298237933,
+      "mean_torque_nm": 37.51099996812732,
+      "saturation_fraction": 0.7254333333333334,
+      "mean_contact_slip_m_s": 0.022063381474723368,
+      "peak_center_z_m": 0.17811063192922313
+    }
+  ],
+  "T22_WFR_RDN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.692858370249749,
+      "mean_torque_nm": 4.960272646575009,
+      "saturation_fraction": 0.04036666666666667,
+      "mean_contact_slip_m_s": 0.4908929134757959,
+      "peak_center_z_m": 1.3474617941102054
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.1489260966250114,
+      "mean_torque_nm": 20.335574096016803,
+      "saturation_fraction": 0.3141333333333333,
+      "mean_contact_slip_m_s": 0.0855569086336406,
+      "peak_center_z_m": 0.7561294171859634
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.1852403157598521,
+      "mean_torque_nm": 42.35996723475657,
+      "saturation_fraction": 0.8305666666666667,
+      "mean_contact_slip_m_s": 0.024601110289760208,
+      "peak_center_z_m": 0.1812643825127657
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.693619007667705,
+      "mean_torque_nm": 4.846809791381993,
+      "saturation_fraction": 0.0362,
+      "mean_contact_slip_m_s": 0.4577568414427346,
+      "peak_center_z_m": 1.3338713014850092
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.84375795018685,
+      "mean_torque_nm": 25.717150661773932,
+      "saturation_fraction": 0.4206,
+      "mean_contact_slip_m_s": 0.07871155393555908,
+      "peak_center_z_m": 0.7566949243099934
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.4155609102017643,
+      "mean_torque_nm": 41.22887154838964,
+      "saturation_fraction": 0.8014666666666667,
+      "mean_contact_slip_m_s": 0.029255894713198068,
+      "peak_center_z_m": 0.18259995490867975
+    }
+  ],
+  "T22_WFR_RDP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.675662542874298,
+      "mean_torque_nm": 5.459569037500178,
+      "saturation_fraction": 0.044366666666666665,
+      "mean_contact_slip_m_s": 0.47096541536075387,
+      "peak_center_z_m": 1.345220627154478
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.117901685092371,
+      "mean_torque_nm": 20.511383940681124,
+      "saturation_fraction": 0.3239,
+      "mean_contact_slip_m_s": 0.08561718155437242,
+      "peak_center_z_m": 0.7568803063764603
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.2155590627184865,
+      "mean_torque_nm": 42.45425821288174,
+      "saturation_fraction": 0.8309333333333333,
+      "mean_contact_slip_m_s": 0.0237689131217819,
+      "peak_center_z_m": 0.17968166571914143
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.684785079298031,
+      "mean_torque_nm": 5.107400399243351,
+      "saturation_fraction": 0.041166666666666664,
+      "mean_contact_slip_m_s": 0.45478679418122636,
+      "peak_center_z_m": 1.3306677960770985
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.9008612692204967,
+      "mean_torque_nm": 24.875847335643826,
+      "saturation_fraction": 0.42533333333333334,
+      "mean_contact_slip_m_s": 0.07647280316437091,
+      "peak_center_z_m": 0.7530734798353289
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.1783687838694599,
+      "mean_torque_nm": 42.59454589815152,
+      "saturation_fraction": 0.8279333333333333,
+      "mean_contact_slip_m_s": 0.02667113015361194,
+      "peak_center_z_m": 0.1771767601024207
+    }
+  ],
+  "T22_WFR_RN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.541712723442793,
+      "mean_torque_nm": 8.728202157535655,
+      "saturation_fraction": 0.07603333333333333,
+      "mean_contact_slip_m_s": 0.5521878992780944,
+      "peak_center_z_m": 1.1524488899022793
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.9831792149892902,
+      "mean_torque_nm": 20.569347226512612,
+      "saturation_fraction": 0.3816,
+      "mean_contact_slip_m_s": 0.057356883151608334,
+      "peak_center_z_m": 0.6880350213327276
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.18400655396020474,
+      "mean_torque_nm": 49.348901834801545,
+      "saturation_fraction": 0.9846333333333334,
+      "mean_contact_slip_m_s": 0.011557790627683978,
+      "peak_center_z_m": 0.16615519306468624
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.569103685661414,
+      "mean_torque_nm": 8.890530451810795,
+      "saturation_fraction": 0.07856666666666667,
+      "mean_contact_slip_m_s": 0.5127678923525644,
+      "peak_center_z_m": 1.143510799068687
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.3604930339190584,
+      "mean_torque_nm": 33.22920673261676,
+      "saturation_fraction": 0.6304333333333333,
+      "mean_contact_slip_m_s": 0.058061861512043025,
+      "peak_center_z_m": 0.6855979343648864
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.3937754296521627,
+      "mean_torque_nm": 42.3166983681499,
+      "saturation_fraction": 0.8172,
+      "mean_contact_slip_m_s": 0.03650689955638116,
+      "peak_center_z_m": 0.16602041484924723
+    }
+  ],
+  "T22_WFR_RSN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.428653637687665,
+      "mean_torque_nm": 11.041122247638215,
+      "saturation_fraction": 0.11706666666666667,
+      "mean_contact_slip_m_s": 0.5704252131090011,
+      "peak_center_z_m": 1.2334018027158484
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.4799202014977864,
+      "mean_torque_nm": 10.678634550216175,
+      "saturation_fraction": 0.18646666666666667,
+      "mean_contact_slip_m_s": 0.06205450900810449,
+      "peak_center_z_m": 0.721826303500302
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.17763819120542,
+      "mean_torque_nm": 49.44199887458875,
+      "saturation_fraction": 0.9864666666666667,
+      "mean_contact_slip_m_s": 0.01150237721417231,
+      "peak_center_z_m": 0.1661563866123935
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.589112812507696,
+      "mean_torque_nm": 8.77089563627293,
+      "saturation_fraction": 0.06746666666666666,
+      "mean_contact_slip_m_s": 0.5421340974836325,
+      "peak_center_z_m": 1.3389705074269906
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.6801545721466389,
+      "mean_torque_nm": 29.30821517546873,
+      "saturation_fraction": 0.5027666666666667,
+      "mean_contact_slip_m_s": 0.07749767251306043,
+      "peak_center_z_m": 0.7562232877500836
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.5052760473947,
+      "mean_torque_nm": 40.84868706804245,
+      "saturation_fraction": 0.7834,
+      "mean_contact_slip_m_s": 0.03627174928167899,
+      "peak_center_z_m": 0.18213275317096342
+    }
+  ],
+  "T22_WFR_RSP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.464758396577455,
+      "mean_torque_nm": 11.029577640443494,
+      "saturation_fraction": 0.11423333333333334,
+      "mean_contact_slip_m_s": 0.5385412216481726,
+      "peak_center_z_m": 1.338894814923186
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.352318360305265,
+      "mean_torque_nm": 14.70968019868054,
+      "saturation_fraction": 0.24166666666666667,
+      "mean_contact_slip_m_s": 0.0748631620792611,
+      "peak_center_z_m": 0.7546242298837902
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.5854977738512506,
+      "mean_torque_nm": 46.639045550812995,
+      "saturation_fraction": 0.9232333333333334,
+      "mean_contact_slip_m_s": 0.015090012639283817,
+      "peak_center_z_m": 0.18045311494070038
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.530817819180439,
+      "mean_torque_nm": 9.318117790222233,
+      "saturation_fraction": 0.07976666666666667,
+      "mean_contact_slip_m_s": 0.48606124203770806,
+      "peak_center_z_m": 1.3341116719270563
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.7519434126647773,
+      "mean_torque_nm": 26.64217262578692,
+      "saturation_fraction": 0.4639,
+      "mean_contact_slip_m_s": 0.0717733027121551,
+      "peak_center_z_m": 0.7545824970345131
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.254996008399616,
+      "mean_torque_nm": 42.34458594403599,
+      "saturation_fraction": 0.8241,
+      "mean_contact_slip_m_s": 0.028739203979366548,
+      "peak_center_z_m": 0.18479987805502596
+    }
+  ],
+  "T22_WF_RDN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.705046071132876,
+      "mean_torque_nm": 4.795927786330665,
+      "saturation_fraction": 0.0342,
+      "mean_contact_slip_m_s": 0.49012734192456636,
+      "peak_center_z_m": 1.3432600834236148
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.1826529222396895,
+      "mean_torque_nm": 19.827530331319842,
+      "saturation_fraction": 0.30093333333333333,
+      "mean_contact_slip_m_s": 0.08696075342316305,
+      "peak_center_z_m": 0.7564165852105068
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.5729135519958115,
+      "mean_torque_nm": 42.31487278219517,
+      "saturation_fraction": 0.8324666666666667,
+      "mean_contact_slip_m_s": 0.015621481928043713,
+      "peak_center_z_m": 0.1846120119849317
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.700610883569599,
+      "mean_torque_nm": 4.479852775255968,
+      "saturation_fraction": 0.03506666666666667,
+      "mean_contact_slip_m_s": 0.42012291302492455,
+      "peak_center_z_m": 1.339325948212983
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.7917864004507627,
+      "mean_torque_nm": 26.297334401537256,
+      "saturation_fraction": 0.43423333333333336,
+      "mean_contact_slip_m_s": 0.07511555891763638,
+      "peak_center_z_m": 0.7568785885403532
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.7754507458612447,
+      "mean_torque_nm": 39.390423660832056,
+      "saturation_fraction": 0.7663666666666666,
+      "mean_contact_slip_m_s": 0.018929898638151213,
+      "peak_center_z_m": 0.17660929782130358
+    }
+  ],
+  "T22_WF_RDP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.629998468067252,
+      "mean_torque_nm": 5.602956083936053,
+      "saturation_fraction": 0.046033333333333336,
+      "mean_contact_slip_m_s": 0.48605474187548275,
+      "peak_center_z_m": 1.3417744595656789
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.165454484454112,
+      "mean_torque_nm": 18.7745218834733,
+      "saturation_fraction": 0.2833,
+      "mean_contact_slip_m_s": 0.08330048816917869,
+      "peak_center_z_m": 0.756480254131904
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.5985695723872392,
+      "mean_torque_nm": 41.397319899524994,
+      "saturation_fraction": 0.8157666666666666,
+      "mean_contact_slip_m_s": 0.013771696080432558,
+      "peak_center_z_m": 0.18733365168248742
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.73823936574372,
+      "mean_torque_nm": 4.676443205144629,
+      "saturation_fraction": 0.035666666666666666,
+      "mean_contact_slip_m_s": 0.4878388754506004,
+      "peak_center_z_m": 1.3405103681050117
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.7652211224081218,
+      "mean_torque_nm": 27.621778598325896,
+      "saturation_fraction": 0.4708333333333333,
+      "mean_contact_slip_m_s": 0.07262199122121261,
+      "peak_center_z_m": 0.7558274572196473
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.0287054709358017,
+      "mean_torque_nm": 36.21104251071011,
+      "saturation_fraction": 0.6810666666666667,
+      "mean_contact_slip_m_s": 0.027787645018764243,
+      "peak_center_z_m": 0.1821380965715031
+    }
+  ],
+  "T22_WF_RN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.532814738197164,
+      "mean_torque_nm": 8.919160107330704,
+      "saturation_fraction": 0.07923333333333334,
+      "mean_contact_slip_m_s": 0.5613530164862816,
+      "peak_center_z_m": 1.1569677231596642
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.9697802843180297,
+      "mean_torque_nm": 20.78922243196779,
+      "saturation_fraction": 0.3867,
+      "mean_contact_slip_m_s": 0.05808838385343397,
+      "peak_center_z_m": 0.6900903867405354
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.17243173077169532,
+      "mean_torque_nm": 48.56147719174844,
+      "saturation_fraction": 0.9653666666666667,
+      "mean_contact_slip_m_s": 0.011245809276912669,
+      "peak_center_z_m": 0.16658451952295938
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.571645586941923,
+      "mean_torque_nm": 9.033195191422625,
+      "saturation_fraction": 0.07913333333333333,
+      "mean_contact_slip_m_s": 0.5326514686951297,
+      "peak_center_z_m": 1.1448002008005234
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.35711906040511,
+      "mean_torque_nm": 33.04406779190714,
+      "saturation_fraction": 0.6267,
+      "mean_contact_slip_m_s": 0.056693059912160636,
+      "peak_center_z_m": 0.6861810859716649
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.7200240541787172,
+      "mean_torque_nm": 41.83688136611057,
+      "saturation_fraction": 0.8002,
+      "mean_contact_slip_m_s": 0.02543994947238466,
+      "peak_center_z_m": 0.16602060801960694
+    }
+  ],
+  "T22_WF_RSN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.456044339204201,
+      "mean_torque_nm": 11.240352701907804,
+      "saturation_fraction": 0.11783333333333333,
+      "mean_contact_slip_m_s": 0.572716388135848,
+      "peak_center_z_m": 1.238430015798014
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.550380434907515,
+      "mean_torque_nm": 9.937555531718928,
+      "saturation_fraction": 0.17063333333333333,
+      "mean_contact_slip_m_s": 0.06009639409658674,
+      "peak_center_z_m": 0.7238287210108962
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.16768381786359465,
+      "mean_torque_nm": 48.681209900219415,
+      "saturation_fraction": 0.969,
+      "mean_contact_slip_m_s": 0.010644446656224167,
+      "peak_center_z_m": 0.16769593179286624
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.58494953041398,
+      "mean_torque_nm": 8.323855998758647,
+      "saturation_fraction": 0.0613,
+      "mean_contact_slip_m_s": 0.5389576970416403,
+      "peak_center_z_m": 1.3386089717042682
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.6404210707431075,
+      "mean_torque_nm": 29.767092799286008,
+      "saturation_fraction": 0.5041666666666667,
+      "mean_contact_slip_m_s": 0.07685599364299338,
+      "peak_center_z_m": 0.7556520167839658
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.7895614866686471,
+      "mean_torque_nm": 39.86335295658667,
+      "saturation_fraction": 0.7644666666666666,
+      "mean_contact_slip_m_s": 0.023959480955044663,
+      "peak_center_z_m": 0.18100354435658278
+    }
+  ],
+  "T22_WF_RSP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.483611413482986,
+      "mean_torque_nm": 10.71146549399036,
+      "saturation_fraction": 0.11106666666666666,
+      "mean_contact_slip_m_s": 0.5017566535615471,
+      "peak_center_z_m": 1.2517097214888142
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.336973185168507,
+      "mean_torque_nm": 14.252839310762456,
+      "saturation_fraction": 0.25266666666666665,
+      "mean_contact_slip_m_s": 0.05519583678781152,
+      "peak_center_z_m": 0.7211888127780941
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.16608278292031103,
+      "mean_torque_nm": 48.60082660358529,
+      "saturation_fraction": 0.9672666666666667,
+      "mean_contact_slip_m_s": 0.010798850633149351,
+      "peak_center_z_m": 0.16882557190043182
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 5.544604066790551,
+      "mean_torque_nm": 9.042872213559395,
+      "saturation_fraction": 0.0747,
+      "mean_contact_slip_m_s": 0.4834485190079183,
+      "peak_center_z_m": 1.3374372226935398
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.7853543950764756,
+      "mean_torque_nm": 26.921795400662596,
+      "saturation_fraction": 0.42866666666666664,
+      "mean_contact_slip_m_s": 0.08344975209318206,
+      "peak_center_z_m": 0.7559356279598647
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.8287883508302175,
+      "mean_torque_nm": 38.94834038138007,
+      "saturation_fraction": 0.7473333333333333,
+      "mean_contact_slip_m_s": 0.022822528982252697,
+      "peak_center_z_m": 0.18073524688379122
+    }
+  ],
+  "T22_WH_RDN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8793382203423534,
+      "mean_torque_nm": 4.148894258595645,
+      "saturation_fraction": 0.005966666666666667,
+      "mean_contact_slip_m_s": 0.22919472584204495,
+      "peak_center_z_m": 1.341599033324777
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.034099041640276,
+      "mean_torque_nm": 22.02679549675892,
+      "saturation_fraction": 0.34826666666666667,
+      "mean_contact_slip_m_s": 0.08287072318000362,
+      "peak_center_z_m": 0.7566344649247483
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.5579215190955518,
+      "mean_torque_nm": 42.45222391179865,
+      "saturation_fraction": 0.8339333333333333,
+      "mean_contact_slip_m_s": 0.01642985440414865,
+      "peak_center_z_m": 0.1845448580269312
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.907555439965445,
+      "mean_torque_nm": 4.124176678737132,
+      "saturation_fraction": 0.012666666666666666,
+      "mean_contact_slip_m_s": 0.2059716180947487,
+      "peak_center_z_m": 1.3411517500506838
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.875457359708467,
+      "mean_torque_nm": 25.324988312421315,
+      "saturation_fraction": 0.4168,
+      "mean_contact_slip_m_s": 0.07839143945171735,
+      "peak_center_z_m": 0.7568811371865234
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.6763249691220417,
+      "mean_torque_nm": 40.89478489596475,
+      "saturation_fraction": 0.7977666666666666,
+      "mean_contact_slip_m_s": 0.01786589858863022,
+      "peak_center_z_m": 0.178580595637241
+    }
+  ],
+  "T22_WH_RDP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8482796367715357,
+      "mean_torque_nm": 4.667770507227011,
+      "saturation_fraction": 0.0149,
+      "mean_contact_slip_m_s": 0.2250984296718448,
+      "peak_center_z_m": 1.3444541753969306
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.0276609285365854,
+      "mean_torque_nm": 21.81815220863262,
+      "saturation_fraction": 0.34453333333333336,
+      "mean_contact_slip_m_s": 0.08090098838494394,
+      "peak_center_z_m": 0.7565173245359399
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.5754366383281406,
+      "mean_torque_nm": 41.69950288988734,
+      "saturation_fraction": 0.8229,
+      "mean_contact_slip_m_s": 0.013999600732356825,
+      "peak_center_z_m": 0.19073128354690982
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.9204741176485385,
+      "mean_torque_nm": 4.181613599342639,
+      "saturation_fraction": 0.0096,
+      "mean_contact_slip_m_s": 0.21052456698984245,
+      "peak_center_z_m": 1.3422273127311353
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.8816972340921014,
+      "mean_torque_nm": 25.4424265362878,
+      "saturation_fraction": 0.42306666666666665,
+      "mean_contact_slip_m_s": 0.07545173539271777,
+      "peak_center_z_m": 0.7564975472785602
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.7847910816923287,
+      "mean_torque_nm": 39.22658163313386,
+      "saturation_fraction": 0.7560666666666667,
+      "mean_contact_slip_m_s": 0.020189278542435803,
+      "peak_center_z_m": 0.1805252313448756
+    }
+  ],
+  "T22_WH_RN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.7483225473188675,
+      "mean_torque_nm": 8.546774559630547,
+      "saturation_fraction": 0.024633333333333333,
+      "mean_contact_slip_m_s": 0.26225488013849213,
+      "peak_center_z_m": 1.144678902025929
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.1541973255918494,
+      "mean_torque_nm": 17.256229425828604,
+      "saturation_fraction": 0.31383333333333335,
+      "mean_contact_slip_m_s": 0.061951838438312826,
+      "peak_center_z_m": 0.6867163856611992
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.15789241589288844,
+      "mean_torque_nm": 48.54200695091562,
+      "saturation_fraction": 0.9673666666666667,
+      "mean_contact_slip_m_s": 0.010085141926470548,
+      "peak_center_z_m": 0.166043824094789
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8295611349091243,
+      "mean_torque_nm": 7.572323990285373,
+      "saturation_fraction": 0.025033333333333335,
+      "mean_contact_slip_m_s": 0.25216566189545253,
+      "peak_center_z_m": 1.1423280929446085
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.0550399131661405,
+      "mean_torque_nm": 37.85072524437656,
+      "saturation_fraction": 0.7321666666666666,
+      "mean_contact_slip_m_s": 0.05125964501357763,
+      "peak_center_z_m": 0.6849669526300259
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.5993411334417008,
+      "mean_torque_nm": 43.54420243115107,
+      "saturation_fraction": 0.8321333333333333,
+      "mean_contact_slip_m_s": 0.024312177882270167,
+      "peak_center_z_m": 0.1652979205377121
+    }
+  ],
+  "T22_WH_RSN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.6965194509524046,
+      "mean_torque_nm": 10.418743367714738,
+      "saturation_fraction": 0.05273333333333333,
+      "mean_contact_slip_m_s": 0.24527744705428015,
+      "peak_center_z_m": 1.2623278025641302
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.6049266962727353,
+      "mean_torque_nm": 8.613002286059507,
+      "saturation_fraction": 0.14033333333333334,
+      "mean_contact_slip_m_s": 0.06326468082817015,
+      "peak_center_z_m": 0.7261892856961448
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.10961205796181767,
+      "mean_torque_nm": 49.3157620763302,
+      "saturation_fraction": 0.9843,
+      "mean_contact_slip_m_s": 0.009966668073825279,
+      "peak_center_z_m": 0.16560160715750002
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8112630771896017,
+      "mean_torque_nm": 8.113203899054827,
+      "saturation_fraction": 0.0243,
+      "mean_contact_slip_m_s": 0.2493501233946978,
+      "peak_center_z_m": 1.3333686579497825
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.5554966258996852,
+      "mean_torque_nm": 31.22603468852152,
+      "saturation_fraction": 0.5424333333333333,
+      "mean_contact_slip_m_s": 0.07557536685992985,
+      "peak_center_z_m": 0.7544685195016068
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.7712423824498948,
+      "mean_torque_nm": 40.1252686543742,
+      "saturation_fraction": 0.7664666666666666,
+      "mean_contact_slip_m_s": 0.024860261304520504,
+      "peak_center_z_m": 0.1836039892315831
+    }
+  ],
+  "T22_WH_RSP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.687499079014863,
+      "mean_torque_nm": 10.442008476127285,
+      "saturation_fraction": 0.06363333333333333,
+      "mean_contact_slip_m_s": 0.2474647169780659,
+      "peak_center_z_m": 1.3434342954201934
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.2559767233022097,
+      "mean_torque_nm": 15.765774423509164,
+      "saturation_fraction": 0.25926666666666665,
+      "mean_contact_slip_m_s": 0.07410505812616877,
+      "peak_center_z_m": 0.7552929879090138
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.374771098641072,
+      "mean_torque_nm": 45.239108271550165,
+      "saturation_fraction": 0.8944666666666666,
+      "mean_contact_slip_m_s": 0.012709172564379688,
+      "peak_center_z_m": 0.1824335206222776
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.781435945659912,
+      "mean_torque_nm": 8.987967674717126,
+      "saturation_fraction": 0.03903333333333334,
+      "mean_contact_slip_m_s": 0.23971922446154315,
+      "peak_center_z_m": 1.3325949683125662
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.8522766556443475,
+      "mean_torque_nm": 25.231783758509636,
+      "saturation_fraction": 0.4393,
+      "mean_contact_slip_m_s": 0.07396120881924718,
+      "peak_center_z_m": 0.7551142077053649
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.6005411560520725,
+      "mean_torque_nm": 42.6542700383862,
+      "saturation_fraction": 0.8277,
+      "mean_contact_slip_m_s": 0.020084999761757694,
+      "peak_center_z_m": 0.1784556603799866
+    }
+  ],
+  "T22_WMR_RDN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.919127194590765,
+      "mean_torque_nm": 1.2055770957394312,
+      "saturation_fraction": 0.0003,
+      "mean_contact_slip_m_s": 0.23958386206733548,
+      "peak_center_z_m": 1.373654099542353
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 0.2805453959523548,
+      "mean_torque_nm": 48.97017324238499,
+      "saturation_fraction": 0.9728666666666667,
+      "mean_contact_slip_m_s": 0.017944771276871427,
+      "peak_center_z_m": 0.765276986870366
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.930719447420662,
+      "mean_torque_nm": 37.011033599911535,
+      "saturation_fraction": 0.7152333333333334,
+      "mean_contact_slip_m_s": 0.03809343377033644,
+      "peak_center_z_m": 0.18434294849821561
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.931768327915951,
+      "mean_torque_nm": 4.6935784642913685,
+      "saturation_fraction": 0.009433333333333334,
+      "mean_contact_slip_m_s": 0.18898224190599103,
+      "peak_center_z_m": 1.2326559859333768
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.042343296186196,
+      "mean_torque_nm": 17.3496834901443,
+      "saturation_fraction": 0.3285666666666667,
+      "mean_contact_slip_m_s": 0.04113336449244686,
+      "peak_center_z_m": 0.7156690235530603
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.16804892738820676,
+      "mean_torque_nm": 49.31073181497178,
+      "saturation_fraction": 0.9823666666666667,
+      "mean_contact_slip_m_s": 0.00999375546851719,
+      "peak_center_z_m": 0.16523304558775948
+    }
+  ],
+  "T22_WMR_RDP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8304599734178644,
+      "mean_torque_nm": 1.8974975095734306,
+      "saturation_fraction": 0.003933333333333333,
+      "mean_contact_slip_m_s": 0.22778651032311922,
+      "peak_center_z_m": 1.3754403037626906
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 0.6318020888106922,
+      "mean_torque_nm": 44.726642250276235,
+      "saturation_fraction": 0.8892666666666666,
+      "mean_contact_slip_m_s": 0.01300345310304239,
+      "peak_center_z_m": 0.7660034852392672
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 2.2077746624875223,
+      "mean_torque_nm": 34.47594463709495,
+      "saturation_fraction": 0.6690666666666667,
+      "mean_contact_slip_m_s": 0.03644305823688827,
+      "peak_center_z_m": 0.18565464981558158
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.9975635499868476,
+      "mean_torque_nm": 4.816112142562957,
+      "saturation_fraction": 0.0129,
+      "mean_contact_slip_m_s": 0.1679857520861679,
+      "peak_center_z_m": 1.3150987322181473
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.907790733660924,
+      "mean_torque_nm": 11.713047463898748,
+      "saturation_fraction": 0.21226666666666666,
+      "mean_contact_slip_m_s": 0.04760642748586543,
+      "peak_center_z_m": 0.7454826539091798
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.313462297832843,
+      "mean_torque_nm": 47.83851598688632,
+      "saturation_fraction": 0.9469,
+      "mean_contact_slip_m_s": 0.011404479075123172,
+      "peak_center_z_m": 0.16704296930307302
+    }
+  ],
+  "T22_WMR_RN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.755058048016731,
+      "mean_torque_nm": 7.777841822246319,
+      "saturation_fraction": 0.022333333333333334,
+      "mean_contact_slip_m_s": 0.25285711029780356,
+      "peak_center_z_m": 1.1541584040419677
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 3.9343203491324297,
+      "mean_torque_nm": 19.03807406259471,
+      "saturation_fraction": 0.3569,
+      "mean_contact_slip_m_s": 0.0666002163164312,
+      "peak_center_z_m": 0.6888443582726728
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.2012932170910145,
+      "mean_torque_nm": 49.13747696642888,
+      "saturation_fraction": 0.9806666666666667,
+      "mean_contact_slip_m_s": 0.011088594635033805,
+      "peak_center_z_m": 0.16642966088541994
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8568947860454603,
+      "mean_torque_nm": 7.0698056528208815,
+      "saturation_fraction": 0.021633333333333334,
+      "mean_contact_slip_m_s": 0.24039178882156131,
+      "peak_center_z_m": 1.1487557818692464
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.971744160477384,
+      "mean_torque_nm": 37.84438439206911,
+      "saturation_fraction": 0.7398666666666667,
+      "mean_contact_slip_m_s": 0.06259797644410683,
+      "peak_center_z_m": 0.6873148327943676
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.3915280240962096,
+      "mean_torque_nm": 42.424996666919526,
+      "saturation_fraction": 0.8098666666666666,
+      "mean_contact_slip_m_s": 0.03917591130150151,
+      "peak_center_z_m": 0.16652847689791012
+    }
+  ],
+  "T22_WMR_RSN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8775069328173433,
+      "mean_torque_nm": 7.043273332684153,
+      "saturation_fraction": 0.0226,
+      "mean_contact_slip_m_s": 0.1960130841643402,
+      "peak_center_z_m": 1.2404628183737336
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 5.345270457197047,
+      "mean_torque_nm": 6.417578548554777,
+      "saturation_fraction": 0.1034,
+      "mean_contact_slip_m_s": 0.06905448762404932,
+      "peak_center_z_m": 0.7222305527667129
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.15673856823575513,
+      "mean_torque_nm": 49.258843630814724,
+      "saturation_fraction": 0.9832333333333333,
+      "mean_contact_slip_m_s": 0.008168632242403622,
+      "peak_center_z_m": 0.16871097449163577
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8481957232421085,
+      "mean_torque_nm": 3.4869189728530974,
+      "saturation_fraction": 0.010766666666666667,
+      "mean_contact_slip_m_s": 0.23476493225783954,
+      "peak_center_z_m": 1.369674278645591
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.040324219059391,
+      "mean_torque_nm": 44.10894572145194,
+      "saturation_fraction": 0.8692,
+      "mean_contact_slip_m_s": 0.03198256061286627,
+      "peak_center_z_m": 0.7655290476740628
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 2.8906076770842564,
+      "mean_torque_nm": 29.413216610195978,
+      "saturation_fraction": 0.5462666666666667,
+      "mean_contact_slip_m_s": 0.053251944467675776,
+      "peak_center_z_m": 0.18529096229604192
+    }
+  ],
+  "T22_WMR_RSP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.842959413491562,
+      "mean_torque_nm": 6.229394496278749,
+      "saturation_fraction": 0.031066666666666666,
+      "mean_contact_slip_m_s": 0.21920381789964835,
+      "peak_center_z_m": 1.2446892523627355
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.547074884466811,
+      "mean_torque_nm": 12.917411482834346,
+      "saturation_fraction": 0.23726666666666665,
+      "mean_contact_slip_m_s": 0.059962670214712056,
+      "peak_center_z_m": 0.7199287562572578
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.252205512350151,
+      "mean_torque_nm": 48.61740594617107,
+      "saturation_fraction": 0.9696666666666667,
+      "mean_contact_slip_m_s": 0.008943043522295899,
+      "peak_center_z_m": 0.16895459860958292
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.9219851225438926,
+      "mean_torque_nm": 2.666195412012586,
+      "saturation_fraction": 0.0034666666666666665,
+      "mean_contact_slip_m_s": 0.24475959411300424,
+      "peak_center_z_m": 1.3687445309168085
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 0.6772043572747294,
+      "mean_torque_nm": 45.79866505688203,
+      "saturation_fraction": 0.9071333333333333,
+      "mean_contact_slip_m_s": 0.018601518930528763,
+      "peak_center_z_m": 0.7646082622781923
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 2.8130611308118403,
+      "mean_torque_nm": 34.796061256072406,
+      "saturation_fraction": 0.5931333333333333,
+      "mean_contact_slip_m_s": 0.08398149393332208,
+      "peak_center_z_m": 0.18072393266700212
+    }
+  ],
+  "T22_WM_RDN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.9813291121918377,
+      "mean_torque_nm": 4.886668715762873,
+      "saturation_fraction": 0.008533333333333334,
+      "mean_contact_slip_m_s": 0.17506488727866157,
+      "peak_center_z_m": 1.3558857820075205
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 5.148410417339234,
+      "mean_torque_nm": 9.341301173010256,
+      "saturation_fraction": 0.16216666666666665,
+      "mean_contact_slip_m_s": 0.06450350252729273,
+      "peak_center_z_m": 0.7605146727526485
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.1793985654090391,
+      "mean_torque_nm": 47.8991719065543,
+      "saturation_fraction": 0.9541,
+      "mean_contact_slip_m_s": 0.008033055094399033,
+      "peak_center_z_m": 0.18451899192501808
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8546277310316044,
+      "mean_torque_nm": 1.595380449739402,
+      "saturation_fraction": 0.0017333333333333333,
+      "mean_contact_slip_m_s": 0.17558758205453984,
+      "peak_center_z_m": 1.3662176337022822
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 0.650246592581438,
+      "mean_torque_nm": 44.99825720828517,
+      "saturation_fraction": 0.8945333333333333,
+      "mean_contact_slip_m_s": 0.013943448289144874,
+      "peak_center_z_m": 0.7653854683762511
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.490110464433878,
+      "mean_torque_nm": 27.63850458762209,
+      "saturation_fraction": 0.5285666666666666,
+      "mean_contact_slip_m_s": 0.03284885459704291,
+      "peak_center_z_m": 0.18464144659260168
+    }
+  ],
+  "T22_WM_RDP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.833676646741005,
+      "mean_torque_nm": 2.966389278594125,
+      "saturation_fraction": 0.008266666666666667,
+      "mean_contact_slip_m_s": 0.22536494324351986,
+      "peak_center_z_m": 1.3750828400150907
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.8330196600967854,
+      "mean_torque_nm": 35.9867500037194,
+      "saturation_fraction": 0.7045333333333333,
+      "mean_contact_slip_m_s": 0.03167250166207558,
+      "peak_center_z_m": 0.7655257401100976
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.1654978799696867,
+      "mean_torque_nm": 33.79008141972121,
+      "saturation_fraction": 0.6085666666666667,
+      "mean_contact_slip_m_s": 0.034669097055667925,
+      "peak_center_z_m": 0.18616026885856748
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 3.0005392402961197,
+      "mean_torque_nm": 3.3722134886332875,
+      "saturation_fraction": 0.011633333333333334,
+      "mean_contact_slip_m_s": 0.15157250824945342,
+      "peak_center_z_m": 1.3039601970974415
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.470304003505096,
+      "mean_torque_nm": 15.798930465103254,
+      "saturation_fraction": 0.2944,
+      "mean_contact_slip_m_s": 0.06193832403452839,
+      "peak_center_z_m": 0.7410132053484273
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.4410058410873017,
+      "mean_torque_nm": 44.57520074031233,
+      "saturation_fraction": 0.8712,
+      "mean_contact_slip_m_s": 0.013583710076000847,
+      "peak_center_z_m": 0.17161574488376677
+    }
+  ],
+  "T22_WM_RN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8053482997061105,
+      "mean_torque_nm": 7.042903047006585,
+      "saturation_fraction": 0.023466666666666667,
+      "mean_contact_slip_m_s": 0.24062148941722955,
+      "peak_center_z_m": 1.1597593561567259
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 3.4477628706624257,
+      "mean_torque_nm": 23.829240203152704,
+      "saturation_fraction": 0.45343333333333335,
+      "mean_contact_slip_m_s": 0.06655985398036356,
+      "peak_center_z_m": 0.6910608057648366
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.1845627735884767,
+      "mean_torque_nm": 48.358624959188504,
+      "saturation_fraction": 0.9608,
+      "mean_contact_slip_m_s": 0.011618959747831975,
+      "peak_center_z_m": 0.16750437618883993
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.819749073712304,
+      "mean_torque_nm": 7.331951574389105,
+      "saturation_fraction": 0.017433333333333332,
+      "mean_contact_slip_m_s": 0.23956052280725518,
+      "peak_center_z_m": 1.1553504572907747
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.3681586973810074,
+      "mean_torque_nm": 34.711869265530005,
+      "saturation_fraction": 0.6743,
+      "mean_contact_slip_m_s": 0.06822752996376667,
+      "peak_center_z_m": 0.6903314685938616
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.8142758007587664,
+      "mean_torque_nm": 40.34740401788618,
+      "saturation_fraction": 0.7698,
+      "mean_contact_slip_m_s": 0.02727398496793104,
+      "peak_center_z_m": 0.16620507420552072
+    }
+  ],
+  "T22_WM_RSN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.722052749372285,
+      "mean_torque_nm": 10.67164098924044,
+      "saturation_fraction": 0.06533333333333333,
+      "mean_contact_slip_m_s": 0.2510542496312366,
+      "peak_center_z_m": 1.3511313886392187
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.684071310195096,
+      "mean_torque_nm": 13.197620938216978,
+      "saturation_fraction": 0.23763333333333334,
+      "mean_contact_slip_m_s": 0.08702126812024319,
+      "peak_center_z_m": 0.7607403846123265
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.2003625479585674,
+      "mean_torque_nm": 47.64778460584158,
+      "saturation_fraction": 0.9487,
+      "mean_contact_slip_m_s": 0.008972605917621184,
+      "peak_center_z_m": 0.18110222112783494
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.763531862842531,
+      "mean_torque_nm": 8.509864860389428,
+      "saturation_fraction": 0.019366666666666667,
+      "mean_contact_slip_m_s": 0.2369404393365022,
+      "peak_center_z_m": 1.3463071823156052
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 3.3368121757455538,
+      "mean_torque_nm": 26.877292846129585,
+      "saturation_fraction": 0.5049,
+      "mean_contact_slip_m_s": 0.09516681115246121,
+      "peak_center_z_m": 0.7602017114419135
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.9373893736898443,
+      "mean_torque_nm": 37.50007531881653,
+      "saturation_fraction": 0.7161333333333333,
+      "mean_contact_slip_m_s": 0.02434830441458738,
+      "peak_center_z_m": 0.1961854949333938
+    }
+  ],
+  "T22_WM_RSP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.6946985271321164,
+      "mean_torque_nm": 10.421307611510711,
+      "saturation_fraction": 0.0583,
+      "mean_contact_slip_m_s": 0.25170737836615525,
+      "peak_center_z_m": 1.3514447717610576
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 4.545514962847631,
+      "mean_torque_nm": 13.7025383749539,
+      "saturation_fraction": 0.2482,
+      "mean_contact_slip_m_s": 0.08126094616622297,
+      "peak_center_z_m": 0.7616361681138069
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.19833216390846184,
+      "mean_torque_nm": 47.77007533790771,
+      "saturation_fraction": 0.9512333333333334,
+      "mean_contact_slip_m_s": 0.009042087742141462,
+      "peak_center_z_m": 0.18521010464411072
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.7993634503391323,
+      "mean_torque_nm": 8.538465500409423,
+      "saturation_fraction": 0.0261,
+      "mean_contact_slip_m_s": 0.24978418087492468,
+      "peak_center_z_m": 1.3439033827458386
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 3.0240445715693354,
+      "mean_torque_nm": 28.496658242013467,
+      "saturation_fraction": 0.5463,
+      "mean_contact_slip_m_s": 0.07786943430009872,
+      "peak_center_z_m": 0.7582133935458407
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.9127760743632778,
+      "mean_torque_nm": 38.08363968160828,
+      "saturation_fraction": 0.7260666666666666,
+      "mean_contact_slip_m_s": 0.024617992037587882,
+      "peak_center_z_m": 0.17625967773181506
+    }
+  ],
+  "T22_WR_RDN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.8332497240213788,
+      "mean_torque_nm": 5.265395336247928,
+      "saturation_fraction": 0.015533333333333333,
+      "mean_contact_slip_m_s": 0.2159009484536755,
+      "peak_center_z_m": 1.3455536867604967
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.3338760061833956,
+      "mean_torque_nm": 16.164375515773596,
+      "saturation_fraction": 0.2273,
+      "mean_contact_slip_m_s": 0.08780104153020371,
+      "peak_center_z_m": 0.7564726727520575
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.863384251281692,
+      "mean_torque_nm": 44.136927983694754,
+      "saturation_fraction": 0.8719333333333333,
+      "mean_contact_slip_m_s": 0.017416719479672084,
+      "peak_center_z_m": 0.1834147076415615
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.9014668465549223,
+      "mean_torque_nm": 4.798793358895398,
+      "saturation_fraction": 0.017833333333333333,
+      "mean_contact_slip_m_s": 0.19258715396420184,
+      "peak_center_z_m": 1.3379826977953717
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.6832694088049005,
+      "mean_torque_nm": 28.608365305133773,
+      "saturation_fraction": 0.4851,
+      "mean_contact_slip_m_s": 0.07368471753939904,
+      "peak_center_z_m": 0.755689117127518
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.8212409779971825,
+      "mean_torque_nm": 38.885543236551165,
+      "saturation_fraction": 0.7421666666666666,
+      "mean_contact_slip_m_s": 0.03859209324675316,
+      "peak_center_z_m": 0.1811302586772778
+    }
+  ],
+  "T22_WR_RDP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.877016235403373,
+      "mean_torque_nm": 4.424462551613804,
+      "saturation_fraction": 0.01,
+      "mean_contact_slip_m_s": 0.22685420724658145,
+      "peak_center_z_m": 1.341208547173778
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.0156542649898603,
+      "mean_torque_nm": 22.03837782519639,
+      "saturation_fraction": 0.34586666666666666,
+      "mean_contact_slip_m_s": 0.08227270756004344,
+      "peak_center_z_m": 0.7563611567472873
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.2100805063758102,
+      "mean_torque_nm": 42.07104318168044,
+      "saturation_fraction": 0.8275333333333333,
+      "mean_contact_slip_m_s": 0.02097703828452453,
+      "peak_center_z_m": 0.18123831694916104
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.906615272778751,
+      "mean_torque_nm": 3.9707241116839,
+      "saturation_fraction": 0.0077,
+      "mean_contact_slip_m_s": 0.20053383245285034,
+      "peak_center_z_m": 1.3358919904653939
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.9168581801162,
+      "mean_torque_nm": 24.501457329693103,
+      "saturation_fraction": 0.4145,
+      "mean_contact_slip_m_s": 0.07316055939570965,
+      "peak_center_z_m": 0.7553898993169056
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.0472640612212296,
+      "mean_torque_nm": 43.11669866320946,
+      "saturation_fraction": 0.8419,
+      "mean_contact_slip_m_s": 0.02278417904916119,
+      "peak_center_z_m": 0.18359029659361034
+    }
+  ],
+  "T22_WR_RN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.773565990425299,
+      "mean_torque_nm": 7.892186925581059,
+      "saturation_fraction": 0.022266666666666667,
+      "mean_contact_slip_m_s": 0.2677901940039539,
+      "peak_center_z_m": 1.1519423948943646
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.0373359163672795,
+      "mean_torque_nm": 19.38722383729648,
+      "saturation_fraction": 0.3595333333333333,
+      "mean_contact_slip_m_s": 0.058653449087127274,
+      "peak_center_z_m": 0.6885924330551215
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.1628738383052111,
+      "mean_torque_nm": 49.52756329043603,
+      "saturation_fraction": 0.9886666666666667,
+      "mean_contact_slip_m_s": 0.01176607507379323,
+      "peak_center_z_m": 0.16810472912412192
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.832876168813347,
+      "mean_torque_nm": 7.2436316953491495,
+      "saturation_fraction": 0.020533333333333334,
+      "mean_contact_slip_m_s": 0.24544618103736626,
+      "peak_center_z_m": 1.1432145435412406
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.1463866297788283,
+      "mean_torque_nm": 36.58287399673941,
+      "saturation_fraction": 0.7053333333333334,
+      "mean_contact_slip_m_s": 0.055351136785358517,
+      "peak_center_z_m": 0.6845635121671575
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.8057535730528855,
+      "mean_torque_nm": 46.167368983806114,
+      "saturation_fraction": 0.9007,
+      "mean_contact_slip_m_s": 0.026405503139012142,
+      "peak_center_z_m": 0.16544110093131292
+    }
+  ],
+  "T22_WR_RSN_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.734041836561438,
+      "mean_torque_nm": 9.738180931250337,
+      "saturation_fraction": 0.0548,
+      "mean_contact_slip_m_s": 0.23993826095782045,
+      "peak_center_z_m": 1.2350904348523781
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.4096363366092337,
+      "mean_torque_nm": 12.160385671129326,
+      "saturation_fraction": 0.21706666666666666,
+      "mean_contact_slip_m_s": 0.05357341334092656,
+      "peak_center_z_m": 0.7207221290624578
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.1475362817556982,
+      "mean_torque_nm": 49.54108892507356,
+      "saturation_fraction": 0.9889,
+      "mean_contact_slip_m_s": 0.010539565146638948,
+      "peak_center_z_m": 0.16789706016401104
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.796264214324589,
+      "mean_torque_nm": 7.8655803425140425,
+      "saturation_fraction": 0.0183,
+      "mean_contact_slip_m_s": 0.24078894885392627,
+      "peak_center_z_m": 1.3353643190138433
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 1.7149435881670774,
+      "mean_torque_nm": 27.942833653355258,
+      "saturation_fraction": 0.4776666666666667,
+      "mean_contact_slip_m_s": 0.074136744579276,
+      "peak_center_z_m": 0.7545260019337583
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 1.3574812205870936,
+      "mean_torque_nm": 41.39197734737962,
+      "saturation_fraction": 0.7976,
+      "mean_contact_slip_m_s": 0.03072255204433608,
+      "peak_center_z_m": 0.17701099547045995
+    }
+  ],
+  "T22_WR_RSP_dt1000us": [
+    {
+      "name": "left_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.736300796633889,
+      "mean_torque_nm": 9.493367919025921,
+      "saturation_fraction": 0.05436666666666667,
+      "mean_contact_slip_m_s": 0.23989511623784424,
+      "peak_center_z_m": 1.3420866842303774
+    },
+    {
+      "name": "left_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.1021939386909323,
+      "mean_torque_nm": 19.953582610020568,
+      "saturation_fraction": 0.3325666666666667,
+      "mean_contact_slip_m_s": 0.07808745685387278,
+      "peak_center_z_m": 0.7563532999560714
+    },
+    {
+      "name": "left_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.7925521975906687,
+      "mean_torque_nm": 45.036984283727215,
+      "saturation_fraction": 0.8902666666666667,
+      "mean_contact_slip_m_s": 0.01668663469428315,
+      "peak_center_z_m": 0.17835611236709148
+    },
+    {
+      "name": "right_front_wheel_joint",
+      "group": 0,
+      "mean_speed_rad_s": 2.7380390927028504,
+      "mean_torque_nm": 9.503339902849715,
+      "saturation_fraction": 0.05333333333333334,
+      "mean_contact_slip_m_s": 0.22461894598275012,
+      "peak_center_z_m": 1.3374997148903682
+    },
+    {
+      "name": "right_middle_wheel_joint",
+      "group": 1,
+      "mean_speed_rad_s": 2.011930261830099,
+      "mean_torque_nm": 21.217541704848717,
+      "saturation_fraction": 0.3707666666666667,
+      "mean_contact_slip_m_s": 0.06821452163382646,
+      "peak_center_z_m": 0.7555402072008665
+    },
+    {
+      "name": "right_rear_wheel_joint",
+      "group": 2,
+      "mean_speed_rad_s": 0.8173299758047181,
+      "mean_torque_nm": 44.89526446400088,
+      "saturation_fraction": 0.8872666666666666,
+      "mean_contact_slip_m_s": 0.020310068273636107,
+      "peak_center_z_m": 0.17657443976352666
+    }
+  ]
+}

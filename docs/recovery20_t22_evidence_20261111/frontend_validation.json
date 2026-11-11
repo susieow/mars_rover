@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "cases": 40,
+  "per_case_checks": [
+    "video HEAD",
+    "curves HEAD",
+    "result HEAD",
+    "trajectory HEAD",
+    "video byte-range GET"
+  ],
+  "browser_observed": {
+    "matrix": "40/40 with all media",
+    "selected_cases": [
+      "T22_WFMR_RN_dt1000us",
+      "T22_WF_RDN_dt1000us"
+    ],
+    "video_playback_and_22s_seek": true,
+    "rocker_angle_selector": true,
+    "steer_overspeed_events": true,
+    "chart_click_video_seek": true,
+    "browser_console_errors": 0
+  },
+  "listen_host": "127.0.0.1"
+}

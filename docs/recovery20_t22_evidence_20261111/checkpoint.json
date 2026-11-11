@@ -1,0 +1,41 @@
+{
+  "parent_id": "A03_C03_dt1000us",
+  "parent_trajectory": "/home/agilex/wzy/rover/runs/overspeed20_20261111/cases/A03_C03_dt1000us/trajectory.npz",
+  "parent_trajectory_sha256": "1ff1eaec107794758c2e561cef14f8cf7383f583c395b4f52e8ecba3b7aab442",
+  "parent_step": 22000,
+  "time_s": 22.000000000003904,
+  "physics_dt_s": 0.001,
+  "scene_sha256": "ff3c4fac90325b5b85f41867a833212e31455d46ce67e09f7e04c2ca0b337cd8",
+  "urdf_sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
+  "physics_sha256": "399deeb25e0e5fabb5dbc6e56d20f0a17eacb7f8d22d913bc5ca6cc32336270b",
+  "memory_sha256": "d5506eb95c702f131afbaf300e461ba3bf49ba32d706dce4cf10c90154d0ed35",
+  "source_sha256": {
+    "/home/agilex/wzy/rover/scripts/rover/recovery20_experiment.py": "892bb8adf2cf88c5ec072eadc563e7b50419268334f3811e5624c651efe9d005",
+    "/home/agilex/wzy/rover/scripts/rover/speed20_experiment.py": "08067d4f443ac2ef180900b931d5112625671421e6ac0fc57174d7595a9715f9",
+    "/home/agilex/wzy/rover/scripts/rover/overspeed20_stairs.py": "528e816ced16f767597a715e13cba840c6323bcd69ca882ab2fb624c6f47961b",
+    "/home/agilex/wzy/rover/review_v4/dynamic_search20/sources/episode_audit.py": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab",
+    "/home/agilex/wzy/rover/review_v4/dynamic_search20/sources/verify_dataset.py": "17fbc861766167ab8b2077d9472d3f515285ff72c21c8fe660ef6ba8980080ae"
+  },
+  "prefix_comparison": {
+    "state_max_abs": 0.0,
+    "control_max_abs": 0.0,
+    "actuator_max_abs": 0.0
+  },
+  "mujoco_version": "3.17.0",
+  "numpy_version": "2.2.6",
+  "course": {
+    "slope_deg": 44.99999999999998,
+    "ascending_risers": 15,
+    "descending_risers_including_ground": 15,
+    "height_m": 0.2,
+    "depth_m": 0.20000000000000018,
+    "chamfer_or_nosing": false,
+    "start_x": 1.6,
+    "end_x": 9.399999999999999,
+    "platform_start_x": 4.600000000000002,
+    "platform_end_x": 6.600000000000002,
+    "platform_top_z": 3.0,
+    "half_width_m": 2.5
+  },
+  "checkpoint_id": "4b14b2d5bd451c4ff1e4e08a7b67a7368bd85d6e9e01a37dd6d629393f475bb8"
+}

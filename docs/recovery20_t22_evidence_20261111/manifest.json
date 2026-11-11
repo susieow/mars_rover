@@ -1,0 +1,77 @@
+{
+  "purpose": "Read-only evidence copies; no new physics execution",
+  "files": [
+    {
+      "file": "summary.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/summary.json",
+      "bytes": 642,
+      "sha256": "b34d1c48da470b2be76541515815e8e5a2571dc604d7100782d3196561a08788"
+    },
+    {
+      "file": "analysis_summary.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/analysis_summary.json",
+      "bytes": 91327,
+      "sha256": "a809213fc7b8484a0974f33aa928e5c655dbcb4fe2ad5d75dea03ba627dbb5e7"
+    },
+    {
+      "file": "wheel_diagnostics.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/wheel_diagnostics.json",
+      "bytes": 73866,
+      "sha256": "d637dd8e2e1329cd1db6def2686296af09fe9b7670f6522df0913100a767dc42"
+    },
+    {
+      "file": "verification.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/verification.json",
+      "bytes": 374,
+      "sha256": "538762078636ba8c8e55081c632bf3f502d94dfd051e947feb9db70b5cc9f46e"
+    },
+    {
+      "file": "frontend_validation.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/frontend_validation.json",
+      "bytes": 536,
+      "sha256": "f8817703ead3db2fe48514a7722b0452a0146199a1ebb494992009bdc5517e43"
+    },
+    {
+      "file": "deduplication_validation.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/deduplication_validation.json",
+      "bytes": 176,
+      "sha256": "216a4aeedcaabb41ff05d43df266d415b95d9e6e945c62ae340ee5b5fd994703"
+    },
+    {
+      "file": "experiment_complete.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/experiment_complete.json",
+      "bytes": 707,
+      "sha256": "32f3c733d0d4a30c50c03a4bce07d170eb2259ec73c4354d798f1e7961cae0f8"
+    },
+    {
+      "file": "batch_plan.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/batch_plan.json",
+      "bytes": 19334,
+      "sha256": "b0225e220d2b3057e81ea3c31bba7bea6a7a4d43d04fe1a39535852da67539cc"
+    },
+    {
+      "file": "invocations.jsonl",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/invocations.jsonl",
+      "bytes": 24363,
+      "sha256": "58f1348833accb50ae0ab2b72c84813b45f362be8476336f5135163996603791"
+    },
+    {
+      "file": "refinement_selection.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/refinement_selection.json",
+      "bytes": 160,
+      "sha256": "2661d0bfcd8d4b96ba12c377e38361557ed7eb63a871691a338836f4e61ef1cc"
+    },
+    {
+      "file": "gate.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/checkpoints/dt1000us/gate.json",
+      "bytes": 447,
+      "sha256": "ab9f3ad1b068fd140f8e261695ef539d885d0c025be659cce4b77772dee09b99"
+    },
+    {
+      "file": "checkpoint.json",
+      "source": "/home/agilex/wzy/rover/runs/recovery20_t22_20261111/checkpoints/dt1000us/checkpoint.json",
+      "bytes": 2069,
+      "sha256": "a3e5b2e249a78df064e980ff9766cbb424e60b846c90afa206ca8e149fe871b6"
+    }
+  ]
+}

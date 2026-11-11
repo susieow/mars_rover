@@ -1,0 +1,14 @@
+{
+  "parent_state_max_abs": 0.0,
+  "parent_control_max_abs": 0.0,
+  "parent_actuator_max_abs": 0.0,
+  "uninterrupted_state_max_abs": 0.0,
+  "uninterrupted_control_max_abs": 0.0,
+  "uninterrupted_actuator_max_abs": 0.0,
+  "audit_equal": true,
+  "route_equal": true,
+  "passed": true,
+  "checkpoint_id": "4b14b2d5bd451c4ff1e4e08a7b67a7368bd85d6e9e01a37dd6d629393f475bb8",
+  "duration_s": 30.0,
+  "reference": "uninterrupted_and_original_22_to_52"
+}

@@ -1,0 +1,26 @@
+{
+  "completed": 40,
+  "primary_conditions": 40,
+  "new_action_conditions": 35,
+  "controls": 5,
+  "process_valid": 37,
+  "speed_violation_cases": 3,
+  "sustained_crossing": 0,
+  "platform": 0,
+  "unique_actual_control_sequences": 40,
+  "full_route": "not_evaluated",
+  "dataset_accepted": 0,
+  "at_time_limit": 40,
+  "total_continuation_simulation_s": 1200.0,
+  "checkpoint_rebuilds": 1,
+  "restore_reference_continuations": 2,
+  "execution_errors": 0,
+  "refinement": {
+    "selected": [],
+    "eligible": 0,
+    "rule": "process validity, platform, highest sustained level, retained level, planned order",
+    "no_more_search": true
+  },
+  "experiment_status": "completed_stopped",
+  "media_ready": 40
+}

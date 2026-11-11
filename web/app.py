@@ -13,6 +13,7 @@ from urllib.parse import quote, unquote, urlsplit
 import high_stairs
 import speed20_review
 import overspeed20_review
+import recovery20_review
 
 BASE = Path.home() / "wzy"
 VIDEOS = BASE / "videos"
@@ -59,6 +60,7 @@ INDEX = r"""<!doctype html>
 <body>
 <header>
   <h1>火星车 · 成功轨迹核验</h1>
+  <p><a href="/recovery20">查看20 cm · 22秒卡点续跑实验 →</a></p>
   <p>只读核验 · 仿真视频、终态与 state/action 轨迹</p>
   <p style="margin-top:10px"><a href="/experiments">查看高台阶试验审阅：15 cm / 20 cm 全部候选与早期诊断 →</a></p>
 </header>
@@ -230,6 +232,19 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, INDEX.encode("utf-8"), "text/html; charset=utf-8")
         if path == "/api/runs":
             return self._send(200, json.dumps(read_runs(), ensure_ascii=False).encode("utf-8"), extra={"Cache-Control": "no-store"})
+        if path in ("/recovery20", "/recovery20/"):
+            return self._send(200, recovery20_review.PAGE.read_bytes(), "text/html; charset=utf-8")
+        if path == "/api/recovery20":
+            return self._send(200, json.dumps(recovery20_review.catalog(), ensure_ascii=False).encode("utf-8"), extra={"Cache-Control": "no-store"})
+        if path.startswith("/recovery20-media/"):
+            target = recovery20_review.media(path[len("/recovery20-media/"):])
+            return self._serve_file(target) if target else self._send(404, b"not found", "text/plain")
+        if path.startswith("/recovery20-curves/"):
+            target = recovery20_review.curves(path[len("/recovery20-curves/"):])
+            return self._serve_file(target) if target else self._send(404, b"not found", "text/plain")
+        if path.startswith("/recovery20-data/"):
+            target = recovery20_review.data(path[len("/recovery20-data/"):])
+            return self._serve_file(target, download=True) if target else self._send(404, b"not found", "text/plain")
         if path in ("/overspeed20", "/overspeed20/"):
             return self._send(200, overspeed20_review.PAGE.read_bytes(), "text/html; charset=utf-8")
         if path == "/api/overspeed20":
