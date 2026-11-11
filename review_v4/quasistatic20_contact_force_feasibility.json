@@ -1,0 +1,1171 @@
+{
+  "analysis_only": true,
+  "dynamics_stepped": false,
+  "scene": "/home/agilex/wzy/rover/review_v4/high20_world_pi_short/scene.xml",
+  "scene_sha256": "ff3c4fac90325b5b85f41867a833212e31455d46ce67e09f7e04c2ca0b337cd8",
+  "mujoco_version": "3.17.0",
+  "numpy_version": "1.21.5",
+  "scipy_version": "1.8.0",
+  "model_cone": 0,
+  "balance": "qfrc_bias = qfrc_passive + B*tau + sum(J_relative.T * contact_world_force)",
+  "constraints": {
+    "normal": "nonnegative",
+    "friction": "four-ray inscribed cone using each actual contact friction",
+    "actuator_caps_nm": {
+      "wheel": 50,
+      "steer": 40,
+      "rocker": 100
+    }
+  },
+  "limitations": [
+    "No pose, margin, model, or contact activation changes.",
+    "Contacts generated at the exact qpos with qvel=0; contact forces are independent static variables.",
+    "No contact torsional/rolling torque, joint-friction constraint reactions, or soft-contact constitutive equation.",
+    "Feasible static force balance is necessary-reference evidence, not a reachable motion or successful demonstration.",
+    "Infeasibility of this reduced force model does not prove the rover cannot climb."
+  ],
+  "poses": [
+    {
+      "label": "actual_anchor_activation",
+      "provenance": {
+        "source": "/home/agilex/wzy/rover/review_v4/high20_world_pi_short/trajectory.npz",
+        "time": 11.326999999999162,
+        "recorded_ctrl": [
+          0.8950293921810282,
+          -50.0,
+          50.0,
+          1.3901775264535399,
+          -50.0,
+          50.0,
+          -8.52139699645832,
+          2.0696069662501944,
+          8.075880200701835,
+          -2.9737127827253436,
+          -34.16450354574697,
+          -67.13616660643916
+        ]
+      },
+      "qpos": [
+        1.5470003585324181,
+        0.00047293148902259456,
+        0.9256486181675218,
+        0.8943071837165034,
+        0.0009594256305669809,
+        -0.44745249201589304,
+        8.968992426939235e-05,
+        -0.22366474468570846,
+        0.022719912702238325,
+        19.108948437907472,
+        20.96435211035584,
+        -0.005596263564176263,
+        14.800160660559063,
+        -0.24551745363224023,
+        -0.020341693783197192,
+        21.156155599803125,
+        20.640620785368824,
+        0.004274390880127884,
+        14.633578964605887
+      ],
+      "qvel_zero": true,
+      "contact_count": 7,
+      "contacts": [
+        {
+          "index": 0,
+          "geoms": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "distance_m": -0.00034768387900947794,
+          "includemargin_m": 0.0,
+          "position_world": [
+            2.0000464312298787,
+            0.24732115242988167,
+            0.599832473402641
+          ],
+          "frame": [
+            [
+              0.267088770471367,
+              1.5140151116397946e-07,
+              -0.963671930009415
+            ],
+            [
+              -4.043764346429468e-08,
+              0.9999999999999887,
+              1.4590138646973575e-07
+            ],
+            [
+              0.9636719300094262,
+              0.0,
+              0.2670887704713701
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 0,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            498.1451451866952,
+            -1924.8074894482206,
+            -67.77309129856006
+          ],
+          "force_on_rover_world": [
+            -67.73802648448557,
+            1924.807414028271,
+            498.15020594494047
+          ]
+        },
+        {
+          "index": 1,
+          "geoms": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "distance_m": -0.0010292750549756036,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.4373447373754746,
+            0.2248129727052836,
+            -0.00051463752748781
+          ],
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 4,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            81696.1991381592,
+            -163673.78616080695,
+            -77149.72402474514
+          ],
+          "force_on_rover_world": [
+            77149.72402474514,
+            -163673.78616080695,
+            81696.1991381592
+          ]
+        },
+        {
+          "index": 2,
+          "geoms": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "distance_m": -0.0006298834483597915,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.60031494172418,
+            0.42343986434839653,
+            0.16306161876131497
+          ],
+          "frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 8,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "force_on_rover_world": [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        },
+        {
+          "index": 3,
+          "geoms": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "distance_m": -0.00019816178756637548,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.6000990808937834,
+            0.22344423210710687,
+            0.16181233864283676
+          ],
+          "frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 12,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            75803.12699395811,
+            224376.50954367407,
+            78835.9984321584
+          ],
+          "force_on_rover_world": [
+            -75803.12699395811,
+            -224376.50954367407,
+            -78835.9984321584
+          ]
+        },
+        {
+          "index": 4,
+          "geoms": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "distance_m": -0.00019679730746258173,
+          "includemargin_m": 0.0,
+          "position_world": [
+            2.0000983986537313,
+            -0.44439224241161057,
+            0.5959779008522135
+          ],
+          "frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 16,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            209.75067131711995,
+            0.0,
+            -839.0026852684798
+          ],
+          "force_on_rover_world": [
+            -209.75067131711995,
+            -0.0,
+            839.0026852684798
+          ]
+        },
+        {
+          "index": 5,
+          "geoms": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "distance_m": -0.00016408170440854186,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.436971803890716,
+            -0.2206198817002325,
+            -8.204085220427093e-05
+          ],
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 20,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            121716.04677577788,
+            11384.05197300791,
+            -123783.75627707627
+          ],
+          "force_on_rover_world": [
+            123783.75627707627,
+            11384.05197300791,
+            121716.04677577788
+          ]
+        },
+        {
+          "index": 6,
+          "geoms": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "distance_m": -0.0003566235473777546,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.600178311773689,
+            -0.4197524417533208,
+            0.16291235017579478
+          ],
+          "frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 24,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            124852.86461006173,
+            -374741.43631744484,
+            124670.0221228021
+          ],
+          "force_on_rover_world": [
+            -124852.86461006173,
+            374741.43631744484,
+            -124670.0221228021
+          ]
+        }
+      ],
+      "rhs": [
+        0.0,
+        0.0,
+        1243.37825019,
+        -1.4545491750144683,
+        -260.8091908429554,
+        2.6531167506139197,
+        -109.74740747469826,
+        -8.692993564306185,
+        7.105427357601002e-15,
+        -3.552713678800501e-15,
+        -7.9045768499343865,
+        0.0,
+        -109.937648767736,
+        8.696652681574768,
+        7.105427357601002e-15,
+        -3.552713678800501e-15,
+        7.890300914473805,
+        -7.105427357601002e-15
+      ],
+      "qfrc_passive": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "jacobian_max_error_against_mujoco_efc": 4.440892098500626e-16,
+      "min_peak_status": 0,
+      "min_peak_message": "Optimization terminated successfully.",
+      "unilateral_contact_equilibrium_exists_with_unbounded_actuation": true,
+      "within_urdf_torque_caps": true,
+      "minimum_peak_torque_ratio": 0.2174163170393692,
+      "max_equilibrium_residual": 6.84692302854728e-11,
+      "torque_nm": {
+        "left_front_wheel_joint_act": -0.0,
+        "left_middle_wheel_joint_act": 10.87081585196846,
+        "left_rear_wheel_joint_act": -10.87081585196846,
+        "right_front_wheel_joint_act": -0.0,
+        "right_middle_wheel_joint_act": -7.160223856143134,
+        "right_rear_wheel_joint_act": -10.87081585196846,
+        "left_front_steer_joint_act": -8.692993564306185,
+        "left_rear_steer_joint_act": -8.696652681574768,
+        "right_front_steer_joint_act": 8.696652681574768,
+        "right_rear_steer_joint_act": 8.696652681574768,
+        "left_rocker_joint_act": -21.74163170393692,
+        "right_rocker_joint_act": -21.74163170393692
+      },
+      "feasible_individual_torque_ranges_nm": {
+        "left_middle_wheel_joint_act": [
+          -50.0,
+          49.49430449898424
+        ],
+        "right_middle_wheel_joint_act": [
+          -50.0,
+          -0.8067914192683115
+        ],
+        "left_rocker_joint_act": [
+          -100.0,
+          100.0
+        ],
+        "right_rocker_joint_act": [
+          -100.0,
+          100.0
+        ]
+      },
+      "equilibrium_with_both_middle_torques_within_1Nm": true
+    },
+    {
+      "label": "geometric_fixed_middle_half",
+      "provenance": {
+        "source": "/home/agilex/wzy/rover/review_v4/quasistatic20_fixed_middle_center.json",
+        "note": "Reconstructed exactly from the saved geometric candidate; no contact adjustment."
+      },
+      "qpos": [
+        1.5982779075775064,
+        0.0,
+        0.9656247758396983,
+        0.9085081775267196,
+        0.0,
+        -0.4178670738010815,
+        0.0,
+        -0.17453292519943295,
+        0.0,
+        35.20117497066331,
+        39.1249432258221,
+        0.0,
+        15.23253029026383,
+        -0.17453292519943295,
+        0.0,
+        38.09612744857622,
+        36.30718859553494,
+        0.0,
+        18.9614012717992
+      ],
+      "qvel_zero": true,
+      "contact_count": 4,
+      "contacts": [
+        {
+          "index": 0,
+          "geoms": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "distance_m": -0.00015815778409485894,
+          "includemargin_m": 0.0,
+          "position_world": [
+            2.0000137676084213,
+            0.2975106268066601,
+            0.5999221287978402
+          ],
+          "frame": [
+            [
+              0.17409966256005185,
+              1.723400406757905e-07,
+              -0.9847280373262692
+            ],
+            [
+              -3.000434292724119e-08,
+              0.9999999999999853,
+              1.6970807000740316e-07
+            ],
+            [
+              0.984728037326284,
+              -3.308722450212111e-24,
+              0.17409966256005446
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 0,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            726.3934081015773,
+            -178.0116229620619,
+            -290.8346154139917
+          ],
+          "force_on_rover_world": [
+            159.92814744571223,
+            178.01149777538967,
+            765.9341937009742
+          ]
+        },
+        {
+          "index": 1,
+          "geoms": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "distance_m": -0.00048316662271210263,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.6002410989764964,
+            0.4044866627806978,
+            0.19998471013871244
+          ],
+          "frame": [
+            [
+              0.9979951642477178,
+              -1.6406252347330395e-07,
+              -0.06329022150493754
+            ],
+            [
+              1.6373360506063726e-07,
+              0.9999999999999867,
+              -1.0383553451284563e-08
+            ],
+            [
+              0.0632902215049384,
+              0.0,
+              0.9979951642477314
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 4,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            56.18538739951718,
+            178.01150699330867,
+            -46.730042604760044
+          ],
+          "force_on_rover_world": [
+            -53.11521932517812,
+            -178.01149777538987,
+            50.19234400688915
+          ]
+        },
+        {
+          "index": 2,
+          "geoms": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "distance_m": -0.00091999051471503,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.6004599952573577,
+            -0.42193587164917,
+            0.1996227592258215
+          ],
+          "frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 8,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            106.81292812053411,
+            0.0,
+            -427.25171248213644
+          ],
+          "force_on_rover_world": [
+            -106.81292812053411,
+            -0.0,
+            427.25171248213644
+          ]
+        },
+        {
+          "index": 3,
+          "geoms": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "distance_m": -0.0009193875523134665,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.6004596937761568,
+            -0.22193587165096995,
+            0.19962335624920044
+          ],
+          "frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 12,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "force_on_rover_world": [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        }
+      ],
+      "rhs": [
+        0.0,
+        0.0,
+        1243.37825019,
+        -2.1414290794202993,
+        -244.734158412382,
+        2.498448176892356,
+        -105.7509629653357,
+        -8.171119455322739,
+        0.0,
+        3.552713678800501e-15,
+        -7.533768616301309,
+        7.105427357601002e-15,
+        -105.15187074156165,
+        8.11537292914884,
+        0.0,
+        3.552713678800501e-15,
+        7.517934445970155,
+        -7.105427357601002e-15
+      ],
+      "qfrc_passive": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "jacobian_max_error_against_mujoco_efc": 4.440892098500626e-16,
+      "min_peak_status": 0,
+      "min_peak_message": "Optimization terminated successfully.",
+      "unilateral_contact_equilibrium_exists_with_unbounded_actuation": true,
+      "within_urdf_torque_caps": false,
+      "minimum_peak_torque_ratio": 1.4061920383098354,
+      "max_equilibrium_residual": 3.348432642269472e-13,
+      "torque_nm": {
+        "left_front_wheel_joint_act": -0.0,
+        "left_middle_wheel_joint_act": 45.48656217298222,
+        "left_rear_wheel_joint_act": 7.486326740451158,
+        "right_front_wheel_joint_act": -0.0,
+        "right_middle_wheel_joint_act": -0.0,
+        "right_rear_wheel_joint_act": 67.98928525963795,
+        "left_front_steer_joint_act": -8.171119455322739,
+        "left_rear_steer_joint_act": 10.494701565459392,
+        "right_front_steer_joint_act": 8.11537292914884,
+        "right_rear_steer_joint_act": -47.243309346454254,
+        "left_rocker_joint_act": 140.61920383098354,
+        "right_rocker_joint_act": -105.15187074156165
+      }
+    },
+    {
+      "label": "actual_anchor_terminal",
+      "provenance": {
+        "source": "/home/agilex/wzy/rover/review_v4/high20_world_pi_short/trajectory.npz",
+        "time": 11.755999999998924,
+        "recorded_ctrl": [
+          1.3325413620389615,
+          -1.0267228484967648,
+          50.0,
+          1.2580227084677897,
+          11.568833455367479,
+          0.9465636021399781,
+          -7.875071350483452,
+          3.7974562335799997,
+          8.47100904664711,
+          7.756873356742999,
+          -100.0,
+          -65.59486763686441
+        ]
+      },
+      "qpos": [
+        1.5398671761315879,
+        0.002857700280776052,
+        0.9264679058549096,
+        0.8927005999457013,
+        -0.0010612139409520835,
+        -0.4506484455098345,
+        -0.0007008859583153415,
+        -0.12102908829544898,
+        0.01900330001051554,
+        19.958787942958793,
+        20.869758760865043,
+        -0.007922228060355493,
+        14.819754079525362,
+        -0.17459519970665807,
+        -0.023280361939243238,
+        21.995415361411045,
+        20.557518587190437,
+        -0.004372166401540148,
+        15.000558637935587
+      ],
+      "qvel_zero": true,
+      "contact_count": 5,
+      "contacts": [
+        {
+          "index": 0,
+          "geoms": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "distance_m": -0.001634195580972192,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.4363650954975289,
+            0.22516172639200058,
+            -0.0008170977904860877
+          ],
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 0,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            498.1837990006132,
+            -0.6049762813716368,
+            -535.2533166322587
+          ],
+          "force_on_rover_world": [
+            535.2533166322587,
+            -0.6049762813716368,
+            498.1837990006132
+          ]
+        },
+        {
+          "index": 1,
+          "geoms": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "distance_m": -0.0005751194053715547,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.4376966119371457,
+            0.4251544898151438,
+            -0.0002875597026857857
+          ],
+          "frame": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 4,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            93.01425593721844,
+            0.0,
+            372.05702374887375
+          ],
+          "force_on_rover_world": [
+            -372.05702374887375,
+            0.0,
+            93.01425593721844
+          ]
+        },
+        {
+          "index": 2,
+          "geoms": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "distance_m": -0.0005432612239246737,
+          "includemargin_m": 0.0,
+          "position_world": [
+            1.6002716306119624,
+            0.4232079291584996,
+            0.16226968647782564
+          ],
+          "frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 8,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            39.75840167975469,
+            0.0,
+            -159.03360671901876
+          ],
+          "force_on_rover_world": [
+            -39.75840167975469,
+            -0.0,
+            159.03360671901876
+          ]
+        },
+        {
+          "index": 3,
+          "geoms": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "distance_m": -0.0005706896670969464,
+          "includemargin_m": 0.0,
+          "position_world": [
+            2.0002853448335483,
+            -0.2444397953374655,
+            0.5986912206748806
+          ],
+          "frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 12,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            0.1512440703429092,
+            -0.6049762813716368,
+            0.0
+          ],
+          "force_on_rover_world": [
+            -0.1512440703429092,
+            0.6049762813716368,
+            -0.0
+          ]
+        },
+        {
+          "index": 4,
+          "geoms": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "distance_m": -0.00012863285192032947,
+          "includemargin_m": 0.0,
+          "position_world": [
+            2.00006431642596,
+            -0.4444391481606724,
+            0.5989431255588429
+          ],
+          "frame": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dim": 3,
+          "friction": [
+            4.0,
+            4.0,
+            0.02,
+            0.001,
+            0.001
+          ],
+          "ray_start": 16,
+          "ray_count": 4,
+          "force_contact_n_t1_t2": [
+            123.28664713328732,
+            0.0,
+            -493.14658853314927
+          ],
+          "force_on_rover_world": [
+            -123.28664713328732,
+            -0.0,
+            493.14658853314927
+          ]
+        }
+      ],
+      "rhs": [
+        0.0,
+        0.0,
+        1243.37825019,
+        -2.34009612269423,
+        -256.2069491331396,
+        2.625721655885595,
+        -106.44442769795428,
+        -8.266018415713326,
+        -1.4210854715202004e-14,
+        -7.105427357601002e-15,
+        -7.9438651945791605,
+        0.0,
+        -107.89394213790196,
+        8.434821451983638,
+        -7.105427357601002e-15,
+        -3.552713678800501e-15,
+        7.931154406511119,
+        0.0
+      ],
+      "qfrc_passive": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "jacobian_max_error_against_mujoco_efc": 0.0,
+      "min_peak_status": 0,
+      "min_peak_message": "Optimization terminated successfully.",
+      "unilateral_contact_equilibrium_exists_with_unbounded_actuation": true,
+      "within_urdf_torque_caps": false,
+      "minimum_peak_torque_ratio": 1.0644442769795428,
+      "max_equilibrium_residual": 6.821210263296962e-13,
+      "torque_nm": {
+        "left_front_wheel_joint_act": -0.0,
+        "left_middle_wheel_joint_act": -0.0,
+        "left_rear_wheel_joint_act": 53.22221384897714,
+        "right_front_wheel_joint_act": -0.0,
+        "right_middle_wheel_joint_act": 16.946683378131063,
+        "right_rear_wheel_joint_act": -0.0,
+        "left_front_steer_joint_act": -8.266018415713326,
+        "left_rear_steer_joint_act": -9.392269335822771,
+        "right_front_steer_joint_act": 8.434821451983638,
+        "right_rear_steer_joint_act": 7.931154406511119,
+        "left_rocker_joint_act": -106.44442769795428,
+        "right_rocker_joint_act": -51.001374083766706
+      }
+    }
+  ]
+}

@@ -1,0 +1,1081 @@
+{
+  "dataset_accepted": false,
+  "frozen_sha256": {
+    "backend.py": "7a7a65c2bb5bb2da84e8fbc8a1e051c275b450ce674b7c29a4d2cc07fcfeb72b",
+    "reference.urdf": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
+    "scene.xml": "11a6bde37768a3d13174187687aca6e56d84f350b336fe845d81250a2921af5f",
+    "sources/dataset_io.py": "a10982652c9dc9efbc9d792623769f4e7db915092a5523e3f75360b12a41aa97",
+    "sources/episode_audit.py": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab",
+    "sources/verify_dataset.py": "17fbc861766167ab8b2077d9472d3f515285ff72c21c8fe660ef6ba8980080ae"
+  },
+  "candidate_generator_sha256": "eac1fd80c9fe8f7cef0cbe9a0d9f87caf21eb8f8566ec2bcff0ef947dd1b950b",
+  "driver_sha256": "7c0599e7582ff650a58887b2bf383f90df088b3d20194ab5a01e76aaa27c39be",
+  "seed_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/early_seed_prefix.npz",
+  "seed_sha256": "aa9ef378cf3addfde7b711ea2992595fe88670d3ec883f2a2f6a54b7ddc860dd",
+  "candidate_budget": {
+    "rounds": 3,
+    "per_round": 64,
+    "evaluated": 192,
+    "workers": 8
+  },
+  "target_units": [
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "deg",
+    "deg"
+  ],
+  "target_bounds": [
+    [
+      -2,
+      -2,
+      -2,
+      -30,
+      -30
+    ],
+    [
+      3,
+      3,
+      3,
+      15,
+      15
+    ]
+  ],
+  "sequence_rows": 2,
+  "target_hold_s": 1.0,
+  "wheel_slew_rad_s2": 4.0,
+  "rocker_slew_deg_s": 15.0,
+  "horizon_s": 2.0,
+  "feedback_period_s": 0.001,
+  "seed_time_s": 9.383000000000239,
+  "scope": "True initial-state prefix replay, short-horizon local search; early-entry comparison only if its explicit seed is selected.",
+  "score_definition": "100*(both rear crossing >=100ms) +10*final crossing duration +8*worst-rear dx +3*worst-rear dz +4*max(0,min(rear tail dx,rear net dx)) +.25*base dx +.003*front/middle tail support fraction",
+  "crossing_is_local_diagnostic_only": true,
+  "comparison_caveat": "Both seed checkpoint and scoring changed relative to near-contact search. Improvement cannot be attributed to earlier planning alone; natural pre-entry advance is not evidence of passing the dead point.",
+  "independent_final_replay_completed": true,
+  "baseline": {
+    "id": "round0_candidate00",
+    "valid": true,
+    "reasons": [],
+    "first_failure_s": null,
+    "metrics": {
+      "start_time_s": 9.383000000000239,
+      "end_time_s": 11.38299999999913,
+      "base_x_start": 1.4844534942655334,
+      "base_x_final": 1.6340560027771733,
+      "base_x_delta": 0.14960250851163992,
+      "rear_min_x_start": 1.2052006915639857,
+      "rear_min_x_final": 1.4379218181665356,
+      "rear_min_x_tail_mean": 1.437797808640032,
+      "rear_min_x_delta": 0.23272112660254995,
+      "rear_min_z_start": 0.16189261309832703,
+      "rear_min_z_final": 0.16207798572494223,
+      "rear_min_z_max": 0.16264612022808028,
+      "rear_bottom_min_final": -0.0006210142750577852,
+      "rear_x_change_last_500ms": 7.964347682776207e-05,
+      "rear_x_slope_last_500ms": 0.000401042364822911,
+      "rear_both_crossed_continuous_peak_s": 0.0,
+      "rear_both_crossed_final_s": 0.0,
+      "front_middle_both_supported_tail_fraction": 0.196,
+      "mean_support_world_force_n": {
+        "left_front_wheel_col_1": [
+          -51.800707300441886,
+          -16.205248878681513,
+          115.8598965297429
+        ],
+        "left_middle_wheel_col_1": [
+          -22.48389468535299,
+          -2.585851868602699,
+          141.61209249855452
+        ],
+        "left_rear_wheel_col_1": [
+          36.82731283794218,
+          -14.51893693440917,
+          337.93089910422435
+        ],
+        "right_front_wheel_col_1": [
+          -37.2306433655798,
+          7.5052286430568635,
+          109.0743787588307
+        ],
+        "right_middle_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_rear_wheel_col_1": [
+          64.13222321975137,
+          26.05646314199437,
+          534.704113294189
+        ]
+      },
+      "tail_mean_upward_force_by_role_n": {
+        "front": 165.24217869143288,
+        "middle": 287.81521429739615,
+        "rear": 789.1855931893666
+      },
+      "max_roll_deg": 0.5421388144356913,
+      "max_pitch_deg": 46.60934910416292,
+      "max_steer_deg": 2.1877092410803654
+    },
+    "controller_state": {
+      "wheel_commands": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "rocker_commands_rad": [
+        0.0,
+        0.0
+      ],
+      "yaw_rate": -0.002190087350423495,
+      "yaw_previous": -0.006519185407218431
+    },
+    "audit": {
+      "audit_steps": 11383,
+      "audit_time_s": 11.38299999999913,
+      "nonfinite_seen": false,
+      "time_nonmonotonic_seen": false,
+      "mujoco_warning_counts": {},
+      "max_contact_penetration_m": 0.003548441830908633,
+      "worst_contact": {
+        "time_s": 8.651000000000645,
+        "robot_geom": "right_front_wheel_col_1",
+        "terrain_geom": "up4",
+        "penetration_m": 0.003548441830908633
+      },
+      "non_wheel_contact_duration_s": 0.0,
+      "non_wheel_contact_duration_by_geom_s": {},
+      "max_joint_limit_error_deg": 0.0,
+      "joint_limit_error_by_joint_deg": {
+        "left_rocker_joint": 0.0,
+        "left_front_steer_joint": 0.0,
+        "left_rear_steer_joint": 0.0,
+        "right_rocker_joint": 0.0,
+        "right_front_steer_joint": 0.0,
+        "right_rear_steer_joint": 0.0
+      },
+      "actuator_force_peak_by_joint_nm": {
+        "left_rocker_joint": 82.18729174920331,
+        "left_front_steer_joint": 26.86410491445082,
+        "left_front_wheel_joint": 50.0,
+        "left_middle_wheel_joint": 50.0,
+        "left_rear_steer_joint": 25.588091533820446,
+        "left_rear_wheel_joint": 50.0,
+        "right_rocker_joint": 90.45798395146811,
+        "right_front_steer_joint": 25.188220728468245,
+        "right_front_wheel_joint": 50.0,
+        "right_middle_wheel_joint": 21.01244714834328,
+        "right_rear_steer_joint": 15.37726056905874,
+        "right_rear_wheel_joint": 50.0
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 26.86410491445082,
+        "rocker": 90.45798395146811
+      },
+      "velocity_limit_source": {
+        "path": "/home/agilex/wzy/rover/review_v4/dynamic_search15/reference.urdf",
+        "sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a"
+      },
+      "joint_velocity_limit_rad_s": {
+        "left_rocker_joint": 1.57,
+        "left_front_steer_joint": 3.1416,
+        "left_front_wheel_joint": 52.359878,
+        "left_rear_steer_joint": 3.1416,
+        "left_rear_wheel_joint": 52.359878,
+        "left_middle_wheel_joint": 52.359878,
+        "right_rocker_joint": 1.57,
+        "right_front_steer_joint": 3.1416,
+        "right_front_wheel_joint": 52.359878,
+        "right_rear_steer_joint": 3.1416,
+        "right_rear_wheel_joint": 52.359878,
+        "right_middle_wheel_joint": 52.359878
+      },
+      "joint_velocity_threshold_rad_s": {
+        "left_rocker_joint": 1.58,
+        "left_front_steer_joint": 3.1515999999999997,
+        "left_front_wheel_joint": 52.369878,
+        "left_rear_steer_joint": 3.1515999999999997,
+        "left_rear_wheel_joint": 52.369878,
+        "left_middle_wheel_joint": 52.369878,
+        "right_rocker_joint": 1.58,
+        "right_front_steer_joint": 3.1515999999999997,
+        "right_front_wheel_joint": 52.369878,
+        "right_rear_steer_joint": 3.1515999999999997,
+        "right_rear_wheel_joint": 52.369878,
+        "right_middle_wheel_joint": 52.369878
+      },
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.4937364964478979,
+        "left_front_steer_joint": 0.5680752059777621,
+        "left_front_wheel_joint": 2.4920116755957324,
+        "left_rear_steer_joint": 0.3792703754566892,
+        "left_rear_wheel_joint": 2.0576944239239396,
+        "left_middle_wheel_joint": 2.1275714344964927,
+        "right_rocker_joint": 0.44205455366425306,
+        "right_front_steer_joint": 0.5481912297093332,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.23855960859880315,
+        "right_rear_wheel_joint": 1.989199908885408,
+        "right_middle_wheel_joint": 2.1363479747580087
+      },
+      "joint_velocity_excess_duration_s": {
+        "left_rocker_joint": 0.0,
+        "left_front_steer_joint": 0.0,
+        "left_front_wheel_joint": 0.0,
+        "left_rear_steer_joint": 0.0,
+        "left_rear_wheel_joint": 0.0,
+        "left_middle_wheel_joint": 0.0,
+        "right_rocker_joint": 0.0,
+        "right_front_steer_joint": 0.0,
+        "right_front_wheel_joint": 0.0,
+        "right_rear_steer_joint": 0.0,
+        "right_rear_wheel_joint": 0.0,
+        "right_middle_wheel_joint": 0.0
+      },
+      "final_ground_normal_force_n": {
+        "left_front_wheel": 0.0,
+        "left_middle_wheel": 0.0,
+        "left_rear_wheel": 43.66909578203362,
+        "right_front_wheel": 0.0,
+        "right_middle_wheel": 0.0,
+        "right_rear_wheel": 354.6541852326123
+      },
+      "final_ground_contact_by_wheel": {
+        "left_front_wheel": false,
+        "left_middle_wheel": false,
+        "left_rear_wheel": true,
+        "right_front_wheel": false,
+        "right_middle_wheel": false,
+        "right_rear_wheel": true
+      },
+      "final_all_six_ground": false,
+      "final_joint_state": {
+        "left_rocker_joint": {
+          "position_deg": 1.08054313660805,
+          "velocity_deg_s": -0.6573996300364717
+        },
+        "left_front_steer_joint": {
+          "position_deg": 1.166015289373566,
+          "velocity_deg_s": -0.3854890084574836
+        },
+        "left_rear_steer_joint": {
+          "position_deg": 0.14849960924518013,
+          "velocity_deg_s": -0.14310242547140903
+        },
+        "right_rocker_joint": {
+          "position_deg": 2.742357198893538,
+          "velocity_deg_s": 5.471054239345178
+        },
+        "right_front_steer_joint": {
+          "position_deg": -0.6512334275691175,
+          "velocity_deg_s": 1.3764484805281627
+        },
+        "right_rear_steer_joint": {
+          "position_deg": 0.7125768267015183,
+          "velocity_deg_s": -0.3002481193100817
+        }
+      },
+      "continuous_final_stability_s": 0.0,
+      "final_stability_criteria": {
+        "finite": true,
+        "six_wheels_on_ground": false,
+        "roll_pitch": false,
+        "heading": true,
+        "lateral_position": true,
+        "body_translation": true,
+        "body_rotation": true,
+        "wheel_speed": false,
+        "joint_position": true,
+        "joint_speed": true
+      },
+      "quality_rejection_reasons": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "audit_quality_ok": false,
+      "thresholds": {
+        "minimum_final_stability_s": 1.0,
+        "final_roll_pitch_deg": 3.0,
+        "final_yaw_deg": 5.0,
+        "final_lateral_position_m": 0.25,
+        "final_linear_speed_m_s": 0.03,
+        "final_angular_speed_rad_s": 0.08,
+        "final_wheel_speed_rad_s": 0.2,
+        "final_rocker_steer_position_deg": 3.0,
+        "final_rocker_steer_speed_rad_s": 0.1,
+        "max_penetration_m": 0.02,
+        "max_non_wheel_contact_s": 0.02,
+        "max_joint_limit_error_deg": 1.0,
+        "minimum_ground_normal_force_n": 5.0,
+        "actuator_force_limits_nm": {
+          "wheel": 50.0,
+          "steer": 40.0,
+          "rocker": 100.0
+        },
+        "joint_velocity_tolerance_rad_s": 0.01,
+        "actuator_force_tolerance_nm": 0.001
+      }
+    },
+    "route": {
+      "route_ok": false,
+      "rejection_reasons": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "geometry": {
+        "slope_deg": 45.00000000000002,
+        "ascending_risers": 15,
+        "descending_risers_including_ground": 15,
+        "height_m": 0.15,
+        "depth_m": 0.1499999999999999,
+        "chamfer_or_nosing": false,
+        "start_x": 1.6,
+        "end_x": 7.950000000000004,
+        "platform_start_x": 3.8499999999999988,
+        "platform_end_x": 5.849999999999999,
+        "platform_top_z": 2.25,
+        "half_width_m": 2.5
+      },
+      "events": {
+        "start_before_stairs_s": 0.001,
+        "initial_six_wheels_ground_s": 0.02000000000000001,
+        "ascent_s": 3.557999999999719
+      },
+      "platform_wheels_seen": [],
+      "ascending_treads_contacted": [
+        "up0",
+        "up1",
+        "up2",
+        "up3",
+        "up4",
+        "up5"
+      ],
+      "descending_treads_contacted": [],
+      "max_abs_y_m": 0.00641804771882971,
+      "max_abs_yaw_deg": 0.4060544208175483,
+      "max_abs_roll_deg": 0.5421388144356913,
+      "max_abs_pitch_deg": 46.60934910416292,
+      "max_abs_steer_deg": 2.1877092410803654,
+      "steer_peak": {
+        "joint": "right_rear_steer_joint",
+        "abs_angle_deg": 2.1877092410803654,
+        "signed_angle_deg": 2.1877092410803654,
+        "time_s": 4.222999999999745
+      },
+      "steer_peak_by_joint": {
+        "left_front_steer_joint": {
+          "abs_angle_deg": 1.4654999279648426,
+          "signed_angle_deg": -1.4654999279648426,
+          "time_s": 8.432000000000766
+        },
+        "left_rear_steer_joint": {
+          "abs_angle_deg": 1.880278241180128,
+          "signed_angle_deg": -1.880278241180128,
+          "time_s": 3.169999999999762
+        },
+        "right_front_steer_joint": {
+          "abs_angle_deg": 1.7902763464766596,
+          "signed_angle_deg": -1.7902763464766596,
+          "time_s": 5.22600000000008
+        },
+        "right_rear_steer_joint": {
+          "abs_angle_deg": 2.1877092410803654,
+          "signed_angle_deg": 2.1877092410803654,
+          "time_s": 4.222999999999745
+        }
+      },
+      "task_steer_limit_deg": 30.0,
+      "wheel_outside_course": false,
+      "final_base_x_m": 1.6340560027771733,
+      "final_wheel_min_x_m": 1.4370090534558477
+    },
+    "elapsed_s": 3.827654746997723,
+    "sequence": [
+      [
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "terminal_qpos": [
+      1.6340560027771733,
+      -0.0018922933944359472,
+      0.907892661144393,
+      0.9185189642164583,
+      0.0024381729354257015,
+      -0.39536696122275655,
+      -0.0013905613779240844,
+      0.018859035443637345,
+      0.020350805928163178,
+      18.332440817741283,
+      20.723439861060577,
+      0.0025918071192534047,
+      14.72189348511589,
+      0.04786316238646123,
+      -0.011366167510129113,
+      20.716747532929535,
+      21.883277742148415,
+      0.01243681179935454,
+      14.195466325127558
+    ],
+    "terminal_qvel": [
+      0.0032502578065057366,
+      -0.0010891751037650447,
+      0.005263657945238048,
+      0.0004912959645691666,
+      0.00013004497202549607,
+      -0.0013308121862637438,
+      -0.011473788045529041,
+      -0.006728052427831355,
+      1.9274432239595891,
+      0.30056878024698447,
+      -0.002497608492065886,
+      0.09513551091899623,
+      0.09548791003176725,
+      0.024023557969289497,
+      1.9898053333777288,
+      1.9905339189199374,
+      -0.005240318254881691,
+      0.056945087245450145
+    ],
+    "dataset_accepted": false,
+    "label": "neutral_reference",
+    "score": 1.9006323317354663
+  },
+  "best": {
+    "id": "round2_candidate56",
+    "valid": true,
+    "reasons": [],
+    "first_failure_s": null,
+    "metrics": {
+      "start_time_s": 9.383000000000239,
+      "end_time_s": 11.38299999999913,
+      "base_x_start": 1.4844534942655334,
+      "base_x_final": 1.6339334379018555,
+      "base_x_delta": 0.1494799436363221,
+      "rear_min_x_start": 1.2052006915639857,
+      "rear_min_x_final": 1.4384357081882697,
+      "rear_min_x_tail_mean": 1.3613981627488492,
+      "rear_min_x_delta": 0.23323501662428403,
+      "rear_min_z_start": 0.16189261309832703,
+      "rear_min_z_final": 0.16367107733832456,
+      "rear_min_z_max": 0.16367107733832456,
+      "rear_bottom_min_final": 0.0009720773383245507,
+      "rear_x_change_last_500ms": 0.14390411821904858,
+      "rear_x_slope_last_500ms": 0.2937531607741209,
+      "rear_both_crossed_continuous_peak_s": 0.0,
+      "rear_both_crossed_final_s": 0.0,
+      "front_middle_both_supported_tail_fraction": 0.574,
+      "mean_support_world_force_n": {
+        "left_front_wheel_col_1": [
+          -8.5835925690125,
+          -0.6644370798760648,
+          71.35878616517225
+        ],
+        "left_middle_wheel_col_1": [
+          -16.98533177459153,
+          -8.20505615053573,
+          210.52156542986938
+        ],
+        "left_rear_wheel_col_1": [
+          9.792811062019165,
+          -18.96741112768812,
+          294.3831798836022
+        ],
+        "right_front_wheel_col_1": [
+          17.607184761546915,
+          5.105494905883254,
+          140.75301080445556
+        ],
+        "right_middle_wheel_col_1": [
+          -31.8950614829923,
+          0.20232853969484318,
+          239.2913840470824
+        ],
+        "right_rear_wheel_col_1": [
+          18.272825919801416,
+          22.41801327454334,
+          289.95691980314774
+        ]
+      },
+      "tail_mean_upward_force_by_role_n": {
+        "front": 223.48829663565715,
+        "middle": 254.67805667837783,
+        "rear": 789.8156811805821
+      },
+      "max_roll_deg": 0.4082630034841396,
+      "max_pitch_deg": 46.64235153318836,
+      "max_steer_deg": 2.1877092410803654
+    },
+    "controller_state": {
+      "wheel_commands": [
+        3.0,
+        2.0114748643244695,
+        3.0
+      ],
+      "rocker_commands_rad": [
+        3.469446951953614e-18,
+        0.10416560963046133
+      ],
+      "yaw_rate": -0.0029434434704736934,
+      "yaw_previous": -0.003292754357999807
+    },
+    "audit": {
+      "audit_steps": 11383,
+      "audit_time_s": 11.38299999999913,
+      "nonfinite_seen": false,
+      "time_nonmonotonic_seen": false,
+      "mujoco_warning_counts": {},
+      "max_contact_penetration_m": 0.003548441830908633,
+      "worst_contact": {
+        "time_s": 8.651000000000645,
+        "robot_geom": "right_front_wheel_col_1",
+        "terrain_geom": "up4",
+        "penetration_m": 0.003548441830908633
+      },
+      "non_wheel_contact_duration_s": 0.0,
+      "non_wheel_contact_duration_by_geom_s": {},
+      "max_joint_limit_error_deg": 0.0,
+      "joint_limit_error_by_joint_deg": {
+        "left_rocker_joint": 0.0,
+        "left_front_steer_joint": 0.0,
+        "left_rear_steer_joint": 0.0,
+        "right_rocker_joint": 0.0,
+        "right_front_steer_joint": 0.0,
+        "right_rear_steer_joint": 0.0
+      },
+      "actuator_force_peak_by_joint_nm": {
+        "left_rocker_joint": 89.4598199253026,
+        "left_front_steer_joint": 28.362081615938433,
+        "left_front_wheel_joint": 50.0,
+        "left_middle_wheel_joint": 50.0,
+        "left_rear_steer_joint": 25.588091533820446,
+        "left_rear_wheel_joint": 50.0,
+        "right_rocker_joint": 91.63062056311992,
+        "right_front_steer_joint": 40.0,
+        "right_front_wheel_joint": 50.0,
+        "right_middle_wheel_joint": 50.0,
+        "right_rear_steer_joint": 15.37726056905874,
+        "right_rear_wheel_joint": 50.0
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 91.63062056311992
+      },
+      "velocity_limit_source": {
+        "path": "/home/agilex/wzy/rover/review_v4/dynamic_search15/reference.urdf",
+        "sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a"
+      },
+      "joint_velocity_limit_rad_s": {
+        "left_rocker_joint": 1.57,
+        "left_front_steer_joint": 3.1416,
+        "left_front_wheel_joint": 52.359878,
+        "left_rear_steer_joint": 3.1416,
+        "left_rear_wheel_joint": 52.359878,
+        "left_middle_wheel_joint": 52.359878,
+        "right_rocker_joint": 1.57,
+        "right_front_steer_joint": 3.1416,
+        "right_front_wheel_joint": 52.359878,
+        "right_rear_steer_joint": 3.1416,
+        "right_rear_wheel_joint": 52.359878,
+        "right_middle_wheel_joint": 52.359878
+      },
+      "joint_velocity_threshold_rad_s": {
+        "left_rocker_joint": 1.58,
+        "left_front_steer_joint": 3.1515999999999997,
+        "left_front_wheel_joint": 52.369878,
+        "left_rear_steer_joint": 3.1515999999999997,
+        "left_rear_wheel_joint": 52.369878,
+        "left_middle_wheel_joint": 52.369878,
+        "right_rocker_joint": 1.58,
+        "right_front_steer_joint": 3.1515999999999997,
+        "right_front_wheel_joint": 52.369878,
+        "right_rear_steer_joint": 3.1515999999999997,
+        "right_rear_wheel_joint": 52.369878,
+        "right_middle_wheel_joint": 52.369878
+      },
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.4937364964478979,
+        "left_front_steer_joint": 0.5680752059777621,
+        "left_front_wheel_joint": 3.0665989878789577,
+        "left_rear_steer_joint": 0.3792703754566892,
+        "left_rear_wheel_joint": 2.833662020511679,
+        "left_middle_wheel_joint": 2.2258844338736683,
+        "right_rocker_joint": 0.5732286069350164,
+        "right_front_steer_joint": 0.9158131671631468,
+        "right_front_wheel_joint": 3.0697236491316935,
+        "right_rear_steer_joint": 0.23855960859880315,
+        "right_rear_wheel_joint": 2.8080659232664207,
+        "right_middle_wheel_joint": 2.256764912206222
+      },
+      "joint_velocity_excess_duration_s": {
+        "left_rocker_joint": 0.0,
+        "left_front_steer_joint": 0.0,
+        "left_front_wheel_joint": 0.0,
+        "left_rear_steer_joint": 0.0,
+        "left_rear_wheel_joint": 0.0,
+        "left_middle_wheel_joint": 0.0,
+        "right_rocker_joint": 0.0,
+        "right_front_steer_joint": 0.0,
+        "right_front_wheel_joint": 0.0,
+        "right_rear_steer_joint": 0.0,
+        "right_rear_wheel_joint": 0.0,
+        "right_middle_wheel_joint": 0.0
+      },
+      "final_ground_normal_force_n": {
+        "left_front_wheel": 0.0,
+        "left_middle_wheel": 0.0,
+        "left_rear_wheel": 0.0,
+        "right_front_wheel": 0.0,
+        "right_middle_wheel": 0.0,
+        "right_rear_wheel": 0.0
+      },
+      "final_ground_contact_by_wheel": {
+        "left_front_wheel": false,
+        "left_middle_wheel": false,
+        "left_rear_wheel": false,
+        "right_front_wheel": false,
+        "right_middle_wheel": false,
+        "right_rear_wheel": false
+      },
+      "final_all_six_ground": false,
+      "final_joint_state": {
+        "left_rocker_joint": {
+          "position_deg": 1.2488968889131735,
+          "velocity_deg_s": -5.355983418130083
+        },
+        "left_front_steer_joint": {
+          "position_deg": 0.9820140010237235,
+          "velocity_deg_s": -2.1683860674424396
+        },
+        "left_rear_steer_joint": {
+          "position_deg": -0.1319571546927706,
+          "velocity_deg_s": 3.233549716233313
+        },
+        "right_rocker_joint": {
+          "position_deg": 1.2963569515972588,
+          "velocity_deg_s": -16.32801842773179
+        },
+        "right_front_steer_joint": {
+          "position_deg": 1.3349002071496892,
+          "velocity_deg_s": 14.218525410631816
+        },
+        "right_rear_steer_joint": {
+          "position_deg": 0.3894039844680216,
+          "velocity_deg_s": 4.926043654270361
+        }
+      },
+      "continuous_final_stability_s": 0.0,
+      "final_stability_criteria": {
+        "finite": true,
+        "six_wheels_on_ground": false,
+        "roll_pitch": false,
+        "heading": true,
+        "lateral_position": true,
+        "body_translation": false,
+        "body_rotation": true,
+        "wheel_speed": false,
+        "joint_position": true,
+        "joint_speed": false
+      },
+      "quality_rejection_reasons": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "audit_quality_ok": false,
+      "thresholds": {
+        "minimum_final_stability_s": 1.0,
+        "final_roll_pitch_deg": 3.0,
+        "final_yaw_deg": 5.0,
+        "final_lateral_position_m": 0.25,
+        "final_linear_speed_m_s": 0.03,
+        "final_angular_speed_rad_s": 0.08,
+        "final_wheel_speed_rad_s": 0.2,
+        "final_rocker_steer_position_deg": 3.0,
+        "final_rocker_steer_speed_rad_s": 0.1,
+        "max_penetration_m": 0.02,
+        "max_non_wheel_contact_s": 0.02,
+        "max_joint_limit_error_deg": 1.0,
+        "minimum_ground_normal_force_n": 5.0,
+        "actuator_force_limits_nm": {
+          "wheel": 50.0,
+          "steer": 40.0,
+          "rocker": 100.0
+        },
+        "joint_velocity_tolerance_rad_s": 0.01,
+        "actuator_force_tolerance_nm": 0.001
+      }
+    },
+    "route": {
+      "route_ok": false,
+      "rejection_reasons": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "geometry": {
+        "slope_deg": 45.00000000000002,
+        "ascending_risers": 15,
+        "descending_risers_including_ground": 15,
+        "height_m": 0.15,
+        "depth_m": 0.1499999999999999,
+        "chamfer_or_nosing": false,
+        "start_x": 1.6,
+        "end_x": 7.950000000000004,
+        "platform_start_x": 3.8499999999999988,
+        "platform_end_x": 5.849999999999999,
+        "platform_top_z": 2.25,
+        "half_width_m": 2.5
+      },
+      "events": {
+        "start_before_stairs_s": 0.001,
+        "initial_six_wheels_ground_s": 0.02000000000000001,
+        "ascent_s": 3.557999999999719
+      },
+      "platform_wheels_seen": [],
+      "ascending_treads_contacted": [
+        "up0",
+        "up1",
+        "up2",
+        "up3",
+        "up4",
+        "up5"
+      ],
+      "descending_treads_contacted": [],
+      "max_abs_y_m": 0.00641804771882971,
+      "max_abs_yaw_deg": 0.3404232522279018,
+      "max_abs_roll_deg": 0.4082630034841396,
+      "max_abs_pitch_deg": 46.64235153318836,
+      "max_abs_steer_deg": 2.1877092410803654,
+      "steer_peak": {
+        "joint": "right_rear_steer_joint",
+        "abs_angle_deg": 2.1877092410803654,
+        "signed_angle_deg": 2.1877092410803654,
+        "time_s": 4.222999999999745
+      },
+      "steer_peak_by_joint": {
+        "left_front_steer_joint": {
+          "abs_angle_deg": 1.8373349658337368,
+          "signed_angle_deg": -1.8373349658337368,
+          "time_s": 9.585000000000127
+        },
+        "left_rear_steer_joint": {
+          "abs_angle_deg": 1.880278241180128,
+          "signed_angle_deg": -1.880278241180128,
+          "time_s": 3.169999999999762
+        },
+        "right_front_steer_joint": {
+          "abs_angle_deg": 1.7902763464766596,
+          "signed_angle_deg": -1.7902763464766596,
+          "time_s": 5.22600000000008
+        },
+        "right_rear_steer_joint": {
+          "abs_angle_deg": 2.1877092410803654,
+          "signed_angle_deg": 2.1877092410803654,
+          "time_s": 4.222999999999745
+        }
+      },
+      "task_steer_limit_deg": 30.0,
+      "wheel_outside_course": false,
+      "final_base_x_m": 1.6339334379018555,
+      "final_wheel_min_x_m": 1.4376083850958252
+    },
+    "elapsed_s": 4.110939862999658,
+    "sequence": [
+      [
+        3.0,
+        2.209040457557811,
+        -0.4513693011300215,
+        -15.458993598847737,
+        -9.031750197767282
+      ],
+      [
+        3.0,
+        2.0114748643244695,
+        3.0,
+        1.2248437834926422,
+        10.324848053966914
+      ]
+    ],
+    "terminal_qpos": [
+      1.6339334379018555,
+      -0.0007869148610016347,
+      0.9094502491060981,
+      0.9183787310578377,
+      0.001594022520843037,
+      -0.39569896311604824,
+      -0.0005440787467179113,
+      0.021797362729448745,
+      0.01713937761854694,
+      20.511218372623993,
+      21.397628349679973,
+      -0.0023030868209523337,
+      14.593974163819063,
+      0.02262569708648893,
+      0.023298403800316426,
+      22.063727865670188,
+      21.626577037058595,
+      0.006796381649351837,
+      14.15881882996083
+    ],
+    "terminal_qvel": [
+      -0.03231137605523186,
+      -0.004849589483670899,
+      0.0906008066459576,
+      -0.00616097534849281,
+      0.05353990568971511,
+      0.0005081644656473144,
+      -0.0934795453285901,
+      -0.03784547633124239,
+      2.9159696796452645,
+      0.8703816729133339,
+      0.05643608907519965,
+      0.5866701509820857,
+      -0.28497768189022754,
+      0.24816008319400396,
+      2.0625056076167008,
+      1.3211112764551962,
+      0.08597568086399103,
+      0.73434772734395
+    ],
+    "dataset_accepted": false,
+    "label": "round_2_perturbation_49",
+    "score": 2.4859239844995398
+  },
+  "rounds": [
+    {
+      "round_index": 0,
+      "evaluated_candidates": 64,
+      "process_valid_candidates": 64,
+      "both_rear_crossed_100ms_candidates": 0,
+      "failure_counts": {},
+      "best_id": "round0_candidate31",
+      "best_score": 2.2837754455123616,
+      "best_metrics": {
+        "start_time_s": 9.383000000000239,
+        "end_time_s": 11.38299999999913,
+        "base_x_start": 1.4844534942655334,
+        "base_x_final": 1.6210394160187518,
+        "base_x_delta": 0.13658592175321838,
+        "rear_min_x_start": 1.2052006915639857,
+        "rear_min_x_final": 1.4372274313889943,
+        "rear_min_x_tail_mean": 1.4066852684867086,
+        "rear_min_x_delta": 0.23202673982500865,
+        "rear_min_z_start": 0.16189261309832703,
+        "rear_min_z_final": 0.16187737242496109,
+        "rear_min_z_max": 0.16647076755556173,
+        "rear_bottom_min_final": -0.0008216275750389246,
+        "rear_x_change_last_500ms": 0.09829469212352149,
+        "rear_x_slope_last_500ms": 0.20019717715277993,
+        "rear_both_crossed_continuous_peak_s": 0.0,
+        "rear_both_crossed_final_s": 0.0,
+        "front_middle_both_supported_tail_fraction": 0.094,
+        "mean_support_world_force_n": {
+          "left_front_wheel_col_1": [
+            -155.77453891824973,
+            -10.29748272626952,
+            181.331681866157
+          ],
+          "left_middle_wheel_col_1": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left_rear_wheel_col_1": [
+            107.8471295265372,
+            -17.923203828878357,
+            340.5988878028008
+          ],
+          "right_front_wheel_col_1": [
+            -75.67662396378716,
+            -16.841596881653018,
+            48.81345450900498
+          ],
+          "right_middle_wheel_col_1": [
+            -15.462083465193787,
+            -0.8477914485583657,
+            49.55675534474691
+          ],
+          "right_rear_wheel_col_1": [
+            126.104593917994,
+            45.82287704390717,
+            616.6008734253602
+          ]
+        },
+        "tail_mean_upward_force_by_role_n": {
+          "front": 144.13312993926849,
+          "middle": 198.22702137898764,
+          "rear": 884.8520798249826
+        },
+        "max_roll_deg": 0.5150484095797212,
+        "max_pitch_deg": 47.56794308529211,
+        "max_steer_deg": 2.1877092410803654
+      },
+      "wall_elapsed_s": 40.21231174468994
+    },
+    {
+      "round_index": 1,
+      "evaluated_candidates": 64,
+      "process_valid_candidates": 64,
+      "both_rear_crossed_100ms_candidates": 0,
+      "failure_counts": {},
+      "best_id": "round1_candidate54",
+      "best_score": 2.419179396117938,
+      "best_metrics": {
+        "start_time_s": 9.383000000000239,
+        "end_time_s": 11.38299999999913,
+        "base_x_start": 1.4844534942655334,
+        "base_x_final": 1.6119488756697933,
+        "base_x_delta": 0.12749538140425987,
+        "rear_min_x_start": 1.2052006915639857,
+        "rear_min_x_final": 1.4231848115901018,
+        "rear_min_x_tail_mean": 1.3375059346378788,
+        "rear_min_x_delta": 0.2179841200261161,
+        "rear_min_z_start": 0.16189261309832703,
+        "rear_min_z_final": 0.16159439300828873,
+        "rear_min_z_max": 0.16202934036711372,
+        "rear_bottom_min_final": -0.0011046069917112766,
+        "rear_x_change_last_500ms": 0.16108181270701483,
+        "rear_x_slope_last_500ms": 0.32766017170130246,
+        "rear_both_crossed_continuous_peak_s": 0.0,
+        "rear_both_crossed_final_s": 0.0,
+        "front_middle_both_supported_tail_fraction": 0.0,
+        "mean_support_world_force_n": {
+          "left_front_wheel_col_1": [
+            -169.4088588933459,
+            -42.20847277577475,
+            245.50766598802844
+          ],
+          "left_middle_wheel_col_1": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left_rear_wheel_col_1": [
+            96.74146024905701,
+            2.6575371183458296,
+            257.43814875497964
+          ],
+          "right_front_wheel_col_1": [
+            -18.78866796083444,
+            -2.4059935827336862,
+            44.94087534715746
+          ],
+          "right_middle_wheel_col_1": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "right_rear_wheel_col_1": [
+            100.7999392244357,
+            42.206459146931245,
+            693.2679635792846
+          ]
+        },
+        "tail_mean_upward_force_by_role_n": {
+          "front": 309.14505452010883,
+          "middle": 0.0,
+          "rear": 928.6166991558505
+        },
+        "max_roll_deg": 0.45490804753326036,
+        "max_pitch_deg": 47.262933636013706,
+        "max_steer_deg": 2.1877092410803654
+      },
+      "wall_elapsed_s": 87.78292965888977
+    },
+    {
+      "round_index": 2,
+      "evaluated_candidates": 64,
+      "process_valid_candidates": 64,
+      "both_rear_crossed_100ms_candidates": 0,
+      "failure_counts": {},
+      "best_id": "round2_candidate56",
+      "best_score": 2.4859239844995398,
+      "best_metrics": {
+        "start_time_s": 9.383000000000239,
+        "end_time_s": 11.38299999999913,
+        "base_x_start": 1.4844534942655334,
+        "base_x_final": 1.6339334379018555,
+        "base_x_delta": 0.1494799436363221,
+        "rear_min_x_start": 1.2052006915639857,
+        "rear_min_x_final": 1.4384357081882697,
+        "rear_min_x_tail_mean": 1.3613981627488492,
+        "rear_min_x_delta": 0.23323501662428403,
+        "rear_min_z_start": 0.16189261309832703,
+        "rear_min_z_final": 0.16367107733832456,
+        "rear_min_z_max": 0.16367107733832456,
+        "rear_bottom_min_final": 0.0009720773383245507,
+        "rear_x_change_last_500ms": 0.14390411821904858,
+        "rear_x_slope_last_500ms": 0.2937531607741209,
+        "rear_both_crossed_continuous_peak_s": 0.0,
+        "rear_both_crossed_final_s": 0.0,
+        "front_middle_both_supported_tail_fraction": 0.574,
+        "mean_support_world_force_n": {
+          "left_front_wheel_col_1": [
+            -8.5835925690125,
+            -0.6644370798760648,
+            71.35878616517225
+          ],
+          "left_middle_wheel_col_1": [
+            -16.98533177459153,
+            -8.20505615053573,
+            210.52156542986938
+          ],
+          "left_rear_wheel_col_1": [
+            9.792811062019165,
+            -18.96741112768812,
+            294.3831798836022
+          ],
+          "right_front_wheel_col_1": [
+            17.607184761546915,
+            5.105494905883254,
+            140.75301080445556
+          ],
+          "right_middle_wheel_col_1": [
+            -31.8950614829923,
+            0.20232853969484318,
+            239.2913840470824
+          ],
+          "right_rear_wheel_col_1": [
+            18.272825919801416,
+            22.41801327454334,
+            289.95691980314774
+          ]
+        },
+        "tail_mean_upward_force_by_role_n": {
+          "front": 223.48829663565715,
+          "middle": 254.67805667837783,
+          "rear": 789.8156811805821
+        },
+        "max_roll_deg": 0.4082630034841396,
+        "max_pitch_deg": 46.64235153318836,
+        "max_steer_deg": 2.1877092410803654
+      },
+      "wall_elapsed_s": 135.86571621894836
+    }
+  ],
+  "valid_candidate_evaluations": 192,
+  "both_rear_crossed_100ms_candidate_evaluations": 0,
+  "wall_elapsed_s": 135.89654064178467,
+  "selection_override": "Diagnostic secondary selection by maximum final worst-rear x, no search evaluations added. Original score-based outputs remain intact.",
+  "selected_process_valid": true
+}
