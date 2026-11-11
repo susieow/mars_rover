@@ -22,8 +22,17 @@
     20
   ],
   "required_approver": "susieow",
-  "github_branch_protection": "pending_configuration_and_verification",
-  "local_hooks": "pending_installation",
+  "github_branch_protection": "not_configured_settings_page_ERR_CONNECTION_CLOSED",
+  "local_hooks": "installed_and_tested_local_deterrent_only",
   "collaborator_github_accounts": "not_provided_no_invitations_sent",
-  "new_simulation_executed": false
+  "new_simulation_executed": false,
+  "worktrees_created": true,
+  "validation": {
+    "unit_tests_passed": 34,
+    "worktree_height_checks_passed": 14,
+    "main_run_rejected": true,
+    "frozen_hashes_unchanged": true,
+    "stored_scene_visual_compile": true,
+    "artifact_inventory_records": 1968
+  }
 }
