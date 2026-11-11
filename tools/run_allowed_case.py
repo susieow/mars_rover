@@ -25,8 +25,8 @@ def main(argv=None):
     branch = subprocess.check_output(
         ["git", "-C", str(ROOT), "branch", "--show-current"], text=True
     ).strip()
-    if not branch or branch in ("main", "master"):
-        parser.error("run experiments from a dedicated work branch, never main/master")
+    if not branch or branch in ("main", "master", "wzy"):
+        parser.error("run experiments from a dedicated work branch, never main/master/wzy")
     folder = ROOT / "runs" / args.name
     dataset = folder / "dataset"
     videos = folder / "videos"
