@@ -10,6 +10,8 @@
 
 - T22_WMR_RSP固定转向的两条诊断已记录于docs/diagnostic_registry20_steer_locks_20261111.jsonl；虚拟锁定反力未按电机力矩上限限制，不作为真实锁止装置验证。
 
+- T22台阶摩擦6.0和8.0的两条诊断见docs/diagnostic_registry20_friction_20261111.jsonl；新试验先核对已有记录。
+
 ## 项目
 - AGX 项目：`/home/agilex/wzy/rover`；GitHub 分支：`wzy`。
 

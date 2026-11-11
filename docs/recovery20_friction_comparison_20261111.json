@@ -1,0 +1,134 @@
+{
+  "completed": 2,
+  "dataset_accepted": 0,
+  "full_route": "not_evaluated",
+  "results": {
+    "6": {
+      "id": "T22_WMR_RSP_stair_mu6_dt1000us",
+      "friction": 6,
+      "stop_s": 26.46300000000936,
+      "continuation_s": 4.463,
+      "reasons": [
+        "contact_penetration_over_20mm"
+      ],
+      "worst_contact": {
+        "time_s": 26.46300000000936,
+        "robot_geom": "left_middle_wheel_col_1",
+        "terrain_geom": "up2",
+        "penetration_m": 0.03413434367071655
+      },
+      "max_progress_m": 0.0042627548253211245,
+      "net_progress_m": -0.02526058075178339,
+      "source_result": "/home/agilex/wzy/rover/runs/friction20_t22_20261111/cases/T22_WMR_RSP_stair_mu6_dt1000us/result.json",
+      "source_sha256": {
+        "/home/agilex/wzy/rover/scripts/rover/recovery20_friction.py": "0957f38a23cf6025a8f6885dc1777ebe4ff020a64a9bf585551f1ed81ea7cade",
+        "/home/agilex/wzy/rover/scripts/rover/recovery20_amp20_experiment.py": "06cee37ab8619fbfbb4b7d3b131a80642ec2127ab2ab034126e218ec2970b196",
+        "/home/agilex/wzy/rover/scripts/rover/speed20_experiment.py": "08067d4f443ac2ef180900b931d5112625671421e6ac0fc57174d7595a9715f9",
+        "/home/agilex/wzy/rover/scripts/rover/overspeed20_stairs.py": "528e816ced16f767597a715e13cba840c6323bcd69ca882ab2fb624c6f47961b",
+        "/home/agilex/wzy/rover/review_v4/dynamic_search20/sources/episode_audit.py": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab",
+        "/home/agilex/wzy/rover/review_v4/dynamic_search20/sources/verify_dataset.py": "17fbc861766167ab8b2077d9472d3f515285ff72c21c8fe660ef6ba8980080ae"
+      },
+      "trajectory_sha256": "70df062b53054a9ea7397bc72d7401b1c9d7e731b4c409ed8864de1187daec17",
+      "scene_sha256": "5f2706f546507df4bf9c7d4143565f1210535ddbedfdd1b9a936462f6b016400",
+      "video_sha256": "c371e11edcdf6df945b6af35f875f1a8475780e4793b8b65640f3be282b27ae0",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/friction20_t22_20261111/T22_WMR_RSP_stair_mu6_dt1000us.mp4",
+      "initial_contact_probe": [
+        {
+          "geoms": [
+            "left_front_wheel_col_1",
+            "up4"
+          ],
+          "effective_friction": [
+            6.0,
+            6.0,
+            0.02,
+            0.001,
+            0.001
+          ]
+        },
+        {
+          "geoms": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "effective_friction": [
+            6.0,
+            6.0,
+            0.02,
+            0.001,
+            0.001
+          ]
+        }
+      ]
+    },
+    "8": {
+      "id": "T22_WMR_RSP_stair_mu8_dt1000us",
+      "friction": 8,
+      "stop_s": 26.39100000000927,
+      "continuation_s": 4.391,
+      "reasons": [
+        "contact_penetration_over_20mm"
+      ],
+      "worst_contact": {
+        "time_s": 26.39100000000927,
+        "robot_geom": "left_middle_wheel_col_1",
+        "terrain_geom": "up2",
+        "penetration_m": 0.021916493991084255
+      },
+      "max_progress_m": 0.005933295391744808,
+      "net_progress_m": -0.04450616863883283,
+      "source_result": "/home/agilex/wzy/rover/runs/friction20_t22_20261111/cases/T22_WMR_RSP_stair_mu8_dt1000us/result.json",
+      "source_sha256": {
+        "/home/agilex/wzy/rover/scripts/rover/recovery20_friction.py": "0957f38a23cf6025a8f6885dc1777ebe4ff020a64a9bf585551f1ed81ea7cade",
+        "/home/agilex/wzy/rover/scripts/rover/recovery20_amp20_experiment.py": "06cee37ab8619fbfbb4b7d3b131a80642ec2127ab2ab034126e218ec2970b196",
+        "/home/agilex/wzy/rover/scripts/rover/speed20_experiment.py": "08067d4f443ac2ef180900b931d5112625671421e6ac0fc57174d7595a9715f9",
+        "/home/agilex/wzy/rover/scripts/rover/overspeed20_stairs.py": "528e816ced16f767597a715e13cba840c6323bcd69ca882ab2fb624c6f47961b",
+        "/home/agilex/wzy/rover/review_v4/dynamic_search20/sources/episode_audit.py": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab",
+        "/home/agilex/wzy/rover/review_v4/dynamic_search20/sources/verify_dataset.py": "17fbc861766167ab8b2077d9472d3f515285ff72c21c8fe660ef6ba8980080ae"
+      },
+      "trajectory_sha256": "418317d3514a389e27dff87d9c85ed63e3b33418c1b719bcab0d09f7b45dcfd5",
+      "scene_sha256": "20135ebfb1c88e8bc48061ee62ec221387edc17fb0c641eb598de88b2a4de413",
+      "video_sha256": "434ed59b7c90dde3e02cf46620e038c3373b39854221bfbf1f394049c0df8007",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/friction20_t22_20261111/T22_WMR_RSP_stair_mu8_dt1000us.mp4",
+      "initial_contact_probe": [
+        {
+          "geoms": [
+            "left_front_wheel_col_1",
+            "up4"
+          ],
+          "effective_friction": [
+            8.0,
+            8.0,
+            0.02,
+            0.001,
+            0.001
+          ]
+        },
+        {
+          "geoms": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "effective_friction": [
+            8.0,
+            8.0,
+            0.02,
+            0.001,
+            0.001
+          ]
+        }
+      ]
+    }
+  },
+  "checks": [
+    "same full state at 22 s",
+    "only stair sliding friction changed",
+    "effective wheel-stair friction",
+    "wheel and rocker commands",
+    "force limits",
+    "saved trajectory and video hashes",
+    "video and curve structure"
+  ],
+  "additional_physics_trials": 0,
+  "passed": true
+}
