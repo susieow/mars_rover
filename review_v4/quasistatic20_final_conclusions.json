@@ -1,0 +1,185 @@
+{
+  "status": "current_static_analysis_conclusions",
+  "analysis_only": true,
+  "dynamics_stepped": false,
+  "trajectory_states_injected": false,
+  "authoritative_force_analysis": "/home/agilex/wzy/rover/review_v4/quasistatic20_force_with_joint_friction.json",
+  "scene_sha256": "ff3c4fac90325b5b85f41867a833212e31455d46ce67e09f7e04c2ca0b337cd8",
+  "verified_identical_scene_sources": [
+    "high20_world_pi_short/scene.xml",
+    "high20_slow_neutral_v2/scene.xml",
+    "high20_slow_cycle/scene.xml"
+  ],
+  "superseded_analysis_records": [
+    {
+      "artifact": "/home/agilex/wzy/rover/review_v4/quasistatic20_contact_force_feasibility.json",
+      "artifact_sha256": "d9b0f54590678760ad7670ea591716786b452bfb701658787c5ecad5c3d14044",
+      "status": "superseded_for_force_feasibility_conclusions",
+      "replacement": "/home/agilex/wzy/rover/review_v4/quasistatic20_force_with_joint_friction.json",
+      "final_conclusions": "/home/agilex/wzy/rover/review_v4/quasistatic20_final_conclusions.json",
+      "reason": "This reduced LP omitted original-model joint dry-friction reactions (wheel 1 Nm, steer 0.8 Nm, rocker 1.2 Nm). The omission changes marginal feasibility and can generate misleading large self-stress solutions.",
+      "preserved_without_modification": true,
+      "do_not_reuse": [
+        "Neutral terminal 24.519 s reported as outside rated caps.",
+        "Several-kN minimum normal force at neutral 23.52/23.72 s interpreted as physically required.",
+        "Minimum-peak torque alone interpreted as a physically realistic load allocation."
+      ]
+    },
+    {
+      "artifact": "/home/agilex/wzy/rover/review_v4/quasistatic20_force_followup.json",
+      "artifact_sha256": "16135a7815e52c10a906f89e53bea931371be138f5c0d515fd509719ae502886",
+      "status": "superseded_for_force_feasibility_conclusions",
+      "replacement": "/home/agilex/wzy/rover/review_v4/quasistatic20_force_with_joint_friction.json",
+      "final_conclusions": "/home/agilex/wzy/rover/review_v4/quasistatic20_final_conclusions.json",
+      "reason": "This reduced LP omitted original-model joint dry-friction reactions (wheel 1 Nm, steer 0.8 Nm, rocker 1.2 Nm). The omission changes marginal feasibility and can generate misleading large self-stress solutions.",
+      "preserved_without_modification": true,
+      "do_not_reuse": [
+        "Neutral terminal 24.519 s reported as outside rated caps.",
+        "Several-kN minimum normal force at neutral 23.52/23.72 s interpreted as physically required.",
+        "Minimum-peak torque alone interpreted as a physically realistic load allocation."
+      ]
+    }
+  ],
+  "method": "Exact saved qpos; zero velocity; actual active contact Jacobians; original unilateral pyramidal friction cones; original actuator caps plus bounded original joint dry friction; no model, margin, or pose changes.",
+  "sampled_neutral_stall": {
+    "source": "/home/agilex/wzy/rover/review_v4/high20_slow_neutral_v2/trajectory.npz",
+    "sample_count": 6,
+    "rated_static_feasible_count": 5,
+    "is_not_a_time_fraction_or_success_rate": true
+  },
+  "pose_results": [
+    {
+      "pose": "actual_anchor_activation",
+      "time_s": 11.326999999999162,
+      "active_contacts": 7,
+      "rated_static_equilibrium_exists": true,
+      "mathematical_minimum_peak_actuator_ratio": 0.1974163170393692,
+      "minimum_total_normal_force_at_rated_caps_n": 419.18101920704026,
+      "front_force_zero_feasible": true,
+      "both_middle_torques_within_1nm_feasible": true,
+      "both_rear_torques_plus_50nm_feasible": true
+    },
+    {
+      "pose": "geometric_fixed_middle_half",
+      "time_s": null,
+      "active_contacts": 4,
+      "rated_static_equilibrium_exists": false,
+      "mathematical_minimum_peak_actuator_ratio": 1.394192038309834,
+      "minimum_total_normal_force_at_rated_caps_n": null,
+      "front_force_zero_feasible": false,
+      "both_middle_torques_within_1nm_feasible": false,
+      "both_rear_torques_plus_50nm_feasible": false
+    },
+    {
+      "pose": "actual_anchor_terminal",
+      "time_s": 11.755999999998924,
+      "active_contacts": 5,
+      "rated_static_equilibrium_exists": false,
+      "mathematical_minimum_peak_actuator_ratio": 1.0524442769795428,
+      "minimum_total_normal_force_at_rated_caps_n": null,
+      "front_force_zero_feasible": false,
+      "both_middle_torques_within_1nm_feasible": false,
+      "both_rear_torques_plus_50nm_feasible": false
+    },
+    {
+      "pose": "actual_neutral_stall_23.52",
+      "time_s": 23.520000000005762,
+      "active_contacts": 8,
+      "rated_static_equilibrium_exists": true,
+      "mathematical_minimum_peak_actuator_ratio": 0.9024273912283673,
+      "minimum_total_normal_force_at_rated_caps_n": 859.7581262085021,
+      "front_force_zero_feasible": true,
+      "both_middle_torques_within_1nm_feasible": true,
+      "both_rear_torques_plus_50nm_feasible": true
+    },
+    {
+      "pose": "actual_neutral_stall_23.72",
+      "time_s": 23.720000000006007,
+      "active_contacts": 8,
+      "rated_static_equilibrium_exists": true,
+      "mathematical_minimum_peak_actuator_ratio": 0.9061825620602587,
+      "minimum_total_normal_force_at_rated_caps_n": 859.2005356547062,
+      "front_force_zero_feasible": true,
+      "both_middle_torques_within_1nm_feasible": true,
+      "both_rear_torques_plus_50nm_feasible": true
+    },
+    {
+      "pose": "actual_neutral_stall_23.92",
+      "time_s": 23.92000000000625,
+      "active_contacts": 5,
+      "rated_static_equilibrium_exists": true,
+      "mathematical_minimum_peak_actuator_ratio": 0.9082279486370255,
+      "minimum_total_normal_force_at_rated_caps_n": 802.6146131888711,
+      "front_force_zero_feasible": false,
+      "both_middle_torques_within_1nm_feasible": true,
+      "both_rear_torques_plus_50nm_feasible": false
+    },
+    {
+      "pose": "actual_neutral_stall_24.12",
+      "time_s": 24.120000000006495,
+      "active_contacts": 5,
+      "rated_static_equilibrium_exists": true,
+      "mathematical_minimum_peak_actuator_ratio": 0.9021888217232393,
+      "minimum_total_normal_force_at_rated_caps_n": 1786.435377723046,
+      "front_force_zero_feasible": false,
+      "both_middle_torques_within_1nm_feasible": true,
+      "both_rear_torques_plus_50nm_feasible": false
+    },
+    {
+      "pose": "actual_neutral_stall_24.32",
+      "time_s": 24.32000000000674,
+      "active_contacts": 3,
+      "rated_static_equilibrium_exists": false,
+      "mathematical_minimum_peak_actuator_ratio": 8.45160100828585,
+      "minimum_total_normal_force_at_rated_caps_n": null,
+      "front_force_zero_feasible": false,
+      "both_middle_torques_within_1nm_feasible": false,
+      "both_rear_torques_plus_50nm_feasible": false
+    },
+    {
+      "pose": "actual_neutral_stall_24.519",
+      "time_s": 24.519000000006983,
+      "active_contacts": 7,
+      "rated_static_equilibrium_exists": true,
+      "mathematical_minimum_peak_actuator_ratio": 0.9850898358937412,
+      "minimum_total_normal_force_at_rated_caps_n": 1518.6373533617193,
+      "front_force_zero_feasible": true,
+      "both_middle_torques_within_1nm_feasible": false,
+      "both_rear_torques_plus_50nm_feasible": true
+    }
+  ],
+  "reliable_control_implications_zh": [
+    "中立卡住末秒不是固定静态支撑：6个抽样中5个有额定静态平衡解，24.32秒仅左后轮接触的姿态无额定静态平衡解。该抽样不能代表时间占比或成功率。",
+    "前轮支撑随姿态而重要：23.92秒与24.12秒原接触拓扑下额定可行，但把前轮接触力约束为零后不可行。不能由此推出所有阶段都必须前轮承重。",
+    "几何半程候选并非已验证控制目标：右中轮实际没有活跃接触；即使计入原模型静摩擦，最小峰值额定比仍为1.39419。不得把该qpos直接注入轨迹或当作成功演示。",
+    "真实世界角PI终止瞬间的静态最小峰值比为1.05244，该最小峰值解的左摇臂约为105.24 Nm；世界角误差小不足以保证轮心接触锚定。",
+    "起始11.327秒两后轮都为+50 Nm时仍存在额定静态平衡解，故静态结果不支持“后轮持续+50必然令中轮脱离”的因果断言。",
+    "中轮驱动力不能固定为接近零：起始允许两中轮均在±1 Nm，但中立末帧24.519秒在同一约束下不可行。控制应读取接触、载荷和姿态，不能仅以轮角误差充当支撑反馈。",
+    "静态分配需要大量接触模式信息，并常在摩擦或力矩边界上；它只可作为接触力闭环设计参考，不能作为开环动作或成功保证。"
+  ],
+  "illustrative_force_allocation_not_control_command": {
+    "pose": "actual_neutral_stall_23.92",
+    "reference_actuator_torque_nm": {
+      "left_rear_wheel_joint_act": 49.99998550356109,
+      "right_middle_wheel_joint_act": 49.99998550356109,
+      "right_front_wheel_joint_act": 1.5319202613045255,
+      "left_rocker_joint_act": -93.22279486370256,
+      "right_rocker_joint_act": -46.52657711856724
+    },
+    "right_front_contact_force_on_rover_world_n": [
+      -36.9259333404089,
+      87.85289266236487,
+      59.85084069927075
+    ],
+    "total_contact_normal_n": 802.6146934503324,
+    "equilibrium_max_residual": 5.968558980384842e-13,
+    "warning": "One nonunique minimum-normal solution. Includes static-friction reactions and saturated actuators; no dynamics or soft-contact constitutive consistency is established."
+  },
+  "limits_zh": [
+    "没有执行任何动力学步进；静态可行不代表动态可达、可稳定保持或可成功爬升。",
+    "所有接触力必须满足单边压缩及摩擦锥，但未强制当前微小压入量对应的MuJoCo软接触本构；可行解可能无法在该瞬时qpos自然实现。",
+    "未证明需要负法向力，也未证明车辆绝对爬不上；不可从局部静态不可行推广至全部动态路径。",
+    "峰值力矩最小化可能利用极大的自平衡接触力，因此峰值比仅用于受约束数学可行性比较，不应解释为真实低力矩需求。",
+    "旧几何候选文件仍是几何记录，只保留几何参考意义；含静摩擦结果取代旧无静摩擦的受力结论。"
+  ]
+}

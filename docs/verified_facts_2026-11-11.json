@@ -1,0 +1,139 @@
+{
+  "checked_date": "2026-11-11",
+  "new_simulation_executed": false,
+  "allowed_future_heights_cm": [
+    15,
+    20
+  ],
+  "target_risers_up": 15,
+  "target_risers_down_including_ground": 15,
+  "slope_deg": 45,
+  "groups": [
+    {
+      "height_cm": 15,
+      "evaluations": 384,
+      "unique_case_sequences": 352,
+      "unique_numeric_sequences": 288,
+      "shared_between_start_times": 64,
+      "process_compliant": 384,
+      "local_success": 0
+    },
+    {
+      "height_cm": 20,
+      "evaluations": 384,
+      "unique_case_sequences": 352,
+      "unique_numeric_sequences": 288,
+      "shared_between_start_times": 64,
+      "process_compliant": 383,
+      "local_success": 0
+    }
+  ],
+  "total_candidate_evaluations": 768,
+  "unique_case_target_sequences": 704,
+  "unique_numeric_sequences_all_four_cases": 546,
+  "accepted_high_stair_training_samples": 0,
+  "historical_diagnostics": 29,
+  "additional_tail_validation": 1,
+  "wheel_peaks": {
+    "15": {
+      "left_front_wheel_joint": {
+        "peak_rad_s": 4.0821032941103335,
+        "peak_rpm": 38.98121504816212,
+        "peak_motor_torque_nm": 50.0
+      },
+      "left_middle_wheel_joint": {
+        "peak_rad_s": 3.255975205379908,
+        "peak_rpm": 31.092272911251687,
+        "peak_motor_torque_nm": 50.0
+      },
+      "left_rear_wheel_joint": {
+        "peak_rad_s": 3.00535629633896,
+        "peak_rpm": 28.69903861888179,
+        "peak_motor_torque_nm": 50.0
+      },
+      "right_front_wheel_joint": {
+        "peak_rad_s": 4.069352247916729,
+        "peak_rpm": 38.859451526283806,
+        "peak_motor_torque_nm": 50.0
+      },
+      "right_middle_wheel_joint": {
+        "peak_rad_s": 3.254164261423491,
+        "peak_rpm": 31.07497967031212,
+        "peak_motor_torque_nm": 50.0
+      },
+      "right_rear_wheel_joint": {
+        "peak_rad_s": 3.024044663524929,
+        "peak_rpm": 28.87749937983959,
+        "peak_motor_torque_nm": 50.0
+      }
+    },
+    "20": {
+      "left_front_wheel_joint": {
+        "peak_rad_s": 3.0510520671716765,
+        "peak_rpm": 29.13540108726707,
+        "peak_motor_torque_nm": 50.0
+      },
+      "left_middle_wheel_joint": {
+        "peak_rad_s": 3.336490702727883,
+        "peak_rpm": 31.861139275157644,
+        "peak_motor_torque_nm": 50.0
+      },
+      "left_rear_wheel_joint": {
+        "peak_rad_s": 3.0430312435726647,
+        "peak_rpm": 29.058807863860018,
+        "peak_motor_torque_nm": 50.0
+      },
+      "right_front_wheel_joint": {
+        "peak_rad_s": 3.3039229795854013,
+        "peak_rpm": 31.55014042775519,
+        "peak_motor_torque_nm": 50.0
+      },
+      "right_middle_wheel_joint": {
+        "peak_rad_s": 3.2151545921493083,
+        "peak_rpm": 30.702464768710147,
+        "peak_motor_torque_nm": 50.0
+      },
+      "right_rear_wheel_joint": {
+        "peak_rad_s": 3.097693373545247,
+        "peak_rpm": 29.580792754964108,
+        "peak_motor_torque_nm": 50.0
+      }
+    }
+  },
+  "urdf_comment_mass_kg": 122.5,
+  "urdf_inertial_mass_sum_kg": 126.74600000000001,
+  "compiled_scene_mass_kg": 126.74599900000003,
+  "gravity_m_s2": [
+    0.0,
+    0.0,
+    -9.81
+  ],
+  "physics_timestep_s": 0.001,
+  "robot_joint_dofs": 12,
+  "wheel_drive_joints": 6,
+  "steer_joints": 4,
+  "rocker_joints": 2,
+  "python": "3.10.12",
+  "packages": {
+    "PyOpenGL": "3.1.10",
+    "absl-py": "2.5.1",
+    "etils": "1.13.0",
+    "fsspec": "2026.9.0",
+    "glfw": "2.11.0",
+    "importlib_resources": "7.1.0",
+    "mujoco": "3.17.0",
+    "numpy": "2.2.6",
+    "typing_extensions": "4.16.0",
+    "websockets": "16.1.1",
+    "zipp": "4.1.2"
+  },
+  "artifact_sha256": {
+    "assets/mars_rover/urdf/mars_rover.urdf": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
+    "assets/mars_rover/rover_actuated.xml": "a7eeb359f8412dcc7830f997563d8aa4dbf22fe1ee55156f2b32e8307a1e1c68",
+    "review_v4/dynamic_search15/backend.py": "7a7a65c2bb5bb2da84e8fbc8a1e051c275b450ce674b7c29a4d2cc07fcfeb72b",
+    "review_v4/dynamic_search20/backend.py": "7a7a65c2bb5bb2da84e8fbc8a1e051c275b450ce674b7c29a4d2cc07fcfeb72b",
+    "review_v4/dynamic_search15/scene.xml": "11a6bde37768a3d13174187687aca6e56d84f350b336fe845d81250a2921af5f",
+    "review_v4/dynamic_search20/scene.xml": "ff3c4fac90325b5b85f41867a833212e31455d46ce67e09f7e04c2ca0b337cd8",
+    "scripts/rover/closed_loop_controller.py": "d938fa4b9f71ce326318187cdb3306d89b653fef2c35467258b82c28464061d6"
+  }
+}

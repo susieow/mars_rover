@@ -1,0 +1,4265 @@
+{
+  "count": 384,
+  "unique_control_replays": 350,
+  "wall_s": 8.043212716998823,
+  "entries": [
+    {
+      "id": "h15_near_contact_round0_candidate00",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate00.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate01",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate01.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate02",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate02.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate03",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate03.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate04",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate04.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate05",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate05.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate06",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate06.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate07",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate07.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate08",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate08.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate09",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate09.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate10",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate10.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate11",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate11.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate12",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate12.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate13",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate13.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate14",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate14.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate16",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate16.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate17",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate17.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate18",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate18.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate19",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate19.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate20",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate20.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate21",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate21.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate22",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate22.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate23",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate23.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate24",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate24.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate25",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate25.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate26",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate26.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate27",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate27.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate28",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate28.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate29",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate29.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate30",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate30.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate31",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate31.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate32",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate32.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate33",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate33.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate34",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate34.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate35",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate35.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate36",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate36.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate37",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate37.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate38",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate38.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate39",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate39.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate40",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate40.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate41",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate41.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate42",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate42.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate43",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate43.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate44",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate44.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate45",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate45.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate46",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate46.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate47",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate47.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate48",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate48.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate49",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate49.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate50",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate50.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate51",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate51.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate52",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate52.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate53",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate53.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate54",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate54.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate55",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate55.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate56",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate56.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate57",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate57.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate58",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate58.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate59",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate59.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate60",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate60.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate61",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate61.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate62",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate62.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate63",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate63.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate08",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate08.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate09",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate09.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate10",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate10.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate11",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate11.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate12",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate12.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate13",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate13.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate14",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate14.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate15",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate15.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate16",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate16.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate17",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate17.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate18",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate18.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate19",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate19.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate20",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate20.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate21",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate21.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate22",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate22.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate23",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate23.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate24",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate24.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate25",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate25.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate26",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate26.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate27",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate27.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate28",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate28.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate29",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate29.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate30",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate30.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate31",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate31.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate32",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate32.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate33",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate33.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate34",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate34.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate35",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate35.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate36",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate36.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate37",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate37.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate38",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate38.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate39",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate39.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate40",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate40.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate41",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate41.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate42",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate42.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate43",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate43.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate44",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate44.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate45",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate45.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate46",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate46.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate47",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate47.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate48",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate48.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate49",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate49.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate50",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate50.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate51",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate51.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate52",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate52.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate53",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate53.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate54",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate54.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate55",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate55.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate56",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate56.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate57",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate57.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate58",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate58.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate59",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate59.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate60",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate60.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate61",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate61.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate62",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate62.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round1_candidate63",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate63.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate08",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate08.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate09",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate09.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate10",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate10.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate11",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate11.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate12",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate12.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate13",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate13.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate14",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate14.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate15",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate15.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate16",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate16.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate17",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate17.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate18",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate18.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate19",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate19.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate20",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate20.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate21",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate21.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate22",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate22.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate23",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate23.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate24",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate24.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate25",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate25.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate26",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate26.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate27",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate27.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate28",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate28.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate29",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate29.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate30",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate30.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate31",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate31.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate32",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate32.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate33",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate33.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate34",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate34.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate35",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate35.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate36",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate36.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate37",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate37.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate38",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate38.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate39",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate39.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate40",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate40.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate41",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate41.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate42",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate42.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate43",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate43.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate44",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate44.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate45",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate45.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate46",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate46.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate47",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate47.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate48",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate48.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate49",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate49.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate50",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate50.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate51",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate51.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate52",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate52.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate53",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate53.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate54",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate54.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate55",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate55.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate56",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate56.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate57",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate57.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate58",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate58.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate59",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate59.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate60",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate60.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate61",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate61.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate62",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate62.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round2_candidate63",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round2_candidate63.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate00",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate00.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate01",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate01.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate02",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate02.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate03",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate03.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate04",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate04.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate05",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate05.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate06",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate06.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate07",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate07.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate08",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate08.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate09",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate09.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate10",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate10.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate11",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate11.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate12",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate12.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate13",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate13.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate14",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate14.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate16",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate16.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate17",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate17.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate18",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate18.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate19",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate19.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate20",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate20.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate21",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate21.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate22",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate22.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate23",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate23.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate24",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate24.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate25",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate25.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate26",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate26.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate27",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate27.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate28",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate28.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate29",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate29.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate30",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate30.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate31",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate31.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate32",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate32.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate33",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate33.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate34",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate34.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate35",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate35.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate36",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate36.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate37",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate37.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate38",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate38.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate39",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate39.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate40",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate40.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate41",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate41.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate42",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate42.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate43",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate43.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate44",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate44.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate45",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate45.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate46",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate46.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate47",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate47.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate48",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate48.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate49",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate49.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate50",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate50.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate51",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate51.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate52",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate52.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate53",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate53.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate54",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate54.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate55",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate55.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate56",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate56.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate57",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate57.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate58",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate58.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate59",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate59.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate60",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate60.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate61",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate61.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate62",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate62.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round0_candidate63",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate63.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate08",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate08.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate09",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate09.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate10",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate10.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate11",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate11.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate12",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate12.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate13",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate13.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate14",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate14.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate15",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate15.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate16",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate16.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate17",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate17.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate18",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate18.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate19",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate19.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate20",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate20.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate21",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate21.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate22",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate22.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate23",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate23.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate24",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate24.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate25",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate25.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate26",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate26.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate27",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate27.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate28",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate28.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate29",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate29.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate30",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate30.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate31",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate31.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate32",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate32.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate33",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate33.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate34",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate34.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate35",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate35.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate36",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate36.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate37",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate37.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate38",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate38.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate39",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate39.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate40",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate40.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate41",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate41.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate42",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate42.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate43",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate43.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate44",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate44.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate45",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate45.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate46",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate46.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate47",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate47.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate48",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate48.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate49",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate49.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate50",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate50.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate51",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate51.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate52",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate52.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate53",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate53.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate54",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate54.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate55",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate55.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate56",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate56.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate57",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate57.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate58",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate58.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate59",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate59.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate60",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate60.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate61",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate61.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate62",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate62.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round1_candidate63",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate63.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate08",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate08.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate09",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate09.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate10",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate10.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate11",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate11.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate12",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate12.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate13",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate13.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate14",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate14.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate15",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate15.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate16",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate16.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate17",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate17.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate18",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate18.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate19",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate19.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate20",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate20.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate21",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate21.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate22",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate22.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate23",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate23.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate24",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate24.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate25",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate25.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate26",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate26.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate27",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate27.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate28",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate28.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate29",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate29.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate30",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate30.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate31",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate31.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate32",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate32.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate33",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate33.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate34",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate34.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate35",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate35.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate36",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate36.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate37",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate37.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate38",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate38.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate39",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate39.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate40",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate40.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate41",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate41.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate42",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate42.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate43",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate43.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate44",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate44.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate45",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate45.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate46",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate46.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate47",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate47.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate48",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate48.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate49",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate49.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate50",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate50.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate51",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate51.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate52",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate52.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate53",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate53.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate54",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate54.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate55",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate55.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate56",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate56.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate57",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate57.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate58",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate58.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate59",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate59.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate60",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate60.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate61",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate61.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate62",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate62.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_early_entry_round2_candidate63",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round2_candidate63.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000
+    },
+    {
+      "id": "h15_near_contact_round0_candidate15",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate13.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate13"
+    },
+    {
+      "id": "h15_near_contact_round1_candidate00",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate27.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate27"
+    },
+    {
+      "id": "h15_near_contact_round1_candidate01",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate48.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate48"
+    },
+    {
+      "id": "h15_near_contact_round1_candidate02",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate11.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate11"
+    },
+    {
+      "id": "h15_near_contact_round1_candidate03",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate00.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate00"
+    },
+    {
+      "id": "h15_near_contact_round1_candidate04",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate26.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate26"
+    },
+    {
+      "id": "h15_near_contact_round1_candidate05",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate21.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate21"
+    },
+    {
+      "id": "h15_near_contact_round1_candidate06",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate49.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate49"
+    },
+    {
+      "id": "h15_near_contact_round1_candidate07",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate63.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate63"
+    },
+    {
+      "id": "h15_near_contact_round2_candidate00",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate23.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round1_candidate23"
+    },
+    {
+      "id": "h15_near_contact_round2_candidate01",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate27.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate27"
+    },
+    {
+      "id": "h15_near_contact_round2_candidate02",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate38.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round1_candidate38"
+    },
+    {
+      "id": "h15_near_contact_round2_candidate03",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate10.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round1_candidate10"
+    },
+    {
+      "id": "h15_near_contact_round2_candidate04",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate12.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round1_candidate12"
+    },
+    {
+      "id": "h15_near_contact_round2_candidate05",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate17.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round1_candidate17"
+    },
+    {
+      "id": "h15_near_contact_round2_candidate06",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round1_candidate55.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round1_candidate55"
+    },
+    {
+      "id": "h15_near_contact_round2_candidate07",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/near_contact/round0_candidate48.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_near_contact_round0_candidate48"
+    },
+    {
+      "id": "h15_early_entry_round0_candidate15",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate13.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round0_candidate13"
+    },
+    {
+      "id": "h15_early_entry_round1_candidate00",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate31.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round0_candidate31"
+    },
+    {
+      "id": "h15_early_entry_round1_candidate01",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate28.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round0_candidate28"
+    },
+    {
+      "id": "h15_early_entry_round1_candidate02",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate03.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round0_candidate03"
+    },
+    {
+      "id": "h15_early_entry_round1_candidate03",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate53.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round0_candidate53"
+    },
+    {
+      "id": "h15_early_entry_round1_candidate04",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate48.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round0_candidate48"
+    },
+    {
+      "id": "h15_early_entry_round1_candidate05",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate33.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round0_candidate33"
+    },
+    {
+      "id": "h15_early_entry_round1_candidate06",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate26.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round0_candidate26"
+    },
+    {
+      "id": "h15_early_entry_round1_candidate07",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round0_candidate27.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round0_candidate27"
+    },
+    {
+      "id": "h15_early_entry_round2_candidate00",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate54.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round1_candidate54"
+    },
+    {
+      "id": "h15_early_entry_round2_candidate01",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate08.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round1_candidate08"
+    },
+    {
+      "id": "h15_early_entry_round2_candidate02",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate14.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round1_candidate14"
+    },
+    {
+      "id": "h15_early_entry_round2_candidate03",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate32.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round1_candidate32"
+    },
+    {
+      "id": "h15_early_entry_round2_candidate04",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate09.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round1_candidate09"
+    },
+    {
+      "id": "h15_early_entry_round2_candidate05",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate31.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round1_candidate31"
+    },
+    {
+      "id": "h15_early_entry_round2_candidate06",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate50.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round1_candidate50"
+    },
+    {
+      "id": "h15_early_entry_round2_candidate07",
+      "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h15/early_entry/round1_candidate26.npz",
+      "media_provenance": "saved_actual_torque_replay_from_true_prefix",
+      "candidate_track_max_error": 0.0,
+      "terminal_errors": {
+        "qpos": 0.0,
+        "qvel": 0.0
+      },
+      "pose_steps": 2000,
+      "shared_media_with": "h15_early_entry_round1_candidate26"
+    }
+  ]
+}

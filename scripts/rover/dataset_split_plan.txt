@@ -1,0 +1,59 @@
+ROVER DATASET SPLITS (development; no release frozen)
+==================================================
+New geometry: 15 ascending risers and 15 descending risers, including the final
+drop to ground. Within each staircase, every rise and tread has the same value,
+so the stair slope is 45 degrees. Historical 4 cm / 12-riser records retain
+their original geometry.
+
+train: 15 cm and 20 cm; base, yaw_left, yaw_right.
+validation: 15 cm and 20 cm; validation_left, validation_right.
+test: 17 cm and 18 cm; base, test_left, test_right. Reserved, unvalidated.
+regression: historical 4 cm / 12-riser cases. Not development training data.
+
+CLI defaults to base only (validation: validation_left). The additional variants
+require explicit --variants; for example --variants base,yaw_left,yaw_right.
+
+The exact initial x/y/yaw for each case lives in dataset_plan.py and is printed
+by --dry-run. Assignment and group hashes depend on geometry and initial state,
+never on success. Different trajectory prefixes do not change group ownership.
+
+Plan without simulation or file creation:
+  python generate_dataset.py --dry-run
+  python generate_dataset.py --split validation --dry-run
+  python generate_dataset.py --split test --dry-run
+  python generate_dataset.py --split regression --dry-run
+
+Collect development cases only when the controller is ready:
+  python generate_dataset.py --split train --prefix dev01
+  python generate_dataset.py --split validation --prefix val01
+
+Release freeze is an explicit later action, not performed by this change:
+  python generate_dataset.py --freeze-release /absolute/path/release.json
+This creates a new file and exits without simulation. Existing files cannot be
+overwritten. It captures controller and all relevant source hashes, robot,
+URDF, mesh hashes, MuJoCo version, control interval, simulation parameters and
+the full case plan. Changing any captured value invalidates the release.
+Use identical CLI physical parameters when freezing and evaluating.
+
+Held-out evaluation after an explicit freeze:
+  python generate_dataset.py --split test --release /absolute/path/release.json --prefix test01
+Without a matching frozen release this is rejected before any attempt starts.
+A test dry run is allowed while the test remains locked.
+
+Every run writes metadata before simulation. Failed or interrupted attempts
+remain in their original split and count in the denominator. Success alone
+does not publish an episode: independent checks and visual review still apply.
+Metadata contains split, concrete case_spec, policy snapshot/hash, and optional
+frozen release snapshot. Source snapshots now include nine Python files.
+
+Publication keeps accepted.jsonl and the web runs.jsonl compatible. It also
+writes train/validation/test/regression.jsonl (accepted only), corresponding
+*_attempts.jsonl (all attempts), and split_summary.json. The summary reports
+total attempts separately from successes and accepted episodes.
+  python publish_dataset.py --refresh-splits
+Refreshes split manifests without accepting new episodes or changing the web
+manifest. Unknown historical cases, such as old 5 cm experiments, remain in
+unassigned_attempts.jsonl and are never silently added to training.
+
+Pure logic checks, with simulation calls mocked:
+  python -m unittest -v test_dataset_plan

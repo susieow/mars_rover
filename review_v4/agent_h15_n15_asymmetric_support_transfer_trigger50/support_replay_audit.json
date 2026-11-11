@@ -1,0 +1,219 @@
+{
+  "source": "Saved initial integration state and every physics_ctrl action, independently stepped through the saved scene.",
+  "contact_force_convention": "mj_contactForce local force rotated by contact frame transpose into world, reversed for geom1 wheel. Only enabled wheel-terrain contacts are summed.",
+  "max_qpos_replay_error": 0.0,
+  "max_qvel_replay_error": 0.0,
+  "replay_ok": true,
+  "weight_n": 1243.37825019,
+  "windows": [
+    {
+      "stage": "SIDE_ACQUIRE_FRONT",
+      "start_s": 13.898999999997736,
+      "end_s": 21.444000000003225,
+      "base_x_min": 1.5384231176598955,
+      "base_x_max": 1.5770817034230398,
+      "physics_samples": 7545,
+      "mean_terrain_force_world_n": {
+        "left_front_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_middle_wheel_col_1": [
+          -177.78123194676223,
+          -0.9454521814981073,
+          250.73621125813435
+        ],
+        "left_rear_wheel_col_1": [
+          169.61309745343692,
+          -3.6837188109770427,
+          351.57865710629187
+        ],
+        "right_front_wheel_col_1": [
+          1.1428218174519664,
+          -0.44899086238121166,
+          2.5947147646980486
+        ],
+        "right_middle_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_rear_wheel_col_1": [
+          7.749576497228442,
+          5.075758602799055,
+          638.8738750453841
+        ]
+      }
+    },
+    {
+      "stage": "SIDE_HOLD_BRIDGE",
+      "start_s": 21.444000000003225,
+      "end_s": 21.74400000000359,
+      "base_x_min": 1.576435341585831,
+      "base_x_max": 1.5768052750173531,
+      "physics_samples": 300,
+      "mean_terrain_force_world_n": {
+        "left_front_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_middle_wheel_col_1": [
+          -140.89859910611324,
+          -20.417727773575606,
+          245.83974751244057
+        ],
+        "left_rear_wheel_col_1": [
+          119.15833648295879,
+          7.821799876066207,
+          356.96153099218475
+        ],
+        "right_front_wheel_col_1": [
+          33.96929022302699,
+          -7.453792474970493,
+          84.401464714759
+        ],
+        "right_middle_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_rear_wheel_col_1": [
+          -13.232492125077677,
+          20.369573314209674,
+          552.9213399734352
+        ]
+      }
+    },
+    {
+      "stage": "SIDE_PRESS_MIDDLE",
+      "start_s": 21.74400000000359,
+      "end_s": 22.048000000003963,
+      "base_x_min": 1.5767624637879518,
+      "base_x_max": 1.5769146818972983,
+      "physics_samples": 304,
+      "mean_terrain_force_world_n": {
+        "left_front_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_middle_wheel_col_1": [
+          -159.31256161515654,
+          3.9133699217431257,
+          289.02378394190436
+        ],
+        "left_rear_wheel_col_1": [
+          163.85392199297493,
+          -1.6403651862585358,
+          338.6340427017453
+        ],
+        "right_front_wheel_col_1": [
+          24.8031945101803,
+          -3.7737513935478417,
+          42.63940601506429
+        ],
+        "right_middle_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_rear_wheel_col_1": [
+          -32.677208857625054,
+          1.5287761566350782,
+          573.1339506397984
+        ]
+      }
+    },
+    {
+      "stage": "SIDE_ACQUIRE_FRONT",
+      "start_s": 22.048000000003963,
+      "end_s": 22.28200000000425,
+      "base_x_min": 1.5767336131845604,
+      "base_x_max": 1.5770501316463779,
+      "physics_samples": 234,
+      "mean_terrain_force_world_n": {
+        "left_front_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_middle_wheel_col_1": [
+          -156.0600199025919,
+          9.849675636597167,
+          285.584286888193
+        ],
+        "left_rear_wheel_col_1": [
+          157.53625394742136,
+          -4.658678155404495,
+          346.61827816064175
+        ],
+        "right_front_wheel_col_1": [
+          22.5412491315016,
+          -5.277073873752258,
+          49.29241485982534
+        ],
+        "right_middle_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_rear_wheel_col_1": [
+          -19.98351967633837,
+          1.6167507330191866,
+          566.1509360630121
+        ]
+      }
+    },
+    {
+      "stage": "FINAL_1S",
+      "start_s": 21.28200000000425,
+      "end_s": 22.28200100000425,
+      "base_x_min": 1.576435341585831,
+      "base_x_max": 1.5770501316463779,
+      "physics_samples": 1000,
+      "mean_terrain_force_world_n": {
+        "left_front_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_middle_wheel_col_1": [
+          -151.1479606659487,
+          -3.4271824320623954,
+          269.7550406484072
+        ],
+        "left_rear_wheel_col_1": [
+          143.18354862147365,
+          1.505373650027843,
+          351.7168306479106
+        ],
+        "right_front_wheel_col_1": [
+          28.29278083282663,
+          -6.393813613400461,
+          62.60610733528935
+        ],
+        "right_middle_wheel_col_1": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_rear_wheel_col_1": [
+          -20.351186633858667,
+          8.300547690021473,
+          560.3021506897329
+        ]
+      }
+    }
+  ],
+  "final_zero_velocity_gravity_bias_nm": {
+    "left_rocker_joint": -111.85238074955952,
+    "right_rocker_joint": -73.01109384020374
+  },
+  "final_recorded_actuator_force_nm": {
+    "left_rocker_joint": -100.0,
+    "right_rocker_joint": -15.573598514815147
+  },
+  "dataset_accepted": false
+}

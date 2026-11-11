@@ -1,0 +1,6306 @@
+{
+  "parameters": {
+    "height": 0.2,
+    "stairs": 15,
+    "depth": 0.2,
+    "seconds": 90.0,
+    "speed": 2.0,
+    "friction": 4.0,
+    "tau_max": 50.0,
+    "nosing": 0.0,
+    "front_lift_deg": 0.0,
+    "middle_lift_deg": 0.0,
+    "rocker_gain": 600.0,
+    "rocker_damp": 150.0,
+    "wheel_gain": 40.0,
+    "descent_wheel_gain": 40.0,
+    "steer_damp": 50.0,
+    "slew": 15.0,
+    "descent_speed": 1.0,
+    "settle_time": 1.2,
+    "quality_pitch_limit": 60.0,
+    "quality_roll_limit": 15.0,
+    "contact_timeconst": 0.004,
+    "init_x": 0.0,
+    "init_y": 0.0,
+    "init_yaw_deg": 0.0
+  },
+  "mode": "anchor_joint",
+  "result": {
+    "height": 0.2,
+    "stairs": 15,
+    "depth": 0.2,
+    "friction": 4.0,
+    "contact_timeconst": 0.004,
+    "speed": 2.0,
+    "wheel_gain": 40.0,
+    "descent_speed": 1.0,
+    "descent_wheel_gain": 40.0,
+    "steer_damp": 50.0,
+    "rocker_gain": 600.0,
+    "rocker_damp": 150.0,
+    "nosing": 0.0,
+    "tau_max_requested": 50.0,
+    "tau_max_actual": 50.0,
+    "front_lift_deg": 0.0,
+    "middle_lift_deg": 0.0,
+    "quality_pitch_limit": 60.0,
+    "deg": 12.0,
+    "assist": true,
+    "controller": "closed_loop_v5",
+    "simulation_dt": 0.001,
+    "control_dt": 0.001,
+    "duration_s": 20.308000000001837,
+    "quality_roll_limit": 15.0,
+    "ground_wheels": [
+      2,
+      5
+    ],
+    "stable_duration_s": 0.0,
+    "x": 1.59,
+    "y": -0.0,
+    "z": 0.918,
+    "max_z": 0.928,
+    "plat_z": 3.532,
+    "max_pitch_deg": 53.9,
+    "max_roll_deg": 0.8,
+    "final_pitch_deg": -49.77,
+    "final_roll_deg": 0.22,
+    "final_yaw_deg": -0.13,
+    "final_yaw_error_deg": 0.13,
+    "linear_speed": 0.0748,
+    "angular_speed": 0.1048,
+    "wheel_speed_max": 1.6739,
+    "reached_top": false,
+    "back_down": false,
+    "past_end": false,
+    "platform_seen": false,
+    "down_seen": false,
+    "settled": false,
+    "final_shape_ok": false,
+    "quality_ok": true,
+    "stopped_at_s": null,
+    "recovery_count": 0,
+    "settle_retries": 0,
+    "max_slip": 2.473,
+    "max_abs_y": 0.009,
+    "max_yaw_error_deg": 0.63,
+    "phase": "TRANSFER_RECOVER",
+    "events": [
+      {
+        "t": 2.701,
+        "phase": "FRONT_LIFT",
+        "riser": "up0"
+      },
+      {
+        "t": 3.882,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 3.883,
+        "phase": "FRONT_LIFT",
+        "riser": "up0"
+      },
+      {
+        "t": 4.006,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 4.007,
+        "phase": "FRONT_LIFT",
+        "riser": "up0"
+      },
+      {
+        "t": 4.257,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 4.258,
+        "phase": "FRONT_LIFT",
+        "riser": "up0"
+      },
+      {
+        "t": 4.378,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 4.379,
+        "phase": "FRONT_LIFT",
+        "riser": "up1"
+      },
+      {
+        "t": 5.266,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 5.267,
+        "phase": "FRONT_LIFT",
+        "riser": "up1"
+      },
+      {
+        "t": 5.526,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 5.527,
+        "phase": "FRONT_LIFT",
+        "riser": "up1"
+      },
+      {
+        "t": 5.647,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 5.648,
+        "phase": "FRONT_LIFT",
+        "riser": "up1"
+      },
+      {
+        "t": 5.768,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 5.862,
+        "phase": "FRONT_LIFT",
+        "riser": "up2"
+      },
+      {
+        "t": 6.902,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 6.903,
+        "phase": "FRONT_LIFT",
+        "riser": "up2"
+      },
+      {
+        "t": 7.023,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 7.024,
+        "phase": "FRONT_LIFT",
+        "riser": "up2"
+      },
+      {
+        "t": 7.159,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 7.16,
+        "phase": "FRONT_LIFT",
+        "riser": "up2"
+      },
+      {
+        "t": 7.411,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 7.412,
+        "phase": "FRONT_LIFT",
+        "riser": "up2"
+      },
+      {
+        "t": 7.532,
+        "phase": "MIDDLE_APPROACH",
+        "riser": null
+      },
+      {
+        "t": 7.533,
+        "phase": "FRONT_LIFT",
+        "riser": "up3"
+      },
+      {
+        "t": 8.142,
+        "phase": "LOAD_MIDDLE_SUPPORT",
+        "riser": null
+      },
+      {
+        "t": 11.327,
+        "phase": "ANCHOR_MIDDLE_PULL",
+        "riser": null
+      },
+      {
+        "t": 11.686,
+        "phase": "TRANSFER_RECOVER",
+        "riser": null
+      },
+      {
+        "t": 12.687,
+        "phase": "LOAD_MIDDLE_SUPPORT",
+        "riser": null
+      },
+      {
+        "t": 14.108,
+        "phase": "ANCHOR_MIDDLE_PULL",
+        "riser": null
+      },
+      {
+        "t": 15.942,
+        "phase": "TRANSFER_RECOVER",
+        "riser": null
+      },
+      {
+        "t": 16.942,
+        "phase": "LOAD_MIDDLE_SUPPORT",
+        "riser": null
+      },
+      {
+        "t": 18.551,
+        "phase": "ANCHOR_MIDDLE_PULL",
+        "riser": null
+      },
+      {
+        "t": 19.307,
+        "phase": "TRANSFER_RECOVER",
+        "riser": null
+      }
+    ],
+    "abort_reason": "diagnostic_anchor_cycles_exhausted",
+    "success": false
+  },
+  "audit": {
+    "audit_steps": 20308,
+    "audit_time_s": 20.308000000001837,
+    "nonfinite_seen": false,
+    "time_nonmonotonic_seen": false,
+    "mujoco_warning_counts": {},
+    "max_contact_penetration_m": 0.006220666289735277,
+    "worst_contact": {
+      "time_s": 4.143999999999719,
+      "robot_geom": "right_front_wheel_col_1",
+      "terrain_geom": "up0",
+      "penetration_m": 0.006220666289735277
+    },
+    "non_wheel_contact_duration_s": 0.0,
+    "non_wheel_contact_duration_by_geom_s": {},
+    "max_joint_limit_error_deg": 0.0,
+    "joint_limit_error_by_joint_deg": {
+      "left_rocker_joint": 0.0,
+      "left_front_steer_joint": 0.0,
+      "left_rear_steer_joint": 0.0,
+      "right_rocker_joint": 0.0,
+      "right_front_steer_joint": 0.0,
+      "right_rear_steer_joint": 0.0
+    },
+    "actuator_force_peak_by_joint_nm": {
+      "left_rocker_joint": 100.0,
+      "left_front_steer_joint": 39.821169801069466,
+      "left_front_wheel_joint": 50.0,
+      "left_middle_wheel_joint": 50.0,
+      "left_rear_steer_joint": 27.255939848546028,
+      "left_rear_wheel_joint": 50.0,
+      "right_rocker_joint": 100.0,
+      "right_front_steer_joint": 40.0,
+      "right_front_wheel_joint": 50.0,
+      "right_middle_wheel_joint": 50.0,
+      "right_rear_steer_joint": 21.55892046029015,
+      "right_rear_wheel_joint": 50.0
+    },
+    "actuator_force_peak_by_kind_nm": {
+      "wheel": 50.0,
+      "steer": 40.0,
+      "rocker": 100.0
+    },
+    "velocity_limit_source": {
+      "path": "/home/agilex/wzy/rover/assets/mars_rover/urdf/mars_rover.urdf",
+      "sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a"
+    },
+    "joint_velocity_limit_rad_s": {
+      "left_rocker_joint": 1.57,
+      "left_front_steer_joint": 3.1416,
+      "left_front_wheel_joint": 52.359878,
+      "left_rear_steer_joint": 3.1416,
+      "left_rear_wheel_joint": 52.359878,
+      "left_middle_wheel_joint": 52.359878,
+      "right_rocker_joint": 1.57,
+      "right_front_steer_joint": 3.1416,
+      "right_front_wheel_joint": 52.359878,
+      "right_rear_steer_joint": 3.1416,
+      "right_rear_wheel_joint": 52.359878,
+      "right_middle_wheel_joint": 52.359878
+    },
+    "joint_velocity_threshold_rad_s": {
+      "left_rocker_joint": 1.58,
+      "left_front_steer_joint": 3.1515999999999997,
+      "left_front_wheel_joint": 52.369878,
+      "left_rear_steer_joint": 3.1515999999999997,
+      "left_rear_wheel_joint": 52.369878,
+      "left_middle_wheel_joint": 52.369878,
+      "right_rocker_joint": 1.58,
+      "right_front_steer_joint": 3.1515999999999997,
+      "right_front_wheel_joint": 52.369878,
+      "right_rear_steer_joint": 3.1515999999999997,
+      "right_rear_wheel_joint": 52.369878,
+      "right_middle_wheel_joint": 52.369878
+    },
+    "joint_velocity_peak_rad_s": {
+      "left_rocker_joint": 0.6365133589560895,
+      "left_front_steer_joint": 0.9098800938264726,
+      "left_front_wheel_joint": 2.9549422530958074,
+      "left_rear_steer_joint": 0.39543403569523605,
+      "left_rear_wheel_joint": 2.1003225497140816,
+      "left_middle_wheel_joint": 2.2192350269733527,
+      "right_rocker_joint": 0.6792816642047884,
+      "right_front_steer_joint": 1.0765073850732483,
+      "right_front_wheel_joint": 3.6652259461273333,
+      "right_rear_steer_joint": 0.4208166482727885,
+      "right_rear_wheel_joint": 2.101840719963896,
+      "right_middle_wheel_joint": 2.32759477920444
+    },
+    "joint_velocity_excess_duration_s": {
+      "left_rocker_joint": 0.0,
+      "left_front_steer_joint": 0.0,
+      "left_front_wheel_joint": 0.0,
+      "left_rear_steer_joint": 0.0,
+      "left_rear_wheel_joint": 0.0,
+      "left_middle_wheel_joint": 0.0,
+      "right_rocker_joint": 0.0,
+      "right_front_steer_joint": 0.0,
+      "right_front_wheel_joint": 0.0,
+      "right_rear_steer_joint": 0.0,
+      "right_rear_wheel_joint": 0.0,
+      "right_middle_wheel_joint": 0.0
+    },
+    "final_ground_normal_force_n": {
+      "left_front_wheel": 0.0,
+      "left_middle_wheel": 0.0,
+      "left_rear_wheel": 364.6480269929028,
+      "right_front_wheel": 0.0,
+      "right_middle_wheel": 0.0,
+      "right_rear_wheel": 94.97665767523412
+    },
+    "final_ground_contact_by_wheel": {
+      "left_front_wheel": false,
+      "left_middle_wheel": false,
+      "left_rear_wheel": true,
+      "right_front_wheel": false,
+      "right_middle_wheel": false,
+      "right_rear_wheel": true
+    },
+    "final_all_six_ground": false,
+    "final_joint_state": {
+      "left_rocker_joint": {
+        "position_deg": 6.8105689280167985,
+        "velocity_deg_s": -22.129213770916692
+      },
+      "left_front_steer_joint": {
+        "position_deg": 0.8283292568647296,
+        "velocity_deg_s": -3.5111644942104165
+      },
+      "left_rear_steer_joint": {
+        "position_deg": -0.5886478409863225,
+        "velocity_deg_s": 0.5930739240443865
+      },
+      "right_rocker_joint": {
+        "position_deg": 2.4879941910278234,
+        "velocity_deg_s": 9.81849225933757
+      },
+      "right_front_steer_joint": {
+        "position_deg": -0.9435447718190949,
+        "velocity_deg_s": -0.8518202250460618
+      },
+      "right_rear_steer_joint": {
+        "position_deg": 0.035901003963773145,
+        "velocity_deg_s": 0.2314969163708805
+      }
+    },
+    "continuous_final_stability_s": 0.0,
+    "final_stability_criteria": {
+      "finite": true,
+      "six_wheels_on_ground": false,
+      "roll_pitch": false,
+      "heading": true,
+      "lateral_position": true,
+      "body_translation": false,
+      "body_rotation": false,
+      "wheel_speed": false,
+      "joint_position": false,
+      "joint_speed": false
+    },
+    "quality_rejection_reasons": [
+      "final_six_wheels_not_supported_on_ground",
+      "final_stability_under_1s"
+    ],
+    "audit_quality_ok": false,
+    "thresholds": {
+      "minimum_final_stability_s": 1.0,
+      "final_roll_pitch_deg": 3.0,
+      "final_yaw_deg": 5.0,
+      "final_lateral_position_m": 0.25,
+      "final_linear_speed_m_s": 0.03,
+      "final_angular_speed_rad_s": 0.08,
+      "final_wheel_speed_rad_s": 0.2,
+      "final_rocker_steer_position_deg": 3.0,
+      "final_rocker_steer_speed_rad_s": 0.1,
+      "max_penetration_m": 0.02,
+      "max_non_wheel_contact_s": 0.02,
+      "max_joint_limit_error_deg": 1.0,
+      "minimum_ground_normal_force_n": 5.0,
+      "actuator_force_limits_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "joint_velocity_tolerance_rad_s": 0.01,
+      "actuator_force_tolerance_nm": 0.001
+    }
+  },
+  "route": {
+    "route_ok": false,
+    "rejection_reasons": [
+      "route_missing:all_six_supported_on_platform_s",
+      "route_missing:descent_s",
+      "route_missing:all_six_ground_after_stairs_s",
+      "route_final_base_not_past_end",
+      "route_final_wheels_not_past_end",
+      "route_final_ground_stability_under_1s"
+    ],
+    "geometry": {
+      "slope_deg": 44.99999999999998,
+      "ascending_risers": 15,
+      "descending_risers_including_ground": 15,
+      "height_m": 0.2,
+      "depth_m": 0.20000000000000018,
+      "chamfer_or_nosing": false,
+      "start_x": 1.6,
+      "end_x": 9.399999999999999,
+      "platform_start_x": 4.600000000000002,
+      "platform_end_x": 6.600000000000002,
+      "platform_top_z": 3.0,
+      "half_width_m": 2.5
+    },
+    "events": {
+      "start_before_stairs_s": 0.001,
+      "initial_six_wheels_ground_s": 0.02000000000000001,
+      "ascent_s": 3.8799999999996837
+    },
+    "platform_wheels_seen": [],
+    "ascending_treads_contacted": [
+      "up0",
+      "up1",
+      "up2",
+      "up3",
+      "up4"
+    ],
+    "descending_treads_contacted": [],
+    "max_abs_y_m": 0.008868951056599114,
+    "max_abs_yaw_deg": 0.6271339517728824,
+    "max_abs_roll_deg": 0.8448554448031004,
+    "max_abs_pitch_deg": 53.92660288871067,
+    "max_abs_steer_deg": 2.337929984059906,
+    "steer_peak": {
+      "joint": "left_rear_steer_joint",
+      "abs_angle_deg": 2.337929984059906,
+      "signed_angle_deg": -2.337929984059906,
+      "time_s": 3.3719999999997397
+    },
+    "steer_peak_by_joint": {
+      "left_front_steer_joint": {
+        "abs_angle_deg": 1.6561527453347957,
+        "signed_angle_deg": 1.6561527453347957,
+        "time_s": 18.798999999999992
+      },
+      "left_rear_steer_joint": {
+        "abs_angle_deg": 2.337929984059906,
+        "signed_angle_deg": -2.337929984059906,
+        "time_s": 3.3719999999997397
+      },
+      "right_front_steer_joint": {
+        "abs_angle_deg": 1.8759286557543235,
+        "signed_angle_deg": -1.8759286557543235,
+        "time_s": 12.116999999998724
+      },
+      "right_rear_steer_joint": {
+        "abs_angle_deg": 2.202507933637995,
+        "signed_angle_deg": 2.202507933637995,
+        "time_s": 3.9019999999996813
+      }
+    },
+    "task_steer_limit_deg": 30.0,
+    "wheel_outside_course": false,
+    "final_base_x_m": 1.5921830766187661,
+    "final_wheel_min_x_m": 1.4370896196974152
+  },
+  "record": {
+    "trajectory_path": "/home/agilex/wzy/rover/review_v4/high20_anchor_joint/trajectory.npz",
+    "actions": 20308,
+    "states": 20309,
+    "physics_steps": 20308,
+    "duration": 20.308000000001837,
+    "simulation_dt": 0.001,
+    "control_dt": 0.001
+  },
+  "source_sha256": {
+    "verify_dataset.py": "17fbc861766167ab8b2077d9472d3f515285ff72c21c8fe660ef6ba8980080ae",
+    "experiment.py": "7be7e19f9808364864f5f9ce20a54ced171ad5995067145a933cdfc4cecea025",
+    "course.py": "8778c12b9586121ac8ea1d33fdc34d781f3b8c9d6c60c87c871f35ee83ced3c6",
+    "climb.py": "c6eeda7d0d07df47300b9b0659cee7a38875a71b3ab6c277d5bd9feead581672",
+    "closed_loop_controller.py": "85ce76d03d7c5367d8379804802ca1f94bbfc09a30db8d670675fc78f8b42538",
+    "dataset_io.py": "a10982652c9dc9efbc9d792623769f4e7db915092a5523e3f75360b12a41aa97",
+    "episode_audit.py": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab"
+  },
+  "samples": [
+    {
+      "t": 0.001,
+      "x": 6.601240279229661e-07,
+      "z": 0.5318150617645283,
+      "rpy_deg": [
+        -0.0001630425028534738,
+        -8.352431840541219e-05,
+        3.090393582411734e-05
+      ],
+      "phase": "APPROACH",
+      "target": 0.0,
+      "rocker_deg": [
+        0.00012665355212124012,
+        0.00046499891056272694
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 65.91225214061143,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 67.36452871254582,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          0.6603678838138957,
+          0.3538279,
+          0.1630235369378369
+        ],
+        "left_middle_wheel_col_1": [
+          0.013147203352705476,
+          0.34585259999999995,
+          0.1637197630031847
+        ],
+        "left_rear_wheel_col_1": [
+          -0.673890820269262,
+          0.3221992,
+          0.16399165152007567
+        ],
+        "right_front_wheel_col_1": [
+          0.6506347962971054,
+          -0.35322109999999995,
+          0.16416327662710206
+        ],
+        "right_middle_wheel_col_1": [
+          0.018178870287700898,
+          -0.34586589999999995,
+          0.16249424239037447
+        ],
+        "right_rear_wheel_col_1": [
+          -0.6753531232055717,
+          -0.3219364,
+          0.1631312796935787
+        ]
+      }
+    },
+    {
+      "t": 0.5000000000000003,
+      "x": 0.07448821482564305,
+      "z": 0.5307101080608606,
+      "rpy_deg": [
+        -0.03642103520836312,
+        0.04612901145851225,
+        0.007956486009587283
+      ],
+      "phase": "APPROACH",
+      "target": 0.0,
+      "rocker_deg": [
+        -0.1444510045420778,
+        0.2904465201220864
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 73.62799742363931,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 45.31340759395218,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_middle_wheel_col_1"
+          ],
+          "fn": 40.42780150151356,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_middle_wheel_col_1"
+          ],
+          "fn": 16.982322615373036,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 240.25525314592775,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 178.95584194679452,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 171.12793474008635,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 120.92807410540391,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 173.09040506276176,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 114.74114455827477,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 46.40736819943917,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 22.038488935337693,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          0.7351336877165842,
+          0.3540147463257212,
+          0.16231648388357717
+        ],
+        "left_middle_wheel_col_1": [
+          0.08853243953373707,
+          0.3459495632982722,
+          0.16260133942176108
+        ],
+        "left_rear_wheel_col_1": [
+          -0.5999737804496731,
+          0.32219630981201763,
+          0.16212738109255231
+        ],
+        "right_front_wheel_col_1": [
+          0.7232391210845406,
+          -0.35304625224517183,
+          0.16221237218004558
+        ],
+        "right_middle_wheel_col_1": [
+          0.08971957412367644,
+          -0.3457691577966451,
+          0.16222299879863716
+        ],
+        "right_rear_wheel_col_1": [
+          -0.6014833919332362,
+          -0.32193184002999997,
+          0.16246481057764683
+        ]
+      }
+    },
+    {
+      "t": 1.0000000000000007,
+      "x": 0.235058606004437,
+      "z": 0.5311540547365116,
+      "rpy_deg": [
+        -0.07828981942957493,
+        0.16788178198303053,
+        0.020518845323076493
+      ],
+      "phase": "APPROACH",
+      "target": 0.0,
+      "rocker_deg": [
+        -0.26971864990732736,
+        0.353051338317005
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 63.781576405129826,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 16.40544887486169,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_middle_wheel_col_1"
+          ],
+          "fn": 11.602099235542678,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 305.27529227046705,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 178.69350680622932,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 244.65387084133437,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 127.35158732252552,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 208.69991019438282,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 86.67846277099103,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          0.8960707734579411,
+          0.3542776943158904,
+          0.16243421046306922
+        ],
+        "left_middle_wheel_col_1": [
+          0.25144335572477494,
+          0.34606973149827425,
+          0.16284917277438735
+        ],
+        "left_rear_wheel_col_1": [
+          -0.44161796466430164,
+          0.32215674104760533,
+          0.1620534844640467
+        ],
+        "right_front_wheel_col_1": [
+          0.8848145354463379,
+          -0.3527771718008433,
+          0.16211741742827684
+        ],
+        "right_middle_wheel_col_1": [
+          0.2470009707749151,
+          -0.3456519175446638,
+          0.16222599078552
+        ],
+        "right_rear_wheel_col_1": [
+          -0.4423436609634948,
+          -0.3219680712092784,
+          0.1643085982539488
+        ]
+      }
+    },
+    {
+      "t": 1.5009999999999455,
+      "x": 0.3951183273309538,
+      "z": 0.531258336339757,
+      "rpy_deg": [
+        -0.036809593021653736,
+        0.1186162597152636,
+        0.02777392641965015
+      ],
+      "phase": "APPROACH",
+      "target": 0.0,
+      "rocker_deg": [
+        -0.0991979653701027,
+        0.16699424208101374
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 50.34355725044296,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 28.520591045278024,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_middle_wheel_col_1"
+          ],
+          "fn": 33.54952551264107,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_middle_wheel_col_1"
+          ],
+          "fn": 11.699306762952364,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 267.46187626224935,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 214.7549889900221,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 214.78253974459548,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 156.13019469937052,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 160.7243228736359,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 105.09781988187089,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.0560612452648686,
+          0.35416797538642236,
+          0.16242662916776346
+        ],
+        "left_middle_wheel_col_1": [
+          0.4125958485394649,
+          0.34588049512056407,
+          0.16264883960969093
+        ],
+        "left_rear_wheel_col_1": [
+          -0.2834141667588673,
+          0.321881694741279,
+          0.16205877890898288
+        ],
+        "right_front_wheel_col_1": [
+          1.0483440976912426,
+          -0.3528772794831429,
+          0.16211630130907673
+        ],
+        "right_middle_wheel_col_1": [
+          0.4065621509391885,
+          -0.3458414232392052,
+          0.16224513725125586
+        ],
+        "right_rear_wheel_col_1": [
+          -0.2825588945548977,
+          -0.3222462702095471,
+          0.16399015632646594
+        ]
+      }
+    },
+    {
+      "t": 2.0009999999998906,
+      "x": 0.5543999988862736,
+      "z": 0.531028242759641,
+      "rpy_deg": [
+        0.038225588404258916,
+        -0.042910274805145185,
+        0.028714230542151855
+      ],
+      "phase": "APPROACH",
+      "target": 0.0,
+      "rocker_deg": [
+        0.221785694796239,
+        -0.10833306673339031
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 143.12460381840464,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 94.82348011522845,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_middle_wheel_col_1"
+          ],
+          "fn": 129.9588412074856,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_middle_wheel_col_1"
+          ],
+          "fn": 81.47473437403559,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 131.42448260172802,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 74.39952867786768,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 123.98722124918595,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 80.73215521540965,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 70.34245120434545,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 39.59071151775028,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 166.28670890267097,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 107.80496356007188,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.214683412729403,
+          0.3538308295477733,
+          0.16212645704671272
+        ],
+        "left_middle_wheel_col_1": [
+          0.5705806051483687,
+          0.34553305664766515,
+          0.16231556382872178
+        ],
+        "left_rear_wheel_col_1": [
+          -0.1241064587086002,
+          0.3215261801375964,
+          0.1623584283384977
+        ],
+        "right_front_wheel_col_1": [
+          1.2103141405981852,
+          -0.35320676601347695,
+          0.16232059792239248
+        ],
+        "right_middle_wheel_col_1": [
+          0.568597750257024,
+          -0.3461867870336233,
+          0.16247781512603815
+        ],
+        "right_rear_wheel_col_1": [
+          -0.12226389167099933,
+          -0.32260521226490124,
+          0.16213157743055295
+        ]
+      }
+    },
+    {
+      "t": 2.5009999999998356,
+      "x": 0.7141177940223141,
+      "z": 0.5312636321952372,
+      "rpy_deg": [
+        0.08590468072957926,
+        -0.09295879342708999,
+        0.017448566988379058
+      ],
+      "phase": "APPROACH",
+      "target": 0.0,
+      "rocker_deg": [
+        0.32272154569618106,
+        -0.2901489904049392
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 243.85813747193862,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_front_wheel_col_1"
+          ],
+          "fn": 117.06425730738657,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_middle_wheel_col_1"
+          ],
+          "fn": 218.9397926515969,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_middle_wheel_col_1"
+          ],
+          "fn": 84.31753544798515,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 67.68516013642878,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_front_wheel_col_1"
+          ],
+          "fn": 15.315391086252081,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_middle_wheel_col_1"
+          ],
+          "fn": 14.332514404160124,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 312.0869104655937,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 169.59094741383146,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.3737847466137918,
+          0.3535677782778435,
+          0.16197409853466294
+        ],
+        "left_middle_wheel_col_1": [
+          0.7278988968588106,
+          0.3453937696866302,
+          0.16221668680350412
+        ],
+        "left_rear_wheel_col_1": [
+          0.03685172019479726,
+          0.32152192286313386,
+          0.16426625666991979
+        ],
+        "right_front_wheel_col_1": [
+          1.369561114326462,
+          -0.3534750773203359,
+          0.1625870340895236
+        ],
+        "right_middle_wheel_col_1": [
+          0.7317911576324329,
+          -0.3463252848344663,
+          0.16284530890705312
+        ],
+        "right_rear_wheel_col_1": [
+          0.038429755429420974,
+          -0.3226045645196444,
+          0.1619009293640348
+        ]
+      }
+    },
+    {
+      "t": 3.0009999999997805,
+      "x": 0.7769399543012856,
+      "z": 0.5519170856672859,
+      "rpy_deg": [
+        -0.14472440863799477,
+        -1.9772977140618078,
+        -0.0016565402450170242
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        1.8416004887755502,
+        0.4366705633917941
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up0"
+          ],
+          "fn": 303.5512011167268,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up0"
+          ],
+          "fn": 15.993484970038756,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 177.45056720964655,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 143.57239025607294,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up0"
+          ],
+          "fn": 55.13331932953511,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up0"
+          ],
+          "fn": 218.51853276506316,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 389.43249699541605,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 71.61409520814371,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.437861077899852,
+          0.3535983783893041,
+          0.19417059892903335
+        ],
+        "left_middle_wheel_col_1": [
+          0.7907611421141478,
+          0.3456915933057985,
+          0.19160700351793444
+        ],
+        "left_rear_wheel_col_1": [
+          0.11674156469770827,
+          0.3218913981680673,
+          0.16222214304912774
+        ],
+        "right_front_wheel_col_1": [
+          1.437543430655142,
+          -0.35338870334551875,
+          0.20263963616774272
+        ],
+        "right_middle_wheel_col_1": [
+          0.8041835287376163,
+          -0.3460379063614824,
+          0.18874518880432764
+        ],
+        "right_rear_wheel_col_1": [
+          0.11604916494399528,
+          -0.3220046688795732,
+          0.1619174460528893
+        ]
+      }
+    },
+    {
+      "t": 3.5009999999997254,
+      "x": 0.7866837427918577,
+      "z": 0.5982076639181869,
+      "rpy_deg": [
+        -0.06721378532291797,
+        -6.074968012250208,
+        0.054578801396722984
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        3.6426365004489676,
+        0.679727491047558
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up0"
+          ],
+          "fn": 399.4095411799773,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up0"
+          ],
+          "fn": 39.89079640207435,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 101.46893932276134,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 547.7266976127686,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 122.46655198531676,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.4590268744230803,
+          0.3543244071022786,
+          0.27847578288446556
+        ],
+        "left_middle_wheel_col_1": [
+          0.8126114481819331,
+          0.3457903361269609,
+          0.25236594727815786
+        ],
+        "left_rear_wheel_col_1": [
+          0.1561165011896859,
+          0.3213397410989798,
+          0.16263400687009352
+        ],
+        "right_front_wheel_col_1": [
+          1.4677965784302462,
+          -0.35260128325676765,
+          0.2964526563027413
+        ],
+        "right_middle_wheel_col_1": [
+          0.839068857170693,
+          -0.34592608096851796,
+          0.23639860341769162
+        ],
+        "right_rear_wheel_col_1": [
+          0.15709212996707872,
+          -0.3224659691660941,
+          0.16160798143941887
+        ]
+      }
+    },
+    {
+      "t": 4.000999999999671,
+      "x": 0.8351524906287269,
+      "z": 0.6213052184630128,
+      "rpy_deg": [
+        -0.07960530800175923,
+        -8.129884639961327,
+        0.10636450487789406
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        -0.2742710665765092,
+        1.463717181478635
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up0"
+          ],
+          "fn": 29.376301696866353,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 176.3100010608726,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 167.2492911781265,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up0"
+          ],
+          "fn": 263.5113370585906,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up0"
+          ],
+          "fn": 14.106499293694384,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 384.39782605323103,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 19.570217036224044,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.5413602333209253,
+          0.3563665399803738,
+          0.35092028276216136
+        ],
+        "left_middle_wheel_col_1": [
+          0.9031150982714631,
+          0.34720504035863525,
+          0.2590696626753185
+        ],
+        "left_rear_wheel_col_1": [
+          0.21977560815964797,
+          0.3222293344846914,
+          0.16222968400619348
+        ],
+        "right_front_wheel_col_1": [
+          1.5227008317240052,
+          -0.3506546164005759,
+          0.34183730239024956
+        ],
+        "right_middle_wheel_col_1": [
+          0.8934412522027921,
+          -0.3445250137290403,
+          0.2635973714938743
+        ],
+        "right_rear_wheel_col_1": [
+          0.22129379496174925,
+          -0.3217245662461456,
+          0.16206878924818718
+        ]
+      }
+    },
+    {
+      "t": 4.500999999999838,
+      "x": 0.9288021394000495,
+      "z": 0.6305444266727562,
+      "rpy_deg": [
+        0.01673956683901178,
+        -8.914700156418522,
+        0.11430110144824673
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        -0.04978559617898645,
+        -1.1467855662369593
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up1"
+          ],
+          "fn": 226.8326187740289,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 310.4329114733913,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 51.994208476870696,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up1"
+          ],
+          "fn": 268.70642402996504,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 382.4786264374404,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 120.97416588161792,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.6374952738589117,
+          0.3564634399638499,
+          0.36955109222286825
+        ],
+        "left_middle_wheel_col_1": [
+          1.0025912627338363,
+          0.3472197136222276,
+          0.27046957010955086
+        ],
+        "left_rear_wheel_col_1": [
+          0.32101544841911134,
+          0.3221013767195978,
+          0.16223930297985303
+        ],
+        "right_front_wheel_col_1": [
+          1.637354085338727,
+          -0.3505116873707935,
+          0.37746661301472917
+        ],
+        "right_middle_wheel_col_1": [
+          1.0095871633833533,
+          -0.3444830969046095,
+          0.2608725105135595
+        ],
+        "right_rear_wheel_col_1": [
+          0.32104215377107015,
+          -0.32184200715001876,
+          0.16181803186878352
+        ]
+      }
+    },
+    {
+      "t": 5.000000000000004,
+      "x": 0.9372667898540042,
+      "z": 0.6815528401550915,
+      "rpy_deg": [
+        0.12740204011912967,
+        -13.829532003834686,
+        0.11715986249396655
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        2.692129077273542,
+        1.2003513991321428
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up1"
+          ],
+          "fn": 327.9467341165288,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up1"
+          ],
+          "fn": 11.414995043894567,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 306.5437871062781,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up1"
+          ],
+          "fn": 37.19819205543068,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 474.0757467813841,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 60.803481168403266,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.651336671022369,
+          0.3567059004892261,
+          0.46453423194436355
+        ],
+        "left_middle_wheel_col_1": [
+          1.0213795502427123,
+          0.3473795691492143,
+          0.33893735609544196
+        ],
+        "left_rear_wheel_col_1": [
+          0.3709645524068691,
+          0.3223733568067444,
+          0.16237938092347315
+        ],
+        "right_front_wheel_col_1": [
+          1.654070330551118,
+          -0.35026516185431017,
+          0.47273825057507074
+        ],
+        "right_middle_wheel_col_1": [
+          1.0294948271639346,
+          -0.3443044055949419,
+          0.3307717412940102
+        ],
+        "right_rear_wheel_col_1": [
+          0.3729275649656897,
+          -0.3215447004208165,
+          0.1618274815851235
+        ]
+      }
+    },
+    {
+      "t": 5.500000000000171,
+      "x": 0.9986302932131033,
+      "z": 0.7112686482936491,
+      "rpy_deg": [
+        0.1484519298077798,
+        -16.806995495407506,
+        0.09563277790448342
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        0.4050022730991908,
+        -0.23588258428956682
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up1"
+          ],
+          "fn": 356.5940087596065,
+          "normal": [
+            0.39678451656482033,
+            -1.2712730071326819e-08,
+            -0.9179117862923549
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 374.3179423777342,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 101.86511294039292,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up1"
+          ],
+          "fn": 73.8940391587461,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up1"
+          ],
+          "fn": 67.54145636669803,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 277.4094797281397,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 18.19267882491571,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.7347964262205313,
+          0.3573923066010891,
+          0.5481106455534727
+        ],
+        "left_middle_wheel_col_1": [
+          1.1175344477955835,
+          0.3483798332251065,
+          0.36297375497027373
+        ],
+        "left_rear_wheel_col_1": [
+          0.4585099721788246,
+          0.32362028622202543,
+          0.16205625321275383
+        ],
+        "right_front_wheel_col_1": [
+          1.7327996404201027,
+          -0.3495571962132366,
+          0.5481014389820855
+        ],
+        "right_middle_wheel_col_1": [
+          1.120844718675403,
+          -0.3433343245630325,
+          0.3627746899459802
+        ],
+        "right_rear_wheel_col_1": [
+          0.46095562946374785,
+          -0.3203980212169537,
+          0.1622539141298633
+        ]
+      }
+    },
+    {
+      "t": 6.000000000000338,
+      "x": 1.0960559309591296,
+      "z": 0.7244609379035485,
+      "rpy_deg": [
+        0.3391410192839349,
+        -18.186881378340676,
+        0.041573534419027156
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        0.05241510659651255,
+        -0.3895893436424866
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 477.4016265546196,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 73.22013393825756,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 163.12845556804604,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 441.74330277147146,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 332.02043932957764,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.838362123919558,
+          0.3563278716097922,
+          0.5823703022320994
+        ],
+        "left_middle_wheel_col_1": [
+          1.2240069458985818,
+          0.34791720113968577,
+          0.3784401155268087
+        ],
+        "left_rear_wheel_col_1": [
+          0.5679878696427171,
+          0.3237779648039472,
+          0.16294453036819387
+        ],
+        "right_front_wheel_col_1": [
+          1.835208586835453,
+          -0.3506714157558807,
+          0.5770692827731083
+        ],
+        "right_middle_wheel_col_1": [
+          1.230534666004662,
+          -0.3437958576921344,
+          0.3781003818948301
+        ],
+        "right_rear_wheel_col_1": [
+          0.5712709497232694,
+          -0.3202534750331536,
+          0.16151802865154546
+        ]
+      }
+    },
+    {
+      "t": 6.500000000000505,
+      "x": 1.1076430825479355,
+      "z": 0.7616232531223948,
+      "rpy_deg": [
+        0.44283277294218615,
+        -22.45865538169883,
+        0.08239342457371955
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        2.4661778307713704,
+        4.276918243614005
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 199.70350934450272,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 184.72287547326522,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 180.90879799628783,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 689.1516967515878,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 88.09536366598115,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.8486632198472341,
+          0.35859741122744954,
+          0.657317262840684
+        ],
+        "left_middle_wheel_col_1": [
+          1.2384407671884214,
+          0.3495311825748839,
+          0.4354918935697642
+        ],
+        "left_rear_wheel_col_1": [
+          0.6201892412128029,
+          0.32512162997212957,
+          0.16254275767965318
+        ],
+        "right_front_wheel_col_1": [
+          1.8330842276651798,
+          -0.34829168068300614,
+          0.6338688125119393
+        ],
+        "right_middle_wheel_col_1": [
+          1.2314955328969717,
+          -0.34226225004506816,
+          0.4383116368790413
+        ],
+        "right_rear_wheel_col_1": [
+          0.6279077958885035,
+          -0.31882249421672104,
+          0.1614390690457226
+        ]
+      }
+    },
+    {
+      "t": 7.000000000000672,
+      "x": 1.1556810018036323,
+      "z": 0.7887561824899839,
+      "rpy_deg": [
+        0.08755444092564847,
+        -25.821453750755758,
+        0.015298256742901976
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        1.5418026085584333,
+        2.7659711986595426
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 35.934019470389934,
+          "normal": [
+            0.582045597789384,
+            -1.5371006733717218e-08,
+            -0.8131561486541182
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 458.43190468536034,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 152.86376055489782,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 383.082723517733,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 48.861212618892566,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 227.42719280768148,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 13.474252233057518,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          1.905043881790747,
+          0.3582585533298426,
+          0.732404874772007
+        ],
+        "left_middle_wheel_col_1": [
+          1.314672002887226,
+          0.35009231836965937,
+          0.46910659124006837
+        ],
+        "left_rear_wheel_col_1": [
+          0.7054403018432228,
+          0.326283922638202,
+          0.16185422176801303
+        ],
+        "right_front_wheel_col_1": [
+          1.890510017721416,
+          -0.3487151896324005,
+          0.7186010141271713
+        ],
+        "right_middle_wheel_col_1": [
+          1.3094461077985404,
+          -0.34163151814694953,
+          0.4687241486372453
+        ],
+        "right_rear_wheel_col_1": [
+          0.7080642052969912,
+          -0.31780233969882576,
+          0.16231178411155434
+        ]
+      }
+    },
+    {
+      "t": 7.500000000000839,
+      "x": 1.2709140843635442,
+      "z": 0.7934001408263821,
+      "rpy_deg": [
+        -0.026456204176369874,
+        -26.560241689668356,
+        -0.05638157304778765
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        -0.4462109722770093,
+        -0.6445171165389945
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 135.12415955196468,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 107.76306090912702,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 354.83778502300885,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 62.62758208783072,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 232.9613648007819,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up2"
+          ],
+          "fn": 24.099151917694712,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 300.33542506877706,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 32.476995307906776,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.0285820142062554,
+          0.3570270932559927,
+          0.7621190543091226
+        ],
+        "left_middle_wheel_col_1": [
+          1.4536322562888924,
+          0.34961600157795597,
+          0.4720898706663972
+        ],
+        "left_rear_wheel_col_1": [
+          0.82923249032622,
+          0.32655982247823356,
+          0.16211855039321274
+        ],
+        "right_front_wheel_col_1": [
+          2.0183769284378896,
+          -0.34992913952113913,
+          0.7623427723373049
+        ],
+        "right_middle_wheel_col_1": [
+          1.4551415974032857,
+          -0.3421070308469554,
+          0.4668549377645846
+        ],
+        "right_rear_wheel_col_1": [
+          0.8301926591014187,
+          -0.3175352637259556,
+          0.16215409944893613
+        ]
+      }
+    },
+    {
+      "t": 8.000000000001005,
+      "x": 1.2903909896689243,
+      "z": 0.8235837143300314,
+      "rpy_deg": [
+        0.12225415522169793,
+        -30.89543468284079,
+        -0.011879066479970954
+      ],
+      "phase": "FRONT_LIFT",
+      "target": -0.0,
+      "rocker_deg": [
+        1.0291866282499964,
+        5.10307462697195
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up3"
+          ],
+          "fn": 290.53515986825073,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up3"
+          ],
+          "fn": 118.06413020078887,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 179.6599749488899,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 12.704979588496302,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 781.7626405977182,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 49.25512314229057,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.0427756822549696,
+          0.35806842190868643,
+          0.8382707641135221
+        ],
+        "left_middle_wheel_col_1": [
+          1.4859840443596766,
+          0.3501861223501891,
+          0.518858560403884
+        ],
+        "left_rear_wheel_col_1": [
+          0.8972205303146367,
+          0.326655277101906,
+          0.16251668332349647
+        ],
+        "right_front_wheel_col_1": [
+          2.022424543076635,
+          -0.34885367921128196,
+          0.8037507660896926
+        ],
+        "right_middle_wheel_col_1": [
+          1.447835551564736,
+          -0.3415734074820008,
+          0.5220536244536504
+        ],
+        "right_rear_wheel_col_1": [
+          0.9009791663929526,
+          -0.317361560932889,
+          0.1613761986186934
+        ]
+      }
+    },
+    {
+      "t": 8.500000000000728,
+      "x": 1.3288266391509804,
+      "z": 0.8476894273813569,
+      "rpy_deg": [
+        -0.3033108793652054,
+        -34.695142180567096,
+        6.288408244723969e-05
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        1.0038645498473546,
+        3.1611163573111507
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 539.57751982245,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 86.19379021583917,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up3"
+          ],
+          "fn": 380.9812456516786,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 388.739307532117,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 17.202360014180712,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.0799258169211177,
+          0.3580439086111022,
+          0.9110908632936205
+        ],
+        "left_middle_wheel_col_1": [
+          1.5462678854176206,
+          0.3501103159746757,
+          0.5520524609487538
+        ],
+        "left_rear_wheel_col_1": [
+          0.9839605364272326,
+          0.32635887524052115,
+          0.16182132520709172
+        ],
+        "right_front_wheel_col_1": [
+          2.0671647941290905,
+          -0.3490078291838484,
+          0.8933057498482743
+        ],
+        "right_middle_wheel_col_1": [
+          1.5202212338414154,
+          -0.3415108344613435,
+          0.5586384430885428
+        ],
+        "right_rear_wheel_col_1": [
+          0.9815459381808537,
+          -0.3176788234281834,
+          0.16210607265475543
+        ]
+      }
+    },
+    {
+      "t": 9.000000000000451,
+      "x": 1.4357892222058852,
+      "z": 0.8472658227051182,
+      "rpy_deg": [
+        -0.2885476135596062,
+        -34.596685342818255,
+        -0.11627213836432565
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        -5.125907746939248,
+        -5.790573414014496
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up3"
+          ],
+          "fn": 64.45547321786256,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up3"
+          ],
+          "fn": 98.99862143303095,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 472.1225436288273,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 61.08426900892823,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_front_wheel_col_1",
+            "up3"
+          ],
+          "fn": 209.93882983203883,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 349.6029003980213,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 19.1642363079715,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2006535966739156,
+          0.35521721235086323,
+          0.9621653597885415
+        ],
+        "left_middle_wheel_col_1": [
+          1.705338602716183,
+          0.34793849864914506,
+          0.5461118318200183
+        ],
+        "left_rear_wheel_col_1": [
+          1.091802405221641,
+          0.32558404923493306,
+          0.16196348951513623
+        ],
+        "right_front_wheel_col_1": [
+          2.19309411043375,
+          -0.3516868984095518,
+          0.9628260622112647
+        ],
+        "right_middle_wheel_col_1": [
+          1.705188507715459,
+          -0.3437634321963159,
+          0.5533534308174324
+        ],
+        "right_rear_wheel_col_1": [
+          1.0870464318102984,
+          -0.3184334011461447,
+          0.162107469655898
+        ]
+      }
+    },
+    {
+      "t": 9.500000000000174,
+      "x": 1.4850006178821287,
+      "z": 0.8634484365103163,
+      "rpy_deg": [
+        0.09214638555430887,
+        -37.365925748958226,
+        -0.07836699764691789
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        -8.528687804965339,
+        -8.320594582159027
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up4"
+          ],
+          "fn": 381.4964680371849,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up4"
+          ],
+          "fn": 29.937787146261854,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 299.61996773959464,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 13.141285098033745,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 751.7263544414291,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 60.943423576836906,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2447453804750173,
+          0.35476715759687,
+          1.0453103438057265
+        ],
+        "left_middle_wheel_col_1": [
+          1.7949854051931244,
+          0.3475624936407164,
+          0.5792219294397678
+        ],
+        "left_rear_wheel_col_1": [
+          1.1734873578240346,
+          0.3246576149426254,
+          0.1623880589059557
+        ],
+        "right_front_wheel_col_1": [
+          2.2386105043242925,
+          -0.35211915093398144,
+          1.0334333270266485
+        ],
+        "right_middle_wheel_col_1": [
+          1.7945226811715078,
+          -0.34416137255704476,
+          0.5830927998504475
+        ],
+        "right_rear_wheel_col_1": [
+          1.1730095569047347,
+          -0.31935227825402157,
+          0.16139102217667545
+        ]
+      }
+    },
+    {
+      "t": 10.000999999999896,
+      "x": 1.5142642055427293,
+      "z": 0.8897963611498948,
+      "rpy_deg": [
+        0.0584444783799518,
+        -42.41479994910602,
+        -0.0693037024477619
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        -7.86169142234332,
+        -7.49357541825914
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 123.44102658637914,
+          "normal": [
+            0.9781473690399236,
+            -7.315794597928617e-08,
+            -0.2079127808487736
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 301.3239890008724,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 21.50180027560223,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 67.94026359617727,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 49.881724214753824,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 366.9273607004335,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 34.04250010888323,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2553419301851845,
+          0.3546568465808255,
+          1.130839910839384
+        ],
+        "left_middle_wheel_col_1": [
+          1.8412492663275448,
+          0.34726912590365916,
+          0.6337486853260457
+        ],
+        "left_rear_wheel_col_1": [
+          1.2662215566556307,
+          0.32424488124716505,
+          0.16233530009132074
+        ],
+        "right_front_wheel_col_1": [
+          2.2473186176837707,
+          -0.3521774322700451,
+          1.1186089301034412
+        ],
+        "right_middle_wheel_col_1": [
+          1.841634623052952,
+          -0.3444515589515364,
+          0.6360037043045387
+        ],
+        "right_rear_wheel_col_1": [
+          1.2646221391141246,
+          -0.31982899809424076,
+          0.16204148785287661
+        ]
+      }
+    },
+    {
+      "t": 10.50099999999962,
+      "x": 1.522677088295275,
+      "z": 0.9159881176929284,
+      "rpy_deg": [
+        0.12787377453247956,
+        -49.484601959217244,
+        -0.10321779973204033
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        -7.437140395058876,
+        -6.686736607443106
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 112.15040268516019,
+          "normal": [
+            0.7734532487115299,
+            1.2135125677691152e-07,
+            -0.633853352170331
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 444.91517426368176,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 48.30363704924085,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 53.18220711302282,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 54.6060622831633,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 258.79295791266986,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 35.23226747528209,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2286723288532544,
+          0.35413739012987255,
+          1.2419020208804308
+        ],
+        "left_middle_wheel_col_1": [
+          1.87429101728585,
+          0.34699121383931153,
+          0.702821533980977
+        ],
+        "left_rear_wheel_col_1": [
+          1.3655674776375064,
+          0.3241551444885865,
+          0.1620608778599124
+        ],
+        "right_front_wheel_col_1": [
+          2.2213949376697797,
+          -0.3526858904851334,
+          1.2281238244150543
+        ],
+        "right_middle_wheel_col_1": [
+          1.872914199825261,
+          -0.34472523341540523,
+          0.7010020814497727
+        ],
+        "right_rear_wheel_col_1": [
+          1.364382727506644,
+          -0.3199372975587201,
+          0.1622053332163134
+        ]
+      }
+    },
+    {
+      "t": 11.000999999999342,
+      "x": 1.538920822283446,
+      "z": 0.9263750872206948,
+      "rpy_deg": [
+        0.13485114711597515,
+        -53.76466779178911,
+        -0.019785888840784287
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        -10.376172080191838,
+        -10.560188781982282
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 476.8648517752698,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 142.09220180306772,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 19.111114966440823,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 145.67091604850242,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 53.77529328188295,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 80.05899203177475,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 38.62617792637698,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 119.89859205124706,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2120915401197343,
+          0.3547998264818476,
+          1.3286801695560824
+        ],
+        "left_middle_wheel_col_1": [
+          1.9295590402787732,
+          0.3472178541462143,
+          0.7519470963289923
+        ],
+        "left_rear_wheel_col_1": [
+          1.4374667699209416,
+          0.323602844420789,
+          0.1621374909238453
+        ],
+        "right_front_wheel_col_1": [
+          2.20700812522151,
+          -0.3520584995878783,
+          1.3243786452417763
+        ],
+        "right_middle_wheel_col_1": [
+          1.93642619979597,
+          -0.344487583542445,
+          0.7491740730464824
+        ],
+        "right_rear_wheel_col_1": [
+          1.437524522138815,
+          -0.3205019865237552,
+          0.16234428899324435
+        ]
+      }
+    },
+    {
+      "t": 11.500999999999065,
+      "x": 1.5428372746778516,
+      "z": 0.926021754673235,
+      "rpy_deg": [
+        0.1759008990528081,
+        -53.48425135051974,
+        -0.04700727746149572
+      ],
+      "phase": "ANCHOR_MIDDLE_PULL",
+      "target": 12.0,
+      "rocker_deg": [
+        -11.966143293837357,
+        -12.803331593456127
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 424.20356336452426,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 114.76525374969063,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 28.49254065129904,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 117.43688329677357,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 53.60717469114971,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 96.52555965860603,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 86.32113781794726,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 71.39593919803008,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {
+        "1": {
+          "joint_speed": -0.003001184445461342,
+          "world_speed": 0.16696902660669566,
+          "expected_ctrl": 0.12004737781845368
+        },
+        "4": {
+          "joint_speed": 0.0773548091021649,
+          "world_speed": 0.17511723934118723,
+          "expected_ctrl": -3.094192364086596
+        }
+      },
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2138100647527326,
+          0.3543944549178096,
+          1.3385531826016046
+        ],
+        "left_middle_wheel_col_1": [
+          1.9466393527402173,
+          0.347080152439924,
+          0.7563361009727327
+        ],
+        "left_rear_wheel_col_1": [
+          1.4375089848354623,
+          0.3236588068198797,
+          0.16230968928391248
+        ],
+        "right_front_wheel_col_1": [
+          2.2104676671510264,
+          -0.35249757840382095,
+          1.3401566676702503
+        ],
+        "right_middle_wheel_col_1": [
+          1.9569263706747024,
+          -0.3446187928494883,
+          0.7537903677398273
+        ],
+        "right_rear_wheel_col_1": [
+          1.4374320267339387,
+          -0.32045391704357057,
+          0.16224001893713924
+        ]
+      }
+    },
+    {
+      "t": 12.000999999998788,
+      "x": 1.5411976769953333,
+      "z": 0.9273130153506756,
+      "rpy_deg": [
+        -0.4015776394214876,
+        -53.48796487180167,
+        0.23455973862278856
+      ],
+      "phase": "TRANSFER_RECOVER",
+      "target": 0.0,
+      "rocker_deg": [
+        -1.2564365544513647,
+        -10.932904402505965
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 403.472749309897,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 156.14485774467846,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 159.59590297076863,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 102.263954091337,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 41.491531736412675,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2287898215415454,
+          0.35919588671422786,
+          1.2481282720625217
+        ],
+        "left_middle_wheel_col_1": [
+          1.8595840007036393,
+          0.34962168605207605,
+          0.7240096227646298
+        ],
+        "left_rear_wheel_col_1": [
+          1.4370918593799769,
+          0.32425329967950706,
+          0.16190323534621626
+        ],
+        "right_front_wheel_col_1": [
+          2.2131071483701517,
+          -0.34729993055293423,
+          1.3258786233751974
+        ],
+        "right_middle_wheel_col_1": [
+          1.9381819620130736,
+          -0.3421125942524511,
+          0.7497359509171699
+        ],
+        "right_rear_wheel_col_1": [
+          1.4346235753282406,
+          -0.3198315311938428,
+          0.16554848074317333
+        ]
+      }
+    },
+    {
+      "t": 12.50099999999851,
+      "x": 1.5438350610720528,
+      "z": 0.9271628154463794,
+      "rpy_deg": [
+        -0.6269241804091459,
+        -53.258140852369024,
+        0.4471092496294427
+      ],
+      "phase": "TRANSFER_RECOVER",
+      "target": 0.0,
+      "rocker_deg": [
+        8.102044081264776,
+        -8.324612841655883
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 511.7414331640201,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 95.41631901801773,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 116.25413795330857,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 443.17003069104373,
+          "normal": [
+            0.5071795850870513,
+            1.3246589542119347e-07,
+            -0.861840396170259
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.232789682826135,
+          0.36139095540343025,
+          1.164126394155665
+        ],
+        "left_middle_wheel_col_1": [
+          1.78135793549661,
+          0.35085423278104405,
+          0.7058747160159426
+        ],
+        "left_rear_wheel_col_1": [
+          1.4367600108479714,
+          0.3239316466955858,
+          0.1618539139065518
+        ],
+        "right_front_wheel_col_1": [
+          2.221700388390405,
+          -0.3444882324559868,
+          1.2994415297340922
+        ],
+        "right_middle_wheel_col_1": [
+          1.9177530876344258,
+          -0.3407870195102552,
+          0.7401273791460686
+        ],
+        "right_rear_wheel_col_1": [
+          1.4337246215235169,
+          -0.32013842080102595,
+          0.16669940896436145
+        ]
+      }
+    },
+    {
+      "t": 13.000999999998234,
+      "x": 1.5971795677275744,
+      "z": 0.9156902611569457,
+      "rpy_deg": [
+        0.36987318302613553,
+        -49.36413137188283,
+        -0.13683128187274451
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        5.707138719158147,
+        3.3128361449254036
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up4"
+          ],
+          "fn": 73.87347564497912,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 500.2249508845157,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 23.909190186460705,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 331.12705779829736,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 114.646827128751,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 150.99109454230182,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.301984970906112,
+          0.35272514868539895,
+          1.1282792694392736
+        ],
+        "left_middle_wheel_col_1": [
+          1.8373271299836935,
+          0.34546528449779396,
+          0.6813328932172923
+        ],
+        "left_rear_wheel_col_1": [
+          1.4370105314590171,
+          0.32296791915610235,
+          0.16234695833375312
+        ],
+        "right_front_wheel_col_1": [
+          2.2992669580847602,
+          -0.35421054176841915,
+          1.1382890659954674
+        ],
+        "right_middle_wheel_col_1": [
+          1.8576992688436416,
+          -0.3462063877002184,
+          0.6803746744376571
+        ],
+        "right_rear_wheel_col_1": [
+          1.437138455916656,
+          -0.32112121784643477,
+          0.16195217361166916
+        ]
+      }
+    },
+    {
+      "t": 13.500999999997957,
+      "x": 1.562801614119096,
+      "z": 0.9226692741999789,
+      "rpy_deg": [
+        0.386915809406457,
+        -52.000125704433415,
+        -0.21289071785590252
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        -2.1102324884097037,
+        -2.071944967167104
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 96.46084112712194,
+          "normal": [
+            0.7371988856326133,
+            7.233004752424219e-07,
+            -0.6756758120737416
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 400.2355207949134,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 77.13220851298009,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 34.83982591223746,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 78.83620623420367,
+          "normal": [
+            0.7435840469385994,
+            -2.283989026070479e-13,
+            -0.6686424793104422
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 96.64522725153594,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 20.19640966288064,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 103.87001987068648,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2583025772264844,
+          0.35186068321034303,
+          1.2343921022949906
+        ],
+        "left_middle_wheel_col_1": [
+          1.880545644264788,
+          0.34546614720409613,
+          0.7107037728278426
+        ],
+        "left_rear_wheel_col_1": [
+          1.4374877652726112,
+          0.3233687690655447,
+          0.16248110641616637
+        ],
+        "right_front_wheel_col_1": [
+          2.251905792603808,
+          -0.3549950113332155,
+          1.2243907546923387
+        ],
+        "right_middle_wheel_col_1": [
+          1.8790594384055583,
+          -0.34625529024282514,
+          0.7091837732842556
+        ],
+        "right_rear_wheel_col_1": [
+          1.4372160448594693,
+          -0.3207327073031516,
+          0.16245244705134287
+        ]
+      }
+    },
+    {
+      "t": 14.00099999999768,
+      "x": 1.5406362455650044,
+      "z": 0.9260915960315003,
+      "rpy_deg": [
+        0.39355971105243337,
+        -53.66820357639392,
+        -0.2574219413643727
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        -11.083408863638029,
+        -11.003543474750813
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 37.85203277631897,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 40.34843553034962,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 375.28417310928944,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 87.7648600109938,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 50.75187688026668,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 24.57222660957765,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 58.926836378991226,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 119.47407458226942,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2132620985598574,
+          0.35116840172646935,
+          1.3336996573994542
+        ],
+        "left_middle_wheel_col_1": [
+          1.9373637147427427,
+          0.34531056815605254,
+          0.7504269265391913
+        ],
+        "left_rear_wheel_col_1": [
+          1.4375390679220503,
+          0.32352131002970985,
+          0.1623993904324928
+        ],
+        "right_front_wheel_col_1": [
+          2.2079274985860353,
+          -0.3556669065214064,
+          1.3251511667726308
+        ],
+        "right_middle_wheel_col_1": [
+          1.936196351337931,
+          -0.34641253166836083,
+          0.7497601834545509
+        ],
+        "right_rear_wheel_col_1": [
+          1.4371727052036891,
+          -0.32057322860210363,
+          0.16282220944418693
+        ]
+      }
+    },
+    {
+      "t": 14.500999999997402,
+      "x": 1.5410064459789716,
+      "z": 0.9259803337655521,
+      "rpy_deg": [
+        0.4283558332219677,
+        -53.62754676030732,
+        -0.33212632721721824
+      ],
+      "phase": "ANCHOR_MIDDLE_PULL",
+      "target": 12.0,
+      "rocker_deg": [
+        -10.989394334371214,
+        -11.017351814457657
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 71.40226313728735,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 73.6965159933232,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 352.11681646065796,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 102.52866499444019,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 52.13936616333423,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 39.507746133036406,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 40.11940900148875,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 69.50830457853957,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 99.74445090339219,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {
+        "1": {
+          "joint_speed": -0.41577478753214514,
+          "world_speed": -0.29816042151547256,
+          "expected_ctrl": 16.630991501285806
+        },
+        "4": {
+          "joint_speed": -0.1960982870968887,
+          "world_speed": -0.050674955075726544,
+          "expected_ctrl": 7.843931483875548
+        }
+      },
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.213565793554838,
+          0.3503389693017625,
+          1.33235662291427
+        ],
+        "left_middle_wheel_col_1": [
+          1.93708551296176,
+          0.3449330935252306,
+          0.7500743349287914
+        ],
+        "left_rear_wheel_col_1": [
+          1.4375168003649583,
+          0.3237682033191529,
+          0.16236344454371499
+        ],
+        "right_front_wheel_col_1": [
+          2.2101117880564747,
+          -0.3565276447125144,
+          1.3263745978484605
+        ],
+        "right_middle_wheel_col_1": [
+          1.9365572700213358,
+          -0.3467907257770509,
+          0.7497026137879478
+        ],
+        "right_rear_wheel_col_1": [
+          1.4369872563450934,
+          -0.3203109593560229,
+          0.16303740131321348
+        ]
+      }
+    },
+    {
+      "t": 15.000999999997125,
+      "x": 1.547884160329443,
+      "z": 0.9250091590216339,
+      "rpy_deg": [
+        0.4426055919295885,
+        -53.10767428959697,
+        -0.3593114830499595
+      ],
+      "phase": "ANCHOR_MIDDLE_PULL",
+      "target": 12.0,
+      "rocker_deg": [
+        -5.954229510992851,
+        -6.029056992225208
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 45.84732516616098,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 45.950418058955286,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 338.524153674308,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 81.50211357249378,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 47.63521612817277,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 84.95636739084114,
+          "normal": [
+            0.6118444737932368,
+            1.1221290344110538e-07,
+            -0.7909780906502182
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 65.0984436656615,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 135.41401320217003,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {
+        "1": {
+          "joint_speed": -0.5069288817838467,
+          "world_speed": -0.1900223131011835,
+          "expected_ctrl": 20.277155271353866
+        },
+        "4": {
+          "joint_speed": -0.6231458779680438,
+          "world_speed": -0.31378721601845927,
+          "expected_ctrl": 24.92583511872175
+        }
+      },
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2320168542611656,
+          0.3501775372931882,
+          1.2833392303594808
+        ],
+        "left_middle_wheel_col_1": [
+          1.901454795099725,
+          0.3448396427231744,
+          0.7295498855290693
+        ],
+        "left_rear_wheel_col_1": [
+          1.4374849494658137,
+          0.32385580356072946,
+          0.1623404581896109
+        ],
+        "right_front_wheel_col_1": [
+          2.230775899287225,
+          -0.3567040269423467,
+          1.2764610359519142
+        ],
+        "right_middle_wheel_col_1": [
+          1.9007671887573698,
+          -0.34688370133649327,
+          0.7290068702599511
+        ],
+        "right_rear_wheel_col_1": [
+          1.4369564934487011,
+          -0.32021761073582333,
+          0.16314752720606385
+        ]
+      }
+    },
+    {
+      "t": 15.500999999996848,
+      "x": 1.5813003686799754,
+      "z": 0.9195001214871751,
+      "rpy_deg": [
+        0.41117391961547156,
+        -50.5801205010116,
+        -0.3591933281488986
+      ],
+      "phase": "ANCHOR_MIDDLE_PULL",
+      "target": 12.0,
+      "rocker_deg": [
+        0.8741081520538978,
+        0.6560486390375134
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 46.711105107842194,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 46.32714982524101,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 317.16285647716643,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 97.55092330930674,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 46.11279500192286,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 42.762443266570216,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 35.359888836107416,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 45.0640700849486,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 107.35608765593477,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {
+        "1": {
+          "joint_speed": -0.8099904138150026,
+          "world_speed": -0.41885075153280277,
+          "expected_ctrl": 32.3996165526001
+        },
+        "4": {
+          "joint_speed": -0.8296659892634491,
+          "world_speed": -0.4451580692073743,
+          "expected_ctrl": 33.18663957053796
+        }
+      },
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.283828040175584,
+          0.3502679353569236,
+          1.189373157388001
+        ],
+        "left_middle_wheel_col_1": [
+          1.8680163517977535,
+          0.3448626530273088,
+          0.6953188047249114
+        ],
+        "left_rear_wheel_col_1": [
+          1.4375214718023934,
+          0.323948907443805,
+          0.1623784500001132
+        ],
+        "right_front_wheel_col_1": [
+          2.2813103157395456,
+          -0.3566180335298631,
+          1.1808964717652783
+        ],
+        "right_middle_wheel_col_1": [
+          1.867741019400228,
+          -0.3468600310819958,
+          0.694661961189875
+        ],
+        "right_rear_wheel_col_1": [
+          1.4368535583365514,
+          -0.3201185825540963,
+          0.16342342335562193
+        ]
+      }
+    },
+    {
+      "t": 16.000999999996573,
+      "x": 1.6019599573692507,
+      "z": 0.9150212746213177,
+      "rpy_deg": [
+        0.4622280530568203,
+        -49.026785544229966,
+        -0.4043596975942269
+      ],
+      "phase": "TRANSFER_RECOVER",
+      "target": 0.0,
+      "rocker_deg": [
+        4.384398990110336,
+        3.4454013220844946
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up4"
+          ],
+          "fn": 141.15448607099512,
+          "normal": [
+            0.5417678713026146,
+            -1.388635388704998e-07,
+            -0.8405281515953018
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 359.1639163365011,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 19.928981471841613,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 162.23055648433248,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 103.77088944400737,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 161.4080321576277,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 100.04790969009221,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.310447151226784,
+          0.3496335538760753,
+          1.135876312805609
+        ],
+        "left_middle_wheel_col_1": [
+          1.8517310232864783,
+          0.34451421468970456,
+          0.6802119478964672
+        ],
+        "left_rear_wheel_col_1": [
+          1.4377232441186576,
+          0.32400148075121704,
+          0.16226102073585597
+        ],
+        "right_front_wheel_col_1": [
+          2.307935012738454,
+          -0.3575889810181767,
+          1.1343376459380232
+        ],
+        "right_middle_wheel_col_1": [
+          1.8577394763978492,
+          -0.3472175686616754,
+          0.6797299354010437
+        ],
+        "right_rear_wheel_col_1": [
+          1.4369087219699512,
+          -0.3200778798518996,
+          0.1627515705676382
+        ]
+      }
+    },
+    {
+      "t": 16.500999999997184,
+      "x": 1.60358266188241,
+      "z": 0.91521699152029,
+      "rpy_deg": [
+        0.11929983931225066,
+        -48.84649493544533,
+        -0.20445675983073586
+      ],
+      "phase": "TRANSFER_RECOVER",
+      "target": 0.0,
+      "rocker_deg": [
+        3.722445484106098,
+        3.3347207793976477
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up4"
+          ],
+          "fn": 68.5995068677528,
+          "normal": [
+            0.5196046343973285,
+            -3.3042623486406204e-08,
+            -0.8544068257644117
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 411.59614624124606,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 92.5992957147675,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 220.9866119120798,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 92.65403404897229,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.31538778265929,
+          0.3526645609721071,
+          1.139013707664778
+        ],
+        "left_middle_wheel_col_1": [
+          1.8571999900905638,
+          0.34622353420612273,
+          0.6805809919375685
+        ],
+        "left_rear_wheel_col_1": [
+          1.437506033165823,
+          0.3241056504951456,
+          0.1620002563577292
+        ],
+        "right_front_wheel_col_1": [
+          2.3067936739124035,
+          -0.35442474477546115,
+          1.134158987400622
+        ],
+        "right_middle_wheel_col_1": [
+          1.859604111149448,
+          -0.3455032973305909,
+          0.6817277344180108
+        ],
+        "right_rear_wheel_col_1": [
+          1.4349236585598408,
+          -0.32002318060355184,
+          0.16362481364692807
+        ]
+      }
+    },
+    {
+      "t": 17.000999999997795,
+      "x": 1.6036422124118024,
+      "z": 0.9149467698938244,
+      "rpy_deg": [
+        0.3099019145293567,
+        -48.90575102552612,
+        -0.24665253734509024
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        3.8180299374647566,
+        3.529441994790194
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up4"
+          ],
+          "fn": 60.898298191293534,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_front_wheel_col_1",
+            "up4"
+          ],
+          "fn": 60.898298191293534,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 368.50501587917415,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 244.65739744714477,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 49.75149132764959,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 52.896368086559285,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 34.724277126625985,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 100.21357079638214,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.3137999538134597,
+          0.351673446500569,
+          1.1379606554642117
+        ],
+        "left_middle_wheel_col_1": [
+          1.8566444111647415,
+          0.34541718318689163,
+          0.6835525598544206
+        ],
+        "left_rear_wheel_col_1": [
+          1.4377293109209992,
+          0.32371002804438737,
+          0.16224879563834896
+        ],
+        "right_front_wheel_col_1": [
+          2.306384481881835,
+          -0.35543262819481375,
+          1.1343324678957194
+        ],
+        "right_middle_wheel_col_1": [
+          1.8591488357880988,
+          -0.3462979075276978,
+          0.6812435046013473
+        ],
+        "right_rear_wheel_col_1": [
+          1.4372664757507898,
+          -0.3203900048271333,
+          0.16333877372461367
+        ]
+      }
+    },
+    {
+      "t": 17.500999999998406,
+      "x": 1.5985788687272355,
+      "z": 0.9166569943522477,
+      "rpy_deg": [
+        0.6393769127104537,
+        -49.28970643450744,
+        -0.4323297130555184
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        2.6697246332278532,
+        3.0411367493471744
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 45.544877609575316,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 50.839383807516874,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 56.33087123547371,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 38.07447921075961,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 69.58302801719204,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 75.03231732716833,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 150.79778918528928,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 228.82113015994614,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 10.043704658088625,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.3066175635172,
+          0.3486791025763747,
+          1.1543323129382965
+        ],
+        "left_middle_wheel_col_1": [
+          1.8644552367163303,
+          0.34370845851838283,
+          0.6900130854270917
+        ],
+        "left_rear_wheel_col_1": [
+          1.437330134053852,
+          0.32348312917021416,
+          0.16408521407094429
+        ],
+        "right_front_wheel_col_1": [
+          2.300731816718638,
+          -0.3582242120915437,
+          1.1443509019679403
+        ],
+        "right_middle_wheel_col_1": [
+          1.8607143744000345,
+          -0.3479894847720802,
+          0.6841719183786149
+        ],
+        "right_rear_wheel_col_1": [
+          1.4377791511950477,
+          -0.32063064554506354,
+          0.16246866105982685
+        ]
+      }
+    },
+    {
+      "t": 18.000999999999017,
+      "x": 1.5522362147504551,
+      "z": 0.9240141954249793,
+      "rpy_deg": [
+        0.5497013956898752,
+        -52.75654758110056,
+        -0.4440254303330354
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        -5.354539879734676,
+        -4.687205547879895
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 57.80708518281976,
+          "normal": [
+            0.6061122991090033,
+            2.3290037663264318e-07,
+            -0.7953790799793166
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 395.9303166202925,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 166.30040402011065,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 43.113105655239345,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 42.01605909574759,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 98.84970902069094,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 16.828456293949007,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 112.70015387285343,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.240007743004428,
+          0.34881528100444603,
+          1.2724704317764497
+        ],
+        "left_middle_wheel_col_1": [
+          1.9014610825168958,
+          0.3440747290103449,
+          0.7297969327863567
+        ],
+        "left_rear_wheel_col_1": [
+          1.437260691840165,
+          0.32374331217889474,
+          0.16298973365629899
+        ],
+        "right_front_wheel_col_1": [
+          2.2377930874726086,
+          -0.35804723544513617,
+          1.2602106051840785
+        ],
+        "right_middle_wheel_col_1": [
+          1.8946000650352253,
+          -0.34762141572314964,
+          0.7240645455927047
+        ],
+        "right_rear_wheel_col_1": [
+          1.4372874929961814,
+          -0.3203282733063776,
+          0.16244771134524694
+        ]
+      }
+    },
+    {
+      "t": 18.500999999999628,
+      "x": 1.543682055908712,
+      "z": 0.9258430301716181,
+      "rpy_deg": [
+        0.3635470735799446,
+        -53.34188500939234,
+        -0.3980258218915621
+      ],
+      "phase": "LOAD_MIDDLE_SUPPORT",
+      "target": -20.0,
+      "rocker_deg": [
+        -12.005491988744298,
+        -13.13541082059254
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 79.51053102239635,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "left_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 42.56955082650263,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 320.8196041814002,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 43.43308028631167,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 17.400319249949355,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 15.389167707835197,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 159.52463063341455,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.21633306303495,
+          0.349499869391486,
+          1.3374249465415804
+        ],
+        "left_middle_wheel_col_1": [
+          1.9513864895793587,
+          0.3442507702451979,
+          0.7548467193471441
+        ],
+        "left_rear_wheel_col_1": [
+          1.4368616436236075,
+          0.32376289691672155,
+          0.16282205904358696
+        ],
+        "right_front_wheel_col_1": [
+          2.2124465256948787,
+          -0.35739657149109577,
+          1.3391184783177514
+        ],
+        "right_middle_wheel_col_1": [
+          1.9579320019493458,
+          -0.34749552302516756,
+          0.7573919330644882
+        ],
+        "right_rear_wheel_col_1": [
+          1.4368055375702606,
+          -0.32023777983741974,
+          0.16488378770672762
+        ]
+      }
+    },
+    {
+      "t": 19.000000000000238,
+      "x": 1.5409663499950652,
+      "z": 0.925657602246026,
+      "rpy_deg": [
+        0.3776349867303585,
+        -53.54993881031655,
+        -0.4544430885623797
+      ],
+      "phase": "ANCHOR_MIDDLE_PULL",
+      "target": 12.0,
+      "rocker_deg": [
+        -8.596474268357552,
+        -10.44100454341921
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 491.0985554715734,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 181.65642130161726,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 82.73286355660971,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 42.78669352113781,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 63.70736300646864,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {
+        "1": {
+          "joint_speed": -0.0009879214121821338,
+          "world_speed": 0.37723380513412663,
+          "expected_ctrl": 0.039516856487285354
+        },
+        "4": {
+          "joint_speed": -0.28507297782480406,
+          "world_speed": -0.05566707672994464,
+          "expected_ctrl": 11.402919112992162
+        }
+      },
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.21921294749176,
+          0.3489019538443423,
+          1.3121057917879542
+        ],
+        "left_middle_wheel_col_1": [
+          1.922444660723744,
+          0.34396543041585204,
+          0.7441639393923853
+        ],
+        "left_rear_wheel_col_1": [
+          1.4371398468605445,
+          0.3238547560461139,
+          0.16234094835420274
+        ],
+        "right_front_wheel_col_1": [
+          2.2132869069718866,
+          -0.3579777285130669,
+          1.3165710298133109
+        ],
+        "right_middle_wheel_col_1": [
+          1.934446087865464,
+          -0.34781003444517417,
+          0.7487141977879663
+        ],
+        "right_rear_wheel_col_1": [
+          1.4365301659669663,
+          -0.3201566049736415,
+          0.16406023733779684
+        ]
+      }
+    },
+    {
+      "t": 19.50000000000085,
+      "x": 1.5508376212518293,
+      "z": 0.9253117296415388,
+      "rpy_deg": [
+        -0.17562458198410505,
+        -52.642319540595665,
+        -0.31272698474335947
+      ],
+      "phase": "TRANSFER_RECOVER",
+      "target": 0.0,
+      "rocker_deg": [
+        0.1742412024717827,
+        -6.285998672872917
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 459.5482571023929,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 96.89304899021519,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 185.4870328486122,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 131.801373870693,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.2465794049366727,
+          0.3520839721767388,
+          1.2244258333979134
+        ],
+        "left_middle_wheel_col_1": [
+          1.8574935207313084,
+          0.3462259550422006,
+          0.7128499629073844
+        ],
+        "left_rear_wheel_col_1": [
+          1.4365978352403828,
+          0.32484846292407493,
+          0.16190845959844236
+        ],
+        "right_front_wheel_col_1": [
+          2.2308857663887944,
+          -0.35453235210660844,
+          1.2710356751556842
+        ],
+        "right_middle_wheel_col_1": [
+          1.9054637959753216,
+          -0.34585983753463007,
+          0.7312766799289866
+        ],
+        "right_rear_wheel_col_1": [
+          1.4312035566565842,
+          -0.31927400359587216,
+          0.1645793651478477
+        ]
+      }
+    },
+    {
+      "t": 20.00000000000146,
+      "x": 1.5638939439387678,
+      "z": 0.9229334731869443,
+      "rpy_deg": [
+        -0.007123162871196533,
+        -51.86376446094747,
+        -0.00713994827564049
+      ],
+      "phase": "TRANSFER_RECOVER",
+      "target": 0.0,
+      "rocker_deg": [
+        7.132483573093336,
+        -2.159800858861858
+      ],
+      "contacts": [
+        {
+          "pair": [
+            "ground",
+            "left_rear_wheel_col_1"
+          ],
+          "fn": 499.5344784592196,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "pair": [
+            "left_rear_wheel_col_1",
+            "up0"
+          ],
+          "fn": 255.0885504034465,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 95.1428369508119,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "right_middle_wheel_col_1",
+            "up2"
+          ],
+          "fn": 143.43937726162767,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "pair": [
+            "ground",
+            "right_rear_wheel_col_1"
+          ],
+          "fn": 108.34873082383314,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "command_checks": {},
+      "wheel_centers": {
+        "left_front_wheel_col_1": [
+          2.259489116409904,
+          0.3554960729138185,
+          1.1526277144341939
+        ],
+        "left_middle_wheel_col_1": [
+          1.8026803518049213,
+          0.3475990946642251,
+          0.6965414062488903
+        ],
+        "left_rear_wheel_col_1": [
+          1.4370455089749083,
+          0.323945968137476,
+          0.16219476782408537
+        ],
+        "right_front_wheel_col_1": [
+          2.252347054561993,
+          -0.35131707473835005,
+          1.2254775305214427
+        ],
+        "right_middle_wheel_col_1": [
+          1.883998416959325,
+          -0.34414541387484465,
+          0.7135228141604295
+        ],
+        "right_rear_wheel_col_1": [
+          1.4363786086281398,
+          -0.320180369702725,
+          0.1628887871468963
+        ]
+      }
+    }
+  ],
+  "dataset_accepted": false,
+  "transfer_events": [
+    {
+      "t": 8.142000000000927,
+      "stage": "LOAD_MIDDLE_SUPPORT",
+      "x": 1.2992929256569128,
+      "support_n": {
+        "left_front_wheel_joint": 244.71583063102503,
+        "left_middle_wheel_joint": 1.619092361058614e-45,
+        "left_rear_wheel_joint": 178.72719413454521,
+        "right_front_wheel_joint": 0.0012608623473794732,
+        "right_middle_wheel_joint": 3.387153369087644e-46,
+        "right_rear_wheel_joint": 814.4803670644303
+      },
+      "rocker_deg": [
+        0.644144005753164,
+        5.606510455955762
+      ]
+    },
+    {
+      "t": 11.326999999999162,
+      "stage": "ANCHOR_MIDDLE_PULL",
+      "x": 1.5470003585324181,
+      "support_n": {
+        "left_front_wheel_joint": 3.2125644201384933e-13,
+        "left_middle_wheel_joint": 161.58152948943427,
+        "left_rear_wheel_joint": 527.3223185379933,
+        "right_front_wheel_joint": 4.1387819904866633e-13,
+        "right_middle_wheel_joint": 325.90791887328413,
+        "right_rear_wheel_joint": 197.7854597309168
+      },
+      "rocker_deg": [
+        -12.815045896362204,
+        -14.06711388992625
+      ]
+    },
+    {
+      "t": 11.685999999998963,
+      "stage": "TRANSFER_RECOVER",
+      "x": 1.5400005307698326,
+      "support_n": {
+        "left_front_wheel_joint": 2.446907009657427e-16,
+        "left_middle_wheel_joint": 0.962463585918453,
+        "left_rear_wheel_joint": 718.8862102187026,
+        "right_front_wheel_joint": 3.1523771478267093e-16,
+        "right_middle_wheel_joint": 402.5857348909828,
+        "right_rear_wheel_joint": 101.53318436318892
+      },
+      "rocker_deg": [
+        -8.755985281735141,
+        -10.961144179949194
+      ]
+    },
+    {
+      "t": 12.686999999998408,
+      "stage": "LOAD_MIDDLE_SUPPORT",
+      "x": 1.5471457106808337,
+      "support_n": {
+        "left_front_wheel_joint": 4.94358422092759e-25,
+        "left_middle_wheel_joint": 1.9445037256360543e-09,
+        "left_rear_wheel_joint": 662.5317093568189,
+        "right_front_wheel_joint": 6.368873792466121e-25,
+        "right_middle_wheel_joint": 611.8804147280797,
+        "right_rear_wheel_joint": 1.1410512018638381
+      },
+      "rocker_deg": [
+        8.442693909484701,
+        -6.217349420342315
+      ]
+    },
+    {
+      "t": 14.10799999999762,
+      "stage": "ANCHOR_MIDDLE_PULL",
+      "x": 1.5430153257865753,
+      "support_n": {
+        "left_front_wheel_joint": 8.1496129218968e-08,
+        "left_middle_wheel_joint": 202.18796380750163,
+        "left_rear_wheel_joint": 539.2760290700037,
+        "right_front_wheel_joint": 1.1003304415457768e-07,
+        "right_middle_wheel_joint": 254.00504786298904,
+        "right_rear_wheel_joint": 230.4796412352365
+      },
+      "rocker_deg": [
+        -12.951223508781167,
+        -12.906207743274367
+      ]
+    },
+    {
+      "t": 15.941999999996604,
+      "stage": "TRANSFER_RECOVER",
+      "x": 1.6018618409830794,
+      "support_n": {
+        "left_front_wheel_joint": 160.88494625489977,
+        "left_middle_wheel_joint": 0.9757633815533009,
+        "left_rear_wheel_joint": 546.1528436614478,
+        "right_front_wheel_joint": 236.78815345413403,
+        "right_middle_wheel_joint": 3.0719517345227567,
+        "right_rear_wheel_joint": 301.51434281071704
+      },
+      "rocker_deg": [
+        4.408829515286759,
+        3.453984188543551
+      ]
+    },
+    {
+      "t": 16.941999999997723,
+      "stage": "LOAD_MIDDLE_SUPPORT",
+      "x": 1.6026499823756328,
+      "support_n": {
+        "left_front_wheel_joint": 83.71542427816867,
+        "left_middle_wheel_joint": 22.064635196973043,
+        "left_rear_wheel_joint": 603.5098031929682,
+        "right_front_wheel_joint": 17.361390837780302,
+        "right_middle_wheel_joint": 320.37171903362196,
+        "right_rear_wheel_joint": 176.9373866421
+      },
+      "rocker_deg": [
+        4.020640917899174,
+        3.5689678760638857
+      ]
+    },
+    {
+      "t": 18.55099999999969,
+      "stage": "ANCHOR_MIDDLE_PULL",
+      "x": 1.5437749861001415,
+      "support_n": {
+        "left_front_wheel_joint": 7.466620523475523e-12,
+        "left_middle_wheel_joint": 346.57780316698626,
+        "left_rear_wheel_joint": 419.6144758630864,
+        "right_front_wheel_joint": 7.584993448681762e-12,
+        "right_middle_wheel_joint": 140.32660255902738,
+        "right_rear_wheel_joint": 310.64379445600554
+      },
+      "rocker_deg": [
+        -12.412427432831606,
+        -13.946127509889436
+      ]
+    },
+    {
+      "t": 19.307000000000613,
+      "stage": "TRANSFER_RECOVER",
+      "x": 1.5462557069899967,
+      "support_n": {
+        "left_front_wheel_joint": 2.025776427879305e-18,
+        "left_middle_wheel_joint": 0.9937315987497894,
+        "left_rear_wheel_joint": 621.182696034161,
+        "right_front_wheel_joint": 2.0578923069209658e-18,
+        "right_middle_wheel_joint": 385.60153587079344,
+        "right_rear_wheel_joint": 213.5085397590283
+      },
+      "rocker_deg": [
+        -3.179371900809039,
+        -6.501288427391174
+      ]
+    }
+  ],
+  "anchor_control_count": 2949,
+  "anchor_command_max_error": 0.0,
+  "diagnostic_sample_correction": "Removed aliased support_n sample dictionaries; event support_n was copied at activation and is valid. Original diagnostic retained. Raw NPZ controls/states/forces unchanged."
+}

@@ -1,0 +1,13 @@
+{
+  "branch_time_s": 9.383000000000239,
+  "replay_steps": 9383,
+  "errors": {
+    "time": 0.0,
+    "qpos": 0.0,
+    "qvel": 0.0,
+    "qfrc_actuator": 0.0
+  },
+  "hard_reasons": [],
+  "source_trajectory": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_slow2_neutral/trajectory.npz",
+  "dataset_accepted": false
+}

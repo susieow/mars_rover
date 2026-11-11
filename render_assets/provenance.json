@@ -1,0 +1,47 @@
+{
+  "source_path": "/home/agilex/wzy/rover/assets/mars_rover/meshes/base_link.stl",
+  "source_sha256": "f65ec29157bee435dfa4573f056f0655b5c39f64ff4a7d504dbe05affd379fd1",
+  "output_path": "/home/agilex/wzy/rover/render_assets/base_link_original.obj",
+  "output_sha256": "1b5ea674aa677298d605b763dd5d4583def59326de5b0f3caaea1a1afe6d4374",
+  "source_format": "binary STL",
+  "output_format": "OBJ",
+  "source_triangle_count": 202697,
+  "output_triangle_count": 202697,
+  "output_unique_vertex_count": 99533,
+  "output_unique_normal_count": 173206,
+  "conversion": "Deduplicate identical float32 vertices and normals; preserve triangle order, coordinates and facet normals. Decimal .9g values round-trip exactly to original float32.",
+  "triangle_positions_float32_exact": true,
+  "triangle_normals_float32_exact": true,
+  "max_triangle_position_error_m": 0.0,
+  "source_triangle_vertex_float32_sha256": "a375d1e87946b500c0f567f8bcdea4ada0332cd9e869c7c57fdcc88748039450",
+  "obj_roundtrip_triangle_vertex_float32_sha256": "a375d1e87946b500c0f567f8bcdea4ada0332cd9e869c7c57fdcc88748039450",
+  "coordinate_transform_applied": false,
+  "urdf_visual_origin_xyz": [
+    0,
+    0,
+    0
+  ],
+  "urdf_visual_origin_rpy": [
+    0,
+    -0.04,
+    0
+  ],
+  "origin_application": "Keep the existing vis_base_link geom transform; no origin baked into the OBJ.",
+  "mujoco_version": "3.17.0",
+  "mujoco_compile_ok": true,
+  "mujoco_compiled_mesh_faces": 202697,
+  "render_model_physics_arrays_equal": {
+    "body_mass": true,
+    "body_inertia": true,
+    "body_pos": true,
+    "body_quat": true,
+    "jnt_range": true,
+    "jnt_axis": true,
+    "dof_damping": true,
+    "dof_armature": true,
+    "actuator_gear": true,
+    "actuator_forcerange": true,
+    "actuator_ctrlrange": true
+  },
+  "purpose": "Offline rendering only; original STL, URDF, robot XML, saved physics scene and trajectories unchanged."
+}

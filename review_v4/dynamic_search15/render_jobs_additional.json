@@ -1,0 +1,103 @@
+[
+  {
+    "id": "h20_near_contact_tail_hold_1s",
+    "kind": "additional_validation",
+    "height_cm": 20,
+    "batch": "additional",
+    "parent_candidate_id": "h20_near_contact_round2_candidate13",
+    "parent_video_path": "/home/agilex/wzy/videos/review_high_stairs/h20/near_contact/round2_candidate13.mp4",
+    "prefix_video_path": "/home/agilex/wzy/videos/review_high_stairs/h20/near_contact/prefix.mp4",
+    "diagnostic_json": "/home/agilex/wzy/rover/review_v4/dynamic_search20/tail_hold_1s.json",
+    "poses_npz": "/home/agilex/wzy/rover/review_v4/dynamic_search15/render_data/h20/additional/tail_hold_1s.npz",
+    "scene_path": "/home/agilex/wzy/rover/review_v4/dynamic_search20/scene.xml",
+    "source_start_s": 12.48399999999852,
+    "source_end_s": 13.483999999997966,
+    "duration_s": 0.9999999999994458,
+    "video_path": "/home/agilex/wzy/videos/review_high_stairs/additional/h20_tail_hold_1s.mp4",
+    "poster_path": "/home/agilex/wzy/videos/review_high_stairs/additional/h20_tail_hold_1s.jpg",
+    "video_label": "20 cm | prior one-second hold validation",
+    "status_text": "ADDITIONAL VALIDATION | no rear crossing | outside 768 candidate / 29 historical counts",
+    "render_status": "pending",
+    "media_provenance": "saved_record_qpos_offline_render",
+    "process_valid": true,
+    "reasons": [],
+    "first_failure_s": null,
+    "metrics": {
+      "start_time_s": 12.48399999999852,
+      "end_time_s": 13.483999999997966,
+      "base_x_start": 1.6027828601071752,
+      "base_x_final": 1.591799266764572,
+      "base_x_delta": -0.010983593342603237,
+      "rear_min_x_start": 1.4382264825339997,
+      "rear_min_x_final": 1.4370758232553,
+      "rear_min_x_tail_mean": 1.4369623429179932,
+      "rear_min_x_delta": -0.0011506592786996173,
+      "rear_min_z_start": 0.16327065014008527,
+      "rear_min_z_final": 0.16203509186285878,
+      "rear_min_z_max": 0.1651513604542276,
+      "rear_bottom_min_final": -0.0008209081371412241,
+      "rear_x_change_last_500ms": 0.00014938985732215748,
+      "rear_x_slope_last_500ms": 0.00039392163326184047,
+      "rear_both_crossed_continuous_peak_s": 0.0,
+      "rear_both_crossed_final_s": 0.0,
+      "front_middle_both_supported_tail_fraction": 0.122,
+      "mean_support_world_force_n": {
+        "left_front_wheel_col_1": [
+          56.11985970981519,
+          2.3906543015095036,
+          126.28446501827064
+        ],
+        "left_middle_wheel_col_1": [
+          -0.8484371429404491,
+          13.464115235257307,
+          114.93676570461393
+        ],
+        "left_rear_wheel_col_1": [
+          -34.85692499236373,
+          -9.970727481580958,
+          430.98905269626584
+        ],
+        "right_front_wheel_col_1": [
+          66.71919335144648,
+          7.633757235549861,
+          231.17863890923297
+        ],
+        "right_middle_wheel_col_1": [
+          -4.96375521082485,
+          1.0819569912218265,
+          40.14738766532401
+        ],
+        "right_rear_wheel_col_1": [
+          -93.35399981863742,
+          -14.62147247863928,
+          290.35064861701045
+        ]
+      },
+      "tail_mean_upward_force_by_role_n": {
+        "front": 423.21843706122485,
+        "middle": 64.74543089424581,
+        "rear": 750.2136789979678
+      },
+      "max_roll_deg": 0.48840722345809656,
+      "max_pitch_deg": 49.76260624904729,
+      "max_steer_deg": 2.9097793351077503
+    },
+    "sequence": [
+      [
+        3.0,
+        1.3586476625001882,
+        3.0,
+        9.022488826469928,
+        15.0
+      ]
+    ],
+    "dataset_accepted": false,
+    "full_route_success": false,
+    "independent_initial_state_replay_max_error": {
+      "time": 0.0,
+      "qpos": 0.0,
+      "qvel": 0.0,
+      "actuator_force": 0.0
+    }
+  }
+]

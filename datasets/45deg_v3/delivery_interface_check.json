@@ -1,0 +1,11 @@
+{
+  "case": "seed1000_h04_base",
+  "accepted_count": 1,
+  "independent_verify_ok": true,
+  "visual_mode": "original_urdf_visual_meshes_only",
+  "hidden_collision_count": 82,
+  "visual_count": 13,
+  "video_hash_matches_review": true,
+  "physics_files_unchanged": true,
+  "video_bytes": 5522443
+}

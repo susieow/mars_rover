@@ -1,0 +1,1612 @@
+{
+  "scope": "15 cm uniform stairs, 15 up + platform + 15 down, 45 degrees",
+  "accepted_count": 0,
+  "runs": [
+    {
+      "tag": "agent_h15_n15_asymmetric_support_transfer",
+      "parameters": {
+        "policy": "asymmetric_front_middle_support_transfer",
+        "middle_angle": 12.0,
+        "traverse_angle": -30.0,
+        "anchor_cycle": false,
+        "anchor_angle": 12.0,
+        "entry_angle": null,
+        "sync": false,
+        "leading_drive_scale": 1.0,
+        "middle_positive_drive_unload": true,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 22.28200000000425,
+      "final_x_m": 1.58,
+      "phase": "SIDE_ACQUIRE_FRONT",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 10.30099999999973,
+          "mode": "RELEASE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.6284012272046062,
+          "pitch_deg": -45.85609802087297,
+          "rocker_deg": [
+            0.20393797117984885,
+            5.383554785922714
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 11.146999999999261,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_released_and_retreat_observed",
+          "x": 1.6126693967160926,
+          "pitch_deg": -48.208098762530255,
+          "rocker_deg": [
+            11.870447513663423,
+            11.684494121805931
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 13.898999999997736,
+          "mode": "SIDE_ACQUIRE_FRONT",
+          "reason": "one_middle_passed_and_loaded_other_not_passed",
+          "x": 1.5390079754145334,
+          "anchor_side": 0,
+          "free_side": 1,
+          "targets_deg": [
+            -29.999999999999996,
+            18.0
+          ],
+          "actual_deg": [
+            -26.72748335967582,
+            -15.495337021622234
+          ],
+          "support_up_n": {
+            "0": 5.450917240067129e-16,
+            "1": 305.2901117924762,
+            "2": 351.5661902106406,
+            "3": 9.892069785389548e-16,
+            "4": 0.02569702623777044,
+            "5": 572.9497030079276
+          },
+          "wheel_centers": {
+            "left_front_wheel_col_1": [
+              2.1602126442343983,
+              0.34977974087997343,
+              1.461571295972579
+            ],
+            "left_middle_wheel_col_1": [
+              2.0558412263333237,
+              0.34500209924985725,
+              0.8252920519028825
+            ],
+            "left_rear_wheel_col_1": [
+              1.437913222646969,
+              0.3246491282061315,
+              0.16278675650304547
+            ],
+            "right_front_wheel_col_1": [
+              2.1944266790785294,
+              -0.35658343644231466,
+              1.3622549758657365
+            ],
+            "right_middle_wheel_col_1": [
+              1.9729858539273932,
+              -0.3464536288206028,
+              0.770778322827497
+            ],
+            "right_rear_wheel_col_1": [
+              1.437899430796907,
+              -0.3194399003927828,
+              0.16190806061799431
+            ]
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.1877092410803654,
+      "max_contact_penetration_m": 0.003558694320603184,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.8565440860798739,
+        "left_front_steer_joint": 0.5773827683496027,
+        "left_front_wheel_joint": 2.7484323398564214,
+        "left_rear_steer_joint": 0.3792703754566892,
+        "left_rear_wheel_joint": 2.0576944239239396,
+        "left_middle_wheel_joint": 2.1395122577280055,
+        "right_rocker_joint": 0.7551629071529751,
+        "right_front_steer_joint": 0.8838457375685839,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.23855960859880315,
+        "right_rear_wheel_joint": 1.989199908885408,
+        "right_middle_wheel_joint": 2.1584469588960875
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_asymmetric_support_transfer_trigger50",
+      "parameters": {
+        "policy": "asymmetric_front_middle_support_transfer",
+        "front_support_trigger_n": 50.0,
+        "middle_angle": 12.0,
+        "traverse_angle": -30.0,
+        "anchor_cycle": false,
+        "anchor_angle": 12.0,
+        "entry_angle": null,
+        "sync": false,
+        "leading_drive_scale": 1.0,
+        "middle_positive_drive_unload": true,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 22.28200000000425,
+      "final_x_m": 1.58,
+      "phase": "SIDE_ACQUIRE_FRONT",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 10.30099999999973,
+          "mode": "RELEASE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.6284012272046062,
+          "pitch_deg": -45.85609802087297,
+          "rocker_deg": [
+            0.20393797117984885,
+            5.383554785922714
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 11.146999999999261,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_released_and_retreat_observed",
+          "x": 1.6126693967160926,
+          "pitch_deg": -48.208098762530255,
+          "rocker_deg": [
+            11.870447513663423,
+            11.684494121805931
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 13.898999999997736,
+          "mode": "SIDE_ACQUIRE_FRONT",
+          "reason": "one_middle_passed_and_loaded_other_not_passed",
+          "x": 1.5390079754145334,
+          "anchor_side": 0,
+          "free_side": 1,
+          "targets_deg": [
+            -29.999999999999996,
+            18.0
+          ],
+          "actual_deg": [
+            -26.72748335967582,
+            -15.495337021622234
+          ],
+          "support_up_n": {
+            "0": 5.450917240067129e-16,
+            "1": 305.2901117924762,
+            "2": 351.5661902106406,
+            "3": 9.892069785389548e-16,
+            "4": 0.02569702623777044,
+            "5": 572.9497030079276
+          },
+          "wheel_centers": {
+            "left_front_wheel_col_1": [
+              2.1602126442343983,
+              0.34977974087997343,
+              1.461571295972579
+            ],
+            "left_middle_wheel_col_1": [
+              2.0558412263333237,
+              0.34500209924985725,
+              0.8252920519028825
+            ],
+            "left_rear_wheel_col_1": [
+              1.437913222646969,
+              0.3246491282061315,
+              0.16278675650304547
+            ],
+            "right_front_wheel_col_1": [
+              2.1944266790785294,
+              -0.35658343644231466,
+              1.3622549758657365
+            ],
+            "right_middle_wheel_col_1": [
+              1.9729858539273932,
+              -0.3464536288206028,
+              0.770778322827497
+            ],
+            "right_rear_wheel_col_1": [
+              1.437899430796907,
+              -0.3194399003927828,
+              0.16190806061799431
+            ]
+          }
+        },
+        {
+          "t": 21.444000000003225,
+          "mode": "SIDE_HOLD_BRIDGE",
+          "reason": "free_front_upward_support_above_50N_50ms",
+          "x": 1.5764472429283714,
+          "anchor_side": 0,
+          "free_side": 1,
+          "targets_deg": [
+            -29.999999999999996,
+            18.0
+          ],
+          "actual_deg": [
+            -19.946528335441595,
+            19.907715131652797
+          ],
+          "support_up_n": {
+            "0": 3.4451702488757647e-82,
+            "1": 257.97183982259315,
+            "2": 373.6841325845044,
+            "3": 86.74795449305199,
+            "4": 1.6241418898859633e-68,
+            "5": 545.0063240016016
+          },
+          "wheel_centers": {
+            "left_front_wheel_col_1": [
+              2.2467549047922493,
+              0.35033552217419756,
+              1.3706378736919378
+            ],
+            "left_middle_wheel_col_1": [
+              2.0378684705996566,
+              0.34524291231749926,
+              0.7609274962866757
+            ],
+            "left_rear_wheel_col_1": [
+              1.4373855266513214,
+              0.3241784773259305,
+              0.16373089087547307
+            ],
+            "right_front_wheel_col_1": [
+              2.24889798041065,
+              -0.3551276401110748,
+              1.0283864420436026
+            ],
+            "right_middle_wheel_col_1": [
+              1.7009764999659476,
+              -0.3463352052336528,
+              0.6987698945377371
+            ],
+            "right_rear_wheel_col_1": [
+              1.437814686728377,
+              -0.3198728656441456,
+              0.16201011647891397
+            ]
+          }
+        },
+        {
+          "t": 21.74400000000359,
+          "mode": "SIDE_PRESS_MIDDLE",
+          "reason": "front_and_other_middle_support_confirmed",
+          "x": 1.5767932853945528,
+          "anchor_side": 0,
+          "free_side": 1,
+          "targets_deg": [
+            -29.999999999999996,
+            18.0
+          ],
+          "actual_deg": [
+            -19.929234327775212,
+            19.481425529600454
+          ],
+          "support_up_n": {
+            "0": 8.035879132560346e-85,
+            "1": 249.49428921752516,
+            "2": 348.24869301220014,
+            "3": 79.04530449128447,
+            "4": 3.7883201637163525e-71,
+            "5": 552.2825172410733
+          },
+          "wheel_centers": {
+            "left_front_wheel_col_1": [
+              2.24708506920471,
+              0.3505773518754453,
+              1.3703959020892202
+            ],
+            "left_middle_wheel_col_1": [
+              2.0378786287979596,
+              0.3453686310414683,
+              0.7607627882098524
+            ],
+            "left_rear_wheel_col_1": [
+              1.4374402058481313,
+              0.3240253044810003,
+              0.16382186630708942
+            ],
+            "right_front_wheel_col_1": [
+              2.2514538568853792,
+              -0.3549542293296049,
+              1.0309876217913498
+            ],
+            "right_middle_wheel_col_1": [
+              1.7051227757071377,
+              -0.3463458861735008,
+              0.698187400449315
+            ],
+            "right_rear_wheel_col_1": [
+              1.438102901572949,
+              -0.3200270101607029,
+              0.16203809059479884
+            ]
+          }
+        },
+        {
+          "t": 22.048000000003963,
+          "mode": "SIDE_ACQUIRE_FRONT",
+          "reason": "front_lost_before_middle_received_load",
+          "x": 1.5768025568830046,
+          "anchor_side": 0,
+          "free_side": 1,
+          "targets_deg": [
+            -29.999999999999996,
+            -30.0
+          ],
+          "actual_deg": [
+            -19.93813583635646,
+            19.453196735249467
+          ],
+          "support_up_n": {
+            "0": 1.7288623093994266e-87,
+            "1": 311.6555744387971,
+            "2": 330.72877290418336,
+            "3": 11.06311286452245,
+            "4": 8.150301714282136e-74,
+            "5": 586.2245906027043
+          },
+          "wheel_centers": {
+            "left_front_wheel_col_1": [
+              2.2471007209221305,
+              0.3504301727315553,
+              1.3702455888480805
+            ],
+            "left_middle_wheel_col_1": [
+              2.0378660134541753,
+              0.34530327659401155,
+              0.7606409254501844
+            ],
+            "left_rear_wheel_col_1": [
+              1.4372242825166153,
+              0.32400200825998526,
+              0.16375541802402363
+            ],
+            "right_front_wheel_col_1": [
+              2.2492245641151163,
+              -0.3549714939487876,
+              1.0287179091613028
+            ],
+            "right_middle_wheel_col_1": [
+              1.7058312079986904,
+              -0.34642527107072135,
+              0.6964926710806593
+            ],
+            "right_rear_wheel_col_1": [
+              1.4380231855383605,
+              -0.3200509325733154,
+              0.1619080527432077
+            ]
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.1877092410803654,
+      "max_contact_penetration_m": 0.003558694320603184,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.8565440860798739,
+        "left_front_steer_joint": 0.5773827683496027,
+        "left_front_wheel_joint": 2.7484323398564214,
+        "left_rear_steer_joint": 0.3792703754566892,
+        "left_rear_wheel_joint": 2.0576944239239396,
+        "left_middle_wheel_joint": 2.1395122577280055,
+        "right_rocker_joint": 0.7551629071529751,
+        "right_front_steer_joint": 0.8838457375685839,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.23855960859880315,
+        "right_rear_wheel_joint": 1.989199908885408,
+        "right_middle_wheel_joint": 2.1584469588960875
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_baseline",
+      "parameters": null,
+      "duration_s": 17.313999999998178,
+      "final_x_m": 1.63,
+      "phase": "MIDDLE_LIFT",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [],
+      "physics_rejections": [
+        "joint_velocity_limit:left_rocker_joint",
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.6555729637765095,
+      "max_contact_penetration_m": 0.006650066188660819,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 1.5927870853421247,
+        "left_front_steer_joint": 1.6272518844548725,
+        "left_front_wheel_joint": 6.121700272546048,
+        "left_rear_steer_joint": 1.0681328291265093,
+        "left_rear_wheel_joint": 6.073575607729254,
+        "left_middle_wheel_joint": 6.353328759843519,
+        "right_rocker_joint": 1.0289940844470324,
+        "right_front_steer_joint": 1.052416665433677,
+        "right_front_wheel_joint": 6.2273857141715405,
+        "right_rear_steer_joint": 0.7858012271856446,
+        "right_rear_wheel_joint": 5.8551890226783465,
+        "right_middle_wheel_joint": 6.271743927337673
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_positive12",
+      "parameters": {
+        "middle_angle": 12.0,
+        "middle_positive_drive_unload": false
+      },
+      "duration_s": 17.313999999998178,
+      "final_x_m": 1.63,
+      "phase": "MIDDLE_LIFT",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [],
+      "physics_rejections": [
+        "joint_velocity_limit:left_rocker_joint",
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.6555729637765095,
+      "max_contact_penetration_m": 0.006650066188660819,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 1.5927870853421247,
+        "left_front_steer_joint": 1.6272518844548725,
+        "left_front_wheel_joint": 6.121700272546048,
+        "left_rear_steer_joint": 1.0681328291265093,
+        "left_rear_wheel_joint": 6.073575607729254,
+        "left_middle_wheel_joint": 6.353328759843519,
+        "right_rocker_joint": 1.0289940844470324,
+        "right_front_steer_joint": 1.052416665433677,
+        "right_front_wheel_joint": 6.2273857141715405,
+        "right_rear_steer_joint": 0.7858012271856446,
+        "right_rear_wheel_joint": 5.8551890226783465,
+        "right_middle_wheel_joint": 6.271743927337673
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_positive12_unload",
+      "parameters": {
+        "middle_angle": 12.0,
+        "middle_positive_drive_unload": true
+      },
+      "duration_s": 17.313999999998178,
+      "final_x_m": 1.63,
+      "phase": "MIDDLE_LIFT",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [],
+      "physics_rejections": [
+        "joint_velocity_limit:left_rocker_joint",
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.6555729637765095,
+      "max_contact_penetration_m": 0.006650066188660819,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 1.5927870853421247,
+        "left_front_steer_joint": 1.6272518844548725,
+        "left_front_wheel_joint": 6.121700272546048,
+        "left_rear_steer_joint": 1.0681328291265093,
+        "left_rear_wheel_joint": 6.073575607729254,
+        "left_middle_wheel_joint": 6.353328759843519,
+        "right_rocker_joint": 1.0289940844470324,
+        "right_front_steer_joint": 1.052416665433677,
+        "right_front_wheel_joint": 6.2273857141715405,
+        "right_rear_steer_joint": 0.7858012271856446,
+        "right_rear_wheel_joint": 5.8551890226783465,
+        "right_middle_wheel_joint": 6.271743927337673
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_preentry_neg20",
+      "parameters": {
+        "middle_angle": 12.0,
+        "traverse_angle": null,
+        "anchor_cycle": false,
+        "anchor_angle": 12.0,
+        "entry_angle": -20.0,
+        "middle_positive_drive_unload": false,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": true,
+        "activation_count": 0
+      },
+      "duration_s": 21.885000000003764,
+      "final_x_m": 1.56,
+      "phase": "MIDDLE_LIFT",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 1.796999999999913,
+          "mode": "ENTRY_POSE",
+          "reason": "front_center_within_45cm_of_first_edge",
+          "x": 0.48942302365762713,
+          "target_deg": -20.0
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 4.991746432702718,
+      "max_contact_penetration_m": 0.006387565818787966,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.45358260474408096,
+        "left_front_steer_joint": 0.4784197013737921,
+        "left_front_wheel_joint": 3.1719389411261365,
+        "left_rear_steer_joint": 0.8125098196328915,
+        "left_rear_wheel_joint": 2.4224656175750083,
+        "left_middle_wheel_joint": 2.52519646861638,
+        "right_rocker_joint": 0.5274332722391001,
+        "right_front_steer_joint": 0.614544600706948,
+        "right_front_wheel_joint": 2.6706578176503077,
+        "right_rear_steer_joint": 0.5995863750583381,
+        "right_rear_wheel_joint": 1.9865588723934364,
+        "right_middle_wheel_joint": 2.3477232876264025
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_release12_push30",
+      "parameters": {
+        "middle_angle": 12.0,
+        "traverse_angle": -30.0,
+        "anchor_cycle": false,
+        "anchor_angle": 12.0,
+        "entry_angle": null,
+        "middle_positive_drive_unload": true,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 22.28200000000425,
+      "final_x_m": 1.55,
+      "phase": "ACTIVE_TRAVERSE",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 10.30099999999973,
+          "mode": "RELEASE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.6284012272046062,
+          "pitch_deg": -45.85609802087297,
+          "rocker_deg": [
+            0.20393797117984885,
+            5.383554785922714
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 11.146999999999261,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_released_and_retreat_observed",
+          "x": 1.6126693967160926,
+          "pitch_deg": -48.208098762530255,
+          "rocker_deg": [
+            11.870447513663423,
+            11.684494121805931
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.1877092410803654,
+      "max_contact_penetration_m": 0.003558694320603184,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.8565440860798739,
+        "left_front_steer_joint": 0.5773827683496027,
+        "left_front_wheel_joint": 2.7484323398564214,
+        "left_rear_steer_joint": 0.39186696757111494,
+        "left_rear_wheel_joint": 2.096893274952397,
+        "left_middle_wheel_joint": 2.1395122577280055,
+        "right_rocker_joint": 0.7689477161375076,
+        "right_front_steer_joint": 0.8838457375685839,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.23855960859880315,
+        "right_rear_wheel_joint": 1.989199908885408,
+        "right_middle_wheel_joint": 2.1584469588960875
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_release12_push30_sync",
+      "parameters": {
+        "middle_angle": 12.0,
+        "traverse_angle": -30.0,
+        "anchor_cycle": false,
+        "anchor_angle": 12.0,
+        "entry_angle": null,
+        "sync": true,
+        "leading_drive_scale": 0.25,
+        "middle_positive_drive_unload": true,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 22.378000000004366,
+      "final_x_m": 1.57,
+      "phase": "ACTIVE_TRAVERSE",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 10.761999999999475,
+          "mode": "RELEASE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.634041522621409,
+          "pitch_deg": -46.561455394989785,
+          "rocker_deg": [
+            1.049365106685279,
+            3.372692629852912
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 13.13499999999816,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_released_and_retreat_observed",
+          "x": 1.6111213711338404,
+          "pitch_deg": -48.33612974628362,
+          "rocker_deg": [
+            12.165382725700393,
+            11.480295539993834
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.1877092410803654,
+      "max_contact_penetration_m": 0.004707614395696811,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.7340468851726283,
+        "left_front_steer_joint": 0.6383663684845684,
+        "left_front_wheel_joint": 2.61168133520997,
+        "left_rear_steer_joint": 0.5082094665385457,
+        "left_rear_wheel_joint": 2.106754137374328,
+        "left_middle_wheel_joint": 2.8253866706587543,
+        "right_rocker_joint": 0.5481723375016353,
+        "right_front_steer_joint": 0.8702521378416921,
+        "right_front_wheel_joint": 2.8549551540144726,
+        "right_rear_steer_joint": 0.45865911120664743,
+        "right_rear_wheel_joint": 2.12519341597779,
+        "right_middle_wheel_joint": 2.6867760437244677
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_slow2_neg20",
+      "parameters": {
+        "middle_angle": -20.0,
+        "traverse_angle": null,
+        "middle_positive_drive_unload": false,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 22.28200000000425,
+      "final_x_m": 1.56,
+      "phase": "ACTIVE_TRAVERSE",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 10.30099999999973,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.6284012272046062,
+          "pitch_deg": -45.85609802087297,
+          "rocker_deg": [
+            0.20393797117984885,
+            5.383554785922714
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 4.427293875203397,
+      "max_contact_penetration_m": 0.004672231950075789,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.5277138420104074,
+        "left_front_steer_joint": 0.5680752059777621,
+        "left_front_wheel_joint": 2.4920116755957324,
+        "left_rear_steer_joint": 0.500312830624867,
+        "left_rear_wheel_joint": 2.0576944239239396,
+        "left_middle_wheel_joint": 2.294500414615765,
+        "right_rocker_joint": 0.4437881352838657,
+        "right_front_steer_joint": 0.5401250523407248,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.5874998444432414,
+        "right_rear_wheel_joint": 2.4143442626110336,
+        "right_middle_wheel_joint": 2.183537048809551
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_slow2_neutral",
+      "parameters": {
+        "middle_angle": 12.0,
+        "middle_positive_drive_unload": false,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": true,
+        "activation_count": 0
+      },
+      "duration_s": 22.28200000000425,
+      "final_x_m": 1.63,
+      "phase": "FRONT_LIFT",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.1877092410803654,
+      "max_contact_penetration_m": 0.003548441830908633,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.4937364964478979,
+        "left_front_steer_joint": 0.7867459244986501,
+        "left_front_wheel_joint": 2.4920116755957324,
+        "left_rear_steer_joint": 0.3792703754566892,
+        "left_rear_wheel_joint": 2.112547107815108,
+        "left_middle_wheel_joint": 2.293501489426743,
+        "right_rocker_joint": 0.4437881352838657,
+        "right_front_steer_joint": 0.5401250523407248,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.32827552387510833,
+        "right_rear_wheel_joint": 2.029953720257962,
+        "right_middle_wheel_joint": 2.167716550434374
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_slow2_p200_neutral",
+      "parameters": {
+        "middle_angle": 12.0,
+        "traverse_angle": null,
+        "anchor_cycle": false,
+        "anchor_angle": 12.0,
+        "middle_positive_drive_unload": false,
+        "speed": 2.0,
+        "wheel_gain": 200.0,
+        "disable_assist": true,
+        "activation_count": 0
+      },
+      "duration_s": 20.354000000001893,
+      "final_x_m": 1.63,
+      "phase": "MIDDLE_LIFT",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.1500585740107985,
+      "max_contact_penetration_m": 0.006050593270023137,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.5800889228585363,
+        "left_front_steer_joint": 0.5397842200667468,
+        "left_front_wheel_joint": 2.8943126829848116,
+        "left_rear_steer_joint": 0.36612452522989664,
+        "left_rear_wheel_joint": 2.136085583002162,
+        "left_middle_wheel_joint": 2.133633495933049,
+        "right_rocker_joint": 0.46905832077383386,
+        "right_front_steer_joint": 0.3997263636741227,
+        "right_front_wheel_joint": 3.2638470547047933,
+        "right_rear_steer_joint": 0.27967700210236923,
+        "right_rear_wheel_joint": 2.0977124151697533,
+        "right_middle_wheel_joint": 2.2234029525644967
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_slow2_p200_release12_push20",
+      "parameters": {
+        "middle_angle": 12.0,
+        "traverse_angle": -20.0,
+        "anchor_cycle": false,
+        "anchor_angle": 12.0,
+        "middle_positive_drive_unload": true,
+        "speed": 2.0,
+        "wheel_gain": 200.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 20.354000000001893,
+      "final_x_m": 1.56,
+      "phase": "ACTIVE_TRAVERSE",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 8.608000000000668,
+          "mode": "RELEASE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.6331580400617032,
+          "pitch_deg": -46.63963643832582,
+          "rocker_deg": [
+            1.5526409787029976,
+            1.6269812559402734
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 9.482000000000184,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_released_and_retreat_observed",
+          "x": 1.6112404420731832,
+          "pitch_deg": -48.31006862283203,
+          "rocker_deg": [
+            12.080104763089036,
+            11.302360069684347
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 12.971160965500227,
+      "max_contact_penetration_m": 0.012928235836024867,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.8544290005247542,
+        "left_front_steer_joint": 0.7015831616093892,
+        "left_front_wheel_joint": 2.8943126829848116,
+        "left_rear_steer_joint": 0.9591303789578196,
+        "left_rear_wheel_joint": 2.272240539298467,
+        "left_middle_wheel_joint": 2.5271002373548512,
+        "right_rocker_joint": 0.807312003116888,
+        "right_front_steer_joint": 1.0054489983948018,
+        "right_front_wheel_joint": 3.2638470547047933,
+        "right_rear_steer_joint": 0.6991784434714582,
+        "right_rear_wheel_joint": 2.5021151084706763,
+        "right_middle_wheel_joint": 2.460613724608421
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_slow2_pos12",
+      "parameters": {
+        "middle_angle": 12.0,
+        "middle_positive_drive_unload": false,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 22.28200000000425,
+      "final_x_m": 1.61,
+      "phase": "ACTIVE_TRAVERSE",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 10.30099999999973,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.6284012272046062,
+          "pitch_deg": -45.85609802087297,
+          "rocker_deg": [
+            0.20393797117984885,
+            5.383554785922714
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.1877092410803654,
+      "max_contact_penetration_m": 0.005192910881029356,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.8444032823617692,
+        "left_front_steer_joint": 0.6800320451125199,
+        "left_front_wheel_joint": 2.730070664142469,
+        "left_rear_steer_joint": 0.3792703754566892,
+        "left_rear_wheel_joint": 2.0576944239239396,
+        "left_middle_wheel_joint": 2.196178954186879,
+        "right_rocker_joint": 0.6111972387428618,
+        "right_front_steer_joint": 0.9015800193317284,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.23855960859880315,
+        "right_rear_wheel_joint": 1.989199908885408,
+        "right_middle_wheel_joint": 2.1256795350705953
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_slow2_pos12_unload",
+      "parameters": {
+        "middle_angle": 12.0,
+        "middle_positive_drive_unload": true,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 22.28200000000425,
+      "final_x_m": 1.61,
+      "phase": "ACTIVE_TRAVERSE",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 10.30099999999973,
+          "mode": "RELEASE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.6284012272046062,
+          "pitch_deg": -45.85609802087297,
+          "rocker_deg": [
+            0.20393797117984885,
+            5.383554785922714
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 10.779999999999465,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_released_and_retreat_observed",
+          "x": 1.6305399717280242,
+          "pitch_deg": -46.83377402699747,
+          "rocker_deg": [
+            2.86322926640218,
+            8.703438080505734
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.1877092410803654,
+      "max_contact_penetration_m": 0.003548441830908633,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.8517593449806112,
+        "left_front_steer_joint": 0.5680752059777621,
+        "left_front_wheel_joint": 2.740464895163771,
+        "left_rear_steer_joint": 0.3792703754566892,
+        "left_rear_wheel_joint": 2.0576944239239396,
+        "left_middle_wheel_joint": 2.2060834935974913,
+        "right_rocker_joint": 0.6921971732852636,
+        "right_front_steer_joint": 0.7683781575917861,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.23855960859880315,
+        "right_rear_wheel_joint": 1.989199908885408,
+        "right_middle_wheel_joint": 2.118457026172404
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_slow2_release12_push20",
+      "parameters": {
+        "middle_angle": 12.0,
+        "traverse_angle": -20.0,
+        "middle_positive_drive_unload": true,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 22.28200000000425,
+      "final_x_m": 1.57,
+      "phase": "ACTIVE_TRAVERSE",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 10.30099999999973,
+          "mode": "RELEASE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.6284012272046062,
+          "pitch_deg": -45.85609802087297,
+          "rocker_deg": [
+            0.20393797117984885,
+            5.383554785922714
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 11.146999999999261,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_released_and_retreat_observed",
+          "x": 1.6126693967160926,
+          "pitch_deg": -48.208098762530255,
+          "rocker_deg": [
+            11.870447513663423,
+            11.684494121805931
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.4244877701802627,
+      "max_contact_penetration_m": 0.003634746748838564,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.8565440860798739,
+        "left_front_steer_joint": 0.5773827683496027,
+        "left_front_wheel_joint": 2.7484323398564214,
+        "left_rear_steer_joint": 0.3792703754566892,
+        "left_rear_wheel_joint": 2.093288204488547,
+        "left_middle_wheel_joint": 2.1770207263313575,
+        "right_rocker_joint": 0.6921971732852636,
+        "right_front_steer_joint": 0.8838457375685839,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.4589936304438809,
+        "right_rear_wheel_joint": 2.097109553773368,
+        "right_middle_wheel_joint": 2.209399964056117
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    },
+    {
+      "tag": "agent_h15_n15_support_anchor_cycle",
+      "parameters": {
+        "middle_angle": 12.0,
+        "traverse_angle": -20.0,
+        "anchor_cycle": true,
+        "anchor_angle": 12.0,
+        "middle_positive_drive_unload": true,
+        "speed": 2.0,
+        "wheel_gain": 40.0,
+        "disable_assist": false,
+        "activation_count": 1
+      },
+      "duration_s": 22.28200000000425,
+      "final_x_m": 1.61,
+      "phase": "ACTIVE_ANCHOR",
+      "abort_reason": "diagnostic_no_forward_progress_12s",
+      "events": [
+        {
+          "t": 10.30099999999973,
+          "mode": "RELEASE",
+          "reason": "middle_wall_20ms_rear_loaded_nose_up",
+          "x": 1.6284012272046062,
+          "pitch_deg": -45.85609802087297,
+          "rocker_deg": [
+            0.20393797117984885,
+            5.383554785922714
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 11.146999999999261,
+          "mode": "TRAVERSE",
+          "reason": "middle_wall_released_and_retreat_observed",
+          "x": 1.6126693967160926,
+          "pitch_deg": -48.208098762530255,
+          "rocker_deg": [
+            11.870447513663423,
+            11.684494121805931
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        },
+        {
+          "t": 12.838999999998324,
+          "mode": "ANCHOR",
+          "reason": "both_middle_support_force_above_80N_and_negative_rocker",
+          "x": 1.5645861384678124,
+          "pitch_deg": -51.859681551710445,
+          "rocker_deg": [
+            -12.01535300842957,
+            -12.189712670269527
+          ],
+          "edges": {
+            "1": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            },
+            "4": {
+              "name": "up3",
+              "x": 2.05,
+              "z": 0.6
+            }
+          }
+        }
+      ],
+      "physics_rejections": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "route_rejections": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "max_abs_steer_deg": 2.1877092410803654,
+      "max_contact_penetration_m": 0.0036384788962977588,
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 0.8565440860798739,
+        "left_front_steer_joint": 0.5773827683496027,
+        "left_front_wheel_joint": 2.7484323398564214,
+        "left_rear_steer_joint": 0.3792703754566892,
+        "left_rear_wheel_joint": 2.0576944239239396,
+        "left_middle_wheel_joint": 2.1275714344964927,
+        "right_rocker_joint": 0.8451591543094923,
+        "right_front_steer_joint": 0.8838457375685839,
+        "right_front_wheel_joint": 3.0259904737141294,
+        "right_rear_steer_joint": 0.23855960859880315,
+        "right_rear_wheel_joint": 1.989199908885408,
+        "right_middle_wheel_joint": 2.118457026172404
+      },
+      "automated_checks_passed": false,
+      "dataset_accepted": false
+    }
+  ],
+  "replayed_support_measurements": {
+    "method": "Replay full saved input sequence from saved integration state. Sum world-frame contact force on each wheel over the final 1 second. All three final physics_qpos errors are 0. Forces below are rounded to 0.01 N.",
+    "mean_vertical_force_n": {
+      "agent_h15_n15_slow2_neutral": {
+        "front": 171.4,
+        "middle": 181.52,
+        "rear": 881.52
+      },
+      "agent_h15_n15_slow2_pos12": {
+        "front": 312.48,
+        "middle": 0.0,
+        "rear": 930.93
+      },
+      "agent_h15_n15_slow2_release12_push20": {
+        "front": 0.0,
+        "middle": 549.9,
+        "rear": 688.7
+      }
+    }
+  },
+  "gravity_measurements": {
+    "method": "Separate MjData with final saved qpos, qvel zero, ctrl zero, mj_forward; no trajectory modification.",
+    "agent_h15_n15_release12_push30": {
+      "left_bias_nm": -111.44534659275041,
+      "right_bias_nm": -99.87258334363108
+    },
+    "agent_h15_n15_release12_push30_sync": {
+      "left_bias_nm": -111.21740131637137,
+      "right_bias_nm": -111.95427942909951
+    }
+  },
+  "limitations": [
+    "All runs are diagnostic failures, not successful dataset episodes.",
+    "No full route reached platform or descent.",
+    "Absence of enabled contact reports does not exclude robot self-intersection; collision masks disable self-collision.",
+    "Wheel-center force Jacobians do not replace actual contact-point force and torque calculations."
+  ],
+  "diagnostic_directory_count": 16,
+  "diagnostic_directory_count_is_not_independent_policy_count": true,
+  "most_informative_cases": [
+    {
+      "tag": "agent_h15_n15_slow2_neutral",
+      "finding": "Speed 2 rad/s and wheel P40 remove the initial rocker speed violation; route still stalls near x1.63."
+    },
+    {
+      "tag": "agent_h15_n15_slow2_pos12",
+      "finding": "Positive rocker move actually executes and releases middle wheels, but transfers more vertical load to rear wheels."
+    },
+    {
+      "tag": "agent_h15_n15_slow2_release12_push20",
+      "finding": "Release then negative swing establishes middle support; average rear support remains about689N and rear wheels stay before first edge."
+    },
+    {
+      "tag": "agent_h15_n15_release12_push30",
+      "finding": "One middle wheel crosses; other rocker stalls near0deg. Zero-velocity gravity bias on lagging rocker is -99.8726Nm against -100Nm actuator saturation."
+    },
+    {
+      "tag": "agent_h15_n15_release12_push30_sync",
+      "finding": "Synchronization reduces left/right mismatch to about1-3deg but neither middle center fully crosses; next riser also blocks wheel."
+    },
+    {
+      "tag": "agent_h15_n15_asymmetric_support_transfer_trigger50",
+      "finding": "Other-side front support is established and PRESS executes. Front support then vanishes before middle support forms; both rear wheels remain blocked. Full independent replay qpos/qvel errors are0."
+    }
+  ],
+  "observability_notes": [
+    {
+      "tags": [
+        "agent_h15_n15_positive12",
+        "agent_h15_n15_positive12_unload"
+      ],
+      "note": "Assist events were empty; these are not valid executed active-policy contrasts."
+    },
+    {
+      "tags": [
+        "agent_h15_n15_asymmetric_support_transfer"
+      ],
+      "note": "Only unilateral front acquisition executes; the historical EMA/goal sample fields are unreliable due to shared references. See diagnostic_notes.json and independently recomputed support_replay_audit.json."
+    },
+    {
+      "tags": [
+        "agent_h15_n15_asymmetric_support_transfer_trigger50"
+      ],
+      "note": "50N is a controller transition trigger, not a quality threshold. Historical samples now copy mutable values. PRESS does execute."
+    }
+  ],
+  "final_candidate_replay_paths": [
+    "/home/agilex/wzy/rover/review_v4/agent_h15_n15_asymmetric_support_transfer/support_replay_audit.json",
+    "/home/agilex/wzy/rover/review_v4/agent_h15_n15_asymmetric_support_transfer_trigger50/support_replay_audit.json"
+  ],
+  "final_candidate_support_evidence": {
+    "hold_bridge_mean_upward_n": {
+      "left_middle": 245.83974751244057,
+      "right_front": 84.401464714759,
+      "rear_sum": 909.8828709656199
+    },
+    "press_middle_mean_upward_n": {
+      "left_middle": 289.02378394190436,
+      "right_front": 42.63940601506429,
+      "right_middle": 0.0,
+      "rear_sum": 911.7679933415437
+    },
+    "press_duration_s": 0.304,
+    "press_base_x_range_m": 0.00015221810934651359,
+    "interpretation": "The new front support does not unload rear wheels enough or hand off support to the free middle wheel. This is a failed controller candidate, not a proof of global physical impossibility."
+  },
+  "final_status": "No 15cm accepted episode. Prototype experiments stopped. No background simulation or replay remains. Formal source and accepted4cm seed not modified by this subtask."
+}

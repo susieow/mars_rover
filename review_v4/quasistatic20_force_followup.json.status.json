@@ -1,0 +1,14 @@
+{
+  "artifact": "/home/agilex/wzy/rover/review_v4/quasistatic20_force_followup.json",
+  "artifact_sha256": "16135a7815e52c10a906f89e53bea931371be138f5c0d515fd509719ae502886",
+  "status": "superseded_for_force_feasibility_conclusions",
+  "replacement": "/home/agilex/wzy/rover/review_v4/quasistatic20_force_with_joint_friction.json",
+  "final_conclusions": "/home/agilex/wzy/rover/review_v4/quasistatic20_final_conclusions.json",
+  "reason": "This reduced LP omitted original-model joint dry-friction reactions (wheel 1 Nm, steer 0.8 Nm, rocker 1.2 Nm). The omission changes marginal feasibility and can generate misleading large self-stress solutions.",
+  "preserved_without_modification": true,
+  "do_not_reuse": [
+    "Neutral terminal 24.519 s reported as outside rated caps.",
+    "Several-kN minimum normal force at neutral 23.52/23.72 s interpreted as physically required.",
+    "Minimum-peak torque alone interpreted as a physically realistic load allocation."
+  ]
+}

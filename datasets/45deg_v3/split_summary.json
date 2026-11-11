@@ -1,0 +1,40 @@
+{
+  "plan_version": "equal_stairs_split_v1_15_20",
+  "unassigned_legacy_attempts": 3,
+  "test_reserved": true,
+  "splits": {
+    "train": {
+      "attempts": 0,
+      "accepted": 0,
+      "simulation_successes": 0,
+      "automated_passes": 0,
+      "incomplete_or_error": 0,
+      "policy_sha256": []
+    },
+    "validation": {
+      "attempts": 0,
+      "accepted": 0,
+      "simulation_successes": 0,
+      "automated_passes": 0,
+      "incomplete_or_error": 0,
+      "policy_sha256": []
+    },
+    "test": {
+      "attempts": 0,
+      "accepted": 0,
+      "simulation_successes": 0,
+      "automated_passes": 0,
+      "incomplete_or_error": 0,
+      "policy_sha256": []
+    },
+    "regression": {
+      "attempts": 9,
+      "accepted": 1,
+      "simulation_successes": 6,
+      "automated_passes": 1,
+      "incomplete_or_error": 0,
+      "policy_sha256": []
+    }
+  },
+  "denominator_definition": "Every episode metadata record, including failed, errored and incomplete attempts."
+}

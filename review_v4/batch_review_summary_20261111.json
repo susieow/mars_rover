@@ -1,0 +1,304 @@
+{
+  "generated_utc": "2026-11-11T02:38:07.506713+00:00",
+  "exploration_status": "stopped_at_user_request",
+  "media_preparation_status": "complete",
+  "target": {
+    "heights_cm": [
+      15,
+      20
+    ],
+    "equal_height_within_flight": true,
+    "slope_deg": 45,
+    "up_risers": 15,
+    "down_risers_including_ground": 15,
+    "completion": "ascend, cross platform, descend, settle normally on ground"
+  },
+  "candidate_batch": {
+    "evaluations": 768,
+    "unique_case_target_sequences": 704,
+    "process_compliant": 767,
+    "local_first_rear_step_successes": 0,
+    "local_first_rear_step_success_rate": 0.0,
+    "complete_route_trials": 0,
+    "complete_route_success_rate": null,
+    "groups": [
+      {
+        "height_cm": 15,
+        "phase": "near_contact",
+        "candidate_evaluations": 192,
+        "unique_target_sequences_within_case": 176,
+        "process_compliant": 192,
+        "rejected": [],
+        "local_first_rear_step_successes": 0,
+        "complete_route_trials": 0,
+        "complete_route_success_rate": null,
+        "report_path": "/home/agilex/wzy/rover/review_v4/dynamic_search15/search_report.json"
+      },
+      {
+        "height_cm": 15,
+        "phase": "early_entry",
+        "candidate_evaluations": 192,
+        "unique_target_sequences_within_case": 176,
+        "process_compliant": 192,
+        "rejected": [],
+        "local_first_rear_step_successes": 0,
+        "complete_route_trials": 0,
+        "complete_route_success_rate": null,
+        "report_path": "/home/agilex/wzy/rover/review_v4/dynamic_search15/early_entry/search_report.json"
+      },
+      {
+        "height_cm": 20,
+        "phase": "near_contact",
+        "candidate_evaluations": 192,
+        "unique_target_sequences_within_case": 176,
+        "process_compliant": 191,
+        "rejected": [
+          {
+            "id": "round0_candidate41",
+            "reasons": [
+              "contact_penetration_over_20mm"
+            ],
+            "first_failure_s": 12.328999999998606
+          }
+        ],
+        "local_first_rear_step_successes": 0,
+        "complete_route_trials": 0,
+        "complete_route_success_rate": null,
+        "report_path": "/home/agilex/wzy/rover/review_v4/dynamic_search20/search_report.json"
+      },
+      {
+        "height_cm": 20,
+        "phase": "early_entry",
+        "candidate_evaluations": 192,
+        "unique_target_sequences_within_case": 176,
+        "process_compliant": 192,
+        "rejected": [],
+        "local_first_rear_step_successes": 0,
+        "complete_route_trials": 0,
+        "complete_route_success_rate": null,
+        "report_path": "/home/agilex/wzy/rover/review_v4/dynamic_search20/early_entry/search_report.json"
+      }
+    ],
+    "denominator_note": "Counts are evaluations, including repeated elites. The two-second local candidates do not constitute full-route trials."
+  },
+  "earlier_route_diagnostics": {
+    "records": 29,
+    "successes": 0,
+    "entries": [
+      {
+        "id": "agent_h15_n15_asymmetric_support_transfer",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_asymmetric_support_transfer/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_asymmetric_support_transfer_trigger50",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_asymmetric_support_transfer_trigger50/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_baseline",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_baseline/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_positive12",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_positive12/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_positive12_unload",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_positive12_unload/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_preentry_neg20",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_preentry_neg20/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_release12_push30",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_release12_push30/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_release12_push30_sync",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_release12_push30_sync/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_slow2_neg20",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_slow2_neg20/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_slow2_neutral",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_slow2_neutral/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_slow2_p200_neutral",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_slow2_p200_neutral/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_slow2_p200_release12_push20",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_slow2_p200_release12_push20/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_slow2_pos12",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_slow2_pos12/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_slow2_pos12_unload",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_slow2_pos12_unload/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_slow2_release12_push20",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_slow2_release12_push20/diagnostic.json"
+      },
+      {
+        "id": "agent_h15_n15_support_anchor_cycle",
+        "height_cm": 15,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/agent_h15_n15_support_anchor_cycle/diagnostic.json"
+      },
+      {
+        "id": "high20_anchor_joint",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_anchor_joint/diagnostic.json"
+      },
+      {
+        "id": "high20_anchor_position",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_anchor_position/diagnostic.json"
+      },
+      {
+        "id": "high20_anchor_world",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_anchor_world/diagnostic.json"
+      },
+      {
+        "id": "high20_front35_drive",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_front35_drive/diagnostic.json"
+      },
+      {
+        "id": "high20_front35_free",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_front35_free/diagnostic.json"
+      },
+      {
+        "id": "high20_front35_sync",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_front35_sync/diagnostic.json"
+      },
+      {
+        "id": "high20_slow_cycle",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_slow_cycle/diagnostic.json"
+      },
+      {
+        "id": "high20_slow_cycle_unload",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_slow_cycle_unload/diagnostic.json"
+      },
+      {
+        "id": "high20_slow_neutral_v2",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_slow_neutral_v2/diagnostic.json"
+      },
+      {
+        "id": "high20_slow_positive",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_slow_positive/diagnostic.json"
+      },
+      {
+        "id": "high20_slow_positive_unload",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_slow_positive_unload/diagnostic.json"
+      },
+      {
+        "id": "high20_world_pi_short",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/high20_world_pi_short/diagnostic.json"
+      },
+      {
+        "id": "root_h20_n15_baseline",
+        "height_cm": 20,
+        "simulation_success": false,
+        "path": "/home/agilex/wzy/rover/review_v4/root_h20_n15_baseline/diagnostic.json"
+      }
+    ],
+    "note": "Includes two 15 cm candidates whose requested special action never activated; not 29 distinct effective strategies."
+  },
+  "accepted_target_training_episodes": 0,
+  "reserved_test_heights_cm": [
+    17,
+    18
+  ],
+  "model_sha256": "a7eeb359f8412dcc7830f997563d8aa4dbf22fe1ee55156f2b32e8307a1e1c68",
+  "urdf_sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
+  "proposed_next_steps_not_executed": [
+    "Review the failed contact and support transitions before collecting further demonstrations.",
+    "Validate rover collision geometry against the supplied URDF and document self-collision limitations.",
+    "Design a contact-dependent support transfer that measurably unloads and raises both rear wheels, and gate progress by actual tread support and retained clearance.",
+    "Prove one complete 15 cm, 15-riser route with independent replay and visual review, then address 20 cm; preserve the existing quality limits."
+  ],
+  "media_validation": {
+    "path": "/home/agilex/wzy/videos/review_high_stairs/media_validation.json",
+    "counts": {
+      "candidate_entries": 768,
+      "historical_entries": 29,
+      "shared_prefix_entries": 4,
+      "additional_validation_entries": 1,
+      "all_catalog_entries": 802,
+      "unique_mp4_files": 734,
+      "unique_candidate_mp4_files": 700,
+      "unique_posters": 734,
+      "checked_with_ffprobe": 734
+    },
+    "missing_or_invalid": []
+  },
+  "additional_completed_validation": {
+    "count": 1,
+    "id": "h20_near_contact_tail_hold_1s",
+    "local_success": false,
+    "included_in_768_or_29_denominators": false,
+    "note": "Previously executed 1-second tail hold; offline rendering only during delivery."
+  },
+  "frontend_validation_path": "/home/agilex/wzy/rover/review_v4/frontend_validation_20261111.json",
+  "frontend_url": "http://127.0.0.1:8701/experiments",
+  "delivery_completed_utc": "2026-11-11T02:56:01.456303+00:00",
+  "browser_validation": "passed"
+}

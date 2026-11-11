@@ -1,0 +1,3615 @@
+{
+  "height": 0.04,
+  "stairs": 12,
+  "depth": 0.04,
+  "friction": 4.0,
+  "contact_timeconst": 0.004,
+  "speed": 6.0,
+  "wheel_gain": 10.0,
+  "descent_speed": 1.0,
+  "rocker_gain": 240.0,
+  "rocker_damp": 60.0,
+  "nosing": 0.0,
+  "tau_max_requested": 50.0,
+  "tau_max_actual": 50.0,
+  "front_lift_deg": 14.0,
+  "middle_lift_deg": 17.0,
+  "quality_pitch_limit": 60.0,
+  "deg": 12.0,
+  "assist": true,
+  "controller": "closed_loop_v4",
+  "simulation_dt": 0.002,
+  "control_dt": 0.002,
+  "duration_s": 89.99999999997165,
+  "quality_roll_limit": 15.0,
+  "ground_wheels": [],
+  "stable_duration_s": 0.0,
+  "x": 1.91,
+  "y": 0.499,
+  "z": 0.844,
+  "max_z": 0.859,
+  "plat_z": 1.012,
+  "max_pitch_deg": 32.2,
+  "max_roll_deg": 11.9,
+  "final_pitch_deg": -27.32,
+  "final_roll_deg": 8.78,
+  "final_yaw_deg": -13.43,
+  "final_yaw_error_deg": 13.43,
+  "linear_speed": 0.0147,
+  "angular_speed": 0.0265,
+  "wheel_speed_max": 6.0333,
+  "reached_top": false,
+  "back_down": false,
+  "past_end": false,
+  "platform_seen": true,
+  "down_seen": false,
+  "settled": false,
+  "final_shape_ok": false,
+  "quality_ok": true,
+  "stopped_at_s": null,
+  "recovery_count": 0,
+  "max_slip": 5.308,
+  "max_abs_y": 0.499,
+  "max_yaw_error_deg": 15.86,
+  "phase": "STEP_SETTLE",
+  "events": [
+    {
+      "t": 1.736,
+      "phase": "FRONT_LIFT",
+      "riser": "up0"
+    },
+    {
+      "t": 1.956,
+      "phase": "FRONT_LAND",
+      "riser": null
+    },
+    {
+      "t": 2.078,
+      "phase": "MIDDLE_APPROACH",
+      "riser": null
+    },
+    {
+      "t": 2.08,
+      "phase": "FRONT_LIFT",
+      "riser": "up4"
+    },
+    {
+      "t": 2.362,
+      "phase": "FRONT_LAND",
+      "riser": null
+    },
+    {
+      "t": 2.484,
+      "phase": "MIDDLE_APPROACH",
+      "riser": null
+    },
+    {
+      "t": 2.486,
+      "phase": "FRONT_LIFT",
+      "riser": "up8"
+    },
+    {
+      "t": 2.71,
+      "phase": "FRONT_LAND",
+      "riser": null
+    },
+    {
+      "t": 2.832,
+      "phase": "MIDDLE_APPROACH",
+      "riser": null
+    },
+    {
+      "t": 2.834,
+      "phase": "FRONT_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 2.994,
+      "phase": "MIDDLE_APPROACH",
+      "riser": null
+    },
+    {
+      "t": 2.996,
+      "phase": "FRONT_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 3.22,
+      "phase": "FRONT_LAND",
+      "riser": null
+    },
+    {
+      "t": 3.342,
+      "phase": "MIDDLE_APPROACH",
+      "riser": null
+    },
+    {
+      "t": 3.344,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up6"
+    },
+    {
+      "t": 3.58,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 3.782,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 3.784,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up9"
+    },
+    {
+      "t": 4.008,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 4.21,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 4.212,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 5.192,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 5.194,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 5.316,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 5.318,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 5.48,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 5.482,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 5.604,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 5.606,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 5.728,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 5.73,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 5.874,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 5.876,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 6.022,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 6.024,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 6.392,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 6.594,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 6.596,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 6.786,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 6.788,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 7.012,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 7.214,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 7.216,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 7.426,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 7.428,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 7.552,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 7.554,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 7.676,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 7.678,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 7.8,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 7.802,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 7.95,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 7.952,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 8.072,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 8.074,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 8.194,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 8.196,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 8.568,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 8.57,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 8.694,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 8.696,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 8.816,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 8.818,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 8.938,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 8.94,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 9.078,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 9.08,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 9.216,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 9.218,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 9.338,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 9.34,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 9.52,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 9.522,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 9.656,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 9.658,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 9.778,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 9.78,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 9.926,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 9.928,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 10.056,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 10.058,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 10.198,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 10.2,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 10.32,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 10.322,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 10.46,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 10.462,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 10.726,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 10.728,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 10.854,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 10.856,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 11.054,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 11.056,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 11.176,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 11.178,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 11.322,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 11.324,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 11.454,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 11.456,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 11.596,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 11.598,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 11.718,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 11.72,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 11.9,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 11.902,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 12.052,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 12.054,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 12.174,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 12.176,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 12.296,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 12.298,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 12.42,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 12.422,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 12.56,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 12.562,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 12.682,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 12.684,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 12.804,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 12.806,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 12.93,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 12.932,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 13.064,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 13.066,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 13.186,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 13.188,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 13.314,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 13.316,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 13.436,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 13.438,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 13.558,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 13.56,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 13.68,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 13.682,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 13.806,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 13.808,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 13.94,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 13.942,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 14.062,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 14.064,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 14.184,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 14.186,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 14.306,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 14.308,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 14.432,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 14.434,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 14.636,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 14.638,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 14.768,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 14.77,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 14.89,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 14.892,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 15.144,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 15.146,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 15.41,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 15.412,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 15.554,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 15.556,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 15.676,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 15.684,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 15.834,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 15.836,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 15.972,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 15.974,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 16.374,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 16.576,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 16.578,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 16.814,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 16.816,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 17.226,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 17.228,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 17.35,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 17.352,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 17.574,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 17.576,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 17.776,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 17.778,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 17.986,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 17.988,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 18.132,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 18.134,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 18.798,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 18.8,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 18.95,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 18.952,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 19.422,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 19.424,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 19.56,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 19.562,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 19.84,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 19.842,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 19.982,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 19.984,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 20.124,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 20.126,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 20.376,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 20.378,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 20.5,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 20.502,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 20.656,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 20.658,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 21.316,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 21.518,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 21.52,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 21.8,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 21.802,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 21.924,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 21.926,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 22.048,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 22.05,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 22.172,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 22.174,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 22.296,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 22.298,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 22.42,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 22.422,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 22.544,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 22.546,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 22.706,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 22.708,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 22.872,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 22.874,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 22.996,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 22.998,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 23.146,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 23.148,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 23.27,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 23.272,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 23.394,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 23.396,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 23.522,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 23.524,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 23.646,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 23.648,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 23.77,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 23.772,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 23.894,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 23.896,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 24.018,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 24.02,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 24.142,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 24.144,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 24.266,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 24.268,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 24.4,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 24.402,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 24.524,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 24.526,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 24.648,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 24.65,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 24.772,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 24.774,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 24.902,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 24.904,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 25.026,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 25.028,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 25.154,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 25.156,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 25.278,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 25.28,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 25.42,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 25.422,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 25.582,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 25.584,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 25.708,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 25.71,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 25.832,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 25.834,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 25.956,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 25.958,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 26.08,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 26.082,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 26.204,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 26.206,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 26.334,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 26.336,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 26.458,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 26.46,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 26.59,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 26.592,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 26.73,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 26.732,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 26.908,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 26.91,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 27.044,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 27.046,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 27.17,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 27.172,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 27.294,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 27.296,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 27.418,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 27.42,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 27.58,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 27.582,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 29.054,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 29.056,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 29.302,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 29.304,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 29.426,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 29.428,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 29.55,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 29.552,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 29.674,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 29.676,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 29.798,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 29.8,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 29.922,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 29.924,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 30.046,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 30.048,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 30.17,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 30.172,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 30.298,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 30.3,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 30.422,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 30.424,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 30.552,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 30.554,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 30.676,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 30.678,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 30.8,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 30.802,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 30.93,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 30.932,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 31.064,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 31.066,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 31.188,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 31.19,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 31.326,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 31.328,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 31.45,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 31.452,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 31.574,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 31.576,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 31.938,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 31.94,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 32.06,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 32.062,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 32.182,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 32.184,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 32.304,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 32.306,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 32.426,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 32.428,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 32.548,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 32.55,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 33.452,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 33.454,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 37.422,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 37.424,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 37.58,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 37.582,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 37.732,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 37.734,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 42.192,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 42.392,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 42.394,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 42.786,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 42.986,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 42.988,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 46.572,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 46.574,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 46.706,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 46.708,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 46.982,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 46.984,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 47.14,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 47.142,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 47.262,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 47.264,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 47.524,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 47.724,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 47.732,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 47.932,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 47.936,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 48.068,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 48.08,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 48.232,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 48.238,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 48.358,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 48.364,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 48.484,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 48.49,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 48.61,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 48.622,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 48.842,
+      "phase": "MIDDLE_LAND",
+      "riser": null
+    },
+    {
+      "t": 49.042,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 52.474,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 52.872,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 54.406,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 54.93,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 55.626,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up10"
+    },
+    {
+      "t": 56.232,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 56.78,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 56.9,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 56.902,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 57.022,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 57.024,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 57.144,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 57.146,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 57.266,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 57.268,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 57.388,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 57.39,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 57.51,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 57.512,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 57.632,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 57.634,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 57.754,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 57.756,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 57.876,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 57.878,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 57.998,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 58.0,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 58.12,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 58.122,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 58.242,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 58.244,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 58.364,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 58.366,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 58.486,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 58.488,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 58.608,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 58.61,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 58.73,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 58.732,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 58.852,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 58.854,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 58.974,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 58.976,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 59.096,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 59.098,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 59.218,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 59.22,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 59.34,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 59.342,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 59.462,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 59.464,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 59.584,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 59.586,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 59.706,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 59.708,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 59.828,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 59.83,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 59.95,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 59.952,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 60.072,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 60.074,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 60.194,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 60.196,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 60.316,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 60.318,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 60.438,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 60.44,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 60.56,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 60.562,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 60.682,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 60.684,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 60.804,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 60.806,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 60.926,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 60.928,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 61.048,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 61.05,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 61.17,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 61.172,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 61.292,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 61.294,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 61.414,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 61.416,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 61.536,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 61.538,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 61.658,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 61.66,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 61.78,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 61.782,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 61.902,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 61.904,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 62.024,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 62.026,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 62.146,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 62.148,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 62.268,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 62.27,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 62.39,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 62.392,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 62.512,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 62.514,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 62.634,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 62.636,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 62.756,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 62.758,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 62.878,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 62.88,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 63.0,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 63.002,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 63.122,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 63.124,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 63.244,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 63.246,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 63.366,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 63.368,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 63.488,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 63.49,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 63.61,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 63.612,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 63.732,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 63.734,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 63.854,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 63.856,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 63.976,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 63.978,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 64.1,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 64.102,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 64.224,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 64.226,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 64.348,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 64.35,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 64.472,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 64.474,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 64.596,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 64.598,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 64.72,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 64.722,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 64.844,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 64.846,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 64.968,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 64.97,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 65.092,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 65.094,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 65.216,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 65.218,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 65.34,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 65.342,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 65.464,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 65.466,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 65.588,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 65.59,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 65.712,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 66.352,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 66.474,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 66.49,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 66.612,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 66.626,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 66.748,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 66.76,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 66.882,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 66.884,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 67.006,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 67.008,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 67.13,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 67.132,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 67.254,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 67.256,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 67.378,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 67.38,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 67.502,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 67.504,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 67.626,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 67.628,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 67.75,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 67.752,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 67.874,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 67.876,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 67.998,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 68.0,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 68.122,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 68.124,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 68.246,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 68.248,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 68.37,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 68.372,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 68.494,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 68.516,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 68.638,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 70.336,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 70.458,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 70.484,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 70.606,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 70.61,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 70.732,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 70.734,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 70.856,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 70.858,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 70.98,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 70.998,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 71.12,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    },
+    {
+      "t": 71.172,
+      "phase": "MIDDLE_LIFT",
+      "riser": "up11"
+    },
+    {
+      "t": 71.294,
+      "phase": "STEP_SETTLE",
+      "riser": null
+    }
+  ],
+  "abort_reason": null,
+  "success": false,
+  "trajectory_path": "/home/agilex/wzy/rover/datasets/45deg_v3/episodes/servo500_h04_yaw_left/trajectory.npz",
+  "actions": 45000,
+  "states": 45001,
+  "physics_steps": 45000,
+  "duration": 89.99999999997165,
+  "case": "servo500_h04_yaw_left",
+  "dataset": "45deg_v3",
+  "dataset_accepted": false,
+  "simulation_success": false,
+  "physics_valid": false,
+  "automated_checks_passed": false,
+  "visual_review_status": "not_eligible",
+  "quality_rejection_reasons": [
+    "continuous_stability_less_than_1s",
+    "final_six_wheels_not_supported_on_ground",
+    "final_stability_under_1s",
+    "full_route_or_final_pose_failed",
+    "route_final_base_not_past_end",
+    "route_final_ground_stability_under_1s",
+    "route_final_wheels_not_past_end",
+    "route_missing:all_six_ground_after_stairs_s",
+    "route_missing:all_six_supported_on_platform_s",
+    "route_missing:descent_s"
+  ],
+  "final_wheel_contacts": {
+    "left_front_wheel": false,
+    "left_middle_wheel": false,
+    "left_rear_wheel": false,
+    "right_front_wheel": false,
+    "right_middle_wheel": false,
+    "right_rear_wheel": false
+  },
+  "max_contact_penetration_m": 0.0031747826242454202,
+  "measured_actuator_peaks_nm": {
+    "wheel": 50.0,
+    "steer": 40.0,
+    "rocker": 100.0
+  },
+  "continuous_final_stability_s": 0.0,
+  "parameters": {
+    "height": 0.04,
+    "stairs": 12,
+    "depth": 0.04,
+    "seconds": 90.0,
+    "speed": 6.0,
+    "friction": 4.0,
+    "tau_max": 50.0,
+    "nosing": 0.0,
+    "front_lift_deg": 14.0,
+    "middle_lift_deg": 17.0,
+    "rocker_gain": 240.0,
+    "rocker_damp": 60.0,
+    "wheel_gain": 10.0,
+    "descent_speed": 1.0,
+    "settle_time": 1.2,
+    "quality_pitch_limit": 60.0,
+    "quality_roll_limit": 15.0,
+    "contact_timeconst": 0.004,
+    "init_yaw_deg": 1.0,
+    "init_y": 0.015,
+    "init_x": -0.02
+  },
+  "metadata_path": "/home/agilex/wzy/rover/datasets/45deg_v3/episodes/servo500_h04_yaw_left/metadata.json",
+  "scene_path": "/home/agilex/wzy/rover/datasets/45deg_v3/episodes/servo500_h04_yaw_left/scene.xml",
+  "model_sha256": "a7eeb359f8412dcc7830f997563d8aa4dbf22fe1ee55156f2b32e8307a1e1c68",
+  "source_sha256": {
+    "course.py": "e097d46f4afb3ce358a8c029de3820674a524dcc380940ca099a4b82d22a0489",
+    "closed_loop_controller.py": "a4b2b96b07318b9bad24d991865d54a4c46beda2ddd6f9247587a3e8ebfb7f2f",
+    "episode_audit.py": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab",
+    "dataset_io.py": "a10982652c9dc9efbc9d792623769f4e7db915092a5523e3f75360b12a41aa97",
+    "generate_dataset.py": "3f4b76e3e1e550347a79fbac95766d83f9b2672e6ae7c757f0447fe783eef402",
+    "verify_dataset.py": "49364262642bafe80c8cc37d55075a7d7fc916712b4be73fa2a81714d587087d",
+    "climb.py": "c6eeda7d0d07df47300b9b0659cee7a38875a71b3ab6c277d5bd9feead581672"
+  },
+  "source_sha256_end": {
+    "course.py": "e097d46f4afb3ce358a8c029de3820674a524dcc380940ca099a4b82d22a0489",
+    "closed_loop_controller.py": "a4b2b96b07318b9bad24d991865d54a4c46beda2ddd6f9247587a3e8ebfb7f2f",
+    "episode_audit.py": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab",
+    "dataset_io.py": "a10982652c9dc9efbc9d792623769f4e7db915092a5523e3f75360b12a41aa97",
+    "generate_dataset.py": "3f4b76e3e1e550347a79fbac95766d83f9b2672e6ae7c757f0447fe783eef402",
+    "verify_dataset.py": "49364262642bafe80c8cc37d55075a7d7fc916712b4be73fa2a81714d587087d",
+    "climb.py": "c6eeda7d0d07df47300b9b0659cee7a38875a71b3ab6c277d5bd9feead581672"
+  },
+  "source_loaded_sha256": {
+    "course.py": "e097d46f4afb3ce358a8c029de3820674a524dcc380940ca099a4b82d22a0489",
+    "closed_loop_controller.py": "a4b2b96b07318b9bad24d991865d54a4c46beda2ddd6f9247587a3e8ebfb7f2f",
+    "episode_audit.py": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab",
+    "dataset_io.py": "a10982652c9dc9efbc9d792623769f4e7db915092a5523e3f75360b12a41aa97",
+    "generate_dataset.py": "3f4b76e3e1e550347a79fbac95766d83f9b2672e6ae7c757f0447fe783eef402",
+    "verify_dataset.py": "49364262642bafe80c8cc37d55075a7d7fc916712b4be73fa2a81714d587087d",
+    "climb.py": "c6eeda7d0d07df47300b9b0659cee7a38875a71b3ab6c277d5bd9feead581672"
+  },
+  "mesh_sha256": {
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/base_link_slim.stl": "fe9e11a0722f6ee65072126585aa61c8c48daf670b2252de9851335cb5a3b111",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_front_steer.stl": "5d7baf452cb2e64b2e06ab9ca07cb12c47a0c4d0cf0e8e0b7ce9be2fcb34a4c9",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_front_wheel.stl": "e5eb759c077f3dfaeabb5891e1fc6c1fa16421d3b621d193d14dac346345dbe1",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_middle_wheel.stl": "3bfda563104e4bd877db6939589df239a606f1323ab176c8999b9d5264e19820",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_rear_steer.stl": "a3f27f42989467e97124c440cbd9159a59e28ea63624ed9f5cb0cfb47db5e835",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_rear_wheel.stl": "b21d6e925524b6435e441f2603088bee7c7ead57e45ffa89fb261e97a25d7218",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_rocker.stl": "1864647327000825b7f7a4f35041a1f2a5680aa375799f0aa9b142735ae55eca",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_front_steer.stl": "1806a808f7d07ed25e62cb8a92ce76eb62c114ec6519b2fbc1a941716a78fb6b",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_front_wheel.stl": "52619e8783486176938937b367e9989d21f56bf5efa42d67560cd1bf6d6e9c43",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_middle_wheel.stl": "08ede2c0bd09b9430a0e05d6a8949687d2a5885b4edb015fc001381a683cceff",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_rear_steer.stl": "a72870f68bbe74ba976059e39e9a940dae95bfa0f21573b0acf769e3f2314ddf",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_rear_wheel.stl": "b0ceb4ba317025c5ebae6909e00e672ca8266a24e0c7cf6adfb1afac65f9d2b3",
+    "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_rocker.stl": "20c05ebd99191f684ee128b72cd8ab371f6be76b8f8ffb028465bd3bdb041511"
+  },
+  "mujoco_version": "3.17.0",
+  "audit": {
+    "audit_steps": 45000,
+    "audit_time_s": 89.99999999997165,
+    "nonfinite_seen": false,
+    "time_nonmonotonic_seen": false,
+    "mujoco_warning_counts": {},
+    "max_contact_penetration_m": 0.0031747826242454202,
+    "worst_contact": {
+      "time_s": 2.3599999999999617,
+      "robot_geom": "right_front_wheel_col_1",
+      "terrain_geom": "up6",
+      "penetration_m": 0.0031747826242454202
+    },
+    "non_wheel_contact_duration_s": 0.0,
+    "non_wheel_contact_duration_by_geom_s": {},
+    "max_joint_limit_error_deg": 0.3217271214819944,
+    "joint_limit_error_by_joint_deg": {
+      "left_rocker_joint": 0.3217271214819944,
+      "left_front_steer_joint": 0.0,
+      "left_rear_steer_joint": 0.0,
+      "right_rocker_joint": 0.25458871795631793,
+      "right_front_steer_joint": 0.0,
+      "right_rear_steer_joint": 0.22162461737031494
+    },
+    "actuator_force_peak_by_joint_nm": {
+      "left_rocker_joint": 100.0,
+      "left_front_steer_joint": 40.0,
+      "left_front_wheel_joint": 40.73578507652321,
+      "left_middle_wheel_joint": 50.0,
+      "left_rear_steer_joint": 40.0,
+      "left_rear_wheel_joint": 50.0,
+      "right_rocker_joint": 100.0,
+      "right_front_steer_joint": 40.0,
+      "right_front_wheel_joint": 50.0,
+      "right_middle_wheel_joint": 50.0,
+      "right_rear_steer_joint": 40.0,
+      "right_rear_wheel_joint": 50.0
+    },
+    "actuator_force_peak_by_kind_nm": {
+      "wheel": 50.0,
+      "steer": 40.0,
+      "rocker": 100.0
+    },
+    "velocity_limit_source": {
+      "path": "/home/agilex/wzy/rover/assets/mars_rover/urdf/mars_rover.urdf",
+      "sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a"
+    },
+    "joint_velocity_limit_rad_s": {
+      "left_rocker_joint": 1.57,
+      "left_front_steer_joint": 3.1416,
+      "left_front_wheel_joint": 52.359878,
+      "left_rear_steer_joint": 3.1416,
+      "left_rear_wheel_joint": 52.359878,
+      "left_middle_wheel_joint": 52.359878,
+      "right_rocker_joint": 1.57,
+      "right_front_steer_joint": 3.1416,
+      "right_front_wheel_joint": 52.359878,
+      "right_rear_steer_joint": 3.1416,
+      "right_rear_wheel_joint": 52.359878,
+      "right_middle_wheel_joint": 52.359878
+    },
+    "joint_velocity_threshold_rad_s": {
+      "left_rocker_joint": 1.58,
+      "left_front_steer_joint": 3.1515999999999997,
+      "left_front_wheel_joint": 52.369878,
+      "left_rear_steer_joint": 3.1515999999999997,
+      "left_rear_wheel_joint": 52.369878,
+      "left_middle_wheel_joint": 52.369878,
+      "right_rocker_joint": 1.58,
+      "right_front_steer_joint": 3.1515999999999997,
+      "right_front_wheel_joint": 52.369878,
+      "right_rear_steer_joint": 3.1515999999999997,
+      "right_rear_wheel_joint": 52.369878,
+      "right_middle_wheel_joint": 52.369878
+    },
+    "joint_velocity_peak_rad_s": {
+      "left_rocker_joint": 1.3638964969953906,
+      "left_front_steer_joint": 1.9520894816442358,
+      "left_front_wheel_joint": 7.180320518498442,
+      "left_rear_steer_joint": 2.664440136472126,
+      "left_rear_wheel_joint": 7.0717662138496555,
+      "left_middle_wheel_joint": 6.532601600204064,
+      "right_rocker_joint": 1.3638737521333815,
+      "right_front_steer_joint": 2.0571128927697315,
+      "right_front_wheel_joint": 6.446026362012553,
+      "right_rear_steer_joint": 1.6512795042477455,
+      "right_rear_wheel_joint": 6.881650671861221,
+      "right_middle_wheel_joint": 6.027541637298996
+    },
+    "joint_velocity_excess_duration_s": {
+      "left_rocker_joint": 0.0,
+      "left_front_steer_joint": 0.0,
+      "left_front_wheel_joint": 0.0,
+      "left_rear_steer_joint": 0.0,
+      "left_rear_wheel_joint": 0.0,
+      "left_middle_wheel_joint": 0.0,
+      "right_rocker_joint": 0.0,
+      "right_front_steer_joint": 0.0,
+      "right_front_wheel_joint": 0.0,
+      "right_rear_steer_joint": 0.0,
+      "right_rear_wheel_joint": 0.0,
+      "right_middle_wheel_joint": 0.0
+    },
+    "final_ground_normal_force_n": {
+      "left_front_wheel": 0.0,
+      "left_middle_wheel": 0.0,
+      "left_rear_wheel": 0.0,
+      "right_front_wheel": 0.0,
+      "right_middle_wheel": 0.0,
+      "right_rear_wheel": 0.0
+    },
+    "final_ground_contact_by_wheel": {
+      "left_front_wheel": false,
+      "left_middle_wheel": false,
+      "left_rear_wheel": false,
+      "right_front_wheel": false,
+      "right_middle_wheel": false,
+      "right_rear_wheel": false
+    },
+    "final_all_six_ground": false,
+    "final_joint_state": {
+      "left_rocker_joint": {
+        "position_deg": 19.939895199888028,
+        "velocity_deg_s": 0.981014792740119
+      },
+      "left_front_steer_joint": {
+        "position_deg": -2.727424952209137,
+        "velocity_deg_s": -0.6846057051599258
+      },
+      "left_rear_steer_joint": {
+        "position_deg": 4.019893870467779,
+        "velocity_deg_s": 0.20779029386261613
+      },
+      "right_rocker_joint": {
+        "position_deg": 20.01125768032825,
+        "velocity_deg_s": -0.16126418396302045
+      },
+      "right_front_steer_joint": {
+        "position_deg": 50.15809202279949,
+        "velocity_deg_s": -27.908503928334618
+      },
+      "right_rear_steer_joint": {
+        "position_deg": 90.12256995694678,
+        "velocity_deg_s": 0.2193443032647856
+      }
+    },
+    "continuous_final_stability_s": 0.0,
+    "final_stability_criteria": {
+      "finite": true,
+      "six_wheels_on_ground": false,
+      "roll_pitch": false,
+      "heading": false,
+      "lateral_position": false,
+      "body_translation": true,
+      "body_rotation": true,
+      "wheel_speed": false,
+      "joint_position": false,
+      "joint_speed": false
+    },
+    "quality_rejection_reasons": [
+      "final_six_wheels_not_supported_on_ground",
+      "final_stability_under_1s"
+    ],
+    "audit_quality_ok": false,
+    "thresholds": {
+      "minimum_final_stability_s": 1.0,
+      "final_roll_pitch_deg": 3.0,
+      "final_yaw_deg": 5.0,
+      "final_lateral_position_m": 0.25,
+      "final_linear_speed_m_s": 0.03,
+      "final_angular_speed_rad_s": 0.08,
+      "final_wheel_speed_rad_s": 0.2,
+      "final_rocker_steer_position_deg": 3.0,
+      "final_rocker_steer_speed_rad_s": 0.1,
+      "max_penetration_m": 0.02,
+      "max_non_wheel_contact_s": 0.02,
+      "max_joint_limit_error_deg": 1.0,
+      "minimum_ground_normal_force_n": 5.0,
+      "actuator_force_limits_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "joint_velocity_tolerance_rad_s": 0.01,
+      "actuator_force_tolerance_nm": 0.001
+    }
+  },
+  "scope": "full_ascent_platform_descent_ground_stop",
+  "limitations": [
+    "Simulation demonstrations; friction and contact response are not hardware calibrated.",
+    "Original robot model retained, including disabled self-collision and collision/visual tire-width differences.",
+    "Controller uses privileged simulator contacts and world pose; not a sensor-only deployment controller."
+  ],
+  "independent_verification": {
+    "metadata_path": "/home/agilex/wzy/rover/datasets/45deg_v3/episodes/servo500_h04_yaw_left/metadata.json",
+    "verify_ok": false,
+    "rejection_reasons": [
+      "final_six_wheels_not_supported_on_ground",
+      "final_stability_under_1s",
+      "route_missing:all_six_supported_on_platform_s",
+      "route_missing:descent_s",
+      "route_missing:all_six_ground_after_stairs_s",
+      "route_final_base_not_past_end",
+      "route_final_wheels_not_past_end",
+      "route_final_ground_stability_under_1s"
+    ],
+    "source_snapshot_hashes_verified": {
+      "course.py": "e097d46f4afb3ce358a8c029de3820674a524dcc380940ca099a4b82d22a0489",
+      "closed_loop_controller.py": "a4b2b96b07318b9bad24d991865d54a4c46beda2ddd6f9247587a3e8ebfb7f2f",
+      "episode_audit.py": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab",
+      "dataset_io.py": "a10982652c9dc9efbc9d792623769f4e7db915092a5523e3f75360b12a41aa97",
+      "generate_dataset.py": "3f4b76e3e1e550347a79fbac95766d83f9b2672e6ae7c757f0447fe783eef402",
+      "verify_dataset.py": "49364262642bafe80c8cc37d55075a7d7fc916712b4be73fa2a81714d587087d",
+      "climb.py": "c6eeda7d0d07df47300b9b0659cee7a38875a71b3ab6c277d5bd9feead581672"
+    },
+    "mesh_hashes_verified": {
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/base_link_slim.stl": "fe9e11a0722f6ee65072126585aa61c8c48daf670b2252de9851335cb5a3b111",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_front_steer.stl": "5d7baf452cb2e64b2e06ab9ca07cb12c47a0c4d0cf0e8e0b7ce9be2fcb34a4c9",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_front_wheel.stl": "e5eb759c077f3dfaeabb5891e1fc6c1fa16421d3b621d193d14dac346345dbe1",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_middle_wheel.stl": "3bfda563104e4bd877db6939589df239a606f1323ab176c8999b9d5264e19820",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_rear_steer.stl": "a3f27f42989467e97124c440cbd9159a59e28ea63624ed9f5cb0cfb47db5e835",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_rear_wheel.stl": "b21d6e925524b6435e441f2603088bee7c7ead57e45ffa89fb261e97a25d7218",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/left_rocker.stl": "1864647327000825b7f7a4f35041a1f2a5680aa375799f0aa9b142735ae55eca",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_front_steer.stl": "1806a808f7d07ed25e62cb8a92ce76eb62c114ec6519b2fbc1a941716a78fb6b",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_front_wheel.stl": "52619e8783486176938937b367e9989d21f56bf5efa42d67560cd1bf6d6e9c43",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_middle_wheel.stl": "08ede2c0bd09b9430a0e05d6a8949687d2a5885b4edb015fc001381a683cceff",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_rear_steer.stl": "a72870f68bbe74ba976059e39e9a940dae95bfa0f21573b0acf769e3f2314ddf",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_rear_wheel.stl": "b0ceb4ba317025c5ebae6909e00e672ca8266a24e0c7cf6adfb1afac65f9d2b3",
+      "/home/agilex/wzy/rover/assets/mars_rover/meshes/right_rocker.stl": "20c05ebd99191f684ee128b72cd8ab371f6be76b8f8ffb028465bd3bdb041511"
+    },
+    "current_verifier_sha256": "49364262642bafe80c8cc37d55075a7d7fc916712b4be73fa2a81714d587087d",
+    "current_audit_sha256": "5a90043c4c2bda4494df088b6514d6ba04b89247bbe071e6ea87e37f8fa5c8ab",
+    "replay": {
+      "replay_ok": true,
+      "actions": 45000,
+      "states": 45001,
+      "physics_steps": 45000,
+      "duration": 89.99999999997165,
+      "atol": 1e-08,
+      "physics_checked": true,
+      "max_time_error": 0.0,
+      "max_qpos_error": 0.0,
+      "max_qvel_error": 0.0,
+      "max_physics_time_error": 0.0,
+      "max_physics_qpos_error": 0.0,
+      "max_physics_qvel_error": 0.0,
+      "max_physics_qfrc_actuator_error": 0.0
+    },
+    "audit": {
+      "audit_steps": 45000,
+      "audit_time_s": 89.99999999997165,
+      "nonfinite_seen": false,
+      "time_nonmonotonic_seen": false,
+      "mujoco_warning_counts": {},
+      "max_contact_penetration_m": 0.0031747826242454202,
+      "worst_contact": {
+        "time_s": 2.3599999999999617,
+        "robot_geom": "right_front_wheel_col_1",
+        "terrain_geom": "up6",
+        "penetration_m": 0.0031747826242454202
+      },
+      "non_wheel_contact_duration_s": 0.0,
+      "non_wheel_contact_duration_by_geom_s": {},
+      "max_joint_limit_error_deg": 0.3217271214819944,
+      "joint_limit_error_by_joint_deg": {
+        "left_rocker_joint": 0.3217271214819944,
+        "left_front_steer_joint": 0.0,
+        "left_rear_steer_joint": 0.0,
+        "right_rocker_joint": 0.25458871795631793,
+        "right_front_steer_joint": 0.0,
+        "right_rear_steer_joint": 0.22162461737031494
+      },
+      "actuator_force_peak_by_joint_nm": {
+        "left_rocker_joint": 100.0,
+        "left_front_steer_joint": 40.0,
+        "left_front_wheel_joint": 40.73578507652321,
+        "left_middle_wheel_joint": 50.0,
+        "left_rear_steer_joint": 40.0,
+        "left_rear_wheel_joint": 50.0,
+        "right_rocker_joint": 100.0,
+        "right_front_steer_joint": 40.0,
+        "right_front_wheel_joint": 50.0,
+        "right_middle_wheel_joint": 50.0,
+        "right_rear_steer_joint": 40.0,
+        "right_rear_wheel_joint": 50.0
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "velocity_limit_source": {
+        "path": "/home/agilex/wzy/rover/assets/mars_rover/urdf/mars_rover.urdf",
+        "sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a"
+      },
+      "joint_velocity_limit_rad_s": {
+        "left_rocker_joint": 1.57,
+        "left_front_steer_joint": 3.1416,
+        "left_front_wheel_joint": 52.359878,
+        "left_rear_steer_joint": 3.1416,
+        "left_rear_wheel_joint": 52.359878,
+        "left_middle_wheel_joint": 52.359878,
+        "right_rocker_joint": 1.57,
+        "right_front_steer_joint": 3.1416,
+        "right_front_wheel_joint": 52.359878,
+        "right_rear_steer_joint": 3.1416,
+        "right_rear_wheel_joint": 52.359878,
+        "right_middle_wheel_joint": 52.359878
+      },
+      "joint_velocity_threshold_rad_s": {
+        "left_rocker_joint": 1.58,
+        "left_front_steer_joint": 3.1515999999999997,
+        "left_front_wheel_joint": 52.369878,
+        "left_rear_steer_joint": 3.1515999999999997,
+        "left_rear_wheel_joint": 52.369878,
+        "left_middle_wheel_joint": 52.369878,
+        "right_rocker_joint": 1.58,
+        "right_front_steer_joint": 3.1515999999999997,
+        "right_front_wheel_joint": 52.369878,
+        "right_rear_steer_joint": 3.1515999999999997,
+        "right_rear_wheel_joint": 52.369878,
+        "right_middle_wheel_joint": 52.369878
+      },
+      "joint_velocity_peak_rad_s": {
+        "left_rocker_joint": 1.3638964969953906,
+        "left_front_steer_joint": 1.9520894816442358,
+        "left_front_wheel_joint": 7.180320518498442,
+        "left_rear_steer_joint": 2.664440136472126,
+        "left_rear_wheel_joint": 7.0717662138496555,
+        "left_middle_wheel_joint": 6.532601600204064,
+        "right_rocker_joint": 1.3638737521333815,
+        "right_front_steer_joint": 2.0571128927697315,
+        "right_front_wheel_joint": 6.446026362012553,
+        "right_rear_steer_joint": 1.6512795042477455,
+        "right_rear_wheel_joint": 6.881650671861221,
+        "right_middle_wheel_joint": 6.027541637298996
+      },
+      "joint_velocity_excess_duration_s": {
+        "left_rocker_joint": 0.0,
+        "left_front_steer_joint": 0.0,
+        "left_front_wheel_joint": 0.0,
+        "left_rear_steer_joint": 0.0,
+        "left_rear_wheel_joint": 0.0,
+        "left_middle_wheel_joint": 0.0,
+        "right_rocker_joint": 0.0,
+        "right_front_steer_joint": 0.0,
+        "right_front_wheel_joint": 0.0,
+        "right_rear_steer_joint": 0.0,
+        "right_rear_wheel_joint": 0.0,
+        "right_middle_wheel_joint": 0.0
+      },
+      "final_ground_normal_force_n": {
+        "left_front_wheel": 0.0,
+        "left_middle_wheel": 0.0,
+        "left_rear_wheel": 0.0,
+        "right_front_wheel": 0.0,
+        "right_middle_wheel": 0.0,
+        "right_rear_wheel": 0.0
+      },
+      "final_ground_contact_by_wheel": {
+        "left_front_wheel": false,
+        "left_middle_wheel": false,
+        "left_rear_wheel": false,
+        "right_front_wheel": false,
+        "right_middle_wheel": false,
+        "right_rear_wheel": false
+      },
+      "final_all_six_ground": false,
+      "final_joint_state": {
+        "left_rocker_joint": {
+          "position_deg": 19.939895199888028,
+          "velocity_deg_s": 0.981014792740119
+        },
+        "left_front_steer_joint": {
+          "position_deg": -2.727424952209137,
+          "velocity_deg_s": -0.6846057051599258
+        },
+        "left_rear_steer_joint": {
+          "position_deg": 4.019893870467779,
+          "velocity_deg_s": 0.20779029386261613
+        },
+        "right_rocker_joint": {
+          "position_deg": 20.01125768032825,
+          "velocity_deg_s": -0.16126418396302045
+        },
+        "right_front_steer_joint": {
+          "position_deg": 50.15809202279949,
+          "velocity_deg_s": -27.908503928334618
+        },
+        "right_rear_steer_joint": {
+          "position_deg": 90.12256995694678,
+          "velocity_deg_s": 0.2193443032647856
+        }
+      },
+      "continuous_final_stability_s": 0.0,
+      "final_stability_criteria": {
+        "finite": true,
+        "six_wheels_on_ground": false,
+        "roll_pitch": false,
+        "heading": false,
+        "lateral_position": false,
+        "body_translation": true,
+        "body_rotation": true,
+        "wheel_speed": false,
+        "joint_position": false,
+        "joint_speed": false
+      },
+      "quality_rejection_reasons": [
+        "final_six_wheels_not_supported_on_ground",
+        "final_stability_under_1s"
+      ],
+      "audit_quality_ok": false,
+      "thresholds": {
+        "minimum_final_stability_s": 1.0,
+        "final_roll_pitch_deg": 3.0,
+        "final_yaw_deg": 5.0,
+        "final_lateral_position_m": 0.25,
+        "final_linear_speed_m_s": 0.03,
+        "final_angular_speed_rad_s": 0.08,
+        "final_wheel_speed_rad_s": 0.2,
+        "final_rocker_steer_position_deg": 3.0,
+        "final_rocker_steer_speed_rad_s": 0.1,
+        "max_penetration_m": 0.02,
+        "max_non_wheel_contact_s": 0.02,
+        "max_joint_limit_error_deg": 1.0,
+        "minimum_ground_normal_force_n": 5.0,
+        "actuator_force_limits_nm": {
+          "wheel": 50.0,
+          "steer": 40.0,
+          "rocker": 100.0
+        },
+        "joint_velocity_tolerance_rad_s": 0.01,
+        "actuator_force_tolerance_nm": 0.001
+      }
+    },
+    "route": {
+      "route_ok": false,
+      "rejection_reasons": [
+        "route_missing:all_six_supported_on_platform_s",
+        "route_missing:descent_s",
+        "route_missing:all_six_ground_after_stairs_s",
+        "route_final_base_not_past_end",
+        "route_final_wheels_not_past_end",
+        "route_final_ground_stability_under_1s"
+      ],
+      "geometry": {
+        "slope_deg": 44.99999999999997,
+        "ascending_risers": 12,
+        "descending_risers_including_ground": 12,
+        "height_m": 0.04,
+        "depth_m": 0.040000000000000036,
+        "chamfer_or_nosing": false,
+        "start_x": 1.6,
+        "end_x": 4.52,
+        "platform_start_x": 2.0800000000000005,
+        "platform_end_x": 4.08,
+        "platform_top_z": 0.48,
+        "half_width_m": 2.5
+      },
+      "events": {
+        "start_before_stairs_s": 0.002,
+        "initial_six_wheels_ground_s": 0.020000000000000004,
+        "ascent_s": 1.7300000000000013
+      },
+      "platform_wheels_seen": [
+        "left_front_wheel",
+        "right_front_wheel"
+      ],
+      "ascending_treads_contacted": [
+        "up0",
+        "up1",
+        "up10",
+        "up11",
+        "up2",
+        "up3",
+        "up4",
+        "up5",
+        "up6",
+        "up7",
+        "up8",
+        "up9"
+      ],
+      "descending_treads_contacted": [],
+      "max_abs_y_m": 0.4994945760495614,
+      "max_abs_yaw_deg": 15.863197058072549,
+      "max_abs_roll_deg": 11.94399720274581,
+      "max_abs_pitch_deg": 32.20707617362111,
+      "wheel_outside_course": false,
+      "final_base_x_m": 1.9084388941521948,
+      "final_wheel_min_x_m": 1.5452024694212632
+    }
+  },
+  "replay": {
+    "replay_ok": true,
+    "actions": 45000,
+    "states": 45001,
+    "physics_steps": 45000,
+    "duration": 89.99999999997165,
+    "atol": 1e-08,
+    "physics_checked": true,
+    "max_time_error": 0.0,
+    "max_qpos_error": 0.0,
+    "max_qvel_error": 0.0,
+    "max_physics_time_error": 0.0,
+    "max_physics_qpos_error": 0.0,
+    "max_physics_qvel_error": 0.0,
+    "max_physics_qfrc_actuator_error": 0.0
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "checked_utc": "2026-11-11T02:52:02.992099+00:00",
+  "api_summary": {
+    "candidate_evaluations": 768,
+    "candidate_process_valid": 767,
+    "candidate_local_crossings": 0,
+    "candidate_full_route_successes_observed": 0,
+    "candidate_media_ready": 768,
+    "historical_attempts": 29,
+    "historical_full_route_successes": 0,
+    "historical_media_ready": 29,
+    "additional_validations": 1,
+    "additional_media_ready": 1,
+    "full_route_rate_for_short_horizon_is_defined": false
+  },
+  "height_counts": {
+    "15": 384,
+    "20": 384
+  },
+  "media_urls_all_present": 1464,
+  "sample_http_checks": [
+    {
+      "id": "h15_near_contact_round0_candidate00",
+      "video_head": 200,
+      "poster_head": 200,
+      "video_range": 206,
+      "range_bytes": 1024
+    },
+    {
+      "id": "h20_near_contact_round0_candidate41",
+      "video_head": 200,
+      "poster_head": 200,
+      "video_range": 206,
+      "range_bytes": 1024
+    },
+    {
+      "id": "historical_agent_h15_n15_asymmetric_support_transfer",
+      "video_head": 200,
+      "poster_head": 200,
+      "video_range": 206,
+      "range_bytes": 1024
+    },
+    {
+      "id": "h20_near_contact_tail_hold_1s",
+      "video_head": 200,
+      "poster_head": 200,
+      "video_range": 206,
+      "range_bytes": 1024
+    }
+  ],
+  "unknown_media_404": true,
+  "unregistered_manifest_404": true,
+  "original_accepted_runs": 1,
+  "listening_host": "127.0.0.1",
+  "browser_checks": {
+    "status": "passed",
+    "tested_url": "http://127.0.0.1:8701/experiments",
+    "candidate_15cm": {
+      "id": "h15_near_contact_round0_candidate00",
+      "observed_playback_end_s": 2,
+      "video_dimensions": [
+        960,
+        360
+      ],
+      "media_error": null
+    },
+    "candidate_20cm": {
+      "id": "h20_near_contact_round0_candidate41",
+      "observed_playing_time_s": 0.1663,
+      "duration_s": 1.85,
+      "media_error": null
+    },
+    "shared_prefix": {
+      "height_cm": 15,
+      "observed_playing_time_s": 0.0739,
+      "media_error": null
+    },
+    "historical": {
+      "id": "historical_agent_h15_n15_asymmetric_support_transfer",
+      "observed_playing_time_s": 9.3088,
+      "media_error": null
+    },
+    "additional": {
+      "id": "h20_near_contact_tail_hold_1s",
+      "observed_playback_end_s": 1,
+      "media_error": null,
+      "parent_link_passed": true
+    },
+    "filters": {
+      "violation_result_count": 1,
+      "local_success_result_count": 0,
+      "20cm_result_count": 384,
+      "20cm_page2_display": "13-24",
+      "historical_positive12_search_count": 2,
+      "special_action_not_activated_labels": 2
+    },
+    "candidate_target_table_visible": true,
+    "frozen_backend_reconstruction_provenance_visible": true,
+    "dual_view_images_contained_without_crop": true,
+    "console_errors_or_warnings": [],
+    "user_deliverable_tab_retained": true
+  },
+  "completed_utc": "2026-11-11T02:56:01.454232+00:00"
+}
