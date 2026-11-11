@@ -17,6 +17,7 @@ import recovery20_review
 import recovery20_amp20_review
 import recovery20_asym_review
 import recovery20_contact_wheels_review
+import ground_mu8_review
 import ground_mu6_review
 import recovery20_friction_review
 import recovery20_friction_negative_first_review
@@ -66,7 +67,7 @@ INDEX = r"""<!doctype html>
 <body>
 <header>
   <h1>火星车 · 成功轨迹核验</h1>
-  <p><a href="/groundmu6">查看地面起步恒定轮速实验 →</a></p><p><a href="/recovery20contactwheels">查看前中轮接触控制 →</a></p><p><a href="/recovery20frictionnegative">查看先负后正 · 台阶摩擦 6 / 8 →</a></p><p><a href="/recovery20friction">查看台阶摩擦 6 / 8 对照 →</a></p><p><a href="/recovery20asym">查看20 cm · 七种摇臂范围实验 →</a></p><p><a href="/recovery20amp20">查看20 cm · 摇臂 ±20° 续跑实验 →</a> · <a href="/recovery20">上一批 ±10°</a></p>
+  <p><a href="/groundmu8">查看摩擦 8.0 地面起步实验 →</a></p><p><a href="/groundmu6">查看地面起步恒定轮速实验 →</a></p><p><a href="/recovery20contactwheels">查看前中轮接触控制 →</a></p><p><a href="/recovery20frictionnegative">查看先负后正 · 台阶摩擦 6 / 8 →</a></p><p><a href="/recovery20friction">查看台阶摩擦 6 / 8 对照 →</a></p><p><a href="/recovery20asym">查看20 cm · 七种摇臂范围实验 →</a></p><p><a href="/recovery20amp20">查看20 cm · 摇臂 ±20° 续跑实验 →</a> · <a href="/recovery20">上一批 ±10°</a></p>
   <p>只读核验 · 仿真视频、终态与 state/action 轨迹</p>
   <p style="margin-top:10px"><a href="/experiments">查看高台阶试验审阅：15 cm / 20 cm 全部候选与早期诊断 →</a></p>
 </header>
@@ -263,6 +264,19 @@ class Handler(BaseHTTPRequestHandler):
             return self._serve_file(target) if target else self._send(404, b"not found", "text/plain")
         if path.startswith("/recovery20contactwheels-data/"):
             target = recovery20_contact_wheels_review.data(path[len("/recovery20contactwheels-data/"):])
+            return self._serve_file(target, download=True) if target else self._send(404, b"not found", "text/plain")
+        if path in ("/groundmu8", "/groundmu8/"):
+            return self._send(200, ground_mu8_review.PAGE.read_bytes(), "text/html; charset=utf-8")
+        if path == "/api/groundmu8":
+            return self._send(200, json.dumps(ground_mu8_review.catalog(), ensure_ascii=False).encode("utf-8"), extra={"Cache-Control": "no-store"})
+        if path.startswith("/groundmu8-media/"):
+            target = ground_mu8_review.media(path[len("/groundmu8-media/"):])
+            return self._serve_file(target) if target else self._send(404, b"not found", "text/plain")
+        if path.startswith("/groundmu8-curves/"):
+            target = ground_mu8_review.curves(path[len("/groundmu8-curves/"):])
+            return self._serve_file(target) if target else self._send(404, b"not found", "text/plain")
+        if path.startswith("/groundmu8-data/"):
+            target = ground_mu8_review.data(path[len("/groundmu8-data/"):])
             return self._serve_file(target, download=True) if target else self._send(404, b"not found", "text/plain")
         if path in ("/groundmu6", "/groundmu6/"):
             return self._send(200, ground_mu6_review.PAGE.read_bytes(), "text/html; charset=utf-8")
