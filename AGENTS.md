@@ -8,6 +8,8 @@
 
 - 七种非对称摇臂范围批次按用户要求停止：139条已完成、3条中断、82条未运行。记录见docs/diagnostic_registry20_asymmetric_stopped_20261111.jsonl；不得自动续跑。
 
+- T22_WMR_RSP固定转向的两条诊断已记录于docs/diagnostic_registry20_steer_locks_20261111.jsonl；虚拟锁定反力未按电机力矩上限限制，不作为真实锁止装置验证。
+
 ## 项目
 - AGX 项目：`/home/agilex/wzy/rover`；GitHub 分支：`wzy`。
 

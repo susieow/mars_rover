@@ -5,6 +5,10 @@
 GitHub：`https://github.com/susieow/mars_rover.git`  
 本文是当前交接入口。旧 `DELIVERY_45DEG.md` 仅作历史资料，不能据其旧“成功”结论接纳本批数据。
 
+## 转向锁定对照（2026-11-11）
+
+从T22_WMR_RSP的22秒状态分别做后轮转向锁定、前后四个转向均锁定两条对照。两条均运行30秒、过程无违规，但均未持续越首阶，未登顶，完整路线未评估。固定使用仿真等式约束，锁在22秒实际角度，转向执行器禁用；约束反力未按电机力矩上限限制。结果及视频哈希见 `docs/recovery20_steering_lock_comparison_20261111.json`，逐条记录见 `docs/diagnostic_registry20_steer_locks_20261111.jsonl`。
+
 ## 非对称摇臂范围批次：用户要求停止（2026-11-11）
 
 224条计划中139条已完成、3条中断、82条未运行；139条均有视频和曲线，自动只读核验通过。已完成候选双后轮持续越首阶0条，登顶0条，完整路线未评估；成功入库0。前端 `http://127.0.0.1:8701/recovery20asym`。统计 `docs/recovery20_asymmetric_stopped_20261111.json`，逐条记录 `docs/diagnostic_registry20_asymmetric_stopped_20261111.jsonl`。用户明确要求停止，不自动继续。

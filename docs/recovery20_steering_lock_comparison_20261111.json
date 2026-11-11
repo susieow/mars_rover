@@ -1,0 +1,71 @@
+{
+  "parent_id": "T22_WMR_RSP_dt1000us",
+  "intervention_s": 22,
+  "parent_checkpoint_id": "7818f5fdf5622d63500cda1219d8cb7ea1333de82e3236227ce520cb5bc20058",
+  "runs": {
+    "T22_WMR_RSP_rear_lock_dt1000us": {
+      "process_valid": true,
+      "process_reasons": [],
+      "duration_s": 30.0,
+      "rear_crossing": false,
+      "platform": false,
+      "max_progress_m": 0.1431729845360401,
+      "net_progress_m": -0.0023337524973778834,
+      "lock_deviations": {
+        "left_rear_steer_joint": {
+          "lock_angle_deg": -0.40066916912035266,
+          "max_deviation_deg": 0.02862843274021236,
+          "max_speed_rad_s": 0.201845923745949
+        },
+        "right_rear_steer_joint": {
+          "lock_angle_deg": 0.42690764220582716,
+          "max_deviation_deg": 0.02332460144393787,
+          "max_speed_rad_s": 0.21042070662376974
+        }
+      },
+      "virtual_lock_note": "MuJoCo joint equality at checkpoint angles; rear steer actuator disabled; constraint reaction is not actuator torque limited",
+      "trajectory_sha256": "bbf9f725e2ec452a67bf43d95dd136ff84d517d7a2d4f3eca634bfbd92c74b84",
+      "scene_sha256": "2964d85245d015c98a354d40a9a920f865b3e16d7565736e7774e04fe63fde25",
+      "video_sha256": "ee441d875a6aeef9c7309fa9ba7ffe38c86c0c5f2db15cd7ba81edfd546044fc",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/rear_steer_lock_20261111/T22_WMR_RSP_rear_lock_dt1000us.mp4",
+      "dataset_accepted": false
+    },
+    "T22_WMR_RSP_all_lock_dt1000us": {
+      "process_valid": true,
+      "process_reasons": [],
+      "duration_s": 30.0,
+      "rear_crossing": false,
+      "platform": false,
+      "max_progress_m": 0.1101885005297254,
+      "net_progress_m": 0.10581272758115445,
+      "lock_deviations": {
+        "left_front_steer_joint": {
+          "lock_angle_deg": 0.09404517423588815,
+          "max_deviation_deg": 0.014607133524748859,
+          "max_speed_rad_s": 0.13391116562214497
+        },
+        "left_rear_steer_joint": {
+          "lock_angle_deg": -0.40066916912035266,
+          "max_deviation_deg": 0.021545304726553527,
+          "max_speed_rad_s": 0.20835104889091025
+        },
+        "right_front_steer_joint": {
+          "lock_angle_deg": 0.024814682305931108,
+          "max_deviation_deg": 0.02148562226404012,
+          "max_speed_rad_s": 0.13725846152297438
+        },
+        "right_rear_steer_joint": {
+          "lock_angle_deg": 0.42690764220582716,
+          "max_deviation_deg": 0.021240204742046673,
+          "max_speed_rad_s": 0.21188826905799227
+        }
+      },
+      "virtual_lock_note": "MuJoCo joint equality at checkpoint angles; all four steer actuators disabled; constraint reaction is not actuator torque limited",
+      "trajectory_sha256": "32830297d43bc890a27471b1df2c487ee5fd40e870c9e8511ac94cd4d96dfa29",
+      "scene_sha256": "716c68b7abeb8ce486039ce5831a41a69dfd688963263283622802d7b93906e7",
+      "video_sha256": "d580649ba0733367f8a1e5e7c73e08bdde7fe719b378bee96c39c8b658ab130f",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/all_steer_lock_20261111/T22_WMR_RSP_all_lock_dt1000us.mp4",
+      "dataset_accepted": false
+    }
+  }
+}
