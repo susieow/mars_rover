@@ -10,10 +10,11 @@
 </head>
 <body>
 <header>
-<nav><a href="/">← 已接纳成功轨迹</a><span class="state">按用户要求停止新增试验</span></nav>
+<nav><a href="/">← 已接纳成功轨迹</a><span class="state">历史试验记录</span></nav>
 <div class="eyebrow">MARS ROVER / EXPERIMENT REVIEW</div>
 <h1>高台阶试验审阅</h1>
 <p class="muted">15 cm、20 cm · 45° 等高台阶 · 15 级上楼 → 平台 → 15 级下楼 → 地面停稳</p>
+<p><a href="/speed20">查看新一批 20 cm 高轮速试验 →</a></p>
 </header>
 <main>
 <section class="stats" aria-label="本批候选统计">
@@ -36,7 +37,7 @@
 <div class="toolbar"><p class="muted small" id="status" role="status">正在读取全部评估记录…</p><label class="small muted">每页 <select id="page-size"><option>12</option><option>24</option><option>48</option></select></label></div>
 <section id="results" class="results" aria-label="试验记录"></section>
 <div class="pagination"><button id="previous">上一页</button><label class="small muted">第 <input id="page-number" type="number" min="1" value="1" aria-label="跳转页码"> / <span id="page-total">1</span> 页</label><button id="next">下一页</button></div>
-<section class="plan"><h2>下一步建议 <span class="badge warn">尚未执行</span></h2><ol><li>先审阅失败时的接触切换，确认前轮、中轮承载如何丢失，以及后轮为何没有抬升。</li><li>核对碰撞几何与原 URDF 的对应关系，记录当前自碰撞模型的限制。</li><li>设计由实际接触与承载触发的支撑转移，用双后轮净抬升、踏面支撑与持续前进作为关口。</li><li>先验证一条完整的 15 cm、15 级路线，通过独立重放与视频审核后再解决 20 cm，继续保留现有审核门槛。</li></ol></section>
+<section class="plan"><h2>历史记录与当前任务</h2><p class="muted">本页保留此前的 15 cm 和 20 cm 试验，原建议中的 15 cm 后续试验已停止。当前只进行 20 cm、15 级楼梯研究。<a href="/speed20">查看本批高轮速试验及全部视频</a>。</p></section>
 <footer>17 cm、18 cm 测试高度保持封存。页面仅供审阅；原成功集入口和训练数据发布规则不变。</footer>
 </main>
 <dialog id="detail"><div class="modal-head"><h2 id="detail-title">试验详情</h2><button id="close-detail" aria-label="关闭试验详情">关闭 ✕</button></div><div id="detail-body" class="modal-content"></div></dialog>

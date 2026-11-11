@@ -11,6 +11,7 @@ from pathlib import Path
 from urllib.parse import quote, unquote, urlsplit
 
 import high_stairs
+import speed20_review
 
 BASE = Path.home() / "wzy"
 VIDEOS = BASE / "videos"
@@ -228,6 +229,15 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, INDEX.encode("utf-8"), "text/html; charset=utf-8")
         if path == "/api/runs":
             return self._send(200, json.dumps(read_runs(), ensure_ascii=False).encode("utf-8"), extra={"Cache-Control": "no-store"})
+        if path in ("/speed20", "/speed20/"):
+            return self._send(200, speed20_review.PAGE.read_bytes(), "text/html; charset=utf-8")
+        if path == "/api/speed20":
+            return self._send(200, json.dumps(speed20_review.catalog(), ensure_ascii=False).encode("utf-8"), extra={"Cache-Control": "no-store"})
+        if path.startswith("/speed20-media/"):
+            target = speed20_review.registered_media(path[len("/speed20-media/"):])
+            if target is None:
+                return self._send(404, b"not found", "text/plain")
+            return self._serve_file(target)
         if path in ("/experiments", "/experiments/"):
             return self._send(200, high_stairs.PAGE.read_bytes(), "text/html; charset=utf-8")
         if path == "/api/experiments":
