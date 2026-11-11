@@ -5,6 +5,10 @@
 GitHub：`https://github.com/susieow/mars_rover.git`  
 本文是当前交接入口。旧 `DELIVERY_45DEG.md` 仅作历史资料，不能据其旧“成功”结论接纳本批数据。
 
+## 非对称摇臂范围批次：用户要求停止（2026-11-11）
+
+224条计划中139条已完成、3条中断、82条未运行；139条均有视频和曲线，自动只读核验通过。已完成候选双后轮持续越首阶0条，登顶0条，完整路线未评估；成功入库0。前端 `http://127.0.0.1:8701/recovery20asym`。统计 `docs/recovery20_asymmetric_stopped_20261111.json`，逐条记录 `docs/diagnostic_registry20_asymmetric_stopped_20261111.jsonl`。用户明确要求停止，不自动继续。
+
 ## 最新进展：摇臂目标 ±20°（2026-11-11）
 
 32条已完成并停止：28条轮组加速配摇臂、4条仅摇臂对照；8条中立摇臂直接引用上一批。摇臂周期仍为8秒，因此目标速度从10增至20°/s。1条中后轮加速、左右同向先正的候选曾双后轮越首阶，但末段回落并有速度违规；没有登顶，完整路线未评估，入库0。详细结果为 `docs/recovery20_t22_amp20_summary_20261111.json`，失败及部分进展记录为 `docs/diagnostic_failure_registry20_amp20_20261111.jsonl`。前端：`http://127.0.0.1:8701/recovery20amp20`。原始数据在 `runs/recovery20_t22_amp20_20261111/`。小实验的无限力矩模型未用于本批。

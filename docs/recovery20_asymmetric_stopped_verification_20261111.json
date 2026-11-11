@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checked": 139,
+  "failures": [],
+  "checks": [
+    "parent checkpoint and source hashes",
+    "start state and timing",
+    "commands and force limits",
+    "raw velocity events and audit peaks",
+    "sustained rear crossing",
+    "video hash, frames and time",
+    "12-joint curves with retained speed extrema"
+  ],
+  "additional_physics_trials": 0,
+  "scope": "139 completed cases before user stopped the batch"
+}
