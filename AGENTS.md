@@ -7,9 +7,8 @@
 - 不通过放宽穿透、接触、姿态、力矩、速度或终态要求来接纳数据。
 
 ## 工作树
-- zc在zc/stairs-15-20，cxm在cxm/stairs-15-20；两个worktree有独立文件及runs输出。
-- 两人各自在本人工作树中操作；共享原始证据只读。
-- 不共享账号凭据。zc/cxm的GitHub账号尚未确认，未发送邀请。
+- zc：AGX `/home/agilex/wzy/worktrees/rover-zc`；GitHub `zc/stairs-15-20`。
+- cxm：AGX `/home/agilex/wzy/worktrees/rover-cxm`；GitHub `cxm/stairs-15-20`。
 
 ## 证据与路径
 - 先读HANDOFF_ZC_CXM_2026-11-11.md。旧DELIVERY_45DEG.md仅作历史参考。

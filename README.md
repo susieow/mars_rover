@@ -6,7 +6,8 @@
 
 - 后续仅允许15 cm、20 cm，两侧各15级、45°，目标是上楼→平台→下楼→地面正常停稳。
 - 其他高度不再进行新动力学试验；旧4 cm回归与17/18 cm计划不是当前运行授权。
-- zc：`zc/stairs-15-20`；cxm：`cxm/stairs-15-20`。各自在自己的工作树和runs目录工作。
+- zc：AGX `/home/agilex/wzy/worktrees/rover-zc`；GitHub [zc/stairs-15-20](https://github.com/susieow/mars_rover/tree/zc/stairs-15-20)。
+- cxm：AGX `/home/agilex/wzy/worktrees/rover-cxm`；GitHub [cxm/stairs-15-20](https://github.com/susieow/mars_rover/tree/cxm/stairs-15-20)。
 - 工作树和远端分支状态记录在 [交付状态](docs/git_delivery_status.json)。
 - 仿真、数据集记录和审核源码：`scripts/rover`；本批冻结证据：`review_v4`；核实值：[verified_facts](docs/verified_facts_2026-11-11.json)。
 - 大批NPZ、视频和venv留在AGX，没有上传Git；完整清单及SHA-256见`docs/artifact_inventory_2026-11-11.jsonl`。克隆仓库不能替代取得原始轨迹。
