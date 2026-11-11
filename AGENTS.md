@@ -6,14 +6,13 @@
 - 上楼/局部越阶可作阶段进展；只有完整路线完成并正常停稳、审核和独立重放及视频审核通过才是成功经验。
 - 不通过放宽穿透、接触、姿态、力矩、速度或终态要求来接纳数据。
 
-## 工作树
-- zc：AGX `/home/agilex/wzy/worktrees/rover-zc`；GitHub `zc/stairs-15-20`。
-- cxm：AGX `/home/agilex/wzy/worktrees/rover-cxm`；GitHub `cxm/stairs-15-20`。
+## 项目
+- AGX 项目：`/home/agilex/wzy/rover`；GitHub 分支：`wzy`。
 
 ## 证据与路径
-- 先读HANDOFF_ZC_CXM_2026-11-11.md。旧DELIVERY_45DEG.md仅作历史参考。
+- 先读HANDOFF_WZY_2026-11-11.md。旧DELIVERY_45DEG.md仅作历史参考。
 - review_v4原始冻结证据只读；不要执行其旧绝对路径搜索脚本或覆盖旧JSON/NPZ。
-- 不改共享主目录/home/agilex/wzy/rover；在本人worktree新建脚本，输出写本人runs/。
+- 新试验在项目内使用独立目录，输出写入 runs/。
 - 运行前打印15/20 cm、15级的明确计划；推荐tools/run_allowed_case.py --dry-run。
 - 记录全部尝试，失败也保留参数、原因和可视化。分清评估次数、去重目标序列、实际动作、局部成功与完整路线成功。
 - 物理模型变更要记录依据、数值和前后哈希，单独比较，不能静默修改冻结模型。
