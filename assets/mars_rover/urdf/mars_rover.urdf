@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  mars_rover
+  base_link 在六轮前后中心、黄色摆臂固定块圆孔的高度上。X 前，Y 左，Z 上，单位米。
+  主摇臂绕摆臂固定块侧面的圆孔转动，轴沿 Y。弯头和中轴轴承留在 base_link 上。
+  主动转向只有前轮和后轮共四个，绕 011 圆盘的孔转动。
+  圆盘和它下面的轮毂安装板跟着转；伺服电机、减速机、法兰、焊接件和固定板不转。
+  中间两轮没有转向，轮毂直接装在摇臂上。
+  轮毂关节只带动轮毂电机和电机轴。
+  每个碰撞块是一个固定子连杆，惯量盒只包住这一块。固定关节不增加自由度。
+  显示网格在 ../meshes/<link>.stl，碰撞用简化几何。
+  零位是六轮落地姿态：车身绕 Y 轴的安装角已含落地俯仰，左右摇臂关节在 0 rad。
+  六个轮毂电机：力矩 50 N·m，转速 500 rpm（52.359878 rad/s）。
+  两个摇臂：转速 1.57 rad/s。中轴轴承留在 base_link 上，摇臂用一个转动关节绕该孔转动，不再另加轴承连杆。
+  关节阻尼、摩擦是轴承和减速器损耗，不是地面摩擦，也不用来平衡重力。无实测时：干摩擦取额定力矩的 2%，粘性阻尼按最高转速时阻尼力矩为额定力矩的 5% 计算。
+  质量：六个轮子各 12.75 kg（合计 76.5 kg），其余结构件合计 46 kg，整车 122.5 kg。惯量按质量同比缩放。
+-->
+<robot name="mars_rover">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.000560" />
+      <inertia ixx="3.733380e-08" ixy="0.000000e+00" ixz="0.000000e+00" iyy="3.733380e-08" iyz="0.000000e+00" izz="3.733380e-08" />
+    </inertial>
+    <visual name="base_link_vis">
+      <origin xyz="0 0 0" rpy="0 -0.04 0" />
+      <geometry>
+        <mesh filename="../meshes/base_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="base_link_mat">
+        <color rgba="0.25 0.32 0.40 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="base_link_shape0">
+    <inertial>
+      <origin xyz="0.0965832 0.198448 0.203365" rpy="0 0 0" />
+      <mass value="0.295948" />
+      <inertia ixx="4.616813e-04" ixy="-7.754021e-06" ixz="-1.891966e-09" iyy="8.989171e-04" iyz="2.705320e-07" izz="4.615407e-04" />
+    </inertial>
+    <collision name="base_link_col_0">
+      <origin xyz="0.0965832 0.198448 0.203365" rpy="-1.57202 -1.04107 -3.12281" />
+      <geometry>
+        <box size="0.135009 0.135008 0.0220719" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape1">
+    <inertial>
+      <origin xyz="-0.429785 0.224438 0.0049174" rpy="0 0 0" />
+      <mass value="1.966133" />
+      <inertia ixx="6.335468e-03" ixy="-5.826814e-04" ixz="-1.185747e-02" iyy="3.772698e-02" iyz="-2.200210e-04" izz="3.326328e-02" />
+    </inertial>
+    <collision name="base_link_col_1">
+      <origin xyz="-0.429785 0.224438 0.0049174" rpy="1.93176 0.000617457 -1.55201" />
+      <geometry>
+        <box size="0.0751398 0.0750399 0.474021" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape2">
+    <inertial>
+      <origin xyz="-0.420694 -0.259477 0.00431967" rpy="0 0 0" />
+      <mass value="1.966133" />
+      <inertia ixx="6.335468e-03" ixy="-5.826814e-04" ixz="-1.185747e-02" iyy="3.772698e-02" iyz="-2.200210e-04" izz="3.326328e-02" />
+    </inertial>
+    <collision name="base_link_col_2">
+      <origin xyz="-0.420694 -0.259477 0.00431967" rpy="1.93176 0.000617457 -1.55201" />
+      <geometry>
+        <box size="0.0751398 0.0750399 0.474021" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape3">
+    <inertial>
+      <origin xyz="0.104323 -0.21349 0.202855" rpy="0 0 0" />
+      <mass value="0.295947" />
+      <inertia ixx="4.617115e-04" ixy="-8.275219e-06" ixz="6.107377e-09" iyy="8.988724e-04" iyz="2.719796e-07" izz="4.615066e-04" />
+    </inertial>
+    <collision name="base_link_col_3">
+      <origin xyz="0.104323 -0.21349 0.202855" rpy="1.57016 0.218059 -3.12281" />
+      <geometry>
+        <box size="0.135003 0.135011 0.0220723" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape4">
+    <inertial>
+      <origin xyz="0.100453 -0.00752073 0.20311" rpy="0 0 0" />
+      <mass value="2.835179" />
+      <inertia ixx="3.828587e-02" ixy="6.655232e-04" ixz="-3.305490e-05" iyy="4.682798e-03" iyz="-2.146349e-05" izz="3.826481e-02" />
+    </inertial>
+    <collision name="base_link_col_4">
+      <origin xyz="0.100453 -0.00752073 0.20311" rpy="1.56961 1.02158 -3.12281" />
+      <geometry>
+        <box size="0.100206 0.0986055 0.390061" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape5">
+    <inertial>
+      <origin xyz="0.214068 -0.246554 0.105062" rpy="0 0 0" />
+      <mass value="2.112295" />
+      <inertia ixx="1.534558e-02" ixy="8.186346e-04" ixz="1.187942e-02" iyy="2.848788e-02" iyz="-1.081636e-03" izz="1.476334e-02" />
+    </inertial>
+    <collision name="base_link_col_5">
+      <origin xyz="0.214068 -0.246554 0.105062" rpy="-0.157108 0.796588 -0.0757942" />
+      <geometry>
+        <box size="0.385789 0.0640312 0.116241" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape6">
+    <inertial>
+      <origin xyz="-0.0349899 -0.242483 0.148941" rpy="0 0 0" />
+      <mass value="2.430967" />
+      <inertia ixx="8.333235e-03" ixy="-1.771654e-03" ixz="-9.028764e-03" iyy="2.866053e-02" iyz="-9.482426e-04" izz="2.333072e-02" />
+    </inertial>
+    <collision name="base_link_col_6">
+      <origin xyz="-0.0349899 -0.242483 0.148941" rpy="-3.02052 0.437678 -3.05217" />
+      <geometry>
+        <box size="0.359831 0.0810296 0.11334" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape7">
+    <inertial>
+      <origin xyz="0.207069 0.232653 0.0976546" rpy="0 0 0" />
+      <mass value="1.624417" />
+      <inertia ixx="1.147482e-02" ixy="-8.272363e-04" ixz="8.165290e-03" iyy="2.017284e-02" iyz="1.089874e-03" izz="9.621195e-03" />
+    </inertial>
+    <collision name="base_link_col_7">
+      <origin xyz="0.207069 0.232653 0.0976546" rpy="0.156073 0.839191 0.113685" />
+      <geometry>
+        <box size="0.368759 0.0508619 0.117736" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape8">
+    <inertial>
+      <origin xyz="-0.0380809 0.221215 0.158576" rpy="0 0 0" />
+      <mass value="2.573080" />
+      <inertia ixx="8.192618e-03" ixy="1.038488e-03" ixz="-9.490041e-03" iyy="3.283073e-02" iyz="5.748413e-04" izz="2.756247e-02" />
+    </inertial>
+    <collision name="base_link_col_8">
+      <origin xyz="-0.0380809 0.221215 0.158576" rpy="3.02919 0.387483 3.09704" />
+      <geometry>
+        <box size="0.374192 0.080808 0.115678" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape9">
+    <inertial>
+      <origin xyz="-0.686577 -0.178519 -0.144518" rpy="0 0 0" />
+      <mass value="0.028826" />
+      <inertia ixx="5.551940e-06" ixy="9.598123e-09" ixz="2.128748e-10" iyy="5.541854e-06" iyz="1.157786e-10" izz="5.534210e-06" />
+    </inertial>
+    <collision name="base_link_col_9">
+      <origin xyz="-0.686577 -0.178519 -0.144518" rpy="-1.04609 -1.55891 -3.12281" />
+      <geometry>
+        <box size="0.0340178 0.0338735 0.0340065" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape10">
+    <inertial>
+      <origin xyz="-0.686787 -0.178545 -0.131018" rpy="0 0 0" />
+      <mass value="0.060494" />
+      <inertia ixx="2.217755e-05" ixy="-4.904393e-07" ixz="-5.537912e-07" iyy="4.828059e-05" iyz="-2.303207e-08" izz="6.873018e-05" />
+    </inertial>
+    <collision name="base_link_col_10">
+      <origin xyz="-0.686787 -0.178545 -0.131018" rpy="0.000617511 -0.0118986 0.0187855" />
+      <geometry>
+        <box size="0.0970005 0.0650086 0.013041" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape11">
+    <inertial>
+      <origin xyz="-0.684155 -0.178416 -0.00596214" rpy="0 0 0" />
+      <mass value="0.327611" />
+      <inertia ixx="4.080203e-04" ixy="9.604507e-07" ixz="2.102153e-06" iyy="4.370729e-04" iyz="5.739061e-08" izz="2.311853e-04" />
+    </inertial>
+    <collision name="base_link_col_11">
+      <origin xyz="-0.684155 -0.178416 -0.00596214" rpy="1.62264 1.55891 0.0187848" />
+      <geometry>
+        <box size="0.106039 0.0690388 0.060834" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape12">
+    <inertial>
+      <origin xyz="-0.687224 -0.17852 -0.0942626" rpy="0 0 0" />
+      <mass value="0.363294" />
+      <inertia ixx="6.249171e-04" ixy="3.608958e-07" ixz="4.701144e-06" iyy="6.359044e-04" iyz="9.506506e-08" izz="2.294191e-04" />
+    </inertial>
+    <collision name="base_link_col_12">
+      <origin xyz="-0.687224 -0.17852 -0.0942626" rpy="-3.08974 1.55891 0.0187856" />
+      <geometry>
+        <box size="0.130522 0.0600594 0.0629999" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape13">
+    <inertial>
+      <origin xyz="-0.685142 -0.264504 -0.091154" rpy="0 0 0" />
+      <mass value="0.864533" />
+      <inertia ixx="1.515815e-03" ixy="-1.747120e-06" ixz="-2.355999e-06" iyy="1.608860e-03" iyz="-1.091240e-07" izz="1.713928e-03" />
+    </inertial>
+    <collision name="base_link_col_13">
+      <origin xyz="-0.685142 -0.264504 -0.091154" rpy="1.5589 -0.000617457 1.58958" />
+      <geometry>
+        <box size="0.10606 0.0989467 0.111989" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape14">
+    <inertial>
+      <origin xyz="-0.685254 -0.244043 -0.156596" rpy="0 0 0" />
+      <mass value="0.557999" />
+      <inertia ixx="1.868698e-03" ixy="1.280416e-05" ixz="-1.346564e-05" iyy="1.188121e-03" iyz="-1.364865e-06" izz="3.002381e-03" />
+    </inertial>
+    <collision name="base_link_col_14">
+      <origin xyz="-0.685254 -0.244043 -0.156596" rpy="-3.14098 -0.0118986 0.0187855" />
+      <geometry>
+        <box size="0.158 0.199015 0.0241233" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape15">
+    <inertial>
+      <origin xyz="-0.685317 -0.244509 -0.150597" rpy="0 0 0" />
+      <mass value="0.670614" />
+      <inertia ixx="2.431611e-03" ixy="1.514062e-05" ixz="-1.841319e-05" iyy="1.626814e-03" iyz="-1.800511e-06" izz="3.981681e-03" />
+    </inertial>
+    <collision name="base_link_col_15">
+      <origin xyz="-0.685317 -0.244509 -0.150597" rpy="-0.000617511 0.0118986 -3.12281" />
+      <geometry>
+        <box size="0.16859 0.206954 0.0261284" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape16">
+    <inertial>
+      <origin xyz="-0.692539 0.13336 -0.144133" rpy="0 0 0" />
+      <mass value="0.028826" />
+      <inertia ixx="5.552651e-06" ixy="9.240503e-09" ixz="2.216478e-10" iyy="5.541093e-06" iyz="1.113652e-10" izz="5.534177e-06" />
+    </inertial>
+    <collision name="base_link_col_16">
+      <origin xyz="-0.692539 0.13336 -0.144133" rpy="2.05791 -1.55891 -3.12281" />
+      <geometry>
+        <box size="0.0340178 0.0338731 0.0340068" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape17">
+    <inertial>
+      <origin xyz="-0.692648 0.1334 -0.130632" rpy="0 0 0" />
+      <mass value="0.060494" />
+      <inertia ixx="2.217755e-05" ixy="-4.903648e-07" ixz="-5.537917e-07" iyy="4.828059e-05" iyz="-2.303050e-08" izz="6.873018e-05" />
+    </inertial>
+    <collision name="base_link_col_17">
+      <origin xyz="-0.692648 0.1334 -0.130632" rpy="-0.000617511 0.0118986 -3.12281" />
+      <geometry>
+        <box size="0.0970005 0.0650086 0.013041" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape18">
+    <inertial>
+      <origin xyz="-0.698252 0.13353 -0.0056593" rpy="0 0 0" />
+      <mass value="0.327703" />
+      <inertia ixx="4.084218e-04" ixy="2.048370e-06" ixz="2.106404e-06" iyy="4.372560e-04" iyz="7.035028e-08" izz="2.312503e-04" />
+    </inertial>
+    <collision name="base_link_col_18">
+      <origin xyz="-0.698252 0.13353 -0.0056593" rpy="-1.48136 1.55891 0.0187861" />
+      <geometry>
+        <box size="0.106069 0.0690387 0.060834" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape19">
+    <inertial>
+      <origin xyz="-0.693085 0.133426 -0.0938773" rpy="0 0 0" />
+      <mass value="0.363294" />
+      <inertia ixx="6.249171e-04" ixy="3.608526e-07" ixz="4.701144e-06" iyy="6.359044e-04" iyz="9.506450e-08" izz="2.294191e-04" />
+    </inertial>
+    <collision name="base_link_col_19">
+      <origin xyz="-0.693085 0.133426 -0.0938773" rpy="0.0518487 1.55891 0.0187856" />
+      <geometry>
+        <box size="0.130522 0.0600594 0.0629999" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape20">
+    <inertial>
+      <origin xyz="-0.694233 0.219411 -0.0905563" rpy="0 0 0" />
+      <mass value="0.864533" />
+      <inertia ixx="1.515815e-03" ixy="-1.747120e-06" ixz="-2.355999e-06" iyy="1.608860e-03" iyz="-1.091257e-07" izz="1.713928e-03" />
+    </inertial>
+    <collision name="base_link_col_20">
+      <origin xyz="-0.694233 0.219411 -0.0905563" rpy="1.5589 -0.000617473 1.58958" />
+      <geometry>
+        <box size="0.10606 0.0989467 0.111989" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape21">
+    <inertial>
+      <origin xyz="-0.693575 0.198878 -0.15605" rpy="0 0 0" />
+      <mass value="0.557999" />
+      <inertia ixx="1.868698e-03" ixy="1.280226e-05" ixz="-1.346564e-05" iyy="1.188121e-03" iyz="-1.364826e-06" izz="3.002381e-03" />
+    </inertial>
+    <collision name="base_link_col_21">
+      <origin xyz="-0.693575 0.198878 -0.15605" rpy="3.14098 0.0118986 -3.12281" />
+      <geometry>
+        <box size="0.158 0.199015 0.0241233" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape22">
+    <inertial>
+      <origin xyz="-0.693655 0.199349 -0.15005" rpy="0 0 0" />
+      <mass value="0.670614" />
+      <inertia ixx="2.431611e-03" ixy="1.514292e-05" ixz="-1.841319e-05" iyy="1.626814e-03" iyz="-1.800567e-06" izz="3.981681e-03" />
+    </inertial>
+    <collision name="base_link_col_22">
+      <origin xyz="-0.693655 0.199349 -0.15005" rpy="0.000617511 -0.0118986 0.0187855" />
+      <geometry>
+        <box size="0.16859 0.206954 0.0261284" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape23">
+    <inertial>
+      <origin xyz="-0.0524604 -0.252496 0.105945" rpy="0 0 0" />
+      <mass value="0.035360" />
+      <inertia ixx="7.632219e-06" ixy="5.300161e-09" ixz="-6.809121e-07" iyy="7.372600e-06" iyz="-1.390743e-08" izz="9.179350e-06" />
+    </inertial>
+    <collision name="base_link_col_23">
+      <origin xyz="-0.0524604 -0.252496 0.105945" rpy="2.78063 -0.000617466 1.58958" />
+      <geometry>
+        <box size="0.0400208 0.0400091 0.0300205" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape24">
+    <inertial>
+      <origin xyz="-0.0615521 0.231418 0.106543" rpy="0 0 0" />
+      <mass value="0.035360" />
+      <inertia ixx="7.632219e-06" ixy="5.300161e-09" ixz="-6.809121e-07" iyy="7.372600e-06" iyz="-1.390743e-08" izz="9.179350e-06" />
+    </inertial>
+    <collision name="base_link_col_24">
+      <origin xyz="-0.0615521 0.231418 0.106543" rpy="2.78063 -0.000617466 1.58958" />
+      <geometry>
+        <box size="0.0400208 0.0400091 0.0300205" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape25">
+    <inertial>
+      <origin xyz="-0.153457 0.21967 0.0717597" rpy="0 0 0" />
+      <mass value="0.017684" />
+      <inertia ixx="2.047396e-06" ixy="-3.056920e-08" ixz="-3.406543e-07" iyy="3.685264e-06" iyz="-5.865230e-09" izz="2.820731e-06" />
+    </inertial>
+    <collision name="base_link_col_25">
+      <origin xyz="-0.153457 0.21967 0.0717597" rpy="2.78063 -0.000617466 1.58958" />
+      <geometry>
+        <box size="0.0200234 0.0400048 0.0300115" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape26">
+    <inertial>
+      <origin xyz="-0.144743 -0.244243 0.0711901" rpy="0 0 0" />
+      <mass value="0.017663" />
+      <inertia ixx="2.043089e-06" ixy="-3.055133e-08" ixz="-3.406073e-07" iyy="3.679776e-06" iyz="-5.865902e-09" izz="2.816318e-06" />
+    </inertial>
+    <collision name="base_link_col_26">
+      <origin xyz="-0.144743 -0.244243 0.0711901" rpy="-2.78063 0.000617466 -1.55201" />
+      <geometry>
+        <box size="0.0200079 0.0400047 0.0299991" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape27">
+    <inertial>
+      <origin xyz="-0.693217 0.133422 -0.0854293" rpy="0 0 0" />
+      <mass value="0.206473" />
+      <inertia ixx="1.446217e-04" ixy="9.353848e-10" ixz="-1.141378e-07" iyy="1.445758e-04" iyz="-8.103801e-09" izz="1.542253e-04" />
+    </inertial>
+    <collision name="base_link_col_27">
+      <origin xyz="-0.693217 0.133422 -0.0854293" rpy="-1.5589 0.000617457 -1.55201" />
+      <geometry>
+        <box size="0.0669556 0.062627 0.0669362" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape28">
+    <inertial>
+      <origin xyz="-0.692773 0.133404 -0.120133" rpy="0 0 0" />
+      <mass value="0.024993" />
+      <inertia ixx="8.936923e-06" ixy="1.115085e-10" ixz="-1.029735e-07" iyy="8.934403e-06" iyz="-7.286135e-09" izz="1.759955e-05" />
+    </inertial>
+    <collision name="base_link_col_28">
+      <origin xyz="-0.692773 0.133404 -0.120133" rpy="0.0118986 0.000617468 -1.55201" />
+      <geometry>
+        <box size="0.0650054 0.0650005 0.00804076" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="base_link_shape29">
+    <inertial>
+      <origin xyz="-0.692558 0.133408 -0.138222" rpy="0 0 0" />
+      <mass value="0.054978" />
+      <inertia ixx="1.656069e-05" ixy="-8.103353e-09" ixz="7.595371e-09" iyy="1.631602e-05" iyz="-8.200178e-12" izz="1.592155e-05" />
+    </inertial>
+    <collision name="base_link_col_29">
+      <origin xyz="-0.692558 0.133408 -0.138222" rpy="1.62264 1.55891 0.0187859" />
+      <geometry>
+        <box size="0.0430166 0.0413621 0.0420043" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.000313" />
+      <inertia ixx="2.089562e-08" ixy="0.000000e+00" ixz="0.000000e+00" iyy="2.089562e-08" iyz="0.000000e+00" izz="2.089562e-08" />
+    </inertial>
+    <visual name="left_rocker_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_rocker.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_rocker_mat">
+        <color rgba="0.20 0.55 0.38 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_rocker_shape0">
+    <inertial>
+      <origin xyz="0.17739 0.00328188 -0.0786465" rpy="0 0 0" />
+      <mass value="0.335848" />
+      <inertia ixx="4.474963e-04" ixy="-2.000347e-05" ixz="3.724225e-04" iyy="1.499686e-03" iyz="7.077564e-06" izz="1.368494e-03" />
+    </inertial>
+    <collision name="left_rocker_col_0">
+      <origin xyz="0.17739 0.00328188 -0.0786465" rpy="-1.23083 -0.000617458 1.58958" />
+      <geometry>
+        <box size="0.0750818 0.0750392 0.219014" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape1">
+    <inertial>
+      <origin xyz="0.000237836 -1.49794e-05 -0.0269904" rpy="0 0 0" />
+      <mass value="0.749678" />
+      <inertia ixx="1.897390e-03" ixy="-2.604093e-05" ixz="-9.136544e-06" iyy="3.283067e-03" iyz="6.424523e-08" izz="2.900809e-03" />
+    </inertial>
+    <collision name="left_rocker_col_1">
+      <origin xyz="0.000237836 -1.49794e-05 -0.0269904" rpy="1.57018 0.00909716 -3.12281" />
+      <geometry>
+        <box size="0.185245 0.135069 0.110084" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape2">
+    <inertial>
+      <origin xyz="-0.175948 -0.00335861 -0.0818656" rpy="0 0 0" />
+      <mass value="0.335857" />
+      <inertia ixx="4.613563e-04" ixy="-1.927442e-05" ixz="-3.889718e-04" iyy="1.499792e-03" iyz="-7.217355e-06" izz="1.354722e-03" />
+    </inertial>
+    <collision name="left_rocker_col_2">
+      <origin xyz="-0.175948 -0.00335861 -0.0818656" rpy="1.21263 -0.000617458 1.58958" />
+      <geometry>
+        <box size="0.0750839 0.0750377 0.219018" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape3">
+    <inertial>
+      <origin xyz="0.326157 -0.0800368 -0.179594" rpy="0 0 0" />
+      <mass value="0.010665" />
+      <inertia ixx="2.054310e-06" ixy="3.492785e-09" ixz="6.120618e-11" iyy="2.050352e-06" iyz="3.219471e-11" izz="2.047637e-06" />
+    </inertial>
+    <collision name="left_rocker_col_3">
+      <origin xyz="0.326157 -0.0800368 -0.179594" rpy="2.07958 -1.56171 -3.12281" />
+      <geometry>
+        <box size="0.0340178 0.0338735 0.0340066" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape4">
+    <inertial>
+      <origin xyz="0.326085 -0.0799938 -0.166092" rpy="0 0 0" />
+      <mass value="0.022382" />
+      <inertia ixx="8.204517e-06" ixy="-1.814637e-07" ixz="-1.566422e-07" iyy="1.786346e-05" iyz="-7.614571e-09" izz="2.543070e-05" />
+    </inertial>
+    <collision name="left_rocker_col_4">
+      <origin xyz="0.326085 -0.0799938 -0.166092" rpy="-0.000617486 0.00909716 -3.12281" />
+      <geometry>
+        <box size="0.0970004 0.0650085 0.013041" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape5">
+    <inertial>
+      <origin xyz="0.320832 -0.0800127 -0.0411041" rpy="0 0 0" />
+      <mass value="0.121246" />
+      <inertia ixx="1.510872e-04" ixy="5.263156e-07" ixz="5.955031e-07" iyy="1.618060e-04" iyz="1.779695e-08" izz="8.555437e-05" />
+    </inertial>
+    <collision name="left_rocker_col_5">
+      <origin xyz="0.320832 -0.0800127 -0.0411041" rpy="-1.50303 1.56171 0.0187846" />
+      <geometry>
+        <box size="0.106069 0.0690377 0.0608339" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape6">
+    <inertial>
+      <origin xyz="0.325751 -0.0799666 -0.129336" rpy="0 0 0" />
+      <mass value="0.134416" />
+      <inertia ixx="2.312286e-04" ixy="1.980052e-07" ixz="1.329763e-06" iyy="2.352747e-04" iyz="2.747110e-08" izz="8.487485e-05" />
+    </inertial>
+    <collision name="left_rocker_col_6">
+      <origin xyz="0.325751 -0.0799666 -0.129336" rpy="0.0677709 1.56171 0.0187848" />
+      <geometry>
+        <box size="0.130522 0.0600593 0.0629999" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape7">
+    <inertial>
+      <origin xyz="0.3236 0.00600031 -0.126025" rpy="0 0 0" />
+      <mass value="0.319875" />
+      <inertia ixx="5.608466e-04" ixy="-6.468436e-07" ixz="-6.663078e-07" iyy="5.952837e-04" iyz="-3.652041e-08" izz="6.341620e-04" />
+    </inertial>
+    <collision name="left_rocker_col_7">
+      <origin xyz="0.3236 0.00600031 -0.126025" rpy="1.57989 0.000617457 -1.55201" />
+      <geometry>
+        <box size="0.10606 0.098947 0.11199" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape8">
+    <inertial>
+      <origin xyz="0.325086 -0.0145169 -0.19151" rpy="0 0 0" />
+      <mass value="0.206456" />
+      <inertia ixx="6.913826e-04" ixy="4.735145e-06" ixz="-3.807505e-06" iyy="4.395977e-04" iyz="-4.829237e-07" izz="1.110889e-03" />
+    </inertial>
+    <collision name="left_rocker_col_8">
+      <origin xyz="0.325086 -0.0145169 -0.19151" rpy="3.14098 0.00909716 -3.12281" />
+      <geometry>
+        <box size="0.158 0.199015 0.0241233" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape9">
+    <inertial>
+      <origin xyz="0.325023 -0.0140457 -0.18551" rpy="0 0 0" />
+      <mass value="0.248122" />
+      <inertia ixx="8.996377e-04" ixy="5.600474e-06" ixz="-5.206549e-06" iyy="6.019097e-04" iyz="-6.360082e-07" izz="1.473219e-03" />
+    </inertial>
+    <collision name="left_rocker_col_9">
+      <origin xyz="0.325023 -0.0140457 -0.18551" rpy="0.000617486 -0.00909716 0.0187855" />
+      <geometry>
+        <box size="0.16859 0.206953 0.0261284" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape10">
+    <inertial>
+      <origin xyz="-0.320834 -0.0061417 -0.180865" rpy="0 0 0" />
+      <mass value="0.018213" />
+      <inertia ixx="1.840765e-05" ixy="-6.537893e-08" ixz="-1.981105e-07" iyy="2.189316e-05" iyz="-1.503851e-08" izz="4.021925e-05" />
+    </inertial>
+    <collision name="left_rocker_col_10">
+      <origin xyz="-0.320834 -0.0061417 -0.180865" rpy="3.1325 -0.00061746 1.58958" />
+      <geometry>
+        <box size="0.110004 0.120001 0.00506907" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape11">
+    <inertial>
+      <origin xyz="-0.321273 -0.00611888 -0.131901" rpy="0 0 0" />
+      <mass value="0.319872" />
+      <inertia ixx="5.608403e-04" ixy="-6.466305e-07" ixz="-6.664552e-07" iyy="5.952711e-04" iyz="-3.652198e-08" izz="6.341463e-04" />
+    </inertial>
+    <collision name="left_rocker_col_11">
+      <origin xyz="-0.321273 -0.00611888 -0.131901" rpy="1.5617 -0.000617457 1.58958" />
+      <geometry>
+        <box size="0.10606 0.0989467 0.111989" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape12">
+    <inertial>
+      <origin xyz="-0.319926 0.00130527 -0.296352" rpy="0 0 0" />
+      <mass value="0.081993" />
+      <inertia ixx="3.757261e-04" ixy="-9.002426e-07" ixz="2.949742e-06" iyy="4.235217e-04" iyz="2.850853e-07" izz="5.096409e-05" />
+    </inertial>
+    <collision name="left_rocker_col_12">
+      <origin xyz="-0.319926 0.00130527 -0.296352" rpy="1.57018 0.00909716 -3.12281" />
+      <geometry>
+        <box size="0.0850027 0.23401 0.0151448" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape13">
+    <inertial>
+      <origin xyz="-0.319644 -0.0136932 -0.296373" rpy="0 0 0" />
+      <mass value="0.081978" />
+      <inertia ixx="3.756352e-04" ixy="-9.002144e-07" ixz="2.949018e-06" iyy="4.234214e-04" iyz="2.840363e-07" izz="5.095437e-05" />
+    </inertial>
+    <collision name="left_rocker_col_13">
+      <origin xyz="-0.319644 -0.0136932 -0.296373" rpy="1.57141 -0.00909716 0.0187855" />
+      <geometry>
+        <box size="0.0850027 0.234003 0.0151425" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rocker_shape14">
+    <inertial>
+      <origin xyz="-0.174637 -0.00331052 -0.0440024" rpy="0 0 0" />
+      <mass value="0.013083" />
+      <inertia ixx="2.822481e-06" ixy="1.933877e-09" ixz="-2.503274e-07" iyy="2.727821e-06" iyz="-5.117033e-09" izz="3.397721e-06" />
+    </inertial>
+    <collision name="left_rocker_col_14">
+      <origin xyz="-0.174637 -0.00331052 -0.0440024" rpy="0.358163 0.000617459 -1.55201" />
+      <geometry>
+        <box size="0.0400208 0.0400091 0.0300205" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.000313" />
+      <inertia ixx="2.089535e-08" ixy="0.000000e+00" ixz="0.000000e+00" iyy="2.089535e-08" iyz="0.000000e+00" izz="2.089535e-08" />
+    </inertial>
+    <visual name="right_rocker_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_rocker.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_rocker_mat">
+        <color rgba="0.20 0.55 0.38 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_rocker_shape0">
+    <inertial>
+      <origin xyz="-0.00089106 -2.42919e-05 -0.0272827" rpy="0 0 0" />
+      <mass value="0.749690" />
+      <inertia ixx="1.898433e-03" ixy="-2.601328e-05" ixz="3.295529e-05" iyy="3.283148e-03" iyz="8.548083e-07" izz="2.899911e-03" />
+    </inertial>
+    <collision name="right_rocker_col_0">
+      <origin xyz="-0.00089106 -2.42919e-05 -0.0272827" rpy="1.57018 -0.0328533 -3.12281" />
+      <geometry>
+        <box size="0.185247 0.135069 0.110085" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape1">
+    <inertial>
+      <origin xyz="0.173939 0.00322437 -0.0863241" rpy="0 0 0" />
+      <mass value="0.335868" />
+      <inertia ixx="4.803691e-04" ixy="-1.941100e-05" ixz="4.097471e-04" iyy="1.499807e-03" iyz="7.798985e-06" izz="1.335779e-03" />
+    </inertial>
+    <collision name="right_rocker_col_1">
+      <origin xyz="0.173939 0.00322437 -0.0863241" rpy="-1.18888 -0.000617461 1.58958" />
+      <geometry>
+        <box size="0.0750865 0.0750385 0.219016" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape2">
+    <inertial>
+      <origin xyz="-0.179222 -0.00340393 -0.0747194" rpy="0 0 0" />
+      <mass value="0.335834" />
+      <inertia ixx="4.302893e-04" ixy="-1.987974e-05" ixz="-3.501296e-04" iyy="1.499656e-03" iyz="-6.506839e-06" izz="1.385618e-03" />
+    </inertial>
+    <collision name="right_rocker_col_2">
+      <origin xyz="-0.179222 -0.00340393 -0.0747194" rpy="1.25458 -0.000617457 1.58958" />
+      <geometry>
+        <box size="0.0750791 0.0750385 0.219016" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape3">
+    <inertial>
+      <origin xyz="-0.328132 -0.00625868 -0.167555" rpy="0 0 0" />
+      <mass value="0.018213" />
+      <inertia ixx="1.842987e-05" ixy="-6.553603e-08" ixz="7.163130e-07" iyy="2.189365e-05" iyz="2.152731e-09" izz="4.019834e-05" />
+    </inertial>
+    <collision name="right_rocker_col_3">
+      <origin xyz="-0.328132 -0.00625868 -0.167555" rpy="-3.10874 -0.000617468 1.58958" />
+      <geometry>
+        <box size="0.110005 0.120002 0.00506904" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape4">
+    <inertial>
+      <origin xyz="-0.326518 -0.00619726 -0.118615" rpy="0 0 0" />
+      <mass value="0.319877" />
+      <inertia ixx="5.609269e-04" ixy="-6.471703e-07" ixz="2.407766e-06" iyy="5.952851e-04" iyz="2.127146e-08" izz="6.340972e-04" />
+    </inertial>
+    <collision name="right_rocker_col_4">
+      <origin xyz="-0.326518 -0.00619726 -0.118615" rpy="1.60365 -0.000617457 1.58958" />
+      <geometry>
+        <box size="0.106061 0.0989468 0.11199" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape5">
+    <inertial>
+      <origin xyz="-0.332068 0.00109708 -0.282984" rpy="0 0 0" />
+      <mass value="0.081997" />
+      <inertia ixx="3.754171e-04" ixy="-8.967296e-07" ixz="-1.066590e-05" iyy="4.235380e-04" iyz="2.921287e-08" izz="5.129031e-05" />
+    </inertial>
+    <collision name="right_rocker_col_5">
+      <origin xyz="-0.332068 0.00109708 -0.282984" rpy="1.57018 -0.0328533 -3.12281" />
+      <geometry>
+        <box size="0.0850028 0.23401 0.0151455" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape6">
+    <inertial>
+      <origin xyz="-0.331786 -0.0139011 -0.283005" rpy="0 0 0" />
+      <mass value="0.081984" />
+      <inertia ixx="3.753356e-04" ixy="-8.967672e-07" ixz="-1.066349e-05" iyy="4.234502e-04" iyz="2.819040e-08" izz="5.128185e-05" />
+    </inertial>
+    <collision name="right_rocker_col_6">
+      <origin xyz="-0.331786 -0.0139011 -0.283005" rpy="1.57141 0.0328533 0.0187855" />
+      <geometry>
+        <box size="0.0850028 0.234003 0.0151436" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape7">
+    <inertial>
+      <origin xyz="0.315219 0.0918558 -0.193146" rpy="0 0 0" />
+      <mass value="0.010665" />
+      <inertia ixx="2.053945e-06" ixy="3.731071e-09" ixz="-2.110735e-10" iyy="2.050638e-06" iyz="-1.245289e-10" izz="2.047601e-06" />
+    </inertial>
+    <collision name="right_rocker_col_7">
+      <origin xyz="0.315219 0.0918558 -0.193146" rpy="2.12856 -1.53793 0.0187856" />
+      <geometry>
+        <box size="0.0340178 0.0338722 0.0340076" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape8">
+    <inertial>
+      <origin xyz="0.315611 0.0918434 -0.17965" rpy="0 0 0" />
+      <mass value="0.022383" />
+      <inertia ixx="8.222147e-06" ixy="-1.813679e-07" ixz="5.657443e-07" iyy="1.786410e-05" iyz="5.956612e-09" izz="2.541460e-05" />
+    </inertial>
+    <collision name="right_rocker_col_8">
+      <origin xyz="0.315611 0.0918434 -0.17965" rpy="0.000617801 0.0328533 0.0187855" />
+      <geometry>
+        <box size="0.0970011 0.0650097 0.013041" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape9">
+    <inertial>
+      <origin xyz="0.323834 0.0919229 -0.0548374" rpy="0 0 0" />
+      <mass value="0.121214" />
+      <inertia ixx="1.508921e-04" ixy="-1.288878e-09" ixz="-2.148676e-06" iyy="1.617255e-04" iyz="-4.700980e-08" izz="8.559868e-05" />
+    </inertial>
+    <collision name="right_rocker_col_9">
+      <origin xyz="0.323834 0.0919229 -0.0548374" rpy="-1.552 1.53793 -3.12281" />
+      <geometry>
+        <box size="0.106039 0.0690385 0.0608344" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape10">
+    <inertial>
+      <origin xyz="0.316819 0.0918997 -0.142912" rpy="0 0 0" />
+      <mass value="0.134419" />
+      <inertia ixx="2.310879e-04" ixy="-1.550996e-07" ixz="-4.806544e-06" iyy="2.352875e-04" iyz="-8.778705e-08" izz="8.502448e-05" />
+    </inertial>
+    <collision name="right_rocker_col_10">
+      <origin xyz="0.316819 0.0918997 -0.142912" rpy="-0.0187959 1.53793 -3.12281" />
+      <geometry>
+        <box size="0.130523 0.06006 0.0630004" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape11">
+    <inertial>
+      <origin xyz="0.318034 0.00589913 -0.139794" rpy="0 0 0" />
+      <mass value="0.319880" />
+      <inertia ixx="5.609363e-04" ixy="-6.473835e-07" ixz="2.408133e-06" iyy="5.953008e-04" iyz="2.128528e-08" izz="6.341097e-04" />
+    </inertial>
+    <collision name="right_rocker_col_11">
+      <origin xyz="0.318034 0.00589913 -0.139794" rpy="1.53794 0.000617461 -1.55201" />
+      <geometry>
+        <box size="0.106061 0.0989471 0.111991" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape12">
+    <inertial>
+      <origin xyz="0.316004 0.026324 -0.205217" rpy="0 0 0" />
+      <mass value="0.206456" />
+      <inertia ixx="6.918090e-04" ixy="4.726368e-06" ixz="1.377700e-05" iyy="4.395982e-04" iyz="-1.590723e-07" izz="1.110476e-03" />
+    </inertial>
+    <collision name="right_rocker_col_12">
+      <origin xyz="0.316004 0.026324 -0.205217" rpy="-3.14097 0.0328533 0.0187855" />
+      <geometry>
+        <box size="0.158 0.199016 0.0241233" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape13">
+    <inertial>
+      <origin xyz="0.31621 0.0258629 -0.199221" rpy="0 0 0" />
+      <mass value="0.248122" />
+      <inertia ixx="9.002181e-04" ixy="5.587956e-06" ixz="1.883696e-05" iyy="6.019079e-04" iyz="-1.843501e-07" izz="1.472657e-03" />
+    </inertial>
+    <collision name="right_rocker_col_13">
+      <origin xyz="0.31621 0.0258629 -0.199221" rpy="-0.000617801 -0.0328533 -3.12281" />
+      <geometry>
+        <box size="0.16859 0.206954 0.0261284" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rocker_shape14">
+    <inertial>
+      <origin xyz="-0.176326 -0.00332593 -0.0369445" rpy="0 0 0" />
+      <mass value="0.013083" />
+      <inertia ixx="2.802372e-06" ixy="1.543909e-09" ixz="-2.253073e-07" iyy="2.727637e-06" iyz="-4.659200e-09" izz="3.417422e-06" />
+    </inertial>
+    <collision name="right_rocker_col_14">
+      <origin xyz="-0.176326 -0.00332593 -0.0369445" rpy="0.316213 0.000617465 -1.55201" />
+      <geometry>
+        <box size="0.0400202 0.040008 0.0300208" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_front_steer">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002425" />
+      <inertia ixx="1.616454e-07" ixy="0.000000e+00" ixz="0.000000e+00" iyy="1.616454e-07" iyz="0.000000e+00" izz="1.616454e-07" />
+    </inertial>
+    <visual name="left_front_steer_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_front_steer.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_front_steer_mat">
+        <color rgba="0.72 0.55 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_front_steer_shape0">
+    <inertial>
+      <origin xyz="0.000133135 0.0009297 -0.0170505" rpy="0 0 0" />
+      <mass value="0.454620" />
+      <inertia ixx="6.611689e-04" ixy="5.282698e-09" ixz="-5.987164e-06" iyy="6.610865e-04" iyz="-5.195167e-07" izz="1.320190e-03" />
+    </inertial>
+    <collision name="left_front_steer_col_0">
+      <origin xyz="0.000133135 0.0009297 -0.0170505" rpy="-0.00909716 -0.00061746 1.58958" />
+      <geometry>
+        <box size="0.132003 0.132 0.0050815" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_front_steer_shape1">
+    <inertial>
+      <origin xyz="0.00118699 -0.00661511 -0.117559" rpy="0 0 0" />
+      <mass value="1.346572" />
+      <inertia ixx="4.695683e-03" ixy="-1.477740e-05" ixz="3.504656e-05" iyy="5.480552e-03" iyz="3.508972e-06" izz="8.367836e-04" />
+    </inertial>
+    <collision name="left_front_steer_col_1">
+      <origin xyz="0.00118699 -0.00661511 -0.117559" rpy="1.57141 -0.00909716 0.0187855" />
+      <geometry>
+        <box size="0.0850024 0.204003 0.0151239" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_front_steer_shape2">
+    <inertial>
+      <origin xyz="0.000905143 0.00838338 -0.117537" rpy="0 0 0" />
+      <mass value="1.346832" />
+      <inertia ixx="4.696920e-03" ixy="-1.477799e-05" ixz="3.505602e-05" iyy="5.481934e-03" iyz="3.522114e-06" izz="8.369509e-04" />
+    </inertial>
+    <collision name="left_front_steer_col_2">
+      <origin xyz="0.000905143 0.00838338 -0.117537" rpy="1.57018 0.00909716 -3.12281" />
+      <geometry>
+        <box size="0.0850024 0.20401 0.0151263" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_front_steer_shape3">
+    <inertial>
+      <origin xyz="1.05751e-05 0.0009346 -0.00355788" rpy="0 0 0" />
+      <mass value="2.349551" />
+      <inertia ixx="4.156386e-03" ixy="1.024759e-07" ixz="-3.598200e-05" iyy="4.152118e-03" iyz="-3.124563e-06" izz="8.117003e-03" />
+    </inertial>
+    <collision name="left_front_steer_col_3">
+      <origin xyz="1.05751e-05 0.0009346 -0.00355788" rpy="-0.00909716 -0.00061746 1.58958" />
+      <geometry>
+        <box size="0.144011 0.143941 0.0220753" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_front_steer">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002425" />
+      <inertia ixx="1.616434e-07" ixy="0.000000e+00" ixz="0.000000e+00" iyy="1.616434e-07" iyz="0.000000e+00" izz="1.616434e-07" />
+    </inertial>
+    <visual name="right_front_steer_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_front_steer.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_front_steer_mat">
+        <color rgba="0.72 0.55 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_front_steer_shape0">
+    <inertial>
+      <origin xyz="-0.000574477 -0.000979378 -0.0173313" rpy="0 0 0" />
+      <mass value="0.454602" />
+      <inertia ixx="6.618033e-04" ixy="-5.623611e-10" ixz="2.164203e-05" iyy="6.610613e-04" iyz="5.181743e-11" izz="1.319487e-03" />
+    </inertial>
+    <collision name="right_front_steer_col_0">
+      <origin xyz="-0.000574477 -0.000979378 -0.0173313" rpy="-0.0328533 -0.000617451 -1.58958" />
+      <geometry>
+        <box size="0.132003 0.132 0.00508146" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_front_steer_shape1">
+    <inertial>
+      <origin xyz="-0.00373527 0.0063949 -0.117777" rpy="0 0 0" />
+      <mass value="1.346852" />
+      <inertia ixx="4.693127e-03" ixy="1.476241e-05" ixz="-1.267658e-04" iyy="5.482036e-03" iyz="-4.635300e-07" izz="8.408151e-04" />
+    </inertial>
+    <collision name="right_front_steer_col_1">
+      <origin xyz="-0.00373527 0.0063949 -0.117777" rpy="1.57141 -0.0328533 3.12277" />
+      <geometry>
+        <box size="0.0850026 0.20401 0.0151269" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_front_steer_shape2">
+    <inertial>
+      <origin xyz="-0.00401727 -0.00860329 -0.117781" rpy="0 0 0" />
+      <mass value="1.346636" />
+      <inertia ixx="4.692061e-03" ixy="1.476248e-05" ixz="-1.267352e-04" iyy="5.480823e-03" iyz="-4.753404e-07" izz="8.406745e-04" />
+    </inertial>
+    <collision name="right_front_steer_col_2">
+      <origin xyz="-0.00401727 -0.00860329 -0.117781" rpy="1.57018 0.0328533 -0.0188261" />
+      <geometry>
+        <box size="0.0850026 0.204003 0.015125" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_front_steer_shape3">
+    <inertial>
+      <origin xyz="-0.000131172 -0.00096282 -0.00384539" rpy="0 0 0" />
+      <mass value="2.349485" />
+      <inertia ixx="4.160214e-03" ixy="-7.410529e-08" ixz="1.300669e-04" iyy="4.151994e-03" iyz="2.636419e-09" izz="8.112853e-03" />
+    </inertial>
+    <collision name="right_front_steer_col_3">
+      <origin xyz="-0.000131172 -0.00096282 -0.00384539" rpy="-0.0328533 -0.000617451 -1.58958" />
+      <geometry>
+        <box size="0.144011 0.143941 0.0220753" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rear_steer">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002425" />
+      <inertia ixx="1.616448e-07" ixy="0.000000e+00" ixz="0.000000e+00" iyy="1.616448e-07" iyz="0.000000e+00" izz="1.616448e-07" />
+    </inertial>
+    <visual name="left_rear_steer_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_rear_steer.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_rear_steer_mat">
+        <color rgba="0.72 0.55 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_rear_steer_shape0">
+    <inertial>
+      <origin xyz="0.000224648 0.000974058 -0.0170687" rpy="0 0 0" />
+      <mass value="0.454616" />
+      <inertia ixx="6.612054e-04" ixy="6.022082e-09" ixz="-7.832924e-06" iyy="6.610841e-04" iyz="-5.541731e-07" izz="1.320146e-03" />
+    </inertial>
+    <collision name="left_rear_steer_col_0">
+      <origin xyz="0.000224648 0.000974058 -0.0170687" rpy="-0.011867 -0.0010642 1.55199" />
+      <geometry>
+        <box size="0.132003 0.132 0.0050815" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rear_steer_shape1">
+    <inertial>
+      <origin xyz="0.0012781 -0.00656546 -0.117578" rpy="0 0 0" />
+      <mass value="1.346585" />
+      <inertia ixx="4.695497e-03" ixy="1.471516e-05" ixz="4.587865e-05" iyy="5.480605e-03" iyz="4.077666e-06" izz="8.370183e-04" />
+    </inertial>
+    <collision name="left_rear_steer_col_1">
+      <origin xyz="0.0012781 -0.00656546 -0.117578" rpy="1.57186 -0.011867 -0.0188084" />
+      <geometry>
+        <box size="0.0850024 0.204003 0.0151241" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rear_steer_shape2">
+    <inertial>
+      <origin xyz="0.00156008 0.008433 -0.117549" rpy="0 0 0" />
+      <mass value="1.346834" />
+      <inertia ixx="4.696685e-03" ixy="1.472095e-05" ixz="4.589126e-05" iyy="5.481963e-03" iyz="4.090808e-06" izz="8.371831e-04" />
+    </inertial>
+    <collision name="left_rear_steer_col_2">
+      <origin xyz="0.00156008 0.008433 -0.117549" rpy="1.56973 0.011867 3.12278" />
+      <geometry>
+        <box size="0.0850024 0.20401 0.0151264" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_rear_steer_shape3">
+    <inertial>
+      <origin xyz="6.42762e-05 0.000978248 -0.00357644" rpy="0 0 0" />
+      <mass value="2.349540" />
+      <inertia ixx="4.156589e-03" ixy="-3.462042e-08" ixz="-4.707499e-05" iyy="4.152103e-03" iyz="-3.334529e-06" izz="8.116756e-03" />
+    </inertial>
+    <collision name="left_rear_steer_col_3">
+      <origin xyz="6.42762e-05 0.000978248 -0.00357644" rpy="-0.011867 -0.0010642 1.55199" />
+      <geometry>
+        <box size="0.144011 0.143941 0.0220753" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rear_steer">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.002425" />
+      <inertia ixx="1.616447e-07" ixy="0.000000e+00" ixz="0.000000e+00" iyy="1.616447e-07" iyz="0.000000e+00" izz="1.616447e-07" />
+    </inertial>
+    <visual name="right_rear_steer_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_rear_steer.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_rear_steer_mat">
+        <color rgba="0.72 0.55 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_rear_steer_shape0">
+    <inertial>
+      <origin xyz="0.000225243 -0.00133074 -0.0173704" rpy="0 0 0" />
+      <mass value="0.454616" />
+      <inertia ixx="6.612051e-04" ixy="7.150134e-09" ixz="-7.832896e-06" iyy="6.610814e-04" iyz="-5.541898e-07" izz="1.320143e-03" />
+    </inertial>
+    <collision name="right_rear_steer_col_0">
+      <origin xyz="0.000225243 -0.00133074 -0.0173704" rpy="0.0118986 0.000617468 -1.55201" />
+      <geometry>
+        <box size="0.132003 0.132 0.00508149" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rear_steer_shape1">
+    <inertial>
+      <origin xyz="0.00127873 0.0061282 -0.117854" rpy="0 0 0" />
+      <mass value="1.346829" />
+      <inertia ixx="4.696659e-03" ixy="-1.479022e-05" ixz="4.586603e-05" iyy="5.481936e-03" iyz="3.725093e-06" izz="8.371779e-04" />
+    </inertial>
+    <collision name="right_rear_steer_col_1">
+      <origin xyz="0.00127873 0.0061282 -0.117854" rpy="1.57018 0.0118986 -3.12281" />
+      <geometry>
+        <box size="0.0850024 0.20401 0.0151263" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rear_steer_shape2">
+    <inertial>
+      <origin xyz="0.0015606 -0.00887025 -0.117876" rpy="0 0 0" />
+      <mass value="1.346587" />
+      <inertia ixx="4.695494e-03" ixy="-1.478981e-05" ixz="4.585415e-05" iyy="5.480627e-03" iyz="3.711951e-06" izz="8.370179e-04" />
+    </inertial>
+    <collision name="right_rear_steer_col_2">
+      <origin xyz="0.0015606 -0.00887025 -0.117876" rpy="1.57141 -0.0118986 0.0187855" />
+      <geometry>
+        <box size="0.0850024 0.204003 0.0151241" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="right_rear_steer_shape3">
+    <inertial>
+      <origin xyz="6.48711e-05 -0.00132552 -0.00387814" rpy="0 0 0" />
+      <mass value="2.349544" />
+      <inertia ixx="4.156612e-03" ixy="1.137088e-07" ixz="-4.707472e-05" iyy="4.152102e-03" iyz="-3.332951e-06" izz="8.116752e-03" />
+    </inertial>
+    <collision name="right_rear_steer_col_3">
+      <origin xyz="6.48711e-05 -0.00132552 -0.00387814" rpy="0.0118986 0.000617468 -1.55201" />
+      <geometry>
+        <box size="0.144011 0.143941 0.0220753" />
+      </geometry>
+        <contact><lateral_friction value="0.6"/></contact>
+    </collision>
+  </link>
+  <link name="left_front_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="12.75" />
+      <inertia ixx="0.099225" ixy="0" ixz="0" iyy="0.168962" iyz="0" izz="0.099225" />
+    </inertial>
+    <collision name="left_front_wheel_col_1">
+      <origin xyz="-0.00073418 0.0274896 -0.000317404" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.162697" length="0.20" />
+      </geometry>
+    </collision>
+    <visual name="left_front_wheel_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_front_wheel.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_front_wheel_mat">
+        <color rgba="0.12 0.12 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_front_wheel_shape0">
+    <inertial><origin xyz="0 0 0"/><mass value="0.001"/><inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/></inertial>
+    </link>
+  <link name="left_middle_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="12.75" />
+      <inertia ixx="0.099225" ixy="0" ixz="0" iyy="0.168962" iyz="0" izz="0.099225" />
+    </inertial>
+    <collision name="left_middle_wheel_col_1">
+      <origin xyz="-0.00252804 0.0274609 0.00067437" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.16278" length="0.20" />
+      </geometry>
+    </collision>
+    <visual name="left_middle_wheel_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_middle_wheel.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_middle_wheel_mat">
+        <color rgba="0.12 0.12 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_middle_wheel_shape0">
+    <inertial><origin xyz="0 0 0"/><mass value="0.001"/><inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/></inertial>
+    </link>
+  <link name="left_rear_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="12.75" />
+      <inertia ixx="0.099225" ixy="0" ixz="0" iyy="0.168962" iyz="0" izz="0.099225" />
+    </inertial>
+    <collision name="left_rear_wheel_col_1">
+      <origin xyz="0.00236743 0.0274594 0.000479388" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.162856" length="0.20" />
+      </geometry>
+    </collision>
+    <visual name="left_rear_wheel_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/left_rear_wheel.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_rear_wheel_mat">
+        <color rgba="0.12 0.12 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_rear_wheel_shape0">
+    <inertial><origin xyz="0 0 0"/><mass value="0.001"/><inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/></inertial>
+    </link>
+  <link name="right_front_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="12.75" />
+      <inertia ixx="0.099225" ixy="0" ixz="0" iyy="0.168962" iyz="0" izz="0.099225" />
+    </inertial>
+    <collision name="right_front_wheel_col_1">
+      <origin xyz="-0.00248997 -0.0274594 0.000537965" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.162853" length="0.20" />
+      </geometry>
+    </collision>
+    <visual name="right_front_wheel_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_front_wheel.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_front_wheel_mat">
+        <color rgba="0.12 0.12 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_front_wheel_shape0">
+    <inertial><origin xyz="0 0 0"/><mass value="0.001"/><inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/></inertial>
+    </link>
+  <link name="right_middle_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="12.75" />
+      <inertia ixx="0.099225" ixy="0" ixz="0" iyy="0.168962" iyz="0" izz="0.099225" />
+    </inertial>
+    <collision name="right_middle_wheel_col_1">
+      <origin xyz="0.00252487 -0.0274742 -0.000460387" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.162782" length="0.20" />
+      </geometry>
+    </collision>
+    <visual name="right_middle_wheel_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_middle_wheel.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_middle_wheel_mat">
+        <color rgba="0.12 0.12 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_middle_wheel_shape0">
+    <inertial><origin xyz="0 0 0"/><mass value="0.001"/><inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/></inertial>
+    </link>
+  <link name="right_rear_wheel">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="12.75" />
+      <inertia ixx="0.099225" ixy="0" ixz="0" iyy="0.168962" iyz="0" izz="0.099225" />
+    </inertial>
+    <collision name="right_rear_wheel_col_1">
+      <origin xyz="0.000717171 -0.0275267 -0.000193819" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.162699" length="0.20" />
+      </geometry>
+    </collision>
+    <visual name="right_rear_wheel_vis">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../meshes/right_rear_wheel.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_rear_wheel_mat">
+        <color rgba="0.12 0.12 0.12 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_rear_wheel_shape0">
+    <inertial><origin xyz="0 0 0"/><mass value="0.001"/><inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/></inertial>
+    </link>
+  <joint name="left_rocker_joint" type="revolute">
+    <origin xyz="0.34304439 0.244963 0.013878805" rpy="0 0.018 0" />
+    <parent link="base_link" />
+    <child link="left_rocker" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="1.57" lower="-1.5708" upper="0.3491" />
+    <dynamics damping="1.911" friction="1.2" />
+  </joint>
+  <joint name="left_front_steer_joint" type="revolute">
+    <origin xyz="0.324636 0.0050466 -0.181934" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_front_steer" />
+    <axis xyz="0 0 1" />
+    <limit effort="40" velocity="3.1416" lower="-1.5708" upper="1.5708" />
+    <dynamics damping="0.637" friction="0.8" />
+  </joint>
+  <joint name="left_front_wheel_joint" type="continuous">
+    <origin xyz="0.000258505 0.0763287 -0.194654" rpy="0 0 0" />
+    <parent link="left_front_steer" />
+    <child link="left_front_wheel" />
+    <axis xyz="0 1 0" />
+    <limit effort="50" velocity="52.359878" />
+    <dynamics damping="0.0477" friction="1" />
+  </joint>
+  <joint name="left_rear_steer_joint" type="revolute">
+    <origin xyz="-0.68768416 0.218398 -0.17409429" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="left_rear_steer" />
+    <axis xyz="0 0 1" />
+    <limit effort="40" velocity="3.1416" lower="-1.5708" upper="1.5708" />
+    <dynamics damping="0.637" friction="0.8" />
+  </joint>
+  <joint name="left_rear_wheel_joint" type="continuous">
+    <origin xyz="0.00366725 0.0763418 -0.194614" rpy="0 0 0" />
+    <parent link="left_rear_steer" />
+    <child link="left_rear_wheel" />
+    <axis xyz="0 1 0" />
+    <limit effort="50" velocity="52.359878" />
+    <dynamics damping="0.0477" friction="1" />
+  </joint>
+  <joint name="left_middle_wheel_joint" type="continuous">
+    <origin xyz="-0.32044 0.0734287 -0.388533" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_middle_wheel" />
+    <axis xyz="0 1 0" />
+    <limit effort="50" velocity="52.359878" />
+    <dynamics damping="0.0477" friction="1" />
+  </joint>
+  <joint name="right_rocker_joint" type="revolute">
+    <origin xyz="0.34304439 -0.244963 0.013878805" rpy="0 0.018 0" />
+    <parent link="base_link" />
+    <child link="right_rocker" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" velocity="1.57" lower="-1.5708" upper="0.3491" />
+    <dynamics damping="1.911" friction="1.2" />
+  </joint>
+  <joint name="right_front_steer_joint" type="revolute">
+    <origin xyz="0.324636 -0.0050466 -0.181934" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_front_steer" />
+    <axis xyz="0 0 1" />
+    <limit effort="40" velocity="3.1416" lower="-1.5708" upper="1.5708" />
+    <dynamics damping="0.637" friction="0.8" />
+  </joint>
+  <joint name="right_front_wheel_joint" type="continuous">
+    <origin xyz="-0.00773773 -0.0757521 -0.194545" rpy="0 0 0" />
+    <parent link="right_front_steer" />
+    <child link="right_front_wheel" />
+    <axis xyz="0 1 0" />
+    <limit effort="50" velocity="52.359878" />
+    <dynamics damping="0.0477" friction="1" />
+  </joint>
+  <joint name="right_rear_steer_joint" type="revolute">
+    <origin xyz="-0.68768416 -0.218398 -0.17409429" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="right_rear_steer" />
+    <axis xyz="0 0 1" />
+    <limit effort="40" velocity="3.1416" lower="-1.5708" upper="1.5708" />
+    <dynamics damping="0.637" friction="0.8" />
+  </joint>
+  <joint name="right_rear_wheel_joint" type="continuous">
+    <origin xyz="0.00382197 -0.0760117 -0.194742" rpy="0 0 0" />
+    <parent link="right_rear_steer" />
+    <child link="right_rear_wheel" />
+    <axis xyz="0 1 0" />
+    <limit effort="50" velocity="52.359878" />
+    <dynamics damping="0.0477" friction="1" />
+  </joint>
+  <joint name="right_middle_wheel_joint" type="continuous">
+    <origin xyz="-0.32044 -0.0734287 -0.388533" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_middle_wheel" />
+    <axis xyz="0 1 0" />
+    <limit effort="50" velocity="52.359878" />
+    <dynamics damping="0.0477" friction="1" />
+  </joint>
+  <joint name="base_link_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape0" />
+  </joint>
+  <joint name="base_link_shape1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape1" />
+  </joint>
+  <joint name="base_link_shape2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape2" />
+  </joint>
+  <joint name="base_link_shape3_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape3" />
+  </joint>
+  <joint name="base_link_shape4_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape4" />
+  </joint>
+  <joint name="base_link_shape5_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape5" />
+  </joint>
+  <joint name="base_link_shape6_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape6" />
+  </joint>
+  <joint name="base_link_shape7_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape7" />
+  </joint>
+  <joint name="base_link_shape8_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape8" />
+  </joint>
+  <joint name="base_link_shape9_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape9" />
+  </joint>
+  <joint name="base_link_shape10_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape10" />
+  </joint>
+  <joint name="base_link_shape11_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape11" />
+  </joint>
+  <joint name="base_link_shape12_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape12" />
+  </joint>
+  <joint name="base_link_shape13_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape13" />
+  </joint>
+  <joint name="base_link_shape14_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape14" />
+  </joint>
+  <joint name="base_link_shape15_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape15" />
+  </joint>
+  <joint name="base_link_shape16_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape16" />
+  </joint>
+  <joint name="base_link_shape17_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape17" />
+  </joint>
+  <joint name="base_link_shape18_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape18" />
+  </joint>
+  <joint name="base_link_shape19_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape19" />
+  </joint>
+  <joint name="base_link_shape20_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape20" />
+  </joint>
+  <joint name="base_link_shape21_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape21" />
+  </joint>
+  <joint name="base_link_shape22_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape22" />
+  </joint>
+  <joint name="base_link_shape23_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape23" />
+  </joint>
+  <joint name="base_link_shape24_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape24" />
+  </joint>
+  <joint name="base_link_shape25_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape25" />
+  </joint>
+  <joint name="base_link_shape26_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape26" />
+  </joint>
+  <joint name="base_link_shape27_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape27" />
+  </joint>
+  <joint name="base_link_shape28_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape28" />
+  </joint>
+  <joint name="base_link_shape29_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0.04 0" />
+    <parent link="base_link" />
+    <child link="base_link_shape29" />
+  </joint>
+  <joint name="left_rocker_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape0" />
+  </joint>
+  <joint name="left_rocker_shape1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape1" />
+  </joint>
+  <joint name="left_rocker_shape2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape2" />
+  </joint>
+  <joint name="left_rocker_shape3_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape3" />
+  </joint>
+  <joint name="left_rocker_shape4_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape4" />
+  </joint>
+  <joint name="left_rocker_shape5_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape5" />
+  </joint>
+  <joint name="left_rocker_shape6_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape6" />
+  </joint>
+  <joint name="left_rocker_shape7_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape7" />
+  </joint>
+  <joint name="left_rocker_shape8_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape8" />
+  </joint>
+  <joint name="left_rocker_shape9_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape9" />
+  </joint>
+  <joint name="left_rocker_shape10_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape10" />
+  </joint>
+  <joint name="left_rocker_shape11_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape11" />
+  </joint>
+  <joint name="left_rocker_shape12_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape12" />
+  </joint>
+  <joint name="left_rocker_shape13_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape13" />
+  </joint>
+  <joint name="left_rocker_shape14_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rocker" />
+    <child link="left_rocker_shape14" />
+  </joint>
+  <joint name="right_rocker_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape0" />
+  </joint>
+  <joint name="right_rocker_shape1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape1" />
+  </joint>
+  <joint name="right_rocker_shape2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape2" />
+  </joint>
+  <joint name="right_rocker_shape3_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape3" />
+  </joint>
+  <joint name="right_rocker_shape4_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape4" />
+  </joint>
+  <joint name="right_rocker_shape5_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape5" />
+  </joint>
+  <joint name="right_rocker_shape6_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape6" />
+  </joint>
+  <joint name="right_rocker_shape7_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape7" />
+  </joint>
+  <joint name="right_rocker_shape8_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape8" />
+  </joint>
+  <joint name="right_rocker_shape9_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape9" />
+  </joint>
+  <joint name="right_rocker_shape10_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape10" />
+  </joint>
+  <joint name="right_rocker_shape11_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape11" />
+  </joint>
+  <joint name="right_rocker_shape12_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape12" />
+  </joint>
+  <joint name="right_rocker_shape13_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape13" />
+  </joint>
+  <joint name="right_rocker_shape14_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rocker" />
+    <child link="right_rocker_shape14" />
+  </joint>
+  <joint name="left_front_steer_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_front_steer" />
+    <child link="left_front_steer_shape0" />
+  </joint>
+  <joint name="left_front_steer_shape1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_front_steer" />
+    <child link="left_front_steer_shape1" />
+  </joint>
+  <joint name="left_front_steer_shape2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_front_steer" />
+    <child link="left_front_steer_shape2" />
+  </joint>
+  <joint name="left_front_steer_shape3_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_front_steer" />
+    <child link="left_front_steer_shape3" />
+  </joint>
+  <joint name="right_front_steer_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_front_steer" />
+    <child link="right_front_steer_shape0" />
+  </joint>
+  <joint name="right_front_steer_shape1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_front_steer" />
+    <child link="right_front_steer_shape1" />
+  </joint>
+  <joint name="right_front_steer_shape2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_front_steer" />
+    <child link="right_front_steer_shape2" />
+  </joint>
+  <joint name="right_front_steer_shape3_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_front_steer" />
+    <child link="right_front_steer_shape3" />
+  </joint>
+  <joint name="left_rear_steer_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rear_steer" />
+    <child link="left_rear_steer_shape0" />
+  </joint>
+  <joint name="left_rear_steer_shape1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rear_steer" />
+    <child link="left_rear_steer_shape1" />
+  </joint>
+  <joint name="left_rear_steer_shape2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rear_steer" />
+    <child link="left_rear_steer_shape2" />
+  </joint>
+  <joint name="left_rear_steer_shape3_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rear_steer" />
+    <child link="left_rear_steer_shape3" />
+  </joint>
+  <joint name="right_rear_steer_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rear_steer" />
+    <child link="right_rear_steer_shape0" />
+  </joint>
+  <joint name="right_rear_steer_shape1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rear_steer" />
+    <child link="right_rear_steer_shape1" />
+  </joint>
+  <joint name="right_rear_steer_shape2_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rear_steer" />
+    <child link="right_rear_steer_shape2" />
+  </joint>
+  <joint name="right_rear_steer_shape3_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rear_steer" />
+    <child link="right_rear_steer_shape3" />
+  </joint>
+  <joint name="left_front_wheel_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_front_wheel" />
+    <child link="left_front_wheel_shape0" />
+  </joint>
+  <joint name="left_middle_wheel_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_middle_wheel" />
+    <child link="left_middle_wheel_shape0" />
+  </joint>
+  <joint name="left_rear_wheel_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_rear_wheel" />
+    <child link="left_rear_wheel_shape0" />
+  </joint>
+  <joint name="right_front_wheel_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_front_wheel" />
+    <child link="right_front_wheel_shape0" />
+  </joint>
+  <joint name="right_middle_wheel_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_middle_wheel" />
+    <child link="right_middle_wheel_shape0" />
+  </joint>
+  <joint name="right_rear_wheel_shape0_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_rear_wheel" />
+    <child link="right_rear_wheel_shape0" />
+  </joint>
+</robot>
