@@ -4,7 +4,6 @@
   "date": "2026-11-11",
   "default_branch": "wzy",
   "initial_repository_state": "empty",
-  "remote_upload": "zc_cxm_branches_uploaded_prior_to_latest_simplification_check_remote_head",
   "worktrees": [
     {
       "person": "zc",
@@ -33,10 +32,10 @@
     "artifact_inventory_records": 1968
   },
   "remote_default_branch_observed": "wzy",
-  "temporary_transport": {
-    "branch": "delivery/transport-20261111",
-    "purpose": "earlier_delivery_transfer"
-  },
   "coordination": "two_worktrees_only",
-  "default_branch_status": "wzy_contains_incomplete_earlier_transport_content"
+  "branches": [
+    "wzy",
+    "zc/stairs-15-20",
+    "cxm/stairs-15-20"
+  ]
 }

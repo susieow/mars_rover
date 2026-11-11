@@ -151,7 +151,7 @@ Git收录源码、原模型/视觉网格、冻结的诊断源码和JSON结论、
 | zc | `/home/agilex/wzy/worktrees/rover-zc` | [zc/stairs-15-20](https://github.com/susieow/mars_rover/tree/zc/stairs-15-20) |
 | cxm | `/home/agilex/wzy/worktrees/rover-cxm` | [cxm/stairs-15-20](https://github.com/susieow/mars_rover/tree/cxm/stairs-15-20) |
 
-GitHub 保存的是分支；上面的工作树目录位于 AGX。GitHub 默认分支 `wzy` 仍是不完整的旧版本，请使用各自的分支。
+GitHub 保存的是分支；上面的工作树目录位于 AGX，默认分支为 `wzy`。
 
 ## 10. 建议继续工作的顺序（尚未验证）
 
