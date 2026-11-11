@@ -1,0 +1,115 @@
+{
+  "completed": 32,
+  "primary_conditions": 32,
+  "new_action_conditions": 28,
+  "controls": 4,
+  "process_valid": 19,
+  "speed_violation_cases": 12,
+  "sustained_crossing": 1,
+  "platform": 0,
+  "unique_actual_control_sequences": 32,
+  "full_route": "not_evaluated",
+  "dataset_accepted": 0,
+  "at_time_limit": 31,
+  "total_continuation_simulation_s": 931.511,
+  "checkpoint_rebuilds": 1,
+  "restore_reference_continuations": 2,
+  "execution_errors": 0,
+  "refinement": {
+    "selected": [],
+    "reason": "not requested"
+  },
+  "experiment_status": "completed_stopped",
+  "media_ready": 32,
+  "frontend_validation_passed": true,
+  "height_cm": 20,
+  "depth_cm": 20,
+  "ascending_steps": 15,
+  "intervention_s": 22,
+  "rocker_target_range_deg": [
+    -20,
+    20
+  ],
+  "rocker_target_rate_deg_s": 20,
+  "rocker_period_s": 8,
+  "rocker_cycles": 3,
+  "control_dt_s": 0.001,
+  "physical_dt_s": 0.001,
+  "previous_neutral_controls_reused": 8,
+  "attempted_case_count": 32,
+  "additional_prefix_replay": 1,
+  "additional_restore_validation_rollouts": 2,
+  "previous_unrestricted_diagnostic_used": false,
+  "complete_route_success_rate": "not_evaluated",
+  "failure_reason_case_counts": {
+    "joint_velocity_limit:right_front_steer_joint": 4,
+    "joint_velocity_limit:left_front_steer_joint": 7,
+    "joint_velocity_limit:left_rear_steer_joint": 4,
+    "joint_velocity_limit:right_rear_steer_joint": 4,
+    "joint_velocity_limit:left_rocker_joint": 2,
+    "joint_velocity_limit:right_rocker_joint": 1,
+    "contact_penetration_over_20mm": 1
+  },
+  "best_local_progress": {
+    "id": "T22_WMR_RSP_dt1000us",
+    "wheel_groups": "middle and rear 3 to 6 rad/s; front 3 rad/s",
+    "rocker": "both same direction, positive first",
+    "process_valid": false,
+    "process_reasons": [
+      "joint_velocity_limit:left_rocker_joint",
+      "joint_velocity_limit:left_rear_steer_joint",
+      "joint_velocity_limit:right_rocker_joint",
+      "joint_velocity_limit:right_rear_steer_joint"
+    ],
+    "first_violation_s": 28.512000000011863,
+    "first_sustained_crossing_s": 31.8150000000159,
+    "max_continuous_geometry_crossing_s": 9.144000000000371,
+    "total_both_rear_supported_s": 2.531999999999832,
+    "rear_retained_level_final_1s": 0,
+    "max_body_advance_m": 0.35101862664611816,
+    "final_body_advance_m": 6.58762421947845e-05,
+    "platform": false,
+    "prior_10deg_same_case_max_body_advance_m": 0.0028515037931116094,
+    "prior_10deg_same_case_sustained_crossing": false,
+    "comparison_caveat": "Rocker target amplitude and target rate both changed; 10 to 20 deg/s due to same segment timing."
+  },
+  "frontend": "http://127.0.0.1:8701/recovery20amp20?case=T22_WMR_RSP_dt1000us",
+  "gate": {
+    "parent_state_max_abs": 0.0,
+    "parent_control_max_abs": 0.0,
+    "parent_actuator_max_abs": 0.0,
+    "uninterrupted_state_max_abs": 0.0,
+    "uninterrupted_control_max_abs": 0.0,
+    "uninterrupted_actuator_max_abs": 0.0,
+    "audit_equal": true,
+    "route_equal": true,
+    "passed": true,
+    "checkpoint_id": "7818f5fdf5622d63500cda1219d8cb7ea1333de82e3236227ce520cb5bc20058",
+    "duration_s": 30.0,
+    "reference": "uninterrupted_and_original_22_to_52"
+  },
+  "verification": {
+    "passed": true,
+    "checked": 32,
+    "failures": [],
+    "checks": [
+      "parent checkpoint and source hashes",
+      "start state and timing",
+      "commands and force limits",
+      "raw velocity events and audit peaks",
+      "sustained rear crossing",
+      "video hash, frames and time",
+      "12-joint curves with retained speed extrema"
+    ],
+    "additional_physics_trials": 0
+  },
+  "frontend_validation": {
+    "passed": true,
+    "cases_checked": 32,
+    "checks": [
+      "video, curves, result and trajectory HEAD",
+      "video range GET"
+    ],
+    "failures": []
+  }
+}
