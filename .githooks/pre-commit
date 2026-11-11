@@ -1,5 +1,0 @@
-#!/bin/sh
-branch=$(git symbolic-ref --quiet --short HEAD) || exit 1
-case "$branch" in
-  main|master) echo "Direct main/master commits are blocked. Use a work branch and request wzy approval." >&2; exit 1 ;;
-esac

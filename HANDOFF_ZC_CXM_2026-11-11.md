@@ -144,32 +144,14 @@ Git收录源码、原模型/视觉网格、冻结的诊断源码和JSON结论、
 
 `review_v4`内冻结脚本保留原绝对路径和原始来源，用于证据追溯；不要从工作树直接执行旧搜索脚本，以免写回原目录。新的试验在本人工作树里新建独立目录与记录程序。
 
-## 9. zc / cxm工作树与合并约定
+## 9. zc / cxm 工作树地址
 
-|同事|工作树（AGX）|工作分支|
+| 同事 | AGX 上的本地工作树 | GitHub 远端分支 |
 |---|---|---|
-|zc|`/home/agilex/wzy/worktrees/rover-zc`|`zc/stairs-15-20`|
-|cxm|`/home/agilex/wzy/worktrees/rover-cxm`|`cxm/stairs-15-20`|
+| zc | `/home/agilex/wzy/worktrees/rover-zc` | [zc/stairs-15-20](https://github.com/susieow/mars_rover/tree/zc/stairs-15-20) |
+| cxm | `/home/agilex/wzy/worktrees/rover-cxm` | [cxm/stairs-15-20](https://github.com/susieow/mars_rover/tree/cxm/stairs-15-20) |
 
-两人均只允许15/20 cm；不强行按高度分工，可自行在各自分支探索。共享原始证据只读；新数据/视频/日志分别写入各自工作树的`runs/`。工作树共用Git对象库，但有独立分支与文件；不是权限隔离沙箱。
-
-在本人工作树先运行下列命令检查计划（**dry-run不运行动力学**）：
-
-```bash
-cd /home/agilex/wzy/worktrees/rover-zc
-/home/agilex/wzy/rover/.venv/bin/python -B tools/run_allowed_case.py --height-cm 15 --name zc_h15_001 --dry-run
-/home/agilex/wzy/rover/.venv/bin/python -B tools/run_allowed_case.py --height-cm 20 --name zc_h20_001 --dry-run
-```
-
-cxm将目录及name前缀改为自己的。确认自己的控制改动、数据记录和输出目录后去掉`--dry-run`才会运行；当前正式控制器尚未证明能完成15/20 cm路线，此入口不能被当成成功保证。封装入口拒绝其他高度，并固定15级。已有冻结backend仅作为理解控制与重放的数据来源。
-
-协作必须遵循：
-1. 只在本人分支提交和推送；不直接push/merge到main、不强推、不改已有证据。
-2. 通过PR提交，并附参数、模型/源码哈希、全部尝试分母、失败原因、完整视频、审核和独立重放结果。
-3. **必须得到wzy在该PR最新版本上的明确批准后才能合并主分支。** 新提交后旧批准应失效；禁止自行打开自动合并。
-4. GitHub需要启用main分支保护、要求PR及代码所有者审核，代码所有者为`@susieow`。交付时实际配置状态以`docs/git_delivery_status.json`为准，不能把文档要求误认为服务端已生效。
-5. 本地hooks只是防误操作；同一AGX账号或Git管理员可绕过它，不能替代GitHub服务端权限。GitHub协作者身份与权限须由wzy管理；“zc/cxm”是工作目录标签，不是已确认的GitHub用户名。
-6. 初始已授权交付基线可以上传空仓库；此后的同事改动都遵守上述审批流程。
+GitHub 保存的是分支；上面的工作树目录位于 AGX，默认分支为 `wzy`。
 
 ## 10. 建议继续工作的顺序（尚未验证）
 
@@ -181,6 +163,6 @@ cxm将目录及name前缀改为自己的。确认自己的控制改动、数据�
 
 ## 11. 本次交付的软件验证
 
-34项既有controller/course/dataset测试通过。两个工作树分别检查15/20 cm dry-run成功，4/10/12/17/18 cm均拒绝，主分支运行入口拒绝；检查没有生成runs轨迹。原模型、控制器与冻结backend/scene哈希不变，已有场景的visual渲染模型静态编译成功，未执行mj_step。原始大文件清单包含1968项。
+34项既有controller/course/dataset测试通过。两个工作树分别检查15/20 cm dry-run成功，4/10/12/17/18 cm均拒绝；检查没有生成runs轨迹。原模型、控制器与冻结backend/scene哈希不变，已有场景的visual渲染模型静态编译成功，未执行mj_step。原始大文件清单包含1968项。
 
 为协作仅修改活动生成/发布/渲染脚本的路径解析：数据默认在当前仓库datasets/45deg_v3，视频默认在当前仓库runs/videos；封装入口用ROVER_DATASET_ROOT和ROVER_VIDEO_ROOT指定每次运行独立目录。视觉OBJ改为仓库内定位，继续核对来源和输出SHA-256。历史冻结脚本与媒体不改；在用网页仍引用原媒体目录。

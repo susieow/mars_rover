@@ -2,9 +2,8 @@
   "repository": "https://github.com/susieow/mars_rover.git",
   "owner": "susieow",
   "date": "2026-11-11",
-  "default_branch": "main",
+  "default_branch": "wzy",
   "initial_repository_state": "empty",
-  "remote_upload": "pending",
   "worktrees": [
     {
       "person": "zc",
@@ -21,18 +20,22 @@
     15,
     20
   ],
-  "required_approver": "susieow",
-  "github_branch_protection": "not_configured_settings_page_ERR_CONNECTION_CLOSED",
-  "local_hooks": "installed_and_tested_local_deterrent_only",
+  "local_hooks": "removed",
   "collaborator_github_accounts": "not_provided_no_invitations_sent",
   "new_simulation_executed": false,
   "worktrees_created": true,
   "validation": {
     "unit_tests_passed": 34,
     "worktree_height_checks_passed": 14,
-    "main_run_rejected": true,
     "frozen_hashes_unchanged": true,
     "stored_scene_visual_compile": true,
     "artifact_inventory_records": 1968
-  }
+  },
+  "remote_default_branch_observed": "wzy",
+  "coordination": "two_worktrees_only",
+  "branches": [
+    "wzy",
+    "zc/stairs-15-20",
+    "cxm/stairs-15-20"
+  ]
 }
