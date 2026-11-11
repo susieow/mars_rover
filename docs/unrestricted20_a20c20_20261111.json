@@ -1,0 +1,70 @@
+{
+  "case_id": "A20_C20_unrestricted_after_33975_dt0250us",
+  "status": "diagnostic_complete",
+  "description": "The original A20_C20_dt0250us is replayed exactly through 3.3975 seconds; afterward quality and route violations are recorded without stopping, controller torque clipping and actuator and joint actuator-force limits are disabled. Mechanical joint constraints, contact, controller speed targets and rates remain.",
+  "prefix_gate": {
+    "passed": true,
+    "switch_step": 13590,
+    "switch_time_s": 3.397499999999477,
+    "max_abs_errors": {
+      "time": 0.0,
+      "qpos": 0.0,
+      "qvel": 0.0,
+      "ctrl": 0.0,
+      "qfrc_actuator": 0.0
+    },
+    "parent_trajectory_sha256": "719631e599c6e24bc692eb7c4b87d631ec1eea15382c224399c32fb471d31940"
+  },
+  "duration_s": 30.000000000052232,
+  "termination_reason": "simulation_time_limit_30s",
+  "physics_dt_s": 0.00025,
+  "peak_actuator_force_nm": {
+    "wheel": 960.5226328721192,
+    "steer": 715.0889522965201,
+    "rocker": 893.9066659755707
+  },
+  "max_joint_limit_error_deg": 1.847999873282791,
+  "max_contact_penetration_m": 0.03625284930399182,
+  "max_roll_deg": 179.99943461669662,
+  "max_pitch_deg": 63.14386012709916,
+  "ascent_platform_support": false,
+  "full_route_evaluated": false,
+  "dataset_accepted": false,
+  "source_sha256": "0629aeb0b9f51433afba39d80e53de936f0c64ff674387165b13a401d89b9663",
+  "trajectory_sha256": "ed506adf4dfb89e8ebf27d62a5a731e56e9ab3658522bbdae6b7021a436c0bd1",
+  "video": {
+    "id": "A20_C20_unrestricted_after_33975_dt0250us",
+    "render_status": "complete",
+    "video_path": "/home/agilex/wzy/videos/review_high_stairs/unrestricted20_a20c20_20261111/A20_C20_unrestricted_after_33975_dt0250us.mp4",
+    "video_sha256": "52a5888ee2c82824a6efacd957370cbb624973857b95b1f5d02fbe47f831f543",
+    "render_source": "original_recorded_state",
+    "scene_sha256": "ff3c4fac90325b5b85f41867a833212e31455d46ce67e09f7e04c2ca0b337cd8",
+    "trajectory_sha256": "ed506adf4dfb89e8ebf27d62a5a731e56e9ab3658522bbdae6b7021a436c0bd1",
+    "frames": 601,
+    "fps": 20,
+    "duration_s": 30.000000000052232,
+    "first_time_s": 0.0,
+    "last_time_s": 30.000000000052232,
+    "max_sample_error_s": 5.2231996505724965e-11,
+    "visual_mode": "original_urdf_visual_meshes_only",
+    "render_scene_sha256": "c76e70c3ef851a55ddcccdc0e1508e8e0adfca87501eb39822c11c2a80676672"
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "outcome": "script NameError after prefix, no post-switch physics"
+    },
+    {
+      "number": 2,
+      "outcome": "host reboot after observed 25 seconds, no complete trajectory"
+    },
+    {
+      "number": 3,
+      "outcome": "30 seconds, invalid for requested no-torque-cap condition because joint actuator-force limits remained enabled"
+    },
+    {
+      "number": 4,
+      "outcome": "30 seconds, controller and both actuator and joint force clamps disabled"
+    }
+  ]
+}
