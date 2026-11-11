@@ -6,12 +6,10 @@
 - 上楼/局部越阶可作阶段进展；只有完整路线完成并正常停稳、审核和独立重放及视频审核通过才是成功经验。
 - 不通过放宽穿透、接触、姿态、力矩、速度或终态要求来接纳数据。
 
-## 分支与批准
+## 工作树
 - zc在zc/stairs-15-20，cxm在cxm/stairs-15-20；两个worktree有独立文件及runs输出。
-- 不直接提交、推送、合并wzy（以及旧名main/master），不强推，不自行开启auto-merge。
-- 所有改动经PR；必须由wzy（@susieow）明确批准最新提交后才可合并。新提交需重新确认。
-- CODEOWNERS、本地hooks不是独立的权限保障；服务端状态见docs/git_delivery_status.json。
-- 不共享wzy的密码/私钥/token。zc/cxm各用自己的GitHub账号与凭据；邀请协作者需负责人指定账号。
+- 两人各自在本人工作树中操作；共享原始证据只读。
+- 不共享账号凭据。zc/cxm的GitHub账号尚未确认，未发送邀请。
 
 ## 证据与路径
 - 先读HANDOFF_ZC_CXM_2026-11-11.md。旧DELIVERY_45DEG.md仅作历史参考。
