@@ -1,72 +1,67 @@
 {
   "status": "planned_not_started",
-  "baseline_commit": "dd43d2a",
+  "plan_version": 2,
+  "baseline_commit": "46cda0a",
   "experiment_id": "urdf_slope",
+  "plan_doc": "docs/urdf_slope_plan_v2.md",
   "urdf_sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
   "height_m": 0.2,
   "steps": 15,
   "total_rise_m": 3,
   "friction": {
     "robot_slide": 0.6,
-    "stairs_slide": [
-      4,
-      6,
-      8
-    ],
+    "robot_slide_note": "76 non-wheel collisions declare 0.6 in URDF; 6 wheel collisions have no contact element; user requires 0.6 on wheels; compiler default is 1.0",
+    "stairs_slide": [4, 6, 8],
     "mixing": "default_mujoco_same_priority_max",
+    "effective_wheel_stair": [4, 6, 8],
+    "effective_note": "0.6 never determines a contact because all terrain values are larger",
     "confirmed_by_user": true
   },
-  "coarse_angles_deg": [
-    15,
-    25,
-    35,
-    45
+  "gates": [
+    "P0_model_compliance",
+    "P1_model_delta_control",
+    "P2_single_step_mount",
+    "P3_penetration_baseline"
   ],
+  "coarse_angles_deg": [15, 25, 35, 45],
+  "first_batch_angles_deg": [15, 45],
+  "rocker_amplitudes_deg": [18, 20],
   "coarse_controller": {
     "wheel_base_rad_s": 3,
     "trigger": "first_front_stair_contact",
-    "directions": [
-      "SN",
-      "SP"
-    ],
-    "rocker_amplitude_deg": 20,
+    "directions": ["SN", "SP"],
     "rocker_period_s": 8,
-    "rocker_cycles": 3
+    "rocker_cycles": 3,
+    "steer_law": "frozen_after_P1"
   },
   "coarse_max_trials": 24,
-  "boundary_speed_library_rad_s": [
-    3,
-    6,
-    9,
-    12,
-    15
-  ],
-  "boundary_triggers": [
-    "contact",
-    "stall"
-  ],
-  "boundary_directions": [
-    "SN",
-    "SP"
-  ],
-  "refinement_deg": [
-    5,
-    1
-  ],
-  "bounds_deg": [
-    5,
-    45
-  ],
+  "boundary_speed_library_rad_s": [3, 6, 9, 12, 15],
+  "boundary_triggers": ["contact", "stall"],
+  "boundary_directions": ["SN", "SP"],
+  "boundary_screen": "single_step_then_top2_on_full_stair",
+  "refinement_deg": 1,
+  "bounds_deg": [5, 45],
   "physics_dt_s": 0.001,
   "control_dt_s": 0.001,
-  "boundary_comparison_physics_dt_s": [
-    0.0005,
-    0.0002
-  ],
-  "stop_for_audit_violation": false,
-  "accept_any_urdf_violation": false,
+  "boundary_comparison_physics_dt_s": [0.0005, 0.0002],
+  "penetration_policy": {
+    "pass_gate": false,
+    "warning_mm": 20,
+    "criteria": [
+      "no_nonfinite",
+      "no_persistent_nonwheel_support_over_20ms",
+      "boolean_agreement_at_smaller_dt"
+    ]
+  },
+  "success_flags": ["ascent_completed", "urdf_compliant", "numerical_quality_ok"],
+  "audit_tolerance": {"velocity_rad_s": 0, "angle_deg": 0},
+  "self_collision": "enabled_with_declared_bitmask_robot_contype1_conaffinity3",
   "goal": "all_six_supported_and_stopped_on_top_platform",
   "descent_required": false,
-  "implementation_plan": "README.md#实验二urdf-约束内的阶梯坡度上限sol-实施方案",
-  "if_no_pass": "Evaluate the 20-controller library at 5 and 10 degrees for each friction; report no qualified sample if none passes, not a physical maximum."
+  "observation_budget": "T=max(240, ceil(2*(8+15*d+2)/(3*0.162697))+180), cap 600",
+  "run_budget": {"long": 69, "short": 73},
+  "stop_for_audit_violation": false,
+  "accept_any_urdf_violation": false,
+  "implementation_plan": "docs/urdf_slope_plan_v2.md",
+  "if_no_pass": "Report no qualified sample under the declared model and control set. Do not report a physical maximum."
 }
