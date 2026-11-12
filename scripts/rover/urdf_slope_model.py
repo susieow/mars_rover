@@ -251,7 +251,7 @@ def build(source: dict) -> None:
             return match.group(0)
         attrs = (f'friction="{ROBOT_FRICTION[0]} {ROBOT_FRICTION[1]} {ROBOT_FRICTION[2]}" '
                  f'contype="{ROBOT_CONTYPE}" conaffinity="{ROBOT_CONAFFINITY}" '
-                 f'priority="0" condim="3"')
+                 f'priority="0" condim="3" solref="0.004 1"')
         return match.group(0)[:-2].rstrip() + " " + attrs + "/>"
 
     xml, tagged = re.subn(r'<geom [^>]*name="([^"]+)"[^>]*/>', tag_collision, xml)
@@ -270,8 +270,8 @@ def build(source: dict) -> None:
     xml = xml.replace("</mujoco>", "  <actuator>\n" + "\n".join(actuators) +
                       "\n  </actuator>\n</mujoco>", 1)
 
-    option = ('  <option timestep="0.001" gravity="0 0 -9.81" solver="Newton" cone="elliptic" '
-              'impratio="10" iterations="200"/>\n')
+    option = ('  <option timestep="0.001" gravity="0 0 -9.81" solver="Newton" cone="pyramidal" '
+              'impratio="1" iterations="100"/>\n')
     xml = xml.replace("<worldbody>", option + "  <worldbody>", 1)
 
     visual = visual_geoms()
@@ -483,6 +483,11 @@ def check_geoms(model, source) -> list[dict]:
                         int(model.geom_condim[gid]),
                         f"urdf:collision[@name='{collision['name']}']/contact/@condim",
                         "direct", ok=collision["condim"] == int(model.geom_condim[gid])))
+        rows.append(row("geom", collision["name"], "solref", [0.004, 1.0],
+                        model.geom_solref[gid].tolist(),
+                        "experiment:contact_stiffness", "direct",
+                        ok=close([0.004, 1.0], model.geom_solref[gid]),
+                        note="experiment-one scene value; MuJoCo default is 0.02 1"))
         rows.append(row("geom", collision["name"], "contype", ROBOT_CONTYPE,
                         int(model.geom_contype[gid]), "experiment:self_collision", "direct",
                         ok=int(model.geom_contype[gid]) == ROBOT_CONTYPE))
@@ -497,9 +502,9 @@ def check_options(model) -> list[dict]:
         ("timestep", TIMESTEP, float(model.opt.timestep), "s"),
         ("gravity", [0.0, 0.0, -9.81], model.opt.gravity.tolist(), "m/s^2"),
         ("solver", "Newton", mujoco.mjtSolver(int(model.opt.solver)).name.removeprefix("mjSOL_").lower(), ""),
-        ("cone", "elliptic", mujoco.mjtCone(int(model.opt.cone)).name.removeprefix("mjCONE_").lower(), ""),
-        ("impratio", 10.0, float(model.opt.impratio), ""),
-        ("iterations", 200, int(model.opt.iterations), ""),
+        ("cone", "pyramidal", mujoco.mjtCone(int(model.opt.cone)).name.removeprefix("mjCONE_").lower(), ""),
+        ("impratio", 1.0, float(model.opt.impratio), ""),
+        ("iterations", 100, int(model.opt.iterations), ""),
         ("integrator", "Euler", mujoco.mjtIntegrator(int(model.opt.integrator)).name.removeprefix("mjINT_").lower(), ""),
         ("disableflags", 0, int(model.opt.disableflags), ""),
     ]
@@ -749,10 +754,10 @@ def main(argv: list[str] | None = None) -> int:
             "timestep_s": TIMESTEP,
             "integrator": "Euler",
             "solver": "Newton",
-            "cone": "elliptic",
-            "impratio": 10,
-            "iterations": 200,
-            "solref": "0.004 1 (MuJoCo default)",
+            "cone": "pyramidal",
+            "impratio": 1,
+            "iterations": 100,
+            "solref": "0.004 1 (experiment-one scene value; MuJoCo default is 0.02 1)",
             "robot_friction": list(ROBOT_FRICTION),
             "robot_friction_note": "76 structure collisions declare 0.6; 6 wheels have no contact element and take the user-required 0.6",
             "self_collision": "robot contype=1 conaffinity=3, terrain contype=2 conaffinity=1",
