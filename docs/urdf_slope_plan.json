@@ -1,0 +1,72 @@
+{
+  "status": "planned_not_started",
+  "baseline_commit": "dd43d2a",
+  "experiment_id": "urdf_slope",
+  "urdf_sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
+  "height_m": 0.2,
+  "steps": 15,
+  "total_rise_m": 3,
+  "friction": {
+    "robot_slide": 0.6,
+    "stairs_slide": [
+      4,
+      6,
+      8
+    ],
+    "mixing": "default_mujoco_same_priority_max",
+    "confirmed_by_user": true
+  },
+  "coarse_angles_deg": [
+    15,
+    25,
+    35,
+    45
+  ],
+  "coarse_controller": {
+    "wheel_base_rad_s": 3,
+    "trigger": "first_front_stair_contact",
+    "directions": [
+      "SN",
+      "SP"
+    ],
+    "rocker_amplitude_deg": 20,
+    "rocker_period_s": 8,
+    "rocker_cycles": 3
+  },
+  "coarse_max_trials": 24,
+  "boundary_speed_library_rad_s": [
+    3,
+    6,
+    9,
+    12,
+    15
+  ],
+  "boundary_triggers": [
+    "contact",
+    "stall"
+  ],
+  "boundary_directions": [
+    "SN",
+    "SP"
+  ],
+  "refinement_deg": [
+    5,
+    1
+  ],
+  "bounds_deg": [
+    5,
+    45
+  ],
+  "physics_dt_s": 0.001,
+  "control_dt_s": 0.001,
+  "boundary_comparison_physics_dt_s": [
+    0.0005,
+    0.0002
+  ],
+  "stop_for_audit_violation": false,
+  "accept_any_urdf_violation": false,
+  "goal": "all_six_supported_and_stopped_on_top_platform",
+  "descent_required": false,
+  "implementation_plan": "README.md#实验二urdf-约束内的阶梯坡度上限sol-实施方案",
+  "if_no_pass": "Evaluate the 20-controller library at 5 and 10 degrees for each friction; report no qualified sample if none passes, not a physical maximum."
+}

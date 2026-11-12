@@ -151,14 +151,24 @@ def main():
                  '/recovery20asym', '/recovery20friction', '/api/high-stairs',
                  '/media/T22_WMR_RSP_dt1000us.mp4', '/media/%2e%2e/AGENTS.md', '/data/nope/result.json'):
         assert request(path)[0] == 404, path
-    assert request('/groundmu4contact?case=ground_mu4_contact_v7_rocker_SN')[0] == 302
-    assert request('/')[0] == 200
+    status, headers, _ = request('/groundmu4contact?case=ground_mu4_contact_v7_rocker_SN')
+    assert status == 302 and headers['Location'].startswith('/experiments/stairs-45?')
+    status, headers, _ = request('/?level=3&case=ground_mu6_high_v14_rocker_SN')
+    assert status == 302 and headers['Location'] == '/experiments/stairs-45?level=3&case=ground_mu6_high_v14_rocker_SN'
+    status, _, home = request('/')
+    assert status == 200
+    assert b'href="/experiments/stairs-45"' in home and b'href="/experiments/urdf-slope"' in home
+    status, _, review = request('/experiments/stairs-45?level=3')
+    assert status == 200 and b'id="level"' in review and b'/experiments/stairs-45?' in review
+    status, _, slope = request('/experiments/urdf-slope')
+    assert status == 200 and '当前还没有本实验的仿真结果'.encode() in slope
     print(json.dumps({'passed': True, 'final_cases': 112, 'local_crossing': 68,
                       'untested': 44, 'indexed_records': len(index), 'markdown_files': sorted(expected_md),
                       'reference_unchanged': True, 'simulation_sources_unchanged': len(cleanup['kept_active_simulation_modules']),
                       'http_catalog_bytes': len(json.dumps(public, ensure_ascii=False, separators=(',', ':')).encode()),
                       'all_final_media_routes_checked': True, 'old_routes_hidden': True,
                       'extended_to_120s': len(extended),
+                      'experiment_home_and_entries_checked': True,
                       'media_and_trajectory_hashes_checked': args.hash_media, 'additional_physics_trials': 0}, ensure_ascii=False))
 
 

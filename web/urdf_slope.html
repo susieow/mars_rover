@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>实验二 · URDF 约束内的坡度上限</title>
+  <style>
+    :root{color-scheme:dark;font:16px/1.75 system-ui,sans-serif;background:#0e1720;color:#edf4f8}*{box-sizing:border-box}body{max-width:1100px;margin:auto;padding:34px 24px}a{color:#93d5c8}h1{font-size:31px;margin:24px 0 10px}h2{font-size:21px;margin:0 0 14px}p{margin:10px 0}.muted{color:#acc0ce}.badge{display:inline-block;color:#b3edda;border:1px solid #4e9586;border-radius:99px;padding:3px 12px;font-size:13px}.panel{border:1px solid #344b5c;background:#16232e;border-radius:12px;padding:24px;margin:22px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid .panel{margin:0}.facts{display:grid;grid-template-columns:150px 1fr;gap:10px 16px}.facts dt{color:#9cb3c4}.facts dd{margin:0}.steps{padding-left:24px}.steps li{padding:7px 0}.note{border-left:3px solid #8ed0c1;padding-left:16px}code{overflow-wrap:anywhere}@media(max-width:700px){body{padding:22px 16px}h1{font-size:26px}.grid{grid-template-columns:1fr}.facts{grid-template-columns:110px 1fr}.panel{padding:20px}}
+  </style>
+</head>
+<body>
+  <nav><a href="/">← 实验主页</a></nav>
+  <h1>实验二 · URDF 约束内的坡度上限</h1>
+  <span class="badge">方案已制定 · 等待实施</span>
+  <p class="muted">在甲方 URDF 的明确参数和运行限值内，分别测出台阶摩擦 4 / 6 / 8 时可完成上行的角度。当前还没有本实验的仿真结果。</p>
+  <section class="panel"><h2>固定条件</h2><dl class="facts"><dt>楼梯高度</dt><dd>每级 20 cm，共 15 级，总抬升 3 m。</dd><dt>角度变化</dt><dd>只改变每级踏步深度来改变整体倾斜角；同一楼梯内尺寸一致。</dd><dt>轮胎摩擦</dt><dd>六轮自身参数均为 0.6。</dd><dt>台阶摩擦</dt><dd>分别为 4、6、8，保留 MuJoCo 默认混合规则。</dd><dt>模型与执行器</dt><dd>逐项核对 URDF 的质量、惯量、碰撞几何、关节限位、速度、力矩、阻尼和关节摩擦。</dd><dt>测试终点</dt><dd>六轮进入并支撑在顶部平台，正常姿态停稳；暂不测试下坡。</dd></dl></section>
+  <div class="grid">
+    <section class="panel"><h2>如何测试</h2><ol class="steps"><li>先完成 URDF 一致性检查和地面校验，确认限制实际生效。</li><li>从较缓角度开始，用冻结控制方案粗测 15°、25°、35°、45°。</li><li>在通过与未通过的相邻角度间，先以 5°、再以 1° 间隔细化。</li><li>对最高通过角度复核接触、超速、限位、力矩及步长敏感性。</li></ol></section>
+    <section class="panel"><h2>结果怎么判</h2><p>同时满足“到达平台”和“全程满足约束”才记为本实验通过。</p><p>发生超速、超力矩、超角度等事件后继续录制，保留后续诊断；出现非有限数值则记为技术失败。</p><p>到观察上限仍未登顶，记为“本控制方案在本观察时间内未完成”，不直接当作车辆的物理极限。</p></section>
+  </div>
+  <section class="panel"><h2>摩擦解释已确认</h2><p class="note">0.6 指轮胎自身参数。台阶仍使用 4 / 6 / 8，保留默认混合规则。每次实验必须同时记录双方参数和实际生成的接触摩擦，不能把它们都标成 0.6。</p><p class="muted">完整实施方案和已发现的模型差异保存在项目 README；新结果会使用独立目录和本实验入口展示。</p></section>
+  <p class="muted">成功判据、角度范围与控制序列的具体执行顺序以交接方案为准。本页只展示当前计划，未启动新仿真。</p>
+</body>
+</html>

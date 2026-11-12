@@ -1,4 +1,4 @@
-"""Serve only the final experiment catalog and its explicitly registered files."""
+"""Serve experiment entry pages and explicitly registered review files."""
 from __future__ import annotations
 
 import argparse
@@ -10,6 +10,9 @@ import re
 from urllib.parse import parse_qs, unquote, urlencode, urlsplit
 
 PAGE = Path(__file__).with_name('index.html')
+STAIRS_PAGE = Path(__file__).with_name('stairs45.html')
+SLOPE_PAGE = Path(__file__).with_name('urdf_slope.html')
+STAIRS_ROUTE = '/experiments/stairs-45'
 FINAL_ALIASES = {'/groundmu4contact', '/groundmu6contact', '/groundmu8contact',
                  '/groundmu6', '/groundmu8', '/groundmu6high', '/groundmu8high'}
 
@@ -79,9 +82,16 @@ def handler_for(catalog):
                 if mu:
                     params['mu'] = mu.group(1)
                 params['trigger'] = 'contact' if path.endswith('contact') else 'stall'
-                return self.reply(302, b'', headers={'Location': '/?' + urlencode(params)})
+                return self.reply(302, b'', headers={'Location': STAIRS_ROUTE + '?' + urlencode(params)})
             if path in ('/', '/index.html'):
+                query = parse_qs(parsed.query)
+                if set(query) & {'case', 'mu', 'trigger', 'speed', 'direction', 'level', 'crossed'}:
+                    return self.reply(302, b'', headers={'Location': STAIRS_ROUTE + '?' + parsed.query})
                 return self.serve_file(PAGE)
+            if path == STAIRS_ROUTE:
+                return self.serve_file(STAIRS_PAGE)
+            if path == '/experiments/urdf-slope':
+                return self.serve_file(SLOPE_PAGE)
             if path == '/api/experiments':
                 return self.reply(200, json.dumps(catalog.public, ensure_ascii=False, separators=(',', ':')).encode())
             asset = catalog.asset(path)
@@ -140,7 +150,7 @@ def main():
     if args.catalog is None and not path.exists():
         path = root / 'rover/docs/final_experiments.json'
     server = ThreadingHTTPServer((args.host, args.port), handler_for(Catalog(path)))
-    print(f'Final experiment review: http://{args.host}:{args.port}/', flush=True)
+    print(f'Rover experiments: http://{args.host}:{args.port}/', flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
