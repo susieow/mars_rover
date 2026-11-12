@@ -1,0 +1,984 @@
+{
+  "batch": "final_observation_120s_20261112",
+  "completed": 17,
+  "absolute_end_s": 120.0,
+  "improved_highest_count": 1,
+  "platform_count": 0,
+  "highest_level_counts": {
+    "2": 14,
+    "3": 3
+  },
+  "retained_level_counts": {
+    "0": 3,
+    "2": 11,
+    "3": 3
+  },
+  "parent_catalog_sha256": "44d7f9645db8212dc3b6a0d1262ba3e73f081e1775734ca76998c60202da742f",
+  "all_prefixes_bitwise_equal": true,
+  "rocker_cycles": 3,
+  "rocker_period_s": 8,
+  "cases": [
+    {
+      "passed": true,
+      "id": "ground_mu6_contact_v8_rocker_SP",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 36.328000000006035,
+      "parent_highest_level": 3,
+      "highest_level": 3,
+      "retained_level": 3,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": -0.0011576932838779364,
+          "dz_m": -0.0012921854807854682
+        },
+        "10s": {
+          "dx_m": 0.0028891732290143857,
+          "dz_m": -0.0005910946612137646
+        },
+        "30s": {
+          "dx_m": 0.006799392875375787,
+          "dz_m": 0.0009634702419860641
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.0005217863987576621,
+        "dz_m": 0.0019631900293057836
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "590648a2f3d33481d947a400dcca7664a0cffe094122f61d8ece9ecefd2ca308",
+      "result_sha256": "3511ca50a62184e4aa017be4d3610bf7891356da73e53c328c3933ba55aad988",
+      "friction": 6,
+      "trigger": "contact",
+      "speed": 8,
+      "direction": "SP",
+      "parent_key": "ground_mu6_contact_v6to15_20261112/ground_mu6_contact_v8_rocker_SP",
+      "key": "final_observation_120s_20261112/ground_mu6_contact_v8_rocker_SP",
+      "penetration_mm": 28.7556334481609,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v8_rocker_SP/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v8_rocker_SP/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v8_rocker_SP/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_contact_v8_rocker_SP.mp4",
+      "video_sha256": "7da93bb9ce466ad2d8710692d08b4c4274af16df55203bd76f6302887e9ca730"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_high_v11_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 38.7880000000003,
+      "parent_highest_level": 3,
+      "highest_level": 3,
+      "retained_level": 3,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": -0.004445773437979028,
+          "dz_m": 0.0012085492982853996
+        },
+        "10s": {
+          "dx_m": 0.005537909606310176,
+          "dz_m": 0.0026230076552611337
+        },
+        "30s": {
+          "dx_m": -0.0002680462578830145,
+          "dz_m": 0.000412701310602559
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.0022130058905518446,
+        "dz_m": 0.0037505893627796105
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "9f809486280651867d11694cfdf03afef1d06b56fceceed1a19bc8f6e2c1855c",
+      "result_sha256": "00968e1fda863cebe1d25b2d9205f6da8c4fc9be2e7647526d5450e3eb31219e",
+      "friction": 6,
+      "trigger": "stall",
+      "speed": 11,
+      "direction": "SN",
+      "parent_key": "ground_mu6_v7to15_20261112/ground_mu6_high_v11_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu6_high_v11_rocker_SN",
+      "penetration_mm": 29.521567352517764,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v11_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v11_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v11_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_high_v11_rocker_SN.mp4",
+      "video_sha256": "315584cbbcde95e27ffcac4c5deb8fa2c5dcd272af12cc777fe74f33f7f94393"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_v6_rocker_SP",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 42.78299999999099,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 0,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": -0.003453454177696047,
+          "dz_m": -0.0009302973966494044
+        },
+        "10s": {
+          "dx_m": -0.00806216987015751,
+          "dz_m": 0.0013817660062406256
+        },
+        "30s": {
+          "dx_m": -0.008794200468963176,
+          "dz_m": -0.00011969940908562737
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.5130426095924645,
+        "dz_m": -0.5002668007736242
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "33da779338e3defe6503b2fb67282195c74a7db018474990ad7a93c6d1caa32b",
+      "result_sha256": "c1ba11ddafadf5a2919494379d8f0d98c62ab7ddc20406cb4db8e67ca4970ce5",
+      "friction": 6,
+      "trigger": "stall",
+      "speed": 6,
+      "direction": "SP",
+      "parent_key": "ground_mu6_constant_wheels_20261112/ground_mu6_v6_rocker_SP",
+      "key": "final_observation_120s_20261112/ground_mu6_v6_rocker_SP",
+      "penetration_mm": 19.12388058164849,
+      "process_reasons": [
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_v6_rocker_SP/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_v6_rocker_SP/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_v6_rocker_SP/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_v6_rocker_SP.mp4",
+      "video_sha256": "e3a4f633a509cbb130fe0340ad46619d4f39af46b0529014415abd44ad718c25"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_high_v8_rocker_SP",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 40.742999999995746,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": 0.00224525438238965,
+          "dz_m": 0.002988060599335096
+        },
+        "10s": {
+          "dx_m": -0.002595498471547053,
+          "dz_m": 0.004015329527165656
+        },
+        "30s": {
+          "dx_m": -0.004235908895263707,
+          "dz_m": 0.001183050204760283
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.005000441577452497,
+        "dz_m": 0.00212708737258116
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "6043d5136bb0da4fe06d43bf2ae0275b560989c16fbfc2fb7407a3e9386e97f8",
+      "result_sha256": "4dc5f51276d70233d64877ca3aa80063eb78d1b26908db214ac4ff2e44b25473",
+      "friction": 6,
+      "trigger": "stall",
+      "speed": 8,
+      "direction": "SP",
+      "parent_key": "ground_mu6_v7to15_20261112/ground_mu6_high_v8_rocker_SP",
+      "key": "final_observation_120s_20261112/ground_mu6_high_v8_rocker_SP",
+      "penetration_mm": 23.440552950946714,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v8_rocker_SP/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v8_rocker_SP/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v8_rocker_SP/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_high_v8_rocker_SP.mp4",
+      "video_sha256": "10c23295bfe9f55db3956ff0ac3da88a3d33177eae87364473b30083b8f65aca"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu4_contact_v9_rocker_SP",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 35.6570000000076,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 0,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": -0.0011112583748054128,
+          "dz_m": -0.0012845068764735235
+        },
+        "10s": {
+          "dx_m": 0.00196794069655315,
+          "dz_m": 0.0013957338202522651
+        },
+        "30s": {
+          "dx_m": -0.002542812781755943,
+          "dz_m": 0.0007713857520733614
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.5066869616830496,
+        "dz_m": -0.5051823647451662
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "b6d05621aab9b1ed657f03cb35ef35148d37b0cf9a42e9357c3d2a0a23310e76",
+      "result_sha256": "68ef9d0af82c5ca28f35d9412ddc40b76bf9dfc99307c927ec050f3eea081ed3",
+      "friction": 4,
+      "trigger": "contact",
+      "speed": 9,
+      "direction": "SP",
+      "parent_key": "ground_mu4_contact_v6to15_20261112/ground_mu4_contact_v9_rocker_SP",
+      "key": "final_observation_120s_20261112/ground_mu4_contact_v9_rocker_SP",
+      "penetration_mm": 14.483354142844185,
+      "process_reasons": [
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint",
+        "route_steer_over_30deg"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v9_rocker_SP/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v9_rocker_SP/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v9_rocker_SP/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu4_contact_v9_rocker_SP.mp4",
+      "video_sha256": "4c5679bb99953b2885d1759e028eb97457322a52ab5e7f9c7a5c7b1b5289fd30"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_contact_v9_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 35.6570000000076,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": 0.006645507675511864,
+          "dz_m": 0.0004036592714740106
+        },
+        "10s": {
+          "dx_m": 0.005358809200631587,
+          "dz_m": 0.0007202942818069769
+        },
+        "30s": {
+          "dx_m": 0.004909398163512657,
+          "dz_m": 0.002420004963425537
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": 0.006651373622287959,
+        "dz_m": 0.0016874945562037613
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "3527d0fe9f7a92b565cf66f035ea06634b056910cfe68c27bc549def1be73be7",
+      "result_sha256": "a888f60fd40e7bc7ea3a50e9fa6659eec1b12389480f6a6d6b72be9998d15ad6",
+      "friction": 6,
+      "trigger": "contact",
+      "speed": 9,
+      "direction": "SN",
+      "parent_key": "ground_mu6_contact_v6to15_20261112/ground_mu6_contact_v9_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu6_contact_v9_rocker_SN",
+      "penetration_mm": 25.545882019905708,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v9_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v9_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v9_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_contact_v9_rocker_SN.mp4",
+      "video_sha256": "255cbc509f70484cc22a43a8589a51f1caf7a185acc1ce8264ce858a570ffe55"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_high_v9_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 40.18199999999705,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": -0.0011471702000453998,
+          "dz_m": 0.00013206998073256315
+        },
+        "10s": {
+          "dx_m": -0.010657999049638267,
+          "dz_m": 0.0031775024710845035
+        },
+        "30s": {
+          "dx_m": -0.009481743072222937,
+          "dz_m": 0.00400156303617849
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.006129922121800524,
+        "dz_m": 0.0016839220350590711
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "b0cb1d4358a561eb04bdbc4c81032cd6e7886b714f0720ee8f2f5f375a9fdf0e",
+      "result_sha256": "22f5c111cc5c6b35eac366344086e954023580d096eb87a43f58fe3399dbd44d",
+      "friction": 6,
+      "trigger": "stall",
+      "speed": 9,
+      "direction": "SN",
+      "parent_key": "ground_mu6_v7to15_20261112/ground_mu6_high_v9_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu6_high_v9_rocker_SN",
+      "penetration_mm": 25.022202298735863,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint",
+        "route_pitch_over_60deg"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v9_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v9_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v9_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_high_v9_rocker_SN.mp4",
+      "video_sha256": "764590bcc12c47cc62bbf332d4875127c0532141e52618b87e0349f8b7d8c1c9"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_high_v12_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 39.06499999999966,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": -0.010259515991743795,
+          "dz_m": -0.0029026313036786267
+        },
+        "10s": {
+          "dx_m": -0.0099207882778507,
+          "dz_m": -0.0030085220366782295
+        },
+        "30s": {
+          "dx_m": -0.006057174202685367,
+          "dz_m": -0.0007460874560567543
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.0136964905768171,
+        "dz_m": -0.0016900846245595513
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "1b5d6f5e57c5377864a8b265680606f10cab483d26b67603a72d81fef0a9d416",
+      "result_sha256": "628087e953cfcaad47252a82acc11d08ce14af824775e6c4c5fc6ce823e48ae8",
+      "friction": 6,
+      "trigger": "stall",
+      "speed": 12,
+      "direction": "SN",
+      "parent_key": "ground_mu6_v7to15_20261112/ground_mu6_high_v12_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu6_high_v12_rocker_SN",
+      "penetration_mm": 31.913476252968476,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint",
+        "route_pitch_over_60deg"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v12_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v12_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v12_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_high_v12_rocker_SN.mp4",
+      "video_sha256": "ea9cd1a19dae05e969c1c1c8f241861f8e476a89df5c0f2058b9f0696e5c3416"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu8_high_v12_rocker_SP",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 38.20900000000165,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": 0.003688864884958676,
+          "dz_m": 0.006405140632037787
+        },
+        "10s": {
+          "dx_m": 0.007797097635519723,
+          "dz_m": 0.0049760180414319954
+        },
+        "30s": {
+          "dx_m": 0.01623872894962819,
+          "dz_m": 0.0034376651829979288
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": 0.00817304189748147,
+        "dz_m": 0.0026772064318081323
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "cc569770db3abb52680e1128d55c0ed409a30f8d5a4102e434b4668e617c2f2b",
+      "result_sha256": "ef0d88f60f96e9a194cf927a81c20589726b42ff3dce2c4b5f2cd01e85fad34e",
+      "friction": 8,
+      "trigger": "stall",
+      "speed": 12,
+      "direction": "SP",
+      "parent_key": "ground_mu8_v7to15_20261112/ground_mu8_high_v12_rocker_SP",
+      "key": "final_observation_120s_20261112/ground_mu8_high_v12_rocker_SP",
+      "penetration_mm": 65.42780572584329,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu8_high_v12_rocker_SP/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu8_high_v12_rocker_SP/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu8_high_v12_rocker_SP/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu8_high_v12_rocker_SP.mp4",
+      "video_sha256": "0d577b15fd04cc57fc893b114545d4d39c2f6a6a165f9ed78571e527d292d54e"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_contact_v13_rocker_SP",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 34.03400000001138,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": -0.0024640130385615855,
+          "dz_m": 8.6329003849972e-06
+        },
+        "10s": {
+          "dx_m": -0.0009803504933441065,
+          "dz_m": 0.0029724836894642337
+        },
+        "30s": {
+          "dx_m": -0.004104106344170466,
+          "dz_m": 0.0008025348179321323
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.11467686484899553,
+        "dz_m": -0.132098510033561
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "2de9e5cdb651644040aa79180e3bca05063403901af3951bdf214d0aaf075afe",
+      "result_sha256": "811009a167a9aa1c54f32739502a026b463ce7c0251b62c007a72dbe5908a7fa",
+      "friction": 6,
+      "trigger": "contact",
+      "speed": 13,
+      "direction": "SP",
+      "parent_key": "ground_mu6_contact_v6to15_20261112/ground_mu6_contact_v13_rocker_SP",
+      "key": "final_observation_120s_20261112/ground_mu6_contact_v13_rocker_SP",
+      "penetration_mm": 34.2662180721196,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_limit_error_over_1deg",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint",
+        "route_pitch_over_60deg",
+        "route_steer_over_30deg"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v13_rocker_SP/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v13_rocker_SP/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v13_rocker_SP/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_contact_v13_rocker_SP.mp4",
+      "video_sha256": "7dc5c0149d10eb6941b5053651b52c3611c062ea6c6637a1b38e56a69fbe1c5e"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_high_v13_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 38.56200000000083,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": 0.0036782426105961274,
+          "dz_m": 0.00031295826258470605
+        },
+        "10s": {
+          "dx_m": 0.006862393050331539,
+          "dz_m": -0.001061986693323469
+        },
+        "30s": {
+          "dx_m": 0.004850625933265906,
+          "dz_m": 0.0001731274618264056
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.00064068477717516,
+        "dz_m": 0.00021153339573687369
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "aca7db9b684c44e16b62fee01a430ee6eba76457e8c185c9d61f7a9f6ae6e904",
+      "result_sha256": "9613c5cb64e5c98c8f4cf060211b9ff0263774a87c60ba6406718d52d58e91bd",
+      "friction": 6,
+      "trigger": "stall",
+      "speed": 13,
+      "direction": "SN",
+      "parent_key": "ground_mu6_v7to15_20261112/ground_mu6_high_v13_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu6_high_v13_rocker_SN",
+      "penetration_mm": 34.27148505366695,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_limit_error_over_1deg",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint",
+        "route_pitch_over_60deg"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v13_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v13_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v13_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_high_v13_rocker_SN.mp4",
+      "video_sha256": "150d99f66d1afd5d8a12cef268f1d0eba3cc2995cc98c2330ad832014055a7ec"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu4_contact_v14_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 33.780000000011974,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": 0.001031277592884683,
+          "dz_m": -0.00010756088063534897
+        },
+        "10s": {
+          "dx_m": 0.004631033676806728,
+          "dz_m": -0.0073126116433559485
+        },
+        "30s": {
+          "dx_m": 0.005274464591153327,
+          "dz_m": -0.002663356791146043
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": 1.2753539872178976e-05,
+        "dz_m": 0.0013079386544150307
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "cbeb670d6884db492ead622684e38fe54f4f20541cbe2f7ffb0ac040d4ba7687",
+      "result_sha256": "9d458129932393196a35e14edc6b7bc132776025759b22a5f2b1908f574db9dd",
+      "friction": 4,
+      "trigger": "contact",
+      "speed": 14,
+      "direction": "SN",
+      "parent_key": "ground_mu4_contact_v6to15_20261112/ground_mu4_contact_v14_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu4_contact_v14_rocker_SN",
+      "penetration_mm": 15.450349130304186,
+      "process_reasons": [
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v14_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v14_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v14_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu4_contact_v14_rocker_SN.mp4",
+      "video_sha256": "779521fc7ae67002da50aa4b993b56bf0b592ef413998e18a9656ee7c1e95327"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_contact_v14_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 33.780000000011974,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": 0.0048135917505651715,
+          "dz_m": 4.6590969390969406e-05
+        },
+        "10s": {
+          "dx_m": 0.004364259390860159,
+          "dz_m": 0.0016546103795089806
+        },
+        "30s": {
+          "dx_m": 0.0041192755556211935,
+          "dz_m": -0.0014563795857831519
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": 0.005182701538535284,
+        "dz_m": -0.0007264389267840343
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "2b9ef16dfb772cfbf0a0914daa7b18dc3e4f5762be2302b2dfe188248c4ebe28",
+      "result_sha256": "c797946db734522b2f1d2c8bdec19980313e88ce764c0cfb4a50f895bd2f22fb",
+      "friction": 6,
+      "trigger": "contact",
+      "speed": 14,
+      "direction": "SN",
+      "parent_key": "ground_mu6_contact_v6to15_20261112/ground_mu6_contact_v14_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu6_contact_v14_rocker_SN",
+      "penetration_mm": 36.87212413531604,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_limit_error_over_1deg",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint",
+        "route_steer_over_30deg"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v14_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v14_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_contact_v14_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_contact_v14_rocker_SN.mp4",
+      "video_sha256": "ab64fdac30794fa55dc7f6b494b911d31c0295596300237b0c65fcb9b0a1111a"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_high_v14_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 38.33300000000136,
+      "parent_highest_level": 2,
+      "highest_level": 3,
+      "retained_level": 3,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": 0.001539333577794011,
+          "dz_m": 0.0064859926322666794
+        },
+        "10s": {
+          "dx_m": -0.001536663040607067,
+          "dz_m": 0.007491610990981057
+        },
+        "30s": {
+          "dx_m": 0.002793683960258697,
+          "dz_m": 0.006600620151301362
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": 0.22213988648581684,
+        "dz_m": 0.2023765594459952
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "cd02b97cfdc96ad5c4d0ba3dceef1286237b744c4f1ee63b325523b8bf9b4c25",
+      "result_sha256": "d3e8c3cb69f8e1d7ba5dec051f4f39a302003b3cb6425f9422fc95cfdf86084a",
+      "friction": 6,
+      "trigger": "stall",
+      "speed": 14,
+      "direction": "SN",
+      "parent_key": "ground_mu6_v7to15_20261112/ground_mu6_high_v14_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu6_high_v14_rocker_SN",
+      "penetration_mm": 36.86844867942085,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_limit_error_over_1deg",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v14_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v14_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v14_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_high_v14_rocker_SN.mp4",
+      "video_sha256": "72cc7ec7c2dad5e5d62be085ca1c9b1b7b4bdbd0521a3702e8006b5325619621"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu4_contact_v15_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 33.561000000012484,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": 0.007205896193499983,
+          "dz_m": 0.0003019761336640059
+        },
+        "10s": {
+          "dx_m": 0.008439715220377009,
+          "dz_m": -0.002617940435474253
+        },
+        "30s": {
+          "dx_m": 0.005723758524812883,
+          "dz_m": 0.0015502054721989733
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": 0.001897346053652882,
+        "dz_m": 0.0029431142884723815
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "02ef47a1b53c04ef749c396bd67196774fae4789979066a234297c81c43d78c7",
+      "result_sha256": "efcf9d6b405fdcd8c350d8d89f73d30eda3678290d68fe9c7bc53ac6be0672a6",
+      "friction": 4,
+      "trigger": "contact",
+      "speed": 15,
+      "direction": "SN",
+      "parent_key": "ground_mu4_contact_v6to15_20261112/ground_mu4_contact_v15_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu4_contact_v15_rocker_SN",
+      "penetration_mm": 21.87878545025912,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v15_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v15_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v15_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu4_contact_v15_rocker_SN.mp4",
+      "video_sha256": "508b2bcb0db64be02bd73af7d71b9a109a2d527f76c128c82baaf942db82286e"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu4_contact_v15_rocker_SP",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 33.561000000012484,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 0,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": -0.0006275168818075105,
+          "dz_m": 0.0012028907500887254
+        },
+        "10s": {
+          "dx_m": 0.0035939467622916332,
+          "dz_m": -0.0011263904285342408
+        },
+        "30s": {
+          "dx_m": 0.0039008162181226602,
+          "dz_m": 0.00015861327978161643
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": -0.23828503099768916,
+        "dz_m": -0.26286794605541564
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "8904501b5a81e64e69c58df901b280f75b25ef6a048568c12d6154e87187fb4c",
+      "result_sha256": "59d2044d1ce6cc8144616caa40778a5c83134698b298bf7a184df0bff90167bf",
+      "friction": 4,
+      "trigger": "contact",
+      "speed": 15,
+      "direction": "SP",
+      "parent_key": "ground_mu4_contact_v6to15_20261112/ground_mu4_contact_v15_rocker_SP",
+      "key": "final_observation_120s_20261112/ground_mu4_contact_v15_rocker_SP",
+      "penetration_mm": 26.9073095136807,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint",
+        "route_pitch_over_60deg",
+        "route_steer_over_30deg"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v15_rocker_SP/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v15_rocker_SP/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu4_contact_v15_rocker_SP/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu4_contact_v15_rocker_SP.mp4",
+      "video_sha256": "2cdb082ec4fa39524a90d4402c9e27ff9e1adfe0dcf200b5b321ce1938ae98d3"
+    },
+    {
+      "passed": true,
+      "id": "ground_mu6_high_v15_rocker_SN",
+      "end_s": 120.00000000020893,
+      "parent_end_s": 37.821000000002556,
+      "parent_highest_level": 2,
+      "highest_level": 2,
+      "retained_level": 2,
+      "platform": false,
+      "tail_body_displacement": {
+        "5s": {
+          "dx_m": -0.0008186739057975956,
+          "dz_m": 0.0005859453792786962
+        },
+        "10s": {
+          "dx_m": -0.003935038195380214,
+          "dz_m": 0.00031664074582216095
+        },
+        "30s": {
+          "dx_m": 0.0033965246612088773,
+          "dz_m": -0.005693010917990682
+        }
+      },
+      "additional_body_displacement": {
+        "dx_m": 0.011322880753285691,
+        "dz_m": -0.0008542520758030303
+      },
+      "actuator_force_peak_by_kind_nm": {
+        "wheel": 50.0,
+        "steer": 40.0,
+        "rocker": 100.0
+      },
+      "trajectory_sha256": "880f1e0172b523dd74e2fff15e418f5b0adaaea9fb4dce388f42819ad2ce02e9",
+      "result_sha256": "8871994860516d47b6b5307a8e42eda320e1107fa30226b1af3ecc3e7d582070",
+      "friction": 6,
+      "trigger": "stall",
+      "speed": 15,
+      "direction": "SN",
+      "parent_key": "ground_mu6_v7to15_20261112/ground_mu6_high_v15_rocker_SN",
+      "key": "final_observation_120s_20261112/ground_mu6_high_v15_rocker_SN",
+      "penetration_mm": 39.221570384822655,
+      "process_reasons": [
+        "contact_penetration_over_20mm",
+        "joint_limit_error_over_1deg",
+        "joint_velocity_limit:left_rocker_joint",
+        "joint_velocity_limit:left_front_steer_joint",
+        "joint_velocity_limit:left_rear_steer_joint",
+        "joint_velocity_limit:right_rocker_joint",
+        "joint_velocity_limit:right_front_steer_joint",
+        "joint_velocity_limit:right_rear_steer_joint"
+      ],
+      "verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v15_rocker_SN/verification.json",
+      "prefix_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v15_rocker_SN/prefix_verification.json",
+      "media_verification_path": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/cases/ground_mu6_high_v15_rocker_SN/media_verification.json",
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/final_observation_120s_20261112/ground_mu6_high_v15_rocker_SN.mp4",
+      "video_sha256": "71fc89ea427c55935c99eac82c928d04de6d7fdb39e228ac652824e5bdaf4554"
+    }
+  ],
+  "technical_attempt": "/home/agilex/wzy/rover/runs/final_observation_120s_20261112/technical_attempt_01/failure.json"
+}

@@ -74,7 +74,8 @@
         <p><code>${escapeHtml(id)}</code></p><video controls preload="metadata" src="${row.video_url}"></video>
         <p><button id="jump">跳到摇臂触发</button> <a href="${row.video_url}" download>视频文件</a> · <a href="${row.result_url}">结果 JSON</a> · <a href="${row.trajectory_url}">原始轨迹</a></p>
         <p>前轮首次接触 ${fmt(row.first_contact_s)} s；摇臂触发 ${fmt(row.trigger_s)} s；结束 ${fmt(row.end_s)} s。</p>
-        <p class="${row.crossing?'success':'muted'}">${row.crossing?'双后轮曾局部越阶，首次 '+fmt(row.first_crossing_s)+' s':'双后轮未达到持续越阶条件'}；最高几何等级 ${row.highest_level}，末 1 秒保持等级 ${row.retained_level}；未登顶，完整路线未评估。</p>
+        ${row.extended_to_120s?`<p class="muted">已延长至仿真总时刻 120 秒，替换原 ${fmt(row.parent_end_s)} 秒终点版本；原最高 ${row.parent_highest_level} 级。摇臂仍摆动 3 周期，之后回中立。</p>`:''}
+        <p class="${row.crossing?'success':'muted'}">${row.crossing?'双后轮曾局部越阶，首次 '+fmt(row.first_crossing_s)+' s':'双后轮未达到持续越阶条件'}；最高几何等级 ${row.highest_level}，末 1 秒保持等级 ${row.retained_level}；${row.platform?'曾记录六轮平台支撑':'未记录六轮平台支撑'}，${row.full_route_evaluated?'完整路线结果见结果 JSON':'完整路线未评估'}。</p>
         <p class="warning">最大穿透 ${fmt(row.penetration_mm,2)} mm；首次过程违规 ${fmt(row.first_failure_s)} s。记录违规后继续观察。</p>
         <p><code>${escapeHtml(row.reasons.join('、')||'无过程违规记录')}</code></p>
         <details><summary>查看速度违规的首次时间、峰值和累计时长</summary><div id="events">展开后读取…</div></details>
@@ -108,7 +109,7 @@
       ctx.fillStyle='#b3c5d0';ctx.fillText(fmt(hi,2),4,T+7);ctx.fillText(fmt(lo,2),4,H-B);ctx.fillText(fmt(start,1)+' s',L,H-8);ctx.fillText(fmt(end,1)+' s',W-70,H-8);
     }
     async function load(){
-      try{const response=await fetch('/api/experiments');if(!response.ok)throw Error('HTTP '+response.status);catalog=await response.json();$('summary').textContent=`已完成 ${catalog.completed} 条，曾局部越阶 ${catalog.local_crossing_count} 条；未测 ${catalog.untested_count} 个组合；完整成功 0 条。`;
+      try{const response=await fetch('/api/experiments');if(!response.ok)throw Error('HTTP '+response.status);catalog=await response.json();const extended=catalog.cases.filter(r=>r.extended_to_120s).length;$('summary').textContent=`已完成 ${catalog.completed} 条，曾局部越阶 ${catalog.local_crossing_count} 条；未测 ${catalog.untested_count} 个组合；完整成功 ${catalog.full_route_successes} 条。`+(extended?`其中 ${extended} 条已延长至仿真总时刻 120 秒，其余保留触发后 30 秒观察。`:'');
         const levels=[...new Set(catalog.cases.map(r=>r.highest_level))].sort((a,b)=>a-b);
         for(const level of levels){const count=catalog.cases.filter(r=>r.highest_level===level).length;$('level').add(new Option(`${level} 级${level===0?'（未越阶）':''} · ${count} 条`,level));}
         if(parameters.has('level'))$('level').value=parameters.get('level');

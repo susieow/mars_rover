@@ -67,9 +67,44 @@ def main():
     for name, expected_hash in cleanup['pinned_audit_evidence'].items():
         assert digest(ROOT / name) == expected_hash, name
     index = [json.loads(line) for line in (ROOT / 'docs/experiment_index.jsonl').read_text().splitlines()]
-    assert len(index) == len({r['key'] for r in index}) == 1198
+    assert len(index) == len({r['key'] for r in index}) and len(index) >= 1198
     final_index = {r['id']: r for r in index if r['scope'] == 'final'}
     assert len(final_index) == 112
+    extended = [r for r in rows if r.get('extended_to_120s')]
+    if extended:
+        summary = json.loads((ROOT / 'docs/final_observation_120s_20261112.json').read_text())
+        assert len(extended) == summary['completed'] == 17
+        assert summary['all_prefixes_bitwise_equal'] and summary['absolute_end_s'] == 120
+        assert summary['improved_highest_count'] == sum(r['highest_level'] > r['parent_highest_level'] for r in extended)
+        parent_path = ROOT / 'runs/final_observation_120s_20261112/parent_catalog.json'
+        assert digest(parent_path) == summary['parent_catalog_sha256']
+        parents = {r['id']: r for r in json.loads(parent_path.read_text())['cases']}
+        selected_ids = {r['id'] for r in parents.values() if r['highest_level'] in (2, 3)}
+        assert selected_ids == {r['id'] for r in extended}
+        for row in rows:
+            if row['id'] not in selected_ids:
+                assert row == parents[row['id']], row['id']
+        indexed = {r['key']: r for r in index}
+        for row in extended:
+            folder = Path(row['result_path']).parent
+            result = json.loads(Path(row['result_path']).read_text())
+            prefix = json.loads((folder / 'prefix_verification.json').read_text())
+            verification = json.loads((folder / 'verification.json').read_text())
+            media = json.loads((folder / 'media.json').read_text())
+            assert prefix['passed'] and verification['passed']
+            assert all(v['equal'] for v in prefix['fields'].values())
+            assert abs(row['end_s'] - 120) < 1e-7 and abs(media['last_time_s'] - 120) < 1e-7
+            assert media['frames'] == 2401
+            assert result['termination_reason'] == 'simulation_time_limit_120s'
+            assert result['observation_extension']['prefix_bitwise_equal']
+            assert result['observation_extension']['rocker_cycles'] == 3
+            assert indexed[row['parent_key']]['scope'] == 'history'
+            assert indexed[row['parent_key']]['superseded_by'] == row['key']
+            assert final_index[row['id']]['key'] == row['key']
+            assert row['highest_level'] == result['rear_highest_100ms_geometry_level']
+            assert row['retained_level'] == result['rear_retained_geometry_level_final_1s']
+            assert all(result['audit']['actuator_force_peak_by_kind_nm'][kind] <= limit + .001
+                       for kind, limit in [('wheel', 50), ('steer', 40), ('rocker', 100)])
     for row in rows:
         result_path = Path(row['result_path'])
         result = json.loads(result_path.read_text())
@@ -98,6 +133,10 @@ def main():
     assert status == 200
     public = json.loads(body)
     assert {r['id'] for r in public['cases']} == {r['id'] for r in rows}
+    assert {r['id'] for r in public['cases'] if r.get('extended_to_120s')} == {r['id'] for r in extended}
+    for row in public['cases']:
+        if row.get('extended_to_120s'):
+            assert '?v=' in row['video_url'] and abs(row['end_s'] - 120) < 1e-7
     assert len(body) < 250000, 'catalog response must exclude per-event overspeed payloads'
     for row in public['cases']:
         assert request(row['video_url'], 'HEAD')[0] == 200
@@ -115,10 +154,11 @@ def main():
     assert request('/groundmu4contact?case=ground_mu4_contact_v7_rocker_SN')[0] == 302
     assert request('/')[0] == 200
     print(json.dumps({'passed': True, 'final_cases': 112, 'local_crossing': 68,
-                      'untested': 44, 'indexed_records': 1198, 'markdown_files': sorted(expected_md),
+                      'untested': 44, 'indexed_records': len(index), 'markdown_files': sorted(expected_md),
                       'reference_unchanged': True, 'simulation_sources_unchanged': len(cleanup['kept_active_simulation_modules']),
                       'http_catalog_bytes': len(json.dumps(public, ensure_ascii=False, separators=(',', ':')).encode()),
                       'all_final_media_routes_checked': True, 'old_routes_hidden': True,
+                      'extended_to_120s': len(extended),
                       'media_and_trajectory_hashes_checked': args.hash_media, 'additional_physics_trials': 0}, ensure_ascii=False))
 
 

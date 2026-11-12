@@ -25,7 +25,8 @@ class Catalog:
         for row in self.rows.values():
             visible = {k: v for k, v in row.items()
                        if not k.endswith(('_path', '_sha256')) and k != 'overspeed'}
-            visible.update(video_url=f"/media/{row['id']}.mp4",
+            version = '?v=' + row['video_sha256'][:12] if row.get('extended_to_120s') else ''
+            visible.update(video_url=f"/media/{row['id']}.mp4" + version,
                            curves_url=f"/curves/{row['id']}.json",
                            result_url=f"/data/{row['id']}/result.json",
                            trajectory_url=f"/data/{row['id']}/trajectory.npz")
