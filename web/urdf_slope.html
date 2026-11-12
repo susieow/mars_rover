@@ -24,11 +24,11 @@
 <body>
   <nav><a href="/">← 实验主页</a></nav>
   <h1>实验二 · URDF 约束内的接触恢复控制</h1>
-  <span class="badge">15° / 25° / 35° / 45° 首轮控制诊断 · 数据未接纳</span>
+  <span class="badge">15°～45° 首轮控制诊断 · 数据未接纳</span>
   <p class="muted">固定 20 cm、15 级并只改变踏步深度；模型按原 URDF 的质量、惯量、碰撞体、关节限位/速度/力矩、阻尼和关节摩擦复核。对比原始接触后摆动与“接触→卸载/微退→预抬前轮→重新接触”。</p>
   <div class="toolbar">
-    <label>角度 <select id="angle"><option value="">全部</option><option>15</option><option>25</option><option>35</option><option>45</option></select></label>
-    <label>策略 <select id="strategy"><option value="">全部</option><option value="baseline">原始接触后摆动</option><option value="prelift">卸载—预抬—重接</option><option value="transfer">预抬 + 10° 载荷转移</option><option value="transfer18">预抬 + 18° 载荷转移</option></select></label>
+    <label>角度 <select id="angle"><option value="">全部</option><option>15</option><option>25</option><option>30</option><option>35</option><option>45</option></select></label>
+    <label>策略 <select id="strategy"><option value="">全部</option><option value="baseline">原始接触后摆动</option><option value="prelift">卸载—预抬—重接</option><option value="transfer">预抬 + 10° 载荷转移</option><option value="transfer18">预抬 + 18° 载荷转移</option><option value="zigzag">微Z交替越障</option></select></label>
     <label>摩擦 <select id="friction"><option value="">全部</option><option>4</option><option>6</option><option>8</option></select></label>
     <label>方向 <select id="direction"><option value="">全部</option><option>SN</option><option>SP</option></select></label>
     <button id="reload">刷新目录</button>
@@ -40,7 +40,7 @@
   </main>
   <script>
     const $=id=>document.getElementById(id);let rows=[],current=null;
-    const strategyName=v=>({baseline:'原始接触后摆动',prelift:'卸载—预抬—重接',transfer:'预抬 + 10° 载荷转移',transfer18:'预抬 + 18° 载荷转移'}[v]||v);
+    const strategyName=v=>({baseline:'原始接触后摆动',prelift:'卸载—预抬—重接',transfer:'预抬 + 10° 载荷转移',transfer18:'预抬 + 18° 载荷转移',zigzag:'微Z交替越障'}[v]||v);
     const fmt=(v,n=2)=>v==null||!Number.isFinite(Number(v))?'—':Number(v).toFixed(n);
     function filtered(){return rows.filter(r=>(!$('angle').value||r.angle_deg===Number($('angle').value))&&(!$('strategy').value||r.strategy===$('strategy').value)&&(!$('friction').value||r.friction===Number($('friction').value))&&(!$('direction').value||r.direction===$('direction').value));}
     function badge(r){if(r.ascent_completed&&r.urdf_compliant_exact&&r.numerical_quality_ok)return '<span class="tag">完整通过</span>';if(r.ascent_completed)return '<span class="warn">到平台但未合规</span>';return '<span class="warn">未到平台</span>';}

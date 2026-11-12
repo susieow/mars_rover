@@ -3,10 +3,10 @@
   "experiment": "urdf_slope_control",
   "title": "URDF 约束内的接触恢复控制",
   "summary": "在实验二的 URDF 约束模型中比较原始接触后摇臂周期，以及先卸载、微退、预抬前轮再重接的候选。本批次为 15°、20 cm、15 级、摩擦 6 的诊断结果。",
-  "completed": 11,
-  "platform_completed": 5,
-  "urdf_compliant": 8,
-  "full_success": 4,
+  "completed": 15,
+  "platform_completed": 6,
+  "urdf_compliant": 11,
+  "full_success": 5,
   "cases": [
     {
       "id": "urdf15_mu6_baseline_SN",
@@ -1613,6 +1613,1342 @@
       "trajectory_sha256": "ba79fecc4113bdfefbf8e7b1e7bfe8695f7d083cb3c747b065722e58dc7d5498"
     },
     {
+      "id": "urdf25_mu6_zigzag_SN",
+      "friction": 6,
+      "strategy": "zigzag",
+      "direction": "SN",
+      "angle_deg": 25.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 107.7010000001502,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "platform_complete",
+      "ascent_completed": true,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 15.440316105470586,
+      "violation_names": [],
+      "events": [
+        {
+          "time_s": 18.698,
+          "phase": "UNLOAD",
+          "progress_m": 8.00152,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 18.848,
+          "phase": "ZIG_A",
+          "progress_m": 8.010766,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 19.948,
+          "phase": "ZIG_B",
+          "progress_m": 8.011132,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 21.048,
+          "phase": "RECENTER",
+          "progress_m": 8.154176,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 21.848,
+          "phase": "TRANSFER",
+          "progress_m": 8.383908,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.748,
+          "phase": "FOLLOW",
+          "progress_m": 8.649343,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.749,
+          "phase": "APPROACH",
+          "progress_m": 8.649819,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.75,
+          "phase": "UNLOAD",
+          "progress_m": 8.650295,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.9,
+          "phase": "ZIG_A",
+          "progress_m": 8.689245,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 24.0,
+          "phase": "ZIG_B",
+          "progress_m": 8.805853,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 25.1,
+          "phase": "RECENTER",
+          "progress_m": 8.902886,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 25.9,
+          "phase": "TRANSFER",
+          "progress_m": 9.146316,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.8,
+          "phase": "FOLLOW",
+          "progress_m": 9.240431,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.801,
+          "phase": "APPROACH",
+          "progress_m": 9.240427,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.802,
+          "phase": "UNLOAD",
+          "progress_m": 9.240417,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.952,
+          "phase": "ZIG_A",
+          "progress_m": 9.217421,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 28.052,
+          "phase": "ZIG_B",
+          "progress_m": 9.207517,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 29.152,
+          "phase": "RECENTER",
+          "progress_m": 9.31432,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 29.952,
+          "phase": "TRANSFER",
+          "progress_m": 9.514423,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 30.852,
+          "phase": "FOLLOW",
+          "progress_m": 9.635599,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 30.853,
+          "phase": "APPROACH",
+          "progress_m": 9.635847,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 30.859,
+          "phase": "UNLOAD",
+          "progress_m": 9.637409,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 31.009,
+          "phase": "ZIG_A",
+          "progress_m": 9.63212,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 32.109,
+          "phase": "ZIG_B",
+          "progress_m": 9.624161,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 33.21,
+          "phase": "RECENTER",
+          "progress_m": 9.663944,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 34.011,
+          "phase": "TRANSFER",
+          "progress_m": 9.689233,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 34.912,
+          "phase": "FOLLOW",
+          "progress_m": 9.707447,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 36.784,
+          "phase": "APPROACH",
+          "progress_m": 9.987494,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 36.785,
+          "phase": "UNLOAD",
+          "progress_m": 9.987863,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 36.936,
+          "phase": "ZIG_A",
+          "progress_m": 10.016525,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 38.037,
+          "phase": "ZIG_B",
+          "progress_m": 10.051412,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 39.138,
+          "phase": "RECENTER",
+          "progress_m": 10.101578,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 39.939,
+          "phase": "TRANSFER",
+          "progress_m": 10.118217,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 40.84,
+          "phase": "FOLLOW",
+          "progress_m": 10.134142,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 42.347,
+          "phase": "APPROACH",
+          "progress_m": 10.337879,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 42.348,
+          "phase": "UNLOAD",
+          "progress_m": 10.338244,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 42.499,
+          "phase": "ZIG_A",
+          "progress_m": 10.353098,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 43.6,
+          "phase": "ZIG_B",
+          "progress_m": 10.46097,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 44.701,
+          "phase": "RECENTER",
+          "progress_m": 10.496338,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 45.502,
+          "phase": "TRANSFER",
+          "progress_m": 10.50431,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 46.403,
+          "phase": "FOLLOW",
+          "progress_m": 10.567452,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 49.236,
+          "phase": "APPROACH",
+          "progress_m": 10.68835,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 49.267,
+          "phase": "UNLOAD",
+          "progress_m": 10.697484,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 49.418,
+          "phase": "ZIG_A",
+          "progress_m": 10.721874,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 50.519,
+          "phase": "ZIG_B",
+          "progress_m": 10.85817,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 51.62,
+          "phase": "RECENTER",
+          "progress_m": 10.913835,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 52.421,
+          "phase": "TRANSFER",
+          "progress_m": 10.93513,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 53.322,
+          "phase": "FOLLOW",
+          "progress_m": 10.971202,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 54.508,
+          "phase": "APPROACH",
+          "progress_m": 11.04763,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 54.509,
+          "phase": "UNLOAD",
+          "progress_m": 11.047901,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 54.66,
+          "phase": "ZIG_A",
+          "progress_m": 11.07004,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 55.761,
+          "phase": "ZIG_B",
+          "progress_m": 11.250715,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 56.862,
+          "phase": "RECENTER",
+          "progress_m": 11.339155,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 57.663,
+          "phase": "TRANSFER",
+          "progress_m": 11.407594,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 58.564,
+          "phase": "FOLLOW",
+          "progress_m": 11.665505,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 58.565,
+          "phase": "APPROACH",
+          "progress_m": 11.665787,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 58.566,
+          "phase": "UNLOAD",
+          "progress_m": 11.666069,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 58.717,
+          "phase": "ZIG_A",
+          "progress_m": 11.682752,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 59.818,
+          "phase": "ZIG_B",
+          "progress_m": 11.769109,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 60.919,
+          "phase": "RECENTER",
+          "progress_m": 11.779376,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 61.72,
+          "phase": "TRANSFER",
+          "progress_m": 11.788493,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 62.621,
+          "phase": "FOLLOW",
+          "progress_m": 11.853235,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 63.848,
+          "phase": "APPROACH",
+          "progress_m": 12.016122,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 63.87,
+          "phase": "UNLOAD",
+          "progress_m": 12.023556,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 64.021,
+          "phase": "ZIG_A",
+          "progress_m": 12.051979,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 65.121,
+          "phase": "ZIG_B",
+          "progress_m": 12.166914,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 66.221,
+          "phase": "RECENTER",
+          "progress_m": 12.201729,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 67.021,
+          "phase": "TRANSFER",
+          "progress_m": 12.244264,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 67.921,
+          "phase": "FOLLOW",
+          "progress_m": 12.4009,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 67.922,
+          "phase": "APPROACH",
+          "progress_m": 12.401287,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 67.923,
+          "phase": "UNLOAD",
+          "progress_m": 12.401676,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 68.073,
+          "phase": "ZIG_A",
+          "progress_m": 12.432502,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 69.173,
+          "phase": "ZIG_B",
+          "progress_m": 12.608277,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 70.273,
+          "phase": "RECENTER",
+          "progress_m": 12.62862,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 71.073,
+          "phase": "TRANSFER",
+          "progress_m": 12.627923,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 71.973,
+          "phase": "FOLLOW",
+          "progress_m": 12.650618,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 75.751,
+          "phase": "APPROACH",
+          "progress_m": 12.751843,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 75.752,
+          "phase": "UNLOAD",
+          "progress_m": 12.752096,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 75.902,
+          "phase": "ZIG_A",
+          "progress_m": 12.772956,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 77.002,
+          "phase": "ZIG_B",
+          "progress_m": 12.956684,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 78.102,
+          "phase": "RECENTER",
+          "progress_m": 13.048551,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 78.902,
+          "phase": "TRANSFER",
+          "progress_m": 13.063349,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 79.802,
+          "phase": "FOLLOW",
+          "progress_m": 13.241983,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 79.803,
+          "phase": "APPROACH",
+          "progress_m": 13.242379,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 79.804,
+          "phase": "UNLOAD",
+          "progress_m": 13.242776,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 79.954,
+          "phase": "ZIG_A",
+          "progress_m": 13.274357,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 81.054,
+          "phase": "ZIG_B",
+          "progress_m": 13.449393,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 82.154,
+          "phase": "RECENTER",
+          "progress_m": 13.498777,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 82.954,
+          "phase": "TRANSFER",
+          "progress_m": 13.50095,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 83.854,
+          "phase": "FOLLOW",
+          "progress_m": 13.568699,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 89.86,
+          "phase": "APPROACH",
+          "progress_m": 13.593003,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 89.861,
+          "phase": "UNLOAD",
+          "progress_m": 13.593288,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 90.011,
+          "phase": "ZIG_A",
+          "progress_m": 13.616049,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 91.111,
+          "phase": "ZIG_B",
+          "progress_m": 13.776149,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 92.211,
+          "phase": "RECENTER",
+          "progress_m": 13.921731,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 93.011,
+          "phase": "TRANSFER",
+          "progress_m": 13.92129,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 93.911,
+          "phase": "FOLLOW",
+          "progress_m": 13.929079,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 93.988,
+          "phase": "APPROACH",
+          "progress_m": 13.943289,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 93.989,
+          "phase": "UNLOAD",
+          "progress_m": 13.94351,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 94.139,
+          "phase": "ZIG_A",
+          "progress_m": 13.949179,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 95.239,
+          "phase": "ZIG_B",
+          "progress_m": 13.918805,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 96.339,
+          "phase": "RECENTER",
+          "progress_m": 13.964647,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 97.139,
+          "phase": "TRANSFER",
+          "progress_m": 13.97789,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 98.039,
+          "phase": "FOLLOW",
+          "progress_m": 13.981468,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 100.702,
+          "phase": "APPROACH",
+          "progress_m": 14.293877,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 100.703,
+          "phase": "UNLOAD",
+          "progress_m": 14.294314,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 100.853,
+          "phase": "ZIG_A",
+          "progress_m": 14.323516,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 101.953,
+          "phase": "ZIG_B",
+          "progress_m": 14.547569,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 103.053,
+          "phase": "RECENTER",
+          "progress_m": 14.715964,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 103.853,
+          "phase": "TRANSFER",
+          "progress_m": 14.738175,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 104.753,
+          "phase": "FOLLOW",
+          "progress_m": 15.095577,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 104.754,
+          "phase": "APPROACH",
+          "progress_m": 15.096063,
+          "contact_side": "left"
+        }
+      ],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf25_mu6_zigzag_SN.mp4",
+      "video_sha256": "04e83b37496dd3b897a78ba140b33e283c92a183d3e3b483322ef1c1a61df0d4",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf25_mu6_zigzag_SN/result.json",
+      "result_sha256": "10bd6fc82ef71e3362e516ce161631d093967286ee533b0bbfbd4b02f0c93a12",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf25_mu6_zigzag_SN/trajectory.npz",
+      "trajectory_sha256": "9c4f1548f5e3cbf47262686f5388ecbc1e86065eec8995f4ae21fe97bde31fef"
+    },
+    {
+      "id": "urdf30_mu6_baseline_SN",
+      "friction": 6,
+      "strategy": "baseline",
+      "direction": "SN",
+      "angle_deg": 30.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 242.00000000079146,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "simulation_time_limit",
+      "ascent_completed": false,
+      "urdf_compliant_exact": false,
+      "numerical_quality_ok": false,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 20.431411382386244,
+      "violation_names": [
+        "position_limit:right_rocker_joint"
+      ],
+      "events": [],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf30_mu6_baseline_SN.mp4",
+      "video_sha256": "a79b657630cd6ad6aa7fb689dfdd140e5daa950d52d7c8d503e4b974901cf37b",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf30_mu6_baseline_SN/result.json",
+      "result_sha256": "6c03a8e3e76ea83d528c05f7b7cf64ae0a30482ffbfdf1570ff1f1749c27b301",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf30_mu6_baseline_SN/trajectory.npz",
+      "trajectory_sha256": "2b9bf841c0f2d4deea5e588f6abd5ed6e50028a0a67e9b84b8c7ef1a40fe967e"
+    },
+    {
+      "id": "urdf30_mu6_zigzag_SN",
+      "friction": 6,
+      "strategy": "zigzag",
+      "direction": "SN",
+      "angle_deg": 30.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 242.00000000079146,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "simulation_time_limit",
+      "ascent_completed": false,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 19.568715213604555,
+      "violation_names": [],
+      "events": [
+        {
+          "time_s": 18.698,
+          "phase": "UNLOAD",
+          "progress_m": 8.00152,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 18.848,
+          "phase": "ZIG_A",
+          "progress_m": 8.010786,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 19.948,
+          "phase": "ZIG_B",
+          "progress_m": 8.011067,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 21.048,
+          "phase": "RECENTER",
+          "progress_m": 8.155074,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 21.848,
+          "phase": "TRANSFER",
+          "progress_m": 8.316281,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.748,
+          "phase": "FOLLOW",
+          "progress_m": 8.634786,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.749,
+          "phase": "APPROACH",
+          "progress_m": 8.63483,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.75,
+          "phase": "UNLOAD",
+          "progress_m": 8.634869,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.9,
+          "phase": "ZIG_A",
+          "progress_m": 8.636899,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 24.0,
+          "phase": "ZIG_B",
+          "progress_m": 8.668527,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 25.1,
+          "phase": "RECENTER",
+          "progress_m": 8.937692,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 25.9,
+          "phase": "TRANSFER",
+          "progress_m": 9.001231,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.8,
+          "phase": "FOLLOW",
+          "progress_m": 9.049382,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.801,
+          "phase": "APPROACH",
+          "progress_m": 9.049229,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.802,
+          "phase": "UNLOAD",
+          "progress_m": 9.049076,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.952,
+          "phase": "ZIG_A",
+          "progress_m": 9.032101,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 28.052,
+          "phase": "ZIG_B",
+          "progress_m": 9.072155,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 29.152,
+          "phase": "RECENTER",
+          "progress_m": 9.082569,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 29.952,
+          "phase": "TRANSFER",
+          "progress_m": 9.282939,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 30.852,
+          "phase": "FOLLOW",
+          "progress_m": 9.34227,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 31.349,
+          "phase": "APPROACH",
+          "progress_m": 9.399084,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 31.35,
+          "phase": "UNLOAD",
+          "progress_m": 9.399303,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 31.5,
+          "phase": "ZIG_A",
+          "progress_m": 9.411105,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 32.601,
+          "phase": "ZIG_B",
+          "progress_m": 9.418942,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 33.702,
+          "phase": "RECENTER",
+          "progress_m": 9.420241,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 34.503,
+          "phase": "TRANSFER",
+          "progress_m": 9.40837,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 35.404,
+          "phase": "FOLLOW",
+          "progress_m": 9.678925,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 36.312,
+          "phase": "APPROACH",
+          "progress_m": 9.749472,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 36.313,
+          "phase": "UNLOAD",
+          "progress_m": 9.749686,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 36.464,
+          "phase": "ZIG_A",
+          "progress_m": 9.76217,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 37.565,
+          "phase": "ZIG_B",
+          "progress_m": 9.767054,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 38.666,
+          "phase": "RECENTER",
+          "progress_m": 9.73377,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 39.467,
+          "phase": "TRANSFER",
+          "progress_m": 9.961425,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 40.368,
+          "phase": "FOLLOW",
+          "progress_m": 10.03701,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 40.843,
+          "phase": "APPROACH",
+          "progress_m": 10.099764,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 40.844,
+          "phase": "UNLOAD",
+          "progress_m": 10.099999,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 40.995,
+          "phase": "ZIG_A",
+          "progress_m": 10.112971,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 42.096,
+          "phase": "ZIG_B",
+          "progress_m": 10.105615,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 43.197,
+          "phase": "RECENTER",
+          "progress_m": 10.102154,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 43.998,
+          "phase": "TRANSFER",
+          "progress_m": 10.108655,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 44.899,
+          "phase": "FOLLOW",
+          "progress_m": 10.37435,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 45.793,
+          "phase": "APPROACH",
+          "progress_m": 10.450115,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 45.794,
+          "phase": "UNLOAD",
+          "progress_m": 10.450365,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 45.945,
+          "phase": "ZIG_A",
+          "progress_m": 10.464556,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 47.046,
+          "phase": "ZIG_B",
+          "progress_m": 10.439004,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 48.147,
+          "phase": "RECENTER",
+          "progress_m": 10.462527,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 48.948,
+          "phase": "TRANSFER",
+          "progress_m": 10.602495,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 49.849,
+          "phase": "FOLLOW",
+          "progress_m": 10.724398,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 51.055,
+          "phase": "APPROACH",
+          "progress_m": 10.800511,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 51.091,
+          "phase": "UNLOAD",
+          "progress_m": 10.811419,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 51.242,
+          "phase": "ZIG_A",
+          "progress_m": 10.823115,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 52.343,
+          "phase": "ZIG_B",
+          "progress_m": 10.76783,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 53.444,
+          "phase": "RECENTER",
+          "progress_m": 10.808195,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 54.245,
+          "phase": "TRANSFER",
+          "progress_m": 10.801881,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 55.146,
+          "phase": "FOLLOW",
+          "progress_m": 11.066898,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 56.031,
+          "phase": "APPROACH",
+          "progress_m": 11.161438,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 56.032,
+          "phase": "UNLOAD",
+          "progress_m": 11.16166,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 56.183,
+          "phase": "ZIG_A",
+          "progress_m": 11.171019,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 57.284,
+          "phase": "ZIG_B",
+          "progress_m": 11.160131,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 58.385,
+          "phase": "RECENTER",
+          "progress_m": 11.145745,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 59.186,
+          "phase": "TRANSFER",
+          "progress_m": 11.163743,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 60.087,
+          "phase": "FOLLOW",
+          "progress_m": 11.079772,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 62.593,
+          "phase": "APPROACH",
+          "progress_m": 11.511757,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 62.594,
+          "phase": "UNLOAD",
+          "progress_m": 11.511951,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 62.745,
+          "phase": "ZIG_A",
+          "progress_m": 11.527432,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 63.846,
+          "phase": "ZIG_B",
+          "progress_m": 11.665581,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 64.946,
+          "phase": "RECENTER",
+          "progress_m": 11.764637,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 65.746,
+          "phase": "TRANSFER",
+          "progress_m": 11.873097,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 66.646,
+          "phase": "FOLLOW",
+          "progress_m": 12.111922,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 66.647,
+          "phase": "APPROACH",
+          "progress_m": 12.111957,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 66.648,
+          "phase": "UNLOAD",
+          "progress_m": 12.111989,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 66.798,
+          "phase": "ZIG_A",
+          "progress_m": 12.110638,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 67.898,
+          "phase": "ZIG_B",
+          "progress_m": 12.116554,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 68.998,
+          "phase": "RECENTER",
+          "progress_m": 12.19447,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 69.798,
+          "phase": "TRANSFER",
+          "progress_m": 12.2541,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 70.698,
+          "phase": "FOLLOW",
+          "progress_m": 12.453542,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 71.192,
+          "phase": "APPROACH",
+          "progress_m": 12.462068,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 71.193,
+          "phase": "UNLOAD",
+          "progress_m": 12.462158,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 71.343,
+          "phase": "ZIG_A",
+          "progress_m": 12.467623,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 72.443,
+          "phase": "ZIG_B",
+          "progress_m": 12.536824,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 73.543,
+          "phase": "RECENTER",
+          "progress_m": 12.531791,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 74.343,
+          "phase": "TRANSFER",
+          "progress_m": 12.511754,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 75.243,
+          "phase": "FOLLOW",
+          "progress_m": 12.737192,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 75.944,
+          "phase": "APPROACH",
+          "progress_m": 12.812208,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 75.945,
+          "phase": "UNLOAD",
+          "progress_m": 12.81228,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 76.095,
+          "phase": "ZIG_A",
+          "progress_m": 12.817186,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 77.195,
+          "phase": "ZIG_B",
+          "progress_m": 12.878791,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 78.295,
+          "phase": "RECENTER",
+          "progress_m": 12.87699,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 79.095,
+          "phase": "TRANSFER",
+          "progress_m": 12.881778,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 79.995,
+          "phase": "FOLLOW",
+          "progress_m": 13.198604,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 79.996,
+          "phase": "APPROACH",
+          "progress_m": 13.199052,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 79.997,
+          "phase": "UNLOAD",
+          "progress_m": 13.1995,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 80.147,
+          "phase": "ZIG_A",
+          "progress_m": 13.216633,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 81.247,
+          "phase": "ZIG_B",
+          "progress_m": 13.382647,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 82.347,
+          "phase": "RECENTER",
+          "progress_m": 13.411742,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 83.147,
+          "phase": "TRANSFER",
+          "progress_m": 13.400547,
+          "contact_side": "right"
+        },
+        {
+          "time_s": 84.047,
+          "phase": "FOLLOW",
+          "progress_m": 13.446066,
+          "contact_side": "right"
+        }
+      ],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf30_mu6_zigzag_SN.mp4",
+      "video_sha256": "cc49826be6c7678bbe581e0f3ed61bb0eaa19872c85c9dd579cde6f1dd341ace",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf30_mu6_zigzag_SN/result.json",
+      "result_sha256": "fe8319878b56d7cfc7eaaf56a44fbbe44f9136e18037500b32504970dfef6c9f",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf30_mu6_zigzag_SN/trajectory.npz",
+      "trajectory_sha256": "5ae8ead0adb4c43bcff781ff10f0c5028d562d4caccbf84b8fef5df7ce10fb75"
+    },
+    {
       "id": "urdf35_mu6_baseline_SN",
       "friction": 6,
       "strategy": "baseline",
@@ -1990,6 +3326,153 @@
       "result_sha256": "361199e55a6f024f6f38415511a66c7ec4209838e51bc4e74253d84e5ed142a7",
       "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_transfer_SN/trajectory.npz",
       "trajectory_sha256": "d2779b05a1390d1eacef4cb0fa8543a8c7816fe708c9270516750b3affe8d95b"
+    },
+    {
+      "id": "urdf35_mu6_zigzag_SN",
+      "friction": 6,
+      "strategy": "zigzag",
+      "direction": "SN",
+      "angle_deg": 35.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 242.00000000079146,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "simulation_time_limit",
+      "ascent_completed": false,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 12.771946797624834,
+      "violation_names": [],
+      "events": [
+        {
+          "time_s": 18.698,
+          "phase": "UNLOAD",
+          "progress_m": 8.00152,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 18.848,
+          "phase": "ZIG_A",
+          "progress_m": 8.010766,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 19.948,
+          "phase": "ZIG_B",
+          "progress_m": 8.011254,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 21.048,
+          "phase": "RECENTER",
+          "progress_m": 8.153398,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 21.848,
+          "phase": "TRANSFER",
+          "progress_m": 8.276001,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.748,
+          "phase": "FOLLOW",
+          "progress_m": 8.522798,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.749,
+          "phase": "APPROACH",
+          "progress_m": 8.522864,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.75,
+          "phase": "UNLOAD",
+          "progress_m": 8.522931,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 22.9,
+          "phase": "ZIG_A",
+          "progress_m": 8.528562,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 24.0,
+          "phase": "ZIG_B",
+          "progress_m": 8.636792,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 25.1,
+          "phase": "RECENTER",
+          "progress_m": 8.827023,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 25.9,
+          "phase": "TRANSFER",
+          "progress_m": 8.992093,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.8,
+          "phase": "FOLLOW",
+          "progress_m": 9.062465,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.801,
+          "phase": "APPROACH",
+          "progress_m": 9.062429,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.802,
+          "phase": "UNLOAD",
+          "progress_m": 9.062389,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 26.952,
+          "phase": "ZIG_A",
+          "progress_m": 9.043194,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 28.052,
+          "phase": "ZIG_B",
+          "progress_m": 8.992614,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 29.152,
+          "phase": "RECENTER",
+          "progress_m": 8.988755,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 29.952,
+          "phase": "TRANSFER",
+          "progress_m": 9.043789,
+          "contact_side": "left"
+        },
+        {
+          "time_s": 30.852,
+          "phase": "FOLLOW",
+          "progress_m": 9.05748,
+          "contact_side": "left"
+        }
+      ],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf35_mu6_zigzag_SN.mp4",
+      "video_sha256": "4e1bf8c8c176420e34a27cdbd5c42cc175c92b81b7ec7000e4f8153b086ec8a1",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_zigzag_SN/result.json",
+      "result_sha256": "b66b533ad5dbe14695cb5b944d95cbc2ddfab162462a154fe4625e875d6be8ae",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_zigzag_SN/trajectory.npz",
+      "trajectory_sha256": "1de90ccea31ae6e8b3a400a4ba79e57dcee9cedf9d6e0b0376629becf9791848"
     },
     {
       "id": "urdf45_mu6_baseline_SN",

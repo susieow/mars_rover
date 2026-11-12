@@ -322,7 +322,7 @@ class Controller:
             raise ValueError("unexpected movable joint mapping")
         self.wheel_geom = {row[-1]: index for index, row in enumerate(self.wheels)}
 
-    def update(self, targets, rocker_targets):
+    def update(self, targets, rocker_targets, heading_target=None):
         model, data = self.m, self.d
         _, _, yaw = orientation(data)
         if self.yaw_previous is not None:
@@ -331,12 +331,17 @@ class Controller:
                 + 0.35 * wrap(yaw - self.yaw_previous) / DT
             )
         self.yaw_previous = yaw
-        path_heading = float(
+        tracking_heading = float(
             np.clip(
                 -math.atan(1.5 * float(data.qpos[1]) + 0.3 * float(data.qvel[1])),
                 -0.35,
                 0.35,
             )
+        )
+        path_heading = (
+            tracking_heading
+            if heading_target is None
+            else float(np.clip(heading_target + 0.25 * tracking_heading, -0.35, 0.35))
         )
         error = wrap(path_heading - yaw)
         correction = float(np.clip(4 * error - 1.2 * self.yaw_rate, -1.5, 1.5))
@@ -624,6 +629,90 @@ class PreLiftPattern:
         raise ValueError(f"unknown phase: {self.phase}")
 
 
+class ZigzagPattern:
+    def __init__(self, direction, yaw_deg=6.0, rocker_deg=8.0):
+        self.phase = "APPROACH"
+        self.started = 0.0
+        self.trigger_time = None
+        self.trigger_progress = None
+        self.contact_side = "left" if direction == "SN" else "right"
+        self.yaw_rad = math.radians(yaw_deg)
+        self.rocker_rad = math.radians(rocker_deg)
+        self.events = []
+
+    def switch(self, phase, t, progress):
+        self.phase = phase
+        self.started = t
+        self.events.append(
+            {
+                "time_s": round(float(t), 6),
+                "phase": phase,
+                "progress_m": round(float(progress), 6),
+                "contact_side": self.contact_side,
+            }
+        )
+
+    def command(self, t, progress, front_total_force, front_force, front_indices, controller):
+        if self.phase == "APPROACH":
+            if front_total_force > 0 and self.trigger_time is None:
+                left_force = sum(
+                    float(front_force[index])
+                    for index in front_indices
+                    if controller.wheels[index][5]
+                )
+                right_force = sum(
+                    float(front_force[index])
+                    for index in front_indices
+                    if not controller.wheels[index][5]
+                )
+                if abs(left_force - right_force) > 1e-6:
+                    self.contact_side = "left" if left_force > right_force else "right"
+                self.trigger_time = float(t)
+                self.trigger_progress = float(progress)
+                self.switch("UNLOAD", t, progress)
+            return np.full(3, 3.0), np.zeros(2), 0.0
+        elapsed = t - self.started
+        if self.phase == "UNLOAD":
+            if elapsed >= 0.15:
+                self.switch("ZIG_A", t, progress)
+            return np.array([0.0, 0.5, 1.0]), np.zeros(2), 0.0
+        if self.phase == "ZIG_A":
+            if elapsed >= 1.1:
+                self.switch("ZIG_B", t, progress)
+            if self.contact_side == "left":
+                rockers = np.array([-self.rocker_rad, self.rocker_rad])
+                heading = self.yaw_rad
+            else:
+                rockers = np.array([self.rocker_rad, -self.rocker_rad])
+                heading = -self.yaw_rad
+            return np.array([1.5, 1.5, 2.0]), rockers, heading
+        if self.phase == "ZIG_B":
+            if elapsed >= 1.1:
+                self.switch("RECENTER", t, progress)
+            if self.contact_side == "left":
+                rockers = np.array([self.rocker_rad, -self.rocker_rad])
+                heading = -self.yaw_rad
+            else:
+                rockers = np.array([-self.rocker_rad, self.rocker_rad])
+                heading = self.yaw_rad
+            return np.array([2.0, 2.0, 2.5]), rockers, heading
+        if self.phase == "RECENTER":
+            if elapsed >= 0.8:
+                self.switch("TRANSFER", t, progress)
+            return np.array([2.5, 2.5, 3.0]), np.zeros(2), 0.0
+        if self.phase == "TRANSFER":
+            if elapsed >= 0.9:
+                self.switch("FOLLOW", t, progress)
+            return np.full(3, 3.0), np.full(2, math.radians(8.0)), 0.0
+        if self.phase == "FOLLOW":
+            if self.trigger_progress is not None and progress - self.trigger_progress >= 0.35:
+                self.trigger_time = None
+                self.trigger_progress = None
+                self.switch("APPROACH", t, progress)
+            return np.full(3, 3.0), np.zeros(2), 0.0
+        raise ValueError(f"unknown phase: {self.phase}")
+
+
 def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECONDS):
     angle_tag = f"{angle_deg:g}".replace(".", "p")
     case_id = f"urdf{angle_tag}_mu{friction}_{strategy}_{direction}"
@@ -659,6 +748,7 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         "approach_distance_m": APPROACH_M,
         "base_wheel_speed_rad_s": 3.0,
         "control_version": (
+            "micro_zigzag_v1" if strategy == "zigzag" else
             "contact_prelift_transfer18_v3" if strategy == "transfer18" else
             "contact_prelift_transfer_v2" if strategy == "transfer" else
             "contact_prelift_v1" if strategy == "prelift" else "baseline_wave_v1"
@@ -683,6 +773,7 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         ("rocker_targets_rad", 2),
         ("contact_force_n", 6),
         ("wheel_speed_rad_s", 6),
+        ("heading_target_rad", 1),
     ):
         arrays[name] = np.zeros((maximum_steps, size))
     arrays["wheel_support_level"] = np.full((maximum_steps, 6), -1, dtype=np.int8)
@@ -698,6 +789,10 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         transfer=strategy in {"transfer", "transfer18"},
         transfer_deg=transfer_deg,
     )
+    zigzag_pattern = ZigzagPattern(direction)
+    front_indices = [
+        index for index, row in enumerate(controller.wheels) if row[4] == 0
+    ]
     baseline_trigger = None
     first_contact = None
     first_failure = None
@@ -718,7 +813,8 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         )
         max_self_contacts = max(max_self_contacts, self_contacts)
         penetration = max(penetration, -min_distance)
-        front_level = int(wheel_support_levels(support)[:2].max(initial=-1))
+        levels_for_control = wheel_support_levels(support)
+        front_level = int(levels_for_control[front_indices].max(initial=-1))
         if first_contact is None and front_force > 0:
             first_contact = float(data.time)
         if strategy == "baseline":
@@ -730,7 +826,19 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
             else:
                 targets = np.full(3, 3.0)
                 rockers = wave_rocker(direction, float(data.time) - baseline_trigger)
+            heading = None
             trigger_level = -1
+        elif strategy == "zigzag":
+            targets, rockers, heading = zigzag_pattern.command(
+                float(data.time),
+                progress,
+                front_force,
+                forces,
+                front_indices,
+                controller,
+            )
+            if baseline_trigger is None and zigzag_pattern.trigger_time is not None:
+                baseline_trigger = zigzag_pattern.trigger_time
         else:
             trigger_level = (
                 int(wheel_support_levels(support)[0]) if pattern.trigger_time else -1
@@ -742,16 +850,19 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
                 front_level,
                 trigger_level,
             )
+            heading = None
             if baseline_trigger is None and pattern.trigger_time is not None:
                 baseline_trigger = pattern.trigger_time
         if all(platform) and platform_since is not None:
             targets = np.zeros(3)
             rockers = np.zeros(2)
-        goal = controller.update(targets, rockers)
+            heading = 0.0
+        goal = controller.update(targets, rockers, heading_target=heading)
         arrays["ctrl"][step] = data.ctrl
         arrays["wheel_targets"][step] = goal
         arrays["wheel_group_commands"][step] = controller.wheel_commands
         arrays["rocker_targets_rad"][step] = controller.rocker_commands
+        arrays["heading_target_rad"][step] = 0.0 if heading is None else heading
         mujoco.mj_step(model, data)
         if not np.isfinite(data.qpos).all() or not np.isfinite(data.qvel).all():
             termination_reason = "nonfinite_state"
@@ -869,7 +980,10 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         "termination_reason": termination_reason,
         "first_contact_s": first_contact,
         "intervention_s": baseline_trigger,
-        "events": pattern.events if strategy in {"prelift", "transfer", "transfer18"} else [],
+        "events": (
+            zigzag_pattern.events if strategy == "zigzag" else
+            pattern.events if strategy in {"prelift", "transfer", "transfer18"} else []
+        ),
         "ascent_completed": ascent_completed,
         "urdf_compliant_exact": urdf_compliant,
         "numerical_quality_ok": numerical_quality,
@@ -932,7 +1046,10 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--friction", type=int, choices=(4, 6, 8), required=True)
-    parser.add_argument("--strategy", choices=("baseline", "prelift", "transfer", "transfer18"))
+    parser.add_argument(
+        "--strategy",
+        choices=("baseline", "prelift", "transfer", "transfer18", "zigzag"),
+    )
     parser.add_argument("--direction", choices=("SN", "SP"))
     parser.add_argument("--angle-deg", type=float, default=DEFAULT_ANGLE_DEG)
     parser.add_argument("--max-seconds", type=float, default=MAX_SECONDS)
