@@ -25,6 +25,7 @@
     <label>触发 <select id="trigger"><option value="">全部</option><option value="contact">前轮首次接触</option><option value="stall">接触后确认卡住</option></select></label>
     <label>轮速 <select id="speed"><option value="">全部</option></select></label>
     <label>顺序 <select id="direction"><option value="">全部</option><option value="SN">先 −20° 后 +20°</option><option value="SP">先 +20° 后 −20°</option></select></label>
+    <label title="双后轮持续至少 100 ms 满足几何越阶条件的最高台阶等级">最高几何等级 <select id="level"><option value="">全部等级</option></select></label>
     <label><input id="crossed" type="checkbox">只看曾越阶</label>
     <p id="count"></p><div id="cases" class="cases"></div>
   </div>
@@ -38,15 +39,16 @@
     let catalog, current, curves, generation=0;
     const parameters=new URLSearchParams(location.search);
     for(let speed=3;speed<=15;speed++)$('speed').add(new Option(speed+' rad/s',speed));
-    for(const key of ['mu','trigger','speed','direction']){if(parameters.has(key))$(key).value=parameters.get(key);$(key).onchange=filter;}
+    for(const key of ['mu','trigger','speed','direction','level']){if(parameters.has(key))$(key).value=parameters.get(key);$(key).onchange=filter;}
     $('crossed').checked=parameters.get('crossed')==='1';$('crossed').onchange=filter;
 
     function selected(row){
       return (!$('mu').value||row.friction===Number($('mu').value))&&(!$('trigger').value||row.trigger===$('trigger').value)
         &&(!$('speed').value||row.speed===Number($('speed').value))&&(!$('direction').value||row.direction===$('direction').value);
     }
+    function matchesLevel(row){return !$('level').value||row.highest_level===Number($('level').value);}
     function saveLocation(){
-      const p=new URLSearchParams();for(const key of ['mu','trigger','speed','direction'])if($(key).value)p.set(key,$(key).value);
+      const p=new URLSearchParams();for(const key of ['mu','trigger','speed','direction','level'])if($(key).value)p.set(key,$(key).value);
       if($('crossed').checked)p.set('crossed','1');if(current)p.set('case',current.id);history.replaceState(null,'','/?'+p);
     }
     function clearDetail(){
@@ -54,12 +56,12 @@
       current=null;curves=null;generation++;$('detail').textContent='当前筛选无可显示记录。未测试的组合没有视频。';
     }
     function filter(){
-      const all=catalog.cases.filter(selected),rows=all.filter(r=>!$('crossed').checked||r.crossing),missing=catalog.untested.filter(selected).length;
-      $('count').textContent=`显示 ${rows.length} 条；当前参数下已测 ${all.length}，曾越阶 ${all.filter(r=>r.crossing).length}，未测 ${missing}。`;
+      const all=catalog.cases.filter(selected),rows=all.filter(r=>matchesLevel(r)&&(!$('crossed').checked||r.crossing)),missing=catalog.untested.filter(selected).length;
+      $('count').textContent=`显示 ${rows.length} / ${all.length} 条已测记录；当前参数下曾越阶 ${all.filter(r=>r.crossing).length}，未测 ${missing}。`;
       $('cases').replaceChildren();
       for(const row of rows){
         const button=document.createElement('button');button.className='case'+(current?.id===row.id?' selected':'');button.dataset.id=row.id;
-        button.innerHTML=`<b>μ ${row.friction} · ${row.speed} rad/s · ${triggerName(row.trigger)}</b><small>${directionName(row.direction)}</small><span class="${row.crossing?'tag':'muted'}">${row.crossing?'曾越阶':'未越阶'} · 最大穿透 ${fmt(row.penetration_mm,2)} mm</span>`;
+        button.innerHTML=`<b>μ ${row.friction} · ${row.speed} rad/s · ${triggerName(row.trigger)}</b><small>${directionName(row.direction)}</small><span class="${row.crossing?'tag':'muted'}">最高几何等级 ${row.highest_level} · 末段 ${row.retained_level}</span><small>${row.crossing?'曾越阶':'未越阶'} · 最大穿透 ${fmt(row.penetration_mm,2)} mm</small>`;
         button.onclick=()=>show(row.id);$('cases').append(button);
       }
       if(!rows.some(r=>r.id===current?.id)){if(rows.length)show(rows[0].id);else clearDetail();}saveLocation();
@@ -107,8 +109,11 @@
     }
     async function load(){
       try{const response=await fetch('/api/experiments');if(!response.ok)throw Error('HTTP '+response.status);catalog=await response.json();$('summary').textContent=`已完成 ${catalog.completed} 条，曾局部越阶 ${catalog.local_crossing_count} 条；未测 ${catalog.untested_count} 个组合；完整成功 0 条。`;
+        const levels=[...new Set(catalog.cases.map(r=>r.highest_level))].sort((a,b)=>a-b);
+        for(const level of levels){const count=catalog.cases.filter(r=>r.highest_level===level).length;$('level').add(new Option(`${level} 级${level===0?'（未越阶）':''} · ${count} 条`,level));}
+        if(parameters.has('level'))$('level').value=parameters.get('level');
         const wanted=catalog.cases.find(r=>r.id===parameters.get('case'));
-        if(wanted&&selected(wanted)&&(!$('crossed').checked||wanted.crossing)){current=wanted;filter();show(wanted.id);}else filter();
+        if(wanted&&selected(wanted)&&matchesLevel(wanted)&&(!$('crossed').checked||wanted.crossing)){current=wanted;filter();show(wanted.id);}else filter();
       }catch(error){$('summary').textContent='目录读取失败：'+error.message;}
     }
     load();
