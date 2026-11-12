@@ -78,7 +78,7 @@ Git：`https://github.com/susieow/mars_rover.git`，默认分支 `wzy`。需要�
 
 ## 实验二：URDF 约束内的阶梯坡度上限（Sol 实施方案）
 
-状态：方案已制定，尚未运行新仿真。旧成果已先提交为 `dd43d2a`；本次只增加主页、入口和实施交接。当前执行主机为 AGX `agilex@172.30.2.15`，仓库 `/home/agilex/wzy/rover`，分支 `wzy`，解释器 `.venv/bin/python`。无需推送 GitHub。
+状态：2026-11-12 已完成首轮模型一致性核验与 11 条控制诊断。实现位于 AGX worktree `/home/agilex/wzy/rover-chaixm`，分支 `cxm`；执行解释器沿用 `/home/agilex/wzy/rover/.venv/bin/python`。首轮结果已接入 `/experiments/urdf-slope`，尚未推送 GitHub。
 
 ### 1. 用户已锁定的目标与约束
 
@@ -173,3 +173,29 @@ URDF没有规定地球/火星重力、接触求解器、时间步长、软接触
 - `https://raw.githubusercontent.com/google-deepmind/mujoco/3.17.0/doc/modeling.rst`：438～453行接触摩擦混合，680～686行关节总力矩限制，1524～1526行URDF字段静默忽略风险。
 - `https://raw.githubusercontent.com/google-deepmind/mujoco/3.17.0/src/xml/xml_urdf.cc`：497行不导入velocity，498～503行effort映射joint actfrcrange。
 - `https://raw.githubusercontent.com/google-deepmind/mujoco/3.17.0/doc/XMLreference.rst`：2571～2585行joint合力限幅，5863～5866行actuator输出限幅。
+
+## 实验二首轮控制诊断（2026-11-12）
+
+新增 `scripts/rover/urdf_slope_control_20261112.py`、对应媒体脚本和目录生成器。模型门槛检查原URDF哈希 `cca26f5b...`、95个URDF link（编译后含world共96个body）、82个collision、126.746kg、12个活动关节的位置/阻尼/关节摩擦/关节合力限幅、轮胎0.6、台阶指定摩擦、1ms步长及机器人自碰撞。门槛通过后才允许启动物理循环。
+
+机器人自碰撞启用后，原URDF的简化碰撞几何在“车轮与同侧摇臂形状”之间持续重叠，会把右前轮卡住并把右摇臂推到位置限位。新场景显式排除六轮分别与同侧 `rocker_shape0..14` 的90个接触对，理由和数量写入 `model_compliance.json`；其余机器人内部碰撞未关闭。
+
+首批记录了摩擦6，15°、25°、35°、45°的原始接触后摇臂方案，以及接触后卸载—预抬—重接候选。视频和逐条结果位于 `/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/`、`runs/urdf_slope_control_20261112/` 和 `docs/urdf_slope_review.json`。
+
+| 角度 | 策略 | 六轮到平台 | URDF精确合规 | 数值质量 | 最大穿透mm | 结果 |
+|---:|---|---|---|---|---:|---|
+| 15° | 原始 SN | 是 | 是 | 是 | 13.46 | 63.86s通过 |
+| 15° | 原始 SP | 是 | 是 | 是 | 12.15 | 64.20s通过 |
+| 15° | 卸载—预抬 SN | 是 | 是 | 是 | 13.35 | 111.50s通过 |
+| 25° | 原始 SN | 是 | 是 | 是 | 19.61 | 92.57s通过 |
+| 25° | 预抬+18°载荷转移 | 是 | 否 | 否 | 24.39 | 到平台但不可接纳 |
+| 35° | 原始 SN | 否 | 否 | 是 | 13.65 | 240s观察窗内未完成 |
+| 35° | 卸载—预抬 SN | 否 | 是 | 是 | 13.64 | 240s观察窗内未完成 |
+| 35° | 预抬+10°载荷转移 | 否 | 是 | 是 | 13.64 | 240s观察窗内未完成 |
+| 35° | 预抬+18°载荷转移 | 否 | 是 | 是 | 13.64 | 240s观察窗内未完成 |
+| 45° | 原始 SN | 否 | 否 | 是 | 19.78 | 240s观察窗内未完成 |
+| 45° | 卸载—预抬 SN | 否 | 是 | 是 | 17.93 | 240s观察窗内未完成 |
+
+结论：接触后先卸载和预抬可以避免部分关节超速，并降低45°最大穿透，但首轮实现没有提高最高合规通过角度。当前已验证的合规通过角范围为15°和25°；35°与45°只能说“该控制版本在240秒内未完成”，不能据此宣布车辆物理极限。预抬方案在15°比原始方案更慢，没有展示收益；25°的18°载荷转移出现24.39mm穿透并失去合规资格，不能接纳。
+
+后续优先修正“前轮上第一级后中后轮载荷转移”，而不是继续增加前轮预抬角。下一步应尝试在线阶段估计和轮组独立驱动，并保持相同模型、初态、摩擦和观察预算。

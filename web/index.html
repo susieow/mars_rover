@@ -9,7 +9,7 @@
   </style>
 </head>
 <body>
-  <header><div class="eyebrow">MARS ROVER / EXPERIMENTS</div><h1>火星车实验主页</h1><p class="intro">按实验目标查看方案、视频与结果。两个实验分别保留自己的模型条件和成功判定，方便持续比较与复核。</p></header>
+  <header><div class="eyebrow">MARS ROVER / EXPERIMENTS</div><h1>火星车实验主页</h1><p class="intro">按实验目标查看方案、视频与结果。两个实验分别保留自己的模型条件、控制策略和成功判定，方便持续比较与复核。</p></header>
   <main class="grid">
     <article class="card">
       <div class="top"><span class="number">实验 01</span><span class="badge">已完成阶段探索</span></div>
@@ -20,12 +20,12 @@
       <a class="button" href="/experiments/stairs-45">查看视频与结果 →</a>
     </article>
     <article class="card active">
-      <div class="top"><span class="number">实验 02</span><span class="badge">方案已制定 · 尚未运行</span></div>
+      <div class="top"><span class="number">实验 02</span><span class="badge">URDF 约束 · 首轮控制诊断</span></div>
       <h2>URDF 约束内的坡度上限</h2>
       <p class="description">恢复甲方 URDF 的明确约束，轮胎参数设为 0.6。固定台阶高度和级数，通过改变踏步深度测试可通过的坡度。</p>
       <div class="facts"><p><span>楼梯</span><strong>20 cm · 15 级 · 可变角度</strong></p><p><span>轮胎 / 台阶摩擦</span><strong>0.6 / 4、6、8</strong></p><p><span>成功终点</span><strong>六轮登上平台并停稳</strong></p><p><span>本次范围</span><strong>只测上行</strong></p></div>
-      <p class="status">先完成模型一致性核验，再逐档测试角度。此入口暂不包含新实验数据。</p>
-      <a class="button" href="/experiments/urdf-slope">查看实验方案 →</a>
+      <p class="status" id="slopeStatus">正在读取首轮诊断目录…</p>
+      <a class="button" href="/experiments/urdf-slope">查看视频与结果 →</a>
     </article>
   </main>
   <p class="note">实验一的局部越阶记录含有超限情况，不能作为实验二“URDF 约束内通过”的结论。历史诊断视频仍按经验索引保存。</p>
@@ -35,6 +35,11 @@
       document.getElementById('extendedCount').textContent=c.cases.filter(r=>r.extended_to_120s).length+' 条至 120 秒';
       document.getElementById('oldStatus').textContent='曾局部越阶 '+c.local_crossing_count+' 条；完整路线合格成功 '+c.full_route_successes+' 条。';
     }).catch(e=>{document.getElementById('caseCount').textContent='暂不可用';document.getElementById('extendedCount').textContent='暂不可用';const p=document.getElementById('oldStatus');p.classList.add('error');p.textContent='实验目录读取失败：'+e.message;});
+    fetch('/api/urdf-slope').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(c=>{
+      const p=document.getElementById('slopeStatus');
+      if(!c.completed){p.textContent='模型核验和实验入口已接入；等待首轮仿真记录。';return;}
+      p.textContent=`已记录 ${c.completed} 条；六轮到平台 ${c.platform_completed} 条；完整通过 ${c.full_success} 条。`;
+    }).catch(e=>{const p=document.getElementById('slopeStatus');p.classList.add('error');p.textContent='诊断目录读取失败：'+e.message;});
   </script>
 </body>
 </html>

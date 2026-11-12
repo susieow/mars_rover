@@ -50,7 +50,44 @@ class Catalog:
         return None
 
 
-def handler_for(catalog):
+class ReviewCatalog:
+    def __init__(self, path):
+        path = Path(path) if path else None
+        if path is not None and path.is_file():
+            self.document = json.loads(path.read_text(encoding='utf-8'))
+        else:
+            self.document = {'completed': 0, 'cases': []}
+        self.rows = {row['id']: row for row in self.document.get('cases', [])}
+        self.public = {key: value for key, value in self.document.items() if key != 'cases'}
+        self.public['cases'] = []
+        for row in self.rows.values():
+            visible = {
+                key: value for key, value in row.items()
+                if not key.endswith(('_path', '_sha256'))
+            }
+            visible.update(
+                video_url=f"/slope-media/{row['id']}.mp4?v={row['video_sha256'][:12]}",
+                result_url=f"/slope-data/{row['id']}/result.json",
+                trajectory_url=f"/slope-data/{row['id']}/trajectory.npz",
+            )
+            self.public['cases'].append(visible)
+
+    def asset(self, path):
+        if path.startswith('/slope-media/') and path.endswith('.mp4'):
+            row = self.rows.get(path[len('/slope-media/'):-len('.mp4')])
+            return Path(row['video_path']) if row else None
+        if path.startswith('/slope-data/'):
+            parts = path[len('/slope-data/'):].split('/')
+            if len(parts) == 2 and parts[0] in self.rows:
+                field = {
+                    'result.json': 'result_path',
+                    'trajectory.npz': 'trajectory_path',
+                }.get(parts[1])
+                return Path(self.rows[parts[0]][field]) if field else None
+        return None
+
+
+def handler_for(catalog, review):
     class Handler(BaseHTTPRequestHandler):
         def reply(self, status, body, kind='application/json; charset=utf-8', headers=None):
             self.send_response(status)
@@ -94,10 +131,14 @@ def handler_for(catalog):
                 return self.serve_file(SLOPE_PAGE)
             if path == '/api/experiments':
                 return self.reply(200, json.dumps(catalog.public, ensure_ascii=False, separators=(',', ':')).encode())
+            if path == '/api/urdf-slope':
+                return self.reply(200, json.dumps(review.public, ensure_ascii=False, separators=(',', ':')).encode())
             asset = catalog.asset(path)
+            if asset is None:
+                asset = review.asset(path)
             if asset is not None and asset.is_file():
                 return self.serve_file(asset)
-            self.reply(404, '页面或文件未列入最终测试目录。历史视频请按 EXPERIENCE.md 的索引自行查找。'.encode(), 'text/plain; charset=utf-8')
+            self.reply(404, '页面或文件未登记在实验目录。历史视频请按 EXPERIENCE.md 的索引自行查找。'.encode(), 'text/plain; charset=utf-8')
 
         def serve_file(self, path):
             size = path.stat().st_size
@@ -144,12 +185,16 @@ def main():
     parser.add_argument('--host', choices=('127.0.0.1',), default='127.0.0.1')
     parser.add_argument('--port', type=int, default=8701)
     parser.add_argument('--catalog', type=Path)
+    parser.add_argument('--review-catalog', type=Path)
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     path = args.catalog or root / 'docs/final_experiments.json'
     if args.catalog is None and not path.exists():
         path = root / 'rover/docs/final_experiments.json'
-    server = ThreadingHTTPServer((args.host, args.port), handler_for(Catalog(path)))
+    review_path = args.review_catalog or root / 'docs/urdf_slope_review.json'
+    server = ThreadingHTTPServer(
+        (args.host, args.port), handler_for(Catalog(path), ReviewCatalog(review_path))
+    )
     print(f'Rover experiments: http://{args.host}:{args.port}/', flush=True)
     try:
         server.serve_forever()

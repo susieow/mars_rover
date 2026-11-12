@@ -1,0 +1,2116 @@
+{
+  "updated": "2026-11-12",
+  "experiment": "urdf_slope_control",
+  "title": "URDF 约束内的接触恢复控制",
+  "summary": "在实验二的 URDF 约束模型中比较原始接触后摇臂周期，以及先卸载、微退、预抬前轮再重接的候选。本批次为 15°、20 cm、15 级、摩擦 6 的诊断结果。",
+  "completed": 11,
+  "platform_completed": 5,
+  "urdf_compliant": 8,
+  "full_success": 4,
+  "cases": [
+    {
+      "id": "urdf15_mu6_baseline_SN",
+      "friction": 6,
+      "strategy": "baseline",
+      "direction": "SN",
+      "angle_deg": 15.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 63.85899999994187,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "platform_complete",
+      "ascent_completed": true,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 13.462852097882338,
+      "violation_names": [],
+      "events": [],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf15_mu6_baseline_SN.mp4",
+      "video_sha256": "b1cb0574dbbcd0b41ae8334c82ef54669167424a45467810f2f7b8086c27c56c",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf15_mu6_baseline_SN/result.json",
+      "result_sha256": "fc9a95f5660f5086f1f7601267c5c917af1ee19ce4570938dbfab740ad7c08a1",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf15_mu6_baseline_SN/trajectory.npz",
+      "trajectory_sha256": "dd32d262e23de771e476e37d980469b1da17c467790d445fe68a34d6d8f40b79"
+    },
+    {
+      "id": "urdf15_mu6_baseline_SP",
+      "friction": 6,
+      "strategy": "baseline",
+      "direction": "SP",
+      "angle_deg": 15.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 64.20399999994251,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "platform_complete",
+      "ascent_completed": true,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 12.151140147658612,
+      "violation_names": [],
+      "events": [],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf15_mu6_baseline_SP.mp4",
+      "video_sha256": "7a3e1879950369b832da27f6209698ff8c410a66ed763d71e820cf2df6b071f6",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf15_mu6_baseline_SP/result.json",
+      "result_sha256": "f11b47d2088a59c513bb63028c5e6636573b0917a34cf107dc3243af029a03ce",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf15_mu6_baseline_SP/trajectory.npz",
+      "trajectory_sha256": "0c79ba02dd8d41250d74b0163bfa9d16a7df5d739613a209c5049cdfd5a0cf1f"
+    },
+    {
+      "id": "urdf15_mu6_prelift_SN",
+      "friction": 6,
+      "strategy": "prelift",
+      "direction": "SN",
+      "angle_deg": 15.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 111.49600000016832,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "platform_complete",
+      "ascent_completed": true,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 13.350221647002309,
+      "violation_names": [],
+      "events": [
+        {
+          "time_s": 18.698,
+          "phase": "UNLOAD",
+          "progress_m": 8.001546
+        },
+        {
+          "time_s": 18.848,
+          "phase": "RECOIL",
+          "progress_m": 8.010817
+        },
+        {
+          "time_s": 19.148,
+          "phase": "PRELIFT",
+          "progress_m": 8.00669
+        },
+        {
+          "time_s": 20.048,
+          "phase": "REATTACH",
+          "progress_m": 8.00883
+        },
+        {
+          "time_s": 21.826,
+          "phase": "CLIMB",
+          "progress_m": 8.081668
+        },
+        {
+          "time_s": 23.226,
+          "phase": "FOLLOW",
+          "progress_m": 8.633768
+        },
+        {
+          "time_s": 23.227,
+          "phase": "APPROACH",
+          "progress_m": 8.634109
+        },
+        {
+          "time_s": 23.228,
+          "phase": "UNLOAD",
+          "progress_m": 8.634451
+        },
+        {
+          "time_s": 23.378,
+          "phase": "RECOIL",
+          "progress_m": 8.659095
+        },
+        {
+          "time_s": 23.678,
+          "phase": "PRELIFT",
+          "progress_m": 8.651716
+        },
+        {
+          "time_s": 24.578,
+          "phase": "REATTACH",
+          "progress_m": 8.681246
+        },
+        {
+          "time_s": 24.755,
+          "phase": "CLIMB",
+          "progress_m": 8.714496
+        },
+        {
+          "time_s": 26.155,
+          "phase": "FOLLOW",
+          "progress_m": 8.992565
+        },
+        {
+          "time_s": 26.288,
+          "phase": "APPROACH",
+          "progress_m": 9.054492
+        },
+        {
+          "time_s": 26.289,
+          "phase": "UNLOAD",
+          "progress_m": 9.05497
+        },
+        {
+          "time_s": 26.439,
+          "phase": "RECOIL",
+          "progress_m": 9.091888
+        },
+        {
+          "time_s": 26.739,
+          "phase": "PRELIFT",
+          "progress_m": 9.089776
+        },
+        {
+          "time_s": 27.639,
+          "phase": "REATTACH",
+          "progress_m": 9.152715
+        },
+        {
+          "time_s": 27.64,
+          "phase": "CLIMB",
+          "progress_m": 9.152792
+        },
+        {
+          "time_s": 29.04,
+          "phase": "FOLLOW",
+          "progress_m": 9.422813
+        },
+        {
+          "time_s": 29.176,
+          "phase": "APPROACH",
+          "progress_m": 9.475142
+        },
+        {
+          "time_s": 29.177,
+          "phase": "UNLOAD",
+          "progress_m": 9.475582
+        },
+        {
+          "time_s": 29.327,
+          "phase": "RECOIL",
+          "progress_m": 9.500046
+        },
+        {
+          "time_s": 29.627,
+          "phase": "PRELIFT",
+          "progress_m": 9.488881
+        },
+        {
+          "time_s": 30.527,
+          "phase": "REATTACH",
+          "progress_m": 9.499902
+        },
+        {
+          "time_s": 32.134,
+          "phase": "CLIMB",
+          "progress_m": 9.555598
+        },
+        {
+          "time_s": 33.535,
+          "phase": "FOLLOW",
+          "progress_m": 10.053433
+        },
+        {
+          "time_s": 33.536,
+          "phase": "APPROACH",
+          "progress_m": 10.05363
+        },
+        {
+          "time_s": 33.537,
+          "phase": "UNLOAD",
+          "progress_m": 10.053829
+        },
+        {
+          "time_s": 33.688,
+          "phase": "RECOIL",
+          "progress_m": 10.065122
+        },
+        {
+          "time_s": 33.989,
+          "phase": "PRELIFT",
+          "progress_m": 10.009029
+        },
+        {
+          "time_s": 34.89,
+          "phase": "REATTACH",
+          "progress_m": 9.985383
+        },
+        {
+          "time_s": 34.927,
+          "phase": "CLIMB",
+          "progress_m": 9.986578
+        },
+        {
+          "time_s": 36.328,
+          "phase": "FOLLOW",
+          "progress_m": 10.064846
+        },
+        {
+          "time_s": 38.093,
+          "phase": "APPROACH",
+          "progress_m": 10.474121
+        },
+        {
+          "time_s": 38.094,
+          "phase": "UNLOAD",
+          "progress_m": 10.474593
+        },
+        {
+          "time_s": 38.245,
+          "phase": "RECOIL",
+          "progress_m": 10.51102
+        },
+        {
+          "time_s": 38.546,
+          "phase": "PRELIFT",
+          "progress_m": 10.509853
+        },
+        {
+          "time_s": 39.447,
+          "phase": "REATTACH",
+          "progress_m": 10.573765
+        },
+        {
+          "time_s": 39.448,
+          "phase": "CLIMB",
+          "progress_m": 10.573842
+        },
+        {
+          "time_s": 40.849,
+          "phase": "FOLLOW",
+          "progress_m": 10.903722
+        },
+        {
+          "time_s": 40.85,
+          "phase": "APPROACH",
+          "progress_m": 10.903895
+        },
+        {
+          "time_s": 40.851,
+          "phase": "UNLOAD",
+          "progress_m": 10.904067
+        },
+        {
+          "time_s": 41.002,
+          "phase": "RECOIL",
+          "progress_m": 10.92037
+        },
+        {
+          "time_s": 41.303,
+          "phase": "PRELIFT",
+          "progress_m": 10.899316
+        },
+        {
+          "time_s": 42.204,
+          "phase": "REATTACH",
+          "progress_m": 10.730146
+        },
+        {
+          "time_s": 42.205,
+          "phase": "CLIMB",
+          "progress_m": 10.729918
+        },
+        {
+          "time_s": 43.606,
+          "phase": "FOLLOW",
+          "progress_m": 10.892432
+        },
+        {
+          "time_s": 45.214,
+          "phase": "APPROACH",
+          "progress_m": 11.324533
+        },
+        {
+          "time_s": 45.215,
+          "phase": "UNLOAD",
+          "progress_m": 11.325014
+        },
+        {
+          "time_s": 45.366,
+          "phase": "RECOIL",
+          "progress_m": 11.362002
+        },
+        {
+          "time_s": 45.667,
+          "phase": "PRELIFT",
+          "progress_m": 11.360726
+        },
+        {
+          "time_s": 46.568,
+          "phase": "REATTACH",
+          "progress_m": 11.424272
+        },
+        {
+          "time_s": 46.569,
+          "phase": "CLIMB",
+          "progress_m": 11.424349
+        },
+        {
+          "time_s": 47.97,
+          "phase": "FOLLOW",
+          "progress_m": 11.574355
+        },
+        {
+          "time_s": 49.047,
+          "phase": "APPROACH",
+          "progress_m": 11.745196
+        },
+        {
+          "time_s": 49.048,
+          "phase": "UNLOAD",
+          "progress_m": 11.745433
+        },
+        {
+          "time_s": 49.199,
+          "phase": "RECOIL",
+          "progress_m": 11.766886
+        },
+        {
+          "time_s": 49.5,
+          "phase": "PRELIFT",
+          "progress_m": 11.751699
+        },
+        {
+          "time_s": 50.401,
+          "phase": "REATTACH",
+          "progress_m": 11.763388
+        },
+        {
+          "time_s": 50.745,
+          "phase": "CLIMB",
+          "progress_m": 11.825636
+        },
+        {
+          "time_s": 52.146,
+          "phase": "FOLLOW",
+          "progress_m": 12.311206
+        },
+        {
+          "time_s": 52.147,
+          "phase": "APPROACH",
+          "progress_m": 12.311441
+        },
+        {
+          "time_s": 52.148,
+          "phase": "UNLOAD",
+          "progress_m": 12.311675
+        },
+        {
+          "time_s": 52.299,
+          "phase": "RECOIL",
+          "progress_m": 12.325114
+        },
+        {
+          "time_s": 52.6,
+          "phase": "PRELIFT",
+          "progress_m": 12.261401
+        },
+        {
+          "time_s": 53.501,
+          "phase": "REATTACH",
+          "progress_m": 12.231863
+        },
+        {
+          "time_s": 53.538,
+          "phase": "CLIMB",
+          "progress_m": 12.233199
+        },
+        {
+          "time_s": 54.939,
+          "phase": "FOLLOW",
+          "progress_m": 12.441768
+        },
+        {
+          "time_s": 56.167,
+          "phase": "APPROACH",
+          "progress_m": 12.731993
+        },
+        {
+          "time_s": 56.168,
+          "phase": "UNLOAD",
+          "progress_m": 12.73247
+        },
+        {
+          "time_s": 56.319,
+          "phase": "RECOIL",
+          "progress_m": 12.76941
+        },
+        {
+          "time_s": 56.62,
+          "phase": "PRELIFT",
+          "progress_m": 12.768097
+        },
+        {
+          "time_s": 57.521,
+          "phase": "REATTACH",
+          "progress_m": 12.831822
+        },
+        {
+          "time_s": 57.522,
+          "phase": "CLIMB",
+          "progress_m": 12.8319
+        },
+        {
+          "time_s": 58.923,
+          "phase": "FOLLOW",
+          "progress_m": 13.156333
+        },
+        {
+          "time_s": 58.924,
+          "phase": "APPROACH",
+          "progress_m": 13.156605
+        },
+        {
+          "time_s": 58.925,
+          "phase": "UNLOAD",
+          "progress_m": 13.156881
+        },
+        {
+          "time_s": 59.076,
+          "phase": "RECOIL",
+          "progress_m": 13.1825
+        },
+        {
+          "time_s": 59.377,
+          "phase": "PRELIFT",
+          "progress_m": 13.171798
+        },
+        {
+          "time_s": 60.278,
+          "phase": "REATTACH",
+          "progress_m": 13.207935
+        },
+        {
+          "time_s": 60.325,
+          "phase": "CLIMB",
+          "progress_m": 13.212096
+        },
+        {
+          "time_s": 61.726,
+          "phase": "FOLLOW",
+          "progress_m": 13.482629
+        },
+        {
+          "time_s": 61.926,
+          "phase": "APPROACH",
+          "progress_m": 13.577132
+        },
+        {
+          "time_s": 61.927,
+          "phase": "UNLOAD",
+          "progress_m": 13.577613
+        },
+        {
+          "time_s": 62.078,
+          "phase": "RECOIL",
+          "progress_m": 13.614613
+        },
+        {
+          "time_s": 62.379,
+          "phase": "PRELIFT",
+          "progress_m": 13.613166
+        },
+        {
+          "time_s": 63.28,
+          "phase": "REATTACH",
+          "progress_m": 13.672334
+        },
+        {
+          "time_s": 63.281,
+          "phase": "CLIMB",
+          "progress_m": 13.672355
+        },
+        {
+          "time_s": 64.681,
+          "phase": "FOLLOW",
+          "progress_m": 13.921471
+        },
+        {
+          "time_s": 65.397,
+          "phase": "APPROACH",
+          "progress_m": 13.997835
+        },
+        {
+          "time_s": 65.398,
+          "phase": "UNLOAD",
+          "progress_m": 13.998113
+        },
+        {
+          "time_s": 65.548,
+          "phase": "RECOIL",
+          "progress_m": 14.022626
+        },
+        {
+          "time_s": 65.848,
+          "phase": "PRELIFT",
+          "progress_m": 14.008102
+        },
+        {
+          "time_s": 66.748,
+          "phase": "REATTACH",
+          "progress_m": 14.021301
+        },
+        {
+          "time_s": 67.032,
+          "phase": "CLIMB",
+          "progress_m": 14.078239
+        },
+        {
+          "time_s": 68.432,
+          "phase": "FOLLOW",
+          "progress_m": 14.54231
+        },
+        {
+          "time_s": 68.433,
+          "phase": "APPROACH",
+          "progress_m": 14.542472
+        },
+        {
+          "time_s": 68.434,
+          "phase": "UNLOAD",
+          "progress_m": 14.542633
+        },
+        {
+          "time_s": 68.584,
+          "phase": "RECOIL",
+          "progress_m": 14.551445
+        },
+        {
+          "time_s": 68.884,
+          "phase": "PRELIFT",
+          "progress_m": 14.491543
+        },
+        {
+          "time_s": 69.784,
+          "phase": "REATTACH",
+          "progress_m": 14.465192
+        },
+        {
+          "time_s": 69.825,
+          "phase": "CLIMB",
+          "progress_m": 14.466712
+        },
+        {
+          "time_s": 71.225,
+          "phase": "FOLLOW",
+          "progress_m": 14.559182
+        },
+        {
+          "time_s": 72.86,
+          "phase": "APPROACH",
+          "progress_m": 14.962678
+        },
+        {
+          "time_s": 72.861,
+          "phase": "UNLOAD",
+          "progress_m": 14.963157
+        },
+        {
+          "time_s": 73.011,
+          "phase": "RECOIL",
+          "progress_m": 14.999842
+        },
+        {
+          "time_s": 73.311,
+          "phase": "PRELIFT",
+          "progress_m": 14.998403
+        },
+        {
+          "time_s": 74.211,
+          "phase": "REATTACH",
+          "progress_m": 15.062403
+        },
+        {
+          "time_s": 74.212,
+          "phase": "CLIMB",
+          "progress_m": 15.062481
+        },
+        {
+          "time_s": 75.612,
+          "phase": "FOLLOW",
+          "progress_m": 15.38025
+        },
+        {
+          "time_s": 75.626,
+          "phase": "APPROACH",
+          "progress_m": 15.383269
+        },
+        {
+          "time_s": 75.627,
+          "phase": "UNLOAD",
+          "progress_m": 15.383485
+        },
+        {
+          "time_s": 75.777,
+          "phase": "RECOIL",
+          "progress_m": 15.402786
+        },
+        {
+          "time_s": 76.077,
+          "phase": "PRELIFT",
+          "progress_m": 15.390394
+        },
+        {
+          "time_s": 76.977,
+          "phase": "REATTACH",
+          "progress_m": 15.198779
+        },
+        {
+          "time_s": 76.978,
+          "phase": "CLIMB",
+          "progress_m": 15.198666
+        },
+        {
+          "time_s": 78.378,
+          "phase": "FOLLOW",
+          "progress_m": 15.357423
+        },
+        {
+          "time_s": 80.004,
+          "phase": "APPROACH",
+          "progress_m": 15.803608
+        },
+        {
+          "time_s": 80.005,
+          "phase": "UNLOAD",
+          "progress_m": 15.804088
+        },
+        {
+          "time_s": 80.155,
+          "phase": "RECOIL",
+          "progress_m": 15.840808
+        },
+        {
+          "time_s": 80.455,
+          "phase": "PRELIFT",
+          "progress_m": 15.840009
+        },
+        {
+          "time_s": 81.355,
+          "phase": "REATTACH",
+          "progress_m": 15.904047
+        },
+        {
+          "time_s": 81.356,
+          "phase": "CLIMB",
+          "progress_m": 15.904125
+        },
+        {
+          "time_s": 82.756,
+          "phase": "FOLLOW",
+          "progress_m": 16.145299
+        },
+        {
+          "time_s": 83.459,
+          "phase": "APPROACH",
+          "progress_m": 16.224296
+        },
+        {
+          "time_s": 83.46,
+          "phase": "UNLOAD",
+          "progress_m": 16.22453
+        },
+        {
+          "time_s": 83.61,
+          "phase": "RECOIL",
+          "progress_m": 16.244462
+        },
+        {
+          "time_s": 83.91,
+          "phase": "PRELIFT",
+          "progress_m": 16.230149
+        },
+        {
+          "time_s": 84.81,
+          "phase": "REATTACH",
+          "progress_m": 16.245614
+        },
+        {
+          "time_s": 85.138,
+          "phase": "CLIMB",
+          "progress_m": 16.304604
+        },
+        {
+          "time_s": 86.538,
+          "phase": "FOLLOW",
+          "progress_m": 16.787871
+        },
+        {
+          "time_s": 86.539,
+          "phase": "APPROACH",
+          "progress_m": 16.788115
+        },
+        {
+          "time_s": 86.54,
+          "phase": "UNLOAD",
+          "progress_m": 16.788359
+        },
+        {
+          "time_s": 86.69,
+          "phase": "RECOIL",
+          "progress_m": 16.801645
+        },
+        {
+          "time_s": 86.99,
+          "phase": "PRELIFT",
+          "progress_m": 16.740843
+        },
+        {
+          "time_s": 87.89,
+          "phase": "REATTACH",
+          "progress_m": 16.707211
+        },
+        {
+          "time_s": 87.934,
+          "phase": "CLIMB",
+          "progress_m": 16.709136
+        },
+        {
+          "time_s": 89.334,
+          "phase": "FOLLOW",
+          "progress_m": 16.78709
+        },
+        {
+          "time_s": 91.276,
+          "phase": "APPROACH",
+          "progress_m": 17.208575
+        },
+        {
+          "time_s": 91.277,
+          "phase": "UNLOAD",
+          "progress_m": 17.209049
+        },
+        {
+          "time_s": 91.427,
+          "phase": "RECOIL",
+          "progress_m": 17.246149
+        },
+        {
+          "time_s": 91.727,
+          "phase": "PRELIFT",
+          "progress_m": 17.244661
+        },
+        {
+          "time_s": 92.627,
+          "phase": "REATTACH",
+          "progress_m": 17.308056
+        },
+        {
+          "time_s": 92.628,
+          "phase": "CLIMB",
+          "progress_m": 17.308133
+        },
+        {
+          "time_s": 94.028,
+          "phase": "FOLLOW",
+          "progress_m": 17.588883
+        },
+        {
+          "time_s": 94.206,
+          "phase": "APPROACH",
+          "progress_m": 17.629132
+        },
+        {
+          "time_s": 94.207,
+          "phase": "UNLOAD",
+          "progress_m": 17.629383
+        },
+        {
+          "time_s": 94.357,
+          "phase": "RECOIL",
+          "progress_m": 17.656334
+        },
+        {
+          "time_s": 94.657,
+          "phase": "PRELIFT",
+          "progress_m": 17.646182
+        },
+        {
+          "time_s": 95.557,
+          "phase": "REATTACH",
+          "progress_m": 17.682398
+        },
+        {
+          "time_s": 95.621,
+          "phase": "CLIMB",
+          "progress_m": 17.68953
+        },
+        {
+          "time_s": 97.021,
+          "phase": "FOLLOW",
+          "progress_m": 17.963829
+        },
+        {
+          "time_s": 97.203,
+          "phase": "APPROACH",
+          "progress_m": 18.049614
+        },
+        {
+          "time_s": 97.204,
+          "phase": "UNLOAD",
+          "progress_m": 18.050095
+        },
+        {
+          "time_s": 97.354,
+          "phase": "RECOIL",
+          "progress_m": 18.087113
+        },
+        {
+          "time_s": 97.654,
+          "phase": "PRELIFT",
+          "progress_m": 18.085428
+        },
+        {
+          "time_s": 98.554,
+          "phase": "REATTACH",
+          "progress_m": 18.148195
+        },
+        {
+          "time_s": 98.555,
+          "phase": "CLIMB",
+          "progress_m": 18.148241
+        },
+        {
+          "time_s": 99.955,
+          "phase": "FOLLOW",
+          "progress_m": 18.2774
+        },
+        {
+          "time_s": 101.323,
+          "phase": "APPROACH",
+          "progress_m": 18.47015
+        },
+        {
+          "time_s": 101.324,
+          "phase": "UNLOAD",
+          "progress_m": 18.470386
+        },
+        {
+          "time_s": 101.474,
+          "phase": "RECOIL",
+          "progress_m": 18.492233
+        },
+        {
+          "time_s": 101.774,
+          "phase": "PRELIFT",
+          "progress_m": 18.479178
+        },
+        {
+          "time_s": 102.674,
+          "phase": "REATTACH",
+          "progress_m": 18.495626
+        },
+        {
+          "time_s": 102.976,
+          "phase": "CLIMB",
+          "progress_m": 18.550492
+        },
+        {
+          "time_s": 104.376,
+          "phase": "FOLLOW",
+          "progress_m": 19.028789
+        },
+        {
+          "time_s": 104.377,
+          "phase": "APPROACH",
+          "progress_m": 19.029023
+        },
+        {
+          "time_s": 104.378,
+          "phase": "UNLOAD",
+          "progress_m": 19.029259
+        },
+        {
+          "time_s": 104.528,
+          "phase": "RECOIL",
+          "progress_m": 19.042565
+        },
+        {
+          "time_s": 104.828,
+          "phase": "PRELIFT",
+          "progress_m": 18.981018
+        },
+        {
+          "time_s": 105.728,
+          "phase": "REATTACH",
+          "progress_m": 18.948103
+        },
+        {
+          "time_s": 105.763,
+          "phase": "CLIMB",
+          "progress_m": 18.949287
+        },
+        {
+          "time_s": 107.163,
+          "phase": "FOLLOW",
+          "progress_m": 19.187333
+        },
+        {
+          "time_s": 107.709,
+          "phase": "APPROACH",
+          "progress_m": 19.449272
+        }
+      ],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf15_mu6_prelift_SN.mp4",
+      "video_sha256": "c33e382456dc5936cf6d8901f42411401f00c26603845870cdf8ad6ae9bec9b4",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf15_mu6_prelift_SN/result.json",
+      "result_sha256": "1cf8cccbb1819c96b72d3887a45ad78d780df5e9ecd2f6c67829676e665c4548",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf15_mu6_prelift_SN/trajectory.npz",
+      "trajectory_sha256": "c488d64bc8f7540b6f2cff17580c174e6c076bf7fd28bf845e363546edee5d1e"
+    },
+    {
+      "id": "urdf25_mu6_baseline_SN",
+      "friction": 6,
+      "strategy": "baseline",
+      "direction": "SN",
+      "angle_deg": 25.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 92.56500000007793,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "platform_complete",
+      "ascent_completed": true,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 19.607617425546735,
+      "violation_names": [],
+      "events": [],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf25_mu6_baseline_SN.mp4",
+      "video_sha256": "bbde4af42b31133ed33400361998cb888617de916697c6ab13d6ddfe1888426a",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf25_mu6_baseline_SN/result.json",
+      "result_sha256": "adcf42753da041608eacfffee89d129225faab74ac8dc56c567700dacef3180f",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf25_mu6_baseline_SN/trajectory.npz",
+      "trajectory_sha256": "229de33cbfe27e573403022845a8e55f49c4cfaa70a5b4558918dbba5c3f0901"
+    },
+    {
+      "id": "urdf25_mu6_transfer18_SN",
+      "friction": 6,
+      "strategy": "transfer18",
+      "direction": "SN",
+      "angle_deg": 25.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 113.46400000017772,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "platform_complete",
+      "ascent_completed": true,
+      "urdf_compliant_exact": false,
+      "numerical_quality_ok": false,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 24.388470019973404,
+      "violation_names": [
+        "position_limit:right_rocker_joint"
+      ],
+      "events": [
+        {
+          "time_s": 18.698,
+          "phase": "UNLOAD",
+          "progress_m": 8.001546
+        },
+        {
+          "time_s": 18.848,
+          "phase": "RECOIL",
+          "progress_m": 8.010816
+        },
+        {
+          "time_s": 19.148,
+          "phase": "PRELIFT",
+          "progress_m": 8.00669
+        },
+        {
+          "time_s": 20.048,
+          "phase": "REATTACH",
+          "progress_m": 8.00883
+        },
+        {
+          "time_s": 21.824,
+          "phase": "CLIMB",
+          "progress_m": 8.081574
+        },
+        {
+          "time_s": 23.224,
+          "phase": "LOWER_FRONT",
+          "progress_m": 8.45243
+        },
+        {
+          "time_s": 24.724,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 8.890173
+        },
+        {
+          "time_s": 25.624,
+          "phase": "FOLLOW",
+          "progress_m": 9.149916
+        },
+        {
+          "time_s": 25.625,
+          "phase": "APPROACH",
+          "progress_m": 9.150337
+        },
+        {
+          "time_s": 25.626,
+          "phase": "UNLOAD",
+          "progress_m": 9.150759
+        },
+        {
+          "time_s": 25.776,
+          "phase": "RECOIL",
+          "progress_m": 9.179565
+        },
+        {
+          "time_s": 26.076,
+          "phase": "PRELIFT",
+          "progress_m": 9.159726
+        },
+        {
+          "time_s": 26.976,
+          "phase": "REATTACH",
+          "progress_m": 9.183599
+        },
+        {
+          "time_s": 27.011,
+          "phase": "CLIMB",
+          "progress_m": 9.185356
+        },
+        {
+          "time_s": 28.411,
+          "phase": "LOWER_FRONT",
+          "progress_m": 9.267965
+        },
+        {
+          "time_s": 29.911,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 9.642819
+        },
+        {
+          "time_s": 30.811,
+          "phase": "FOLLOW",
+          "progress_m": 9.622921
+        },
+        {
+          "time_s": 30.812,
+          "phase": "APPROACH",
+          "progress_m": 9.622905
+        },
+        {
+          "time_s": 30.813,
+          "phase": "UNLOAD",
+          "progress_m": 9.622888
+        },
+        {
+          "time_s": 30.963,
+          "phase": "RECOIL",
+          "progress_m": 9.622777
+        },
+        {
+          "time_s": 31.263,
+          "phase": "PRELIFT",
+          "progress_m": 9.617483
+        },
+        {
+          "time_s": 32.163,
+          "phase": "REATTACH",
+          "progress_m": 9.636196
+        },
+        {
+          "time_s": 32.164,
+          "phase": "CLIMB",
+          "progress_m": 9.636204
+        },
+        {
+          "time_s": 33.565,
+          "phase": "LOWER_FRONT",
+          "progress_m": 9.699147
+        },
+        {
+          "time_s": 35.066,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 9.710392
+        },
+        {
+          "time_s": 35.967,
+          "phase": "FOLLOW",
+          "progress_m": 9.788896
+        },
+        {
+          "time_s": 36.771,
+          "phase": "APPROACH",
+          "progress_m": 10.043164
+        },
+        {
+          "time_s": 36.772,
+          "phase": "UNLOAD",
+          "progress_m": 10.043574
+        },
+        {
+          "time_s": 36.923,
+          "phase": "RECOIL",
+          "progress_m": 10.066588
+        },
+        {
+          "time_s": 37.224,
+          "phase": "PRELIFT",
+          "progress_m": 10.043371
+        },
+        {
+          "time_s": 38.125,
+          "phase": "REATTACH",
+          "progress_m": 10.0601
+        },
+        {
+          "time_s": 38.126,
+          "phase": "CLIMB",
+          "progress_m": 10.060129
+        },
+        {
+          "time_s": 39.527,
+          "phase": "LOWER_FRONT",
+          "progress_m": 10.081576
+        },
+        {
+          "time_s": 41.028,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 10.398581
+        },
+        {
+          "time_s": 41.929,
+          "phase": "FOLLOW",
+          "progress_m": 10.48047
+        },
+        {
+          "time_s": 41.93,
+          "phase": "APPROACH",
+          "progress_m": 10.480522
+        },
+        {
+          "time_s": 41.931,
+          "phase": "UNLOAD",
+          "progress_m": 10.480576
+        },
+        {
+          "time_s": 42.082,
+          "phase": "RECOIL",
+          "progress_m": 10.485072
+        },
+        {
+          "time_s": 42.383,
+          "phase": "PRELIFT",
+          "progress_m": 10.475092
+        },
+        {
+          "time_s": 43.284,
+          "phase": "REATTACH",
+          "progress_m": 10.487269
+        },
+        {
+          "time_s": 43.285,
+          "phase": "CLIMB",
+          "progress_m": 10.487271
+        },
+        {
+          "time_s": 44.686,
+          "phase": "LOWER_FRONT",
+          "progress_m": 10.506997
+        },
+        {
+          "time_s": 46.187,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 10.539629
+        },
+        {
+          "time_s": 47.088,
+          "phase": "FOLLOW",
+          "progress_m": 10.501815
+        },
+        {
+          "time_s": 50.717,
+          "phase": "APPROACH",
+          "progress_m": 10.900759
+        },
+        {
+          "time_s": 50.718,
+          "phase": "UNLOAD",
+          "progress_m": 10.901178
+        },
+        {
+          "time_s": 50.869,
+          "phase": "RECOIL",
+          "progress_m": 10.921487
+        },
+        {
+          "time_s": 51.17,
+          "phase": "PRELIFT",
+          "progress_m": 10.897398
+        },
+        {
+          "time_s": 52.071,
+          "phase": "REATTACH",
+          "progress_m": 10.910648
+        },
+        {
+          "time_s": 52.781,
+          "phase": "CLIMB",
+          "progress_m": 10.9114
+        },
+        {
+          "time_s": 54.182,
+          "phase": "LOWER_FRONT",
+          "progress_m": 11.161169
+        },
+        {
+          "time_s": 55.683,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 11.346191
+        },
+        {
+          "time_s": 56.584,
+          "phase": "FOLLOW",
+          "progress_m": 11.338637
+        },
+        {
+          "time_s": 56.585,
+          "phase": "APPROACH",
+          "progress_m": 11.338588
+        },
+        {
+          "time_s": 56.586,
+          "phase": "UNLOAD",
+          "progress_m": 11.338541
+        },
+        {
+          "time_s": 56.737,
+          "phase": "RECOIL",
+          "progress_m": 11.33499
+        },
+        {
+          "time_s": 57.038,
+          "phase": "PRELIFT",
+          "progress_m": 11.337998
+        },
+        {
+          "time_s": 57.939,
+          "phase": "REATTACH",
+          "progress_m": 11.34825
+        },
+        {
+          "time_s": 59.464,
+          "phase": "CLIMB",
+          "progress_m": 11.385129
+        },
+        {
+          "time_s": 60.865,
+          "phase": "LOWER_FRONT",
+          "progress_m": 11.413831
+        },
+        {
+          "time_s": 62.366,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 11.410596
+        },
+        {
+          "time_s": 63.267,
+          "phase": "FOLLOW",
+          "progress_m": 11.410593
+        },
+        {
+          "time_s": 67.61,
+          "phase": "APPROACH",
+          "progress_m": 11.758661
+        },
+        {
+          "time_s": 67.611,
+          "phase": "UNLOAD",
+          "progress_m": 11.759067
+        },
+        {
+          "time_s": 67.761,
+          "phase": "RECOIL",
+          "progress_m": 11.784505
+        },
+        {
+          "time_s": 68.061,
+          "phase": "PRELIFT",
+          "progress_m": 11.763658
+        },
+        {
+          "time_s": 68.961,
+          "phase": "REATTACH",
+          "progress_m": 11.783548
+        },
+        {
+          "time_s": 70.103,
+          "phase": "CLIMB",
+          "progress_m": 11.785704
+        },
+        {
+          "time_s": 71.503,
+          "phase": "LOWER_FRONT",
+          "progress_m": 11.833048
+        },
+        {
+          "time_s": 73.003,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 11.840823
+        },
+        {
+          "time_s": 73.903,
+          "phase": "FOLLOW",
+          "progress_m": 11.852768
+        },
+        {
+          "time_s": 77.146,
+          "phase": "APPROACH",
+          "progress_m": 12.179174
+        },
+        {
+          "time_s": 77.147,
+          "phase": "UNLOAD",
+          "progress_m": 12.17959
+        },
+        {
+          "time_s": 77.297,
+          "phase": "RECOIL",
+          "progress_m": 12.208294
+        },
+        {
+          "time_s": 77.597,
+          "phase": "PRELIFT",
+          "progress_m": 12.187536
+        },
+        {
+          "time_s": 78.497,
+          "phase": "REATTACH",
+          "progress_m": 12.208941
+        },
+        {
+          "time_s": 78.498,
+          "phase": "CLIMB",
+          "progress_m": 12.208968
+        },
+        {
+          "time_s": 79.898,
+          "phase": "LOWER_FRONT",
+          "progress_m": 12.284017
+        },
+        {
+          "time_s": 81.398,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 12.634255
+        },
+        {
+          "time_s": 82.298,
+          "phase": "FOLLOW",
+          "progress_m": 12.635742
+        },
+        {
+          "time_s": 82.299,
+          "phase": "APPROACH",
+          "progress_m": 12.635503
+        },
+        {
+          "time_s": 82.3,
+          "phase": "UNLOAD",
+          "progress_m": 12.635262
+        },
+        {
+          "time_s": 82.45,
+          "phase": "RECOIL",
+          "progress_m": 12.616747
+        },
+        {
+          "time_s": 82.75,
+          "phase": "PRELIFT",
+          "progress_m": 12.614822
+        },
+        {
+          "time_s": 83.65,
+          "phase": "REATTACH",
+          "progress_m": 12.637432
+        },
+        {
+          "time_s": 85.65,
+          "phase": "RETRY_LIFT",
+          "progress_m": 12.667798
+        },
+        {
+          "time_s": 86.25,
+          "phase": "REATTACH",
+          "progress_m": 12.666184
+        },
+        {
+          "time_s": 86.277,
+          "phase": "CLIMB",
+          "progress_m": 12.666393
+        },
+        {
+          "time_s": 87.677,
+          "phase": "LOWER_FRONT",
+          "progress_m": 12.698944
+        },
+        {
+          "time_s": 89.177,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 12.699403
+        },
+        {
+          "time_s": 90.077,
+          "phase": "FOLLOW",
+          "progress_m": 12.708788
+        },
+        {
+          "time_s": 92.083,
+          "phase": "APPROACH",
+          "progress_m": 13.055353
+        },
+        {
+          "time_s": 92.084,
+          "phase": "UNLOAD",
+          "progress_m": 13.055774
+        },
+        {
+          "time_s": 92.234,
+          "phase": "RECOIL",
+          "progress_m": 13.070993
+        },
+        {
+          "time_s": 92.534,
+          "phase": "PRELIFT",
+          "progress_m": 13.049981
+        },
+        {
+          "time_s": 93.434,
+          "phase": "REATTACH",
+          "progress_m": 13.070277
+        },
+        {
+          "time_s": 94.744,
+          "phase": "CLIMB",
+          "progress_m": 13.091063
+        },
+        {
+          "time_s": 96.144,
+          "phase": "LOWER_FRONT",
+          "progress_m": 13.13891
+        },
+        {
+          "time_s": 97.644,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 13.390794
+        },
+        {
+          "time_s": 98.544,
+          "phase": "FOLLOW",
+          "progress_m": 13.499036
+        },
+        {
+          "time_s": 98.545,
+          "phase": "APPROACH",
+          "progress_m": 13.498746
+        },
+        {
+          "time_s": 98.546,
+          "phase": "UNLOAD",
+          "progress_m": 13.498454
+        },
+        {
+          "time_s": 98.696,
+          "phase": "RECOIL",
+          "progress_m": 13.485655
+        },
+        {
+          "time_s": 98.996,
+          "phase": "PRELIFT",
+          "progress_m": 13.482575
+        },
+        {
+          "time_s": 99.896,
+          "phase": "REATTACH",
+          "progress_m": 13.500184
+        },
+        {
+          "time_s": 101.178,
+          "phase": "CLIMB",
+          "progress_m": 13.511071
+        },
+        {
+          "time_s": 102.578,
+          "phase": "LOWER_FRONT",
+          "progress_m": 13.664667
+        },
+        {
+          "time_s": 104.078,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 13.91158
+        },
+        {
+          "time_s": 104.978,
+          "phase": "FOLLOW",
+          "progress_m": 13.931319
+        },
+        {
+          "time_s": 104.979,
+          "phase": "APPROACH",
+          "progress_m": 13.931471
+        },
+        {
+          "time_s": 104.998,
+          "phase": "UNLOAD",
+          "progress_m": 13.934857
+        },
+        {
+          "time_s": 105.148,
+          "phase": "RECOIL",
+          "progress_m": 13.947293
+        },
+        {
+          "time_s": 105.448,
+          "phase": "PRELIFT",
+          "progress_m": 13.930525
+        },
+        {
+          "time_s": 106.348,
+          "phase": "REATTACH",
+          "progress_m": 13.916929
+        },
+        {
+          "time_s": 106.409,
+          "phase": "CLIMB",
+          "progress_m": 13.916941
+        },
+        {
+          "time_s": 107.809,
+          "phase": "LOWER_FRONT",
+          "progress_m": 14.113919
+        },
+        {
+          "time_s": 109.309,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 14.662096
+        },
+        {
+          "time_s": 110.209,
+          "phase": "FOLLOW",
+          "progress_m": 14.997557
+        },
+        {
+          "time_s": 110.21,
+          "phase": "APPROACH",
+          "progress_m": 14.998023
+        }
+      ],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf25_mu6_transfer18_SN.mp4",
+      "video_sha256": "d7d7e677017188dad2de8575b7bb772d9136dd0b5d79432a16dee932f0b5f7cc",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf25_mu6_transfer18_SN/result.json",
+      "result_sha256": "43492516f8174290a128f09549476467d3810a5f4e88b2f944e6274728bb7040",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf25_mu6_transfer18_SN/trajectory.npz",
+      "trajectory_sha256": "ba79fecc4113bdfefbf8e7b1e7bfe8695f7d083cb3c747b065722e58dc7d5498"
+    },
+    {
+      "id": "urdf35_mu6_baseline_SN",
+      "friction": 6,
+      "strategy": "baseline",
+      "direction": "SN",
+      "angle_deg": 35.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 242.00000000079146,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "simulation_time_limit",
+      "ascent_completed": false,
+      "urdf_compliant_exact": false,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 13.65470620368181,
+      "violation_names": [
+        "position_limit:right_rocker_joint"
+      ],
+      "events": [],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf35_mu6_baseline_SN.mp4",
+      "video_sha256": "9bd50501f9ea7bd727e2b19e8c24f199904449e0fd5472ee21894d2156f137b9",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_baseline_SN/result.json",
+      "result_sha256": "89cf3ad3b4a0f13432a3d1da30029061e5b9a6af31d450907be7c8a70a89f12c",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_baseline_SN/trajectory.npz",
+      "trajectory_sha256": "dc301e8243fdad84d41cc612a4c4711813e14d4d6da08f3fbabdf33800289947"
+    },
+    {
+      "id": "urdf35_mu6_prelift_SN",
+      "friction": 6,
+      "strategy": "prelift",
+      "direction": "SN",
+      "angle_deg": 35.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 242.00000000079146,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "simulation_time_limit",
+      "ascent_completed": false,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 13.644070747276471,
+      "violation_names": [],
+      "events": [
+        {
+          "time_s": 18.698,
+          "phase": "UNLOAD",
+          "progress_m": 8.001546
+        },
+        {
+          "time_s": 18.848,
+          "phase": "RECOIL",
+          "progress_m": 8.010816
+        },
+        {
+          "time_s": 19.148,
+          "phase": "PRELIFT",
+          "progress_m": 8.006691
+        },
+        {
+          "time_s": 20.048,
+          "phase": "REATTACH",
+          "progress_m": 8.00883
+        },
+        {
+          "time_s": 21.823,
+          "phase": "CLIMB",
+          "progress_m": 8.081642
+        },
+        {
+          "time_s": 23.223,
+          "phase": "FOLLOW",
+          "progress_m": 8.424338
+        },
+        {
+          "time_s": 23.224,
+          "phase": "APPROACH",
+          "progress_m": 8.424782
+        },
+        {
+          "time_s": 23.225,
+          "phase": "UNLOAD",
+          "progress_m": 8.425226
+        },
+        {
+          "time_s": 23.375,
+          "phase": "RECOIL",
+          "progress_m": 8.461
+        },
+        {
+          "time_s": 23.675,
+          "phase": "PRELIFT",
+          "progress_m": 8.461487
+        },
+        {
+          "time_s": 24.575,
+          "phase": "REATTACH",
+          "progress_m": 8.476592
+        },
+        {
+          "time_s": 25.708,
+          "phase": "CLIMB",
+          "progress_m": 8.505287
+        },
+        {
+          "time_s": 27.108,
+          "phase": "FOLLOW",
+          "progress_m": 8.83311
+        },
+        {
+          "time_s": 27.158,
+          "phase": "APPROACH",
+          "progress_m": 8.845227
+        },
+        {
+          "time_s": 27.159,
+          "phase": "UNLOAD",
+          "progress_m": 8.845505
+        },
+        {
+          "time_s": 27.309,
+          "phase": "RECOIL",
+          "progress_m": 8.872144
+        },
+        {
+          "time_s": 27.609,
+          "phase": "PRELIFT",
+          "progress_m": 8.858897
+        },
+        {
+          "time_s": 28.509,
+          "phase": "REATTACH",
+          "progress_m": 8.887784
+        },
+        {
+          "time_s": 28.713,
+          "phase": "CLIMB",
+          "progress_m": 8.925744
+        },
+        {
+          "time_s": 30.113,
+          "phase": "FOLLOW",
+          "progress_m": 8.990896
+        }
+      ],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf35_mu6_prelift_SN.mp4",
+      "video_sha256": "cae1283299ef5ed487c6cf2de9b06e1be341d09a1ce637deb2e24dcbbb492d6b",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_prelift_SN/result.json",
+      "result_sha256": "0c7ce886a75c5824771df7ec7846cf3852760339110187bdb630820277f81aca",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_prelift_SN/trajectory.npz",
+      "trajectory_sha256": "e70b269dc258437fb809e641a7f5351abe4fd4aadd056f16df340ce239158d32"
+    },
+    {
+      "id": "urdf35_mu6_transfer18_SN",
+      "friction": 6,
+      "strategy": "transfer18",
+      "direction": "SN",
+      "angle_deg": 35.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 242.00000000079146,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "simulation_time_limit",
+      "ascent_completed": false,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 13.644070747276471,
+      "violation_names": [],
+      "events": [
+        {
+          "time_s": 18.698,
+          "phase": "UNLOAD",
+          "progress_m": 8.001546
+        },
+        {
+          "time_s": 18.848,
+          "phase": "RECOIL",
+          "progress_m": 8.010816
+        },
+        {
+          "time_s": 19.148,
+          "phase": "PRELIFT",
+          "progress_m": 8.006691
+        },
+        {
+          "time_s": 20.048,
+          "phase": "REATTACH",
+          "progress_m": 8.00883
+        },
+        {
+          "time_s": 21.823,
+          "phase": "CLIMB",
+          "progress_m": 8.081642
+        },
+        {
+          "time_s": 23.223,
+          "phase": "LOWER_FRONT",
+          "progress_m": 8.424338
+        },
+        {
+          "time_s": 24.723,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 8.810863
+        },
+        {
+          "time_s": 25.623,
+          "phase": "FOLLOW",
+          "progress_m": 8.949261
+        },
+        {
+          "time_s": 25.624,
+          "phase": "APPROACH",
+          "progress_m": 8.949457
+        },
+        {
+          "time_s": 25.625,
+          "phase": "UNLOAD",
+          "progress_m": 8.949653
+        },
+        {
+          "time_s": 25.775,
+          "phase": "RECOIL",
+          "progress_m": 8.966366
+        },
+        {
+          "time_s": 26.075,
+          "phase": "PRELIFT",
+          "progress_m": 8.959287
+        },
+        {
+          "time_s": 26.975,
+          "phase": "REATTACH",
+          "progress_m": 8.98256
+        },
+        {
+          "time_s": 26.976,
+          "phase": "CLIMB",
+          "progress_m": 8.982559
+        },
+        {
+          "time_s": 28.376,
+          "phase": "LOWER_FRONT",
+          "progress_m": 8.991819
+        },
+        {
+          "time_s": 29.876,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 9.057792
+        },
+        {
+          "time_s": 30.776,
+          "phase": "FOLLOW",
+          "progress_m": 9.049885
+        }
+      ],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf35_mu6_transfer18_SN.mp4",
+      "video_sha256": "99707156e9b91166dace2b5695059487def2b3f0e87adba89d181ba69be450b4",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_transfer18_SN/result.json",
+      "result_sha256": "48a5534692f14976788597056f052c96483fcea3aec055c5cbb746380ad96a3e",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_transfer18_SN/trajectory.npz",
+      "trajectory_sha256": "d0908e9c9139032ff778dfebeb5a0a7e357c1a73fc826a259bd46a6e402daf8d"
+    },
+    {
+      "id": "urdf35_mu6_transfer_SN",
+      "friction": 6,
+      "strategy": "transfer",
+      "direction": "SN",
+      "angle_deg": 35.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 242.00000000079146,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "simulation_time_limit",
+      "ascent_completed": false,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 13.644070747276471,
+      "violation_names": [],
+      "events": [
+        {
+          "time_s": 18.698,
+          "phase": "UNLOAD",
+          "progress_m": 8.001546
+        },
+        {
+          "time_s": 18.848,
+          "phase": "RECOIL",
+          "progress_m": 8.010816
+        },
+        {
+          "time_s": 19.148,
+          "phase": "PRELIFT",
+          "progress_m": 8.006691
+        },
+        {
+          "time_s": 20.048,
+          "phase": "REATTACH",
+          "progress_m": 8.00883
+        },
+        {
+          "time_s": 21.823,
+          "phase": "CLIMB",
+          "progress_m": 8.081642
+        },
+        {
+          "time_s": 23.223,
+          "phase": "LOWER_FRONT",
+          "progress_m": 8.424338
+        },
+        {
+          "time_s": 24.423,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 8.68836
+        },
+        {
+          "time_s": 25.323,
+          "phase": "FOLLOW",
+          "progress_m": 8.902143
+        },
+        {
+          "time_s": 25.324,
+          "phase": "APPROACH",
+          "progress_m": 8.902537
+        },
+        {
+          "time_s": 25.325,
+          "phase": "UNLOAD",
+          "progress_m": 8.902931
+        },
+        {
+          "time_s": 25.475,
+          "phase": "RECOIL",
+          "progress_m": 8.944028
+        },
+        {
+          "time_s": 25.775,
+          "phase": "PRELIFT",
+          "progress_m": 8.942489
+        },
+        {
+          "time_s": 26.675,
+          "phase": "REATTACH",
+          "progress_m": 8.98279
+        },
+        {
+          "time_s": 26.676,
+          "phase": "CLIMB",
+          "progress_m": 8.98279
+        },
+        {
+          "time_s": 28.076,
+          "phase": "LOWER_FRONT",
+          "progress_m": 8.987855
+        },
+        {
+          "time_s": 29.276,
+          "phase": "TRANSFER_SETTLE",
+          "progress_m": 9.055376
+        },
+        {
+          "time_s": 30.176,
+          "phase": "FOLLOW",
+          "progress_m": 9.038572
+        }
+      ],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf35_mu6_transfer_SN.mp4",
+      "video_sha256": "452e37512a8902efa0f2c61da55935b438435d064df713db38d15c50e5b85d6b",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_transfer_SN/result.json",
+      "result_sha256": "361199e55a6f024f6f38415511a66c7ec4209838e51bc4e74253d84e5ed142a7",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf35_mu6_transfer_SN/trajectory.npz",
+      "trajectory_sha256": "d2779b05a1390d1eacef4cb0fa8543a8c7816fe708c9270516750b3affe8d95b"
+    },
+    {
+      "id": "urdf45_mu6_baseline_SN",
+      "friction": 6,
+      "strategy": "baseline",
+      "direction": "SN",
+      "angle_deg": 45.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 242.00000000079146,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "simulation_time_limit",
+      "ascent_completed": false,
+      "urdf_compliant_exact": false,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 19.776688105664686,
+      "violation_names": [
+        "position_limit:left_rocker_joint",
+        "position_limit:right_rocker_joint"
+      ],
+      "events": [],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf45_mu6_baseline_SN.mp4",
+      "video_sha256": "6b9af9fc0023e996ab16b0312eec5d997a11706ec433374708e4f48328a3dbd1",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf45_mu6_baseline_SN/result.json",
+      "result_sha256": "85889a60594e7fe1f915dda12a4bd98674dce5186c1208a5964fad70398f8562",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf45_mu6_baseline_SN/trajectory.npz",
+      "trajectory_sha256": "f9b9693da101261236229c0eacb2df8664c14ed250f5ca336cf6765fc0c0fb0d"
+    },
+    {
+      "id": "urdf45_mu6_prelift_SN",
+      "friction": 6,
+      "strategy": "prelift",
+      "direction": "SN",
+      "angle_deg": 45.0,
+      "height_cm": 20,
+      "stairs": 15,
+      "duration_s": 242.00000000079146,
+      "first_contact_s": 18.69799999999987,
+      "intervention_s": 18.69799999999987,
+      "termination_reason": "simulation_time_limit",
+      "ascent_completed": false,
+      "urdf_compliant_exact": true,
+      "numerical_quality_ok": true,
+      "dataset_accepted": false,
+      "max_contact_penetration_mm": 17.930392271148232,
+      "violation_names": [],
+      "events": [
+        {
+          "time_s": 18.698,
+          "phase": "UNLOAD",
+          "progress_m": 8.001546
+        },
+        {
+          "time_s": 18.848,
+          "phase": "RECOIL",
+          "progress_m": 8.010816
+        },
+        {
+          "time_s": 19.148,
+          "phase": "PRELIFT",
+          "progress_m": 8.00669
+        },
+        {
+          "time_s": 20.048,
+          "phase": "REATTACH",
+          "progress_m": 8.00883
+        },
+        {
+          "time_s": 21.825,
+          "phase": "CLIMB",
+          "progress_m": 8.08164
+        },
+        {
+          "time_s": 23.225,
+          "phase": "FOLLOW",
+          "progress_m": 8.315589
+        },
+        {
+          "time_s": 23.705,
+          "phase": "APPROACH",
+          "progress_m": 8.421684
+        },
+        {
+          "time_s": 23.706,
+          "phase": "UNLOAD",
+          "progress_m": 8.422038
+        },
+        {
+          "time_s": 23.856,
+          "phase": "RECOIL",
+          "progress_m": 8.457485
+        },
+        {
+          "time_s": 24.156,
+          "phase": "PRELIFT",
+          "progress_m": 8.466766
+        },
+        {
+          "time_s": 25.056,
+          "phase": "REATTACH",
+          "progress_m": 8.496775
+        },
+        {
+          "time_s": 25.612,
+          "phase": "CLIMB",
+          "progress_m": 8.502044
+        },
+        {
+          "time_s": 27.012,
+          "phase": "FOLLOW",
+          "progress_m": 8.790491
+        }
+      ],
+      "video_path": "/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112/urdf45_mu6_prelift_SN.mp4",
+      "video_sha256": "49f28f1586052f5748eda596073c5ed3d0db2f4c521aa56c558d89da55b80405",
+      "result_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf45_mu6_prelift_SN/result.json",
+      "result_sha256": "fd188370f1e6c749d75f6a63d351774e98451b90d77aeb58d1aae08dc2fe4ebf",
+      "trajectory_path": "/home/agilex/wzy/rover-chaixm/runs/urdf_slope_control_20261112/cases/urdf45_mu6_prelift_SN/trajectory.npz",
+      "trajectory_sha256": "2108d668f01708d5ecff46a5018128a6d812ee505d532794eae2fb0de0a2035b"
+    }
+  ]
+}
