@@ -56,7 +56,9 @@ URDF 本身是 95 个 link，96 个 body（含 world），94 个 joint，82 个 
 
 ### P0 模型一致性，无物理实验
 
-从 `cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a` 重新生成独立 MJCF，写到 `runs/urdf_slope_20261112/model/`，不覆盖 `assets/mars_rover/rover_actuated.xml`。
+从 `c12222dfd7b770b21f5620be33d55ac2ab974fb499f32b7d5c16045b1f5ca061` 重新生成独立 MJCF，写到 `runs/urdf_slope_20261112/model/`，不覆盖 `assets/mars_rover/rover_actuated.xml`。该 SHA 对应左右对称化后的 URDF：26 个右侧连杆的 inertial 和 collision 按左侧镜像，6 个运动关节的 origin 精确镜像，11 对等质量底盘碰撞体按 +y 侧镜像到 -y 侧。修正前右前轮与挡泥板 `right_rocker_col_12` 重叠 4.231 mm，静置内部接触力约 8 kN，右前轮被刹住；修正后零位自接触对为 0，同一驱动测试右前轮从 0.01 升到 132.21 rad/s。左右质量各 52.252997 kg，26 对碰撞体位置误差小于 0.2 mm，整机质心 y 从 -2.646 mm 收到 -1.154 mm。差异存档 `runs/urdf_slope_20261112/model/urdf_symmetry_fix.patch`，核对结果 `runs/urdf_slope_20261112/model/symmetry_report.json`。
+
+底盘仍有 8 个非成对拆分件（`base_link_shape4/5/6/7/8/27/28/29`），底盘质心 y 为 -6.575 mm；它们是凸分解产生的不同分块，强行镜像会改动真实质量和几何。左右侧总质量完全相等，六轮静载左右差小于 1.5 N。转向节盒与轮胎的 7.56 mm 重叠左右一致，属于父子连杆接触，MuJoCo 自动过滤，实测自接触力 0 N，保持原样。
 
 生成规则：
 

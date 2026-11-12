@@ -4,7 +4,27 @@
   "baseline_commit": "46cda0a",
   "experiment_id": "urdf_slope",
   "plan_doc": "docs/urdf_slope_plan_v2.md",
-  "urdf_sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
+  "urdf_sha256": "c12222dfd7b770b21f5620be33d55ac2ab974fb499f32b7d5c16045b1f5ca061",
+  "urdf_fix": {
+    "before_sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
+    "reason": "right side was not a mirror of the left: right_rocker_col_12/13 overlapped the right front wheel at qpos0 (4.231 mm, ~8 kN internal force, wheel locked); front wheel joint origins differed by 7.996 mm; 11 chassis collision pairs were offset by 15-45 mm",
+    "change": "26 right links (inertial and collision) mirrored from the left, 3 wheel joint origins mirrored, 11 exact-mass chassis pairs mirrored from +y to -y",
+    "verified": {
+      "movable_joint_mirror_delta_mm": 0,
+      "matched_collision_pairs": 26,
+      "collision_mismatches": 0,
+      "mass_left_kg": 52.252997,
+      "mass_right_kg": 52.252997,
+      "whole_body_com_y_m": -0.001154,
+      "base_com_y_m": -0.006575,
+      "unmirrored_base_shapes": ["base_link_shape4", "base_link_shape5", "base_link_shape6", "base_link_shape7", "base_link_shape8", "base_link_shape27", "base_link_shape28", "base_link_shape29"],
+      "unmirrored_note": "non-pairwise convex decomposition pieces; forcing a mirror would change real mass and geometry. Side masses are exactly equal and static wheel loads differ by less than 1.5 N",
+      "steer_knuckle_tire_overlap_mm": 7.56,
+      "steer_knuckle_note": "symmetric on both sides; parent-child contact is filtered by MuJoCo, measured self-contact force 0 N"
+    },
+    "patch": "runs/urdf_slope_20261112/model/urdf_symmetry_fix.patch",
+    "report": "runs/urdf_slope_20261112/model/symmetry_report.json"
+  },
   "height_m": 0.2,
   "steps": 15,
   "total_rise_m": 3,
