@@ -45,6 +45,8 @@ STRUCTURE_MAX_S = 0.020
 ROLLOVER_DEG = 60.0
 LATERAL_LIMIT_M = 2.5
 SAVE_EVERY = 10
+# 25 and 35 exist only to narrow the boundary once 15 passes and 45 fails.
+ANGLES = (15.0, 25.0, 35.0, 45.0)
 
 SETTLE = {
     "roll_deg": 3.0, "pitch_deg": 3.0, "heading_deg": 5.0,
@@ -61,7 +63,7 @@ def budget(angle_deg: float) -> int:
 
 def cases() -> list[dict]:
     out = []
-    for angle in (15.0, 45.0):
+    for angle in ANGLES:
         tread = STEP_RISE / math.tan(math.radians(angle))
         for friction in (4, 6, 8):
             for order in ("SP", "SN"):
@@ -94,7 +96,8 @@ def scene_text(case: dict) -> str:
         terrain += box(f"up{i}", x + case["tread_m"] / 2, case["tread_m"] / 2,
                        STEP_RISE * (i + 1), case["friction"])
         x += case["tread_m"]
-    terrain += box("platform", x + PLATFORM_LEN / 2, PLATFORM_LEN / 2,
+    platform_len = case.get("platform_len", PLATFORM_LEN)
+    terrain += box("platform", x + platform_len / 2, platform_len / 2,
                    STEP_RISE * STEP_COUNT, 4.0)
     head, tail = ROBOT.read_text().split("<worldbody>", 1)
     return head + "<worldbody>\n" + terrain + tail
@@ -150,10 +153,9 @@ def scan_contacts(m, d, c, terrain_ids: set[int]):
         ct = d.contact[i]
         a, b = int(ct.geom1), int(ct.geom2)
         a_world = int(m.geom_bodyid[a]) == 0
-        b_world = int(m.geom_bodyid[b]) == 0
-        if a_world == b_world:
+        if a_world == (int(m.geom_bodyid[b]) == 0):
             continue
-        wheel = c.wheel_geom.get(a, c.wheel_geom.get(b))
+        terrain, robot = (a, b) if a_world else (b, a)
         if float(ct.dist) < 0.0 and int(ct.efc_address) >= 0:
             mujoco.mj_contactForce(m, d, i, raw)
             if raw[0] > 0.0 and -float(ct.dist) > depth:
@@ -161,17 +163,13 @@ def scan_contacts(m, d, c, terrain_ids: set[int]):
                 na = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, a) or str(a)
                 nb = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, b) or str(b)
                 pair = f"{na}|{nb}"
-        if int(ct.efc_address) < 0:
-            continue
-        terrain = b if a_world else a
-        name = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, terrain) or ""
-        if terrain not in terrain_ids:
+        if int(ct.efc_address) < 0 or terrain not in terrain_ids or robot in c.wheel_geom:
             continue
         mujoco.mj_contactForce(m, d, i, raw)
         if raw[0] <= STRUCTURE_N:
             continue
-        if wheel is None:
-            structure[name] = structure.get(name, 0.0) + float(raw[0])
+        name = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, terrain) or str(terrain)
+        structure[name] = structure.get(name, 0.0) + float(raw[0])
     return depth, pair, structure
 
 
@@ -193,11 +191,12 @@ def run(case: dict) -> dict:
                                if (mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, g) or "") == "platform"}
     platform_ids = {g for g in range(m.ngeom)
                     if (mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, g) or "") == "platform"}
+    platform_len = case.get("platform_len", PLATFORM_LEN)
     platform_start = RISER_X + STEP_COUNT * case["tread_m"]
-    platform_end = platform_start + PLATFORM_LEN
+    platform_end = platform_start + platform_len
     # Park centered: braking on the first six-wheel sample leaves the rear
     # wheels on the platform edge, where the 2 m platform cannot hold them.
-    park_x = platform_start + PLATFORM_LEN / 2
+    park_x = platform_start + platform_len / 2
 
     timeout = case["timeout_s"]
     cap = int(round((timeout + 240.0) / DT))
@@ -227,6 +226,7 @@ def run(case: dict) -> dict:
     support_steps = 0
     hold_until = None
     judged = False
+    judge_counts = None
     x_history = [(float(d.time), float(d.qpos[0]))]
     extensions = 0
     reason = "timeout"
@@ -308,20 +308,16 @@ def run(case: dict) -> dict:
                 if int(ct.efc_address) < 0:
                     continue
                 a_world = int(m.geom_bodyid[a]) == 0
-                b_world = int(m.geom_bodyid[b]) == 0
-                if a_world == b_world:
+                if a_world == (int(m.geom_bodyid[b]) == 0):
                     continue
-                wheel = c.wheel_geom.get(a, c.wheel_geom.get(b))
-                if wheel is None:
-                    continue
-                terrain = b if a_world else a
-                if terrain not in terrain_ids:
+                terrain, robot = (a, b) if a_world else (b, a)
+                if c.wheel_geom.get(robot) is None or terrain not in terrain_ids:
                     continue
                 mujoco.mj_contactForce(m, d, i, raw)
                 if raw[0] <= 0.0:
                     continue
-                na = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, a) or str(a)
-                nb = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, b) or str(b)
+                na = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, robot) or str(robot)
+                nb = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, terrain) or str(terrain)
                 key = f"{na.split('_col')[0]}|{nb}"
                 friction_seen[key] = round(float(ct.friction[0]), 6)
 
@@ -344,6 +340,7 @@ def run(case: dict) -> dict:
             settled_steps = settled_steps + 1 if _settled(m, d, c) else 0
             if not judged and d.time - settle_start >= BRAKE_S - 1e-9:
                 judged = True
+                judge_counts = (support_steps, settled_steps, _settle_margins(m, d, c))
                 settle_ok = (support_steps >= int(round(1.0 / DT))
                              and settled_steps >= int(round(1.0 / DT)))
                 if not settle_ok:
@@ -393,7 +390,7 @@ def run(case: dict) -> dict:
                        "rocker_cycles": CYCLES, "steer_law": "heading",
                        "brake_law": "zero_hold_3s", "timeout_s": case["timeout_s"]},
         "geometry": {"height_m": STEP_RISE, "steps": STEP_COUNT, "angle_deg": case["angle_deg"],
-                     "tread_m": case["tread_m"], "platform_len_m": PLATFORM_LEN,
+                     "tread_m": case["tread_m"], "platform_len_m": platform_len,
                      "width_m": 2 * WIDTH_HALF},
         "model": {
             "urdf_sha256": common.digest(URDF),
@@ -421,10 +418,28 @@ def run(case: dict) -> dict:
         "peak_wheel_force_n": {c.names[row[0]]: float(peak[i]) for i, row in enumerate(c.wheels)},
         "duration_s": float(d.time),
         "budget_s": case["timeout_s"],
+        "settle_check": None if judge_counts is None else {
+            "support_steps": judge_counts[0], "settled_steps": judge_counts[1],
+            "margins": judge_counts[2]},
         "extensions": extensions,
         "final_base_xyz_m": [float(v) for v in d.qpos[:3]],
     }
     return result
+
+
+def _settle_margins(m, d, c) -> dict:
+    """Reported when a six-wheel platform stop misses a settle threshold."""
+    roll, pitch, yaw = rpy(d.qpos[3:7])
+    wheel_dofs = [row[3] for row in c.wheels]
+    other_dofs = [row[3] for row in c.steer] + [row[3] for row in c.rockers]
+    return {
+        "roll_deg": abs(math.degrees(roll)), "pitch_deg": abs(math.degrees(pitch)),
+        "heading_deg": abs(math.degrees(yaw)),
+        "linear_m_s": float(np.linalg.norm(d.qvel[:3])),
+        "angular_rad_s": float(np.linalg.norm(d.qvel[3:6])),
+        "wheel_rad_s": max(abs(float(d.qvel[i])) for i in wheel_dofs),
+        "joint_rad_s": max(abs(float(d.qvel[i])) for i in other_dofs),
+    }
 
 
 def _settled(m, d, c) -> bool:
