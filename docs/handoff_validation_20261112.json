@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "final_cases": 112,
+  "local_crossing": 68,
+  "untested": 44,
+  "indexed_records": 1198,
+  "markdown_files": [
+    "AGENTS.md",
+    "EXPERIENCE.md",
+    "README.md",
+    "docs/references/supermimic_nonhumanoid_code_survey.md"
+  ],
+  "reference_unchanged": true,
+  "simulation_sources_unchanged": 38,
+  "http_catalog_bytes": 179840,
+  "all_final_media_routes_checked": true,
+  "old_routes_hidden": true,
+  "media_and_trajectory_hashes_checked": true,
+  "additional_physics_trials": 0,
+  "hash_validation_report": "runs/handoff_cleanup_20261112/verification.json",
+  "existing_regression_tests_passed": 34,
+  "active_import_checks_passed": 10,
+  "browser_validation": {
+    "all_final_records": 112,
+    "crossed_filter": 68,
+    "missing_mu4_stall": 26,
+    "video_playback": true,
+    "joint_curves": true,
+    "overspeed_details": true
+  }
+}

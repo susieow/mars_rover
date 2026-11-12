@@ -1,0 +1,643 @@
+{
+  "base_commit": "c956d58cac626bef70a44c2128a40f8d23995437",
+  "removed_files": [
+    {
+      "path": "DELIVERY_45DEG.md",
+      "sha256": "4a062c65be34534ce72dbc080d2fd61f9f550a52dba61650ce9a14bb07714464"
+    },
+    {
+      "path": "HANDOFF_WZY_2026-11-11.md",
+      "sha256": "f67b7dda5ceadbb9e2e428d036fa74190b9c2633724896fcb410fd5f19327202"
+    },
+    {
+      "path": "docs/overspeed20_plan_20261111.md",
+      "sha256": "16bf6c675fe14c0051ad7a9e2b60b53851c7c1e113085704d17a77ad718f607e"
+    },
+    {
+      "path": "docs/overspeed20_results_20261111.md",
+      "sha256": "1a8219130a30b3bd747d2619cc6e7f1925dadf92dea0e769f64b6bdad101f0a5"
+    },
+    {
+      "path": "docs/recovery20_t22_plan_20261111.md",
+      "sha256": "2f26244f6a6a3abad3f166bb738c2ea3e97974401fe73ec2990bdfbf23dc1cd6"
+    },
+    {
+      "path": "docs/recovery20_t22_results_20261111.md",
+      "sha256": "b35cb015ff25f329b8dc206d9f189c4dacffac3f7beec9e2e5ad68592be5fd5f"
+    },
+    {
+      "path": "docs/speed20_results_20261111.md",
+      "sha256": "f375ee0b74249e87da346779e26d9ed9208dda816bed9a016fad1e62695ede42"
+    },
+    {
+      "path": "scripts/rover/archive_v2_20261110/closed_loop_controller.py",
+      "sha256": "603507030eb6b6bcd4381d7d4999933bb288f1111be557fab8f8017ff254cc75"
+    },
+    {
+      "path": "scripts/rover/archive_v2_20261110/course.py",
+      "sha256": "85e3a6e894f9f91da7f26f5752677a465d8844b2c47480ff08bce1d969a2960c"
+    },
+    {
+      "path": "scripts/rover/archive_v2_20261110/render_course.py",
+      "sha256": "7c1affbc9f659223f3dce51ba2bc8a4fb4456c479348e82e647c24d7cf1d60c9"
+    },
+    {
+      "path": "scripts/rover/archive_v2_20261110/render_winners.py",
+      "sha256": "c7cc03f505c3340dd254017b7bccb6a8fb7740122143aeb83167db7a92150b63"
+    },
+    {
+      "path": "scripts/rover/archive_v2_20261110/verify_winners.py",
+      "sha256": "7684abb5038128cafdea56fc50f8d53c5bdeaee2fd0b27020b3dd6b503ccefac"
+    },
+    {
+      "path": "scripts/rover/assist.py",
+      "sha256": "1f87023a2fc43caa2be6749424f23758bad54fd24b8077f05b73c2f29da893bd"
+    },
+    {
+      "path": "scripts/rover/assist2.py",
+      "sha256": "e4f332e188e6fb9517302358cb3b51b82a53dc4334f769c015693a802289b82b"
+    },
+    {
+      "path": "scripts/rover/check_h12_plain.py",
+      "sha256": "16450faa24fd7ff8ea991b90704735f2732df1c0ec6ebbe9a8d20b9ec173c2ef"
+    },
+    {
+      "path": "scripts/rover/check_large_plain.py",
+      "sha256": "406307fbdedbb781f553338849df1711162eea0307873b5dadf939ce84ba5dcc"
+    },
+    {
+      "path": "scripts/rover/check_torque.py",
+      "sha256": "e149a79fc9554bebd2b3bf2710e8660f114924e593d1af90ac56819b7cf2c62a"
+    },
+    {
+      "path": "scripts/rover/check_torque_120.py",
+      "sha256": "c30059c7fdeb3e800f00ffcd7b6f6a575a2f1f00130b9f73669706f3df4c0fc8"
+    },
+    {
+      "path": "scripts/rover/contact_force.py",
+      "sha256": "18fa1bf336708c68e59c72c7f56de68c8070fd973bceb01a78e09c0c4a7030f9"
+    },
+    {
+      "path": "scripts/rover/containment.py",
+      "sha256": "26aea2bc79b3b0c2394f691c2bb3d4c6cb9ffdf09c8536f3623f9d9ea1c36fa3"
+    },
+    {
+      "path": "scripts/rover/debug.py",
+      "sha256": "beea67bc429e2173017d1dc8b468448e0fbfd160fe0a2769a491f300f7db6f7a"
+    },
+    {
+      "path": "scripts/rover/debug2.py",
+      "sha256": "44a139d39fe9eb9de331aab0c6ff8ec956ae5cb2008880ba5a1cc640599b4e8d"
+    },
+    {
+      "path": "scripts/rover/debug3.py",
+      "sha256": "8a9a914de04362b798e790345c1ed67f6bfc46ae055d82a631de10b3fcbcf6b8"
+    },
+    {
+      "path": "scripts/rover/diag020.py",
+      "sha256": "16faa5fac57d99ce3355ee45d503d0f9da1a18635c83950aed24660a7c1b6089"
+    },
+    {
+      "path": "scripts/rover/diag_axles.py",
+      "sha256": "a18936fdad989e8b43fcc35547e43e00398aa8330760654762a11c41964c9557"
+    },
+    {
+      "path": "scripts/rover/diag_big.py",
+      "sha256": "22d6f1c09473970161c315fee262aee3776f7b472b304c1465f96d80455c929c"
+    },
+    {
+      "path": "scripts/rover/diag_slip.py",
+      "sha256": "601c80b16f96f3e13f310a71b034616f49709f49ac854a27c59db53a29bd9d65"
+    },
+    {
+      "path": "scripts/rover/grid_deg.py",
+      "sha256": "da517bdecc8f894c28215799a55459d17210a7b93ecaea2458c44e76b2d2f1bc"
+    },
+    {
+      "path": "scripts/rover/grid_friction.py",
+      "sha256": "bda750ed87c1a2d0ff8da7e1396ed8965f0ff268aa638ca415683a763c3bba4b"
+    },
+    {
+      "path": "scripts/rover/map_heights.py",
+      "sha256": "25ef4c3151af4a7f2959d8561060f87a893d6294fcaf67828a29f1a82670d14a"
+    },
+    {
+      "path": "scripts/rover/matrix.py",
+      "sha256": "b107e5833409cd0af5d0c62278f5b8ef851120b1750783ace2a1c938e2153300"
+    },
+    {
+      "path": "scripts/rover/overspeed20_a40c40.py",
+      "sha256": "d94af161fe98aec92daa7d396e85039ad144477ec568f44f409369ec3dc09bbf"
+    },
+    {
+      "path": "scripts/rover/overspeed20_a40c40_curves.py",
+      "sha256": "efc48148ba9e1c96471372117da62c1b231c784659e01ecf81388e989e62258f"
+    },
+    {
+      "path": "scripts/rover/overspeed20_a40c40_render.py",
+      "sha256": "eed00f6bcd90ad8b93ec06d00a549ee9188d96a3a08f853ecb3175e9e8474260"
+    },
+    {
+      "path": "scripts/rover/overspeed20_a40c40_verify.py",
+      "sha256": "e09702612c919a345b32aaaa990de960e6255c197adfc8e6be30c4d4ac276ac5"
+    },
+    {
+      "path": "scripts/rover/overspeed20_batch.py",
+      "sha256": "f3b3dfc669b719468d6d3440c4e0b46e8923cb0c6fb80299aeb83c2816c52c7f"
+    },
+    {
+      "path": "scripts/rover/overspeed20_curves.py",
+      "sha256": "338dcbfdc18edc48e41c2b4d9761ffc246866fda33c36d569cbc3e5c49dddcdd"
+    },
+    {
+      "path": "scripts/rover/overspeed20_curves_watch.py",
+      "sha256": "d273d7e646245d3f167d5aff143642a7f3d46bf67874e168b6e4b28d850b9cbc"
+    },
+    {
+      "path": "scripts/rover/overspeed20_metadata_fix.py",
+      "sha256": "6512a38e3229e8955b89e212d4dc7048a27ee22539bda8f450685ae6c7819c7e"
+    },
+    {
+      "path": "scripts/rover/overspeed20_render.py",
+      "sha256": "3024e57462ed38e9d668b4ca168cdc7dd77a4e2c5ceed1b1966f4161a7ca3e39"
+    },
+    {
+      "path": "scripts/rover/overspeed20_render_watch.py",
+      "sha256": "d2331bc72cc07a683624a5636b0de5e5c57033d98d58971602c7b02ddcbf8667"
+    },
+    {
+      "path": "scripts/rover/overspeed20_verify.py",
+      "sha256": "f086f6e760e1e7905d6d71e40eb7d82661431d967db72a5f818c67d0eac6b3a3"
+    },
+    {
+      "path": "scripts/rover/pen_check.py",
+      "sha256": "f268853b3e9ea986a594d2aecf92d80ef9d4625b1c6b9d02d41922b7b3a1d20a"
+    },
+    {
+      "path": "scripts/rover/probe45.py",
+      "sha256": "5c3f8c6e2127e5a7acf180ea3c4b92fd7d86fefc52306cca1db6774360e008b7"
+    },
+    {
+      "path": "scripts/rover/probe_4wheel.py",
+      "sha256": "ca4049f60cf1460c6e984b8710412affbca9c73cd62423377b9d568cf013dd1c"
+    },
+    {
+      "path": "scripts/rover/probe_free.py",
+      "sha256": "8122f261771542d3a6310900f16bd1e915c890ac0d7d79592700893b4eed922d"
+    },
+    {
+      "path": "scripts/rover/probe_lock.py",
+      "sha256": "8715be73c56e11a9137cc18b03af19812a21f7dfc5ea678f5ada076682034e23"
+    },
+    {
+      "path": "scripts/rover/probe_mid.py",
+      "sha256": "df32d2e152d8b12b376dc2dce5a6040b797386bf636a2d39ebc0d14b05099709"
+    },
+    {
+      "path": "scripts/rover/probe_nose45.py",
+      "sha256": "07686b5d5c5b005b450dfbe5b9b4632229280f0d9deaf6337810ba2958441cd8"
+    },
+    {
+      "path": "scripts/rover/probe_old.py",
+      "sha256": "38709ac98f54abb3e88347ba86182c100a7e41a9c3f6bd13961640709434e3e8"
+    },
+    {
+      "path": "scripts/rover/probe_phase.py",
+      "sha256": "dba1ecaaf18d40457c50587ccc81150d09febbaa2a19fd03e746510980784f5a"
+    },
+    {
+      "path": "scripts/rover/probe_rocker.py",
+      "sha256": "f917062c5e3c17acb8b1eb63b2640d551ab3b8b5d9815743a7598d6c10f5c8bf"
+    },
+    {
+      "path": "scripts/rover/recovery20_all_lock.py",
+      "sha256": "ed3eaf6c14996de47ffa4460d7105c4e39d42a39a755a86ae5a6b1c511f3f631"
+    },
+    {
+      "path": "scripts/rover/recovery20_all_lock_media.py",
+      "sha256": "9a6204c0efbbc7e78650be2086fb1b0e8dba06d6222b8229cb5b832a41300e7e"
+    },
+    {
+      "path": "scripts/rover/recovery20_amp20_media.py",
+      "sha256": "420b318c3e10bbc584ae387620a3b54ae07fb4da52e4eaddb0f49df1155f19f3"
+    },
+    {
+      "path": "scripts/rover/recovery20_amp20_verify.py",
+      "sha256": "7ab76d7718e75559c3266b07183308b7ed8ea9442d791a0bf5014d3a25e12ba8"
+    },
+    {
+      "path": "scripts/rover/recovery20_asym_experiment.py",
+      "sha256": "a17fd178651d05355e59df78b42397acc4078d6c779491c777b06b9bf0c69591"
+    },
+    {
+      "path": "scripts/rover/recovery20_asym_media.py",
+      "sha256": "341694f63b0edb64deb0c5526f2e58189e46bd8160e5f27a9becad782da13595"
+    },
+    {
+      "path": "scripts/rover/recovery20_asym_verify.py",
+      "sha256": "c6777bf8ff7c92676a5e0d72f165556c07b2a2c55bc987a2d2a93266db4f31f9"
+    },
+    {
+      "path": "scripts/rover/recovery20_asym_verify_partial.py",
+      "sha256": "ff1a31afbf4f8efee76232414d5750671000b2fdb6f78fd74151d078290e70ba"
+    },
+    {
+      "path": "scripts/rover/recovery20_contact_wheels_mu6.py",
+      "sha256": "31557b2fed8692ee2eb7595919ec73d92f0c504d517927434760d7849a0bd237"
+    },
+    {
+      "path": "scripts/rover/recovery20_contact_wheels_mu6_media.py",
+      "sha256": "80cfd15b16bb9c8928a58edf516b9fd1b27316daa77f6a654ba683638bf21133"
+    },
+    {
+      "path": "scripts/rover/recovery20_experiment.py",
+      "sha256": "892bb8adf2cf88c5ec072eadc563e7b50419268334f3811e5624c651efe9d005"
+    },
+    {
+      "path": "scripts/rover/recovery20_friction.py",
+      "sha256": "0957f38a23cf6025a8f6885dc1777ebe4ff020a64a9bf585551f1ed81ea7cade"
+    },
+    {
+      "path": "scripts/rover/recovery20_friction_media.py",
+      "sha256": "4265954c09f4a2fc9f6a8e7feabb7e0c6d8af9edeee50f213f66ffbab1b130c9"
+    },
+    {
+      "path": "scripts/rover/recovery20_friction_negative_first.py",
+      "sha256": "9e62ead5586e578f5bb0f3312b4427e26d49e2291a47259151e65354a280f62e"
+    },
+    {
+      "path": "scripts/rover/recovery20_friction_negative_first_media.py",
+      "sha256": "4df32a9a9f2c7576c79e37c08a659d3d998b45db8051b5e107989260220f264b"
+    },
+    {
+      "path": "scripts/rover/recovery20_friction_negative_first_verify.py",
+      "sha256": "4d5aeb8f0ff3177350eaeb71ee782d80645943bb9c8ed9e924212098fb9df83d"
+    },
+    {
+      "path": "scripts/rover/recovery20_friction_negative_unstopped.py",
+      "sha256": "17fac3d3ba2fe671fabae90473eb3b0a5a359ccd97a14ac3d54c56e3300ec585"
+    },
+    {
+      "path": "scripts/rover/recovery20_friction_negative_unstopped_media.py",
+      "sha256": "2aa402e13ccf05e8d2baf9889286fe8521e0de5c9d28aeb767f53ddc661e049e"
+    },
+    {
+      "path": "scripts/rover/recovery20_friction_verify.py",
+      "sha256": "aab899c6abb763a3274e9dbcf0ea0e9991bdda70b6c413a8b8d9e271bdf241c1"
+    },
+    {
+      "path": "scripts/rover/recovery20_lock_verify.py",
+      "sha256": "df317f9263a9b56b3340c3d56bac52e408b8d1d06a6aeb0a4707823216e9fda8"
+    },
+    {
+      "path": "scripts/rover/recovery20_media.py",
+      "sha256": "c3b802c2ebb70867f597f69ff2f9e502b58bdcfdcc74e6d1d018494f290ad5d7"
+    },
+    {
+      "path": "scripts/rover/recovery20_rear_lock.py",
+      "sha256": "cbe3b492b6392f7ed99a048b8eb19e12571c9a845728ee23cb2e47c567dfdb02"
+    },
+    {
+      "path": "scripts/rover/recovery20_rear_lock_media.py",
+      "sha256": "a83b04a94a60ad9222bf9802cdc93b3cfc08385da8166098de0505ac448935c6"
+    },
+    {
+      "path": "scripts/rover/recovery20_verify.py",
+      "sha256": "52b76646693bfd1d5973653c7330c095ccea4fe8a7660c3339717db3509d53d0"
+    },
+    {
+      "path": "scripts/rover/render.py",
+      "sha256": "5560a772d98d0010c0207f344743a25277cd1f6a0117618c25090cfd7378825a"
+    },
+    {
+      "path": "scripts/rover/render_all_45.py",
+      "sha256": "dc4ace502567f92ca6bd059027c0e17be91ecddaaeb38a91ee74b35b73f2dd9d"
+    },
+    {
+      "path": "scripts/rover/render_alt.py",
+      "sha256": "671a781afc7c06f00b421d83a15dc79495df5fae13be7d2eb69bdff6372c62f6"
+    },
+    {
+      "path": "scripts/rover/render_assist.py",
+      "sha256": "a62c2a0b54a1ca8470da2b700e623c586025e71df48eeb3967125733d9807a30"
+    },
+    {
+      "path": "scripts/rover/render_course.py",
+      "sha256": "7c1affbc9f659223f3dce51ba2bc8a4fb4456c479348e82e647c24d7cf1d60c9"
+    },
+    {
+      "path": "scripts/rover/render_recovery.py",
+      "sha256": "eb89c4e21d53b2f1c6fc37a6b90349bfb71c16fe7fe37a8fa44b267e563c64ee"
+    },
+    {
+      "path": "scripts/rover/render_winners.py",
+      "sha256": "cffd6375e2016bcd5d9af0447de157b403eff287609960be4bab192dd472e842"
+    },
+    {
+      "path": "scripts/rover/rerender_wins.py",
+      "sha256": "b46886ef89bc88a457c9d3b90501ea8d42a44d3e30c64724824843ad104954a6"
+    },
+    {
+      "path": "scripts/rover/rocker_geom.py",
+      "sha256": "87372f8a1fd4445bde38ba045cf613c645a0c56a612f32f20903ad09ccad72bc"
+    },
+    {
+      "path": "scripts/rover/rocker_geom_wide.py",
+      "sha256": "dd68e44097f938dd3cf77f91fd4d7df127fb5eb67cbf82337347a9135122dc2b"
+    },
+    {
+      "path": "scripts/rover/rocker_sign.py",
+      "sha256": "924f1599f120a95607d66ae124a4a17cea30e43784db6b1a234e6c2ed0483aaf"
+    },
+    {
+      "path": "scripts/rover/speed20_render.py",
+      "sha256": "9d8e5f8579c7265b3c5a6672524f5a5a2461962a663838ffe8e40ad12e55d047"
+    },
+    {
+      "path": "scripts/rover/speed20_stairs.py",
+      "sha256": "8c3c7fbcf83983069c65719e03b4b1427a513f7b962e7530b94b090876d989dc"
+    },
+    {
+      "path": "scripts/rover/sweep.py",
+      "sha256": "9c088e6ee5c46808724553ef8502c50b24638820057f84e80d7de1207a63d793"
+    },
+    {
+      "path": "scripts/rover/sweep2.py",
+      "sha256": "1833bcd4166d1d5f717eb800b47a0f658124ef1ae1f50a8da87a460cedc1a87e"
+    },
+    {
+      "path": "scripts/rover/sweep3.py",
+      "sha256": "9364ab0048cde3f26d9a227638d77a41fac3bd46a044ac30c1ac265ad59b3aae"
+    },
+    {
+      "path": "scripts/rover/sweep_deg20_scaled.py",
+      "sha256": "65fccdfe07c90c74c44e1b78cced1ca3c4032ff2938b63580da190fbeb4f5e67"
+    },
+    {
+      "path": "scripts/rover/sweep_dwell.py",
+      "sha256": "9ad39744deb6528bef616231fbeb200155f441927493434f64807cd15bb88fc5"
+    },
+    {
+      "path": "scripts/rover/sweep_dwell2.py",
+      "sha256": "fc019d8d253d437879b640c471fe52c54654bfc39d20f36d9a10f7571c5811a2"
+    },
+    {
+      "path": "scripts/rover/sweep_gain.py",
+      "sha256": "e89cddcfdcc6444969655d8b7dfe4e63c09bad76c02e7d8fdab3d912875b2099"
+    },
+    {
+      "path": "scripts/rover/sweep_h20.py",
+      "sha256": "7d12b1e0057d7aa0c28d9f731dea80156c0806b498e5be2b0b7feccedfb130a4"
+    },
+    {
+      "path": "scripts/rover/sweep_h20_more.py",
+      "sha256": "5a54d1befd0524bde15d2229e0ceea805ef83e060404236aa5528bb696e7f868"
+    },
+    {
+      "path": "scripts/rover/sweep_mu4.py",
+      "sha256": "5b482595b674dfe328fb0b6a51d437a919c8ec5716dca7b67577edc8bb5a4cc5"
+    },
+    {
+      "path": "scripts/rover/sweep_nose.py",
+      "sha256": "aa288ecaf37081d1126c635ff0c89af8bf7d17624fc3193c01d0113f29da2549"
+    },
+    {
+      "path": "scripts/rover/sweep_recovery.py",
+      "sha256": "d7ecc943794f9edb76c5a1597c04c88a922e2e9c765cacac10464ac33e8d041c"
+    },
+    {
+      "path": "scripts/rover/sweep_recovery2.py",
+      "sha256": "8b130f04733ad0a8a2622668276f2025936f684e07bf9736297ebfdf795a3b0d"
+    },
+    {
+      "path": "scripts/rover/sweep_recovery_dwell.py",
+      "sha256": "5570dea7bdbf7ecbc4722b6324d2863dbca2b9860e79932f772c715f26da3a5c"
+    },
+    {
+      "path": "scripts/rover/sweep_recovery_dwell2.py",
+      "sha256": "0b31563200ab204407e2f6438146f9edc70d8ef362679439416e4425d635f06a"
+    },
+    {
+      "path": "scripts/rover/sweep_scaled.py",
+      "sha256": "c3432b0bb37016bbce73fa2c266f211a1a51e299ae9b3acc46c02579a07ff4fc"
+    },
+    {
+      "path": "scripts/rover/sweep_torque.py",
+      "sha256": "12a2f02825ff12383bfcc30df32bcce668691693f4db84bbf32efdc8c47e4db3"
+    },
+    {
+      "path": "scripts/rover/trace_contacts.py",
+      "sha256": "49a27273b2b3fd93c52f0a05d0deab55366cb44baea810a7cd68c41104997298"
+    },
+    {
+      "path": "scripts/rover/trace_init.py",
+      "sha256": "15fd1bf1f853d023039934f4de876bad7ebe52cc546b9f92a6f2a76340b25ad0"
+    },
+    {
+      "path": "scripts/rover/trace_mu.py",
+      "sha256": "65dee3da110aea0d2d081a2b6326862691e47844666721cb8a9795eea59faa4f"
+    },
+    {
+      "path": "scripts/rover/trace_y.py",
+      "sha256": "00ef43bfcb978b5c0283dc6b08842a81401b36101aff328fe0cf34309cdb04a3"
+    },
+    {
+      "path": "scripts/rover/unrestricted20_a20c20.py",
+      "sha256": "0629aeb0b9f51433afba39d80e53de936f0c64ff674387165b13a401d89b9663"
+    },
+    {
+      "path": "scripts/rover/verify_45.py",
+      "sha256": "4a19e94562ab93a9817818326c56ddc0dfab798820a08e7471936fb6e66550db"
+    },
+    {
+      "path": "scripts/rover/verify_winners.py",
+      "sha256": "242e5a4761791827a35f54d2ecb6a2f3a712cb04888af6e5931f9662f46cdf4b"
+    },
+    {
+      "path": "tools/verify_speed20_records.py",
+      "sha256": "c869c35f5a99fc618fbdf9a3f36b439eadb0632907ec813819eefb2a8d5b8076"
+    },
+    {
+      "path": "web/ground_mu4_contact_v6to15_review.html",
+      "sha256": "08575823464be082aa885ece573951de9c54519296ebf6ea3b8a8cbf26372ff2"
+    },
+    {
+      "path": "web/ground_mu4_contact_v6to15_review.py",
+      "sha256": "0ff3133e09694e1083318e50f1e7cf230a5b3cd0e44c4e80cd86ad281c838cc4"
+    },
+    {
+      "path": "web/ground_mu6_contact_v6to15_review.html",
+      "sha256": "0a45903b6b6ad68a8776503fe1e0350d2aa24b5be74b2c8a3cb6c0a88fb9934b"
+    },
+    {
+      "path": "web/ground_mu6_contact_v6to15_review.py",
+      "sha256": "fd795d19e44c5e5f5fe16a28e2ec36fc9a0bc197c4f82644ef6ef4b729caf5f1"
+    },
+    {
+      "path": "web/ground_mu6_review.html",
+      "sha256": "f26d496753edd015697eec444ec6f920c15c35b40761c117cb989c766cdc87e2"
+    },
+    {
+      "path": "web/ground_mu6_review.py",
+      "sha256": "afb72a7647967c416b1a0d1dd979cb9f8f66ed48004dced7dff42e0ebf6d247a"
+    },
+    {
+      "path": "web/ground_mu6_v7to15_review.html",
+      "sha256": "3050cfe9c6b8ac1eb200257e4cdb46158b808840981c31e3ece767d6a17f4317"
+    },
+    {
+      "path": "web/ground_mu6_v7to15_review.py",
+      "sha256": "f490b3d869b2969610003e6c8615d4abe6d0fd372a2e8ada9a44bbd36d01fe3e"
+    },
+    {
+      "path": "web/ground_mu8_contact_v6to15_review.html",
+      "sha256": "e330e9666eb714cbc70bb6b63ea9580b0400d5aaee3e8c43a21d69266cf4d824"
+    },
+    {
+      "path": "web/ground_mu8_contact_v6to15_review.py",
+      "sha256": "d15672c8b5f89ba5a5be7af609288432a2ebd5b1873f38fb799a411b5786c1c7"
+    },
+    {
+      "path": "web/ground_mu8_review.html",
+      "sha256": "9202b85d38aab64084a8418a06964b619e23e8082adb6947ceab02972c1f3d3b"
+    },
+    {
+      "path": "web/ground_mu8_review.py",
+      "sha256": "57ebf4fec309515066edd53b07e6fa9a05de5a51e56e74b7cc31a74baf86256d"
+    },
+    {
+      "path": "web/ground_mu8_v7to15_review.html",
+      "sha256": "b3ef5db53d17c4198013f30d1beb6eb055d4cb1e0268f83b91d22fc68ac8cdbe"
+    },
+    {
+      "path": "web/ground_mu8_v7to15_review.py",
+      "sha256": "584f52bce940e3a7c3c9134150bd300f2301f5e28d6023cacab54a39374e6243"
+    },
+    {
+      "path": "web/high_stairs.html",
+      "sha256": "ea2e7a9f524597e5747c1d814de4d56878f3afd54e548d1f3a051bbef1a4ff18"
+    },
+    {
+      "path": "web/high_stairs.py",
+      "sha256": "cf9536ec0344a558b2bd945bec08f00bc1e28c6f0535ebd7eae7553f4bfe34a4"
+    },
+    {
+      "path": "web/overspeed20_review.html",
+      "sha256": "080888426a1c940b0208ba0457d59e1efc687393bd08ac16f09665e9430916de"
+    },
+    {
+      "path": "web/overspeed20_review.py",
+      "sha256": "ae1caf15c636cf2f3dcb2bfa5d291c639d8bc34b72a809c83540daf19547a793"
+    },
+    {
+      "path": "web/recovery20_amp20_review.html",
+      "sha256": "212901dcdc9701bce673fc9c7b5e9a393f185aaefdeb13f92e6db6845e623c8e"
+    },
+    {
+      "path": "web/recovery20_amp20_review.py",
+      "sha256": "0f7996fc70e66748549b36e9fc0933e93105ae29ee3702463eeb7172001a05ba"
+    },
+    {
+      "path": "web/recovery20_asym_review.html",
+      "sha256": "da742a3402b5e400237feca264acace100d0cb0734d8d9014ba84b22c0e38131"
+    },
+    {
+      "path": "web/recovery20_asym_review.py",
+      "sha256": "4c1d5a657da8f068972a7ab6a98e46c586a035cfa67b3359585ddcb73c2c5796"
+    },
+    {
+      "path": "web/recovery20_contact_wheels_review.html",
+      "sha256": "f4170ceab69a09c7cd89aabc2b58272be95197df4cbcef4c89d363b67a5b5db3"
+    },
+    {
+      "path": "web/recovery20_contact_wheels_review.py",
+      "sha256": "e4b08157c63cb9925123f067a07c32d8fe23e7bcbca01f7d34ca51279ab28023"
+    },
+    {
+      "path": "web/recovery20_friction_negative_first_review.html",
+      "sha256": "23252964114e646bfdf0a2a04bad19a588304aa032a756106a24fc697cf5c510"
+    },
+    {
+      "path": "web/recovery20_friction_negative_first_review.py",
+      "sha256": "5e9f08ffc73fe8a27adf242da2b21e7b50adf47f6364bd3a79ff5de6933fd2db"
+    },
+    {
+      "path": "web/recovery20_friction_review.html",
+      "sha256": "5e360ecb8db364d69dcf5a720d33b524f4d89da04b47028658999129e28c1484"
+    },
+    {
+      "path": "web/recovery20_friction_review.py",
+      "sha256": "2afb3d3fe06d4aa59c47dd807ef6dbc927df7e619bdfe93f0df7a5d4f2f1c063"
+    },
+    {
+      "path": "web/recovery20_review.html",
+      "sha256": "984c3fbb906e7b26b8061688e329347c97321bac95b1cba12585672e8b8c5c62"
+    },
+    {
+      "path": "web/recovery20_review.py",
+      "sha256": "b80fba7f47f6315c455b27265b0cb1cc599d00ffce0947a1259e891ddd1149d6"
+    },
+    {
+      "path": "web/speed20_review.html",
+      "sha256": "aebd78b78265eb22b4346b342f0879da97a406b8c5598e46892f35bb9bffcc73"
+    },
+    {
+      "path": "web/speed20_review.py",
+      "sha256": "89705e3d67f35df8790b41d1c7a61ac28e89b2b5156296f13f7147e71197e73f"
+    }
+  ],
+  "kept_active_simulation_modules": [
+    "climb",
+    "closed_loop_controller",
+    "course",
+    "dataset_io",
+    "dataset_plan",
+    "episode_audit",
+    "generate_dataset",
+    "ground_mu4_contact_v6to15_20261112",
+    "ground_mu4_contact_v6to15_media_20261112",
+    "ground_mu4_contact_v6to15_verify_20261112",
+    "ground_mu6_constant_wheels_20261112",
+    "ground_mu6_constant_wheels_media_20261112",
+    "ground_mu6_contact_v6to15_20261112",
+    "ground_mu6_contact_v6to15_media_20261112",
+    "ground_mu6_contact_v6to15_verify_20261112",
+    "ground_mu6_v7to15_20261112",
+    "ground_mu6_v7to15_media_20261112",
+    "ground_mu6_v7to15_verify_20261112",
+    "ground_mu6_verify_20261112",
+    "ground_mu8_constant_wheels_20261112",
+    "ground_mu8_constant_wheels_media_20261112",
+    "ground_mu8_contact_v6to15_20261112",
+    "ground_mu8_contact_v6to15_media_20261112",
+    "ground_mu8_contact_v6to15_verify_20261112",
+    "ground_mu8_v7to15_20261112",
+    "ground_mu8_v7to15_media_20261112",
+    "ground_mu8_v7to15_verify_20261112",
+    "ground_mu8_verify_20261112",
+    "overspeed20_stairs",
+    "prep_meshes",
+    "publish_dataset",
+    "recovery20_amp20_experiment",
+    "render_dataset",
+    "speed20_experiment",
+    "test_controller_contract",
+    "test_course_geometry",
+    "test_dataset_plan",
+    "verify_dataset"
+  ],
+  "pinned_audit_evidence": {
+    "scripts/rover/course.py.before_closed_loop_20261110.py": "946c632d41f9bf99fe90c6ea93e081279787d0c9823d935c7002c47611f53a39",
+    "review_v3/model_sha256.txt": "8a88e7023ad696d3de6f6ca149d12b4f61e082c276732b0a61ce6433a1f18bd3"
+  },
+  "preserved": [
+    "runs/",
+    "review_v4/",
+    "datasets/",
+    "assets/",
+    "render_assets/",
+    "/home/agilex/wzy/videos/",
+    "/home/agilex/wzy/docs/supermimic_nonhumanoid_code_survey.md"
+  ],
+  "additional_physics_trials": 0
+}

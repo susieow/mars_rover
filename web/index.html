@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>火星车 · 最终测试版本</title>
+  <style>
+    :root{color-scheme:dark;font:15px/1.6 system-ui,sans-serif;background:#10171f;color:#eaf1f6}
+    body{max-width:1320px;margin:auto;padding:24px}h1{font-size:27px;margin:0 0 12px}h2{font-size:20px;margin:0 0 12px}
+    a{color:#87cbff}button,select{font:inherit;color:inherit;background:#22323f;border:1px solid #557184;border-radius:6px;padding:8px;cursor:pointer}
+    label{display:inline-flex;gap:6px;align-items:center;margin:4px 12px 4px 0}.panel{background:#18232e;padding:18px;border-radius:10px;margin:16px 0}
+    .muted{color:#b3c5d0}.warning{color:#ffc0a9}.success{color:#a3dfb9}.cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;max-height:440px;overflow:auto}
+    .case{text-align:left;min-height:84px}.case small{display:block;color:#b3c5d0}.selected{border:2px solid #87cbff}.tag{font-size:13px;color:#a3dfb9}
+    video{width:100%;max-width:1080px;background:#000}canvas{display:block;width:100%;height:280px;background:#101922}table{border-collapse:collapse;width:100%;font-size:14px}
+    td,th{padding:6px 10px;text-align:left;border-bottom:1px solid #344756}code{overflow-wrap:anywhere}.scroll{overflow:auto}details{margin-top:16px}pre{white-space:pre-wrap;overflow-wrap:anywhere}
+    @media(max-width:600px){body{padding:12px}.panel{padding:12px}h1{font-size:23px}}
+  </style>
+</head>
+<body>
+  <h1>火星车 · 20 cm 台阶 · 最终测试版本</h1>
+  <p class="muted">15 级、45°；地面起步，摩擦 4 / 6 / 8，轮速 3～15 rad/s，两种触发，两种 ±20° 摇臂顺序。</p>
+  <div class="panel">
+    <p id="summary">正在读取实验目录…</p>
+    <p class="muted">曾越阶的记录作为当前优先参考组，效果相近。局部越阶不等于登顶或完整路线成功。未测参数会明确显示，旧诊断视频请查经验文档。</p>
+    <label>摩擦 <select id="mu"><option value="">全部</option><option>4</option><option>6</option><option>8</option></select></label>
+    <label>触发 <select id="trigger"><option value="">全部</option><option value="contact">前轮首次接触</option><option value="stall">接触后确认卡住</option></select></label>
+    <label>轮速 <select id="speed"><option value="">全部</option></select></label>
+    <label>顺序 <select id="direction"><option value="">全部</option><option value="SN">先 −20° 后 +20°</option><option value="SP">先 +20° 后 −20°</option></select></label>
+    <label><input id="crossed" type="checkbox">只看曾越阶</label>
+    <p id="count"></p><div id="cases" class="cases"></div>
+  </div>
+  <section class="panel" id="detail">选择一条记录查看视频和曲线。</section>
+  <script>
+    const $=id=>document.getElementById(id);
+    const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const fmt=(v,n=3)=>Number.isFinite(v)?v.toFixed(n):'未发生';
+    const triggerName=t=>t==='contact'?'首次接触':'确认卡住';
+    const directionName=d=>d==='SN'?'先 −20° 后 +20°':'先 +20° 后 −20°';
+    let catalog, current, curves, generation=0;
+    const parameters=new URLSearchParams(location.search);
+    for(let speed=3;speed<=15;speed++)$('speed').add(new Option(speed+' rad/s',speed));
+    for(const key of ['mu','trigger','speed','direction']){if(parameters.has(key))$(key).value=parameters.get(key);$(key).onchange=filter;}
+    $('crossed').checked=parameters.get('crossed')==='1';$('crossed').onchange=filter;
+
+    function selected(row){
+      return (!$('mu').value||row.friction===Number($('mu').value))&&(!$('trigger').value||row.trigger===$('trigger').value)
+        &&(!$('speed').value||row.speed===Number($('speed').value))&&(!$('direction').value||row.direction===$('direction').value);
+    }
+    function saveLocation(){
+      const p=new URLSearchParams();for(const key of ['mu','trigger','speed','direction'])if($(key).value)p.set(key,$(key).value);
+      if($('crossed').checked)p.set('crossed','1');if(current)p.set('case',current.id);history.replaceState(null,'','/?'+p);
+    }
+    function clearDetail(){
+      const video=document.querySelector('video');if(video){video.pause();video.removeAttribute('src');video.load();}
+      current=null;curves=null;generation++;$('detail').textContent='当前筛选无可显示记录。未测试的组合没有视频。';
+    }
+    function filter(){
+      const all=catalog.cases.filter(selected),rows=all.filter(r=>!$('crossed').checked||r.crossing),missing=catalog.untested.filter(selected).length;
+      $('count').textContent=`显示 ${rows.length} 条；当前参数下已测 ${all.length}，曾越阶 ${all.filter(r=>r.crossing).length}，未测 ${missing}。`;
+      $('cases').replaceChildren();
+      for(const row of rows){
+        const button=document.createElement('button');button.className='case'+(current?.id===row.id?' selected':'');button.dataset.id=row.id;
+        button.innerHTML=`<b>μ ${row.friction} · ${row.speed} rad/s · ${triggerName(row.trigger)}</b><small>${directionName(row.direction)}</small><span class="${row.crossing?'tag':'muted'}">${row.crossing?'曾越阶':'未越阶'} · 最大穿透 ${fmt(row.penetration_mm,2)} mm</span>`;
+        button.onclick=()=>show(row.id);$('cases').append(button);
+      }
+      if(!rows.some(r=>r.id===current?.id)){if(rows.length)show(rows[0].id);else clearDetail();}saveLocation();
+    }
+    async function show(id){
+      const row=catalog.cases.find(r=>r.id===id);if(!row)return;
+      clearDetail();current=row;const token=++generation;saveLocation();
+      document.querySelectorAll('[data-id]').forEach(b=>b.classList.toggle('selected',b.dataset.id===id));
+      $('detail').innerHTML=`<h2>μ ${row.friction} · ${row.speed} rad/s · ${triggerName(row.trigger)} · ${directionName(row.direction)}</h2>
+        <p><code>${escapeHtml(id)}</code></p><video controls preload="metadata" src="${row.video_url}"></video>
+        <p><button id="jump">跳到摇臂触发</button> <a href="${row.video_url}" download>视频文件</a> · <a href="${row.result_url}">结果 JSON</a> · <a href="${row.trajectory_url}">原始轨迹</a></p>
+        <p>前轮首次接触 ${fmt(row.first_contact_s)} s；摇臂触发 ${fmt(row.trigger_s)} s；结束 ${fmt(row.end_s)} s。</p>
+        <p class="${row.crossing?'success':'muted'}">${row.crossing?'双后轮曾局部越阶，首次 '+fmt(row.first_crossing_s)+' s':'双后轮未达到持续越阶条件'}；最高几何等级 ${row.highest_level}，末 1 秒保持等级 ${row.retained_level}；未登顶，完整路线未评估。</p>
+        <p class="warning">最大穿透 ${fmt(row.penetration_mm,2)} mm；首次过程违规 ${fmt(row.first_failure_s)} s。记录违规后继续观察。</p>
+        <p><code>${escapeHtml(row.reasons.join('、')||'无过程违规记录')}</code></p>
+        <details><summary>查看速度违规的首次时间、峰值和累计时长</summary><div id="events">展开后读取…</div></details>
+        <p><button id="loadCurves">加载关节曲线</button> <span class="muted">按需加载，切换视频时释放上一条。</span></p>
+        <div id="charts" hidden><label>关节 <select id="joint"></select></label><label>指标 <select id="signal"><option value="speed">速度 rad/s</option><option value="angle">角度 °</option><option value="torque">力矩 N·m</option><option value="contact">轮子法向接触力 N</option></select></label><canvas id="chart" width="1100" height="280"></canvas><p class="muted">蓝色：实际；紫色：目标；黄色虚线：触发。时间从地面起步计算。</p></div>
+        <p id="hint"></p><details><summary>本条参数</summary><pre>${escapeHtml(JSON.stringify(row.parameters,null,2))}</pre></details>`;
+      $('jump').onclick=()=>{const v=document.querySelector('video');if(v&&row.trigger_s!=null){v.currentTime=row.trigger_s;v.play().catch(()=>{});}};
+      $('loadCurves').onclick=async()=>{
+        $('loadCurves').disabled=true;$('hint').textContent='读取曲线…';
+        try{const response=await fetch(row.curves_url);if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();if(token!==generation)return;curves=data;
+          $('joint').replaceChildren(...Object.keys(data.joints).map(n=>new Option(n,n)));$('joint').value='left_front_wheel_joint';$('joint').onchange=draw;$('signal').onchange=draw;$('charts').hidden=false;$('hint').textContent='';draw();
+        }catch(error){if(token===generation){$('hint').textContent='曲线读取失败：'+error.message;$('loadCurves').disabled=false;}}
+      };
+      const details=$('events').parentElement;
+      details.addEventListener('toggle',async()=>{
+        if(!details.open||details.dataset.loaded)return;details.dataset.loaded='1';
+        try{const response=await fetch(row.result_url);if(!response.ok)throw Error('HTTP '+response.status);const result=await response.json();if(token!==generation)return;
+          const rows=Object.entries(result.overspeed||{}).filter(([,v])=>v.audit.event_count>0).map(([name,v])=>{const e=v.audit.events;const peak=Math.max(...e.map(x=>Math.abs(x.peak_signed_rad_s)));return `<tr><td>${escapeHtml(name)}</td><td>${fmt(e[0].first_s)}</td><td>${fmt(peak)}</td><td>${fmt(v.audit.total_duration_s*1000,1)}</td></tr>`;});
+          $('events').innerHTML=rows.length?'<div class="scroll"><table><tr><th>关节</th><th>首次 s</th><th>绝对峰值 rad/s</th><th>累计 ms</th></tr>'+rows.join('')+'</table></div>':'未记录审核阈值超速。';
+        }catch(error){if(token===generation){$('events').textContent='读取失败：'+error.message;delete details.dataset.loaded;}}
+      });
+    }
+    function draw(){
+      if(!curves||!current)return;const joint=curves.joints[$('joint').value],signal=$('signal').value,index={speed:1,torque:3,angle:4,contact:6}[signal],other=signal==='speed'?2:signal==='angle'?5:null;
+      const rows=joint.rows,canvas=$('chart'),ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,L=72,R=20,T=18,B=32,start=rows[0][0],end=rows.at(-1)[0];let lo=0,hi=0;
+      for(const row of rows)for(const i of [index,other])if(i!==null&&Number.isFinite(row[i])){lo=Math.min(lo,row[i]);hi=Math.max(hi,row[i]);}
+      const pad=Math.max((hi-lo)*.1,.001);lo-=pad;hi+=pad;const x=t=>L+(t-start)/(end-start||1)*(W-L-R),y=v=>T+(hi-v)/(hi-lo)*(H-T-B);
+      ctx.clearRect(0,0,W,H);ctx.strokeStyle='#557184';ctx.strokeRect(L,T,W-L-R,H-T-B);
+      for(const [i,color] of [[index,'#87cbff'],[other,'#c2a5ff']]){if(i===null)continue;ctx.strokeStyle=color;ctx.beginPath();let begun=false;for(const row of rows){if(!Number.isFinite(row[i]))continue;begun?ctx.lineTo(x(row[0]),y(row[i])):ctx.moveTo(x(row[0]),y(row[i]));begun=true;}ctx.stroke();}
+      if(current.trigger_s!==null){ctx.strokeStyle='#efc477';ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(x(current.trigger_s),T);ctx.lineTo(x(current.trigger_s),H-B);ctx.stroke();ctx.setLineDash([]);}
+      ctx.fillStyle='#b3c5d0';ctx.fillText(fmt(hi,2),4,T+7);ctx.fillText(fmt(lo,2),4,H-B);ctx.fillText(fmt(start,1)+' s',L,H-8);ctx.fillText(fmt(end,1)+' s',W-70,H-8);
+    }
+    async function load(){
+      try{const response=await fetch('/api/experiments');if(!response.ok)throw Error('HTTP '+response.status);catalog=await response.json();$('summary').textContent=`已完成 ${catalog.completed} 条，曾局部越阶 ${catalog.local_crossing_count} 条；未测 ${catalog.untested_count} 个组合；完整成功 0 条。`;
+        const wanted=catalog.cases.find(r=>r.id===parameters.get('case'));
+        if(wanted&&selected(wanted)&&(!$('crossed').checked||wanted.crossing)){current=wanted;filter();show(wanted.id);}else filter();
+      }catch(error){$('summary').textContent='目录读取失败：'+error.message;}
+    }
+    load();
+  </script>
+</body>
+</html>

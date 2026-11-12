@@ -1,4 +1,4 @@
-"""Run an isolated, explicitly scoped 15 cm or 20 cm case."""
+"""Run an isolated, explicitly scoped 20 cm case."""
 from __future__ import annotations
 import argparse
 import json
@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--height-cm", type=int, choices=(15, 20), required=True)
+    parser.add_argument("--height-cm", type=int, choices=(20,), required=True)
     parser.add_argument("--name", required=True)
     parser.add_argument("--speed", type=float, default=2.0)
     parser.add_argument("--dry-run", action="store_true")
