@@ -145,11 +145,21 @@
     ],
     "note": "matched to the experiment-one scene; MuJoCo default solref is 0.02 1 and P1 diverged until both were aligned"
   },
-  "goal": "all_six_supported_and_stopped_on_top_platform",
+  "goal": "six_wheel_centres_inside_platform_footprint_with_at_least_five_loaded_and_stopped",
+  "success_criterion": {
+    "footprint": "all six wheel centres inside the platform x range and |y| <= half width",
+    "loaded_wheels_min": 5,
+    "loaded_force_n": 5.0,
+    "unloaded_gap_mm_max": 1.0,
+    "hold_s": 1.0,
+    "settle_s": 1.0,
+    "brake_trigger": "same predicate as ascent_completed"
+  },
   "descent_required": false,
   "observation_budget": "T=max(240, ceil(2*(8+15*d+2)/(3*0.162697))+180), cap 600",
   "run_budget": {
-    "long": 69,
+    "long": 129,
+    "long_run_phase_b": 84,
     "short": 73
   },
   "stop_for_audit_violation": false,

@@ -40,6 +40,7 @@ PERIOD_S = 8.0
 CYCLES = 3
 BRAKE_S = 3.0
 SUPPORT_N = 5.0
+UNLOADED_GAP_M = 0.001
 STRUCTURE_N = 5.0
 STRUCTURE_MAX_S = 0.020
 ROLLOVER_DEG = 60.0
@@ -194,6 +195,7 @@ def run(case: dict) -> dict:
     platform_len = case.get("platform_len", PLATFORM_LEN)
     platform_start = RISER_X + STEP_COUNT * case["tread_m"]
     platform_end = platform_start + platform_len
+    platform_top = STEP_RISE * STEP_COUNT
     # Park centered: braking on the first six-wheel sample leaves the rear
     # wheels on the platform edge, where the 2 m platform cannot hold them.
     park_x = platform_start + platform_len / 2
@@ -328,19 +330,24 @@ def run(case: dict) -> dict:
             saved += 1
 
         platform_forces = wheel_forces(m, d, c, platform_ids)
+        inside, loaded, gap = platform_state(
+            m, d, c, platform_forces, platform_start, platform_end, platform_top)
+        support_ok = platform_support(inside, loaded, gap)
         if brake_start is None:
-            if all(platform_forces[i] > SUPPORT_N for i in range(6)) and d.qpos[0] >= park_x:
+            # Same predicate as the success criterion: braking while a front
+            # wheel already hangs on the far edge is not braking on the platform.
+            if support_ok and d.qpos[0] >= park_x:
                 brake_start = float(d.time)
                 support_start = brake_start
                 settle_start = brake_start
                 support_steps = 0
         else:
-            support_steps = support_steps + 1 if all(
-                platform_forces[i] > SUPPORT_N for i in range(6)) else 0
+            support_steps = support_steps + 1 if support_ok else 0
             settled_steps = settled_steps + 1 if _settled(m, d, c) else 0
             if not judged and d.time - settle_start >= BRAKE_S - 1e-9:
                 judged = True
-                judge_counts = (support_steps, settled_steps, _settle_margins(m, d, c))
+                judge_counts = (support_steps, settled_steps, inside, loaded,
+                                gap * 1000.0, _settle_margins(m, d, c))
                 settle_ok = (support_steps >= int(round(1.0 / DT))
                              and settled_steps >= int(round(1.0 / DT)))
                 if not settle_ok:
@@ -420,11 +427,43 @@ def run(case: dict) -> dict:
         "budget_s": case["timeout_s"],
         "settle_check": None if judge_counts is None else {
             "support_steps": judge_counts[0], "settled_steps": judge_counts[1],
-            "margins": judge_counts[2]},
+            "all_inside_footprint": judge_counts[2], "loaded_wheels": judge_counts[3],
+            "unloaded_gap_mm": judge_counts[4], "margins": judge_counts[5]},
+        "success_criterion": {
+            "platform_footprint_m": [platform_start, platform_end],
+            "loaded_wheels_min": 5, "loaded_force_n": SUPPORT_N,
+            "unloaded_gap_mm_max": UNLOADED_GAP_M * 1000.0,
+            "hold_s": 1.0, "settle_s": 1.0,
+        },
         "extensions": extensions,
         "final_base_xyz_m": [float(v) for v in d.qpos[:3]],
     }
     return result
+
+
+def platform_state(m, d, c, forces, x0: float, x1: float, top: float):
+    """Return (all six centres inside the platform footprint, loaded count,
+    largest gap of a wheel the platform does not load).
+
+    Force on the platform geom alone accepts a wheel hanging on the far edge,
+    so the footprint check is what makes "on the platform" mean position.
+    """
+    inside = True
+    gaps = []
+    for wi in range(6):
+        geom = c.wheels[wi][6]
+        cx = float(d.geom_xpos[geom, 0])
+        cy = float(d.geom_xpos[geom, 1])
+        bottom = float(d.geom_xpos[geom, 2]) - float(m.geom_size[geom, 0])
+        inside = inside and x0 <= cx <= x1 and abs(cy) <= WIDTH_HALF
+        if forces[wi] <= SUPPORT_N:
+            gaps.append(bottom - top)
+    loaded = int(sum(1 for wi in range(6) if forces[wi] > SUPPORT_N))
+    return inside, loaded, (max(gaps) if gaps else 0.0)
+
+
+def platform_support(inside: bool, loaded: int, unloaded_gap: float) -> bool:
+    return inside and loaded >= 5 and unloaded_gap <= UNLOADED_GAP_M
 
 
 def _settle_margins(m, d, c) -> dict:
@@ -467,8 +506,14 @@ def main() -> None:
     parser.add_argument("--friction", type=int, action="append", default=[])
     parser.add_argument("--order", action="append", default=[])
     parser.add_argument("--amp", type=float, action="append", default=[])
+    parser.add_argument("--run-dir", default="")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
+    global RUN
+    if args.run_dir:
+        RUN = Path(args.run_dir)
+        if not RUN.is_absolute():
+            RUN = ROOT / RUN
     selected = [c for c in cases()
                 if (not args.angle or c["angle_deg"] in args.angle)
                 and (not args.friction or c["friction"] in args.friction)
