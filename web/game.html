@@ -107,6 +107,7 @@
     function pollState() {
       if (!session || finished) return;
       fetch('/api/state?id=' + session).then(r => r.json()).then(s => {
+        if (s.error) { lost('服务器上这一局已经没了'); return; }
         $('hTime').textContent = s.t.toFixed(1);
         $('hSteps').textContent = s.steps;
         $('hSpeed').textContent = s.speed.toFixed(1);
@@ -117,12 +118,36 @@
       stateTimer = setTimeout(pollState, 500);
     }
 
+    // Fetch the frame as a blob and swap the visible image only on success, so a
+    // failed or superseded request never blanks the stage to its black background.
+    let frameErrors = 0, frameUrl = null;
     function pollFrame() {
       if (!session || finished) return;
-      const img = $('frame');
-      img.onload = () => { if (!finished) frameTimer = setTimeout(pollFrame, 100); };
-      img.onerror = () => { if (!finished) frameTimer = setTimeout(pollFrame, 300); };
-      img.src = '/api/frame?id=' + session + '&t=' + Date.now();
+      fetch('/api/frame?id=' + session + '&t=' + Date.now())
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.blob(); })
+        .then(b => {
+          if (finished || !session) return;
+          frameErrors = 0;
+          const next = URL.createObjectURL(b);
+          $('frame').src = next;
+          if (frameUrl) URL.revokeObjectURL(frameUrl);
+          frameUrl = next;
+          frameTimer = setTimeout(pollFrame, 100);
+        })
+        .catch(() => {
+          if (finished || !session) return;
+          if (++frameErrors >= 40) { lost('连续 12 秒拿不到画面'); return; }
+          frameTimer = setTimeout(pollFrame, 300);
+        });
+    }
+
+    function lost(text) {
+      finished = true;
+      clearTimeout(frameTimer); clearTimeout(stateTimer); clearInterval(inputTimer);
+      $('result').classList.remove('hidden');
+      $('resultTitle').textContent = '连接断了';
+      $('resultTitle').className = 'err';
+      $('resultText').textContent = text + '。点「再来一局」重开，或者点「换个角度」回大厅。';
     }
 
     function finish(s) {
@@ -163,6 +188,7 @@
       $('result').classList.add('hidden');
       fetch('/api/reset', {method:'POST', body: JSON.stringify({id: session, name, angle, friction, mode: rockerMode})})
         .then(r => r.json()).then(d => {
+          if (d.error) { alert(d.error); return; }
           session = d.id;
           keys = {forward:false, back:false, up:false, down:false, brake:false};
           pollFrame(); pollState();
@@ -171,11 +197,10 @@
     }
 
     function leaveGame() {
-      if (!session) return;
       const old = session;
       session = null; finished = true;
       clearTimeout(frameTimer); clearTimeout(stateTimer); clearInterval(inputTimer);
-      fetch('/api/leave', {method:'POST', body: JSON.stringify({id: old})}).catch(()=>{});
+      if (old) fetch('/api/leave', {method:'POST', body: JSON.stringify({id: old})}).catch(()=>{});
       $('frame').removeAttribute('src');
       $('result').classList.add('hidden');
       $('msg').textContent = '';
