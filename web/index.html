@@ -5,11 +5,11 @@
   <title>火星车 · 实验主页</title>
   <style>
     :root{color-scheme:dark;font:16px/1.7 system-ui,sans-serif;background:#0e1720;color:#edf4f8}
-    *{box-sizing:border-box}body{max-width:1160px;margin:auto;padding:56px 28px}a{color:inherit}h1{font-size:38px;line-height:1.25;margin:12px 0 18px}h2{font-size:25px;margin:20px 0 12px}p{margin:10px 0}.eyebrow{font-size:13px;letter-spacing:2px;color:#91abc0}.intro{color:#adc1d0;max-width:760px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:38px}.card{display:flex;flex-direction:column;border:1px solid #344b5c;background:#16232e;border-radius:16px;padding:28px}.card.active{border-color:#5a9caa;background:linear-gradient(145deg,#19323a,#15232d)}.top{display:flex;justify-content:space-between;gap:12px;align-items:center}.number{font-size:13px;color:#a8becd}.badge{font-size:12px;border:1px solid #4b6576;border-radius:99px;padding:3px 10px;white-space:nowrap}.active .badge{color:#b3edda;border-color:#4e9586}.description{color:#c2d1dc;min-height:80px}.facts{border-top:1px solid #344b5c;border-bottom:1px solid #344b5c;padding:15px 0;margin:18px 0}.facts p{display:flex;justify-content:space-between;gap:16px;font-size:14px}.facts span{color:#9cb3c4}.facts strong{font-weight:500;text-align:right}.status{font-size:14px;color:#a9bdcb;margin-bottom:24px}.button{display:block;text-align:center;padding:12px 20px;border-radius:8px;background:#284154;text-decoration:none;font-weight:600;margin-top:auto}.active .button{background:#8ed0c1;color:#112b2a}.button:hover{filter:brightness(1.12)}.note{margin-top:30px;color:#9cb3c4;font-size:13px}.error{color:#ffc0a9}@media(max-width:750px){body{padding:28px 18px}h1{font-size:30px}.grid{grid-template-columns:1fr}.description{min-height:0}.card{padding:23px}}
+    *{box-sizing:border-box}body{max-width:1320px;margin:auto;padding:56px 28px}a{color:inherit}h1{font-size:38px;line-height:1.25;margin:12px 0 18px}h2{font-size:25px;margin:20px 0 12px}p{margin:10px 0}.eyebrow{font-size:13px;letter-spacing:2px;color:#91abc0}.intro{color:#adc1d0;max-width:840px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:38px}.card{display:flex;flex-direction:column;border:1px solid #344b5c;background:#16232e;border-radius:16px;padding:28px}.card.active{border-color:#5a9caa;background:linear-gradient(145deg,#19323a,#15232d)}.card.diagnostic{border-color:#8f724a;background:linear-gradient(145deg,#2d281f,#1c2227)}.top{display:flex;justify-content:space-between;gap:12px;align-items:center}.number{font-size:13px;color:#a8becd}.badge{font-size:12px;border:1px solid #4b6576;border-radius:99px;padding:3px 10px;white-space:nowrap}.active .badge{color:#b3edda;border-color:#4e9586}.diagnostic .badge{color:#ffd59a;border-color:#9e7a43}.description{color:#c2d1dc;min-height:100px}.facts{border-top:1px solid #344b5c;border-bottom:1px solid #344b5c;padding:15px 0;margin:18px 0}.facts p{display:flex;justify-content:space-between;gap:16px;font-size:14px}.facts span{color:#9cb3c4}.facts strong{font-weight:500;text-align:right}.status{font-size:14px;color:#a9bdcb;margin-bottom:24px}.button{display:block;text-align:center;padding:12px 20px;border-radius:8px;background:#284154;text-decoration:none;font-weight:600;margin-top:auto}.active .button{background:#8ed0c1;color:#112b2a}.diagnostic .button{background:#d2a85f;color:#2c2417}.button:hover{filter:brightness(1.12)}.note{margin-top:30px;color:#9cb3c4;font-size:13px}.error{color:#ffc0a9}@media(max-width:1040px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:750px){body{padding:28px 18px}h1{font-size:30px}.grid{grid-template-columns:1fr}.description{min-height:0}.card{padding:23px}}
   </style>
 </head>
 <body>
-  <header><div class="eyebrow">MARS ROVER / EXPERIMENTS</div><h1>火星车实验主页</h1><p class="intro">按实验目标查看方案、视频与结果。两个实验分别保留自己的模型条件、控制策略和成功判定，方便持续比较与复核。</p></header>
+  <header><div class="eyebrow">MARS ROVER / EXPERIMENTS</div><h1>火星车实验主页</h1><p class="intro">按实验目标查看方案、视频与结果。Phase B 给出正式边界，控制诊断页保留预抬、载荷转移和微Z的对照证据。</p></header>
   <main class="grid">
     <article class="card">
       <div class="top"><span class="number">实验 01</span><span class="badge">已完成阶段探索</span></div>
@@ -20,12 +20,20 @@
       <a class="button" href="/experiments/stairs-45">查看视频与结果 →</a>
     </article>
     <article class="card active">
-      <div class="top"><span class="number">实验 02</span><span class="badge">URDF 约束 · 首轮控制诊断</span></div>
+      <div class="top"><span class="number">实验 02</span><span class="badge">Phase B 已完成</span></div>
       <h2>URDF 约束内的坡度上限</h2>
       <p class="description">恢复甲方 URDF 的明确约束，轮胎参数设为 0.6。固定台阶高度和级数，通过改变踏步深度测试可通过的坡度。</p>
       <div class="facts"><p><span>楼梯</span><strong>20 cm · 15 级 · 可变角度</strong></p><p><span>轮胎 / 台阶摩擦</span><strong>0.6 / 4、6、8</strong></p><p><span>成功终点</span><strong>六轮登上平台并停稳</strong></p><p><span>本次范围</span><strong>只测上行</strong></p></div>
-      <p class="status" id="slopeStatus">正在读取首轮诊断目录…</p>
-      <a class="button" href="/experiments/urdf-slope">查看视频与结果 →</a>
+      <p class="status" id="slopeStatus">正在读取 Phase B 结果…</p>
+      <a class="button" href="/experiments/urdf-slope">查看结果与边界 →</a>
+    </article>
+    <article class="card diagnostic">
+      <div class="top"><span class="number">实验 02 · 补充</span><span class="badge">诊断证据 · 非边界结论</span></div>
+      <h2>接触恢复控制</h2>
+      <p class="description">比较原始接触后摆动、前轮卸载预抬、载荷转移和微Z交替越障。结果不计入 Phase B 合规边界。</p>
+      <div class="facts"><p><span>楼梯</span><strong>20 cm · 15 级</strong></p><p><span>首批覆盖</span><strong>15° / 25° / 30° / 35° / 45°</strong></p><p><span>策略</span><strong>5 种</strong></p><p><span>数据状态</span><strong>未接纳诊断</strong></p></div>
+      <p class="status" id="recoveryStatus">正在读取控制诊断目录…</p>
+      <a class="button" href="/experiments/contact-recovery">查看对照视频 →</a>
     </article>
   </main>
   <p class="note">实验一的局部越阶记录含有超限情况，不能作为实验二“URDF 约束内通过”的结论。历史诊断视频仍按经验索引保存。</p>
@@ -35,11 +43,19 @@
       document.getElementById('extendedCount').textContent=c.cases.filter(r=>r.extended_to_120s).length+' 条至 120 秒';
       document.getElementById('oldStatus').textContent='曾局部越阶 '+c.local_crossing_count+' 条；完整路线合格成功 '+c.full_route_successes+' 条。';
     }).catch(e=>{document.getElementById('caseCount').textContent='暂不可用';document.getElementById('extendedCount').textContent='暂不可用';const p=document.getElementById('oldStatus');p.classList.add('error');p.textContent='实验目录读取失败：'+e.message;});
-    fetch('/api/urdf-slope').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(c=>{
-      const p=document.getElementById('slopeStatus');
-      if(!c.completed){p.textContent='模型核验和实验入口已接入；等待首轮仿真记录。';return;}
-      p.textContent=`已记录 ${c.completed} 条；六轮到平台 ${c.platform_completed} 条；完整通过 ${c.full_success} 条。`;
-    }).catch(e=>{const p=document.getElementById('slopeStatus');p.classList.add('error');p.textContent='诊断目录读取失败：'+e.message;});
+  </script>
+  <script>
+    fetch('/api/urdf-slope-phase-b').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(rows=>{
+      const v2=rows.filter(x=>x.criterion==='v2');
+      const pass=v2.filter(x=>x.ascent_completed&&x.urdf_compliant&&x.numerical_quality_ok);
+      const best=Math.max(...pass.map(x=>x.angle_deg));
+      document.getElementById('slopeStatus').textContent='修订后 '+v2.length+' 条记录，合规通过 '+pass.length+' 条；已测最高通过角 '+best+'°。35° 与 45° 全部停在前几级。';
+    }).catch(e=>{const p=document.getElementById('slopeStatus');p.classList.add('error');p.textContent='实验二结果读取失败：'+e.message;});
+  </script>
+  <script>
+    fetch('/api/contact-recovery').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(data=>{
+      document.getElementById('recoveryStatus').textContent=`已记录 ${data.completed} 条；六轮到平台 ${data.platform_completed} 条；三者同时通过 ${data.full_success} 条。`;
+    }).catch(e=>{const p=document.getElementById('recoveryStatus');p.classList.add('error');p.textContent='控制诊断目录读取失败：'+e.message;});
   </script>
 </body>
 </html>

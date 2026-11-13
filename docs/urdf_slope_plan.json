@@ -1,26 +1,78 @@
 {
   "status": "planned_not_started",
-  "baseline_commit": "dd43d2a",
+  "plan_version": 2,
+  "baseline_commit": "46cda0a",
   "experiment_id": "urdf_slope",
-  "urdf_sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
+  "plan_doc": "docs/urdf_slope_plan_v2.md",
+  "urdf_sha256": "c12222dfd7b770b21f5620be33d55ac2ab974fb499f32b7d5c16045b1f5ca061",
+  "urdf_fix": {
+    "before_sha256": "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a",
+    "reason": "right side was not a mirror of the left: right_rocker_col_12/13 overlapped the right front wheel at qpos0 (4.231 mm, ~8 kN internal force, wheel locked); front wheel joint origins differed by 7.996 mm; 11 chassis collision pairs were offset by 15-45 mm",
+    "change": "26 right links (inertial and collision) mirrored from the left, 3 wheel joint origins mirrored, 11 exact-mass chassis pairs mirrored from +y to -y",
+    "verified": {
+      "movable_joint_mirror_delta_mm": 0,
+      "matched_collision_pairs": 26,
+      "collision_mismatches": 0,
+      "mass_left_kg": 52.252997,
+      "mass_right_kg": 52.252997,
+      "whole_body_com_y_m": -0.001154,
+      "base_com_y_m": -0.006575,
+      "unmirrored_base_shapes": [
+        "base_link_shape4",
+        "base_link_shape5",
+        "base_link_shape6",
+        "base_link_shape7",
+        "base_link_shape8",
+        "base_link_shape27",
+        "base_link_shape28",
+        "base_link_shape29"
+      ],
+      "unmirrored_note": "non-pairwise convex decomposition pieces; forcing a mirror would change real mass and geometry. Side masses are exactly equal and static wheel loads differ by less than 1.5 N",
+      "steer_knuckle_tire_overlap_mm": 7.56,
+      "steer_knuckle_note": "symmetric on both sides; parent-child contact is filtered by MuJoCo, measured self-contact force 0 N"
+    },
+    "patch": "runs/urdf_slope_20261112/model/urdf_symmetry_fix.patch",
+    "report": "runs/urdf_slope_20261112/model/symmetry_report.json"
+  },
   "height_m": 0.2,
   "steps": 15,
   "total_rise_m": 3,
   "friction": {
     "robot_slide": 0.6,
+    "robot_slide_note": "76 non-wheel collisions declare 0.6 in URDF; 6 wheel collisions have no contact element; user requires 0.6 on wheels; compiler default is 1.0",
     "stairs_slide": [
       4,
       6,
       8
     ],
     "mixing": "default_mujoco_same_priority_max",
+    "effective_wheel_stair": [
+      4,
+      6,
+      8
+    ],
+    "effective_note": "0.6 never determines a contact because all terrain values are larger",
     "confirmed_by_user": true
   },
+  "gates": [
+    "P0_model_compliance",
+    "P1_model_delta_control",
+    "P2_single_step_mount",
+    "P3_penetration_baseline"
+  ],
   "coarse_angles_deg": [
     15,
     25,
     35,
     45
+  ],
+  "first_batch_angles_deg": [
+    15,
+    45
+  ],
+  "rocker_amplitudes_deg": [
+    18,
+    20
   ],
   "coarse_controller": {
     "wheel_base_rad_s": 3,
@@ -29,9 +81,9 @@
       "SN",
       "SP"
     ],
-    "rocker_amplitude_deg": 20,
     "rocker_period_s": 8,
-    "rocker_cycles": 3
+    "rocker_cycles": 3,
+    "steer_law": "frozen_after_P1"
   },
   "coarse_max_trials": 24,
   "boundary_speed_library_rad_s": [
@@ -49,10 +101,8 @@
     "SN",
     "SP"
   ],
-  "refinement_deg": [
-    5,
-    1
-  ],
+  "boundary_screen": "single_step_then_top2_on_full_stair",
+  "refinement_deg": 1,
   "bounds_deg": [
     5,
     45
@@ -63,10 +113,57 @@
     0.0005,
     0.0002
   ],
+  "penetration_policy": {
+    "pass_gate": false,
+    "warning_mm": 20,
+    "criteria": [
+      "no_nonfinite",
+      "no_persistent_nonwheel_support_over_20ms",
+      "boolean_agreement_at_smaller_dt"
+    ]
+  },
+  "success_flags": [
+    "ascent_completed",
+    "urdf_compliant",
+    "numerical_quality_ok"
+  ],
+  "audit_tolerance": {
+    "velocity_rad_s": 0,
+    "angle_deg": 0
+  },
+  "self_collision": "enabled_with_declared_bitmask_robot_contype1_conaffinity3",
+  "solver": {
+    "timestep_s": 0.001,
+    "integrator": "Euler",
+    "solver": "Newton",
+    "cone": "pyramidal",
+    "impratio": 1,
+    "iterations": 100,
+    "solref": [
+      0.004,
+      1.0
+    ],
+    "note": "matched to the experiment-one scene; MuJoCo default solref is 0.02 1 and P1 diverged until both were aligned"
+  },
+  "goal": "six_wheel_centres_inside_platform_footprint_with_at_least_five_loaded_and_stopped",
+  "success_criterion": {
+    "footprint": "all six wheel centres inside the platform x range and |y| <= half width",
+    "loaded_wheels_min": 5,
+    "loaded_force_n": 5.0,
+    "unloaded_gap_mm_max": 1.0,
+    "hold_s": 1.0,
+    "settle_s": 1.0,
+    "brake_trigger": "same predicate as ascent_completed"
+  },
+  "descent_required": false,
+  "observation_budget": "T=max(240, ceil(2*(8+15*d+2)/(3*0.162697))+180), cap 600",
+  "run_budget": {
+    "long": 130,
+    "long_run_phase_b": 85,
+    "short": 73
+  },
   "stop_for_audit_violation": false,
   "accept_any_urdf_violation": false,
-  "goal": "all_six_supported_and_stopped_on_top_platform",
-  "descent_required": false,
-  "implementation_plan": "README.md#实验二urdf-约束内的阶梯坡度上限sol-实施方案",
-  "if_no_pass": "Evaluate the 20-controller library at 5 and 10 degrees for each friction; report no qualified sample if none passes, not a physical maximum."
+  "implementation_plan": "docs/urdf_slope_plan_v2.md",
+  "if_no_pass": "Report no qualified sample under the declared model and control set. Do not report a physical maximum."
 }

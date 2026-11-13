@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>实验二补充 · 接触恢复控制诊断</title>
+  <style>
+    :root{color-scheme:dark;font:15px/1.65 system-ui,sans-serif;background:#0e1720;color:#edf4f8}
+    *{box-sizing:border-box}body{max-width:1280px;margin:auto;padding:30px 24px}a{color:#93d5c8}
+    h1{font-size:30px;margin:18px 0 8px}h2{font-size:20px;margin:0 0 12px}p{margin:8px 0}
+    .muted{color:#acc0ce}.badge{display:inline-block;color:#ffd59a;border:1px solid #9e7a43;border-radius:99px;padding:3px 12px;font-size:13px}
+    .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:22px 0}
+    select,button{background:#172632;color:#edf4f8;border:1px solid #486173;border-radius:8px;padding:8px 12px}
+    button{cursor:pointer}.summary{border-left:3px solid #8ed0c1;padding:10px 16px;background:#14232d;margin:18px 0}
+    .layout{display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start}
+    .list{display:flex;flex-direction:column;gap:10px}.case{text-align:left;width:100%;border:1px solid #344b5c;background:#16232e;padding:14px;border-radius:10px}
+    .case.active{border-color:#8ed0c1;background:#19313a}.case b{display:block;margin-bottom:4px}.case small{display:block;color:#a9bdcb;line-height:1.55}
+    .tag{color:#b3edda}.warn{color:#ffc0a9}.panel{border:1px solid #344b5c;background:#16232e;border-radius:12px;padding:20px}
+    video{width:100%;background:#05080b;border-radius:8px;max-height:620px}.facts{display:grid;grid-template-columns:170px 1fr;gap:8px 16px}
+    .facts dt{color:#9cb3c4}.facts dd{margin:0}.events{font-family:ui-monospace,monospace;font-size:13px;padding-left:20px}.events li{padding:3px 0}
+    .links{display:flex;gap:14px;flex-wrap:wrap}.empty{padding:40px;text-align:center;color:#9cb3c4}
+    @media(max-width:880px){body{padding:22px 16px}.layout{grid-template-columns:1fr}.facts{grid-template-columns:120px 1fr}}
+  </style>
+</head>
+<body>
+  <nav><a href="/">← 实验主页</a></nav>
+  <h1>实验二补充 · 接触恢复控制诊断</h1>
+  <span class="badge">15°～45° 首轮控制诊断 · 数据未接纳</span>
+  <p class="muted">固定 20 cm、15 级并只改变踏步深度；模型按原 URDF 的质量、惯量、碰撞体、关节限位/速度/力矩、阻尼和关节摩擦复核。对比原始接触后摆动与“接触→卸载/微退→预抬前轮→重新接触”。</p>
+  <div class="toolbar">
+    <label>角度 <select id="angle"><option value="">全部</option><option>15</option><option>25</option><option>30</option><option>35</option><option>45</option></select></label>
+    <label>策略 <select id="strategy"><option value="">全部</option><option value="baseline">原始接触后摆动</option><option value="prelift">卸载—预抬—重接</option><option value="transfer">预抬 + 10° 载荷转移</option><option value="transfer18">预抬 + 18° 载荷转移</option><option value="zigzag">微Z交替越障</option></select></label>
+    <label>摩擦 <select id="friction"><option value="">全部</option><option>4</option><option>6</option><option>8</option></select></label>
+    <label>方向 <select id="direction"><option value="">全部</option><option>SN</option><option>SP</option></select></label>
+    <button id="reload">刷新目录</button>
+  </div>
+  <div class="summary" id="summary">正在读取实验目录…</div>
+  <main class="layout">
+    <section class="list" id="list"></section>
+    <section class="panel" id="detail"><p class="empty">选择一条记录查看视频和事件时间线。</p></section>
+  </main>
+  <script>
+    const $=id=>document.getElementById(id);let rows=[],current=null;
+    const strategyName=v=>({baseline:'原始接触后摆动',prelift:'卸载—预抬—重接',transfer:'预抬 + 10° 载荷转移',transfer18:'预抬 + 18° 载荷转移',zigzag:'微Z交替越障'}[v]||v);
+    const fmt=(v,n=2)=>v==null||!Number.isFinite(Number(v))?'—':Number(v).toFixed(n);
+    function filtered(){return rows.filter(r=>(!$('angle').value||r.angle_deg===Number($('angle').value))&&(!$('strategy').value||r.strategy===$('strategy').value)&&(!$('friction').value||r.friction===Number($('friction').value))&&(!$('direction').value||r.direction===$('direction').value));}
+    function badge(r){if(r.ascent_completed&&r.urdf_compliant_exact&&r.numerical_quality_ok)return '<span class="tag">完整通过</span>';if(r.ascent_completed)return '<span class="warn">到平台但未合规</span>';return '<span class="warn">未到平台</span>';}
+    function drawList(){const shown=filtered();$('list').innerHTML='';if(!shown.length){$('list').innerHTML='<p class="empty">当前筛选没有记录。</p>';return;}for(const r of shown){const b=document.createElement('button');b.className='case'+(current===r.id?' active':'');b.innerHTML=`<b>${fmt(r.angle_deg,0)}° · μ ${r.friction} · ${strategyName(r.strategy)} · ${r.direction}</b><small>${badge(r)} · 观察 ${fmt(r.duration_s,1)} s</small><small>接触 ${fmt(r.first_contact_s)} s · ${r.termination_reason}</small><small>最大穿透 ${fmt(r.max_contact_penetration_mm)} mm</small>`;b.onclick=()=>show(r);$('list').append(b);}}
+    function show(r){current=r.id;drawList();const events=(r.events||[]).map(e=>`<li>${fmt(e.time_s,3)} s · ${e.phase} · 前进 ${fmt(e.progress_m,3)} m</li>`).join('')||'<li>该策略没有阶段事件</li>';$('detail').innerHTML=`<h2>${r.id}</h2><video controls preload="metadata" src="${r.video_url}"></video><dl class="facts"><dt>策略</dt><dd>${strategyName(r.strategy)}</dd><dt>终止原因</dt><dd>${r.termination_reason}</dd><dt>六轮到平台</dt><dd>${r.ascent_completed?'是':'否'}</dd><dt>URDF 精确合规</dt><dd>${r.urdf_compliant_exact?'是':'否'}</dd><dt>数值质量</dt><dd>${r.numerical_quality_ok?'通过':'未通过'}</dd><dt>接触 / 干预</dt><dd>${fmt(r.first_contact_s,3)} s / ${r.intervention_s==null?'未触发':fmt(r.intervention_s,3)+' s'}</dd><dt>最大穿透</dt><dd>${fmt(r.max_contact_penetration_mm)} mm</dd><dt>过程违规</dt><dd>${(r.violation_names||[]).join(', ')||'无'}</dd></dl><h2 style="margin-top:22px">阶段时间线</h2><ol class="events">${events}</ol><p class="links"><a href="${r.video_url}" download>下载视频</a><a href="${r.result_url}">结果 JSON</a><a href="${r.trajectory_url}">原始轨迹 NPZ</a></p><p class="muted">本页只展示实验三诊断记录；到平台、URDF 合规与数值质量分别独立判定。</p>`;}
+    async function load(){try{const response=await fetch('/api/contact-recovery',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();rows=data.cases||[];$('summary').textContent=`已完成 ${data.completed||0} 条；六轮到平台 ${data.platform_completed||0} 条；URDF 精确合规 ${data.urdf_compliant||0} 条；三者同时通过 ${data.full_success||0} 条。`;drawList();if(rows.length)show(rows[0]);}catch(error){$('summary').textContent='实验目录读取失败：'+error.message;}}
+    for(const id of ['angle','strategy','friction','direction'])$(id).onchange=drawList;$('reload').onclick=load;load();
+  </script>
+</body>
+</html>
