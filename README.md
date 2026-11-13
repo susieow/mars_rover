@@ -61,6 +61,8 @@ cd /home/agilex/wzy/rover
 | `docs/final_experiments.json` | 最终 112 条的前端目录及 44 个缺测组合 |
 | `docs/experiment_index.jsonl` | 最终和历史实验的逐条参数、原因、哈希和证据路径 |
 | `docs/diagnostic*.jsonl`、其他 JSON | 冻结原始登记、批次核验，供追溯 |
+| `scripts/rover/urdf_slope_media_20261113.py`、`pd_screen_replay_20261113.py` | 实验二每条记录的并排视频渲染，以及 D 单级筛选的轨迹重放 |
+| `web/game_server.py`、`web/game.html` | 键盘操控爬楼游戏，成功一局存 LAFAN1 结构到 `runs/rover_game/` |
 | `review_v4/`、`datasets/` | 历史冻结证据，不是新的运行入口 |
 | `review_v3/model_sha256.txt`、`scripts/rover/course.py.before_closed_loop_20261110.py` | 审核器按哈希读取的原始模型/碰撞策略证据，名称虽旧仍必须保留 |
 | `runs/` | AGX 原始轨迹、场景、结果和曲线；不提交 Git |
@@ -78,7 +80,7 @@ Git：`https://github.com/susieow/mars_rover.git`，默认分支 `wzy`。需要�
 
 ## 实验二：URDF 约束内的 20 cm 台阶可通过踏步深度（v2）
 
-状态：P0–P3、Phase B、Phase D 与 Phase E 已完成（B 为 v1 36 条加 v2 49 条，D 为 40 条单级筛选加 4 条完整楼梯确认，E 为 24 条步长复核），Phase C 未开始。执行顺序 A → B → D → E → C。完整计划见 `docs/urdf_slope_plan_v2.md`，机器可读参数见 `docs/urdf_slope_plan.json`。基线 `46cda0a`。
+状态：P0–P3、Phase B、Phase D 与 Phase E 已完成（B 为 v1 36 条加 v2 49 条，D 为 40 条单级筛选加 4 条完整楼梯确认，E 为 24 条步长复核），Phase C 未开始。执行顺序 A → B → D → E → C。前端把 Phase B 与 Phase D 合成一张 129 行的可筛选表，逐行带渲染视频。完整计划见 `docs/urdf_slope_plan_v2.md`，机器可读参数见 `docs/urdf_slope_plan.json`。基线 `46cda0a`。
 
 ### 能证什么
 
@@ -141,6 +143,15 @@ Git：`https://github.com/susieow/mars_rover.git`，默认分支 `wzy`。需要�
 长仿真实跑 85 条（Phase B）、4 条（Phase D 确认）、24 条（Phase E），计划总计 131 条（含 Phase C 的 18 条）；短仿真 13 + 20 + 40 = 73 条。每条记录 `result.json` 和 `trajectory.npz`，含模型、控制器、源码哈希、逐步限值事件、穿透、运行时接触摩擦和视频。
 
 前端 `/` 是主页，`/experiments/stairs-45` 保留实验一，`/experiments/urdf-slope` 改为真实结果页。实验二使用独立目录、API 和 `docs/urdf_slope_index.jsonl`，不覆盖实验一。
+
+## 爬楼游戏（键盘操控采集）
+
+`web/game_server.py` 起一个局域网小服务，同事用键盘开同一台六轮车爬 20 cm、15 级的可变角度台阶，能开上去的一局自动存成 LAFAN1 结构，之后直接拿去训练。
+
+- 模型、步长和判据与实验二一致：1 ms 物理步长，`pb.scene_text(case)` 生成场景，`speed20_experiment.Controller` 做速度与转向，六轮上平台停稳 1 s 判定成功。
+- 操作 W/S 调控车速（最大 4 rad/s），Q/E 抬放摇臂（最大 20°），空格刹车，R 重开。上平台后自动刹停，避免冲出 2 m 深的平台。
+- 成功记录写在 `runs/rover_game/game_<角度>deg_<时间戳>_<会话>.npz`，键为 `root_pos`、`root_rot`（xyzw）、`dof_pos`、`fps=30`，同名 JSON 记关节名和参数。
+- 本机 AGX 的 tmux 会话 `game` 监听 `0.0.0.0:8702`，局域网访问 `http://172.30.2.15:8702`。没有内网穿透，外网同事暂时打不开。
 
 ## 接触恢复控制诊断（cxm 分支合并）
 

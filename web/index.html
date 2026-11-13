@@ -45,14 +45,12 @@
     }).catch(e=>{document.getElementById('caseCount').textContent='暂不可用';document.getElementById('extendedCount').textContent='暂不可用';const p=document.getElementById('oldStatus');p.classList.add('error');p.textContent='实验目录读取失败：'+e.message;});
   </script>
   <script>
-    Promise.all([
-      fetch('/api/urdf-slope-phase-b').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}),
-      fetch('/api/urdf-slope-phases').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();})
-    ]).then(([rows,ph])=>{
+    fetch('/api/urdf-slope-phase-b').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(rows=>{
       const v2=rows.filter(x=>x.criterion==='v2');
       const pass=v2.filter(x=>x.ascent_completed&&x.urdf_compliant&&x.numerical_quality_ok);
       const best=Math.max(...pass.map(x=>x.angle_deg));
-      document.getElementById('slopeStatus').textContent='修订后 '+v2.length+' 条，合规通过 '+pass.length+' 条，最高通过角 '+best+'°；Phase D '+ph.screening.length+' 个控制编号、'+ph.confirm.length+' 条确认。';
+      const withVideo=rows.filter(x=>x.video_key).length;
+      document.getElementById('slopeStatus').textContent='修订后 '+v2.length+' 条，合规通过 '+pass.length+' 条，最高通过角 '+best+'°；Phase D 并入同一张表，'+rows.length+' 条记录中 '+withVideo+' 条可播放。';
     }).catch(e=>{const p=document.getElementById('slopeStatus');p.classList.add('error');p.textContent='实验二结果读取失败：'+e.message;});
   </script>
   <script>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>火星车上楼梯 · 手柄</title>
+  <style>
+    :root{color-scheme:dark;font:15px/1.65 system-ui,sans-serif;background:#0b1219;color:#edf4f8}
+    *{box-sizing:border-box}body{margin:0;padding:24px}
+    .wrap{max-width:1080px;margin:auto}
+    h1{font-size:24px;margin:0 0 6px}.muted{color:#a8becd;font-size:13.5px}
+    .panel{border:1px solid #2f4658;background:#14202b;border-radius:14px;padding:20px;margin-top:18px}
+    .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    input,select{background:#0e1a24;color:#edf4f8;border:1px solid #3a5468;border-radius:8px;padding:8px 10px;font:inherit}
+    button{background:#8ed0c1;color:#0d2422;border:0;border-radius:8px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+    button.ghost{background:#20323f;color:#cde8e1}
+    .stage{position:relative;border-radius:12px;overflow:hidden;background:#000;margin-top:16px}
+    .stage img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain}
+    .hud{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;font-size:14px}
+    .hud b{font-weight:600;color:#b6ecdf}
+    .overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+             background:rgba(5,10,14,.82);text-align:center;padding:24px;gap:10px}
+    .overlay.hidden,.hidden{display:none}
+    .overlay h2{font-size:26px;margin:0}
+    .keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+    .key{border:1px solid #31485a;border-radius:10px;padding:12px;background:#101c26}
+    .key strong{display:block;font-size:18px}.key span{font-size:13px;color:#9fb6c6}
+    .badge{display:inline-block;border:1px solid #3c6b5e;color:#a9e7d7;border-radius:99px;padding:2px 10px;font-size:12.5px}
+    .err{color:#ffb59e}.ok{color:#8fe3bd}
+    @media(max-width:720px){body{padding:14px}.keys{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>火星车上楼梯</h1>
+    <p class="muted">用键盘开这台六轮火星车爬 15 级、每级 20 cm 的直角台阶。成功指六轮都停在顶层平台并停稳，成功的这一局会存成 LAFAN1 结构的数据（root_pos、root_rot、dof_pos、fps）。物理步长 1 ms，和实验二用的是同一个模型。</p>
+
+    <section class="panel" id="lobby">
+      <div class="row">
+        <label>称呼 <input id="name" placeholder="你的名字" maxlength="20" style="width:140px"></label>
+        <label>角度 <select id="angle"></select></label>
+        <label>台阶摩擦 <select id="friction"><option value="4">4</option><option value="6" selected>6</option><option value="8">8</option></select></label>
+        <button id="start">开始爬</button>
+        <span class="badge" id="online">正在连接</span>
+      </div>
+      <p class="muted" style="margin-top:12px">角度越小踏面越宽，越容易；越大越陡。实验二的结论是 μ6 时 25° 能过、35° 过不去，25° 还要靠控制细节。</p>
+    </section>
+
+    <section class="panel hidden" id="game">
+      <div class="row">
+        <span class="badge" id="mode">25° · μ6</span>
+        <span class="muted" id="msg"></span>
+      </div>
+      <div class="stage">
+        <img id="frame" alt="仿真画面">
+        <div class="overlay" id="result">
+          <h2 id="resultTitle">成功</h2>
+          <p class="muted" id="resultText"></p>
+          <div class="row">
+            <button id="again">再来一局</button>
+            <button class="ghost" id="back">换个角度</button>
+          </div>
+        </div>
+      </div>
+      <div class="hud">
+        <span>时间 <b id="hTime">0.0</b> s</span>
+        <span>级数 <b id="hSteps">0</b> / 15</span>
+        <span>车速 <b id="hSpeed">0.0</b> rad/s</span>
+        <span>摇臂 <b id="hRocker">0</b>°</span>
+      </div>
+      <div class="keys">
+        <div class="key"><strong>W / S</strong><span>前进 / 后退</span></div>
+        <div class="key"><strong>Q / E</strong><span>抬臂 / 放臂（各 20°）</span></div>
+        <div class="key"><strong>空格</strong><span>刹车</span></div>
+        <div class="key"><strong>R</strong><span>重开这一局</span></div>
+      </div>
+      <p class="muted" style="margin-top:12px">抬臂会同时抬起两侧摇臂，和实验二的手法一样。上平台后松手让它自己停稳，停稳 1 秒才判定成功。</p>
+    </section>
+  </div>
+
+  <script>
+    const $ = id => document.getElementById(id);
+    let session = null, name = '', angle = 25, friction = 6;
+    let keys = {forward:false, back:false, up:false, down:false, brake:false};
+    let frameTimer = null, inputTimer = null, stateTimer = null, finished = false;
+
+    for (let a = 10; a <= 45; a += 1) {
+      const o = document.createElement('option'); o.value = a; o.textContent = a + '°';
+      if (a === 25) o.selected = true;
+      $('angle').appendChild(o);
+    }
+
+    function inputPayload() {
+      const throttle = (keys.forward ? 1 : 0) + (keys.back ? -1 : 0);
+      const rocker = (keys.up ? 1 : 0) + (keys.down ? -1 : 0);
+      return {id: session, throttle, rocker, brake: keys.brake};
+    }
+
+    function sendInput() {
+      if (!session) return;
+      fetch('/api/input', {method:'POST', body: JSON.stringify(inputPayload())}).catch(()=>{});
+    }
+
+    function pollState() {
+      if (!session || finished) return;
+      fetch('/api/state?id=' + session).then(r => r.json()).then(s => {
+        $('hTime').textContent = s.t.toFixed(1);
+        $('hSteps').textContent = s.steps;
+        $('hSpeed').textContent = s.speed.toFixed(1);
+        $('hRocker').textContent = s.rocker_deg.toFixed(0);
+        $('msg').textContent = s.message || '';
+        if (s.status !== 'running') finish(s);
+      }).catch(()=>{});
+      stateTimer = setTimeout(pollState, 500);
+    }
+
+    function pollFrame() {
+      if (!session || finished) return;
+      const img = $('frame');
+      img.onload = () => { if (!finished) frameTimer = setTimeout(pollFrame, 100); };
+      img.onerror = () => { if (!finished) frameTimer = setTimeout(pollFrame, 300); };
+      img.src = '/api/frame?id=' + session + '&t=' + Date.now();
+    }
+
+    function finish(s) {
+      finished = true;
+      clearTimeout(frameTimer); clearTimeout(stateTimer); clearInterval(inputTimer);
+      $('result').classList.remove('hidden');
+      $('resultTitle').textContent = s.status === 'success' ? '上去了' : '没上去';
+      $('resultTitle').className = s.status === 'success' ? 'ok' : 'err';
+      $('resultText').textContent = s.status === 'success'
+        ? '这一局已保存：' + (s.saved || '') + '（' + s.angle_deg + '° · μ' + s.friction + '，用时 ' + s.t + ' s）'
+        : (s.message || '失败') + '　换一个角度或者再来一次。';
+    }
+
+    function startGame() {
+      name = $('name').value.trim();
+      angle = Number($('angle').value);
+      friction = Number($('friction').value);
+      finished = false;
+      $('result').classList.add('hidden');
+      fetch('/api/join', {method:'POST', body: JSON.stringify({name, angle, friction})})
+        .then(r => r.json()).then(d => {
+          if (d.error) { alert(d.error); return; }
+          session = d.id;
+          $('mode').textContent = d.angle_deg + '° · μ' + d.friction;
+          $('lobby').classList.add('hidden');
+          $('game').classList.remove('hidden');
+          keys = {forward:false, back:false, up:false, down:false, brake:false};
+          pollFrame(); pollState();
+          inputTimer = setInterval(sendInput, 120);
+        }).catch(e => alert('连不上仿真：' + e.message));
+    }
+
+    function resetGame() {
+      if (!session) return;
+      finished = false;
+      $('result').classList.add('hidden');
+      fetch('/api/reset', {method:'POST', body: JSON.stringify({id: session, name, angle, friction})})
+        .then(r => r.json()).then(d => {
+          session = d.id;
+          keys = {forward:false, back:false, up:false, down:false, brake:false};
+          pollFrame(); pollState();
+          inputTimer = setInterval(sendInput, 120);
+        });
+    }
+
+    const map = {
+      'w': ['forward', true], 'arrowup': ['forward', true],
+      's': ['back', true], 'arrowdown': ['back', true],
+      'q': ['up', true], 'e': ['down', true], ' ': ['brake', true]
+    };
+    window.addEventListener('keydown', ev => {
+      const k = ev.key.toLowerCase();
+      if (k === 'r') { resetGame(); return; }
+      if (map[k]) { ev.preventDefault(); keys[map[k][0]] = map[k][1]; sendInput(); }
+    });
+    window.addEventListener('keyup', ev => {
+      const k = ev.key.toLowerCase();
+      if (map[k]) { ev.preventDefault(); keys[map[k][0]] = false; sendInput(); }
+    });
+
+    $('start').addEventListener('click', startGame);
+    $('again').addEventListener('click', resetGame);
+    $('back').addEventListener('click', () => {
+      clearInterval(inputTimer);
+      fetch('/api/input', {method:'POST', body: JSON.stringify({id: session, throttle:0, rocker:0, brake:true})});
+      session = null; finished = true;
+      $('game').classList.add('hidden'); $('lobby').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

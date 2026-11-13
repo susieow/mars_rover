@@ -313,4 +313,24 @@ SN＝先负后正；SP＝先正后负。全部曲线、首次接触、触发时�
 
 8.74 rad/s 的摇臂速度只出现在单步尖峰，`numerical_quality_ok` 仍是 true，因为它的两条判据不覆盖关节限值。这类尖峰只有 URDF 零容差审核能抓到，两个判据不能互相替代。
 
+## 实验二前端：B/D 合并与逐条视频（2026-11-13）
 
+`/experiments/urdf-slope` 现在只有一张表，Phase B（v1 36 条、v2 49 条）和 Phase D（单级筛选 40 条、完整确认 4 条）共 129 行同表展示，筛选条按阶段、角度、摩擦、摇臂顺序、幅度、速度、触发和是否合规过滤。B 与 D 的记录字段本来就同构，合并只改展示，不改任何判定；Phase E 的步长对照不进前端。
+
+每行都有视频，可以逐条目视。`scripts/rover/urdf_slope_media_20261113.py` 读 `*_trajectory.npz` 的 qpos，按 20 fps 重采样，用 az 90 和 az 30 两个机位各渲染 480×360，拼成 960×360 一帧，ffmpeg 编码到 `runs/urdf_slope_20261112/media/<folder>__<stem>.mp4`，同名 JSON 记视频哈希、帧数、重采样误差和轨迹哈希。重采样误差超过半个采样间隔就报错，不静默重复帧。
+
+`pd/screen` 只存了结果 JSON、没有轨迹，所以视频来自重放：`scripts/rover/pd_screen_replay_20261113.py` 用同一批 `screen_cases()` 重跑 40 条单级仿真到 `pd/screen_replay/`，逐条比对 `ascent_completed`、`urdf_compliant`、`numerical_quality_ok`、`steps_climbed`、`end_reason`，40 条全部一致。D-screen 行的索引把 `video_folder` 指到重放目录。
+
+`scripts/rover/urdf_slope_index.py` 按（目录, 配置基名）把视频挂到行上，输出 129 行且 129 行有视频。基名由摩擦、角度、顺序、幅度拼出，同一配置有多个速度或触发时回退到带 `_v<速度>_<触发>` 的全名。视频合计约 3.0 GB，都在 `runs/` 下，`.gitignore` 已排除，不进 Git。重渲染加 `--force`，用 `--shard/--shards` 分进程跑，不要在同一个进程里复用 EGL 上下文。
+
+## 爬楼游戏与 LAFAN1 数据采集（2026-11-13）
+
+逐格扫参太慢，所以加了一个键盘操控的上楼游戏 `web/game_server.py` + `web/game.html`，让同事自己试着开上去。参数和实验二完全一致：1 ms 物理步长，场景由 `pb.scene_text(case)` 生成，控制环就是 `speed20_experiment.Controller`。W/S 前进后退（最大 4 rad/s），Q/E 抬放摇臂（最大 20°，20°/s 斜坡），空格刹车，R 重开。机器人从第一级前 2 m 起步。
+
+上平台后自动刹停，`auto_brake` 一旦平台支撑成立就锁存。不锁存的话继续给油会直接冲过 2 m 深的平台，这是首轮冒烟测试里真实失败的原因。
+
+判定沿用六轮判据：六轮中心在平台投影内、至少五轮受载、未受载轮离面不超过 1 mm，连续支撑 1 s 后再停稳 1 s 才算成功。偏出 ±2.5 m、滚转超过 60°、超过 `pb.budget(angle)` 算失败。成功的一局自动存成 LAFAN1 结构，不需要额外点保存：`runs/rover_game/game_<角度>deg_<时间戳>_<会话>.npz`，键为 `root_pos (T,3)`、`root_rot (T,4)`（xyzw）、`dof_pos (T,nq-7)`、`fps=30`。同名 JSON 记关节名、四元数顺序、角度、摩擦、时长、帧数和玩家称呼。30 fps 由 10 ms 采样重采样得到。
+
+部署在本机 AGX 的 tmux 会话 `game`，监听 `0.0.0.0:8702`，局域网直接开 `http://172.30.2.15:8702`。同时最多 3 位在跑，10 分钟无操作自动回收会话。AGX 上没有 cloudflared、ngrok 或 tailscale，所以这个链接只在同一局域网可用；要给外网同事玩必须先装内网穿透。
+
+端到端冒烟测试记录：15° / μ6 一局成功，存了 1546 帧、30 fps 的 npz，四元数模长误差 1e-15，root x 从 -2.22 走到 13.70 m、z 从 0.53 升到 3.53 m。
