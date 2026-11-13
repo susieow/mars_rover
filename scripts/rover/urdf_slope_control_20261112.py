@@ -113,7 +113,7 @@ class Controller:
             raise ValueError("unexpected movable joint mapping")
         self.wheel_geom = {row[-1]: index for index, row in enumerate(self.wheels)}
 
-    def update(self, targets, rocker_targets, heading_target=None):
+    def update(self, targets, rocker_targets, heading_target=None, side_bias=0.0):
         model, data = self.m, self.d
         _, _, yaw = orientation(data)
         if self.yaw_previous is not None:
@@ -147,7 +147,9 @@ class Controller:
             limit = self.limits[self.names[joint_id]]
             goal = float(
                 np.clip(
-                    self.wheel_commands[role] + (-correction if left else correction),
+                    self.wheel_commands[role]
+                    + (-correction if left else correction)
+                    + (side_bias if left else -side_bias),
                     -limit["velocity"],
                     limit["velocity"],
                 )
@@ -511,6 +513,96 @@ class ZigzagPattern:
         raise ValueError(f"unknown phase: {self.phase}")
 
 
+class AdaptiveZigzagPattern:
+    """Wide alternating climb with a separate front-platform transfer phase.
+
+    The wide phase tests whether extra rocker/yaw amplitude helps the first
+    risers.  Once either front wheel has platform support, the controller
+    switches to a short high-front-drive phase and alternates a bounded left /
+    right wheel-speed bias to help the remaining body cross the platform edge.
+    """
+
+    def __init__(self, direction):
+        self.phase = "APPROACH"
+        self.started = 0.0
+        self.trigger_time = None
+        self.trigger_progress = None
+        self.contact_side = "left" if direction == "SN" else "right"
+        self.heading_sign = 1.0 if self.contact_side == "left" else -1.0
+        self.events = []
+        self.wide_yaw = math.radians(10.0)
+        self.wide_rocker = math.radians(14.0)
+        self.platform_rocker = math.radians(10.0)
+        self.platform_bias = 1.0
+
+    def switch(self, phase, t, progress):
+        self.phase = phase
+        self.started = t
+        self.events.append({
+            "time_s": round(float(t), 6),
+            "phase": phase,
+            "progress_m": round(float(progress), 6),
+            "contact_side": self.contact_side,
+        })
+
+    def command(self, t, progress, front_total_force, front_force,
+                front_indices, controller, platform):
+        platform_front = any(bool(platform[index]) for index in front_indices)
+        if self.phase == "APPROACH":
+            if front_total_force > 0 and self.trigger_time is None:
+                left_force = sum(float(front_force[index]) for index in front_indices
+                                 if controller.wheels[index][5])
+                right_force = sum(float(front_force[index]) for index in front_indices
+                                  if not controller.wheels[index][5])
+                if abs(left_force - right_force) > 1e-6:
+                    self.contact_side = "left" if left_force > right_force else "right"
+                    self.heading_sign = 1.0 if self.contact_side == "left" else -1.0
+                self.trigger_time = float(t)
+                self.trigger_progress = float(progress)
+                self.switch("UNLOAD", t, progress)
+            return np.full(3, 3.0), np.zeros(2), 0.0, 0.0
+        if platform_front and self.phase not in {"PLATFORM_ASSIST", "FOLLOW"}:
+            self.switch("PLATFORM_ASSIST", t, progress)
+        elapsed = t - self.started
+        if self.phase == "UNLOAD":
+            if elapsed >= 0.15:
+                self.switch("WIDE_A", t, progress)
+            return np.array([0.0, 0.5, 1.0]), np.zeros(2), 0.0, 0.0
+        if self.phase == "WIDE_A":
+            if elapsed >= 1.4:
+                self.switch("WIDE_B", t, progress)
+            side = self.heading_sign
+            return (np.array([1.8, 1.8, 2.5]),
+                    np.array([-self.wide_rocker, self.wide_rocker]),
+                    side * self.wide_yaw, side * self.platform_bias)
+        if self.phase == "WIDE_B":
+            if elapsed >= 1.4:
+                self.switch("RECENTER", t, progress)
+            side = -self.heading_sign
+            return (np.array([2.2, 2.2, 2.8]),
+                    np.array([self.wide_rocker, -self.wide_rocker]),
+                    side * self.wide_yaw, side * self.platform_bias)
+        if self.phase == "RECENTER":
+            if elapsed >= 0.7:
+                self.switch("FOLLOW", t, progress)
+            return np.array([3.0, 3.0, 3.0]), np.zeros(2), 0.0, 0.0
+        if self.phase == "FOLLOW":
+            if platform_front:
+                self.switch("PLATFORM_ASSIST", t, progress)
+            elif self.trigger_progress is not None and progress - self.trigger_progress >= 0.22:
+                self.switch("WIDE_A", t, progress)
+            return np.full(3, 3.0), np.zeros(2), 0.0, 0.0
+        if self.phase == "PLATFORM_ASSIST":
+            # Front wheels pull over the platform edge while the alternating
+            # side bias nudges the chassis into the side with available support.
+            if elapsed >= 3.0:
+                self.switch("FOLLOW", t, progress)
+            bias = self.platform_bias if int(elapsed / 0.65) % 2 == 0 else -self.platform_bias
+            rocker = self.platform_rocker if int(elapsed / 1.3) % 2 == 0 else -math.radians(4.0)
+            return np.array([4.0, 3.6, 2.8]), np.full(2, rocker), 0.0, bias
+        raise ValueError(f"unknown phase: {self.phase}")
+
+
 def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECONDS):
     angle_tag = f"{angle_deg:g}".replace(".", "p")
     case_id = f"urdf{angle_tag}_mu{friction}_{strategy}_{direction}_c12222df"
@@ -547,6 +639,7 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         "approach_distance_m": APPROACH_M,
         "base_wheel_speed_rad_s": 3.0,
         "control_version": (
+            "adaptive_zigzag_platform_v1" if strategy == "adaptive_zigzag" else
             "micro_zigzag_v1" if strategy == "zigzag" else
             "contact_prelift_transfer18_v3" if strategy == "transfer18" else
             "contact_prelift_transfer_v2" if strategy == "transfer" else
@@ -589,6 +682,7 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         transfer_deg=transfer_deg,
     )
     zigzag_pattern = ZigzagPattern(direction)
+    adaptive_pattern = AdaptiveZigzagPattern(direction)
     front_indices = [
         index for index, row in enumerate(controller.wheels) if row[4] == 0
     ]
@@ -616,6 +710,7 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         front_level = int(levels_for_control[front_indices].max(initial=-1))
         if first_contact is None and front_force > 0:
             first_contact = float(data.time)
+        side_bias = 0.0
         if strategy == "baseline":
             if baseline_trigger is None:
                 targets = np.full(3, 3.0)
@@ -638,6 +733,13 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
             )
             if baseline_trigger is None and zigzag_pattern.trigger_time is not None:
                 baseline_trigger = zigzag_pattern.trigger_time
+        elif strategy == "adaptive_zigzag":
+            targets, rockers, heading, side_bias = adaptive_pattern.command(
+                float(data.time), progress, front_force, forces, front_indices,
+                controller, platform,
+            )
+            if baseline_trigger is None and adaptive_pattern.trigger_time is not None:
+                baseline_trigger = adaptive_pattern.trigger_time
         else:
             trigger_level = (
                 int(wheel_support_levels(support)[0]) if pattern.trigger_time else -1
@@ -656,7 +758,7 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
             targets = np.zeros(3)
             rockers = np.zeros(2)
             heading = 0.0
-        goal = controller.update(targets, rockers, heading_target=heading)
+        goal = controller.update(targets, rockers, heading_target=heading, side_bias=side_bias)
         arrays["ctrl"][step] = data.ctrl
         arrays["wheel_targets"][step] = goal
         arrays["wheel_group_commands"][step] = controller.wheel_commands
@@ -780,8 +882,9 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         "first_contact_s": first_contact,
         "intervention_s": baseline_trigger,
         "events": (
-            zigzag_pattern.events if strategy == "zigzag" else
-            pattern.events if strategy in {"prelift", "transfer", "transfer18"} else []
+            (adaptive_pattern.events if strategy == "adaptive_zigzag" else
+             zigzag_pattern.events if strategy == "zigzag" else
+             pattern.events if strategy in {"prelift", "transfer", "transfer18"} else [])
         ),
         "ascent_completed": ascent_completed,
         "urdf_compliant_exact": urdf_compliant,
@@ -852,7 +955,7 @@ def main():
     parser.add_argument("--friction", type=int, choices=(4, 6, 8), required=True)
     parser.add_argument(
         "--strategy",
-        choices=("baseline", "prelift", "transfer", "transfer18", "zigzag"),
+        choices=("baseline", "prelift", "transfer", "transfer18", "zigzag", "adaptive_zigzag"),
     )
     parser.add_argument("--direction", choices=("SN", "SP"))
     parser.add_argument("--angle-deg", type=float, default=DEFAULT_ANGLE_DEG)

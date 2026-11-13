@@ -30,7 +30,14 @@ case ID 增加 `_c12222df`，视频也写入独立目录。渲染器核对记录
 顶层 `urdf_compliant` / `full_success` 保留历史 API 兼容含义，表示各记录原审核结果，绝非当前模型认证数量；新网页不再拿这些字段宣称完整通过。
 
 初始化阶段、独立重放、步长复核和新版平台判据尚未统一到这套诊断控制器，因此新记录即使模型字段与保存阶段关节检查通过，仍只属于诊断。
-本次未重跑爬楼矩阵、未生成新爬楼视频、未改变 Phase B/D/E 的结果和判据。
+
+## 扩大摆幅与平台辅助诊断（2026-11-13）
+
+新增 `adaptive_zigzag`，只在 30°、35°、40°、45° 上验证。前段将微 Z 的约 ±6° 航向 / ±8° 摇臂扩大到约 ±10° / ±14°；检测到任一前轮对平台产生超过 5 N 的法向支撑后，切换 3 s 的平台辅助：前/中/后轮组目标约为 4.0/3.6/2.8 rad/s，左右轮速差以 1 rad/s 交替，摇臂在 +10° 与 −4° 间切换。
+
+结果：30° 未到平台，最大穿透 24.25 mm 且有运行越限；35° 未到平台但保持限值和数值质量；40° 未到平台但保持限值和数值质量；45° 未到平台并有运行越限。30° 触发过平台辅助阶段但未完成停稳，说明当前动作不足以解决末级上平台。扩大摆幅没有证明 35° 或 40° 可爬，也不能把失败写成车辆绝对物理上限。
+
+新版页面现在把新版 19 条记录和旧版 15 条记录分开；状态颜色为绿色（到平台且质检通过）、黄色（到平台但质检未通过）、红色（未到平台）。
 
 ## 使用
 
@@ -40,6 +47,7 @@ case ID 增加 `_c12222df`，视频也写入独立目录。渲染器核对记录
 /home/agilex/wzy/rover/.venv/bin/python -B scripts/rover/urdf_slope_control_20261112.py --friction 6 --check-model
 # 按需新跑，拒绝覆盖已存在的同名 case：
 /home/agilex/wzy/rover/.venv/bin/python -B scripts/rover/urdf_slope_control_20261112.py --friction 6 --strategy zigzag --direction SN --angle-deg 25 --max-seconds 240
+for angle in 30 35 40 45; do /home/agilex/wzy/rover/.venv/bin/python -B scripts/rover/urdf_slope_control_20261112.py --friction 6 --strategy adaptive_zigzag --direction SN --angle-deg $angle --max-seconds 240; done
 MUJOCO_GL=egl /home/agilex/wzy/rover/.venv/bin/python -B scripts/rover/urdf_slope_control_media_20261112.py --case urdf25_mu6_zigzag_SN_c12222df
 /home/agilex/wzy/rover/.venv/bin/python -B scripts/rover/urdf_slope_catalog_20261112.py
 ```
