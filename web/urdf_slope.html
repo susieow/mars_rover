@@ -27,7 +27,7 @@
 </head>
 <body>
   <nav><a href="/">← 实验主页</a></nav>
-  <h1>实验二 · Phase B 全楼梯结果</h1>
+  <h1>实验二 · 全楼梯结果与边界</h1>
   <span class="badge" id="badge">正在读取结果…</span>
   <p class="muted">固定每级 20 cm、15 级、直角台阶，只改变踏步深度。控制固定为 3 rad/s、前轮首次接触触发、冻结的 heading 转向、摇臂 3 个 8 s 周期后回中立。成功要求六轮中心进入平台投影、至少五轮受载、未受载轮离面不超过 1 mm，连续 1 s 后停稳，且全程每个物理步都在 URDF 限值内。</p>
 
@@ -54,6 +54,22 @@
       <span class="muted" id="count"></span>
     </div>
     <div class="scroll"><table id="runs"><thead><tr><th>角度</th><th>踏面 m</th><th>μ</th><th>顺序</th><th>臂</th><th>级数</th><th>到平台</th><th>合规</th><th>结束</th><th>时长 s</th><th>穿透 mm</th><th>受载轮</th><th>离面 mm</th><th>越限</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="panel">
+    <h2>Phase D · 控制库（单级筛选 40 条 + 完整楼梯确认 4 条）</h2>
+    <p class="muted">20 个控制编号是 3/6/9/12/15 rad/s × 接触/卡住 × SP/SN，在单级台阶上按 15°（踏面 0.7464 m）与 25°（踏面 0.4289 m）筛选，摩擦 6、18° 臂。前 2 名回到完整 15 级，在 25° 与 35° 确认。</p>
+    <div class="scroll" style="max-height:none"><table id="dscreen"><thead><tr><th>速度 rad/s</th><th>触发</th><th>顺序</th><th>15° 判定</th><th>15° 越限步数</th><th>25° 判定</th><th>25° 越限步数</th></tr></thead><tbody></tbody></table></div>
+    <p class="muted">只有 3 rad/s 两个顺序零越限；6 和 9 rad/s 也能安装，但摇臂关节速度越限；12 和 15 rad/s 单级上就冲出平台或未停稳。越限都发生在摇臂速度（1.57 rad/s），不是位置。</p>
+    <div class="scroll" style="max-height:none"><table id="dconfirm"><thead><tr><th>确认控制</th><th>角度</th><th>判定</th><th>级数</th><th>结束</th><th>时长 s</th><th>越限步数</th></tr></thead><tbody></tbody></table></div>
+    <p class="muted">μ6 25° 只有 3 rad/s 卡住 SN 合规通过；同速度的 SP 15 级到平台但未停稳，未受载轮离面 1.355 mm，超过 1 mm 上限。35° 两个顺序都停在第 4 至 5 级。控制编号不改变边界。</p>
+  </section>
+
+  <section class="panel">
+    <h2>Phase E · 步长复核（24 条）</h2>
+    <p class="muted">只改物理步长，控制周期固定 1 ms。1 ms 行引用 pb_v2，新跑 0.5 与 0.2 ms；每格是合规通过或失败，由三个布尔同时成立决定。</p>
+    <div class="scroll" style="max-height:none"><table id="echecks"><thead><tr><th>μ</th><th>顺序</th><th>角度</th><th>1 ms</th><th>0.5 ms</th><th>0.2 ms</th><th>三步长一致</th></tr></thead><tbody></tbody></table></div>
+    <p class="muted">9 个单元三步长判定一致，3 个不一致，全部在 25°：μ4 SP 25° 由通过翻成失败，μ8 SN 25° 在 0.2 ms 未停稳，μ8 SP 25° 由失败翻成通过。这三格按计划标“数值不稳健”，不进入成功数据集，也不进入失败边界。</p>
   </section>
 
   <section class="panel">
@@ -131,7 +147,7 @@
       const pass = v2.filter(x => x.ascent_completed && x.urdf_compliant && x.numerical_quality_ok);
       const arrive = v2.filter(x => x.ascent_completed && !(x.urdf_compliant && x.numerical_quality_ok));
       const at45 = v2.filter(x => x.angle_deg === 45).map(x => x.steps_climbed);
-      $('badge').textContent = 'Phase B 已完成 · ' + v2.length + ' 条修订后记录';
+      $('badge').textContent = 'Phase B/D/E 已完成 · pb_v2 ' + v2.length + ' 条，D 40+4，E 24';
       $('tRows').textContent = v2.length;
       $('tPass').textContent = pass.length;
       $('tArrive').textContent = arrive.length;
@@ -143,6 +159,60 @@
     });
 
     ['fCriterion', 'fFriction', 'fOrder', 'fAmp'].forEach(id => $(id).addEventListener('change', table));
+  </script>
+  <script>
+    (() => {
+      const $ = id => document.getElementById(id);
+      const put = (tr, text, cls) => {
+        const td = document.createElement('td');
+        if (cls) { const s = document.createElement('span'); s.className = cls; s.textContent = text; td.appendChild(s); }
+        else td.textContent = text;
+        tr.appendChild(td);
+      };
+      const END = {platform_settled: '停稳', platform_not_settled: '未停稳', timeout: '超时',
+                   passed_platform: '冲出平台', rollover: '翻侧', left_lane: '偏出车道'};
+      const control = r => r.speed_rad_s + ' · ' + (r.trigger === 'stall' ? '卡住' : '接触') + ' · ' + r.order;
+
+      fetch('/api/urdf-slope-phases').then(r => { if (!r.ok) throw Error('HTTP ' + r.status); return r.json(); }).then(ph => {
+        const screen = $('dscreen').tBodies[0];
+        ph.screening.forEach(row => {
+          const tr = document.createElement('tr');
+          put(tr, row.speed_rad_s); put(tr, row.trigger === 'stall' ? '卡住' : '接触'); put(tr, row.order);
+          row.cells.forEach(c => {
+            const installed = c.mounted && c.urdf;
+            put(tr, installed ? '安装' : (c.mounted ? '安装·越限' : '未安装'), installed ? 'ok' : (c.mounted ? 'warn' : 'no'));
+            put(tr, c.violation_steps ? c.violation_steps + ' 步' : '0');
+          });
+          screen.appendChild(tr);
+        });
+        const confirm = $('dconfirm').tBodies[0];
+        ph.confirm.forEach(row => {
+          const tr = document.createElement('tr');
+          put(tr, control(row)); put(tr, row.angle_deg + '°');
+          put(tr, row.passed ? '通过' : '失败', row.passed ? 'ok' : 'no');
+          put(tr, row.steps_climbed); put(tr, END[row.end_reason] || row.end_reason);
+          put(tr, Math.round(row.duration_s * 10) / 10);
+          put(tr, row.violation_steps ? row.violation_steps + ' 步' : '0');
+          confirm.appendChild(tr);
+        });
+        const checks = $('echecks').tBodies[0];
+        ph.checks.forEach(row => {
+          const tr = document.createElement('tr');
+          put(tr, row.friction); put(tr, row.order); put(tr, row.angle_deg + '°');
+          ['1ms', '0.5ms', '0.2ms'].forEach(dt => {
+            const v = row.verdicts[dt];
+            put(tr, v === null || v === undefined ? '—' : (v ? '通过' : '失败'), v ? 'ok' : (v === false ? 'no' : ''));
+          });
+          put(tr, row.consistent ? '一致' : '不一致', row.consistent ? 'ok' : 'no');
+          checks.appendChild(tr);
+        });
+      }).catch(e => {
+        const p = document.createElement('p');
+        p.className = 'muted no';
+        p.textContent = 'Phase D/E 结果读取失败：' + e.message;
+        $('dscreen').closest('section').appendChild(p);
+      });
+    })();
   </script>
 </body>
 </html>

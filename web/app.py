@@ -89,7 +89,74 @@ class RecoveryCatalog:
         return None
 
 
-def handler_for(catalog, phase_b_rows, recovery):
+def phase_payload(pd_path, pe_path):
+    def read(path):
+        path = Path(path)
+        return json.loads(path.read_text(encoding='utf-8')) if path.is_file() else {}
+
+    def angle_of(run_id):
+        match = re.search(r'/(\d+(?:\.\d+)?)deg/', run_id)
+        return float(match.group(1)) if match else None
+
+    pd_doc, pe_doc = read(pd_path), read(pe_path)
+    screening = {}
+    for row in pd_doc.get('screen', []):
+        control, result = row['control_id'], row['result']
+        angle = angle_of(row['run_id'])
+        if angle is None:
+            continue
+        screening.setdefault((control['speed_rad_s'], control['trigger'], control['order']), {})[angle] = {
+            'angle_deg': angle,
+            'mounted': bool(result['ascent_completed']),
+            'urdf': bool(result['urdf_compliant']),
+            'steps_climbed': int(result['steps_climbed']),
+            'end_reason': result['end_reason'],
+            'violation_steps': sum(row['violation_counts'].values()),
+        }
+    confirm = []
+    for row in pd_doc.get('confirm', []):
+        control, result = row['control_id'], row['result']
+        confirm.append({
+            'speed_rad_s': control['speed_rad_s'],
+            'trigger': control['trigger'],
+            'order': control['order'],
+            'angle_deg': angle_of(row['run_id']),
+            'passed': bool(result['ascent_completed'] and result['urdf_compliant']
+                           and result['numerical_quality_ok']),
+            'steps_climbed': int(result['steps_climbed']),
+            'end_reason': result['end_reason'],
+            'duration_s': row['duration_s'],
+            'violation_steps': sum(row['violation_counts'].values()),
+        })
+    checks = []
+    for check in pe_doc.get('checks', []):
+        variants = [('1ms', check.get('baseline_1ms'))] + [
+            (f"{step['dt_s'] * 1000:g}ms", step['result']) for step in check.get('steps', [])]
+        verdicts = {
+            label: (None if result is None else bool(result['ascent_completed'] and result['urdf_compliant']
+                                                     and result['numerical_quality_ok']))
+            for label, result in variants
+        }
+        seen = [value for value in verdicts.values() if value is not None]
+        checks.append({
+            'friction': check['friction'],
+            'order': check['order'],
+            'angle_deg': check['angle_deg'],
+            'verdicts': verdicts,
+            'consistent': len(set(seen)) <= 1,
+        })
+    return {
+        'screening': [
+            {'speed_rad_s': key[0], 'trigger': key[1], 'order': key[2],
+             'cells': [screening[key][angle] for angle in sorted(screening[key])]}
+            for key in sorted(screening)
+        ],
+        'confirm': confirm,
+        'checks': checks,
+    }
+
+
+def handler_for(catalog, phase_b_rows, recovery, phases):
     class Handler(BaseHTTPRequestHandler):
         def reply(self, status, body, kind='application/json; charset=utf-8', headers=None):
             self.send_response(status)
@@ -137,6 +204,8 @@ def handler_for(catalog, phase_b_rows, recovery):
                 return self.reply(200, json.dumps(catalog.public, ensure_ascii=False, separators=(',', ':')).encode())
             if path == '/api/urdf-slope-phase-b':
                 return self.reply(200, json.dumps(phase_b_rows, ensure_ascii=False, separators=(',', ':')).encode())
+            if path == '/api/urdf-slope-phases':
+                return self.reply(200, json.dumps(phases, ensure_ascii=False, separators=(',', ':')).encode())
             if path == '/api/contact-recovery':
                 return self.reply(200, json.dumps(recovery.public, ensure_ascii=False, separators=(',', ':')).encode())
             asset = catalog.asset(path)
@@ -203,10 +272,16 @@ def main():
         slope_path = root / 'rover/docs/urdf_slope_index.jsonl'
     phase_b_rows = ([json.loads(line) for line in slope_path.read_text(encoding='utf-8').splitlines()
                      if line.strip()] if slope_path.exists() else [])
+    pd_path = root / 'docs/urdf_slope_pd_20261113.json'
+    pe_path = root / 'docs/urdf_slope_pe_20261113.json'
+    if not pd_path.exists():
+        pd_path = root / 'rover/docs/urdf_slope_pd_20261113.json'
+        pe_path = root / 'rover/docs/urdf_slope_pe_20261113.json'
     recovery_path = args.recovery_catalog or root / 'docs/urdf_slope_review.json'
     server = ThreadingHTTPServer(
         (args.host, args.port),
-        handler_for(Catalog(path), phase_b_rows, RecoveryCatalog(recovery_path)),
+        handler_for(Catalog(path), phase_b_rows, RecoveryCatalog(recovery_path),
+                    phase_payload(pd_path, pe_path)),
     )
     print(f'Rover experiments: http://{args.host}:{args.port}/', flush=True)
     try:
