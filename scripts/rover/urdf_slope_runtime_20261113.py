@@ -54,8 +54,8 @@ SETTLE = {
 }
 
 
-def budget(angle_deg: float) -> int:
-    tread = STEP_RISE / math.tan(math.radians(angle_deg))
+def budget(angle_deg: float, rise_m: float = STEP_RISE) -> int:
+    tread = rise_m / math.tan(math.radians(angle_deg))
     ideal = (APPROACH_M + STEP_COUNT * tread + PLATFORM_LEN) / (SPEED * 0.162697)
     return min(600, max(240, math.ceil(2 * ideal) + 180))
 
@@ -92,13 +92,14 @@ def scene_text(case: dict) -> str:
                'rgba=".72 .72 .72 1" />\n')
     x = RISER_X
     steps = case.get("steps", STEP_COUNT)
+    rise = case.get("rise_m", STEP_RISE)
     for i in range(steps):
         terrain += box(f"up{i}", x + case["tread_m"] / 2, case["tread_m"] / 2,
-                       STEP_RISE * (i + 1), case["friction"])
+                       rise * (i + 1), case["friction"])
         x += case["tread_m"]
     platform_len = case.get("platform_len", PLATFORM_LEN)
     terrain += box("platform", x + platform_len / 2, platform_len / 2,
-                   STEP_RISE * steps, 4.0)
+                   rise * steps, 4.0)
     head, tail = ROBOT.read_text().split("<worldbody>", 1)
     return head + "<worldbody>\n" + terrain + tail
 

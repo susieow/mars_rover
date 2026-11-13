@@ -47,6 +47,8 @@ SAVE_FPS = 30
 ROLLOVER_DEG = 60.0
 LATERAL_LIMIT_M = 2.5
 BOOST_EFFORT = 160.0
+RISE_CHOICES_CM = (5, 10, 15, 20, 25, 30, 35)
+DEFAULT_RISE_CM = 20
 
 SESSIONS: dict[str, "Session"] = {}
 LOCK = threading.RLock()
@@ -59,8 +61,17 @@ def orientation(d):
             math.atan2(2 * (w * z + x * y), 1 - 2 * (y * y + z * z)))
 
 
+def rise_cm_of(body):
+    value = body.get("rise_cm", DEFAULT_RISE_CM)
+    try:
+        rise_cm = int(round(float(value)))
+    except (TypeError, ValueError):
+        return None
+    return rise_cm if rise_cm in RISE_CHOICES_CM else None
+
+
 class Session:
-    def __init__(self, angle, friction, name, mode="stock"):
+    def __init__(self, angle, friction, name, mode="stock", rise_cm=DEFAULT_RISE_CM):
         self.id = uuid.uuid4().hex[:10]
         self.name = name
         self.angle = angle
@@ -68,9 +79,14 @@ class Session:
         self.mode = "boost" if mode == "boost" else "stock"
         self.created = time.time()
         self.touched = time.time()
-        self.tread = pb.STEP_RISE / math.tan(math.radians(angle))
-        case = {"angle_deg": angle, "tread_m": self.tread, "friction": friction,
-                "steps": pb.STEP_COUNT, "timeout_s": pb.budget(angle)}
+        # The player picks the riser height; the tread follows from the angle so
+        # the staircase keeps the requested slope.
+        self.rise_cm = int(rise_cm)
+        self.rise = self.rise_cm / 100.0
+        self.tread = self.rise / math.tan(math.radians(angle))
+        self.timeout = pb.budget(angle, self.rise)
+        case = {"angle_deg": angle, "tread_m": self.tread, "rise_m": self.rise,
+                "friction": friction, "steps": pb.STEP_COUNT, "timeout_s": self.timeout}
         SCENE_DIR.mkdir(parents=True, exist_ok=True)
         scene = SCENE_DIR / f"{self.id}.xml"
         scene.write_text(pb.scene_text(case), encoding="utf-8")
@@ -103,8 +119,7 @@ class Session:
                              if (mujoco.mj_id2name(self.model, mujoco.mjtObj.mjOBJ_GEOM, g) or "") == "platform"}
         self.platform_start = pb.RISER_X + pb.STEP_COUNT * self.tread
         self.platform_end = self.platform_start + pb.PLATFORM_LEN
-        self.platform_top = pb.STEP_RISE * pb.STEP_COUNT
-        self.timeout = pb.budget(angle)
+        self.platform_top = self.rise * pb.STEP_COUNT
         self.throttle = 0.0
         self.rocker = 0.0
         self.rocker_cmd = 0.0
@@ -236,7 +251,7 @@ class Session:
         index = np.clip(index, 0, len(times) - 1)
         poses = poses[index]
         stamp = time.strftime("%Y%m%d_%H%M%S")
-        stem = f"game_{self.angle:g}deg_{stamp}_{self.id}"
+        stem = f"game_{self.angle:g}deg_{self.rise_cm}cm_{stamp}_{self.id}"
         np.savez(
             SAVE_DIR / f"{stem}.npz",
             root_pos=poses[:, :3].astype(np.float64),
@@ -246,6 +261,7 @@ class Session:
         )
         meta = {
             "id": self.id, "name": self.name, "angle_deg": self.angle, "tread_m": self.tread,
+            "rise_cm": self.rise_cm, "platform_top_m": round(self.platform_top, 3),
             "friction": self.friction, "duration_s": float(times[-1]), "fps": SAVE_FPS,
             "frames": int(len(poses)), "quaternion_order": "xyzw",
             "joint_names": [self.model.joint(j).name for j in range(self.model.njnt)
@@ -262,6 +278,7 @@ class Session:
     def state(self):
         return {
             "id": self.id, "angle_deg": self.angle, "friction": self.friction,
+            "rise_cm": self.rise_cm,
             "t": round(float(self.data.time), 2), "x": round(float(self.data.qpos[0]), 2),
             "speed": round(self.throttle * SPEED_MAX, 2),
             "rocker_deg": round(math.degrees(float(self.data.qpos[self.ctl.rockers[0][2]])), 1),
@@ -330,17 +347,22 @@ class Handler(BaseHTTPRequestHandler):
             body = self.payload()
             angle = float(body.get("angle", 25))
             friction = int(body.get("friction", 6))
+            rise_cm = rise_cm_of(body)
             if angle < 10 or angle > 50:
                 return self.reply(400, b'{"error":"angle out of range"}')
+            if rise_cm is None:
+                return self.reply(400, json.dumps(
+                    {"error": "每级高度只能选 5/10/15/20/25/30/35 cm"}).encode())
             with LOCK:
                 active = [s for s in SESSIONS.values() if s.status == "running"]
                 if len(active) >= MAX_SESSIONS:
                     return self.reply(429, json.dumps({"error": "上楼梯的人已有 3 位，稍等再开"}).encode())
                 session = Session(angle, friction, str(body.get("name", ""))[:20],
-                                  body.get("mode", "stock"))
+                                  body.get("mode", "stock"), rise_cm)
                 SESSIONS[session.id] = session
             return self.reply(200, json.dumps({"id": session.id, "angle_deg": angle,
-                                               "friction": friction, "mode": session.mode}).encode())
+                                               "friction": friction, "mode": session.mode,
+                                               "rise_cm": session.rise_cm}).encode())
         if path == "/api/state":
             sid = self.query().get("id", "")
             with LOCK:
@@ -379,9 +401,11 @@ class Handler(BaseHTTPRequestHandler):
                 if old is not None:
                     old.close()
                 session = Session(float(body.get("angle", 25)), int(body.get("friction", 6)),
-                                  str(body.get("name", ""))[:20], body.get("mode", "stock"))
+                                  str(body.get("name", ""))[:20], body.get("mode", "stock"),
+                                  rise_cm_of(body) or DEFAULT_RISE_CM)
                 SESSIONS[session.id] = session
-            return self.reply(200, json.dumps({"id": session.id, "mode": session.mode}).encode())
+            return self.reply(200, json.dumps({"id": session.id, "mode": session.mode,
+                                               "rise_cm": session.rise_cm}).encode())
         if path == "/api/episodes":
             SAVE_DIR.mkdir(parents=True, exist_ok=True)
             rows = sorted(SAVE_DIR.glob("game_*.json"), reverse=True)[:50]

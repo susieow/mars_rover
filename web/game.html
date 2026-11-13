@@ -32,18 +32,20 @@
 <body>
   <div class="wrap">
     <h1>火星车上楼梯</h1>
-    <p class="muted">用键盘开这台六轮火星车爬 15 级、每级 20 cm 的直角台阶。成功指六轮都停在顶层平台并停稳，成功的这一局会存成 LAFAN1 结构的数据（root_pos、root_rot、dof_pos、fps）。物理步长 1 ms，和实验二用的是同一个模型。</p>
+    <p class="muted">用键盘开这台六轮火星车爬 15 级、每级高度可选的直角台阶（默认 20 cm）。成功指六轮都停在顶层平台并停稳，成功的这一局会存成 LAFAN1 结构的数据（root_pos、root_rot、dof_pos、fps）。物理步长 1 ms，和实验二用的是同一个模型。</p>
 
     <section class="panel" id="lobby">
       <div class="row">
         <label>称呼 <input id="name" placeholder="你的名字" maxlength="20" style="width:140px"></label>
         <label>角度 <select id="angle"></select></label>
+        <label>每级高 <select id="rise"></select></label>
         <label>台阶摩擦 <select id="friction"><option value="4">4</option><option value="6" selected>6</option><option value="8">8</option></select></label>
         <label>摇臂 <select id="rocker_mode"><option value="stock" selected>原版 100 N·m</option><option value="boost">增强 160 N·m + 新控制环</option></select></label>
         <button id="start">开始爬</button>
         <span class="badge" id="online">正在连接</span>
       </div>
       <p class="muted" style="margin-top:12px">角度越小踏面越宽，越容易；越大越陡。实验二的结论是 μ6 时 25° 能过、35° 过不去，25° 还要靠控制细节。</p>
+      <p class="muted" style="margin-top:6px">每级高度和角度是分开的：踏面宽度会自动跟着变，坡度角保持不变。5、10、15 cm 的台阶更容易骑过去，25、30、35 cm 接近轮子的爬越极限。45° 下可以逐档试。</p>
       <p class="muted" style="margin-top:6px">摇臂「增强」把力矩上限放到 160 N·m，同时换掉原来的速度环（增益 4→12、上限 0.7→1.57 rad/s、加 78 N·m 前馈）。同样的按键，抬臂会明显更快更有力，用来对比甲方加力矩之后的差别。</p>
     </section>
 
@@ -83,7 +85,7 @@
 
   <script>
     const $ = id => document.getElementById(id);
-    let session = null, name = '', angle = 25, friction = 6, rockerMode = 'stock';
+    let session = null, name = '', angle = 25, friction = 6, rockerMode = 'stock', riseCm = 20;
     let keys = {forward:false, back:false, up:false, down:false, brake:false};
     let frameTimer = null, inputTimer = null, stateTimer = null, finished = false;
 
@@ -91,6 +93,11 @@
       const o = document.createElement('option'); o.value = a; o.textContent = a + '°';
       if (a === 25) o.selected = true;
       $('angle').appendChild(o);
+    }
+    for (const r of [5, 10, 15, 20, 25, 30, 35]) {
+      const o = document.createElement('option'); o.value = r; o.textContent = r + ' cm';
+      if (r === 20) o.selected = true;
+      $('rise').appendChild(o);
     }
 
     function inputPayload() {
@@ -157,7 +164,7 @@
       $('resultTitle').textContent = s.status === 'success' ? '上去了' : '没上去';
       $('resultTitle').className = s.status === 'success' ? 'ok' : 'err';
       $('resultText').textContent = s.status === 'success'
-        ? '这一局已保存：' + (s.saved || '') + '（' + s.angle_deg + '° · μ' + s.friction + '，用时 ' + s.t + ' s）'
+        ? '这一局已保存：' + (s.saved || '') + '（' + s.angle_deg + '° · 每级 ' + s.rise_cm + ' cm · μ' + s.friction + '，用时 ' + s.t + ' s）'
         : (s.message || '失败') + '　换一个角度或者再来一次。';
     }
 
@@ -165,14 +172,15 @@
       name = $('name').value.trim();
       angle = Number($('angle').value);
       friction = Number($('friction').value);
+      riseCm = Number($('rise').value);
       rockerMode = $('rocker_mode').value;
       finished = false;
       $('result').classList.add('hidden');
-      fetch('/api/join', {method:'POST', body: JSON.stringify({name, angle, friction, mode: rockerMode})})
+      fetch('/api/join', {method:'POST', body: JSON.stringify({name, angle, friction, mode: rockerMode, rise_cm: riseCm})})
         .then(r => r.json()).then(d => {
           if (d.error) { alert(d.error); return; }
           session = d.id;
-          $('mode').textContent = d.angle_deg + '° · μ' + d.friction
+          $('mode').textContent = d.angle_deg + '° · 每级 ' + d.rise_cm + ' cm · μ' + d.friction
             + (d.mode === 'boost' ? ' · 摇臂 160 N·m' : ' · 摇臂 100 N·m');
           $('lobby').classList.add('hidden');
           $('game').classList.remove('hidden');
@@ -186,7 +194,7 @@
       if (!session) return;
       finished = false;
       $('result').classList.add('hidden');
-      fetch('/api/reset', {method:'POST', body: JSON.stringify({id: session, name, angle, friction, mode: rockerMode})})
+      fetch('/api/reset', {method:'POST', body: JSON.stringify({id: session, name, angle, friction, mode: rockerMode, rise_cm: riseCm})})
         .then(r => r.json()).then(d => {
           if (d.error) { alert(d.error); return; }
           session = d.id;
