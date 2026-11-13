@@ -1,0 +1,1408 @@
+{
+  "phase": "D",
+  "friction": 6,
+  "rocker_amp_deg": 18.0,
+  "screen_angles_deg": [
+    15.0,
+    25.0
+  ],
+  "confirm_angles_deg": [
+    25.0,
+    35.0
+  ],
+  "ranking": [
+    {
+      "speed_rad_s": 3.0,
+      "trigger": "stall",
+      "order": "SP",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 0,
+      "duration_s": 56.948
+    },
+    {
+      "speed_rad_s": 3.0,
+      "trigger": "stall",
+      "order": "SN",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 0,
+      "duration_s": 56.948
+    },
+    {
+      "speed_rad_s": 3.0,
+      "trigger": "contact",
+      "order": "SN",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 0,
+      "duration_s": 57.305
+    },
+    {
+      "speed_rad_s": 6.0,
+      "trigger": "contact",
+      "order": "SP",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 48,
+      "duration_s": 34.787
+    },
+    {
+      "speed_rad_s": 6.0,
+      "trigger": "stall",
+      "order": "SP",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 184,
+      "duration_s": 34.899
+    },
+    {
+      "speed_rad_s": 6.0,
+      "trigger": "stall",
+      "order": "SN",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 184,
+      "duration_s": 34.899
+    },
+    {
+      "speed_rad_s": 6.0,
+      "trigger": "contact",
+      "order": "SN",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 288,
+      "duration_s": 35.044
+    },
+    {
+      "speed_rad_s": 9.0,
+      "trigger": "contact",
+      "order": "SP",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 482,
+      "duration_s": 29.271
+    },
+    {
+      "speed_rad_s": 9.0,
+      "trigger": "stall",
+      "order": "SP",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 698,
+      "duration_s": 29.121
+    },
+    {
+      "speed_rad_s": 9.0,
+      "trigger": "stall",
+      "order": "SN",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 698,
+      "duration_s": 29.121
+    },
+    {
+      "speed_rad_s": 9.0,
+      "trigger": "contact",
+      "order": "SN",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 911,
+      "duration_s": 29.241
+    },
+    {
+      "speed_rad_s": 3.0,
+      "trigger": "contact",
+      "order": "SP",
+      "mounted": 1,
+      "of": 2,
+      "violation_steps": 0,
+      "duration_s": 54.938
+    },
+    {
+      "speed_rad_s": 12.0,
+      "trigger": "contact",
+      "order": "SP",
+      "mounted": 0,
+      "of": 2,
+      "violation_steps": 982,
+      "duration_s": 14.793
+    },
+    {
+      "speed_rad_s": 15.0,
+      "trigger": "contact",
+      "order": "SP",
+      "mounted": 0,
+      "of": 2,
+      "violation_steps": 1005,
+      "duration_s": 12.544
+    },
+    {
+      "speed_rad_s": 12.0,
+      "trigger": "stall",
+      "order": "SP",
+      "mounted": 0,
+      "of": 2,
+      "violation_steps": 1259,
+      "duration_s": 18.81
+    },
+    {
+      "speed_rad_s": 12.0,
+      "trigger": "stall",
+      "order": "SN",
+      "mounted": 0,
+      "of": 2,
+      "violation_steps": 1259,
+      "duration_s": 18.81
+    },
+    {
+      "speed_rad_s": 15.0,
+      "trigger": "stall",
+      "order": "SP",
+      "mounted": 0,
+      "of": 2,
+      "violation_steps": 1394,
+      "duration_s": 16.975
+    },
+    {
+      "speed_rad_s": 15.0,
+      "trigger": "stall",
+      "order": "SN",
+      "mounted": 0,
+      "of": 2,
+      "violation_steps": 1394,
+      "duration_s": 16.975
+    },
+    {
+      "speed_rad_s": 12.0,
+      "trigger": "contact",
+      "order": "SN",
+      "mounted": 0,
+      "of": 2,
+      "violation_steps": 1466,
+      "duration_s": 18.896
+    },
+    {
+      "speed_rad_s": 15.0,
+      "trigger": "contact",
+      "order": "SN",
+      "mounted": 0,
+      "of": 2,
+      "violation_steps": 1857,
+      "duration_s": 12.876
+    }
+  ],
+  "selected": [
+    {
+      "speed_rad_s": 3.0,
+      "trigger": "stall",
+      "order": "SP",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 0,
+      "duration_s": 56.948
+    },
+    {
+      "speed_rad_s": 3.0,
+      "trigger": "stall",
+      "order": "SN",
+      "mounted": 2,
+      "of": 2,
+      "violation_steps": 0,
+      "duration_s": 56.948
+    }
+  ],
+  "screen": [
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v3/contact/SP",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 105.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 28.880000000012313,
+      "wall_seconds": 7.9
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v3/contact/SN",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 105.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 28.97700000001243,
+      "wall_seconds": 7.94
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v3/stall/SP",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 105.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 28.800000000012215,
+      "wall_seconds": 7.95
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v3/stall/SN",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 105.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 28.800000000012215,
+      "wall_seconds": 7.83
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v6/contact/SP",
+      "control_id": {
+        "speed_rad_s": 6.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 83.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 12,
+        "velocity:right_rocker_joint": 12
+      },
+      "duration_s": 17.53599999999845,
+      "wall_seconds": 4.85
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v6/contact/SN",
+      "control_id": {
+        "speed_rad_s": 6.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 83.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 71,
+        "velocity:right_rocker_joint": 71
+      },
+      "duration_s": 17.68399999999863,
+      "wall_seconds": 4.96
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v6/stall/SP",
+      "control_id": {
+        "speed_rad_s": 6.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 83.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 44,
+        "velocity:right_rocker_joint": 45
+      },
+      "duration_s": 17.61099999999854,
+      "wall_seconds": 4.92
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v6/stall/SN",
+      "control_id": {
+        "speed_rad_s": 6.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 83.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 44,
+        "velocity:right_rocker_joint": 45
+      },
+      "duration_s": 17.61099999999854,
+      "wall_seconds": 4.89
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v9/contact/SP",
+      "control_id": {
+        "speed_rad_s": 9.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 75.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 117,
+        "velocity:right_rocker_joint": 118
+      },
+      "duration_s": 14.759999999997259,
+      "wall_seconds": 4.07
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v9/contact/SN",
+      "control_id": {
+        "speed_rad_s": 9.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 75.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 221,
+        "velocity:right_rocker_joint": 221
+      },
+      "duration_s": 14.748999999997265,
+      "wall_seconds": 4.12
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v9/stall/SP",
+      "control_id": {
+        "speed_rad_s": 9.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 75.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 169,
+        "velocity:right_rocker_joint": 170
+      },
+      "duration_s": 14.679999999997303,
+      "wall_seconds": 4.06
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v9/stall/SN",
+      "control_id": {
+        "speed_rad_s": 9.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 75.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 169,
+        "velocity:right_rocker_joint": 170
+      },
+      "duration_s": 14.679999999997303,
+      "wall_seconds": 4.1
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v12/contact/SP",
+      "control_id": {
+        "speed_rad_s": 12.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 72.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "passed_platform"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 154,
+        "velocity:right_rocker_joint": 154,
+        "position_upper:left_rocker_joint": 69,
+        "position_upper:right_rocker_joint": 69
+      },
+      "duration_s": 7.50100000000084,
+      "wall_seconds": 2.05
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v12/contact/SN",
+      "control_id": {
+        "speed_rad_s": 12.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 72.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 271,
+        "velocity:right_rocker_joint": 272,
+        "position_upper:left_rocker_joint": 69,
+        "position_upper:right_rocker_joint": 69
+      },
+      "duration_s": 9.54200000000015,
+      "wall_seconds": 2.63
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v12/stall/SP",
+      "control_id": {
+        "speed_rad_s": 12.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 72.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 226,
+        "velocity:right_rocker_joint": 226,
+        "position_upper:left_rocker_joint": 69,
+        "position_upper:right_rocker_joint": 69
+      },
+      "duration_s": 9.510000000000169,
+      "wall_seconds": 2.59
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v12/stall/SN",
+      "control_id": {
+        "speed_rad_s": 12.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 72.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 226,
+        "velocity:right_rocker_joint": 226,
+        "position_upper:left_rocker_joint": 69,
+        "position_upper:right_rocker_joint": 69
+      },
+      "duration_s": 9.510000000000169,
+      "wall_seconds": 2.56
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v15/contact/SP",
+      "control_id": {
+        "speed_rad_s": 15.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 69.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "passed_platform"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 139,
+        "velocity:right_rocker_joint": 139,
+        "position_upper:left_rocker_joint": 75,
+        "position_upper:right_rocker_joint": 75,
+        "velocity:right_front_steer_joint": 1
+      },
+      "duration_s": 6.389000000000468,
+      "wall_seconds": 1.7
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v15/contact/SN",
+      "control_id": {
+        "speed_rad_s": 15.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 69.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "passed_platform"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 316,
+        "velocity:right_rocker_joint": 309,
+        "position_upper:left_rocker_joint": 147,
+        "position_upper:right_rocker_joint": 145
+      },
+      "duration_s": 6.507000000000508,
+      "wall_seconds": 1.71
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v15/stall/SP",
+      "control_id": {
+        "speed_rad_s": 15.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 69.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 264,
+        "velocity:right_rocker_joint": 265,
+        "position_upper:left_rocker_joint": 75,
+        "position_upper:right_rocker_joint": 75
+      },
+      "duration_s": 8.543000000000704,
+      "wall_seconds": 2.27
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/15deg/v15/stall/SN",
+      "control_id": {
+        "speed_rad_s": 15.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 69.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 264,
+        "velocity:right_rocker_joint": 265,
+        "position_upper:left_rocker_joint": 75,
+        "position_upper:right_rocker_joint": 75
+      },
+      "duration_s": 8.543000000000704,
+      "wall_seconds": 2.28
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v3/contact/SP",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 103.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "passed_platform"
+      },
+      "violation_counts": {},
+      "duration_s": 26.058000000008864,
+      "wall_seconds": 6.88
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v3/contact/SN",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 103.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 28.328000000011638,
+      "wall_seconds": 7.81
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v3/stall/SP",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 103.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 28.148000000011418,
+      "wall_seconds": 7.78
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v3/stall/SN",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 103.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 28.148000000011418,
+      "wall_seconds": 7.8
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v6/contact/SP",
+      "control_id": {
+        "speed_rad_s": 6.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 82.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 12,
+        "velocity:right_rocker_joint": 12
+      },
+      "duration_s": 17.2509999999981,
+      "wall_seconds": 4.75
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v6/contact/SN",
+      "control_id": {
+        "speed_rad_s": 6.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 82.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 73,
+        "velocity:right_rocker_joint": 73
+      },
+      "duration_s": 17.359999999998234,
+      "wall_seconds": 4.8
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v6/stall/SP",
+      "control_id": {
+        "speed_rad_s": 6.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 82.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 48,
+        "velocity:right_rocker_joint": 47
+      },
+      "duration_s": 17.287999999998146,
+      "wall_seconds": 4.79
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v6/stall/SN",
+      "control_id": {
+        "speed_rad_s": 6.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 82.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 48,
+        "velocity:right_rocker_joint": 47
+      },
+      "duration_s": 17.287999999998146,
+      "wall_seconds": 4.85
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v9/contact/SP",
+      "control_id": {
+        "speed_rad_s": 9.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 75.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 123,
+        "velocity:right_rocker_joint": 124
+      },
+      "duration_s": 14.510999999997397,
+      "wall_seconds": 3.99
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v9/contact/SN",
+      "control_id": {
+        "speed_rad_s": 9.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 75.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 234,
+        "velocity:right_rocker_joint": 235
+      },
+      "duration_s": 14.491999999997407,
+      "wall_seconds": 3.99
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v9/stall/SP",
+      "control_id": {
+        "speed_rad_s": 9.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 75.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 179,
+        "velocity:right_rocker_joint": 180
+      },
+      "duration_s": 14.440999999997436,
+      "wall_seconds": 4.08
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v9/stall/SN",
+      "control_id": {
+        "speed_rad_s": 9.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 75.0
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 179,
+        "velocity:right_rocker_joint": 180
+      },
+      "duration_s": 14.440999999997436,
+      "wall_seconds": 4.0
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v12/contact/SP",
+      "control_id": {
+        "speed_rad_s": 12.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 71.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "passed_platform"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 199,
+        "velocity:right_rocker_joint": 199,
+        "position_upper:left_rocker_joint": 69,
+        "position_upper:right_rocker_joint": 69
+      },
+      "duration_s": 7.29200000000077,
+      "wall_seconds": 1.94
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v12/contact/SN",
+      "control_id": {
+        "speed_rad_s": 12.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 71.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 325,
+        "velocity:right_rocker_joint": 322,
+        "position_upper:left_rocker_joint": 69,
+        "position_upper:right_rocker_joint": 69
+      },
+      "duration_s": 9.354000000000255,
+      "wall_seconds": 2.54
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v12/stall/SP",
+      "control_id": {
+        "speed_rad_s": 12.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 71.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 265,
+        "velocity:right_rocker_joint": 266,
+        "position_upper:left_rocker_joint": 69,
+        "position_upper:right_rocker_joint": 69
+      },
+      "duration_s": 9.300000000000285,
+      "wall_seconds": 2.53
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v12/stall/SN",
+      "control_id": {
+        "speed_rad_s": 12.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 71.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 265,
+        "velocity:right_rocker_joint": 266,
+        "position_upper:left_rocker_joint": 69,
+        "position_upper:right_rocker_joint": 69
+      },
+      "duration_s": 9.300000000000285,
+      "wall_seconds": 2.51
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v15/contact/SP",
+      "control_id": {
+        "speed_rad_s": 15.0,
+        "trigger": "contact",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 69.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "passed_platform"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 215,
+        "velocity:right_rocker_joint": 211,
+        "position_upper:left_rocker_joint": 75,
+        "position_upper:right_rocker_joint": 75
+      },
+      "duration_s": 6.15500000000039,
+      "wall_seconds": 1.64
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v15/contact/SN",
+      "control_id": {
+        "speed_rad_s": 15.0,
+        "trigger": "contact",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 69.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "passed_platform"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 321,
+        "velocity:right_rocker_joint": 323,
+        "position_upper:left_rocker_joint": 148,
+        "position_upper:right_rocker_joint": 148
+      },
+      "duration_s": 6.369000000000462,
+      "wall_seconds": 1.67
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v15/stall/SP",
+      "control_id": {
+        "speed_rad_s": 15.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 69.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 281,
+        "velocity:right_rocker_joint": 284,
+        "position_upper:left_rocker_joint": 75,
+        "position_upper:right_rocker_joint": 75
+      },
+      "duration_s": 8.432000000000766,
+      "wall_seconds": 2.24
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/screen/25deg/v15/stall/SN",
+      "control_id": {
+        "speed_rad_s": 15.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 69.0
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 1,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 281,
+        "velocity:right_rocker_joint": 284,
+        "position_upper:left_rocker_joint": 75,
+        "position_upper:right_rocker_joint": 75
+      },
+      "duration_s": 8.432000000000766,
+      "wall_seconds": 2.29
+    }
+  ],
+  "confirm": [
+    {
+      "run_id": "urdf_slope_20261112/D/confirm/25deg/v3/stall/SP",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 248
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 141.21800000031024,
+      "wall_seconds": 37.37
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/confirm/35deg/v3/stall/SP",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "stall",
+        "order": "SP",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 240
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 5,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {},
+      "duration_s": 240.0000000007819,
+      "wall_seconds": 64.23
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/confirm/25deg/v3/stall/SN",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 248
+      },
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 86.20400000004756,
+      "wall_seconds": 22.66
+    },
+    {
+      "run_id": "urdf_slope_20261112/D/confirm/35deg/v3/stall/SN",
+      "control_id": {
+        "speed_rad_s": 3.0,
+        "trigger": "stall",
+        "order": "SN",
+        "rocker_amp_deg": 18.0,
+        "rocker_period_s": 8.0,
+        "rocker_cycles": 3,
+        "steer_law": "heading",
+        "brake_law": "zero_hold_3s",
+        "timeout_s": 240
+      },
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {
+        "velocity:left_rear_steer_joint": 10,
+        "velocity:right_rocker_joint": 2,
+        "velocity:right_rear_steer_joint": 5
+      },
+      "duration_s": 300.0009999998178,
+      "wall_seconds": 78.76
+    }
+  ]
+}

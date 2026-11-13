@@ -1,0 +1,1349 @@
+{
+  "phase": "E",
+  "control_period_s": 0.001,
+  "pairs": [
+    [
+      4,
+      "SN",
+      15.0,
+      25.0
+    ],
+    [
+      4,
+      "SP",
+      25.0,
+      35.0
+    ],
+    [
+      6,
+      "SN",
+      25.0,
+      35.0
+    ],
+    [
+      6,
+      "SP",
+      25.0,
+      35.0
+    ],
+    [
+      8,
+      "SN",
+      25.0,
+      35.0
+    ],
+    [
+      8,
+      "SP",
+      15.0,
+      25.0
+    ]
+  ],
+  "rows": [
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/15deg/mu4/SN/18deg",
+      "friction": 4,
+      "order": "SN",
+      "angle_deg": 15.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 70.08600000015262,
+      "wall_seconds": 28.5,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/15deg/mu4/SN/18deg",
+      "friction": 4,
+      "order": "SN",
+      "angle_deg": 15.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 70.13100000008104,
+      "wall_seconds": 57.01,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/25deg/mu4/SN/18deg",
+      "friction": 4,
+      "order": "SN",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:right_rear_steer_joint": 42
+      },
+      "duration_s": 89.75650000024655,
+      "wall_seconds": 34.43,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/25deg/mu4/SN/18deg",
+      "friction": 4,
+      "order": "SN",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_not_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rear_steer_joint": 421
+      },
+      "duration_s": 85.19340000058106,
+      "wall_seconds": 63.85,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/25deg/mu4/SP/18deg",
+      "friction": 4,
+      "order": "SP",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rear_steer_joint": 37
+      },
+      "duration_s": 90.69800000025104,
+      "wall_seconds": 34.56,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_not_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/25deg/mu4/SP/18deg",
+      "friction": 4,
+      "order": "SP",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 234,
+        "velocity:left_front_steer_joint": 8
+      },
+      "duration_s": 97.0238000009738,
+      "wall_seconds": 72.49,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_not_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/35deg/mu4/SP/18deg",
+      "friction": 4,
+      "order": "SP",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {
+        "velocity:right_rocker_joint": 37
+      },
+      "duration_s": 240.00049999778068,
+      "wall_seconds": 95.95,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/35deg/mu4/SP/18deg",
+      "friction": 4,
+      "order": "SP",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {
+        "velocity:right_rocker_joint": 91
+      },
+      "duration_s": 240.0000000057201,
+      "wall_seconds": 190.63,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/25deg/mu6/SN/18deg",
+      "friction": 6,
+      "order": "SN",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 160.67949999965637,
+      "wall_seconds": 63.75,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/25deg/mu6/SN/18deg",
+      "friction": 6,
+      "order": "SN",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 225.58840000524168,
+      "wall_seconds": 176.2,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/35deg/mu6/SN/18deg",
+      "friction": 6,
+      "order": "SN",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {},
+      "duration_s": 240.00049999778068,
+      "wall_seconds": 95.87,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/35deg/mu6/SN/18deg",
+      "friction": 6,
+      "order": "SN",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {},
+      "duration_s": 240.0000000057201,
+      "wall_seconds": 192.64,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/25deg/mu6/SP/18deg",
+      "friction": 6,
+      "order": "SP",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 89.52650000024545,
+      "wall_seconds": 35.57,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/25deg/mu6/SP/18deg",
+      "friction": 6,
+      "order": "SP",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 135.22800000224203,
+      "wall_seconds": 105.41,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/35deg/mu6/SP/18deg",
+      "friction": 6,
+      "order": "SP",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {
+        "velocity:left_rocker_joint": 43
+      },
+      "duration_s": 240.00049999778068,
+      "wall_seconds": 96.71,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/35deg/mu6/SP/18deg",
+      "friction": 6,
+      "order": "SP",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {},
+      "duration_s": 240.0000000057201,
+      "wall_seconds": 191.75,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/25deg/mu8/SN/18deg",
+      "friction": 8,
+      "order": "SN",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 293.991999996504,
+      "wall_seconds": 109.66,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 7,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/25deg/mu8/SN/18deg",
+      "friction": 8,
+      "order": "SN",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 7,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {},
+      "duration_s": 248.00000000598567,
+      "wall_seconds": 178.39,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 7,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/35deg/mu8/SN/18deg",
+      "friction": 8,
+      "order": "SN",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {
+        "velocity:right_rear_steer_joint": 13
+      },
+      "duration_s": 240.00049999778068,
+      "wall_seconds": 96.65,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/35deg/mu8/SN/18deg",
+      "friction": 8,
+      "order": "SN",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "violation_counts": {
+        "velocity:right_rear_steer_joint": 18
+      },
+      "duration_s": 240.0000000057201,
+      "wall_seconds": 192.01,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/15deg/mu8/SP/18deg",
+      "friction": 8,
+      "order": "SP",
+      "angle_deg": 15.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 66.57650000013587,
+      "wall_seconds": 27.82,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/15deg/mu8/SP/18deg",
+      "friction": 8,
+      "order": "SP",
+      "angle_deg": 15.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 66.57279999996292,
+      "wall_seconds": 56.43,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt500us/25deg/mu8/SP/18deg",
+      "friction": 8,
+      "order": "SP",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0005,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 288.88099999662484,
+      "wall_seconds": 108.33,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 13,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "timeout"
+      }
+    },
+    {
+      "run_id": "urdf_slope_20261112/E/dt200us/25deg/mu8/SP/18deg",
+      "friction": 8,
+      "order": "SP",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "dt_s": 0.0002,
+      "result": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "violation_counts": {},
+      "duration_s": 263.70840000650713,
+      "wall_seconds": 192.58,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 13,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "timeout"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "friction": 4,
+      "order": "SN",
+      "angle_deg": 15.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        }
+      ],
+      "consistent": true
+    },
+    {
+      "friction": 4,
+      "order": "SN",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": false,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": false,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_not_settled"
+          }
+        }
+      ],
+      "consistent": false
+    },
+    {
+      "friction": 4,
+      "order": "SP",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_not_settled"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": false,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": false,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        }
+      ],
+      "consistent": false
+    },
+    {
+      "friction": 4,
+      "order": "SP",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": false,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": false,
+            "numerical_quality_ok": true,
+            "steps_climbed": 4,
+            "end_reason": "timeout"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": false,
+            "numerical_quality_ok": true,
+            "steps_climbed": 4,
+            "end_reason": "timeout"
+          }
+        }
+      ],
+      "consistent": true
+    },
+    {
+      "friction": 6,
+      "order": "SN",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        }
+      ],
+      "consistent": true
+    },
+    {
+      "friction": 6,
+      "order": "SN",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 4,
+            "end_reason": "timeout"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 4,
+            "end_reason": "timeout"
+          }
+        }
+      ],
+      "consistent": true
+    },
+    {
+      "friction": 6,
+      "order": "SP",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        }
+      ],
+      "consistent": true
+    },
+    {
+      "friction": 6,
+      "order": "SP",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": false,
+            "numerical_quality_ok": true,
+            "steps_climbed": 4,
+            "end_reason": "timeout"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 4,
+            "end_reason": "timeout"
+          }
+        }
+      ],
+      "consistent": false
+    },
+    {
+      "friction": 8,
+      "order": "SN",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 7,
+        "end_reason": "timeout"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 7,
+            "end_reason": "timeout"
+          }
+        }
+      ],
+      "consistent": false
+    },
+    {
+      "friction": 8,
+      "order": "SN",
+      "angle_deg": 35.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 4,
+        "end_reason": "timeout"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": false,
+            "numerical_quality_ok": true,
+            "steps_climbed": 4,
+            "end_reason": "timeout"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": false,
+            "urdf_compliant": false,
+            "numerical_quality_ok": true,
+            "steps_climbed": 4,
+            "end_reason": "timeout"
+          }
+        }
+      ],
+      "consistent": false
+    },
+    {
+      "friction": 8,
+      "order": "SP",
+      "angle_deg": 15.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": true,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "platform_settled"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        }
+      ],
+      "consistent": true
+    },
+    {
+      "friction": 8,
+      "order": "SP",
+      "angle_deg": 25.0,
+      "rocker_amp_deg": 18.0,
+      "baseline_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 13,
+        "end_reason": "timeout"
+      },
+      "arm_control_1ms": {
+        "ascent_completed": false,
+        "urdf_compliant": true,
+        "numerical_quality_ok": true,
+        "steps_climbed": 15,
+        "end_reason": "timeout"
+      },
+      "steps": [
+        {
+          "dt_s": 0.0005,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        },
+        {
+          "dt_s": 0.0002,
+          "result": {
+            "ascent_completed": true,
+            "urdf_compliant": true,
+            "numerical_quality_ok": true,
+            "steps_climbed": 15,
+            "end_reason": "platform_settled"
+          }
+        }
+      ],
+      "consistent": false
+    }
+  ]
+}

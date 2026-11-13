@@ -1,5 +1,12 @@
 {
-  "status": "planned_not_started",
+  "status": "phase_b_phase_d_phase_e_complete_phase_c_pending",
+  "phase_order": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "C"
+  ],
   "plan_version": 2,
   "baseline_commit": "46cda0a",
   "experiment_id": "urdf_slope",
@@ -158,9 +165,13 @@
   "descent_required": false,
   "observation_budget": "T=max(240, ceil(2*(8+15*d+2)/(3*0.162697))+180), cap 600",
   "run_budget": {
-    "long": 130,
+    "long": 131,
     "long_run_phase_b": 85,
-    "short": 73
+    "long_run_phase_d": 4,
+    "long_run_phase_e": 24,
+    "long_run_phase_c": 18,
+    "short": 73,
+    "short_run_phase_d": 40
   },
   "stop_for_audit_violation": false,
   "accept_any_urdf_violation": false,
