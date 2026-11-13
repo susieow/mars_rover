@@ -46,6 +46,7 @@ SAMPLE_DT = 0.01
 SAVE_FPS = 30
 ROLLOVER_DEG = 60.0
 LATERAL_LIMIT_M = 2.5
+BOOST_EFFORT = 160.0
 
 SESSIONS: dict[str, "Session"] = {}
 LOCK = threading.RLock()
@@ -59,11 +60,12 @@ def orientation(d):
 
 
 class Session:
-    def __init__(self, angle, friction, name):
+    def __init__(self, angle, friction, name, mode="stock"):
         self.id = uuid.uuid4().hex[:10]
         self.name = name
         self.angle = angle
         self.friction = friction
+        self.mode = "boost" if mode == "boost" else "stock"
         self.created = time.time()
         self.touched = time.time()
         self.tread = pb.STEP_RISE / math.tan(math.radians(angle))
@@ -75,6 +77,13 @@ class Session:
         self.scene_path = scene
         self.model = mujoco.MjModel.from_xml_path(str(scene))
         self.model.opt.timestep = DT
+        if self.mode == "boost":
+            for j in range(self.model.njnt):
+                if (mujoco.mj_id2name(self.model, mujoco.mjtObj.mjOBJ_JOINT, j) or "").endswith("rocker_joint"):
+                    self.model.jnt_actfrcrange[j] = (-BOOST_EFFORT, BOOST_EFFORT)
+            for a in range(self.model.nu):
+                if (mujoco.mj_id2name(self.model, mujoco.mjtObj.mjOBJ_ACTUATOR, a) or "").endswith("rocker_joint_act"):
+                    self.model.actuator_ctrlrange[a] = (-BOOST_EFFORT, BOOST_EFFORT)
         self.model.vis.global_.offwidth = WIDTH
         self.model.vis.global_.offheight = HEIGHT
         self.data = common.initialize(self.model, START_DISTANCE_M)
@@ -141,9 +150,18 @@ class Session:
             self.rocker_cmd += float(np.clip(target - self.rocker_cmd,
                                              -math.radians(20.0) * DT, math.radians(20.0) * DT))
             rocker_target = self.rocker_cmd
+            # Stock mode leaves the velocity-form loop's torque at the gravity
+            # load, so the joint stops short of the command. Boost raises the
+            # effort cap and pays that load with a feedforward instead.
+            gain, cap, feedforward_gain, effort = (
+                (12.0, 1.57, 78.0, BOOST_EFFORT) if self.mode == "boost"
+                else (4.0, 0.7, 0.0, 100.0))
             for _, actuator, qpos, dof in self.ctl.rockers:
-                desired = float(np.clip(4.0 * (rocker_target - float(self.data.qpos[qpos])), -0.7, 0.7))
-                self.data.ctrl[actuator] = np.clip(150.0 * (desired - float(self.data.qvel[dof])), -100.0, 100.0)
+                error = rocker_target - float(self.data.qpos[qpos])
+                desired = float(np.clip(gain * error, -cap, cap))
+                feedforward = feedforward_gain * float(np.clip(error / 0.05, 0.0, 1.0))
+                self.data.ctrl[actuator] = np.clip(
+                    150.0 * (desired - float(self.data.qvel[dof])) + feedforward, -effort, effort)
             mujoco.mj_step(self.model, self.data)
             if not np.isfinite(self.data.qpos).all():
                 self.fail("仿真数值异常")
@@ -233,6 +251,8 @@ class Session:
             "joint_names": [self.model.joint(j).name for j in range(self.model.njnt)
                             if self.model.jnt_type[j] == mujoco.mjtJoint.mjJNT_HINGE],
             "status": self.status, "saved_at": stamp,
+            "rocker_mode": self.mode,
+            "rocker_effort_nm": BOOST_EFFORT if self.mode == "boost" else 100.0,
         }
         (SAVE_DIR / f"{stem}.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n",
                                                encoding="utf-8")
@@ -243,7 +263,9 @@ class Session:
         return {
             "id": self.id, "angle_deg": self.angle, "friction": self.friction,
             "t": round(float(self.data.time), 2), "x": round(float(self.data.qpos[0]), 2),
-            "speed": round(self.throttle * SPEED_MAX, 2), "rocker_deg": round(math.degrees(self.rocker_cmd), 1),
+            "speed": round(self.throttle * SPEED_MAX, 2),
+            "rocker_deg": round(math.degrees(float(self.data.qpos[self.ctl.rockers[0][2]])), 1),
+            "mode": self.mode,
             "steps": self.steps_climbed(), "status": self.status, "message": self.message,
             "saved": self.saved, "timeout_s": self.timeout,
         }
@@ -314,10 +336,11 @@ class Handler(BaseHTTPRequestHandler):
                 active = [s for s in SESSIONS.values() if s.status == "running"]
                 if len(active) >= MAX_SESSIONS:
                     return self.reply(429, json.dumps({"error": "上楼梯的人已有 3 位，稍等再开"}).encode())
-                session = Session(angle, friction, str(body.get("name", ""))[:20])
+                session = Session(angle, friction, str(body.get("name", ""))[:20],
+                                  body.get("mode", "stock"))
                 SESSIONS[session.id] = session
             return self.reply(200, json.dumps({"id": session.id, "angle_deg": angle,
-                                               "friction": friction}).encode())
+                                               "friction": friction, "mode": session.mode}).encode())
         if path == "/api/state":
             sid = self.query().get("id", "")
             with LOCK:
@@ -356,9 +379,9 @@ class Handler(BaseHTTPRequestHandler):
                 if old is not None:
                     old.close()
                 session = Session(float(body.get("angle", 25)), int(body.get("friction", 6)),
-                                  str(body.get("name", ""))[:20])
+                                  str(body.get("name", ""))[:20], body.get("mode", "stock"))
                 SESSIONS[session.id] = session
-            return self.reply(200, json.dumps({"id": session.id}).encode())
+            return self.reply(200, json.dumps({"id": session.id, "mode": session.mode}).encode())
         if path == "/api/episodes":
             SAVE_DIR.mkdir(parents=True, exist_ok=True)
             rows = sorted(SAVE_DIR.glob("game_*.json"), reverse=True)[:50]
