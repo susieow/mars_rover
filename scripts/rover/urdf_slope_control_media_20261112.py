@@ -24,6 +24,8 @@ FPS = 20
 def render(case_id):
     folder = exp.RUN_ROOT / "cases" / case_id
     result = json.loads((folder / "result.json").read_text(encoding="utf-8"))
+    if result.get("urdf_sha256") != exp.digest(exp.URDF):
+        raise RuntimeError("Recorded URDF differs from the current URDF; keep the historical video")
     if exp.digest(folder / "trajectory.npz") != result["trajectory_sha256"]:
         raise RuntimeError("trajectory hash mismatch")
     with np.load(folder / "trajectory.npz", allow_pickle=False) as archive:
@@ -31,7 +33,7 @@ def render(case_id):
         poses = archive["qpos"].copy()
     metadata = {
         "audit": {"velocity_limit_source": {"path": str(exp.URDF)}},
-        "urdf_sha256": exp.digest(exp.URDF),
+        "urdf_sha256": result["urdf_sha256"],
     }
     model, option, visual = render_dataset._visual_render_model(
         folder / "scene.xml", folder, metadata

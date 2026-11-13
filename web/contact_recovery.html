@@ -25,7 +25,9 @@
   <nav><a href="/">← 实验主页</a></nav>
   <h1>实验二补充 · 接触恢复控制诊断</h1>
   <span class="badge">15°～45° 首轮控制诊断 · 数据未接纳</span>
-  <p class="muted">固定 20 cm、15 级并只改变踏步深度；模型按原 URDF 的质量、惯量、碰撞体、关节限位/速度/力矩、阻尼和关节摩擦复核。对比原始接触后摆动与“接触→卸载/微退→预抬前轮→重新接触”。</p>
+  <p class="muted">固定 20 cm、15 级并只改变踏步深度。比较接触后摆动、卸载预抬、载荷转移和微Z。历史视频保留录制时的判定；URDF 几何更新后，旧轨迹不能直接认证为新模型合规成功。</p>
+  <div class="summary" id="modelSummary">正在读取当前 URDF 版本…</div>
+  <details class="panel"><summary>查看当前 URDF 的关节限值</summary><div style="overflow:auto" id="modelLimits"></div><p class="muted">限值直接读取 URDF；轮胎摩擦 0.6 来自项目明确要求，重力与接触求解参数属于仿真假设。关节未越限不等于完整认证通过。</p></details>
   <div class="toolbar">
     <label>角度 <select id="angle"><option value="">全部</option><option>15</option><option>25</option><option>30</option><option>35</option><option>45</option></select></label>
     <label>策略 <select id="strategy"><option value="">全部</option><option value="baseline">原始接触后摆动</option><option value="prelift">卸载—预抬—重接</option><option value="transfer">预抬 + 10° 载荷转移</option><option value="transfer18">预抬 + 18° 载荷转移</option><option value="zigzag">微Z交替越障</option></select></label>
@@ -43,10 +45,29 @@
     const strategyName=v=>({baseline:'原始接触后摆动',prelift:'卸载—预抬—重接',transfer:'预抬 + 10° 载荷转移',transfer18:'预抬 + 18° 载荷转移',zigzag:'微Z交替越障'}[v]||v);
     const fmt=(v,n=2)=>v==null||!Number.isFinite(Number(v))?'—':Number(v).toFixed(n);
     function filtered(){return rows.filter(r=>(!$('angle').value||r.angle_deg===Number($('angle').value))&&(!$('strategy').value||r.strategy===$('strategy').value)&&(!$('friction').value||r.friction===Number($('friction').value))&&(!$('direction').value||r.direction===$('direction').value));}
-    function badge(r){if(r.ascent_completed&&r.urdf_compliant_exact&&r.numerical_quality_ok)return '<span class="tag">完整通过</span>';if(r.ascent_completed)return '<span class="warn">到平台但未合规</span>';return '<span class="warn">未到平台</span>';}
+    function modelStatus(r){return r.matches_current_urdf===true?'当前 URDF':'旧模型 / 当前模型未验证';}
+    function badge(r){return `<span class="${r.matches_current_urdf===true?'tag':'warn'}">${modelStatus(r)} · ${r.ascent_completed?'按原判据到平台':'未到平台'}</span>`;}
     function drawList(){const shown=filtered();$('list').innerHTML='';if(!shown.length){$('list').innerHTML='<p class="empty">当前筛选没有记录。</p>';return;}for(const r of shown){const b=document.createElement('button');b.className='case'+(current===r.id?' active':'');b.innerHTML=`<b>${fmt(r.angle_deg,0)}° · μ ${r.friction} · ${strategyName(r.strategy)} · ${r.direction}</b><small>${badge(r)} · 观察 ${fmt(r.duration_s,1)} s</small><small>接触 ${fmt(r.first_contact_s)} s · ${r.termination_reason}</small><small>最大穿透 ${fmt(r.max_contact_penetration_mm)} mm</small>`;b.onclick=()=>show(r);$('list').append(b);}}
-    function show(r){current=r.id;drawList();const events=(r.events||[]).map(e=>`<li>${fmt(e.time_s,3)} s · ${e.phase} · 前进 ${fmt(e.progress_m,3)} m</li>`).join('')||'<li>该策略没有阶段事件</li>';$('detail').innerHTML=`<h2>${r.id}</h2><video controls preload="metadata" src="${r.video_url}"></video><dl class="facts"><dt>策略</dt><dd>${strategyName(r.strategy)}</dd><dt>终止原因</dt><dd>${r.termination_reason}</dd><dt>六轮到平台</dt><dd>${r.ascent_completed?'是':'否'}</dd><dt>URDF 精确合规</dt><dd>${r.urdf_compliant_exact?'是':'否'}</dd><dt>数值质量</dt><dd>${r.numerical_quality_ok?'通过':'未通过'}</dd><dt>接触 / 干预</dt><dd>${fmt(r.first_contact_s,3)} s / ${r.intervention_s==null?'未触发':fmt(r.intervention_s,3)+' s'}</dd><dt>最大穿透</dt><dd>${fmt(r.max_contact_penetration_mm)} mm</dd><dt>过程违规</dt><dd>${(r.violation_names||[]).join(', ')||'无'}</dd></dl><h2 style="margin-top:22px">阶段时间线</h2><ol class="events">${events}</ol><p class="links"><a href="${r.video_url}" download>下载视频</a><a href="${r.result_url}">结果 JSON</a><a href="${r.trajectory_url}">原始轨迹 NPZ</a></p><p class="muted">本页只展示实验三诊断记录；到平台、URDF 合规与数值质量分别独立判定。</p>`;}
-    async function load(){try{const response=await fetch('/api/contact-recovery',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();rows=data.cases||[];$('summary').textContent=`已完成 ${data.completed||0} 条；六轮到平台 ${data.platform_completed||0} 条；URDF 精确合规 ${data.urdf_compliant||0} 条；三者同时通过 ${data.full_success||0} 条。`;drawList();if(rows.length)show(rows[0]);}catch(error){$('summary').textContent='实验目录读取失败：'+error.message;}}
+    function show(r){current=r.id;drawList();const events=(r.events||[]).map(e=>`<li>${fmt(e.time_s,3)} s · ${e.phase} · 前进 ${fmt(e.progress_m,3)} m</li>`).join('')||'<li>该策略没有阶段事件</li>';$('detail').innerHTML=`<h2>${r.id}</h2><video controls preload="metadata" src="${r.video_url}"></video><dl class="facts"><dt>策略</dt><dd>${strategyName(r.strategy)}</dd><dt>终止原因</dt><dd>${r.termination_reason}</dd><dt>六轮到平台</dt><dd>${r.ascent_completed?'是':'否'}</dd><dt>录制模型版本</dt><dd>${(r.recorded_model_version||'未知').slice(0,12)} · ${modelStatus(r)}</dd><dt>关节限值与当前一致</dt><dd>${r.joint_limits_match_current==null?'证据不足':r.joint_limits_match_current?'是':'否'}</dd><dt>记录时关节审核</dt><dd>${r.urdf_compliant_exact?'原审核未报越限':'有越限'}</dd><dt>当前模型关节审核</dt><dd>${r.current_model_joint_compliant==null?'未验证，需按新模型重跑':r.current_model_joint_compliant?'模型字段及保存阶段关节检查通过':'未通过'}</dd><dt>完整合规认证</dt><dd>尚未完成；不计入合规成功</dd><dt>记录时数值诊断</dt><dd>${r.numerical_quality_ok?'通过':'未通过'}</dd><dt>接触 / 干预</dt><dd>${fmt(r.first_contact_s,3)} s / ${r.intervention_s==null?'未触发':fmt(r.intervention_s,3)+' s'}</dd><dt>最大穿透</dt><dd>${fmt(r.max_contact_penetration_mm)} mm</dd><dt>过程违规</dt><dd>${(r.violation_names||[]).join(', ')||'无'}</dd></dl><h2 style="margin-top:22px">阶段时间线</h2><ol class="events">${events}</ol><p class="links"><a href="${r.video_url}" download>下载视频</a><a href="${r.result_url}">结果 JSON</a><a href="${r.trajectory_url}">原始轨迹 NPZ</a></p><p class="muted">本页为接触恢复诊断，不参与 Phase B 边界。模型字段一致、运行时关节限值、到平台和数值复核是不同检查；新模型也需补齐初始化阶段审核、独立重放与步长复核，才能作完整认证。</p>`;}
+    async function load(){try{
+      const response=await fetch('/api/contact-recovery',{cache:'no-store'});
+      if(!response.ok)throw Error('HTTP '+response.status);
+      const data=await response.json();rows=data.cases||[];
+      const model=data.current_model;
+      if(!model){$('modelSummary').textContent='目录尚未更新模型版本；当前合规状态未知。';$('modelLimits').textContent='无当前 URDF 参数';}
+      else{
+        $('modelSummary').textContent=`当前 URDF：${model.version.slice(0,12)} · 总质量 ${fmt(model.mass_kg,3)} kg。新版修正结构对称性；本次更新未改变关节限值。`;
+        const table=document.createElement('table');table.style.cssText='width:100%;text-align:left;font-size:13px';
+        const head=table.insertRow();['关节','位置范围 rad','速度 rad/s','力矩 N·m'].forEach(v=>{head.insertCell().textContent=v;});
+        for(const [name,limit] of Object.entries(model.joint_limits)){
+          const line=table.insertRow();
+          [name,limit.lower==null?'连续旋转':`${limit.lower} ～ ${limit.upper}`,limit.velocity,limit.effort].forEach(v=>{line.insertCell().textContent=v;});
+        }
+        $('modelLimits').replaceChildren(table);
+      }
+      $('summary').textContent=`共 ${rows.length} 条视频；旧模型 ${data.legacy_model_records??'未知'} 条，当前模型 ${data.current_model_records??'未知'} 条。按各自原判据到平台 ${data.platform_completed||0} 条；当前模型关节检查通过 ${data.current_model_joint_passes??'未知'} 条。完整合规认证尚未完成。`;
+      drawList();if(rows.length)show(rows.find(r=>r.id===current)||rows[0]);
+    }catch(error){$('summary').textContent='实验目录读取失败：'+error.message;}}
     for(const id of ['angle','strategy','friction','direction'])$(id).onchange=drawList;$('reload').onclick=load;load();
   </script>
 </body>

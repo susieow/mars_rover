@@ -54,7 +54,7 @@
   </script>
   <script>
     fetch('/api/contact-recovery').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(data=>{
-      document.getElementById('recoveryStatus').textContent=`已记录 ${data.completed} 条；六轮到平台 ${data.platform_completed} 条；三者同时通过 ${data.full_success} 条。`;
+      document.getElementById('recoveryStatus').textContent=`已记录 ${data.completed} 条；旧模型 ${data.legacy_model_records??'未知'} 条，当前模型 ${data.current_model_records??'未知'} 条。完整合规认证尚未完成。`;
     }).catch(e=>{const p=document.getElementById('recoveryStatus');p.classList.add('error');p.textContent='控制诊断目录读取失败：'+e.message;});
   </script>
 </body>

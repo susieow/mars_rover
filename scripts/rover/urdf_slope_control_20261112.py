@@ -19,16 +19,16 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
-import course
+from recovery_urdf_model import build_scene, model_compliance
+import urdf_slope_model as p0
 from overspeed20_stairs import summarize_speed
 
 
 URDF = ROOT / "assets/mars_rover/urdf/mars_rover.urdf"
-ROBOT_XML = ROOT / "assets/mars_rover/rover_actuated.xml"
-RUN_ROOT = ROOT / "runs/urdf_slope_control_20261112"
-VIDEO_ROOT = Path("/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_20261112")
+LEGACY_RUN_ROOT = ROOT / "runs/urdf_slope_control_20261112"
+RUN_ROOT = ROOT / "runs/urdf_slope_control_c12222df"
+VIDEO_ROOT = Path("/home/agilex/wzy/videos/review_high_stairs/urdf_slope_control_c12222df")
 DT = 0.001
-WHEEL_LIMIT = 52.359878
 HEIGHT = 0.2
 STAIRS = 15
 DEFAULT_ANGLE_DEG = 15.0
@@ -65,219 +65,10 @@ def orientation(data):
     )
 
 
-def build_scene(folder, friction, angle_deg):
-    folder.mkdir(parents=True, exist_ok=False)
-    generated = course.build_course(
-        height=HEIGHT,
-        stairs=STAIRS,
-        depth=HEIGHT / math.tan(math.radians(angle_deg)),
-        friction=friction,
-        contact_timeconst=0.004,
-    )
-    try:
-        tree = ET.parse(generated)
-        compiler = tree.getroot().find("compiler")
-        if compiler is None:
-            compiler = ET.SubElement(tree.getroot(), "compiler")
-        compiler.set("meshdir", str(ROBOT_XML.parent))
-        compiler.set("assetdir", str(ROBOT_XML.parent))
-        terrain = {"ground", "platform"}
-        for geom in tree.getroot().findall(".//geom"):
-            name = geom.get("name", "")
-            is_terrain = name in terrain or name.startswith(("up", "down"))
-            if is_terrain:
-                continue
-            if geom.get("group") == "1":
-                continue
-            if geom.get("contype") == "0" and geom.get("conaffinity") == "0":
-                continue
-            geom.set("friction", "0.6 0.02 0.001")
-            geom.set("contype", "1")
-            geom.set("conaffinity", "1")
-        actuator_limits = {
-            "wheel": 50.0,
-            "steer": 40.0,
-            "rocker": 100.0,
-        }
-        for actuator in tree.getroot().findall("./actuator/motor"):
-            joint_name = actuator.get("joint", "")
-            limit = next(
-                (value for suffix, value in actuator_limits.items() if suffix in joint_name),
-                None,
-            )
-            if limit is not None:
-                actuator.set("ctrlrange", f"{-limit} {limit}")
-                actuator.set("forcerange", f"{-limit} {limit}")
-        option = tree.getroot().find("option")
-        if option is None:
-            option = ET.SubElement(tree.getroot(), "option")
-        option.set("timestep", str(DT))
-        contact = tree.getroot().find("contact")
-        if contact is None:
-            contact = ET.SubElement(tree.getroot(), "contact")
-        for wheel in (
-            "left_front_wheel",
-            "left_middle_wheel",
-            "left_rear_wheel",
-            "right_front_wheel",
-            "right_middle_wheel",
-            "right_rear_wheel",
-        ):
-            side = "left" if wheel.startswith("left_") else "right"
-            for shape in range(15):
-                ET.SubElement(
-                    contact,
-                    "exclude",
-                    body1=wheel,
-                    body2=f"{side}_rocker_shape{shape}",
-                )
-        scene = folder / "scene.xml"
-        tree.write(scene, encoding="unicode")
-    finally:
-        generated.unlink(missing_ok=True)
-    return scene
-
-
-def model_compliance(model, scene, friction):
-    tree = ET.parse(URDF)
-    root = tree.getroot()
-    joints = {}
-    for node in root.findall("joint"):
-        name = node.get("name")
-        joint_type = node.get("type")
-        limit = node.find("limit")
-        dynamics = node.find("dynamics")
-        if not name or joint_type == "fixed" or limit is None:
-            continue
-        joints[name] = {
-            "type": joint_type,
-            "lower": None if joint_type == "continuous" else float(limit.get("lower")),
-            "upper": None if joint_type == "continuous" else float(limit.get("upper")),
-            "velocity": float(limit.get("velocity")),
-            "effort": float(limit.get("effort")),
-            "damping": float(dynamics.get("damping", 0.0)) if dynamics is not None else 0.0,
-            "friction": float(dynamics.get("friction", 0.0)) if dynamics is not None else 0.0,
-        }
-    checks = {}
-    checks["urdf_sha256"] = digest(URDF)
-    checks["expected_urdf_sha256"] = (
-        checks["urdf_sha256"]
-        == "cca26f5be19e02a21feed1dc7b4b9d0147fa0f81db9079b049679ffb3dccde8a"
-    )
-    urdf_mass = sum(
-        float(mass.get("value"))
-        for mass in root.findall("./link/inertial/mass")
-    )
-    checks["link_count"] = {"urdf": len(root.findall("link")), "model_bodies": model.nbody}
-    checks["collision_count"] = len(root.findall("./link/collision"))
-    checks["urdf_mass_kg"] = urdf_mass
-    checks["model_mass_kg"] = float(model.body_mass.sum())
-    checks["mass_match"] = abs(urdf_mass - float(model.body_mass.sum())) <= 1e-5
-    joint_results = {}
-    for name, expected in joints.items():
-        joint_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_JOINT, name)
-        if joint_id < 0:
-            joint_results[name] = {"passed": False, "reason": "joint_missing"}
-            continue
-        dof = int(model.jnt_dofadr[joint_id])
-        actual = {
-            "lower": None if model.jnt_limited[joint_id] == 0 else float(model.jnt_range[joint_id, 0]),
-            "upper": None if model.jnt_limited[joint_id] == 0 else float(model.jnt_range[joint_id, 1]),
-            "effort": float(model.jnt_actfrcrange[joint_id, 1]),
-            "force_limited": bool(model.jnt_actfrclimited[joint_id]),
-            "damping": float(model.dof_damping[dof]),
-            "friction": float(model.dof_frictionloss[dof]),
-        }
-        position_ok = (
-            expected["lower"] is None
-            or (
-                actual["lower"] is not None
-                and abs(expected["lower"] - actual["lower"]) <= 1e-6
-                and abs(expected["upper"] - actual["upper"]) <= 1e-6
-            )
-        )
-        passed = (
-            position_ok
-            and abs(expected["effort"] - actual["effort"]) <= 1e-6
-            and actual["force_limited"]
-            and abs(expected["damping"] - actual["damping"]) <= 1e-6
-            and abs(expected["friction"] - actual["friction"]) <= 1e-6
-        )
-        joint_results[name] = {
-            "expected": expected,
-            "actual": actual,
-            "passed": passed,
-        }
-    checks["joints"] = joint_results
-    checks["movable_joint_count"] = {"expected": 12, "actual": len(joint_results)}
-    scene_root = ET.parse(scene).getroot()
-    robot_geoms = []
-    terrain_geoms = []
-    for geom in scene_root.findall(".//geom"):
-        name = geom.get("name", "")
-        if name in ("ground", "platform") or name.startswith(("up", "down")):
-            terrain_geoms.append(geom)
-        elif geom.get("group") != "1":
-            robot_geoms.append(geom)
-    checks["robot_collision_geoms"] = len(robot_geoms)
-    checks["robot_friction_0_6"] = all(
-        geom.get("friction", "").split()[0] == "0.6" for geom in robot_geoms
-    )
-    checks["robot_self_collision_enabled"] = all(
-        geom.get("contype") != "0" and geom.get("conaffinity") != "0"
-        for geom in robot_geoms
-    )
-    terrain_values = sorted(
-        {
-            float(geom.get("friction", "0 0 0").split()[0])
-            for geom in terrain_geoms
-            if geom.get("friction")
-        }
-    )
-    checks["terrain_friction_values"] = terrain_values
-    checks["terrain_friction_requested"] = friction
-    checks["terrain_friction_match"] = terrain_values == [float(friction)]
-    checks["timestep_s"] = float(model.opt.timestep)
-    checks["timestep_match"] = abs(float(model.opt.timestep) - DT) <= 1e-12
-    checks["assumptions"] = {
-        "gravity_m_s2": [0.0, 0.0, -9.81],
-        "ground_and_platform_friction": 4.0,
-        "platform_length_m": 2.0,
-        "corridor_half_width_m": 2.5,
-        "contact_solref": "0.004 1",
-        "tire_friction_source": "user-confirmed 0.6",
-        "effective_pair_friction": "MuJoCo default mixing; with priority zero the larger value is used",
-        "explicit_self_collision_exclusions": [
-            {
-                "body1": f"{side}_{position}_wheel",
-                "body2": f"{side}_rocker_shape0..14",
-                "reason": (
-                    "The wheel and rocker are mechanically connected through the steer assembly; "
-                    "the original URDF's simplified collision primitives overlap inside the same "
-                    "suspension branch and otherwise lock the right-front wheel before the staircase."
-                ),
-            }
-            for side in ("left", "right")
-            for position in ("front", "middle", "rear")
-        ],
-    }
-    checks["passed"] = bool(
-        checks["expected_urdf_sha256"]
-        and checks["mass_match"]
-        and checks["movable_joint_count"]["expected"]
-        == checks["movable_joint_count"]["actual"]
-        and all(row.get("passed") for row in joint_results.values())
-        and checks["robot_friction_0_6"]
-        and checks["robot_self_collision_enabled"]
-        and checks["terrain_friction_match"]
-        and checks["timestep_match"]
-    )
-    return checks
-
-
 class Controller:
     def __init__(self, model, data):
         self.m = model
+        self.limits = get_joint_limits()
         self.d = data
         self.wheel_commands = np.zeros(3)
         self.rocker_commands = np.zeros(2)
@@ -352,24 +143,28 @@ class Controller:
             30 * DT,
         )
         actual_targets = np.zeros(6)
-        for index, (_, actuator, _, dof, role, left, _) in enumerate(self.wheels):
+        for index, (joint_id, actuator, _, dof, role, left, _) in enumerate(self.wheels):
+            limit = self.limits[self.names[joint_id]]
             goal = float(
                 np.clip(
                     self.wheel_commands[role] + (-correction if left else correction),
-                    -WHEEL_LIMIT,
-                    WHEEL_LIMIT,
+                    -limit["velocity"],
+                    limit["velocity"],
                 )
             )
             actual_targets[index] = goal
             data.ctrl[actuator] = np.clip(
-                40 * (goal - float(data.qvel[dof])), -50, 50
+                40 * (goal - float(data.qvel[dof])), -limit["effort"], limit["effort"]
             )
         for joint_id, actuator, qpos, dof in self.steer:
+            limit = self.limits[self.names[joint_id]]
             goal = steer_target if "front" in self.names[joint_id] else -steer_target
+            goal = float(np.clip(goal, limit["lower"], limit["upper"]))
             current_error = goal - float(data.qpos[qpos])
-            desired = float(np.clip(8 * current_error, -1.2, 1.2))
+            speed = min(1.2, limit["velocity"])
+            desired = float(np.clip(8 * current_error, -speed, speed))
             data.ctrl[actuator] = np.clip(
-                50 * (desired - float(data.qvel[dof])), -40, 40
+                50 * (desired - float(data.qvel[dof])), -limit["effort"], limit["effort"]
             )
             wheel_name = self.names[joint_id].replace("_steer_joint", "_wheel_joint")
             wheel_actuator = next(
@@ -386,16 +181,19 @@ class Controller:
             -math.radians(20) * DT,
             math.radians(20) * DT,
         )
-        for index, (_, actuator, qpos, dof) in enumerate(self.rockers):
+        for index, (joint_id, actuator, qpos, dof) in enumerate(self.rockers):
+            limit = self.limits[self.names[joint_id]]
+            self.rocker_commands[index] = np.clip(self.rocker_commands[index], limit["lower"], limit["upper"])
+            speed = min(0.7, limit["velocity"])
             desired = float(
                 np.clip(
                     4 * (self.rocker_commands[index] - float(data.qpos[qpos])),
-                    -0.7,
-                    0.7,
+                    -speed,
+                    speed,
                 )
             )
             data.ctrl[actuator] = np.clip(
-                150 * (desired - float(data.qvel[dof])), -100, 100
+                150 * (desired - float(data.qvel[dof])), -limit["effort"], limit["effort"]
             )
         return actual_targets
 
@@ -545,12 +343,12 @@ def exact_audit_limits(model, data, limits):
         velocity = abs(float(data.qvel[model.jnt_dofadr[joint_id]]))
         torque = abs(float(data.qfrc_actuator[model.jnt_dofadr[joint_id]]))
         if expected["lower"] is not None and (
-            qpos < expected["lower"] - 1e-9 or qpos > expected["upper"] + 1e-9
+            qpos < expected["lower"] or qpos > expected["upper"]
         ):
             violations.append(f"position_limit:{name}")
-        if velocity > expected["velocity"] + 1e-9:
+        if velocity > expected["velocity"]:
             violations.append(f"velocity_limit:{name}")
-        if torque > expected["effort"] + 1e-6:
+        if torque > expected["effort"]:
             violations.append(f"effort_limit:{name}")
     return violations
 
@@ -715,15 +513,16 @@ class ZigzagPattern:
 
 def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECONDS):
     angle_tag = f"{angle_deg:g}".replace(".", "p")
-    case_id = f"urdf{angle_tag}_mu{friction}_{strategy}_{direction}"
+    case_id = f"urdf{angle_tag}_mu{friction}_{strategy}_{direction}_c12222df"
     folder = RUN_ROOT / "cases" / case_id
     scene = build_scene(folder, friction, angle_deg)
-    model, data = initialize(scene)
+    model = mujoco.MjModel.from_xml_path(str(scene))
     compliance = model_compliance(model, scene, friction)
     write_json(folder / "model_compliance.json", compliance)
     write_json(RUN_ROOT / f"model_compliance_mu{friction}.json", compliance)
     if not compliance["passed"]:
         raise RuntimeError(f"model compliance gate failed: {folder / 'model_compliance.json'}")
+    model, data = initialize(scene)
     controller = Controller(model, data)
     limits = get_joint_limits()
     initial_state = np.empty(
@@ -734,7 +533,7 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
     )
     parameters = {
         "id": case_id,
-        "experiment": "urdf_slope_control_v1",
+        "experiment": "urdf_slope_control_c12222df",
         "strategy": strategy,
         "direction": direction,
         "height_cm": 20,
@@ -1009,11 +808,16 @@ def run_case(*, friction, strategy, direction, angle_deg, max_seconds=MAX_SECOND
         "scene_sha256": digest(scene),
         "source_sha256": digest(__file__),
         "urdf_sha256": digest(URDF),
-        "robot_xml_sha256": digest(ROBOT_XML),
+        "robot_xml_sha256": digest(folder / "model/rover_p0.xml"),
+        "model_builder_sha256": digest(p0.__file__),
+        "model_gate_passed": compliance["passed"],
+        "audit_scope": "post_initialization_joint_limits_and_legacy_endpoint",
+        "current_urdf_certified": False,
         "video_path": str(VIDEO_ROOT / f"{case_id}.mp4"),
         "wall_seconds": time.monotonic() - started_wall,
         "limitations": [
-            "URDF explicit values are audited exactly; gravity and contact solver settings remain declared simulation assumptions.",
+            "Compiled model fields are checked against the pinned URDF; runtime audit covers saved post-initialization steps only.",
+            "Legacy endpoint and penetration checks are diagnostic; no independent replay or timestep-convergence certification.",
             "Robot self-collision is enabled for the new model.",
             "Simulation contact parameters and friction are not hardware calibrated.",
             "A platform failure is a statement about this control candidate, not a hardware capability limit.",
@@ -1057,11 +861,13 @@ def main():
     args = parser.parse_args()
     if not 5.0 <= args.angle_deg <= 45.0:
         parser.error("--angle-deg must be within [5, 45]")
+    if not math.isfinite(args.max_seconds) or args.max_seconds <= 0:
+        parser.error("--max-seconds must be positive and finite")
     if args.check_model:
-        folder = Path(tempfile.mkdtemp(prefix="urdf_slope_compliance_"))
+        folder = Path(tempfile.mkdtemp(prefix="urdf_slope_compliance_", dir=ROOT / "runs"))
         try:
             scene = build_scene(folder / "case", args.friction, args.angle_deg)
-            model, _ = initialize(scene)
+            model = mujoco.MjModel.from_xml_path(str(scene))
             compliance = model_compliance(model, scene, args.friction)
             print(json.dumps(compliance, ensure_ascii=False, indent=2))
             raise SystemExit(0 if compliance["passed"] else 1)
