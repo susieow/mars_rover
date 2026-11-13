@@ -50,7 +50,7 @@ class Catalog:
         return None
 
 
-def handler_for(catalog):
+def handler_for(catalog, phase_b_rows):
     class Handler(BaseHTTPRequestHandler):
         def reply(self, status, body, kind='application/json; charset=utf-8', headers=None):
             self.send_response(status)
@@ -94,6 +94,8 @@ def handler_for(catalog):
                 return self.serve_file(SLOPE_PAGE)
             if path == '/api/experiments':
                 return self.reply(200, json.dumps(catalog.public, ensure_ascii=False, separators=(',', ':')).encode())
+            if path == '/api/urdf-slope-phase-b':
+                return self.reply(200, json.dumps(phase_b_rows, ensure_ascii=False, separators=(',', ':')).encode())
             asset = catalog.asset(path)
             if asset is not None and asset.is_file():
                 return self.serve_file(asset)
@@ -149,7 +151,10 @@ def main():
     path = args.catalog or root / 'docs/final_experiments.json'
     if args.catalog is None and not path.exists():
         path = root / 'rover/docs/final_experiments.json'
-    server = ThreadingHTTPServer((args.host, args.port), handler_for(Catalog(path)))
+    slope_path = root / 'docs/urdf_slope_index.jsonl'
+    phase_b_rows = ([json.loads(line) for line in slope_path.read_text(encoding='utf-8').splitlines()
+                     if line.strip()] if slope_path.exists() else [])
+    server = ThreadingHTTPServer((args.host, args.port), handler_for(Catalog(path), phase_b_rows))
     print(f'Rover experiments: http://{args.host}:{args.port}/', flush=True)
     try:
         server.serve_forever()

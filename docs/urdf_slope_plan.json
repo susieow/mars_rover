@@ -158,8 +158,8 @@
   "descent_required": false,
   "observation_budget": "T=max(240, ceil(2*(8+15*d+2)/(3*0.162697))+180), cap 600",
   "run_budget": {
-    "long": 129,
-    "long_run_phase_b": 84,
+    "long": 130,
+    "long_run_phase_b": 85,
     "short": 73
   },
   "stop_for_audit_violation": false,
