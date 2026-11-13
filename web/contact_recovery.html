@@ -5,29 +5,31 @@
   <title>实验二补充 · 接触恢复控制诊断</title>
   <style>
     :root{color-scheme:dark;font:15px/1.65 system-ui,sans-serif;background:#0e1720;color:#edf4f8}
-    *{box-sizing:border-box}body{max-width:1280px;margin:auto;padding:30px 24px}a{color:#93d5c8}
-    h1{font-size:30px;margin:18px 0 8px}h2{font-size:20px;margin:0 0 12px}p{margin:8px 0}
-    .muted{color:#acc0ce}.badge{display:inline-block;color:#ffd59a;border:1px solid #9e7a43;border-radius:99px;padding:3px 12px;font-size:13px}
-    .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:22px 0}
-    select,button{background:#172632;color:#edf4f8;border:1px solid #486173;border-radius:8px;padding:8px 12px}
-    button{cursor:pointer}.summary{border-left:3px solid #8ed0c1;padding:10px 16px;background:#14232d;margin:18px 0}
-    .layout{display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start}
-    .list{display:flex;flex-direction:column;gap:10px}.case{text-align:left;width:100%;border:1px solid #344b5c;background:#16232e;padding:14px;border-radius:10px}
-    .case.active{border-color:#8ed0c1;background:#19313a}.case b{display:block;margin-bottom:4px}.case small{display:block;color:#a9bdcb;line-height:1.55}
-    .tag{color:#b3edda}.warn{color:#ffc0a9}.panel{border:1px solid #344b5c;background:#16232e;border-radius:12px;padding:20px}
-    video{width:100%;background:#05080b;border-radius:8px;max-height:620px}.facts{display:grid;grid-template-columns:170px 1fr;gap:8px 16px}
-    .facts dt{color:#9cb3c4}.facts dd{margin:0}.events{font-family:ui-monospace,monospace;font-size:13px;padding-left:20px}.events li{padding:3px 0}
-    .links{display:flex;gap:14px;flex-wrap:wrap}.empty{padding:40px;text-align:center;color:#9cb3c4}
-    @media(max-width:880px){body{padding:22px 16px}.layout{grid-template-columns:1fr}.facts{grid-template-columns:120px 1fr}}
+    *{box-sizing:border-box}body{max-width:1320px;margin:auto;padding:30px 24px}a{color:#93d5c8}
+    h1{font-size:30px;margin:18px 0 8px}h2{font-size:21px;margin:0 0 12px}h3{font-size:18px;margin:0 0 10px}p{margin:8px 0}
+    .muted{color:#acc0ce}.badge{display:inline-block;color:#b3edda;border:1px solid #4e9586;border-radius:99px;padding:3px 12px;font-size:13px}
+    .legacy-badge{color:#ffd59a;border-color:#9e7a43}.summary{border-left:3px solid #8ed0c1;padding:10px 16px;background:#14232d;margin:18px 0}
+    .model-panel{border:1px solid #344b5c;background:#13212b;border-radius:14px;padding:20px;margin:22px 0}.model-panel.legacy{border-color:#6e5736;background:#211f1b}
+    .model-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap}.model-head p{max-width:920px}
+    .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:18px 0 14px}
+    select,button{background:#172632;color:#edf4f8;border:1px solid #486173;border-radius:8px;padding:8px 12px}button{cursor:pointer}
+    .layout{display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start}.list{display:flex;flex-direction:column;gap:10px}
+    .case{text-align:left;width:100%;border:1px solid #344b5c;background:#16232e;padding:14px;border-radius:10px}.legacy .case{background:#28231c;border-color:#5b4b35}
+    .case.active{border-color:#8ed0c1;background:#19313a}.legacy .case.active{border-color:#d2a85f;background:#3a3020}.case b{display:block;margin-bottom:4px}.case small{display:block;color:#a9bdcb;line-height:1.55}
+    .tag{color:#b3edda}.warn{color:#ffc0a9}.old{color:#ffd59a}.panel{border:1px solid #344b5c;background:#16232e;border-radius:12px;padding:20px}
+    video{width:100%;background:#05080b;border-radius:8px;max-height:620px}.facts{display:grid;grid-template-columns:190px 1fr;gap:8px 16px}.facts dt{color:#9cb3c4}.facts dd{margin:0}
+    .events{font-family:ui-monospace,monospace;font-size:13px;padding-left:20px}.events li{padding:3px 0}.links{display:flex;gap:14px;flex-wrap:wrap}.empty{padding:40px;text-align:center;color:#9cb3c4}
+    details{margin-top:14px}summary{cursor:pointer;color:#b9d2df}.limits{overflow:auto}.limits table{width:100%;text-align:left;font-size:13px;border-collapse:collapse}.limits td,.limits th{padding:5px 8px;border-bottom:1px solid #2b3f4e}
+    @media(max-width:880px){body{padding:22px 16px}.layout{grid-template-columns:1fr}.facts{grid-template-columns:130px 1fr}}
   </style>
 </head>
 <body>
   <nav><a href="/">← 实验主页</a></nav>
   <h1>实验二补充 · 接触恢复控制诊断</h1>
-  <span class="badge">15°～45° 首轮控制诊断 · 数据未接纳</span>
-  <p class="muted">固定 20 cm、15 级并只改变踏步深度。比较接触后摆动、卸载预抬、载荷转移和微Z。历史视频保留录制时的判定；URDF 几何更新后，旧轨迹不能直接认证为新模型合规成功。</p>
+  <span class="badge">新版 URDF 与旧版历史结果分开展示</span>
+  <p class="muted">固定 20 cm、15 级并只改变踏步深度。新版模型使用当前 URDF 重新生成场景、重新仿真并重新渲染；旧模型视频保持原样，用于历史对照，不能混入新版合规统计。</p>
   <div class="summary" id="modelSummary">正在读取当前 URDF 版本…</div>
-  <details class="panel"><summary>查看当前 URDF 的关节限值</summary><div style="overflow:auto" id="modelLimits"></div><p class="muted">限值直接读取 URDF；轮胎摩擦 0.6 来自项目明确要求，重力与接触求解参数属于仿真假设。关节未越限不等于完整认证通过。</p></details>
+  <details class="panel"><summary>查看当前 URDF 的关节限值</summary><div class="limits" id="modelLimits"></div><p class="muted">限值直接读取 URDF；轮胎摩擦 0.6 来自项目明确要求。新版记录的“诊断通过”仍不等于完整合规认证。</p></details>
   <div class="toolbar">
     <label>角度 <select id="angle"><option value="">全部</option><option>15</option><option>25</option><option>30</option><option>35</option><option>45</option></select></label>
     <label>策略 <select id="strategy"><option value="">全部</option><option value="baseline">原始接触后摆动</option><option value="prelift">卸载—预抬—重接</option><option value="transfer">预抬 + 10° 载荷转移</option><option value="transfer18">预抬 + 18° 载荷转移</option><option value="zigzag">微Z交替越障</option></select></label>
@@ -35,40 +37,30 @@
     <label>方向 <select id="direction"><option value="">全部</option><option>SN</option><option>SP</option></select></label>
     <button id="reload">刷新目录</button>
   </div>
-  <div class="summary" id="summary">正在读取实验目录…</div>
-  <main class="layout">
-    <section class="list" id="list"></section>
-    <section class="panel" id="detail"><p class="empty">选择一条记录查看视频和事件时间线。</p></section>
-  </main>
+  <section class="model-panel current">
+    <div class="model-head"><div><h2>新版 URDF · c12222df</h2><p class="muted">15 条重新运行记录。所有视频来自新版场景和新版轨迹；“完整合规认证”暂未宣称。</p></div><span class="badge" id="currentCount">读取中…</span></div>
+    <div class="summary" id="currentSummary">正在读取新版结果…</div>
+    <main class="layout"><section class="list" id="currentList"></section><section class="panel" id="currentDetail"><p class="empty">选择一条新版记录查看视频。</p></section></main>
+  </section>
+  <section class="model-panel legacy">
+    <div class="model-head"><div><h2>旧模型历史结果 · cca26f5be19e</h2><p class="muted">15 条原始诊断视频。它们使用旧 URDF/旧模型录制，仅作为历史对照，页面不把它们判定为新版模型结果。</p></div><span class="badge legacy-badge" id="legacyCount">读取中…</span></div>
+    <div class="summary" id="legacySummary">正在读取旧版结果…</div>
+    <main class="layout"><section class="list" id="legacyList"></section><section class="panel" id="legacyDetail"><p class="empty">选择一条旧版记录查看历史视频。</p></section></main>
+  </section>
   <script>
     const $=id=>document.getElementById(id);let rows=[],current=null;
     const strategyName=v=>({baseline:'原始接触后摆动',prelift:'卸载—预抬—重接',transfer:'预抬 + 10° 载荷转移',transfer18:'预抬 + 18° 载荷转移',zigzag:'微Z交替越障'}[v]||v);
     const fmt=(v,n=2)=>v==null||!Number.isFinite(Number(v))?'—':Number(v).toFixed(n);
-    function filtered(){return rows.filter(r=>(!$('angle').value||r.angle_deg===Number($('angle').value))&&(!$('strategy').value||r.strategy===$('strategy').value)&&(!$('friction').value||r.friction===Number($('friction').value))&&(!$('direction').value||r.direction===$('direction').value));}
-    function modelStatus(r){return r.matches_current_urdf===true?'当前 URDF':'旧模型 / 当前模型未验证';}
-    function badge(r){return `<span class="${r.matches_current_urdf===true?'tag':'warn'}">${modelStatus(r)} · ${r.ascent_completed?'按原判据到平台':'未到平台'}</span>`;}
-    function drawList(){const shown=filtered();$('list').innerHTML='';if(!shown.length){$('list').innerHTML='<p class="empty">当前筛选没有记录。</p>';return;}for(const r of shown){const b=document.createElement('button');b.className='case'+(current===r.id?' active':'');b.innerHTML=`<b>${fmt(r.angle_deg,0)}° · μ ${r.friction} · ${strategyName(r.strategy)} · ${r.direction}</b><small>${badge(r)} · 观察 ${fmt(r.duration_s,1)} s</small><small>接触 ${fmt(r.first_contact_s)} s · ${r.termination_reason}</small><small>最大穿透 ${fmt(r.max_contact_penetration_mm)} mm</small>`;b.onclick=()=>show(r);$('list').append(b);}}
-    function show(r){current=r.id;drawList();const events=(r.events||[]).map(e=>`<li>${fmt(e.time_s,3)} s · ${e.phase} · 前进 ${fmt(e.progress_m,3)} m</li>`).join('')||'<li>该策略没有阶段事件</li>';$('detail').innerHTML=`<h2>${r.id}</h2><video controls preload="metadata" src="${r.video_url}"></video><dl class="facts"><dt>策略</dt><dd>${strategyName(r.strategy)}</dd><dt>终止原因</dt><dd>${r.termination_reason}</dd><dt>六轮到平台</dt><dd>${r.ascent_completed?'是':'否'}</dd><dt>录制模型版本</dt><dd>${(r.recorded_model_version||'未知').slice(0,12)} · ${modelStatus(r)}</dd><dt>关节限值与当前一致</dt><dd>${r.joint_limits_match_current==null?'证据不足':r.joint_limits_match_current?'是':'否'}</dd><dt>记录时关节审核</dt><dd>${r.urdf_compliant_exact?'原审核未报越限':'有越限'}</dd><dt>当前模型关节审核</dt><dd>${r.current_model_joint_compliant==null?'未验证，需按新模型重跑':r.current_model_joint_compliant?'模型字段及保存阶段关节检查通过':'未通过'}</dd><dt>完整合规认证</dt><dd>尚未完成；不计入合规成功</dd><dt>记录时数值诊断</dt><dd>${r.numerical_quality_ok?'通过':'未通过'}</dd><dt>接触 / 干预</dt><dd>${fmt(r.first_contact_s,3)} s / ${r.intervention_s==null?'未触发':fmt(r.intervention_s,3)+' s'}</dd><dt>最大穿透</dt><dd>${fmt(r.max_contact_penetration_mm)} mm</dd><dt>过程违规</dt><dd>${(r.violation_names||[]).join(', ')||'无'}</dd></dl><h2 style="margin-top:22px">阶段时间线</h2><ol class="events">${events}</ol><p class="links"><a href="${r.video_url}" download>下载视频</a><a href="${r.result_url}">结果 JSON</a><a href="${r.trajectory_url}">原始轨迹 NPZ</a></p><p class="muted">本页为接触恢复诊断，不参与 Phase B 边界。模型字段一致、运行时关节限值、到平台和数值复核是不同检查；新模型也需补齐初始化阶段审核、独立重放与步长复核，才能作完整认证。</p>`;}
-    async function load(){try{
-      const response=await fetch('/api/contact-recovery',{cache:'no-store'});
-      if(!response.ok)throw Error('HTTP '+response.status);
-      const data=await response.json();rows=data.cases||[];
-      const model=data.current_model;
-      if(!model){$('modelSummary').textContent='目录尚未更新模型版本；当前合规状态未知。';$('modelLimits').textContent='无当前 URDF 参数';}
-      else{
-        $('modelSummary').textContent=`当前 URDF：${model.version.slice(0,12)} · 总质量 ${fmt(model.mass_kg,3)} kg。新版修正结构对称性；本次更新未改变关节限值。`;
-        const table=document.createElement('table');table.style.cssText='width:100%;text-align:left;font-size:13px';
-        const head=table.insertRow();['关节','位置范围 rad','速度 rad/s','力矩 N·m'].forEach(v=>{head.insertCell().textContent=v;});
-        for(const [name,limit] of Object.entries(model.joint_limits)){
-          const line=table.insertRow();
-          [name,limit.lower==null?'连续旋转':`${limit.lower} ～ ${limit.upper}`,limit.velocity,limit.effort].forEach(v=>{line.insertCell().textContent=v;});
-        }
-        $('modelLimits').replaceChildren(table);
-      }
-      $('summary').textContent=`共 ${rows.length} 条视频；旧模型 ${data.legacy_model_records??'未知'} 条，当前模型 ${data.current_model_records??'未知'} 条。按各自原判据到平台 ${data.platform_completed||0} 条；当前模型关节检查通过 ${data.current_model_joint_passes??'未知'} 条。完整合规认证尚未完成。`;
-      drawList();if(rows.length)show(rows.find(r=>r.id===current)||rows[0]);
-    }catch(error){$('summary').textContent='实验目录读取失败：'+error.message;}}
-    for(const id of ['angle','strategy','friction','direction'])$(id).onchange=drawList;$('reload').onclick=load;load();
+    const isCurrent=r=>r.matches_current_urdf===true;
+    function filtered(group){return rows.filter(r=>isCurrent(r)===group&&(!$('angle').value||r.angle_deg===Number($('angle').value))&&(!$('strategy').value||r.strategy===$('strategy').value)&&(!$('friction').value||r.friction===Number($('friction').value))&&(!$('direction').value||r.direction===$('direction').value));}
+    function resultText(r){if(r.ascent_completed&&r.urdf_compliant_exact&&r.numerical_quality_ok)return '到平台且诊断条件通过';if(r.ascent_completed)return '到平台但诊断未通过';return '未到平台';}
+    function badge(r){return isCurrent(r)?`<span class="tag">新版 · ${resultText(r)}</span>`:`<span class="old">旧版历史 · ${r.ascent_completed?'到平台':'未到平台'}</span>`;}
+    function drawList(group){const id=group?'currentList':'legacyList',shown=filtered(group);$(id).innerHTML='';if(!shown.length){$(id).innerHTML='<p class="empty">当前筛选没有记录。</p>';return;}for(const r of shown){const b=document.createElement('button');b.className='case'+(current===r.id?' active':'');b.innerHTML=`<b>${fmt(r.angle_deg,0)}° · μ ${r.friction} · ${strategyName(r.strategy)} · ${r.direction}</b><small>${badge(r)} · 观察 ${fmt(r.duration_s,1)} s</small><small>接触 ${fmt(r.first_contact_s)} s · ${r.termination_reason}</small><small>最大穿透 ${fmt(r.max_contact_penetration_mm)} mm</small>`;b.onclick=()=>show(r);$(id).append(b);}}
+    function drawLists(){drawList(true);drawList(false);}
+    function show(r){current=r.id;drawLists();const target=isCurrent(r)?$('currentDetail'):$('legacyDetail');const other=isCurrent(r)?$('legacyDetail'):$('currentDetail');other.innerHTML='<p class="empty">选择本分区的一条记录查看视频。</p>';const events=(r.events||[]).map(e=>`<li>${fmt(e.time_s,3)} s · ${e.phase} · 前进 ${fmt(e.progress_m,3)} m</li>`).join('')||'<li>该策略没有阶段事件</li>';target.innerHTML=`<h3>${r.id}</h3><video controls preload="metadata" src="${r.video_url}"></video><dl class="facts"><dt>模型</dt><dd>${isCurrent(r)?'新版 URDF · '+(r.recorded_model_version||'').slice(0,12):'旧模型历史 · '+(r.recorded_model_version||'').slice(0,12)}</dd><dt>策略</dt><dd>${strategyName(r.strategy)}</dd><dt>结果</dt><dd>${resultText(r)}</dd><dt>终止原因</dt><dd>${r.termination_reason}</dd><dt>记录时关节审核</dt><dd>${r.urdf_compliant_exact?'通过':'未通过'}</dd><dt>新版模型关节审核</dt><dd>${r.current_model_joint_compliant==null?'不适用（旧模型记录）':r.current_model_joint_compliant?'通过':'未通过'}</dd><dt>数值诊断</dt><dd>${r.numerical_quality_ok?'通过':'未通过'}</dd><dt>接触 / 干预</dt><dd>${fmt(r.first_contact_s,3)} s / ${r.intervention_s==null?'未触发':fmt(r.intervention_s,3)+' s'}</dd><dt>最大穿透</dt><dd>${fmt(r.max_contact_penetration_mm)} mm</dd><dt>过程违规</dt><dd>${(r.violation_names||[]).join(', ')||'无'}</dd></dl><h3 style="margin-top:22px">阶段时间线</h3><ol class="events">${events}</ol><p class="links"><a href="${r.video_url}" download>下载视频</a><a href="${r.result_url}">结果 JSON</a><a href="${r.trajectory_url}">原始轨迹 NPZ</a></p><p class="muted">${isCurrent(r)?'新版记录已重新仿真，但仍属于控制诊断，不参与 Phase B 边界。':'该记录是旧模型历史证据，只用于与新版结果对照。'}</p>`;}
+    function summary(){const currentRows=rows.filter(isCurrent),legacyRows=rows.filter(r=>!isCurrent(r));$('currentCount').textContent=`${currentRows.length} 条新版记录`;$('legacyCount').textContent=`${legacyRows.length} 条历史记录`;const full=r=>r.ascent_completed&&r.urdf_compliant_exact&&r.numerical_quality_ok;$('currentSummary').textContent=`新版：到平台 ${currentRows.filter(r=>r.ascent_completed).length} 条；运行时限值通过 ${currentRows.filter(r=>r.urdf_compliant_exact).length} 条；诊断条件同时通过 ${currentRows.filter(full).length} 条。`;$('legacySummary').textContent=`旧版：到平台 ${legacyRows.filter(r=>r.ascent_completed).length} 条；原记录审核通过 ${legacyRows.filter(r=>r.urdf_compliant_exact).length} 条；仅作历史对照，不计入新版统计。`;}
+    async function load(){try{const response=await fetch('/api/contact-recovery',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();rows=data.cases||[];summary();const model=data.current_model;if(!model){$('modelSummary').textContent='目录尚未更新模型版本；当前合规状态未知。';$('modelLimits').textContent='无当前 URDF 参数';}else{$('modelSummary').textContent=`当前 URDF：${model.version.slice(0,12)} · 总质量 ${fmt(model.mass_kg,3)} kg · 新旧结果已分开。`;const table=document.createElement('table');const head=table.insertRow();['关节','位置范围 rad','速度 rad/s','力矩 N·m'].forEach(v=>{head.insertCell().textContent=v;});for(const [name,limit] of Object.entries(model.joint_limits)){const line=table.insertRow();[name,limit.lower==null?'连续旋转':`${limit.lower} ～ ${limit.upper}`,limit.velocity,limit.effort].forEach(v=>{line.insertCell().textContent=v;});}$('modelLimits').replaceChildren(table);}drawLists();const first=rows.find(isCurrent)||rows[0];if(first)show(first);}catch(error){$('modelSummary').textContent='实验目录读取失败：'+error.message;}}
+    for(const id of ['angle','strategy','friction','direction'])$(id).onchange=drawLists;$('reload').onclick=load;load();
   </script>
 </body>
 </html>
