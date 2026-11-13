@@ -89,16 +89,14 @@ class RecoveryCatalog:
         return None
 
 
-def phase_payload(pd_path, pe_path):
-    def read(path):
-        path = Path(path)
-        return json.loads(path.read_text(encoding='utf-8')) if path.is_file() else {}
+def phase_payload(pd_path):
+    path = Path(pd_path)
+    pd_doc = json.loads(path.read_text(encoding='utf-8')) if path.is_file() else {}
 
     def angle_of(run_id):
         match = re.search(r'/(\d+(?:\.\d+)?)deg/', run_id)
         return float(match.group(1)) if match else None
 
-    pd_doc, pe_doc = read(pd_path), read(pe_path)
     screening = {}
     for row in pd_doc.get('screen', []):
         control, result = row['control_id'], row['result']
@@ -128,23 +126,6 @@ def phase_payload(pd_path, pe_path):
             'duration_s': row['duration_s'],
             'violation_steps': sum(row['violation_counts'].values()),
         })
-    checks = []
-    for check in pe_doc.get('checks', []):
-        variants = [('1ms', check.get('baseline_1ms'))] + [
-            (f"{step['dt_s'] * 1000:g}ms", step['result']) for step in check.get('steps', [])]
-        verdicts = {
-            label: (None if result is None else bool(result['ascent_completed'] and result['urdf_compliant']
-                                                     and result['numerical_quality_ok']))
-            for label, result in variants
-        }
-        seen = [value for value in verdicts.values() if value is not None]
-        checks.append({
-            'friction': check['friction'],
-            'order': check['order'],
-            'angle_deg': check['angle_deg'],
-            'verdicts': verdicts,
-            'consistent': len(set(seen)) <= 1,
-        })
     return {
         'screening': [
             {'speed_rad_s': key[0], 'trigger': key[1], 'order': key[2],
@@ -152,7 +133,6 @@ def phase_payload(pd_path, pe_path):
             for key in sorted(screening)
         ],
         'confirm': confirm,
-        'checks': checks,
     }
 
 
@@ -273,15 +253,13 @@ def main():
     phase_b_rows = ([json.loads(line) for line in slope_path.read_text(encoding='utf-8').splitlines()
                      if line.strip()] if slope_path.exists() else [])
     pd_path = root / 'docs/urdf_slope_pd_20261113.json'
-    pe_path = root / 'docs/urdf_slope_pe_20261113.json'
     if not pd_path.exists():
         pd_path = root / 'rover/docs/urdf_slope_pd_20261113.json'
-        pe_path = root / 'rover/docs/urdf_slope_pe_20261113.json'
     recovery_path = args.recovery_catalog or root / 'docs/urdf_slope_review.json'
     server = ThreadingHTTPServer(
         (args.host, args.port),
         handler_for(Catalog(path), phase_b_rows, RecoveryCatalog(recovery_path),
-                    phase_payload(pd_path, pe_path)),
+                    phase_payload(pd_path)),
     )
     print(f'Rover experiments: http://{args.host}:{args.port}/', flush=True)
     try:

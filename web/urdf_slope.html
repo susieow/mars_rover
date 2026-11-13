@@ -66,13 +66,6 @@
   </section>
 
   <section class="panel">
-    <h2>Phase E · 步长复核（24 条）</h2>
-    <p class="muted">只改物理步长，控制周期固定 1 ms。1 ms 行引用 pb_v2，新跑 0.5 与 0.2 ms；每格是合规通过或失败，由三个布尔同时成立决定。</p>
-    <div class="scroll" style="max-height:none"><table id="echecks"><thead><tr><th>μ</th><th>顺序</th><th>角度</th><th>1 ms</th><th>0.5 ms</th><th>0.2 ms</th><th>三步长一致</th></tr></thead><tbody></tbody></table></div>
-    <p class="muted">9 个单元三步长判定一致，3 个不一致，全部在 25°：μ4 SP 25° 由通过翻成失败，μ8 SN 25° 在 0.2 ms 未停稳，μ8 SP 25° 由失败翻成通过。这三格按计划标“数值不稳健”，不进入成功数据集，也不进入失败边界。</p>
-  </section>
-
-  <section class="panel">
     <h2>记录说明</h2>
     <p class="note">判据在 Phase B 中途修订过。修订前要求六轮同时大于 5 N，在刚体六轮三点接触的模型上等于刀锋条件；一家 4 m 平台的诊断显示，停稳时一个后轮悬空 0.116 mm、受力 0 N，其余五轮 79 至 479 N。修订后改为检查位置，并让刹车触发共用同一定义。</p>
     <p class="muted">修订前的 36 条保留在 <code>runs/urdf_slope_20261112/pb/</code>，修订后的 49 条在 <code>runs/urdf_slope_20261112/pb_v2/</code>。重叠的 36 条中 35 条判定不变，只有 25° 摩擦 4 SP 18° 从未停稳变为合规通过。</p>
@@ -147,7 +140,7 @@
       const pass = v2.filter(x => x.ascent_completed && x.urdf_compliant && x.numerical_quality_ok);
       const arrive = v2.filter(x => x.ascent_completed && !(x.urdf_compliant && x.numerical_quality_ok));
       const at45 = v2.filter(x => x.angle_deg === 45).map(x => x.steps_climbed);
-      $('badge').textContent = 'Phase B/D/E 已完成 · pb_v2 ' + v2.length + ' 条，D 40+4，E 24';
+      $('badge').textContent = 'Phase B / D 已完成 · pb_v2 ' + v2.length + ' 条，D 40+4';
       $('tRows').textContent = v2.length;
       $('tPass').textContent = pass.length;
       $('tArrive').textContent = arrive.length;
@@ -195,21 +188,10 @@
           put(tr, row.violation_steps ? row.violation_steps + ' 步' : '0');
           confirm.appendChild(tr);
         });
-        const checks = $('echecks').tBodies[0];
-        ph.checks.forEach(row => {
-          const tr = document.createElement('tr');
-          put(tr, row.friction); put(tr, row.order); put(tr, row.angle_deg + '°');
-          ['1ms', '0.5ms', '0.2ms'].forEach(dt => {
-            const v = row.verdicts[dt];
-            put(tr, v === null || v === undefined ? '—' : (v ? '通过' : '失败'), v ? 'ok' : (v === false ? 'no' : ''));
-          });
-          put(tr, row.consistent ? '一致' : '不一致', row.consistent ? 'ok' : 'no');
-          checks.appendChild(tr);
-        });
       }).catch(e => {
         const p = document.createElement('p');
         p.className = 'muted no';
-        p.textContent = 'Phase D/E 结果读取失败：' + e.message;
+        p.textContent = 'Phase D 结果读取失败：' + e.message;
         $('dscreen').closest('section').appendChild(p);
       });
     })();
