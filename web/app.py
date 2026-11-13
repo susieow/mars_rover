@@ -89,7 +89,7 @@ class RecoveryCatalog:
         return None
 
 
-def handler_for(catalog, phase_b_rows, recovery):
+def handler_for(catalog, phase_b_rows, recovery, slope_media):
     class Handler(BaseHTTPRequestHandler):
         def reply(self, status, body, kind='application/json; charset=utf-8', headers=None):
             self.send_response(status)
@@ -137,6 +137,12 @@ def handler_for(catalog, phase_b_rows, recovery):
                 return self.reply(200, json.dumps(catalog.public, ensure_ascii=False, separators=(',', ':')).encode())
             if path == '/api/urdf-slope-phase-b':
                 return self.reply(200, json.dumps(phase_b_rows, ensure_ascii=False, separators=(',', ':')).encode())
+            if path.startswith('/slope-media/') and path.endswith('.mp4'):
+                key = path[len('/slope-media/'):-len('.mp4')]
+                asset = slope_media / f'{key}.mp4'
+                if re.fullmatch(r'[A-Za-z0-9_-]+', key) and asset.is_file():
+                    return self.serve_file(asset)
+                return self.reply(404, b'no such recording', 'text/plain')
             if path == '/api/contact-recovery':
                 return self.reply(200, json.dumps(recovery.public, ensure_ascii=False, separators=(',', ':')).encode())
             asset = catalog.asset(path)
@@ -203,10 +209,14 @@ def main():
         slope_path = root / 'rover/docs/urdf_slope_index.jsonl'
     phase_b_rows = ([json.loads(line) for line in slope_path.read_text(encoding='utf-8').splitlines()
                      if line.strip()] if slope_path.exists() else [])
+    slope_media = root / 'runs/urdf_slope_20261112/media'
+    if not slope_media.is_dir():
+        slope_media = root / 'rover/runs/urdf_slope_20261112/media'
     recovery_path = args.recovery_catalog or root / 'docs/urdf_slope_review.json'
     server = ThreadingHTTPServer(
         (args.host, args.port),
-        handler_for(Catalog(path), phase_b_rows, RecoveryCatalog(recovery_path)),
+        handler_for(Catalog(path), phase_b_rows, RecoveryCatalog(recovery_path),
+                    slope_media),
     )
     print(f'Rover experiments: http://{args.host}:{args.port}/', flush=True)
     try:

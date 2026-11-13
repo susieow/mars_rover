@@ -61,6 +61,8 @@ cd /home/agilex/wzy/rover
 | `docs/final_experiments.json` | 最终 112 条的前端目录及 44 个缺测组合 |
 | `docs/experiment_index.jsonl` | 最终和历史实验的逐条参数、原因、哈希和证据路径 |
 | `docs/diagnostic*.jsonl`、其他 JSON | 冻结原始登记、批次核验，供追溯 |
+| `scripts/rover/urdf_slope_media_20261113.py`、`pd_screen_replay_20261113.py` | 实验二每条记录的并排视频渲染，以及 D 单级筛选的轨迹重放 |
+| `web/game_server.py`、`web/game.html` | 键盘操控爬楼游戏，成功一局存 LAFAN1 结构到 `runs/rover_game/` |
 | `review_v4/`、`datasets/` | 历史冻结证据，不是新的运行入口 |
 | `review_v3/model_sha256.txt`、`scripts/rover/course.py.before_closed_loop_20261110.py` | 审核器按哈希读取的原始模型/碰撞策略证据，名称虽旧仍必须保留 |
 | `runs/` | AGX 原始轨迹、场景、结果和曲线；不提交 Git |
@@ -78,7 +80,7 @@ Git：`https://github.com/susieow/mars_rover.git`，默认分支 `wzy`。需要�
 
 ## 实验二：URDF 约束内的 20 cm 台阶可通过踏步深度（v2）
 
-状态：P0–P3 与 Phase B 已完成（v1 36 条、v2 49 条），Phase C 未开始。完整计划见 `docs/urdf_slope_plan_v2.md`，机器可读参数见 `docs/urdf_slope_plan.json`。基线 `46cda0a`。
+状态：P0–P3、Phase B、Phase D 与 Phase E 已完成（B 为 v1 36 条加 v2 49 条，D 为 40 条单级筛选加 4 条完整楼梯确认，E 为 24 条步长复核），Phase C 未开始。执行顺序 A → B → D → E → C。前端把 Phase B 与 Phase D 合成一张 129 行的可筛选表，逐行带渲染视频。完整计划见 `docs/urdf_slope_plan_v2.md`，机器可读参数见 `docs/urdf_slope_plan.json`。基线 `46cda0a`。
 
 ### 能证什么
 
@@ -106,11 +108,25 @@ Git：`https://github.com/susieow/mars_rover.git`，默认分支 `wzy`。需要�
 
 18° 是合规臂，余量 2°。20° 只有 0.0019° 余量，接触反驱就会位置违规。20° 只比较爬升效果，不能判合规通过。
 
+### Phase D 控制库（40 条筛选 + 4 条确认）
+
+20 个控制编号是 3/6/9/12/15 rad/s × 接触/卡住 × SP/SN，在单级台阶上用 15°（踏面 0.746410）和 25°（踏面 0.428901，μ6 实测通过角）筛选，摩擦固定 6，摇臂 18°。只有 3 rad/s 两个顺序在两个踏面上都安装且零越限。6 和 9 rad/s 也安装，但摇臂关节速度越限 12 到 221 步（上限 1.57 rad/s）；12 和 15 rad/s 单级上就冲出平台。卡住触发只把启动时刻从首次接触推迟 6 到 8 s，不改变排序。
+
+前 2 名是 3 rad/s 卡住 SP 与 SN。完整楼梯确认（μ6，25°/35°）：SN 在 25° 合规通过（15 级，86.2 s），SP 在 25° 停稳判据满足但未受载轮离面 1.355 mm，支撑从未连续成立（`support_steps=0`，141.2 s）；35° 两个顺序都停在第 4 至 5 级超时。所以控制编号不改变 μ6 的边界，25° 的通过对摇臂顺序敏感，换顺序就差 1 mm 翻转。
+
+### Phase E 步长复核（24 条）
+
+1 ms 的边界行引用 pb_v2，20° 臂的 1 ms 对照也在 pb_v2，因此只新跑 24 条：6 个摩擦/顺序单元的通过角和失败角各做 0.5 ms 与 0.2 ms，控制周期仍 1 ms。输出在 `runs/urdf_slope_20261112/pe/`，汇总 `docs/urdf_slope_pe_20261113.json`，墙钟 39 分钟。
+
+9 个单元三步长判定一致：μ4 SN 15°/25°、μ4 SP 35°、μ6 SP/SN 25°/35°、μ8 SN 35°、μ8 SP 15°。3 个不一致，全部在 25°：μ4 SP 25° 由通过翻成失败（0.5 ms 左后转向速度 3.158 对 3.1416），μ8 SN 25° 在 0.2 ms 未停稳，μ8 SP 25° 由失败翻成通过。25° 这一列的偏差方向不一致，说明边界本身对步长敏感，不是 1 ms 偏保守或偏激进。35° 的失败全部一致。
+
+按计划，这三格标“数值不稳健”，不进入成功数据集也不进入失败边界；Phase C 对这它们改从 15° 与 35° 之间起步，每个候选边界点都做 0.5/0.2 ms 复核。
+
 ### 边界与复核
 
 每个摩擦按冻结顺序和已通过幅度逐 1° 二分到 1°。另一个顺序和另一个幅度只在最终边界角各补一条。边界点做 3 次初态扰动重跑，再用 0.5 ms 和 0.2 ms 复核，要求布尔结果一致。
 
-20 个控制编号（3/6/9/12/15 rad/s × 接触/卡住 × SN/SP）先在单级台阶筛选，取前 2 个回到 15 级确认。
+控制库的 40 条筛选和前 2 名的 4 条确认已完成，见上一节；Phase C 的二分在 Phase E 之后进行。
 
 ### 成功判定
 
@@ -124,9 +140,18 @@ Git：`https://github.com/susieow/mars_rover.git`，默认分支 `wzy`。需要�
 
 ### 预算与交付
 
-长仿真实跑 85 条（Phase B），计划总计不超过 130 条；短仿真不超过 73 条。每条记录 `result.json` 和 `trajectory.npz`，含模型、控制器、源码哈希、逐步限值事件、穿透、运行时接触摩擦和视频。
+长仿真实跑 85 条（Phase B）、4 条（Phase D 确认）、24 条（Phase E），计划总计 131 条（含 Phase C 的 18 条）；短仿真 13 + 20 + 40 = 73 条。每条记录 `result.json` 和 `trajectory.npz`，含模型、控制器、源码哈希、逐步限值事件、穿透、运行时接触摩擦和视频。
 
 前端 `/` 是主页，`/experiments/stairs-45` 保留实验一，`/experiments/urdf-slope` 改为真实结果页。实验二使用独立目录、API 和 `docs/urdf_slope_index.jsonl`，不覆盖实验一。
+
+## 爬楼游戏（键盘操控采集）
+
+`web/game_server.py` 起一个局域网小服务，同事用键盘开同一台六轮车爬 20 cm、15 级的可变角度台阶，能开上去的一局自动存成 LAFAN1 结构，之后直接拿去训练。
+
+- 模型、步长和判据与实验二一致：1 ms 物理步长，`pb.scene_text(case)` 生成场景，`speed20_experiment.Controller` 做速度与转向，六轮上平台停稳 1 s 判定成功。
+- 操作 W/S 调控车速（最大 4 rad/s），Q/E 抬放摇臂（最大 20°），空格刹车，R 重开，Esc 中途退出。上平台后自动刹停，避免冲出 2 m 深的平台。
+- 成功记录写在 `runs/rover_game/game_<角度>deg_<时间戳>_<会话>.npz`，键为 `root_pos`、`root_rot`（xyzw）、`dof_pos`、`fps=30`，同名 JSON 记关节名和参数。
+- 本机 AGX 的 tmux 会话 `game` 监听 `0.0.0.0:8702`，局域网访问 `http://172.30.2.15:8702`。没有内网穿透，外网同事暂时打不开。
 
 ## 接触恢复控制诊断（cxm 分支合并）
 
