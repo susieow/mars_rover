@@ -72,6 +72,7 @@ class Session:
         SCENE_DIR.mkdir(parents=True, exist_ok=True)
         scene = SCENE_DIR / f"{self.id}.xml"
         scene.write_text(pb.scene_text(case), encoding="utf-8")
+        self.scene_path = scene
         self.model = mujoco.MjModel.from_xml_path(str(scene))
         self.model.opt.timestep = DT
         self.model.vis.global_.offwidth = WIDTH
@@ -115,6 +116,10 @@ class Session:
         try:
             self.renderer.close()
         except Exception:
+            pass
+        try:
+            self.scene_path.unlink(missing_ok=True)
+        except OSError:
             pass
 
     def input(self, throttle, rocker, brake):
@@ -336,6 +341,13 @@ class Handler(BaseHTTPRequestHandler):
                 if session is None:
                     return self.reply(404, b'{"error":"session gone"}')
                 session.input(body.get("throttle", 0), body.get("rocker", 0), body.get("brake", False))
+            return self.reply(200, b'{"ok":true}')
+        if path == "/api/leave":
+            body = self.payload()
+            with LOCK:
+                old = SESSIONS.pop(body.get("id", ""), None)
+                if old is not None:
+                    old.close()
             return self.reply(200, b'{"ok":true}')
         if path == "/api/reset":
             body = self.payload()

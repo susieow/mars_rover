@@ -149,7 +149,7 @@ Git：`https://github.com/susieow/mars_rover.git`，默认分支 `wzy`。需要�
 `web/game_server.py` 起一个局域网小服务，同事用键盘开同一台六轮车爬 20 cm、15 级的可变角度台阶，能开上去的一局自动存成 LAFAN1 结构，之后直接拿去训练。
 
 - 模型、步长和判据与实验二一致：1 ms 物理步长，`pb.scene_text(case)` 生成场景，`speed20_experiment.Controller` 做速度与转向，六轮上平台停稳 1 s 判定成功。
-- 操作 W/S 调控车速（最大 4 rad/s），Q/E 抬放摇臂（最大 20°），空格刹车，R 重开。上平台后自动刹停，避免冲出 2 m 深的平台。
+- 操作 W/S 调控车速（最大 4 rad/s），Q/E 抬放摇臂（最大 20°），空格刹车，R 重开，Esc 中途退出。上平台后自动刹停，避免冲出 2 m 深的平台。
 - 成功记录写在 `runs/rover_game/game_<角度>deg_<时间戳>_<会话>.npz`，键为 `root_pos`、`root_rot`（xyzw）、`dof_pos`、`fps=30`，同名 JSON 记关节名和参数。
 - 本机 AGX 的 tmux 会话 `game` 监听 `0.0.0.0:8702`，局域网访问 `http://172.30.2.15:8702`。没有内网穿透，外网同事暂时打不开。
 

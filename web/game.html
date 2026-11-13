@@ -21,7 +21,7 @@
              background:rgba(5,10,14,.82);text-align:center;padding:24px;gap:10px}
     .overlay.hidden,.hidden{display:none}
     .overlay h2{font-size:26px;margin:0}
-    .keys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+    .keys{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:14px}
     .key{border:1px solid #31485a;border-radius:10px;padding:12px;background:#101c26}
     .key strong{display:block;font-size:18px}.key span{font-size:13px;color:#9fb6c6}
     .badge{display:inline-block;border:1px solid #3c6b5e;color:#a9e7d7;border-radius:99px;padding:2px 10px;font-size:12.5px}
@@ -48,6 +48,7 @@
     <section class="panel hidden" id="game">
       <div class="row">
         <span class="badge" id="mode">25° · μ6</span>
+        <button class="ghost" id="quit" style="padding:4px 12px;font-size:13px">退出</button>
         <span class="muted" id="msg"></span>
       </div>
       <div class="stage">
@@ -72,6 +73,7 @@
         <div class="key"><strong>Q / E</strong><span>抬臂 / 放臂（各 20°）</span></div>
         <div class="key"><strong>空格</strong><span>刹车</span></div>
         <div class="key"><strong>R</strong><span>重开这一局</span></div>
+        <div class="key"><strong>Esc</strong><span>中途退出，回大厅</span></div>
       </div>
       <p class="muted" style="margin-top:12px">抬臂会同时抬起两侧摇臂，和实验二的手法一样。上平台后松手让它自己停稳，停稳 1 秒才判定成功。</p>
     </section>
@@ -164,6 +166,19 @@
         });
     }
 
+    function leaveGame() {
+      if (!session) return;
+      const old = session;
+      session = null; finished = true;
+      clearTimeout(frameTimer); clearTimeout(stateTimer); clearInterval(inputTimer);
+      fetch('/api/leave', {method:'POST', body: JSON.stringify({id: old})}).catch(()=>{});
+      $('frame').removeAttribute('src');
+      $('result').classList.add('hidden');
+      $('msg').textContent = '';
+      $('game').classList.add('hidden');
+      $('lobby').classList.remove('hidden');
+    }
+
     const map = {
       'w': ['forward', true], 'arrowup': ['forward', true],
       's': ['back', true], 'arrowdown': ['back', true],
@@ -171,6 +186,7 @@
     };
     window.addEventListener('keydown', ev => {
       const k = ev.key.toLowerCase();
+      if (ev.key === 'Escape') { ev.preventDefault(); leaveGame(); return; }
       if (k === 'r') { resetGame(); return; }
       if (map[k]) { ev.preventDefault(); keys[map[k][0]] = map[k][1]; sendInput(); }
     });
@@ -181,12 +197,8 @@
 
     $('start').addEventListener('click', startGame);
     $('again').addEventListener('click', resetGame);
-    $('back').addEventListener('click', () => {
-      clearInterval(inputTimer);
-      fetch('/api/input', {method:'POST', body: JSON.stringify({id: session, throttle:0, rocker:0, brake:true})});
-      session = null; finished = true;
-      $('game').classList.add('hidden'); $('lobby').classList.remove('hidden');
-    });
+    $('back').addEventListener('click', leaveGame);
+    $('quit').addEventListener('click', leaveGame);
   </script>
 </body>
 </html>

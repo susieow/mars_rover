@@ -325,7 +325,7 @@ SN＝先负后正；SP＝先正后负。全部曲线、首次接触、触发时�
 
 ## 爬楼游戏与 LAFAN1 数据采集（2026-11-13）
 
-逐格扫参太慢，所以加了一个键盘操控的上楼游戏 `web/game_server.py` + `web/game.html`，让同事自己试着开上去。参数和实验二完全一致：1 ms 物理步长，场景由 `pb.scene_text(case)` 生成，控制环就是 `speed20_experiment.Controller`。W/S 前进后退（最大 4 rad/s），Q/E 抬放摇臂（最大 20°，20°/s 斜坡），空格刹车，R 重开。机器人从第一级前 2 m 起步。
+逐格扫参太慢，所以加了一个键盘操控的上楼游戏 `web/game_server.py` + `web/game.html`，让同事自己试着开上去。参数和实验二完全一致：1 ms 物理步长，场景由 `pb.scene_text(case)` 生成，控制环就是 `speed20_experiment.Controller`。W/S 前进后退（最大 4 rad/s），Q/E 抬放摇臂（最大 20°，20°/s 斜坡），空格刹车，R 重开，Esc 中途退出回大厅。机器人从第一级前 2 m 起步。
 
 上平台后自动刹停，`auto_brake` 一旦平台支撑成立就锁存。不锁存的话继续给油会直接冲过 2 m 深的平台，这是首轮冒烟测试里真实失败的原因。
 
