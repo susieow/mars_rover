@@ -2,13 +2,15 @@
 from __future__ import annotations
 
 import json
+import argparse
 from datetime import datetime, timezone
 from pathlib import Path
 
 import urdf_slope_control_20261112 as exp
+from recovery_platform_arrival import assess_arrival
 
 
-def main():
+def main(output=None):
     rows = []
     current_sha = exp.digest(exp.URDF)
     current_limits = exp.get_joint_limits()
@@ -21,6 +23,7 @@ def main():
         if not media_path.exists():
             continue
         media = json.loads(media_path.read_text(encoding="utf-8"))
+        arrival = assess_arrival(folder, result)
         same_model = result.get("urdf_sha256") == current_sha
         audit_path = folder / "model_compliance.json"
         audit = json.loads(audit_path.read_text()) if audit_path.exists() else {}
@@ -57,6 +60,7 @@ def main():
                 "intervention_s": result["intervention_s"],
                 "termination_reason": result["termination_reason"],
                 "ascent_completed": result["ascent_completed"],
+                **arrival,
                 "urdf_compliant_exact": result["urdf_compliant_exact"],
                 "numerical_quality_ok": result["numerical_quality_ok"],
                 "dataset_accepted": False,
@@ -89,6 +93,7 @@ def main():
         "current_urdf_certified_count": 0,
         "completed": len(rows),
         "platform_completed": sum(row["ascent_completed"] for row in rows),
+        "platform_reached_count": sum(row["platform_reached"] for row in rows),
         "urdf_compliant": sum(row["urdf_compliant_exact"] for row in rows),
         "full_success": sum(
             row["ascent_completed"]
@@ -98,7 +103,7 @@ def main():
         ),
         "cases": rows,
     }
-    exp.write_json(exp.ROOT / "docs/urdf_slope_review.json", document)
+    exp.write_json(output or exp.ROOT / "docs/urdf_slope_review.json", document)
     print(
         json.dumps(
             {
@@ -112,4 +117,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path)
+    main(parser.parse_args().output)
