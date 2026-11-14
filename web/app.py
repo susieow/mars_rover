@@ -209,6 +209,10 @@ def main():
         slope_path = root / 'rover/docs/urdf_slope_index.jsonl'
     phase_b_rows = ([json.loads(line) for line in slope_path.read_text(encoding='utf-8').splitlines()
                      if line.strip()] if slope_path.exists() else [])
+    game_path = slope_path.with_name('urdf_slope_game_index.jsonl')
+    if game_path.exists():
+        phase_b_rows += [json.loads(line) for line in game_path.read_text(encoding='utf-8').splitlines()
+                         if line.strip()]
     slope_media = root / 'runs/urdf_slope_20261112/media'
     if not slope_media.is_dir():
         slope_media = root / 'rover/runs/urdf_slope_20261112/media'

@@ -34,7 +34,7 @@
   <nav><a href="/">← 实验主页</a></nav>
   <h1>实验二 · 全楼梯结果与边界</h1>
   <span class="badge" id="badge">正在读取结果…</span>
-  <p class="muted">固定每级 20 cm、15 级、直角台阶，只改变踏步深度。物理步长全程 1 ms。成功要求六轮中心进入平台投影、至少五轮受载、未受载轮离面不超过 1 mm，连续 1 s 后停稳，且全程每个物理步都在 URDF 限值内。下表把 Phase B 与 Phase D 的全部记录放在一起，按筛选条看，每行都能播放对应仿真。</p>
+  <p class="muted">固定每级 20 cm、15 级、直角台阶，只改变踏步深度。物理步长全程 1 ms。成功要求六轮中心进入平台投影、至少五轮受载、未受载轮离面不超过 1 mm，连续 1 s 后停稳，且全程每个物理步都在 URDF 限值内。下表把 Phase B、Phase D 与游戏新环的全部记录放在一起，按筛选条看，Phase B/D 每行都能播放对应仿真。级数按最后一根轴（后轮）到达的台阶计算。</p>
 
   <div class="tiles">
     <div class="tile"><div class="k">pb_v2 记录</div><div class="v" id="tRows">-</div></div>
@@ -50,10 +50,11 @@
   </section>
 
   <section class="panel">
-    <h2>全部记录（Phase B 与 Phase D 合并）</h2>
+    <h2>全部记录（Phase B、Phase D 与游戏新环）</h2>
     <div class="filters">
-      <label>阶段 <select id="fPhase"><option value="v2">修订后 pb_v2</option><option value="v1">修订前 pb</option><option value="D-confirm">Phase D 确认</option><option value="D-screen">Phase D 单级筛选</option><option value="">全部</option></select></label>
+      <label>阶段 <select id="fPhase"><option value="v2">修订后 pb_v2</option><option value="v1">修订前 pb</option><option value="D-confirm">Phase D 确认</option><option value="D-screen">Phase D 单级筛选</option><option value="game">游戏新环</option><option value="">全部</option></select></label>
       <label>角度 <select id="fAngle"><option value="">全部</option></select></label>
+      <label>级高 <select id="fRise"><option value="">全部</option></select></label>
       <label>摩擦 <select id="fFriction"><option value="">全部</option><option>4</option><option>6</option><option>8</option></select></label>
       <label>顺序 <select id="fOrder"><option value="">全部</option><option>SP</option><option>SN</option></select></label>
       <label>臂 <select id="fAmp"><option value="">全部</option><option value="18">18°</option><option value="20">20°</option></select></label>
@@ -66,7 +67,7 @@
       <video id="video" controls playsinline preload="none"></video>
       <div class="meta" id="playerMeta"></div>
     </div>
-    <div class="scroll"><table id="runs"><thead><tr><th>阶段</th><th>角度</th><th>踏面 m</th><th>μ</th><th>顺序</th><th>臂</th><th>速度</th><th>触发</th><th>级数</th><th>到平台</th><th>合规</th><th>结束</th><th>时长 s</th><th>离面 mm</th><th>越限</th><th>视频</th></tr></thead><tbody></tbody></table></div>
+    <div class="scroll"><table id="runs"><thead><tr><th>阶段</th><th>角度</th><th>踏面 m</th><th>级高 cm</th><th>μ</th><th>顺序</th><th>臂</th><th>速度</th><th>触发</th><th>级数</th><th>到平台</th><th>合规</th><th>结束</th><th>时长 s</th><th>离面 mm</th><th>越限</th><th>视频</th></tr></thead><tbody></tbody></table></div>
   </section>
 
   <section class="panel">
@@ -76,13 +77,18 @@
     <p class="muted">Phase D 筛了 20 个控制编号（3/6/9/12/15 rad/s × 接触/卡住 × SP/SN），单级筛选在 <code>pd/screen/</code>，其轨迹为不改判定的重放，放在 <code>pd/screen_replay/</code>；完整楼梯确认在 <code>pd/confirm/</code>。只有 3 rad/s 两个顺序零越限，6 和 9 rad/s 摇臂速度越限，12 和 15 rad/s 单级上就冲出平台或未停稳。μ6 25° 只有 3 rad/s 卡住 SN 合规通过；同速度的 SP 15 级到平台但未停稳，未受载轮离面 1.355 mm。控制编号不改变边界。</p>
     <p class="muted">20° 臂只比较爬升效果，不参与合规边界。μ4 SP 在 15° 到平台但摇臂位置超限，20° 停在第 3 级，25° 通过，说明这个格子的合规性对角度不单调，Phase C 不能按单点二分处理。</p>
     <p class="muted">单级筛选行只有 1 级，判定“合规通过”等于能安装且零越限，不代表能上完整楼梯。</p>
+    <p class="muted">级数改按最后一根轴（后轮）到达的台阶计算，此前取受载轮里的最高点，也就是前轮。45° 的失败行因此从 5–6 级变成 0–1 级：前轮压上了第 5 级，整台车还在地面上。</p>
+    <p class="muted">游戏新环 1512 条来自爬楼游戏的全部配置：10–45° 每 1°、每级 5–35 cm 每 5 cm、μ4/6/8、SP/SN 两个顺序。驾驶脚本固定为满油门 4 rad/s、接触触发 18° 三周期摇臂，摇臂环换成游戏里的增强环（增益 12、上限 1.57 rad/s、78 N·m 前馈、160 N·m 力矩）。它按设计超出原 URDF 100 N·m 的摇臂力矩上限，所以合规列记 —，判定只看是否六轮停稳在平台。</p>
   </section>
 
   <script>
     const fmt = v => v === null || v === undefined ? '—' : (Math.round(v * 100) / 100);
     const $ = id => document.getElementById(id);
-    const pass = x => x.ascent_completed && x.urdf_compliant && x.numerical_quality_ok;
-    const PHASE = {'v1': '修订前', 'v2': '修订后', 'D-confirm': 'D 确认', 'D-screen': 'D 单级'};
+    const pass = x => x.ascent_completed && x.numerical_quality_ok
+      && (x.urdf_compliant === null || x.urdf_compliant);
+    const PHASE = {'v1': '修订前', 'v2': '修订后', 'D-confirm': 'D 确认', 'D-screen': 'D 单级', 'game': '新环'};
+    // Old rows predate the riser-height option and are all 20 cm.
+    const riseOf = x => x.rise_cm ?? Math.round(x.tread_m * Math.tan(x.angle_deg * Math.PI / 180) * 100);
     const END = {platform_settled: '停稳', platform_not_settled: '未停稳', timeout: '超时',
                  passed_platform: '冲出平台', rollover: '翻侧', left_lane: '偏出车道'};
     let rows = [];
@@ -130,14 +136,17 @@
 
     function table() {
       const criterion = $('fPhase').value, angle = $('fAngle').value, mu = $('fFriction').value;
+      const rise = $('fRise').value;
       const order = $('fOrder').value, amp = $('fAmp').value, speed = $('fSpeed').value;
       const trigger = $('fTrigger').value, verdict = $('fPass').value;
       const view = rows.filter(x =>
         (!criterion || x.criterion === criterion) && (!angle || String(x.angle_deg) === angle)
+        && (!rise || String(riseOf(x)) === rise)
         && (!mu || String(x.friction) === mu) && (!order || x.order === order)
         && (!amp || String(x.rocker_amp_deg) === amp) && (!speed || String(x.speed_rad_s) === speed)
         && (!trigger || x.trigger === trigger) && (!verdict || (pass(x) ? '1' : '0') === verdict));
-      view.sort((a, b) => a.angle_deg - b.angle_deg || a.friction - b.friction
+      view.sort((a, b) => a.angle_deg - b.angle_deg || riseOf(a) - riseOf(b)
+        || a.friction - b.friction
         || a.order.localeCompare(b.order) || a.rocker_amp_deg - b.rocker_amp_deg
         || a.speed_rad_s - b.speed_rad_s || a.trigger.localeCompare(b.trigger));
       const body = $('runs').tBodies[0]; body.textContent = '';
@@ -145,17 +154,19 @@
         const tr = document.createElement('tr');
         const violations = Object.values(x.violation_counts || {}).reduce((a, b) => a + b, 0);
         const cells = [
-          PHASE[x.criterion], x.angle_deg + '°', x.tread_m.toFixed(4), x.friction, x.order,
+          PHASE[x.criterion], x.angle_deg + '°', x.tread_m.toFixed(4), riseOf(x), x.friction, x.order,
           x.rocker_amp_deg + '°', x.speed_rad_s, x.trigger === 'stall' ? '卡住' : '接触',
-          x.steps_climbed, x.ascent_completed ? '是' : '否', x.urdf_compliant ? '是' : '否',
+          x.steps_climbed, x.ascent_completed ? '是' : '否',
+          x.urdf_compliant === null ? '—' : (x.urdf_compliant ? '是' : '否'),
           END[x.end_reason] || x.end_reason, fmt(x.duration_s),
           x.unloaded_gap_mm === null || x.unloaded_gap_mm === undefined ? '—' : fmt(x.unloaded_gap_mm),
           violations ? violations + ' 步' : '0'
         ];
         cells.forEach((c, i) => {
           const td = document.createElement('td');
-          if (i === 9 || i === 10) td.appendChild(badge(c === '是', c));
-          else td.textContent = c;
+          if (i === 10 || i === 11) {
+            if (c === '—') td.textContent = c; else td.appendChild(badge(c === '是', c));
+          } else td.textContent = c;
           tr.appendChild(td);
         });
         const td = document.createElement('td');
@@ -180,12 +191,16 @@
       const passed = v2.filter(pass);
       const arrive = v2.filter(x => x.ascent_completed && !pass(x));
       const at45 = v2.filter(x => x.angle_deg === 45).map(x => x.steps_climbed);
-      $('badge').textContent = 'Phase B / D 已完成 · pb_v2 ' + v2.length + ' 条，D 40+4';
+      const gameRows = rows.filter(x => x.criterion === 'game');
+      const gameTop = gameRows.filter(x => x.ascent_completed).length;
+      $('badge').textContent = 'Phase B / D 已完成 · pb_v2 ' + v2.length + ' 条，D 40+4'
+        + (gameRows.length ? ' · 游戏新环 ' + gameTop + ' / ' + gameRows.length + ' 到平台' : '');
       $('tRows').textContent = v2.length;
       $('tPass').textContent = passed.length;
       $('tArrive').textContent = arrive.length;
       $('t45').textContent = at45.length ? Math.max(...at45) + ' 级' : '—';
       fillOptions('fAngle', [...new Set(rows.map(x => x.angle_deg))].sort((a, b) => a - b));
+      fillOptions('fRise', [...new Set(rows.map(riseOf))].sort((a, b) => a - b));
       fillOptions('fSpeed', [...new Set(rows.map(x => x.speed_rad_s))].sort((a, b) => a - b));
       boundary(rows); table();
     }).catch(e => {
@@ -193,7 +208,7 @@
       $('badge').className = 'badge no';
     });
 
-    ['fPhase', 'fAngle', 'fFriction', 'fOrder', 'fAmp', 'fSpeed', 'fTrigger', 'fPass'].forEach(id => $(id).addEventListener('change', table));
+    ['fPhase', 'fAngle', 'fRise', 'fFriction', 'fOrder', 'fAmp', 'fSpeed', 'fTrigger', 'fPass'].forEach(id => $(id).addEventListener('change', table));
   </script>
 </body>
 </html>

@@ -44,6 +44,7 @@ STRUCTURE_MAX_S = 0.020
 ROLLOVER_DEG = 60.0
 LATERAL_LIMIT_M = 2.5
 SAVE_EVERY = 10
+BOOST_EFFORT = 160.0
 # 25 and 35 exist only to narrow the boundary once 15 passes and 45 fails.
 ANGLES = (15.0, 25.0, 35.0, 45.0)
 
@@ -174,29 +175,59 @@ def scan_contacts(m, d, c, terrain_ids: set[int]):
     return depth, pair, structure
 
 
-def run(case: dict) -> dict:
-    RUN.mkdir(parents=True, exist_ok=True)
-    steps = case.get("steps", STEP_COUNT)
+def stem_for(case: dict) -> str:
+    rise = case.get("rise_m", STEP_RISE)
     speed = case.get("speed", SPEED)
     trigger_kind = case.get("trigger", "contact")
     dt = case.get("dt", DT)
-    control_every = max(1, int(round(DT / dt)))
-    save_every = max(1, int(round(SAVE_EVERY * DT / dt)))
     stem = f"{case['friction']}_{case['angle_deg']:g}_{case['order']}_{case['rocker_amp_deg']:g}"
     if "speed" in case or "trigger" in case:
         stem += f"_v{speed:g}_{trigger_kind}"
     if "dt" in case:
         stem += f"_dt{dt * 1e6:g}us"
+    if "rise_m" in case:
+        stem += f"_rise{rise * 100:g}cm"
+    if case.get("rocker_mode", "stock") == "boost":
+        stem += "_boost"
+    return stem
+
+
+def run(case: dict) -> dict:
+    RUN.mkdir(parents=True, exist_ok=True)
+    steps = case.get("steps", STEP_COUNT)
+    rise = case.get("rise_m", STEP_RISE)
+    rocker_mode = case.get("rocker_mode", "stock")
+    speed = case.get("speed", SPEED)
+    trigger_kind = case.get("trigger", "contact")
+    dt = case.get("dt", DT)
+    control_every = max(1, int(round(DT / dt)))
+    save_every = max(1, int(round(SAVE_EVERY * DT / dt)))
+    stem = stem_for(case)
     path = RUN / f"{stem}.xml"
     path.write_text(scene_text(case))
     m = mujoco.MjModel.from_xml_path(str(path))
     m.opt.timestep = dt
+    if rocker_mode == "boost":
+        # Same 160 N.m patch the game applies: the joint limit must allow the
+        # effort before the boosted loop can use it.
+        for j in range(m.njnt):
+            if (mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_JOINT, j) or "").endswith("rocker_joint"):
+                m.jnt_actfrcrange[j] = (-BOOST_EFFORT, BOOST_EFFORT)
+        for a in range(m.nu):
+            if (mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_ACTUATOR, a) or "").endswith("rocker_joint_act"):
+                m.actuator_ctrlrange[a] = (-BOOST_EFFORT, BOOST_EFFORT)
     d = common.initialize(m, APPROACH_M)
     c = common.Controller(m, d)
-    audit = Audit(m)
+    # Batch runs of the boosted loop skip the audit: they exceed the 100 N.m
+    # cap on purpose, so every step would be flagged.
+    audit = Audit(m) if case.get("audit", True) else None
 
     wheel_roles = [row[4] for row in c.wheels]
     front = [i for i in range(6) if wheel_roles[i] == 0]
+    rear = [i for i in range(6) if wheel_roles[i] == 2]
+    rocker_gain, rocker_cap, rocker_feedforward, rocker_effort = (
+        (12.0, 1.57, 78.0, BOOST_EFFORT) if rocker_mode == "boost"
+        else (4.0, 0.7, 0.0, 100.0))
     stair_ids = {g for g in range(m.ngeom)
                  if (mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, g) or "").startswith("up")}
     terrain_ids = stair_ids | {g for g in range(m.ngeom)
@@ -206,7 +237,7 @@ def run(case: dict) -> dict:
     platform_len = case.get("platform_len", PLATFORM_LEN)
     platform_start = RISER_X + steps * case["tread_m"]
     platform_end = platform_start + platform_len
-    platform_top = STEP_RISE * steps
+    platform_top = rise * steps
     # Park centered: braking on the first six-wheel sample leaves the rear
     # wheels on the platform edge, where the 2 m platform cannot hold them.
     park_x = platform_start + platform_len / 2
@@ -237,6 +268,7 @@ def run(case: dict) -> dict:
     structure_since = {}
     structure_flagged = None
     steps_climbed = 0
+    steps_climbed_front = 0
     settled_steps = 0
     support_steps = 0
     hold_until = None
@@ -267,14 +299,18 @@ def run(case: dict) -> dict:
                     # unloaded on a flat platform.
                     d.ctrl[act] = 0.0
                     continue
-                desired = float(np.clip(4.0 * (rocker[i] - float(d.qpos[pos])), -0.7, 0.7))
-                d.ctrl[act] = np.clip(150.0 * (desired - float(d.qvel[vel])), -100.0, 100.0)
+                error = rocker[i] - float(d.qpos[pos])
+                desired = float(np.clip(rocker_gain * error, -rocker_cap, rocker_cap))
+                feedforward = rocker_feedforward * float(np.clip(error / 0.05, 0.0, 1.0))
+                d.ctrl[act] = np.clip(150.0 * (desired - float(d.qvel[vel])) + feedforward,
+                                      -rocker_effort, rocker_effort)
 
         mujoco.mj_step(m, d)
         if not np.isfinite(d.qpos).all() or not np.isfinite(d.qvel).all():
             reason = "nonfinite"
             break
-        audit.check(d, float(d.time))
+        if audit is not None:
+            audit.check(d, float(d.time))
         max_y = max(max_y, abs(float(d.qpos[1])))
 
         if first_contact is None:
@@ -312,7 +348,13 @@ def run(case: dict) -> dict:
                 continue
             geom = c.wheels[wi][6]
             height = float(d.geom_xpos[geom, 2]) - float(m.geom_size[geom, 0])
-            steps_climbed = max(steps_climbed, int(round(height / STEP_RISE)))
+            level = int(round(height / rise))
+            # Report the trailing axle: how far the whole rover has climbed.
+            # The front axle reaches a step two points of support earlier.
+            if wi in rear:
+                steps_climbed = max(steps_climbed, level)
+            if wi in front:
+                steps_climbed_front = max(steps_climbed_front, level)
 
         if structure:
             for name, _ in structure.items():
@@ -413,7 +455,8 @@ def run(case: dict) -> dict:
         time=time_series[:n], qpos=qpos[:n], qvel=qvel[:n],
         simulation_dt=dt, save_every=save_every, control_every=control_every)
 
-    audit_summary = audit.summary()
+    audit_summary = (audit.summary() if audit is not None
+                     else {"compliant": None, "first_violations": [], "violation_kinds": {}})
     numerical_ok = (reason != "nonfinite" and structure_flagged is None)
     result = {
         "run_id": case["run_id"],
@@ -421,10 +464,11 @@ def run(case: dict) -> dict:
         "control_id": {"speed_rad_s": speed, "trigger": trigger_kind, "order": case["order"],
                        "rocker_amp_deg": case["rocker_amp_deg"], "rocker_period_s": PERIOD_S,
                        "rocker_cycles": CYCLES, "steer_law": "heading",
-                       "brake_law": "zero_hold_3s", "timeout_s": case["timeout_s"]},
-        "geometry": {"height_m": STEP_RISE, "steps": steps, "angle_deg": case["angle_deg"],
-                     "tread_m": case["tread_m"], "platform_len_m": platform_len,
-                     "width_m": 2 * WIDTH_HALF},
+                       "brake_law": "zero_hold_3s", "timeout_s": case["timeout_s"],
+                       "rocker_mode": rocker_mode},
+        "geometry": {"height_m": rise, "rise_cm": rise * 100, "steps": steps,
+                     "angle_deg": case["angle_deg"], "tread_m": case["tread_m"],
+                     "platform_len_m": platform_len, "width_m": 2 * WIDTH_HALF},
         "model": {
             "urdf_sha256": common.digest(URDF),
             "mjcf_sha256": common.digest(ROBOT),
@@ -438,6 +482,7 @@ def run(case: dict) -> dict:
                    "urdf_compliant": audit_summary["compliant"],
                    "numerical_quality_ok": numerical_ok,
                    "steps_climbed": steps_climbed,
+                   "steps_climbed_front": steps_climbed_front,
                    "end_reason": reason},
         "violations": audit_summary["first_violations"],
         "violation_counts": audit_summary["violation_kinds"],

@@ -23,7 +23,7 @@
       <div class="top"><span class="number">实验 02</span><span class="badge">Phase B / D 已完成</span></div>
       <h2>URDF 约束内的坡度上限</h2>
       <p class="description">恢复甲方 URDF 的明确约束，轮胎参数设为 0.6。固定台阶高度和级数，通过改变踏步深度测试可通过的坡度。</p>
-      <div class="facts"><p><span>楼梯</span><strong>20 cm · 15 级 · 可变角度</strong></p><p><span>轮胎 / 台阶摩擦</span><strong>0.6 / 4、6、8</strong></p><p><span>成功终点</span><strong>六轮登上平台并停稳</strong></p><p><span>本次范围</span><strong>只测上行</strong></p></div>
+      <div class="facts"><p><span>楼梯</span><strong>20 cm · 15 级 · 可变角度</strong></p><p><span>轮胎 / 台阶摩擦</span><strong>0.6 / 4、6、8</strong></p><p><span>成功终点</span><strong>六轮登上平台并停稳</strong></p><p><span>游戏新环</span><strong id="gameCount">正在读取…</strong></p></div>
       <p class="status" id="slopeStatus">正在读取 Phase B 结果…</p>
       <a class="button" href="/experiments/urdf-slope">查看结果与边界 →</a>
     </article>
@@ -50,7 +50,10 @@
       const pass=v2.filter(x=>x.ascent_completed&&x.urdf_compliant&&x.numerical_quality_ok);
       const best=Math.max(...pass.map(x=>x.angle_deg));
       const withVideo=rows.filter(x=>x.video_key).length;
+      const game=rows.filter(x=>x.criterion==='game');
+      const gameTop=game.filter(x=>x.ascent_completed).length;
       document.getElementById('slopeStatus').textContent='修订后 '+v2.length+' 条，合规通过 '+pass.length+' 条，最高通过角 '+best+'°；Phase D 并入同一张表，'+rows.length+' 条记录中 '+withVideo+' 条可播放。';
+      document.getElementById('gameCount').textContent=game.length? gameTop+' / '+game.length+' 到平台' : '暂无';
     }).catch(e=>{const p=document.getElementById('slopeStatus');p.classList.add('error');p.textContent='实验二结果读取失败：'+e.message;});
   </script>
   <script>
