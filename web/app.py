@@ -194,7 +194,7 @@ def handler_for(catalog, phase_b_rows, recovery, slope_media):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--host', choices=('127.0.0.1',), default='127.0.0.1')
+    parser.add_argument('--host', choices=('127.0.0.1', '0.0.0.0'), default='127.0.0.1')
     parser.add_argument('--port', type=int, default=8701)
     parser.add_argument('--catalog', type=Path)
     parser.add_argument('--phase-b-index', type=Path)
