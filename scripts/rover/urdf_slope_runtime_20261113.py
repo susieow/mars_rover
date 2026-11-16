@@ -45,6 +45,10 @@ ROLLOVER_DEG = 60.0
 LATERAL_LIMIT_M = 2.5
 SAVE_EVERY = 10
 BOOST_EFFORT = 160.0
+# Every riser choice gets the same 3 m staircase, so a lower riser buys more
+# steps instead of a shorter climb. 35 cm does not divide 3 m and rounds to
+# 9 steps (315 cm).
+STAIR_HEIGHT_M = 3.0
 # 25 and 35 exist only to narrow the boundary once 15 passes and 45 fails.
 ANGLES = (15.0, 25.0, 35.0, 45.0)
 
@@ -55,9 +59,15 @@ SETTLE = {
 }
 
 
-def budget(angle_deg: float, rise_m: float = STEP_RISE) -> int:
+def steps_for(rise_m: float = STEP_RISE) -> int:
+    return max(1, int(round(STAIR_HEIGHT_M / rise_m)))
+
+
+def budget(angle_deg: float, rise_m: float = STEP_RISE, steps: int | None = None) -> int:
+    if steps is None:
+        steps = steps_for(rise_m)
     tread = rise_m / math.tan(math.radians(angle_deg))
-    ideal = (APPROACH_M + STEP_COUNT * tread + PLATFORM_LEN) / (SPEED * 0.162697)
+    ideal = (APPROACH_M + steps * tread + PLATFORM_LEN) / (SPEED * 0.162697)
     return min(600, max(240, math.ceil(2 * ideal) + 180))
 
 
@@ -92,8 +102,8 @@ def scene_text(case: dict) -> str:
                'conaffinity="1" friction="4.0 0.02 0.001" solref="0.004 1" '
                'rgba=".72 .72 .72 1" />\n')
     x = RISER_X
-    steps = case.get("steps", STEP_COUNT)
     rise = case.get("rise_m", STEP_RISE)
+    steps = case.get("steps", steps_for(rise))
     for i in range(steps):
         terrain += box(f"up{i}", x + case["tread_m"] / 2, case["tread_m"] / 2,
                        rise * (i + 1), case["friction"])
@@ -194,8 +204,8 @@ def stem_for(case: dict) -> str:
 
 def run(case: dict) -> dict:
     RUN.mkdir(parents=True, exist_ok=True)
-    steps = case.get("steps", STEP_COUNT)
     rise = case.get("rise_m", STEP_RISE)
+    steps = case.get("steps", steps_for(rise))
     rocker_mode = case.get("rocker_mode", "stock")
     speed = case.get("speed", SPEED)
     trigger_kind = case.get("trigger", "contact")

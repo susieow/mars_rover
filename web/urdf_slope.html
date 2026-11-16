@@ -34,7 +34,7 @@
   <nav><a href="/">← 实验主页</a></nav>
   <h1>实验二 · 全楼梯结果与边界</h1>
   <span class="badge" id="badge">正在读取结果…</span>
-  <p class="muted">固定每级 20 cm、15 级、直角台阶，只改变踏步深度。物理步长全程 1 ms。成功要求六轮中心进入平台投影、至少五轮受载、未受载轮离面不超过 1 mm，连续 1 s 后停稳，且全程每个物理步都在 URDF 限值内。下表把 Phase B、Phase D 与游戏新环的全部记录放在一起，按筛选条看，Phase B/D 每行都能播放对应仿真。级数按最后一根轴（后轮）到达的台阶计算。</p>
+  <p class="muted">Phase B/D 固定每级 20 cm、15 级、直角台阶，只改变踏步深度；游戏新环改为总高 3 m，级数随级高变化。物理步长全程 1 ms。成功要求六轮中心进入平台投影、至少五轮受载、未受载轮离面不超过 1 mm，连续 1 s 后停稳，且全程每个物理步都在 URDF 限值内。下表把 Phase B、Phase D 与游戏新环的全部记录放在一起，按筛选条看，Phase B/D 每行都能播放对应仿真。级数按最后一根轴（后轮）到达的台阶计算，显示为「到达 / 总级数」。</p>
 
   <div class="tiles">
     <div class="tile"><div class="k">pb_v2 记录</div><div class="v" id="tRows">-</div></div>
@@ -78,7 +78,7 @@
     <p class="muted">20° 臂只比较爬升效果，不参与合规边界。μ4 SP 在 15° 到平台但摇臂位置超限，20° 停在第 3 级，25° 通过，说明这个格子的合规性对角度不单调，Phase C 不能按单点二分处理。</p>
     <p class="muted">单级筛选行只有 1 级，判定“合规通过”等于能安装且零越限，不代表能上完整楼梯。</p>
     <p class="muted">级数改按最后一根轴（后轮）到达的台阶计算，此前取受载轮里的最高点，也就是前轮。45° 的失败行因此从 5–6 级变成 0–1 级：前轮压上了第 5 级，整台车还在地面上。</p>
-    <p class="muted">游戏新环 1512 条来自爬楼游戏的全部配置：10–45° 每 1°、每级 5–35 cm 每 5 cm、μ4/6/8、SP/SN 两个顺序。驾驶脚本固定为满油门 4 rad/s、接触触发 18° 三周期摇臂，摇臂环换成游戏里的增强环（增益 12、上限 1.57 rad/s、78 N·m 前馈、160 N·m 力矩）。它按设计超出原 URDF 100 N·m 的摇臂力矩上限，所以合规列记 —，判定只看是否六轮停稳在平台。批跑本身不渲染，只有后轮记录到第 15 级的 681 条用保存的轨迹补录了双机位视频，其余行视频列为 —。</p>
+    <p class="muted">游戏新环 1512 条来自爬楼游戏的全部配置：10–45° 每 1°、每级 5–35 cm 每 5 cm、μ4/6/8、SP/SN 两个顺序。台阶总高固定 3 m，所以级数随级高变化：5 cm 60 级、10 cm 30 级、15 cm 20 级、20 cm 15 级、25 cm 12 级、30 cm 10 级、35 cm 9 级（315 cm）。驾驶脚本固定为满油门 4 rad/s、接触触发 18° 三周期摇臂，摇臂环换成游戏里的增强环（增益 12、上限 1.57 rad/s、78 N·m 前馈、160 N·m 力矩）。它按设计超出原 URDF 100 N·m 的摇臂力矩上限，所以合规列记 —，判定只看是否六轮停稳在平台。批跑结果：542 条停稳在平台，744 条超时，114 条翻侧，112 条到平台但未停稳。批跑本身不渲染，只有后轮记录到最高一级的 676 条用保存的轨迹补录了双机位视频，其余行视频列为 —。</p>
   </section>
 
   <script>
@@ -127,10 +127,11 @@
       video.src = '/slope-media/' + x.video_key + '.mp4';
       video.play().catch(() => {});
       player.classList.add('on');
-      const scope = x.scope === 'single' ? '单级' : '15 级';
+      const scope = x.scope === 'single' ? '单级' : (x.steps_total ?? 15) + ' 级';
       $('playerMeta').textContent = PHASE[x.criterion] + ' · ' + x.angle_deg + '° · μ' + x.friction + ' · ' + x.order
         + ' · ' + x.rocker_amp_deg + '° 臂 · ' + x.speed_rad_s + ' rad/s ' + (x.trigger === 'stall' ? '卡住' : '接触')
-        + ' · ' + scope + ' · ' + x.steps_climbed + ' 级 · ' + (END[x.end_reason] || x.end_reason) + ' · ' + fmt(x.duration_s) + ' s';
+        + ' · ' + scope + ' · ' + x.steps_climbed + ' / ' + (x.steps_total ?? 15) + ' 级 · '
+        + (END[x.end_reason] || x.end_reason) + ' · ' + fmt(x.duration_s) + ' s';
       player.scrollIntoView({behavior: 'smooth', block: 'nearest'});
     }
 
@@ -156,7 +157,7 @@
         const cells = [
           PHASE[x.criterion], x.angle_deg + '°', x.tread_m.toFixed(4), riseOf(x), x.friction, x.order,
           x.rocker_amp_deg + '°', x.speed_rad_s, x.trigger === 'stall' ? '卡住' : '接触',
-          x.steps_climbed, x.ascent_completed ? '是' : '否',
+          x.steps_climbed + ' / ' + (x.steps_total ?? 15), x.ascent_completed ? '是' : '否',
           x.urdf_compliant === null ? '—' : (x.urdf_compliant ? '是' : '否'),
           END[x.end_reason] || x.end_reason, fmt(x.duration_s),
           x.unloaded_gap_mm === null || x.unloaded_gap_mm === undefined ? '—' : fmt(x.unloaded_gap_mm),

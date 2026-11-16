@@ -84,9 +84,12 @@ class Session:
         self.rise_cm = int(rise_cm)
         self.rise = self.rise_cm / 100.0
         self.tread = self.rise / math.tan(math.radians(angle))
-        self.timeout = pb.budget(angle, self.rise)
+        # Every riser height builds the same 3 m staircase, so a low riser means
+        # many small steps instead of a shorter climb.
+        self.steps = pb.steps_for(self.rise)
+        self.timeout = pb.budget(angle, self.rise, self.steps)
         case = {"angle_deg": angle, "tread_m": self.tread, "rise_m": self.rise,
-                "friction": friction, "steps": pb.STEP_COUNT, "timeout_s": self.timeout}
+                "friction": friction, "steps": self.steps, "timeout_s": self.timeout}
         SCENE_DIR.mkdir(parents=True, exist_ok=True)
         scene = SCENE_DIR / f"{self.id}.xml"
         scene.write_text(pb.scene_text(case), encoding="utf-8")
@@ -117,9 +120,9 @@ class Session:
         self.camera.distance, self.camera.azimuth, self.camera.elevation = 4.2, 90.0, -14.0
         self.platform_ids = {g for g in range(self.model.ngeom)
                              if (mujoco.mj_id2name(self.model, mujoco.mjtObj.mjOBJ_GEOM, g) or "") == "platform"}
-        self.platform_start = pb.RISER_X + pb.STEP_COUNT * self.tread
+        self.platform_start = pb.RISER_X + self.steps * self.tread
         self.platform_end = self.platform_start + pb.PLATFORM_LEN
-        self.platform_top = self.rise * pb.STEP_COUNT
+        self.platform_top = self.rise * self.steps
         self.throttle = 0.0
         self.rocker = 0.0
         self.rocker_cmd = 0.0
@@ -227,7 +230,7 @@ class Session:
         self.message = reason
 
     def steps_climbed(self):
-        return int(np.clip((float(self.data.qpos[0]) - pb.RISER_X) / self.tread, 0, pb.STEP_COUNT))
+        return int(np.clip((float(self.data.qpos[0]) - pb.RISER_X) / self.tread, 0, self.steps))
 
     def render(self):
         self.render_data.qpos[:] = self.data.qpos
@@ -261,7 +264,8 @@ class Session:
         )
         meta = {
             "id": self.id, "name": self.name, "angle_deg": self.angle, "tread_m": self.tread,
-            "rise_cm": self.rise_cm, "platform_top_m": round(self.platform_top, 3),
+            "rise_cm": self.rise_cm, "steps_total": self.steps,
+            "platform_top_m": round(self.platform_top, 3),
             "friction": self.friction, "duration_s": float(times[-1]), "fps": SAVE_FPS,
             "frames": int(len(poses)), "quaternion_order": "xyzw",
             "joint_names": [self.model.joint(j).name for j in range(self.model.njnt)
@@ -278,7 +282,7 @@ class Session:
     def state(self):
         return {
             "id": self.id, "angle_deg": self.angle, "friction": self.friction,
-            "rise_cm": self.rise_cm,
+            "rise_cm": self.rise_cm, "steps_total": self.steps,
             "t": round(float(self.data.time), 2), "x": round(float(self.data.qpos[0]), 2),
             "speed": round(self.throttle * SPEED_MAX, 2),
             "rocker_deg": round(math.degrees(float(self.data.qpos[self.ctl.rockers[0][2]])), 1),

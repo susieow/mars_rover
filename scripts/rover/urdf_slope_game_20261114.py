@@ -6,6 +6,10 @@ contact, 18 deg amplitude for three cycles. Angle, riser height, friction and
 rocker order stay exactly as the lobby offers them; only the rocker torque loop
 is the new one.
 
+Every riser height uses the same 3 m staircase, so the step count follows the
+riser (5 cm -> 60 steps, 20 cm -> 15, 35 cm -> 9). Results go to game300/ so
+the older 15-step batch in game/ stays untouched.
+
     python scripts/rover/urdf_slope_game_20261114.py --workers 16
     python scripts/rover/urdf_slope_game_20261114.py --index
 """
@@ -23,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts/rover"))
 import urdf_slope_runtime_20261113 as pb  # noqa: E402
 
-RUN = ROOT / "runs/urdf_slope_20261112/game"
+RUN = ROOT / "runs/urdf_slope_20261112/game300"
 OUT = ROOT / "docs/urdf_slope_game_index.jsonl"
 ANGLES = tuple(float(a) for a in range(10, 46))
 RISES_CM = (5, 10, 15, 20, 25, 30, 35)
@@ -39,6 +43,7 @@ def cases() -> list[dict]:
         for rise_cm in RISES_CM:
             rise = rise_cm / 100.0
             tread = rise / math.tan(math.radians(angle))
+            steps = pb.steps_for(rise)
             for friction in FRICTIONS:
                 for order in ORDERS:
                     out.append({
@@ -48,8 +53,8 @@ def cases() -> list[dict]:
                         "angle_deg": angle, "tread_m": tread, "rise_m": rise,
                         "friction": friction, "order": order,
                         "rocker_amp_deg": AMP, "speed": SPEED, "trigger": "contact",
-                        "steps": pb.STEP_COUNT, "rocker_mode": "boost", "audit": False,
-                        "timeout_s": pb.budget(angle, rise),
+                        "steps": steps, "rocker_mode": "boost", "audit": False,
+                        "timeout_s": pb.budget(angle, rise, steps),
                     })
     return out
 
